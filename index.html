@@ -8,18 +8,18 @@
 </head>
 <body>
     <header class="hero">
-  <div class="wrap hero__inner">
-    <div class="hero__media" role="img" aria-label="Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background">
-      <img src="assets/images/main-banner-vF.jpg" alt="Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background. No visible text. Tone is scientific and detailed." />
-    </div>
+  <!-- full-bleed banner image -->
+  <div class="hero__media" role="img" aria-label="Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background">
+    <img src="assets/images/main-banner-vF.jpg" alt="Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background. No visible text. Tone is scientific and detailed." />
+  </div>
 
-    <div class="hero__content">
-      <h1>Seung Lab Datasets</h1>
-      <p class="hero__lede">
-        Connectomics datasets curated for exploring structure, wiring, and the rules of neural computation.
-        Click a card to jump into resources, portals, papers, or tooling.
-      </p>
-    </div>
+  <!-- wrapped content aligned with the cards -->
+  <div class="wrap hero__content">
+    <h1>Seung Lab Datasets</h1>
+    <p class="hero__lede">
+      Connectomics datasets curated for exploring structure, wiring, and the rules of neural computation.
+      Click a card to jump into resources, portals, papers, or tooling.
+    </p>
   </div>
 </header>
 
@@ -27,17 +27,23 @@
         <section class="grid" aria-label="Dataset cards">
     <!-- FlyWire -->
     <article class="card">
-        <div class="card__top"></div>
-            <h2>FlyWire</h2>
-            <p class="tag">Drosophila • whole brain</p>
+        <!-- card image (Material 3 style) -->
+        <div class="card__media">
+          <img src="assets/images/flywire-thumb.jpg" alt="FlyWire preview image" />
         </div>
+
+        <div class="card__top">
+          <h2>FlyWire</h2>
+          <p class="tag">Drosophila • whole brain</p>
+        </div>
+
         <p class="card__body">
-            Whole-brain connectome resources and highlights, including Nature’s curated collection and an immersive feature.
+          Whole-brain connectome resources and highlights, including Nature’s curated collection and an immersive feature.
         </p>
         <div class="card__actions">
-            <a class="btn" href="https://www.nature.com/collections/hgcfafejia" target="_blank" rel="noreferrer">Nature collection</a>
-            <a class="btn btn--ghost" href="https://www.nature.com/immersive/d42859-024-00053-4/index.html" target="_blank" rel="noreferrer">Immersive</a>
-            <a class="btn btn--ghost" href="https://www.nature.com/collections/hgcfafejia" target="_blank" rel="noreferrer">Cover</a>
+          <a class="btn" href="https://www.nature.com/collections/hgcfafejia" target="_blank" rel="noreferrer">Nature collection</a>
+          <a class="btn btn--ghost" href="https://www.nature.com/immersive/d42859-024-00053-4/index.html" target="_blank" rel="noreferrer">Immersive</a>
+          <a class="btn btn--ghost" href="https://www.nature.com/collections/hgcfafejia" target="_blank" rel="noreferrer">Cover</a>
         </div>
     </article>
 
