@@ -86,6 +86,13 @@ h1{
   padding: 22px 0 34px;
 }
 
+/* make grid items equal-height so cards line up, and push actions to the card bottom */
+.grid {
+  /* keep existing grid settings but ensure each cell row can expand equally */
+  grid-auto-rows: 1fr;
+  align-items: stretch; /* stretch items to fill the row */
+}
+
 @media (max-width: 980px){
   .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -107,6 +114,9 @@ h1{
   padding: 16px 16px 14px;
   position: relative;
   overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card::before{
@@ -160,6 +170,16 @@ h2{
 .card__actions{
   display:flex;
   gap: 10px;
+  margin-top: auto;
+  align-items: center;
+}
+
+/* keep the actions row pinned to the bottom of the card */
+.card__actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
 }
 
 .btn{
@@ -258,4 +278,26 @@ h2{
 /* small screens: keep aspect ratio but slightly taller */
 @media (max-width: 620px){
   .card__media { padding-top: 60%; }
+}
+
+/* footer image block */
+.footer__image{
+  padding: 28px 0 48px;
+  background: linear-gradient(180deg, rgba(0,0,0,.02), transparent 40%);
+}
+.footer__image img{
+  display:block;
+  width:100%;
+  max-width:1100px; /* match .wrap width */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  object-fit: contain;
+}
+
+/* slightly reduce spacing on small screens */
+@media (max-width: 620px){
+  .footer__image{ padding: 18px 0 28px; }
+  .footer__image img{ max-width: calc(100% - 32px); }
 }
