@@ -488,3 +488,11 @@ h2{
   .stat__num{ font-size: 1.4rem; }
 }
 
+.footer__image figcaption {
+  margin-top: 12px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
