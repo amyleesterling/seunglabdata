@@ -14,12 +14,30 @@ html,body{ height:100%; }
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg); /* keep a solid fallback */
+}
+
+/* place the complex radial gradients into a fixed full-viewport layer to avoid seams/scroll lines */
+body::before{
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
   background:
     radial-gradient(1200px 500px at 15% 10%, rgba(130,180,255,.22), transparent 55%),
     radial-gradient(900px 500px at 85% 20%, rgba(180,120,255,.18), transparent 60%),
     radial-gradient(900px 700px at 50% 100%, rgba(90,255,220,.10), transparent 60%),
     var(--bg);
-  color: var(--text);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  will-change: transform;
 }
 
 .hero_content {
@@ -300,4 +318,14 @@ h2{
 @media (max-width: 620px){
   .footer__image{ padding: 18px 0 28px; }
   .footer__image img{ max-width: calc(100% - 32px); }
+}
+
+/* footer easter egg */
+.footer__egg {
+  margin: 12px 0 36px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.95;
 }
