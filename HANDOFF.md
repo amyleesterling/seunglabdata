@@ -25,7 +25,7 @@ A public site for the Seung Lab's connectomics datasets and citizen science. Vis
 - Contact/support email is assembled at runtime in JS (not a plain-text literal) to avoid scrapers.
 
 ## Dataset facts (approx neuron counts, confirmed by Amy)
-- EyeWire II (mouse retina) ~100,000 · FlyWire (fly brain) ~140,000 · MICrONS (mouse V1) ~120,000 (200,000 cells / 523M synapses) · FlyWire BANC (fly brain + nerve cord) ~160,000 · EyeWire (mouse retina) >10,000 · Pyr / CA3 (mouse hippocampus) in progress.
+- EyeWire II (mouse retina) ~100,000 · FlyWire (fly brain) 140,000 · MICrONS (mouse V1) ~120,000 (200,000 cells / 523M synapses) · FlyWire BANC (fly brain + nerve cord) ~188,000 · EyeWire (mouse retina) >10,000 · Pyr / CA3 (mouse hippocampus) in progress.
 
 ## Social (X follow icons on dataset cards)
 EyeWire II & EyeWire → https://x.com/eye_wire · FlyWire & BANC → https://x.com/FlyWireNews · Pyr → https://x.com/pyrgame
