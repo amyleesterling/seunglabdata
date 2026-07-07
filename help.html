@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help — Citizen Neuroscience</title>
+  <meta name="description" content="Get help mapping the brain: contact support, join the forum, and learn the proofreading software." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav class="topnav">
+      <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="index.html">Citizen Neuroscience</a>
+        <div class="topnav__links">
+          <a class="topnav__link" href="index.html">Datasets</a>
+          <a class="topnav__link" href="learn.html">Learn Neuroscience</a>
+          <a class="topnav__link" href="videos.html">Videos</a>
+          <a class="topnav__link is-active" href="help.html">Help</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="wrap">
+      <section class="pagehead">
+        <p class="hero__eyebrow">Citizen Neuroscience</p>
+        <h1>Help &amp; Support</h1>
+        <p class="pagehead__lede">
+          Stuck on a tricky merge, hit a bug, or just getting started? Reach out, join the community,
+          and learn the tools below.
+        </p>
+      </section>
+
+      <!-- Contact + forum -->
+      <section class="help2" aria-label="Contact us">
+        <div class="help2__grid">
+          <div class="contactcard">
+            <h2>Contact us</h2>
+            <p>Send a message and we'll get back to you. This opens an email to
+              <a href="mailto:support@eyewire.org">support@eyewire.org</a> with your note.</p>
+            <form id="contactForm" class="cform" novalidate>
+              <label class="cform__field">
+                <span>Your name</span>
+                <input type="text" id="cf-name" name="name" autocomplete="name" />
+              </label>
+              <label class="cform__field">
+                <span>Your email</span>
+                <input type="email" id="cf-email" name="email" autocomplete="email" />
+              </label>
+              <label class="cform__field">
+                <span>How can we help?</span>
+                <textarea id="cf-message" name="message" rows="5"></textarea>
+              </label>
+              <button type="submit" class="btn btn--cta">Compose email</button>
+            </form>
+          </div>
+
+          <aside class="forumcard">
+            <div class="res__badge">Community</div>
+            <h2>Ask the forum</h2>
+            <p>Thousands of citizen scientists and researchers share tips on cell morphology, gnarly
+              slices, and how to execute a clean split or merge. It's often the fastest way to an answer.</p>
+            <div class="card__actions">
+              <a class="btn btn--cta" href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Visit the forum ↗</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Getting started -->
+      <section class="help2" aria-label="Getting started">
+        <h2>Getting started</h2>
+        <p class="help2__lede">
+          All of our datasets are mapped in <strong>Neuroglancer / Spelunker</strong>, a browser‑based
+          viewer for exploring and editing 3D reconstructions of neurons. The quickest way in: pick a
+          dataset on the <a href="index.html">Datasets</a> page and sign up, then read the Spelunker
+          guide below to learn the interface before your first proofreading session. When you're ready,
+          the <a href="learn.html">Learn Neuroscience</a> tour shows what you're actually looking at,
+          and the tutorials further down teach the editing tools click by click.
+        </p>
+        <div class="resources__grid">
+          <article class="res">
+            <div class="res__badge">Read first</div>
+            <h3>Guide to Spelunker</h3>
+            <p class="res__desc">The complete written walkthrough of the proofreading interface.</p>
+            <ul class="res__links">
+              <li><a href="https://blog.flywire.ai/2024/12/20/banc-proofreading-101-climb-into-spelunker/" target="_blank" rel="noreferrer">Proofreading 101: Climb into Spelunker</a> <span>Panels, navigation, and your first edits, step by step.</span></li>
+              <li><a href="https://blog.flywire.ai/" target="_blank" rel="noreferrer">FlyWire Blog</a> <span>More guides, tips, and project updates.</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Learn to use the software -->
+      <section class="help2" aria-label="Learn to use the software">
+        <h2>Learn to use the software</h2>
+        <p class="help2__lede">Short video tutorials from FlyWire Princeton — watch someone do it, then try it yourself.</p>
+        <div class="resources__grid">
+          <article class="res">
+            <div class="res__badge">Start here</div>
+            <h3>How to map neurons</h3>
+            <p class="res__desc">The core proofreading moves, one short video each:</p>
+            <ul class="tut-list">
+              <li>How to merge two pieces of a neuron</li>
+              <li>How to split incorrectly joined cells</li>
+              <li>Find cells using segment IDs</li>
+              <li>Find segments using coordinates</li>
+              <li>Using the Find Path tool</li>
+              <li>Bridging a gap with annotation points</li>
+            </ul>
+            <div class="card__actions">
+              <a class="btn btn--cta" href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCxCiUVwM7uzqp8BM1oePpLK" target="_blank" rel="noreferrer">Watch the playlist ↗</a>
+            </div>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Level up</div>
+            <h3>Advanced navigation</h3>
+            <p class="res__desc">Get faster and more precise moving through the volume and the Spelunker interface.</p>
+            <div class="card__actions">
+              <a class="btn btn--cta" href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCw0BLFWKrc49JHKWK1o41Ud" target="_blank" rel="noreferrer">Watch the playlist ↗</a>
+            </div>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Analysis</div>
+            <h3>Using FlyWire Codex</h3>
+            <p class="res__desc">Query and analyze the finished connectome data — cell types, connectivity, and more.</p>
+            <div class="card__actions">
+              <a class="btn btn--cta" href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCzRNkFGcTfpDk6Ckpmi23Yx" target="_blank" rel="noreferrer">Watch the playlist ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__credit footer__credit--standalone">
+        This page is brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Sebastian Seung's lab</a> at Princeton University.
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var form = document.getElementById('contactForm');
+        if (!form) return;
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var name = document.getElementById('cf-name').value.trim();
+          var email = document.getElementById('cf-email').value.trim();
+          var message = document.getElementById('cf-message').value.trim();
+          var subject = 'Citizen Neuroscience — support request';
+          var bodyLines = [];
+          if (name) bodyLines.push('Name: ' + name);
+          if (email) bodyLines.push('Email: ' + email);
+          bodyLines.push('');
+          bodyLines.push(message);
+          var href = 'mailto:support@eyewire.org?subject=' + encodeURIComponent(subject) +
+                     '&body=' + encodeURIComponent(bodyLines.join('\n'));
+          window.location.href = href;
+        });
+      })();
+    </script>
+</body>
+</html>
