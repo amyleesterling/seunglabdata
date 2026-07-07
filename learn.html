@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Learn Neuroscience — Seung Lab Datasets</title>
+  <meta name="description" content="Inner Cosmos: a guided zoom from the whole human brain down to a single synapse." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="learn-body">
+  <div class="learn">
+    <nav class="topnav">
+      <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="index.html">Seung Lab Datasets</a>
+        <div class="topnav__links">
+          <a class="topnav__link" href="index.html">Datasets</a>
+          <a class="topnav__link is-active" href="learn.html">Learn Neuroscience</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="learn__stage">
+      <iframe
+        class="learn__frame"
+        src="https://amyleesterling.github.io/science-experiment/attract"
+        title="Inner Cosmos — a guided zoom from the human brain to a single synapse"
+        allow="fullscreen; autoplay"
+        loading="eager"></iframe>
+
+      <div class="learn__controls">
+        <button class="iconbtn" id="fsBtn" type="button" aria-label="Toggle fullscreen" title="Fullscreen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 0-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4" />
+          </svg>
+        </button>
+        <button class="iconbtn" id="shareBtn" type="button" aria-label="Share this page" title="Share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <line x1="8.6" y1="13.5" x2="15.4" y2="17.5" />
+            <line x1="15.4" y1="6.5" x2="8.6" y2="10.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      var shareBtn = document.getElementById('shareBtn');
+      var fsBtn = document.getElementById('fsBtn');
+      var stage = document.querySelector('.learn__stage');
+      var toast = document.getElementById('toast');
+      var toastTimer;
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
+      }
+
+      var shareData = {
+        title: 'Inner Cosmos — Learn Neuroscience',
+        text: 'Take a guided zoom from the whole human brain down to a single synapse.',
+        url: window.location.href
+      };
+
+      shareBtn.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () { /* user dismissed */ });
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareData.url).then(function () {
+            showToast('Link copied to clipboard');
+          }).catch(function () {
+            showToast(shareData.url);
+          });
+        } else {
+          showToast(shareData.url);
+        }
+      });
+
+      fsBtn.addEventListener('click', function () {
+        var el = stage;
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        } else {
+          var req = el.requestFullscreen || el.webkitRequestFullscreen;
+          if (req) { var p = req.call(el); if (p && p.catch) p.catch(function () {}); }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
