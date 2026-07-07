@@ -819,20 +819,35 @@ h2{
 .footer__credit--standalone{ margin: 0; padding: 6px 0 20px; }
 
 /* ===== Learn page — immersive Inner Cosmos experience ===== */
-.learn-body{ overflow: hidden; }
-.learn{
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-.learn .topnav{ flex: 0 0 auto; }
+.learn-body{ overflow-x: hidden; }
 .learn__stage{
   position: relative;
-  flex: 1 1 auto;
-  min-height: 0;
+  height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
+  min-height: 420px;
   background: #04060c;
 }
+
+/* content below the experience */
+.learn__about{
+  padding: 54px 0 8px;
+  border-top: 1px solid var(--line);
+}
+.learn__about h2{
+  margin: 6px 0 16px;
+  font-size: clamp(24px, 2.8vw, 34px);
+  letter-spacing: -0.02em;
+  color: #eaf6ff;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.learn__about p{
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+.learn__about .btn{ margin-top: 10px; }
 .learn__frame{
   position: absolute;
   inset: 0;
