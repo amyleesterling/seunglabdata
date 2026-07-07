@@ -717,6 +717,91 @@ h2{
 .more__lede{ margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .more .grid{ padding-top: 16px; }
 
+/* ===== Learn how to map the brain ===== */
+.maptut{
+  padding: 44px 0 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+.maptut__head{ max-width: 72ch; margin-bottom: 20px; }
+.maptut__head h2{
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.6vw, 32px);
+  letter-spacing: -0.02em;
+  color: #eaf6ff;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+.maptut__lede{ margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.maptut__lede strong{ color: #eaf6ff; }
+
+.maptut__frameWrap{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(0,0,0,.3);
+  box-shadow: var(--shadow);
+}
+.maptut__bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+}
+.maptut__badge{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #cfe9ff;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(126,231,255,.28);
+  background: rgba(126,231,255,.08);
+}
+.maptut__embed{
+  position: relative;
+  width: 100%;
+  height: min(68vh, 620px);
+  min-height: 420px;
+  background: #04060c;
+}
+.maptut__embed iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.maptut__notes{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+.maptut__note{
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
+  padding: 16px 18px;
+}
+.maptut__note h3{
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: #eaf6ff;
+  letter-spacing: -0.01em;
+}
+.maptut__note p{ margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.maptut__note p:last-child{ margin-bottom: 0; }
+@media (max-width: 720px){
+  .maptut__notes{ grid-template-columns: 1fr; }
+  .maptut__embed{ height: 66vh; min-height: 360px; }
+}
+
 /* ===== Resources for Citizen Scientists ===== */
 .resources{
   padding: 44px 0 8px;
