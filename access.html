@@ -25,9 +25,9 @@
         <p class="hero__eyebrow">Citizen Neuroscience</p>
         <h1>Get Access to a Dataset</h1>
         <p class="pagehead__lede">
-          Ready to map real neurons? Here's how to earn proofreading access. This example uses
-          EyeWire II, but the same process works for every dataset we release, so once you've done it
-          you'll know how to join any new project.
+          Ready to map real neurons? Here's how to earn proofreading access. The same process works
+          for every dataset we release. Once you've done it, you won't need to redo it and can jump to
+          any open dataset.
         </p>
       </section>
 
@@ -43,12 +43,12 @@
           <li class="step">
             <div class="step__num">2</div>
             <h3>Make 10 example edits</h3>
-            <p>Create 7 links showing accidental mergers (mark where to cut with Multicut points) and 3 links showing accidental splits (turn on the pieces that should join). Use the Share button to save a link for each. Don't finalize the edits.</p>
+            <p>Create 7 links showing accidental mergers (mark where to cut with Multicut points) and 3 links showing accidental splits (turn on the pieces that should join). <strong>Don't actually make the edits, just annotate where they should go.</strong> Use the Share button to save a link for each.</p>
           </li>
           <li class="step">
             <div class="step__num">3</div>
             <h3>Submit your links</h3>
-            <p>Send your 10 links through the <a href="https://blog.eyewire.org/how-to-access-the-eyewire-ii-dataset/" target="_blank" rel="noreferrer">dataset's access form</a>. The team reviews them and sends you personalized feedback.</p>
+            <p>Send us your 10 links. <a id="accessSubmit" href="#">Click here</a> to open an email with the subject ready to go, then paste your links in. We review them and send you personalized feedback.</p>
           </li>
           <li class="step">
             <div class="step__num">4</div>
@@ -57,8 +57,8 @@
           </li>
         </ol>
         <p class="help2__lede">
-          There's no limit on tries, so you can request access as many times as you like. If you're still
-          unsure after a couple of weeks of practice, ask the community on the forum and we'll help you get ready.
+          There's no limit on tries, so you can request access as many times as you like. If you're unsure
+          about anything, ask the community on the <a href="https://forum.eyewire.org/c/eyewire-ii/14" target="_blank" rel="noreferrer">forum</a> or feel free to <a id="emailUs" href="#">email us</a>.
         </p>
       </section>
 
@@ -104,5 +104,15 @@
         This page is brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Sebastian Seung's lab</a> at Princeton University.
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var addr = ['support', 'eyewire.org'].join('@');
+        var a = document.getElementById('accessSubmit');
+        if (a) a.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('dataset access edits');
+        var e = document.getElementById('emailUs');
+        if (e) e.href = 'mailto:' + addr;
+      })();
+    </script>
 </body>
 </html>
