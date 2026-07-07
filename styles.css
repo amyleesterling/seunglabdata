@@ -115,6 +115,7 @@ h1{
   line-height: 1.55;
   max-width: 72ch;
 }
+p.hero__lede + p.hero__lede{ margin-top: 0.9em; }
 
 .grid{
   display:grid;
