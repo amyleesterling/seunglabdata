@@ -54,50 +54,65 @@
 
     <main class="wrap">
 
-      <!-- Subscribe for team updates -->
-      <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
-        <div class="subscribe__copy">
-          <p class="res__badge">Stay in the loop</p>
-          <h2>Get updates from our team</h2>
-          <p class="subscribe__lede">
-            New datasets, events, and fresh ways to help map the brain, straight to your inbox.
-            We'll never share your information.
-          </p>
-        </div>
-        <form class="subscribe__form" id="subscribeForm" novalidate>
-          <div class="subscribe__grid">
-            <label class="cform__field">
-              <span>Name</span>
-              <input id="sub-name" name="name" type="text" autocomplete="name" required />
-            </label>
-            <label class="cform__field">
-              <span>Email</span>
-              <input id="sub-email" name="email" type="email" autocomplete="email" required />
-            </label>
-            <label class="cform__field">
-              <span>Country</span>
-              <input id="sub-country" name="country" type="text" autocomplete="country-name" required />
-            </label>
-            <label class="cform__field">
-              <span>EyeWire username <em>(optional)</em></span>
-              <input id="sub-username" name="eyewire_username" type="text" autocomplete="off" />
-            </label>
-          </div>
-          <!-- bot trap -->
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
-          <div class="subscribe__foot">
-            <button class="btn btn--cta" id="sub-submit" type="submit">Subscribe</button>
-            <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
+    <!-- Citizen Science section -->
+    <section class="citizen wrap" aria-label="Citizen Science">
+      <div class="citizen__inner">
+        <div class="citizen__intro">
+          <h2>Citizen Science</h2>
+          <p>
+            Citizen scientists have been a part of Seung Lab since 2012, ever since the AI-powered brain-mapping game EyeWire proved to the world that science accelerates when we invite everyone to join the quest.
+          </p><br>
+          <p>
+            If you're a citizen scientist: <strong>Thank you!</strong> 
+            Your contributions have been invaluable to advancing our understanding of neural circuits and brain function.
+          </p><br>
 
-        <div class="subscribe__success" id="subscribeSuccess" hidden>
-          <img class="subscribe__nurro" src="assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
-          <h3>You're on the list!</h3>
-          <p>Nurro will keep you posted. Welcome to the quest.</p>
-          <p class="subscribe__egg"><a href="https://amyleesterling.github.io/science-experiment/scale-test" target="_blank" rel="noreferrer">psst… ever wondered how small a neuron really is?</a></p>
+          <p>
+  Citizen science at the Seung Lab centers on mapping and identifying neurons across several public datasets.
+  These datasets share a common visualization and annotation environment: Neuroglancer.
+  A complete Neuroglancer user guide is available here:
+  <a href="https://blog.flywire.ai/2024/12/20/banc-proofreading-101-climb-into-spelunker/" target="_blank" rel="noopener noreferrer">
+    Neuroglancer 101
+  </a>. New here? Jump to the <a href="#resources">resources below</a> to get started.<br><br>
+</p>
         </div>
-      </section>
+
+        <div class="citizen__panel" role="region" aria-label="Citizen science statistics">
+          <div class="citizen__panel-head">
+            <div class="citizen__panel-title">Stats</div>
+          </div>
+
+          <div class="citizen__stats-wrap">
+            <div class="citizen__stats" role="list">
+              <div class="stat" role="listitem">
+                <div class="stat__num">&gt;350,000</div>
+                <div class="stat__label">Citizen scientists</div>
+              </div>
+
+              <div class="stat" role="listitem">
+                <div class="stat__num">&gt;140</div>
+                <div class="stat__label">Countries</div>
+              </div>
+
+              <div class="stat stat--muted" role="listitem">
+                <div class="stat__num">6</div>
+                <div class="stat__label">Datasets</div>
+              </div>
+
+              <div class="stat" role="listitem">
+                <div class="stat__num">12</div>
+                <div class="stat__label">Co‑authored publications</div>
+              </div>
+
+              <div class="stat" role="listitem">
+                <div class="stat__num">2,300+</div>
+                <div class="stat__label">Citations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       <!-- We need your help!, highlighted datasets -->
       <section class="help" id="datasets" aria-label="Datasets that need volunteers">
@@ -175,6 +190,51 @@
 
       <!-- Prototype tutorial section temporarily removed 2026-07-07 while a bug is fixed.
            Restore from git history (commit before this one) — reminder set for 2026-07-09. -->
+
+      <!-- Subscribe for team updates -->
+      <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
+        <div class="subscribe__copy">
+          <p class="res__badge">Stay in the loop</p>
+          <h2>Get updates from our team</h2>
+          <p class="subscribe__lede">
+            New datasets, events, and fresh ways to help map the brain, straight to your inbox.
+            We'll never share your information.
+          </p>
+        </div>
+        <form class="subscribe__form" id="subscribeForm" novalidate>
+          <div class="subscribe__grid">
+            <label class="cform__field">
+              <span>Name</span>
+              <input id="sub-name" name="name" type="text" autocomplete="name" required />
+            </label>
+            <label class="cform__field">
+              <span>Email</span>
+              <input id="sub-email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="cform__field">
+              <span>Country</span>
+              <input id="sub-country" name="country" type="text" autocomplete="country-name" required />
+            </label>
+            <label class="cform__field">
+              <span>EyeWire username <em>(optional)</em></span>
+              <input id="sub-username" name="eyewire_username" type="text" autocomplete="off" />
+            </label>
+          </div>
+          <!-- bot trap -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+          <div class="subscribe__foot">
+            <button class="btn btn--cta" id="sub-submit" type="submit">Subscribe</button>
+            <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="subscribe__success" id="subscribeSuccess" hidden>
+          <img class="subscribe__nurro" src="assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
+          <h3>You're on the list!</h3>
+          <p>Nurro will keep you posted. Welcome to the quest.</p>
+          <p class="subscribe__egg"><a href="https://amyleesterling.github.io/science-experiment/scale-test" target="_blank" rel="noreferrer">psst… ever wondered how small a neuron really is?</a></p>
+        </div>
+      </section>
 
       <!-- More datasets to explore -->
       <section class="more" aria-label="More datasets">
@@ -283,66 +343,6 @@
 
     </section>
       </section>
-
-    <!-- Citizen Science section -->
-    <section class="citizen wrap" aria-label="Citizen Science">
-      <div class="citizen__inner">
-        <div class="citizen__intro">
-          <h2>Citizen Science</h2>
-          <p>
-            Citizen scientists have been a part of Seung Lab since 2012, ever since the AI-powered brain-mapping game EyeWire proved to the world that science accelerates when we invite everyone to join the quest.
-          </p><br>
-          <p>
-            If you're a citizen scientist: <strong>Thank you!</strong> 
-            Your contributions have been invaluable to advancing our understanding of neural circuits and brain function.
-          </p><br>
-
-          <p>
-  Citizen science at the Seung Lab centers on mapping and identifying neurons across several public datasets.
-  These datasets share a common visualization and annotation environment: Neuroglancer.
-  A complete Neuroglancer user guide is available here:
-  <a href="https://blog.flywire.ai/2024/12/20/banc-proofreading-101-climb-into-spelunker/" target="_blank" rel="noopener noreferrer">
-    Neuroglancer 101
-  </a>. New here? Jump to the <a href="#resources">resources below</a> to get started.<br><br>
-</p>
-        </div>
-
-        <div class="citizen__panel" role="region" aria-label="Citizen science statistics">
-          <div class="citizen__panel-head">
-            <div class="citizen__panel-title">Stats</div>
-          </div>
-
-          <div class="citizen__stats-wrap">
-            <div class="citizen__stats" role="list">
-              <div class="stat" role="listitem">
-                <div class="stat__num">&gt;350,000</div>
-                <div class="stat__label">Citizen scientists</div>
-              </div>
-
-              <div class="stat" role="listitem">
-                <div class="stat__num">&gt;140</div>
-                <div class="stat__label">Countries</div>
-              </div>
-
-              <div class="stat stat--muted" role="listitem">
-                <div class="stat__num">6</div>
-                <div class="stat__label">Datasets</div>
-              </div>
-
-              <div class="stat" role="listitem">
-                <div class="stat__num">12</div>
-                <div class="stat__label">Co‑authored publications</div>
-              </div>
-
-              <div class="stat" role="listitem">
-                <div class="stat__num">2,300+</div>
-                <div class="stat__label">Citations</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Resources for Citizen Scientists -->
     <section class="resources wrap" id="resources" aria-label="Resources for Citizen Scientists">
