@@ -593,6 +593,24 @@ h2{
 
 /* ===== Standalone page headers (Videos / Help) ===== */
 .pagehead{ padding: 34px 0 6px; }
+.pagehead--withmascot{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.pagehead__text{ flex: 1 1 320px; min-width: 0; }
+.pagehead__mascot{
+  width: 170px;
+  height: auto;
+  flex: 0 0 auto;
+  margin: 0 auto;
+}
+@media (max-width: 600px){ .pagehead__mascot{ width: 130px; } }
+
+/* midway mascot */
+.access-mascot{ text-align: center; padding: 8px 0 2px; }
+.access-mascot img{ width: 150px; height: auto; display: inline-block; }
 .pagehead h1{
   margin: 6px 0 12px;
   font-size: clamp(28px, 3vw, 40px);
@@ -859,7 +877,7 @@ h2{
 .learn__controls{
   position: absolute;
   top: 14px;
-  right: 14px;
+  left: 14px;
   z-index: 10;
   display: flex;
   gap: 10px;
