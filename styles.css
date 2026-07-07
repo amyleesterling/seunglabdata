@@ -688,6 +688,7 @@ h2{
 }
 .cform textarea{ resize: vertical; min-height: 110px; }
 .cform .btn{ align-self: flex-start; }
+.cform__status{ margin: 2px 0 0; font-size: 13px; color: var(--muted); line-height: 1.45; }
 
 .tut-list{
   margin: 0 0 14px;

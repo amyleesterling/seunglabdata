@@ -34,22 +34,23 @@
         <div class="help2__grid">
           <div class="contactcard">
             <h2>Contact us</h2>
-            <p>Send a message and we'll get back to you. This opens an email to
-              <a href="mailto:support@eyewire.org">support@eyewire.org</a> with your note.</p>
+            <p>Send us a message and we'll get back to you by email.</p>
             <form id="contactForm" class="cform" novalidate>
               <label class="cform__field">
                 <span>Your name</span>
-                <input type="text" id="cf-name" name="name" autocomplete="name" />
+                <input type="text" id="cf-name" name="name" autocomplete="name" required />
               </label>
               <label class="cform__field">
                 <span>Your email</span>
-                <input type="email" id="cf-email" name="email" autocomplete="email" />
+                <input type="email" id="cf-email" name="email" autocomplete="email" required />
               </label>
               <label class="cform__field">
                 <span>How can we help?</span>
-                <textarea id="cf-message" name="message" rows="5"></textarea>
+                <textarea id="cf-message" name="message" rows="5" required></textarea>
               </label>
-              <button type="submit" class="btn btn--cta">Compose email</button>
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+              <button type="submit" class="btn btn--cta" id="cf-submit">Send message</button>
+              <p class="cform__status" id="cf-status" role="status" aria-live="polite"></p>
             </form>
           </div>
 
@@ -70,11 +71,9 @@
         <h2>Getting started</h2>
         <p class="help2__lede">
           All of our datasets are mapped in <strong>Neuroglancer / Spelunker</strong>, a browser‑based
-          viewer for exploring and editing 3D reconstructions of neurons. The quickest way in: pick a
-          dataset on the <a href="index.html">Datasets</a> page and sign up, then read the Spelunker
-          guide below to learn the interface before your first proofreading session. When you're ready,
-          the <a href="learn.html">Inner Cosmos</a> tour on the Learn page shows what you're actually looking at,
-          and the tutorials further down teach the editing tools click by click.
+          viewer for exploring and editing 3D reconstructions of neurons. The quickest way in:
+          <a href="index.html#learn-to-map">this interactive tutorial</a> will show you around.
+          Check below for more tutorial videos.
         </p>
         <div class="resources__grid">
           <article class="res">
@@ -99,12 +98,12 @@
             <h3>How to map neurons</h3>
             <p class="res__desc">The core proofreading moves, one short video each:</p>
             <ul class="tut-list">
-              <li>How to merge two pieces of a neuron</li>
-              <li>How to split incorrectly joined cells</li>
-              <li>Find cells using segment IDs</li>
-              <li>Find segments using coordinates</li>
-              <li>Using the Find Path tool</li>
-              <li>Bridging a gap with annotation points</li>
+              <li><a href="https://www.youtube.com/watch?v=48GS9Sizrvw" target="_blank" rel="noreferrer">How to merge two pieces of a neuron</a></li>
+              <li><a href="https://www.youtube.com/watch?v=DB6wmQWGsck" target="_blank" rel="noreferrer">How to split incorrectly joined cells</a></li>
+              <li><a href="https://www.youtube.com/watch?v=WZYVEXcbOkw" target="_blank" rel="noreferrer">Find cells using segment IDs</a></li>
+              <li><a href="https://www.youtube.com/watch?v=fnHcyPoAuZ0" target="_blank" rel="noreferrer">Find segments using coordinates</a></li>
+              <li><a href="https://www.youtube.com/watch?v=CGooeAhSryg" target="_blank" rel="noreferrer">Using the Find Path tool</a></li>
+              <li><a href="https://www.youtube.com/watch?v=chBd4NPYM1A" target="_blank" rel="noreferrer">Bridging a gap with annotation points</a></li>
             </ul>
             <div class="card__actions">
               <a class="btn btn--cta" href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCxCiUVwM7uzqp8BM1oePpLK" target="_blank" rel="noreferrer">Watch the playlist ↗</a>
@@ -142,20 +141,52 @@
       (function () {
         var form = document.getElementById('contactForm');
         if (!form) return;
+        var statusEl = document.getElementById('cf-status');
+        var submitBtn = document.getElementById('cf-submit');
+        // Assembled at runtime so the address isn't a plain-text literal for scrapers.
+        var ENDPOINT = 'https://formsubmit.co/ajax/' + ['support', 'eyewire.org'].join('@');
+
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           var name = document.getElementById('cf-name').value.trim();
           var email = document.getElementById('cf-email').value.trim();
           var message = document.getElementById('cf-message').value.trim();
-          var subject = 'Citizen Neuroscience — support request';
-          var bodyLines = [];
-          if (name) bodyLines.push('Name: ' + name);
-          if (email) bodyLines.push('Email: ' + email);
-          bodyLines.push('');
-          bodyLines.push(message);
-          var href = 'mailto:support@eyewire.org?subject=' + encodeURIComponent(subject) +
-                     '&body=' + encodeURIComponent(bodyLines.join('\n'));
-          window.location.href = href;
+          if (!message) { statusEl.textContent = 'Please add a message first.'; return; }
+          if (form._honey && form._honey.value) return; // bot trap
+
+          submitBtn.disabled = true;
+          var label = submitBtn.textContent;
+          submitBtn.textContent = 'Sending…';
+          statusEl.textContent = '';
+
+          fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              message: message,
+              _subject: 'Citizen Neuroscience — support request',
+              _template: 'table',
+              _captcha: 'false'
+            })
+          })
+            .then(function (r) { return r.json().catch(function () { return {}; }); })
+            .then(function (d) {
+              if (d && (d.success === true || d.success === 'true')) {
+                form.reset();
+                statusEl.textContent = "Thanks — your message is on its way. We'll reply by email.";
+              } else {
+                statusEl.textContent = 'Something went wrong. Please try again in a moment.';
+              }
+            })
+            .catch(function () {
+              statusEl.textContent = "Couldn't send just now — please try again in a moment.";
+            })
+            .finally(function () {
+              submitBtn.disabled = false;
+              submitBtn.textContent = label;
+            });
         });
       })();
     </script>
