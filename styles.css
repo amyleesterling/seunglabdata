@@ -568,12 +568,15 @@ h2{
   font-weight: 600;
 }
 @media (max-width: 680px){
-  .topnav__inner{ flex-wrap: wrap; gap: 8px; }
-  .topnav__links{ flex-wrap: wrap; }
-}
-@media (max-width: 620px){
-  .topnav__brand{ font-size: 13px; }
-  .topnav__link{ padding: 7px 11px; font-size: 13px; }
+  .topnav__links{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 2px;
+  }
+  .topnav__links::-webkit-scrollbar{ display: none; }
+  .topnav__link{ padding: 7px 10px; font-size: 13px; white-space: nowrap; }
 }
 
 /* ===== Standalone page headers (Videos / Help) ===== */
