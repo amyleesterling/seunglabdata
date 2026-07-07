@@ -22,32 +22,71 @@
     </nav>
 
     <header class="hero">
-  <!-- full-bleed banner image -->
+  <!-- full-bleed banner with overlaid content -->
   <div class="hero__media" role="img" aria-label="Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background">
     <img src="assets/images/main-banner-vF.jpg" alt="Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background. No visible text. Tone is scientific and detailed." />
-  </div>
-
-  <!-- wrapped content aligned with the cards -->
-  <div class="wrap hero__content">
-    <p class="hero__eyebrow">Citizen Neuroscience</p>
-    <h1>Join the quest to map the brain!</h1>
-    <p class="hero__lede">
-      This is the citizen science home of the
-      <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, where anyone can
-      help map the brain one neuron at a time. Our community has helped create some of the world's
-      largest wiring diagrams of the brain through projects like
-      <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> and
-      <a href="https://www.nature.com/immersive/d42859-024-00053-4/index.html" target="_blank" rel="noreferrer">FlyWire</a>.
-      Whether you're a student, gamer, artist, retiree, or simply curious about how the brain works,
-      there's a place for you here.
-    </p>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="wrap hero__overlay">
+      <p class="hero__eyebrow">Citizen Neuroscience</p>
+      <h1>Join the quest to<br />map the brain</h1>
+      <p class="hero__lede">
+        The citizen science home of the
+        <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>. Anyone can help
+        map the brain one neuron at a time, through projects like
+        <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> and
+        <a href="https://www.nature.com/immersive/d42859-024-00053-4/index.html" target="_blank" rel="noreferrer">FlyWire</a>.
+        Student, gamer, artist, retiree, or simply curious, there's a place for you here.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--cta" href="#subscribe">Get project updates</a>
+        <a class="btn btn--ghost" href="#datasets">Explore the datasets</a>
+      </div>
+    </div>
   </div>
 </header>
 
     <main class="wrap">
 
+      <!-- Subscribe for team updates -->
+      <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
+        <div class="subscribe__copy">
+          <p class="res__badge">Stay in the loop</p>
+          <h2>Get updates from our team</h2>
+          <p class="subscribe__lede">
+            New datasets, events, and fresh ways to help map the brain, straight to your inbox.
+            We'll never share your information.
+          </p>
+        </div>
+        <form class="subscribe__form" id="subscribeForm" novalidate>
+          <div class="subscribe__grid">
+            <label class="cform__field">
+              <span>Name</span>
+              <input id="sub-name" name="name" type="text" autocomplete="name" required />
+            </label>
+            <label class="cform__field">
+              <span>Email</span>
+              <input id="sub-email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="cform__field">
+              <span>Country</span>
+              <input id="sub-country" name="country" type="text" autocomplete="country-name" required />
+            </label>
+            <label class="cform__field">
+              <span>EyeWire username <em>(optional)</em></span>
+              <input id="sub-username" name="eyewire_username" type="text" autocomplete="off" />
+            </label>
+          </div>
+          <!-- bot trap -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+          <div class="subscribe__foot">
+            <button class="btn btn--cta" id="sub-submit" type="submit">Subscribe</button>
+            <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
       <!-- We need your help!, highlighted datasets -->
-      <section class="help" aria-label="Datasets that need volunteers">
+      <section class="help" id="datasets" aria-label="Datasets that need volunteers">
         <div class="help__head">
           <h2>We need your <span class="accent">help!</span></h2>
           <p class="help__lede">
@@ -370,7 +409,6 @@
           <ul class="res__links">
             <li><a href="https://blog.flywire.ai/2024/12/20/banc-proofreading-101-climb-into-spelunker/" target="_blank" rel="noreferrer">Neuroglancer 101</a> <span>Climb into Spelunker, the complete proofreading walkthrough.</span></li>
             <li><a href="https://blog.flywire.ai/2024/12/20/banc-guide-for-citizen-scientists/" target="_blank" rel="noreferrer">BANC Guide for Citizen Scientists</a> <span>Tips, workflow, and how to split &amp; merge cleanly.</span></li>
-            <li><a href="https://codex.flywire.ai/faq" target="_blank" rel="noreferrer">Codex FAQ</a> <span>Search and explore finished connectome data.</span></li>
           </ul>
         </article>
 
@@ -404,21 +442,22 @@
           <h3>Video tutorials</h3>
           <p class="res__desc">Prefer to watch someone do it first?</p>
           <ul class="res__links">
-            <li><a href="https://www.youtube.com/channel/UCFWepnO6PHChOTIXsNePEYQ" target="_blank" rel="noreferrer">EyeWire on YouTube</a> <span>The official channel, gameplay, tutorials, and neuron flythroughs.</span></li>
-            <li><a href="https://blog.eyewire.org/category/tutorials/" target="_blank" rel="noreferrer">Tutorial walkthroughs</a> <span>Step‑by‑step guides to the trickiest parts of mapping.</span></li>
-            <li><a href="https://www.youtube.com/watch?v=mWbHTmCSrDg" target="_blank" rel="noreferrer">Why map neurons if the AI already knows?</a> <span>What a human catches that a computer can't.</span></li>
+            <li><a href="https://www.youtube.com/playlist?list=PL-IggV222ozT4CSVbb-bgJWfXPiO8FE_k" target="_blank" rel="noreferrer">EyeWire Tutorials</a> <span>The beginner playlist, from your first cube to solid tracing.</span></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCw0BLFWKrc49JHKWK1o41Ud" target="_blank" rel="noreferrer">Advanced Tutorials</a> <span>Trickier splits, merges, and pro techniques for seasoned mappers.</span></li>
+            <li><a href="help.html">Still stuck? Get help</a> <span>Reach our team and the community when a video isn't enough.</span></li>
           </ul>
         </article>
 
-        <!-- Educators -->
-        <article class="res">
+        <!-- FlyWire Academy -->
+        <article class="res res--academy">
+          <a class="res__cover" href="https://flywire.ai/academy" target="_blank" rel="noreferrer">
+            <img src="assets/images/flywire-academy.png" alt="FlyWire Academy, a colorful 3D rendering of a fly brain connectome with a heads-up-display overlay" loading="lazy" />
+          </a>
           <div class="res__badge">In the classroom</div>
-          <h3>For educators</h3>
-          <p class="res__desc">Bring brain mapping to your students.</p>
+          <h3>FlyWire Academy</h3>
+          <p class="res__desc">Three interactive lessons that take students inside a real connectome, built for high school and college classrooms.</p>
           <ul class="res__links">
-            <li><a href="https://blog.eyewire.org/eyewire-edu/" target="_blank" rel="noreferrer">EyeWire Edu</a> <span>Classroom‑ready ways to teach neuroscience and citizen science.</span></li>
-            <li><a href="https://www.youtube.com/playlist?list=PLWIlr7Ldieg3u_im2lnq1kR9yj8Ab2v6R" target="_blank" rel="noreferrer">Neurons mapped in EyeWire</a> <span>A playlist of real neurons reconstructed by the community.</span></li>
-            <li><a href="https://discuss.flywire.ai/t/what-would-you-say-about-citizen-science-and-the-connectome/212" target="_blank" rel="noreferrer">Citizen science &amp; the connectome</a> <span>Why volunteer mapping matters, in the community's own words.</span></li>
+            <li><a href="https://flywire.ai/academy" target="_blank" rel="noreferrer">Explore FlyWire Academy</a> <span>Free, interactive brain‑mapping lessons for high school and college.</span></li>
           </ul>
         </article>
       </div>
@@ -446,5 +485,64 @@
 
     <div class="footer__tiny"><img src="assets/images/footer-tiny.png" alt="A cool cat mascot wearing sunglasses" /></div>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('subscribeForm');
+      if (!form) return;
+      var statusEl = document.getElementById('sub-status');
+      var submitBtn = document.getElementById('sub-submit');
+      // Assembled at runtime so the address isn't a plain-text literal for scrapers.
+      var ENDPOINT = 'https://formsubmit.co/ajax/' + ['support', 'eyewire.org'].join('@');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('sub-name').value.trim();
+        var email = document.getElementById('sub-email').value.trim();
+        var country = document.getElementById('sub-country').value.trim();
+        var username = document.getElementById('sub-username').value.trim();
+        if (form._honey && form._honey.value) return; // bot trap
+        if (!name || !email || !country) {
+          statusEl.textContent = 'Please add your name, email, and country.';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        var label = submitBtn.textContent;
+        submitBtn.textContent = 'Subscribing…';
+        statusEl.textContent = '';
+
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            country: country,
+            eyewire_username: username || '(not provided)',
+            _subject: 'Citizen Neuroscience, new subscriber',
+            _template: 'table',
+            _captcha: 'false'
+          })
+        })
+          .then(function (r) { return r.json().catch(function () { return {}; }); })
+          .then(function (d) {
+            if (d && (d.success === true || d.success === 'true')) {
+              form.reset();
+              statusEl.textContent = "You're on the list. Thanks for joining the quest!";
+            } else {
+              statusEl.innerHTML = "We couldn't sign you up just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
+            }
+          })
+          .catch(function () {
+            statusEl.innerHTML = "We couldn't sign you up just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
+          })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = label;
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
