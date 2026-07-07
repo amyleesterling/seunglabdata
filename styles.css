@@ -622,6 +622,25 @@ h2{
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
 }
+.chan__head{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.chan__icon{
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
+.chan__meta{ display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.chan__meta h3{ margin: 0; }
+.chan__meta .res__badge{ margin-bottom: 0; }
 .res--pending{ opacity: .72; }
 .btn--disabled{
   opacity: .6;
