@@ -24,6 +24,79 @@
 </header>
 
     <main class="wrap">
+
+      <!-- We need your help! — highlighted datasets -->
+      <section class="help" aria-label="Datasets that need volunteers">
+        <div class="help__head">
+          <h2>We need your <span class="accent">help!</span></h2>
+          <p class="help__lede">
+            Two projects are actively recruiting citizen scientists right now. Claim a neuron,
+            learn the tools, and help finish a wiring diagram of the brain.
+          </p>
+        </div>
+
+        <div class="help__grid">
+          <!-- EyeWire II -->
+          <article class="card card--help">
+            <div class="card__media">
+              <span class="card__flag">Proofreaders needed</span>
+              <img src="assets/images/e2_banner.jpg" alt="EyeWire II — mouse retina neurons" />
+            </div>
+            <div class="card__top">
+              <h2>EyeWire II</h2>
+              <p class="tag">Mouse retina • claim your own cell</p>
+            </div>
+            <p class="card__body">
+              In EyeWire II you own your own cell from start to finish — no consensus committee.
+              Advanced citizen scientists are the first and last check on every neuron.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--cta" href="https://eyewire.ai" target="_blank" rel="noreferrer">Launch EyeWire II</a>
+              <a class="btn btn--ghost" href="https://docs.google.com/presentation/d/1y3iYyv2zaYdCqaL3ZxL02FKEnSfZEIRhEKd7yaOKCkw/edit" target="_blank" rel="noreferrer">How it works</a>
+            </div>
+          </article>
+
+          <!-- FlyWire BANC -->
+          <article class="card card--help">
+            <div class="card__media">
+              <span class="card__flag">Proofreaders needed</span>
+              <img src="assets/images/banc-proofreading-poster-volumeem.jpg" alt="FlyWire BANC — proofreading the fly brain and ventral nerve cord" />
+            </div>
+            <div class="card__top">
+              <h2>FlyWire BANC</h2>
+              <p class="tag">Fly CNS • brain + ventral cord</p>
+            </div>
+            <p class="card__body">
+              Proofread the complete fly nervous system — brain and ventral nerve cord together.
+              Request access, join the #banc-citsci community, and start splitting and merging.
+            </p>
+            <div class="card__actions">
+              <a class="btn btn--cta" href="https://flywire.ai/banc" target="_blank" rel="noreferrer">Request access</a>
+              <a class="btn" href="https://codex.flywire.ai/?dataset=banc" target="_blank" rel="noreferrer">Explore</a>
+              <a class="btn btn--ghost" href="https://blog.flywire.ai/2024/12/20/banc-guide-for-citizen-scientists/" target="_blank" rel="noreferrer">Guide</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Embedded slide deck: EyeWire vs EyeWire II -->
+        <div class="help__deck">
+          <h3>New to EyeWire II? Here's how it works</h3>
+          <div class="embed">
+            <iframe
+              src="https://docs.google.com/presentation/d/1y3iYyv2zaYdCqaL3ZxL02FKEnSfZEIRhEKd7yaOKCkw/embed?start=false&loop=false&delayms=5000"
+              title="EyeWire vs EyeWire II — how proofreading works"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- More datasets to explore -->
+      <section class="more" aria-label="More datasets">
+        <div class="more__head">
+          <h2>More datasets to explore</h2>
+          <p class="more__lede">Open-access connectomes you can browse, search, and build on.</p>
+        </div>
         <section class="grid" aria-label="Dataset cards">
     <!-- FlyWire -->
     <article class="card">
@@ -66,24 +139,6 @@
         </div>
     </article>
 
-    <!-- EyeWire II (new) -->
-    <article class="card">
-        <div class="card__media">
-          <img src="assets/images/e2_banner.jpg" alt="EyeWire II banner" />
-        </div>
-
-        <div class="card__top">
-            <h2>EyeWire II</h2>
-            <p class="tag">Citizen science • connectomics</p>
-        </div>
-        <p class="card__body">
-            Follow-up EyeWire project and resources.
-        </p>
-        <div class="card__actions">
-            <a class="btn" href="https://eyewire.ai" target="_blank" rel="noreferrer">Site</a>
-        </div>
-    </article>
-
     <!-- MICrONS -->
     <article class="card">
         <div class="card__media">
@@ -100,26 +155,6 @@
         <div class="card__actions">
           <a class="btn" href="https://www.microns-explorer.org" target="_blank" rel="noreferrer">Explore</a>
           <a class="btn" href="https://www.nature.com/immersive/d42859-025-00001-w/index.html" target="_blank" rel="noreferrer">Nature Papers</a>
-        </div>
-    </article>
-
-    <!-- BANC (combined, with updated image) -->
-    <article class="card">
-        <!-- use the --contain modifier so the PNG is fully visible (not cropped) -->
-        <div class="card__media card__media--contain">
-          <img src="assets/images/banc-preprint-codex-transparent.png" alt="BANC proofreading / preprint preview" />
-        </div>
-
-        <div class="card__top">
-            <h2>BANC</h2>
-            <p class="tag">Fly • brain + ventral cord</p>
-        </div>
-        <p class="card__body">
-            Distributed control circuits across the complete fly CNS—brain and ventral nerve cord together.
-        </p>
-        <div class="card__actions">
-          <a class="btn" href="https://codex.flywire.ai/?dataset=banc" target="_blank" rel="noreferrer">Explore</a>
-          <a class="btn" href="https://www.biorxiv.org/content/10.1101/2025.07.31.667571v2" target="_blank" rel="noreferrer">Preprint</a>
         </div>
     </article>
 
@@ -143,6 +178,7 @@
     </article>
 
     </section>
+      </section>
 
     <!-- Citizen Science section -->
     <section class="citizen wrap" aria-label="Citizen Science">
