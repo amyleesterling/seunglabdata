@@ -1365,6 +1365,18 @@ h2{
   .resources__grid{ grid-template-columns: 1fr; }
 }
 .steps--four{ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+/* celebratory final access step */
+.step--celebrate{
+  border-color: rgba(230,199,96,.5);
+  background: linear-gradient(180deg, rgba(230,199,96,.14), rgba(255,255,255,.03));
+  box-shadow: 0 0 0 1px rgba(230,199,96,.22), 0 12px 30px rgba(0,0,0,.4);
+}
+.step--celebrate .step__num{
+  background: linear-gradient(135deg,#e6c760,#eed588);
+  color: #0a0e18;
+  box-shadow: 0 8px 22px rgba(230,199,96,.35);
+}
+.step--celebrate h3{ color: #f4e6b0; }
 @media (max-width: 900px){ .steps--four{ grid-template-columns: 1fr; } }
 
 /* ===== Subscribe (team updates) ===== */

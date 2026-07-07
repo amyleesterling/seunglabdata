@@ -50,23 +50,28 @@
         <ol class="steps steps--four" aria-label="Access steps">
           <li class="step">
             <div class="step__num">1</div>
-            <h3>Practice in the Sandbox</h3>
-            <p>Get comfortable viewing and editing neurons in the <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6614313285451776" target="_blank" rel="noreferrer">practice sandbox</a> before you request access.</p>
+            <h3>Unlock early access</h3>
+            <p>Pick the dataset you want to help map, <a href="https://eyewire.ai" target="_blank" rel="noreferrer">EyeWire II</a> (mouse retina) or <a href="https://flywire.ai/banc" target="_blank" rel="noreferrer">BANC</a> (fly). Read our <a href="https://edit.flywire.ai/principles.html" target="_blank" rel="noreferrer">community principles</a>, then <a id="accessRequest" href="#">email us</a> to say you agree and request access.</p>
           </li>
           <li class="step">
             <div class="step__num">2</div>
+            <h3>Play and learn in the sandbox</h3>
+            <p>Get comfortable editing neurons with no consequences. Try the <a href="https://edit.flywire.ai/" target="_blank" rel="noreferrer">fly sandbox</a>, which has a simple built-in tutorial, or the <a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/5870129538662400" target="_blank" rel="noreferrer">mammal cortex sandbox</a>. The mammal sandbox requires a Google login.</p>
+          </li>
+          <li class="step">
+            <div class="step__num">3</div>
             <h3>Make 10 example edits</h3>
             <p>Create 7 links showing accidental mergers (mark where to cut with Multicut points) and 3 links showing accidental splits (turn on the pieces that should join). <strong>Don't actually make the edits, just annotate where they should go.</strong> Use the Share button to save a link for each.</p>
           </li>
           <li class="step">
-            <div class="step__num">3</div>
-            <h3>Submit your links</h3>
+            <div class="step__num">4</div>
+            <h3>Send your links</h3>
             <p>Send us your 10 links. <a id="accessSubmit" href="#">Click here</a> to open an email with the subject ready to go, then paste your links in. We review them and send you personalized feedback.</p>
           </li>
-          <li class="step">
-            <div class="step__num">4</div>
+          <li class="step step--celebrate">
+            <div class="step__num">5</div>
             <h3>Get your invitation</h3>
-            <p>Based on your submission you'll be invited to the full dataset, or asked for a few more example edits.</p>
+            <p>You're in! Based on your submission you'll be invited to the full dataset and can start mapping real neurons for science. Welcome to the team, the brain won't map itself.</p>
           </li>
         </ol>
         <p class="help2__lede">
@@ -79,42 +84,6 @@
         <img src="assets/images/nurro-experiment.png" alt="Nurro the cat, a curious citizen scientist, looking into a microscope" />
       </div>
 
-      <section class="help2" aria-label="Access resources">
-        <h2>Everything you need</h2>
-        <div class="resources__grid">
-          <article class="res">
-            <div class="res__badge">Start here</div>
-            <h3>Full instructions</h3>
-            <p class="res__desc">The complete walkthrough, including the access form.</p>
-            <ul class="res__links">
-              <li><a href="https://blog.eyewire.org/how-to-access-the-eyewire-ii-dataset/" target="_blank" rel="noreferrer">How to access the EyeWire II dataset</a> <span>Step by step, with the link to the access form.</span></li>
-              <li><a href="https://spelunker.cave-explorer.org/#!middleauth+https://global.daf-apis.com/nglstate/api/v1/6614313285451776" target="_blank" rel="noreferrer">Practice sandbox (mouse retina)</a> <span>Try edits on mammalian cells with no consequences.</span></li>
-              <li><a href="https://ngl.flywire.ai/?json_url=https://globalv1.flywire-daf.com/nglstate/5404650781016064" target="_blank" rel="noreferrer">Practice sandbox (fly)</a> <span>Try edits on fly neurons. Requires a Google login.</span></li>
-            </ul>
-          </article>
-
-          <article class="res">
-            <div class="res__badge">Learn the tools</div>
-            <h3>Guides and tutorials</h3>
-            <p class="res__desc">Everything you need to nail your example edits.</p>
-            <ul class="res__links">
-              <li><a href="#learn-to-map">Interactive tutorial</a> <span>The hands-on demo at the top of this page.</span></li>
-              <li><a href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCxCiUVwM7uzqp8BM1oePpLK" target="_blank" rel="noreferrer">Tutorial videos for merging and splitting neurons</a> <span>Short clips for each core move.</span></li>
-              <li><a href="https://blog.pyr.ai/2024/12/20/proofreading-101-climb-into-spelunker/" target="_blank" rel="noreferrer">Proofreading 101: Climb into Spelunker</a> <span>The written guide to the Spelunker interface.</span></li>
-            </ul>
-          </article>
-
-          <article class="res">
-            <div class="res__badge">Community</div>
-            <h3>Get help</h3>
-            <p class="res__desc">Stuck on a tricky edit? Ask.</p>
-            <ul class="res__links">
-              <li><a href="https://forum.eyewire.org/c/eyewire-ii/14" target="_blank" rel="noreferrer">EyeWire II forum</a> <span>Questions, tips, and feedback from the community.</span></li>
-              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">FlyWire community forum</a> <span>For the fly datasets.</span></li>
-            </ul>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -128,6 +97,10 @@
         var addr = ['support', 'eyewire.org'].join('@');
         var a = document.getElementById('accessSubmit');
         if (a) a.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('dataset access edits');
+        var r = document.getElementById('accessRequest');
+        if (r) r.href = 'mailto:' + addr
+          + '?subject=' + encodeURIComponent('early access request')
+          + '&body=' + encodeURIComponent("I'd like early access to (dataset): \n\nI've read and agree to the community principles.");
         var e = document.getElementById('emailUs');
         if (e) e.href = 'mailto:' + addr;
       })();
