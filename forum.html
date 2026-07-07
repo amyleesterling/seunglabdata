@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community forum, Citizen Neuroscience</title>
+  <meta name="description" content="Ask questions, get unstuck, and report issues across our citizen science datasets. These tools are early and in beta, so feedback is welcome." />
+  <link rel="icon" type="image/png" href="assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="assets/images/favicon-pyr.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav class="topnav">
+      <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="https://www.princeton.edu" target="_blank" rel="noreferrer">
+          <img class="topnav__crest" src="assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+          <span>Princeton University</span>
+        </a>
+        <div class="topnav__links">
+          <a class="topnav__link" href="index.html">Datasets</a>
+          <a class="topnav__link" href="learn.html">Learn</a>
+          <a class="topnav__link" href="videos.html">Videos</a>
+          <a class="topnav__link" href="help.html">Help</a>
+          <a class="topnav__link is-active" href="forum.html">Forum</a>
+          <a class="topnav__link" href="access.html">Access</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="wrap">
+      <section class="pagehead">
+        <p class="hero__eyebrow">Citizen Neuroscience</p>
+        <h1>Community forum</h1>
+        <p class="pagehead__lede">
+          This is where citizen scientists ask questions, get unstuck, and report issues. Whatever
+          dataset you are mapping, the community forum is the place to compare notes and get a fast answer.
+          Please note that these datasets and tools are early and in beta, with known issues, so your
+          feedback and bug reports are genuinely welcome.
+        </p>
+      </section>
+
+      <!-- Found a bug? -->
+      <section class="resources" aria-label="Found a bug">
+        <div class="res">
+          <div class="res__badge">Beta</div>
+          <h3>Found a bug?</h3>
+          <p class="res__desc">
+            These tools are still being built, so glitches happen. Post the details in the forum so others
+            can help and the team can track it, or email us directly.
+          </p>
+          <ul class="res__links">
+            <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Report it in the forum</a> <span>Describe what you saw, the dataset, and how to reproduce it.</span></li>
+            <li><a id="bugEmail" href="#">Email the team</a> <span>Prefer email? Send us a note and we'll follow up.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Per-dataset forum sections -->
+      <section class="resources" aria-label="Forums by dataset">
+        <div class="resources__grid">
+          <article class="res">
+            <div class="res__badge">Mouse retina</div>
+            <h3>EyeWire II</h3>
+            <p class="res__desc">The community remapping of the mouse retina in Neuroglancer.</p>
+            <ul class="res__links">
+              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Ask &amp; discuss</a> <span>Questions, tips, and issue reports from EyeWire II mappers.</span></li>
+            </ul>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Fly brain + nerve cord</div>
+            <h3>FlyWire BANC</h3>
+            <p class="res__desc">The fruit fly's whole brain and nerve cord, mapped together.</p>
+            <ul class="res__links">
+              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Ask &amp; discuss</a> <span>Get unstuck on BANC cells and share what you find.</span></li>
+            </ul>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Fly brain</div>
+            <h3>FlyWire</h3>
+            <p class="res__desc">The completed adult fruit fly brain connectome.</p>
+            <ul class="res__links">
+              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Ask &amp; discuss</a> <span>Talk proofreading, cell types, and Codex analysis.</span></li>
+            </ul>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Mouse retina</div>
+            <h3>EyeWire</h3>
+            <p class="res__desc">The original brain-mapping game that started it all.</p>
+            <ul class="res__links">
+              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Ask &amp; discuss</a> <span>Gameplay questions and help from the EyeWire community.</span></li>
+            </ul>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Mouse cortex</div>
+            <h3>MICrONS</h3>
+            <p class="res__desc">A cubic millimeter of mouse visual cortex, neurons and synapses.</p>
+            <ul class="res__links">
+              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Ask &amp; discuss</a> <span>Questions about exploring and analyzing the cortex volume.</span></li>
+            </ul>
+          </article>
+
+          <article class="res">
+            <div class="res__badge">Mouse hippocampus</div>
+            <h3>Pyr</h3>
+            <p class="res__desc">Mapping the mouse hippocampus (CA3), central to memory.</p>
+            <ul class="res__links">
+              <li><a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">Ask &amp; discuss</a> <span>Help and discussion from Pyr players and mappers.</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__credit footer__credit--standalone">
+        This page is brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Sebastian Seung's lab</a> at Princeton University.
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var link = document.getElementById('bugEmail');
+        if (!link) return;
+        // Assembled at runtime so the address isn't a plain-text literal for scrapers.
+        var addr = ['support', 'eyewire.org'].join('@');
+        link.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('Citizen Neuroscience, bug report');
+        link.textContent = 'Email the team';
+      })();
+    </script>
+</body>
+</html>
