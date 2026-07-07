@@ -33,6 +33,20 @@ function doPost(e) {
     }
 
     var p = (e && e.parameter) ? e.parameter : {};
+    var email = String(p.email || '').trim().toLowerCase();
+
+    // duplicate guard: skip if this email is already subscribed (column C = Email)
+    if (email && sheet.getLastRow() > 1) {
+      var existing = sheet.getRange(2, 3, sheet.getLastRow() - 1, 1).getValues();
+      for (var i = 0; i < existing.length; i++) {
+        if (String(existing[i][0]).trim().toLowerCase() === email) {
+          return ContentService
+            .createTextOutput(JSON.stringify({ result: 'duplicate' }))
+            .setMimeType(ContentService.MimeType.JSON);
+        }
+      }
+    }
+
     sheet.appendRow([
       new Date(),
       p.name || '',

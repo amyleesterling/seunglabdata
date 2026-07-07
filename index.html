@@ -11,6 +11,10 @@
 <body>
     <nav class="topnav">
       <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="https://www.princeton.edu" target="_blank" rel="noreferrer">
+          <img class="topnav__crest" src="assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+          <span>Princeton University</span>
+        </a>
         <div class="topnav__links">
           <a class="topnav__link is-active" href="index.html">Datasets</a>
           <a class="topnav__link" href="learn.html">Learn</a>
@@ -79,6 +83,13 @@
             <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
           </div>
         </form>
+
+        <div class="subscribe__success" id="subscribeSuccess" hidden>
+          <img class="subscribe__nurro" src="assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
+          <h3>You're on the list!</h3>
+          <p>Nurro will keep you posted. Welcome to the quest.</p>
+          <p class="subscribe__egg"><a href="https://amyleesterling.github.io/science-experiment/scale-test" target="_blank" rel="noreferrer">psst… ever wondered how small a neuron really is?</a></p>
+        </div>
       </section>
 
       <!-- We need your help!, highlighted datasets -->
@@ -476,7 +487,8 @@
 
     <!-- lab credit -->
     <div class="footer__credit">
-      This page is brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Sebastian Seung's lab</a> at Princeton University.
+      <img class="footer__crest" src="assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+      <span>Brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Sebastian Seung's lab</a> at <a href="https://www.princeton.edu" target="_blank" rel="noreferrer">Princeton University</a>.</span>
     </div>
 
     <div class="footer__tiny"><img src="assets/images/footer-tiny.png" alt="A cool cat mascot wearing sunglasses" /></div>
@@ -528,7 +540,13 @@
         })
           .then(function () {
             form.reset();
-            statusEl.textContent = "You're on the list. Thanks for joining the quest!";
+            var success = document.getElementById('subscribeSuccess');
+            if (success) {
+              form.hidden = true;
+              success.hidden = false;
+            } else {
+              statusEl.textContent = "You're on the list. Thanks for joining the quest!";
+            }
           })
           .catch(function () {
             statusEl.innerHTML = "We couldn't sign you up just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
