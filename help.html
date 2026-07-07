@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Help — Citizen Neuroscience</title>
+  <title>Help, Citizen Neuroscience</title>
   <meta name="description" content="Get help mapping the brain: contact support, join the forum, and learn the proofreading software." />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -91,7 +91,7 @@
       <!-- Learn to use the software -->
       <section class="help2" aria-label="Learn to use the software">
         <h2>Learn to use the software</h2>
-        <p class="help2__lede">Short video tutorials from FlyWire Princeton — watch someone do it, then try it yourself.</p>
+        <p class="help2__lede">Short video tutorials from FlyWire Princeton, watch someone do it, then try it yourself.</p>
         <div class="resources__grid">
           <article class="res">
             <div class="res__badge">Start here</div>
@@ -122,7 +122,7 @@
           <article class="res">
             <div class="res__badge">Analysis</div>
             <h3>Using FlyWire Codex</h3>
-            <p class="res__desc">Query and analyze the finished connectome data — cell types, connectivity, and more.</p>
+            <p class="res__desc">Query and analyze the finished connectome data, cell types, connectivity, and more.</p>
             <div class="card__actions">
               <a class="btn btn--cta" href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCzRNkFGcTfpDk6Ckpmi23Yx" target="_blank" rel="noreferrer">Watch the playlist ↗</a>
             </div>
@@ -166,7 +166,7 @@
               name: name,
               email: email,
               message: message,
-              _subject: 'Citizen Neuroscience — support request',
+              _subject: 'Citizen Neuroscience, support request',
               _template: 'table',
               _captcha: 'false'
             })
@@ -175,13 +175,13 @@
             .then(function (d) {
               if (d && (d.success === true || d.success === 'true')) {
                 form.reset();
-                statusEl.textContent = "Thanks — your message is on its way. We'll reply by email.";
+                statusEl.textContent = "Thanks, your message is on its way. We'll reply by email.";
               } else {
-                statusEl.textContent = 'Something went wrong. Please try again in a moment.';
+                statusEl.innerHTML = "We couldn't send that just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
               }
             })
             .catch(function () {
-              statusEl.textContent = "Couldn't send just now — please try again in a moment.";
+              statusEl.innerHTML = "We couldn't send that just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
             })
             .finally(function () {
               submitBtn.disabled = false;

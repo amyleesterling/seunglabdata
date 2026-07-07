@@ -40,9 +40,7 @@ body::before{
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(1200px 500px at 15% 10%, rgba(130,180,255,.22), transparent 55%),
-    radial-gradient(900px 500px at 85% 20%, rgba(230,199,96,.14), transparent 60%),
-    radial-gradient(900px 700px at 50% 100%, rgba(90,255,220,.10), transparent 60%),
+    radial-gradient(1200px 720px at 50% -15%, rgba(74,72,150,.16), transparent 62%),
     var(--bg);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -204,6 +202,18 @@ h2{
   line-height: 1.5;
   font-size: 14px;
 }
+
+/* per-dataset stats footer */
+.card__stats{
+  margin: 0 0 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 7px;
+}
+.card__stats > div{ display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.card__stats dt{ margin: 0; font-size: 12.5px; color: var(--muted); }
+.card__stats dd{ margin: 0; font-size: 12.5px; color: #eaf6ff; font-weight: 600; text-align: right; }
 
 .card__actions{
   display:flex;
@@ -641,6 +651,72 @@ h2{
 .chan__meta{ display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .chan__meta h3{ margin: 0; }
 .chan__meta .res__badge{ margin-bottom: 0; }
+/* video thumbnail gallery */
+.vid-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+.vidtile{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.vidtile:hover{ transform: translateY(-2px); border-color: rgba(66,213,236,.55); }
+.vidtile__thumb{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #04060c;
+  display: block;
+}
+.vidtile__thumb img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.vidtile__thumb::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background: rgba(4,6,12,.6);
+  transition: background .12s ease;
+}
+.vidtile__thumb::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 7px 0 7px 12px;
+  border-color: transparent transparent transparent #fff;
+}
+.vidtile:hover .vidtile__thumb::before{ background: #cc0000; }
+.vidtile__title{
+  padding: 10px 12px 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #eaf6ff;
+  line-height: 1.3;
+}
+.vidtile__title:last-child{ padding-bottom: 12px; }
+.vidtile__note{
+  padding: 2px 12px 12px;
+  margin-top: auto;
+  font-size: 12px;
+  color: #e6c760;
+  line-height: 1.35;
+}
+
 .res--pending{ opacity: .72; }
 .btn--disabled{
   opacity: .6;
