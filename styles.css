@@ -1377,6 +1377,20 @@ h2{
   box-shadow: 0 8px 22px rgba(230,199,96,.35);
 }
 .step--celebrate h3{ color: #f4e6b0; }
+
+/* single video poster thumbnail (help page video cards) */
+.vidposter{
+  display: block;
+  max-width: 300px;
+  margin: 0 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #04060c;
+  transition: border-color .12s ease;
+}
+.vidposter .vidtile__thumb{ aspect-ratio: 16 / 9; }
+.vidposter:hover{ border-color: rgba(66,213,236,.55); }
 @media (max-width: 900px){ .steps--four{ grid-template-columns: 1fr; } }
 
 /* ===== Subscribe (team updates) ===== */
