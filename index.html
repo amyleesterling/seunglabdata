@@ -37,10 +37,6 @@
         <a href="https://www.nature.com/immersive/d42859-024-00053-4/index.html" target="_blank" rel="noreferrer">FlyWire</a>.
         Student, gamer, artist, retiree, or simply curious, there's a place for you here.
       </p>
-      <div class="hero__actions">
-        <a class="btn btn--cta" href="#subscribe">Get project updates</a>
-        <a class="btn btn--ghost" href="#datasets">Explore the datasets</a>
-      </div>
     </div>
   </div>
 </header>
@@ -492,8 +488,10 @@
       if (!form) return;
       var statusEl = document.getElementById('sub-status');
       var submitBtn = document.getElementById('sub-submit');
-      // Assembled at runtime so the address isn't a plain-text literal for scrapers.
-      var ENDPOINT = 'https://formsubmit.co/ajax/' + ['support', 'eyewire.org'].join('@');
+
+      // Google Apps Script web app (subscribe-to-sheet.gs) that appends each
+      // signup as a row in the Connectome.Quest Subscribe sheet.
+      var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxB4zbbzrivwkpgAMtdto2zPc95lamxTlw8KnZPi5MkjHftWKq5RJhAlvjP_zragwdtCg/exec';
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -506,33 +504,31 @@
           statusEl.textContent = 'Please add your name, email, and country.';
           return;
         }
+        if (ENDPOINT.indexOf('http') !== 0) {
+          statusEl.textContent = 'Signup is not connected yet. Please check back soon.';
+          return;
+        }
 
         submitBtn.disabled = true;
         var label = submitBtn.textContent;
         submitBtn.textContent = 'Subscribing…';
         statusEl.textContent = '';
 
+        // URLSearchParams keeps this a simple CORS request (no preflight);
+        // no-cors lets the Apps Script append the row without a CORS response header.
         fetch(ENDPOINT, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
+          mode: 'no-cors',
+          body: new URLSearchParams({
             name: name,
             email: email,
             country: country,
-            eyewire_username: username || '(not provided)',
-            _subject: 'Citizen Neuroscience, new subscriber',
-            _template: 'table',
-            _captcha: 'false'
+            eyewire_username: username || ''
           })
         })
-          .then(function (r) { return r.json().catch(function () { return {}; }); })
-          .then(function (d) {
-            if (d && (d.success === true || d.success === 'true')) {
-              form.reset();
-              statusEl.textContent = "You're on the list. Thanks for joining the quest!";
-            } else {
-              statusEl.innerHTML = "We couldn't sign you up just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
-            }
+          .then(function () {
+            form.reset();
+            statusEl.textContent = "You're on the list. Thanks for joining the quest!";
           })
           .catch(function () {
             statusEl.innerHTML = "We couldn't sign you up just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
