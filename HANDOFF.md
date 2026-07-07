@@ -36,7 +36,7 @@ EyeWire II & EyeWire → https://x.com/eye_wire · FlyWire & BANC → https://x.
 10-stage guided WebGL zoom (human brain → … → activity → **"Become a hero of neuroscience"** final step using the Rika+Nurro hero art, with a "Get involved" button → connectome.quest/access.html via `target="_top"`). Stages are hand-tuned in the 3D scene, so adding stages is delicate: `isActivityStage = stage === STAGES.length - 2`, `isCtaStage = stage === last`. The NavBar was trimmed to just "Meet a Neuron" + "Activity" (brand + Explorer removed).
 
 ## Status: everything requested is done and deployed
-HTTPS enforced · contact form working · mascots placed · video galleries with descriptions · Twitter-bird follow icons · Pyr favicon · dataset counts corrected · tutorial moved to Access top · both sandboxes on Access (fly needs Google login) · Inner Cosmos hero finale.
+HTTPS enforced · contact form working · mascots placed · video galleries with descriptions · Twitter-bird follow icons · Pyr favicon · dataset counts corrected · interactive tutorial embed on both Datasets (below the EyeWire II slide deck) and the top of Access · both sandboxes on Access (fly needs Google login) · Inner Cosmos hero finale.
 
 ## Open / nice-to-have
 - The prototype tutorial's "Submit your proofreading test" flow currently routes to email/the Access steps; swap in a real production-access form URL if one becomes available.
