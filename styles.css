@@ -362,11 +362,23 @@ h2{
 
 /* lab credit */
 .footer__credit {
-  margin: 0 0 32px;
+  margin: 0 0 20px;
   text-align: center;
   color: rgba(255,255,255,.55);
   font-size: 13px;
   line-height: 1.5;
+}
+
+/* tiny footer mascot */
+.footer__tiny {
+  text-align: center;
+  padding: 0 0 30px;
+}
+.footer__tiny img {
+  width: 120px;
+  height: auto;
+  display: inline-block;
+  opacity: 0.95;
 }
 
 /* Citizen Science — high-impact infographic block */
