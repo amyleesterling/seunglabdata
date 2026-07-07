@@ -1419,6 +1419,9 @@ h2{
   .subscribe__grid{ grid-template-columns: 1fr; }
 }
 
+/* the hidden attribute must win over the flex display rules above */
+.subscribe__form[hidden], .subscribe__success[hidden]{ display: none !important; }
+
 /* subscribe success state (Nurro) */
 .subscribe__success{
   display: flex;
