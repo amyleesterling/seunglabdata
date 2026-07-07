@@ -99,6 +99,15 @@ h1{
   letter-spacing: -0.02em;
 }
 
+.hero__eyebrow{
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7ee7ff;
+}
+
 .hero__lede{
   margin: 0;
   color: var(--muted);
@@ -332,12 +341,21 @@ h2{
 
 /* footer easter egg */
 .footer__egg {
-  margin: 12px 0 36px;
+  margin: 12px 0 20px;
   text-align: center;
   color: var(--muted);
   font-size: 0.95rem;
   font-style: italic;
   opacity: 0.95;
+}
+
+/* lab credit */
+.footer__credit {
+  margin: 0 0 32px;
+  text-align: center;
+  color: rgba(255,255,255,.55);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 /* Citizen Science — high-impact infographic block */
