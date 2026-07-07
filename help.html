@@ -63,6 +63,11 @@
               <button type="submit" class="btn btn--cta" id="cf-submit">Send message</button>
               <p class="cform__status" id="cf-status" role="status" aria-live="polite"></p>
             </form>
+            <div class="contact__success" id="contactSuccess" hidden>
+              <img src="assets/images/nurro-subscribe.png" alt="Nurro the cat, celebrating" />
+              <h3>Message launched!</h3>
+              <p>Thanks! Your message is on its way, we'll reply by email.</p>
+            </div>
           </div>
 
           <aside class="forumcard">
@@ -190,7 +195,13 @@
             .then(function (d) {
               if (d && (d.success === true || d.success === 'true')) {
                 form.reset();
-                statusEl.textContent = "Thanks, your message is on its way. We'll reply by email.";
+                var successEl = document.getElementById('contactSuccess');
+                if (successEl) {
+                  form.hidden = true;
+                  successEl.hidden = false;
+                } else {
+                  statusEl.textContent = "Thanks, your message is on its way. We'll reply by email.";
+                }
               } else {
                 statusEl.innerHTML = "We couldn't send that just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
               }

@@ -1472,6 +1472,41 @@ h2{
   .subscribe__success, .subscribe__nurro{ animation: none; }
 }
 
+/* contact form success state (Nurro) */
+#contactForm[hidden]{ display: none !important; }
+.contact__success[hidden]{ display: none !important; }
+.contact__success{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 6px 0;
+  animation: nurroPop .5s cubic-bezier(.2,.9,.3,1.3) both;
+}
+.contact__success img{
+  width: 170px;
+  max-width: 60%;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.45));
+  animation: nurroFloat 3.2s ease-in-out infinite;
+}
+.contact__success h3{
+  margin: 4px 0 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: #eaf6ff;
+}
+.contact__success p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+@media (prefers-reduced-motion: reduce){
+  .contact__success, .contact__success img{ animation: none; }
+}
+
 /* ===== Resource card with image cover (FlyWire Academy) ===== */
 .res__cover{
   display: block;
