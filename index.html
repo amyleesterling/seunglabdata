@@ -9,10 +9,9 @@
 <body>
     <nav class="topnav">
       <div class="wrap topnav__inner">
-        <a class="topnav__brand" href="index.html">Citizen Neuroscience</a>
         <div class="topnav__links">
           <a class="topnav__link is-active" href="index.html">Datasets</a>
-          <a class="topnav__link" href="learn.html">Learn Neuroscience</a>
+          <a class="topnav__link" href="learn.html">Learn</a>
           <a class="topnav__link" href="videos.html">Videos</a>
           <a class="topnav__link" href="help.html">Help</a>
         </div>
@@ -30,8 +29,9 @@
     <p class="hero__eyebrow">Citizen Neuroscience</p>
     <h1>Join the quest to map the brain!</h1>
     <p class="hero__lede">
-      Welcome to Connectomics Quest. This is the citizen science home of the Seung Lab, where anyone
-      can help map the brain one neuron at a time. Our community has helped create some of the world's
+      This is the citizen science home of the
+      <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, where anyone can
+      help map the brain one neuron at a time. Our community has helped create some of the world's
       largest wiring diagrams of the brain through projects like
       <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> and
       <a href="https://www.nature.com/immersive/d42859-024-00053-4/index.html" target="_blank" rel="noreferrer">FlyWire</a>.
@@ -51,8 +51,8 @@
         <div class="help__head">
           <h2>We need your <span class="accent">help!</span></h2>
           <p class="help__lede">
-            Two projects are actively recruiting citizen scientists right now. Claim a neuron,
-            learn the tools, and help finish a wiring diagram of the brain.
+            Two projects are actively recruiting citizen scientists right now. Learn the tools,
+            pass the challenge, claim a neuron, and help map the brain.
           </p>
         </div>
 
@@ -68,8 +68,9 @@
               <p class="tag">Mouse retina • claim your own cell</p>
             </div>
             <p class="card__body">
-              In EyeWire II you own your own cell from start to finish — no consensus committee.
-              Advanced citizen scientists are the first and last check on every neuron.
+              The next‑generation EyeWire, mapping thousands of neurons in the mouse retina — the
+              light‑sensing tissue at the back of the eye where vision begins. Here you own your cell
+              start to finish: no consensus committee, you're its first and last check.
             </p>
             <div class="card__actions">
               <a class="btn btn--cta" href="https://eyewire.ai" target="_blank" rel="noreferrer">Launch EyeWire II</a>
@@ -88,8 +89,9 @@
               <p class="tag">Fly CNS • brain + ventral cord</p>
             </div>
             <p class="card__body">
-              Proofread the complete fly nervous system — brain and ventral nerve cord together.
-              Request access, join the #banc-citsci community, and start splitting and merging.
+              The fruit fly's complete central nervous system — brain and ventral nerve cord together,
+              well over 100,000 neurons — so you can trace a signal all the way from sensing to movement.
+              Request access, join #banc‑citsci, and start splitting and merging.
             </p>
             <div class="card__actions">
               <a class="btn btn--cta" href="https://flywire.ai/banc" target="_blank" rel="noreferrer">Request access</a>
@@ -132,7 +134,9 @@
         </div>
 
         <p class="card__body">
-          Whole-brain connectome resources and highlights, including Nature’s curated collection and an immersive feature.
+          The first complete wiring diagram of an adult fruit fly brain, imaged with electron microscopy.
+          In about 140,000 neurons the fly brain runs vision, smell, navigation, learning and memory —
+          small enough to map completely, complex enough to reveal how brains compute.
         </p>
         <div class="card__actions">
           <a class="btn" href="https://codex.flywire.ai/?dataset=fafb" target="_blank" rel="noreferrer">Explore</a>
@@ -152,7 +156,9 @@
             <p class="tag">Citizen science • connectomics</p>
         </div>
         <p class="card__body">
-            A citizen-science game where players help map neurons and accelerate connectomics discovery.
+            The original brain‑mapping game. Players reconstructed neurons in the mouse retina — the
+            eye's light‑sensing tissue — and helped reveal how it detects motion, mapping hundreds of
+            neurons across some 47 retinal cell types.
         </p>
         <div class="card__actions">
             <a class="btn" href="https://eyewire.org" target="_blank" rel="noreferrer">Site</a>
@@ -171,7 +177,9 @@
             <p class="tag">Mouse V1 • EM + physiology</p>
         </div>
         <p class="card__body">
-            Dense reconstructions paired with functional data—linking wiring to activity and computation.
+            A cubic millimeter of mouse visual cortex — the region that makes sense of what the eyes see —
+            reconstructed in full and paired with recordings of the very same neurons in action. About
+            200,000 cells and 523 million synapses, linking wiring to activity.
         </p>
         <div class="card__actions">
           <a class="btn" href="https://www.microns-explorer.org" target="_blank" rel="noreferrer">Explore</a>
@@ -191,7 +199,9 @@
           <p class="tag">Mouse CA3 • proofreading + annotation</p>
         </div>
         <p class="card__body">
-          Community proofreading and annotation for a large-scale mouse hippocampal CA3 connectomics dataset.
+          The CA3 region of the mouse hippocampus — the brain area most critical for learning and memory,
+          where new memories are formed and recalled. A large, growing reconstruction that the community
+          proofreads and annotates cell by cell.
         </p>
         <div class="card__actions">
           <a class="btn" href="https://pyr.ai/" target="_blank" rel="noreferrer">Pyr</a>
@@ -265,6 +275,7 @@
     <section class="maptut wrap" id="learn-to-map" aria-label="Learn how to map the brain">
       <div class="maptut__head">
         <h2>Learn How to Map the Brain</h2>
+        <p class="maptut__desktop"><strong>Best on a laptop or desktop — the mapping tools won't run on a phone.</strong></p>
         <p class="maptut__lede">
           We map cells using <strong>Neuroglancer</strong> — the platform every dataset here is built on.
           This prototype tutorial walks you through the basics: how to view a neuron, follow it through
@@ -290,8 +301,8 @@
         <div class="maptut__note">
           <h3>Run into a problem?</h3>
           <p>
-            This is an early prototype, so bumps are expected. If you find an issue, message
-            support at <a href="mailto:support@eyewire.org">support@eyewire.org</a> and we'll take a look.
+            This is an early prototype, so bumps are expected. If you find an issue,
+            <a href="help.html">contact us</a> and we'll take a look.
           </p>
         </div>
         <div class="maptut__note">
@@ -317,8 +328,8 @@
       <ol class="steps" aria-label="How to get started">
         <li class="step">
           <div class="step__num">1</div>
-          <h3>Pick a dataset</h3>
-          <p>Choose a project above — a fly brain, a mouse retina, or a slice of hippocampus — and follow its link to sign up.</p>
+          <h3>Join the community</h3>
+          <p>Ask questions, share finds, and proofread alongside researchers and fellow citizen scientists in the <a href="https://discuss.flywire.ai/" target="_blank" rel="noreferrer">community forum</a>.</p>
         </li>
         <li class="step">
           <div class="step__num">2</div>
@@ -327,8 +338,8 @@
         </li>
         <li class="step">
           <div class="step__num">3</div>
-          <h3>Join the community</h3>
-          <p>Ask questions, share finds, and proofread alongside researchers and fellow citizen scientists in the forums.</p>
+          <h3>Pick a dataset</h3>
+          <p>Choose a project above — a fly brain, a mouse retina, or a slice of hippocampus — and follow its link to sign up.</p>
         </li>
       </ol>
 

@@ -891,6 +891,16 @@ h2{
 }
 .maptut__lede{ margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
 .maptut__lede strong{ color: #eaf6ff; }
+.maptut__desktop{
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(126,231,255,.3);
+  background: rgba(126,231,255,.08);
+  color: #eaf6ff;
+  font-size: 14px;
+  line-height: 1.45;
+}
 
 .maptut__frameWrap{
   border: 1px solid var(--line);
