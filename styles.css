@@ -257,6 +257,7 @@ h2{
 
 /* X (Twitter) follow icon */
 .xfollow{
+  margin-left: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
