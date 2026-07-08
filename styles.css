@@ -484,11 +484,12 @@ h2{
   text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 .citizen__intro p{
-  margin: 0;
+  margin: 0 0 14px;
   color: rgba(230,240,255,0.85);
   line-height: 1.5;
   max-width: 56ch;
 }
+.citizen__intro p:last-child{ margin-bottom: 0; }
 
 /* panel */
 .citizen__panel{
