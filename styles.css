@@ -30,6 +30,7 @@ body{
   position: relative;
   min-height: 100vh;
   background-color: var(--bg); /* keep a solid fallback */
+  overflow-x: hidden;
 }
 
 /* place the complex radial gradients into a fixed full-viewport layer to avoid seams/scroll lines */
@@ -60,7 +61,48 @@ body::before{
 }
 
 .hero{
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
+}
+
+.hero--text{
+  background: radial-gradient(760px 360px at 22% 10%, rgba(66,213,236,.12), transparent 65%);
+}
+
+.hero--text .hero__overlay{
+  padding: clamp(52px, 8vw, 92px) 0 34px;
+}
+
+.hero--text .hero__overlay h1{
+  margin-bottom: 0;
+  text-shadow: none;
+}
+
+.home-intro{
+  max-width: 760px;
+  padding: 8px 0 34px;
+}
+
+.home-intro p{
+  margin: 0;
+  color: rgba(235,243,255,.86);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.6;
+}
+
+.homepage-banner{
+  width: 100vw;
+  margin: 0 0 0 calc(50% - 50vw);
+  background: #04060c;
+}
+
+.homepage-banner img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.citizen{
+  padding: clamp(48px, 7vw, 80px) 0;
 }
 
 /* full-bleed banner with overlaid content */
@@ -438,8 +480,43 @@ h2{
   gap: 12px;
   text-align: left;
   color: rgba(255,255,255,.55);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
+}
+
+.credits-page{
+  padding-bottom: 72px;
+}
+
+.credits-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 34px 0 0;
+}
+
+.credits-card{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.035));
+  padding: 24px;
+}
+
+.credits-card h2{
+  margin: 0 0 12px;
+  color: #eaf6ff;
+  font-size: 24px;
+}
+
+.credits-card p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+@media (max-width: 720px){
+  .credits-grid{ grid-template-columns: 1fr; }
 }
 .footer__crest{
   height: 40px;
@@ -679,7 +756,7 @@ h2{
     gap: 2px;
   }
   .topnav__links::-webkit-scrollbar{ display: none; }
-  .topnav__link{ padding: 7px 10px; font-size: 13px; white-space: nowrap; }
+  .topnav__link{ padding: 8px 10px; font-size: 14px; white-space: nowrap; }
   /* keep the crest, drop the wordmark so the tabs have room */
   .topnav__brand span{ display: none; }
   .topnav__crest{ height: 24px; }
@@ -1587,7 +1664,7 @@ h2{
 .footer__credit{ flex-wrap: wrap; }
 @media (max-width: 480px){
   .footer__crest{ height: 34px; }
-  .footer__credit{ font-size: 12.5px; }
+  .footer__credit{ font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce){
