@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">BRAIN CONNECTS mapping across scales</title>
+  <desc id="desc">A diagram connecting cellular, circuit and whole-brain scales for mouse, primate and human mapping.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#061217"/>
+      <stop offset="1" stop-color="#102537"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#67f5cb" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#67f5cb" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="9"/></filter>
+  </defs>
+  <rect width="720" height="420" fill="url(#bg)"/>
+  <g fill="none" stroke="#7ee0ff" stroke-opacity=".18">
+    <path d="M0 74H720M0 210H720M0 346H720"/>
+    <path d="M90 0V420M360 0V420M630 0V420"/>
+  </g>
+  <circle cx="360" cy="210" r="150" fill="url(#glow)" filter="url(#soft)"/>
+  <g fill="none" stroke="#67f5cb">
+    <circle cx="360" cy="210" r="36" stroke-width="2"/>
+    <circle cx="360" cy="210" r="92" stroke-opacity=".7"/>
+    <circle cx="360" cy="210" r="150" stroke-opacity=".34"/>
+    <path d="M324 210H178M396 210H542M360 174V88M360 246V332" stroke-opacity=".7"/>
+  </g>
+  <g fill="#071015" stroke="#7ee0ff" stroke-width="2">
+    <circle cx="178" cy="210" r="10"/>
+    <circle cx="542" cy="210" r="10"/>
+    <circle cx="360" cy="88" r="10"/>
+    <circle cx="360" cy="332" r="10"/>
+    <circle cx="360" cy="210" r="11" fill="#67f5cb" stroke="#c9fff1"/>
+  </g>
+  <g fill="#dcebed" font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="360" y="216" font-size="14" font-weight="700">CELL</text>
+    <text x="178" y="180" font-size="18" font-weight="700">MOUSE</text>
+    <text x="542" y="180" font-size="18" font-weight="700">PRIMATE</text>
+    <text x="360" y="61" font-size="18" font-weight="700">HUMAN</text>
+    <text x="360" y="375" font-size="18" font-weight="700">SHARED ATLAS</text>
+  </g>
+  <g fill="#8da5ab" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle">
+    <text x="178" y="240">mesoscale + microscale</text>
+    <text x="542" y="240">cross-species mapping</text>
+    <text x="360" y="108">technology development</text>
+    <text x="360" y="396">standards · tools · public data</text>
+  </g>
+  <text x="28" y="38" fill="#67f5cb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2">BRAIN CONNECTS · ACROSS SCALES</text>
+</svg>
