@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>404, False Split Detected</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="This page is not connected to the rest of the site. Help us reconnect the brain instead." />
+  <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .nf-main{min-height:calc(100vh - 220px);display:flex;align-items:center;justify-content:center;padding:60px 24px;text-align:center}
+    .nf-inner{max-width:640px;margin:0 auto}
+    .nf-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;letter-spacing:.35em;color:#42d5ec;text-transform:uppercase;margin-bottom:18px}
+    .nf-svg{width:min(460px,90vw);height:auto;display:block;margin:0 auto 8px}
+    .nf-title{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:10px 0 16px}
+    .nf-copy{opacity:.85;line-height:1.7;margin:0 auto 30px;max-width:520px}
+    .nf-actions{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+    .nf-links{margin-top:38px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:14px}
+    .nf-links a{color:#42d5ec;text-decoration:none}
+    .nf-links a:hover{text-decoration:underline}
+    .nf-alt{color:#42d5ec;text-decoration:none}
+    .nf-alt:hover{text-decoration:underline}
+    /* the signal pulse travels the axon, dies at the gap */
+    .nf-pulse{animation:nf-travel 3.2s ease-in-out infinite}
+    @keyframes nf-travel{
+      0%{transform:translateX(0);opacity:0}
+      8%{opacity:1}
+      55%{transform:translateX(150px);opacity:1}
+      68%{transform:translateX(158px);opacity:0}
+      100%{transform:translateX(158px);opacity:0}
+    }
+    .nf-gap-dash{stroke-dasharray:5 7;animation:nf-flicker 3.2s ease-in-out infinite}
+    @keyframes nf-flicker{
+      0%,50%{opacity:.25}
+      58%,64%{opacity:.9}
+      72%,100%{opacity:.25}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .nf-pulse,.nf-gap-dash{animation:none}
+      .nf-pulse{opacity:0}
+    }
+  </style>
+</head>
+<body>
+    <nav class="topnav">
+      <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">
+          <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+          <span>Princeton University</span>
+        </a>
+        <div class="topnav__links">
+          <a class="topnav__link" href="/learn.html">Neuro 101</a>
+          <a class="topnav__link" href="/videos.html">Videos</a>
+          <a class="topnav__link" href="/help.html">Help</a>
+          <a class="topnav__link" href="/forum.html">Forum</a>
+          <a class="topnav__link" href="/access.html">Access</a>
+          <a class="topnav__link" href="/atlas/">Connectome 101</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="nf-main">
+      <div class="nf-inner">
+        <p class="nf-code">Error 404 / False split detected</p>
+
+        <svg class="nf-svg" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A neuron signal traveling along an axon and stopping at a break in the wire">
+          <!-- left fragment: soma + axon -->
+          <circle cx="34" cy="60" r="20" stroke="#42d5ec" stroke-width="2" fill="#42d5ec14"/>
+          <path d="M20 44 L8 30 M18 74 L6 86 M14 60 L2 60" stroke="#42d5ec" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+          <path d="M54 60 C 100 60, 130 44, 168 52 C 186 56, 196 60, 204 60" stroke="#42d5ec" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- the break -->
+          <path class="nf-gap-dash" d="M212 60 L 248 60" stroke="#e6c760" stroke-width="2"/>
+          <!-- right fragment: dendrites -->
+          <path d="M256 60 C 268 60, 286 62, 306 58 C 344 52, 368 68, 396 62" stroke="#42d5ec" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M396 62 L428 44 M396 62 L432 66 M396 62 L424 84 M306 58 L316 38" stroke="#42d5ec" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+          <!-- the traveling pulse, dies at the gap -->
+          <circle class="nf-pulse" cx="54" cy="58" r="5" fill="#e6c760"/>
+        </svg>
+
+        <h1 class="nf-title">This page broke off from the site.</h1>
+        <p class="nf-copy">
+          The signal stopped here. In connectomics this is called a false split: a piece
+          that lost its connection to the cell it belongs to. When our mappers find one,
+          they reconnect it. You can do the same, on a real brain.
+        </p>
+
+        <div class="nf-actions">
+          <a class="btn btn--cta" href="/">Reconnect to home</a>
+          <a class="nf-alt" href="/play/">Start mapping instead →</a>
+        </div>
+
+        <div class="nf-links">
+          <a href="/learn.html">Neuro 101</a>
+          <a href="/atlas/">Connectome 101</a>
+          <a href="/videos.html">Videos</a>
+          <a href="/help.html">Help</a>
+          <a href="/access.html">Get access</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__credit footer__credit--standalone">
+        Brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at <a href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">Princeton University</a>. <a href="/credits.html">Credits</a>
+      </div>
+    </footer>
+</body>
+</html>
