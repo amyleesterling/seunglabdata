@@ -77,28 +77,20 @@ body::before{
   text-shadow: none;
 }
 
-.home-intro{
-  max-width: 760px;
-  padding: 8px 0 34px;
+/* homepage hero: on wide screens the banner IS the hero and the text sits on it,
+   so the first screen is imagery, not empty background. On phones it stacks:
+   text first, full uncropped banner underneath. */
+.hero--home .hero__media{
+  min-height: clamp(470px, 64vh, 680px);
 }
-
-.home-intro p{
-  margin: 0;
-  color: rgba(235,243,255,.86);
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.6;
+.hero--home .hero__overlay{
+  padding: 48px 0;
 }
-
-.homepage-banner{
-  width: 100vw;
-  margin: 0 0 0 calc(50% - 50vw);
-  background: #04060c;
-}
-
-.homepage-banner img{
-  display: block;
-  width: 100%;
-  height: auto;
+@media (max-width: 720px){
+  .hero--home .hero__media{ display: block; min-height: 0; }
+  .hero--home .hero__media img{ position: static; height: auto; }
+  .hero--home .hero__scrim{ display: none; }
+  .hero--home .hero__overlay{ padding: 44px 0 30px; }
 }
 
 .citizen{
