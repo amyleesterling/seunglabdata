@@ -149,6 +149,23 @@
     if (e.key === "Escape") clear();
   });
 
+  // Keep the page rail responsive even if a hosting shell has to recover from
+  // a hydration mismatch before React's scroll effect is attached.
+  if (!window.__connectomeRailLiftBound) {
+    window.__connectomeRailLiftBound = true;
+    var syncConnectomeRail = function () {
+      var rail = document.querySelector(".atlas-rail");
+      if (rail) rail.classList.toggle("visible", window.scrollY >= 74);
+    };
+    addEventListener("scroll", syncConnectomeRail, { passive: true });
+    addEventListener("resize", syncConnectomeRail, { passive: true });
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", syncConnectomeRail, { once: true });
+    } else {
+      syncConnectomeRail();
+    }
+  }
+
   // a host page may want to release it, or ask what is lit
   window.holotap = {
     clear: clear,
