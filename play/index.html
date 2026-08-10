@@ -4,125 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Play, Map the Brain</title>
-  <meta name="description" content="Start mapping real neurons in the EyeWire II community branch of Neuroglancer: real electron microscopy, real segmentation, and a path into citizen neuroscience." />
+  <meta name="description" content="Map real neurons in the EyeWire II community branch of Neuroglancer: real electron microscopy, real segmentation, and a path into citizen neuroscience." />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
-  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #000; }
+    .play-frame {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100dvh;
+      border: 0;
+      display: block;
+    }
+  </style>
 </head>
-<body class="learn-body">
-    <nav class="topnav">
-      <div class="wrap topnav__inner">
-        <a class="topnav__brand" href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">
-          <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="Princeton University shield" />
-          <span>Princeton University</span>
-        </a>
-        <div class="topnav__links">
-          <a class="topnav__link" href="/learn.html">Neuro 101</a>
-          <a class="topnav__link" href="/videos.html">Videos</a>
-          <a class="topnav__link" href="/help.html">Help</a>
-          <a class="topnav__link" href="/forum.html">Forum</a>
-          <a class="topnav__link" href="/access.html">Access</a>
-          <a class="topnav__link" href="/atlas/">Connectome 101</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="learn__stage">
-      <iframe
-        class="learn__frame"
-        src="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/"
-        title="EyeWire II community Neuroglancer workspace"
-        allow="fullscreen"
-        loading="eager"></iframe>
-
-      <div class="learn__controls">
-        <button class="iconbtn" id="fsBtn" type="button" aria-label="Toggle fullscreen" title="Fullscreen">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 0-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4" />
-          </svg>
-        </button>
-        <button class="iconbtn" id="shareBtn" type="button" aria-label="Share this page" title="Share">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="18" cy="5" r="3" />
-            <circle cx="6" cy="12" r="3" />
-            <circle cx="18" cy="19" r="3" />
-            <line x1="8.6" y1="13.5" x2="15.4" y2="17.5" />
-            <line x1="15.4" y1="6.5" x2="8.6" y2="10.5" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <section class="learn__about">
-      <div class="wrap">
-        <p class="hero__eyebrow">You are inside a living connectome</p>
-        <h2>Real neurons, waiting for careful eyes</h2>
-        <p>
-          This is the EyeWire II community branch of Neuroglancer, showing real electron microscopy
-          and real segmentation from a living dataset. Drag to look around, scroll through the
-          imagery, and explore cells in 2D and 3D.
-        </p>
-        <p>
-          Anyone can view. To contribute edits and help map neurons, connect with the EyeWire II
-          community and get access to the proofreading tools.
-        </p>
-        <a class="btn btn--cta" href="/access.html">Get edit access</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer__credit footer__credit--standalone">
-        Brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at <a href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">Princeton University</a>. <a href="/credits.html">Credits</a>
-      </div>
-    </footer>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script>
-    (function () {
-      var shareBtn = document.getElementById('shareBtn');
-      var fsBtn = document.getElementById('fsBtn');
-      var stage = document.querySelector('.learn__stage');
-      var toast = document.getElementById('toast');
-      var toastTimer;
-
-      function showToast(msg) {
-        toast.textContent = msg;
-        toast.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2400);
-      }
-
-      var shareData = {
-        title: 'Play, Map the Brain',
-        text: 'Explore real neurons in the EyeWire II community branch of Neuroglancer.',
-        url: window.location.href
-      };
-
-      shareBtn.addEventListener('click', function () {
-        if (navigator.share) {
-          navigator.share(shareData).catch(function () { /* user dismissed */ });
-        } else if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(shareData.url).then(function () {
-            showToast('Link copied to clipboard');
-          }).catch(function () {
-            showToast(shareData.url);
-          });
-        } else {
-          showToast(shareData.url);
-        }
-      });
-
-      fsBtn.addEventListener('click', function () {
-        var el = stage;
-        if (document.fullscreenElement || document.webkitFullscreenElement) {
-          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-        } else {
-          var req = el.requestFullscreen || el.webkitRequestFullscreen;
-          if (req) { var p = req.call(el); if (p && p.catch) p.catch(function () {}); }
-        }
-      });
-    })();
-  </script>
+<body>
+  <iframe
+    class="play-frame"
+    src="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/"
+    title="EyeWire II community Neuroglancer workspace"
+    allow="fullscreen"
+    loading="eager"></iframe>
 </body>
 </html>
