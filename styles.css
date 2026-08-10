@@ -87,7 +87,14 @@ body::before{
   padding: 48px 0;
 }
 @media (max-width: 720px){
-  .hero--home .hero__media{ display: block; min-height: 0; }
+  /* the banner's own background is a flat rgb(17,12,44); painting the whole
+     stacked hero that color makes text and image read as one panel */
+  .hero--home{
+    background:
+      radial-gradient(760px 360px at 22% 10%, rgba(66,213,236,.12), transparent 65%),
+      #110c2c;
+  }
+  .hero--home .hero__media{ display: block; min-height: 0; background: #110c2c; }
   .hero--home .hero__media img{ position: static; height: auto; }
   .hero--home .hero__scrim{ display: none; }
   .hero--home .hero__overlay{ padding: 44px 0 30px; }
