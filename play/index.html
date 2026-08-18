@@ -2,42 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Play, Map the Brain</title>
-  <meta name="description" content="Map real neurons in the EyeWire II community branch of Neuroglancer: real electron microscopy, real segmentation, and a path into citizen neuroscience." />
+  <meta name="description" content="Map real neurons in EyeWire II: real electron microscopy, real segmentation, and a path into citizen neuroscience." />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
-  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
-  <style>
-    html, body { margin: 0; padding: 0; height: 100%; background: #000; }
-    .play-frame {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100dvh;
-      border: 0;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <iframe
-    class="play-frame"
-    id="playFrame"
-    title="EyeWire II community Neuroglancer workspace"
-    allow="fullscreen"
-    loading="eager"></iframe>
-
   <script>
-    // Phones and small tablets get the mobile build (welcome sheet, bottom
-    // nav, fullscreen 3D). TEMPORARY split: remove once eyewire-ii-mobile
-    // merges into eyewire-ii-community, then point everything at community.
+    // Straight redirect into the app, no wrapper. Phones and small tablets
+    // go to the mobile build (welcome sheet, bottom nav, fullscreen 3D).
+    // TEMPORARY split: once eyewire-ii-mobile merges into
+    // eyewire-ii-community, point both at community.
     (function () {
       var mobile = window.matchMedia(
         '(max-width: 900px) and (pointer: coarse), (max-width: 640px)').matches;
-      document.getElementById('playFrame').src = mobile
+      location.replace(mobile
         ? 'https://eyewire-ii-mobile-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/'
-        : 'https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/';
+        : 'https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/');
     })();
   </script>
+  <style>html, body { margin: 0; height: 100%; background: #000; }</style>
+</head>
+<body>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/" />
+    <a style="color:#42d5ec; font-family: system-ui, sans-serif;" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/">Enter EyeWire II</a>
+  </noscript>
 </body>
 </html>
