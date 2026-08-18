@@ -17,60 +17,26 @@
       border: 0;
       display: block;
     }
-    .play-hint {
-      position: fixed;
-      left: 50%;
-      bottom: 22px;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      max-width: min(560px, calc(100vw - 32px));
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(66, 213, 236, .35);
-      background: rgba(5, 12, 16, .92);
-      color: #dfe9ee;
-      font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, .5);
-      z-index: 10;
-      transition: opacity .6s ease;
-    }
-    .play-hint.hide { opacity: 0; pointer-events: none; }
-    .play-hint b { color: #42d5ec; font-weight: 600; }
-    .play-hint button {
-      flex: none;
-      border: 0;
-      background: none;
-      color: #9fb3bd;
-      font-size: 16px;
-      line-height: 1;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .play-hint button:hover { color: #fff; }
   </style>
 </head>
 <body>
   <iframe
     class="play-frame"
-    src="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/"
+    id="playFrame"
     title="EyeWire II community Neuroglancer workspace"
     allow="fullscreen"
     loading="eager"></iframe>
 
-  <div class="play-hint" id="playHint" role="status">
-    <span>If the viewer asks for a login through <b>global.daf-apis.com</b>, that is the data server. Choose <b>Sign in with Google</b> and you are in.</span>
-    <button id="playHintClose" type="button" aria-label="Dismiss">&#10005;</button>
-  </div>
-
   <script>
+    // Phones and small tablets get the mobile build (welcome sheet, bottom
+    // nav, fullscreen 3D). TEMPORARY split: remove once eyewire-ii-mobile
+    // merges into eyewire-ii-community, then point everything at community.
     (function () {
-      var hint = document.getElementById('playHint');
-      var close = document.getElementById('playHintClose');
-      function hide() { hint.classList.add('hide'); }
-      close.addEventListener('click', hide);
-      setTimeout(hide, 15000);
+      var mobile = window.matchMedia(
+        '(max-width: 900px) and (pointer: coarse), (max-width: 640px)').matches;
+      document.getElementById('playFrame').src = mobile
+        ? 'https://eyewire-ii-mobile-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/'
+        : 'https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/';
     })();
   </script>
 </body>
