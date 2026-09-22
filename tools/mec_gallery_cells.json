@@ -1,0 +1,242 @@
+[
+ {
+  "id": "stellate-01",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2382.1,
+   2122.5,
+   226.1
+  ],
+  "root_id": "720575947533956891",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 221.2,
+  "probe_hits": 12,
+  "mesh_fragments": 266,
+  "source_segment_id": "81988590493833553"
+ },
+ {
+  "id": "stellate-02",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2762.5,
+   2138.1,
+   224.7
+  ],
+  "root_id": "720575947491070475",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 222.6,
+  "probe_hits": 11,
+  "mesh_fragments": 302,
+  "source_segment_id": "85225621445553863"
+ },
+ {
+  "id": "stellate-03",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2127.9,
+   2108.9,
+   227.5
+  ],
+  "root_id": "720575947416921751",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 219.8,
+  "probe_hits": 11,
+  "mesh_fragments": 271,
+  "source_segment_id": "79736653308356868"
+ },
+ {
+  "id": "stellate-04",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2186.0,
+   2037.5,
+   227.1
+  ],
+  "root_id": "720575947566472472",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 220.2,
+  "probe_hits": 10,
+  "mesh_fragments": 283,
+  "source_segment_id": "80228615975480528"
+ },
+ {
+  "id": "stellate-05",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2681.9,
+   2147.6,
+   219.5
+  ],
+  "root_id": "720575947491098094",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 219.1,
+  "probe_hits": 10,
+  "mesh_fragments": 366,
+  "source_segment_id": "84522071443111010"
+ },
+ {
+  "id": "stellate-06",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2869.0,
+   2157.3,
+   222.3
+  ],
+  "root_id": "720575947517862794",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 221.9,
+  "probe_hits": 9,
+  "mesh_fragments": 221,
+  "source_segment_id": "86140689930653961"
+ },
+ {
+  "id": "pyramidal-01",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2422.0,
+   2103.3,
+   224.9
+  ],
+  "root_id": "720575947537528132",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 222.4,
+  "probe_hits": 9,
+  "mesh_fragments": 330,
+  "source_segment_id": "82340296776172269"
+ },
+ {
+  "id": "pyramidal-02",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2418.2,
+   2156.0,
+   222.6
+  ],
+  "root_id": "720575947422962921",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 222.3,
+  "probe_hits": 8,
+  "mesh_fragments": 184,
+  "source_segment_id": "82270409067930854"
+ },
+ {
+  "id": "pyramidal-03",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2425.3,
+   2076.9,
+   222.9
+  ],
+  "root_id": "720575947553262110",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 222.5,
+  "probe_hits": 7,
+  "mesh_fragments": 301,
+  "source_segment_id": "82269721873353017"
+ },
+ {
+  "id": "pyramidal-04",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2571.0,
+   2008.1,
+   223.6
+  ],
+  "root_id": "720575947452371721",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 223.2,
+  "probe_hits": 6,
+  "mesh_fragments": 566,
+  "source_segment_id": "83606178256982592"
+ },
+ {
+  "id": "inhibitory-02",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2488.8,
+   2078.0,
+   222.2
+  ],
+  "root_id": "720575947556332272",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 221.8,
+  "probe_hits": 11,
+  "mesh_fragments": 369,
+  "source_segment_id": "82832603107419251"
+ },
+ {
+  "id": "inhibitory-03",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2436.4,
+   2153.2,
+   224.0
+  ],
+  "root_id": "720575947560901294",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 223.3,
+  "probe_hits": 9,
+  "mesh_fragments": 578,
+  "source_segment_id": "82411146556687966"
+ },
+ {
+  "id": "inhibitory-04",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2272.3,
+   2145.3,
+   222.4
+  ],
+  "root_id": "720575947499725303",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 222.1,
+  "probe_hits": 5,
+  "mesh_fragments": 152,
+  "source_segment_id": "81074002978191059"
+ },
+ {
+  "id": "inhibitory-05",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2473.2,
+   2027.5,
+   226.9
+  ],
+  "root_id": "720575947459765587",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 220.4,
+  "probe_hits": 5,
+  "mesh_fragments": 113,
+  "source_segment_id": "82691522021598609"
+ },
+ {
+  "id": "microglia-01",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2366.0,
+   2096.9,
+   77.2
+  ],
+  "root_id": "720575947459552163",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 76.8,
+  "probe_hits": 8,
+  "mesh_fragments": 60,
+  "source_segment_id": "81847645974841418"
+ }
+]
