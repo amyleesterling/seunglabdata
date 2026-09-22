@@ -1671,3 +1671,66 @@ h2{
   .res:hover, .card:hover{ transform: none; }
 }
 
+
+/* ===== MEC dataset page ===== */
+
+/* A card that stands on its own rather than sitting in the .grid, so it does
+   not need the full-height stretch the grid variant relies on. */
+.card--flat{ height: auto; margin-top: 16px; padding: 18px 18px 16px; }
+.card--flat .card__top h3{ margin: 0 0 8px; font-size: 17px; color: #eaf6ff; letter-spacing: -0.01em; }
+.card--flat .card__body + .card__body{ margin-top: 10px; }
+
+.mec{ padding: 40px 0 4px; border-top: 1px solid var(--line); margin-top: 40px; }
+
+.mec__cols{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+.mec__cols .card--flat{ margin-top: 16px; }
+
+.mec__table{ width: 100%; border-collapse: collapse; margin-top: 12px; }
+.mec__caption{
+  caption-side: bottom;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12.5px;
+  text-align: left;
+}
+.mec__table th, .mec__table td{
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  text-align: left;
+  vertical-align: middle;
+}
+.mec__table thead th{ color: var(--muted); font-weight: 600; font-size: 12px; }
+.mec__table tbody th{ color: #eaf6ff; font-weight: 700; width: 3.5em; }
+.mec__table tbody td:first-of-type{ color: #eaf6ff; font-weight: 600; width: 5.5em; }
+.mec__table td:last-child{ width: 55%; padding-right: 0; }
+
+/* Bar length is set per row from the data, so the bar and the number it sits
+   beside are the same quantity rendered twice, never two separate estimates. */
+.mec__bar{
+  display: block;
+  height: 8px;
+  width: var(--w, 0%);
+  border-radius: 4px;
+  background: #42d5ec;
+  opacity: .85;
+}
+
+/* Unit symbols must never be uppercased: "nm" shouted as "NM" and "mm" as "MM"
+   are different units. Hooked on its own class, not on a bare span, so the next
+   author cannot reuse the tag and silently lose the rule. */
+.nounit{ text-transform: none; }
+
+.visually-hidden{
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
