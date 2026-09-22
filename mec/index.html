@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medial Entorhinal Cortex, Citizen Neuroscience</title>
+  <meta name="description" content="A new electron microscopy dataset of the mouse medial entorhinal cortex, the part of the brain that holds grid cells. Help map it in EyeWire II." />
+  <link rel="canonical" href="https://connectome.quest/mec/" />
+  <meta property="og:title" content="Medial Entorhinal Cortex" />
+  <meta property="og:description" content="The brain's map of space, imaged at 16 nanometres. Help map it in EyeWire II." />
+  <meta property="og:url" content="https://connectome.quest/mec/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://connectome.quest/assets/images/mec-neurons.jpg" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* Solid colours, no gradient text. */
+    .mec__tiles{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:14px; margin-top:18px;
+    }
+    .mec__tile{
+      border:1px solid var(--line); border-radius:14px; padding:16px 16px 14px;
+      background:rgba(255,255,255,.03);
+    }
+    .mec__tile-num{ font-size:1.75rem; font-weight:800; letter-spacing:-0.02em; color:#42d5ec; line-height:1; }
+    .mec__tile-num--soft{ color:#9fb4c4; }
+    .mec__tile-label{ margin-top:8px; font-size:.82rem; color:rgba(220,230,240,.85); line-height:1.4; }
+    .mec__embed{
+      position:relative; width:100%; aspect-ratio:16/10; min-height:300px;
+      border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+      background:#04060b; margin-top:18px;
+    }
+    .mec__embed img, .mec__embed iframe{
+      position:absolute; inset:0; width:100%; height:100%; border:0; display:block;
+      object-fit:cover;
+    }
+    .mec__embed-cta{
+      position:absolute; inset:0; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:12px;
+      background:rgba(4,6,11,.35);
+    }
+    .mec__embed-note{ font-size:12.5px; color:rgba(230,240,250,.8); text-shadow:0 2px 10px rgba(0,0,0,.8); }
+  </style>
+</head>
+<body>
+    <nav class="topnav">
+      <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">
+          <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+          <span>Princeton University</span>
+        </a>
+        <div class="topnav__links">
+          <a class="topnav__link" href="/learn.html">Neuro 101</a>
+          <a class="topnav__link" href="/videos.html">Videos</a>
+          <a class="topnav__link" href="/help.html">Help</a>
+          <a class="topnav__link" href="/forum.html">Forum</a>
+          <a class="topnav__link" href="/access.html">Access</a>
+          <a class="topnav__link" href="/atlas/">Connectome 101</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero__media" role="img" aria-label="Seven reconstructed neurons from the mouse medial entorhinal cortex, each a different colour, their dendrites spreading outward and two long axons running across the bottom of a black volume">
+        <img src="/assets/images/mec-neurons.jpg" alt="Seven reconstructed neurons from the mouse medial entorhinal cortex on a black background, coloured green, blue, pink, magenta, teal and gold. Each has a dense bush of dendrites around its cell body, and two long axons run diagonally across the lower half of the frame." />
+        <div class="hero__scrim" aria-hidden="true"></div>
+        <div class="wrap hero__overlay">
+          <p class="hero__eyebrow">New dataset</p>
+          <h1>Medial entorhinal<br />cortex</h1>
+          <p class="hero__lede">
+            The part of the brain that keeps track of where you are. We imaged a block of it in
+            electron microscopy, and now it needs mapping. It is the newest volume open to
+            <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> citizen
+            scientists in <strong>EyeWire II</strong>.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- What it is -->
+      <section class="citizen" aria-label="About the medial entorhinal cortex">
+        <div class="citizen__inner">
+          <div class="citizen__intro">
+            <h2>The brain's map of space</h2>
+            <p>
+              Put a mouse in a room and record a single cell in its medial entorhinal cortex, and
+              something strange happens. The cell fires when the animal stands in one spot, then
+              fires again a fixed distance away, and again, and again, until the firing positions
+              trace a hexagonal grid across the whole floor. These are grid cells. Edvard and
+              May&#8209;Britt Moser found them in 2005, and shared the 2014 Nobel Prize in Physiology
+              or Medicine with John O'Keefe for the work.
+            </p>
+            <p>
+              Nobody knows how the grid is built. The leading explanations disagree about what the
+              wiring should look like, which is exactly the kind of argument a connectome can
+              settle. The medial entorhinal cortex is also the main gateway from the cortex into
+              the hippocampus, so its wiring shapes what the memory system receives in the first
+              place. It is one of the first regions to degenerate in Alzheimer's disease.
+            </p>
+            <p>
+              In the Allen Mouse Brain Atlas the medial entorhinal cortex appears as
+              <strong>ENTm</strong> and <strong>ENTmv</strong>, the dorsal and ventral zones of the
+              entorhinal area's medial part. Both sit in the retrohippocampal region, at the back
+              and underside of the cortex. If you want to see where that is in a whole mouse brain,
+              the <a href="https://whatisabrain.com/mouse" target="_blank" rel="noreferrer">mouse
+              wiring explorer</a> places every region in the Allen reference brain.
+            </p>
+          </div>
+
+          <aside class="citizen__panel" aria-label="Dataset at a glance">
+            <div class="citizen__panel-head">
+              <p class="citizen__panel-title">At a glance</p>
+            </div>
+            <dl class="card__stats">
+              <div><dt>Species</dt><dd>Mouse</dd></div>
+              <div><dt>Region</dt><dd>Medial entorhinal cortex</dd></div>
+              <div><dt>Imaging</dt><dd>Serial section electron microscopy</dd></div>
+              <div><dt>Resolution</dt><dd>16 &times; 16 &times; <span class="nounit">45 nm</span></dd></div>
+              <div><dt>Segmented extent</dt><dd>About 2.0 &times; 1.3 &times; <span class="nounit">0.45 mm</span></dd></div>
+              <div><dt>Nuclei marked</dt><dd>62,631</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <!-- The block, to scale -->
+      <section class="mec" aria-label="The block to scale">
+        <div class="more__head">
+          <h2>The block, to scale</h2>
+          <p class="more__lede">
+            Two reconstructed cells inside the imaged volume, at true relative size and in the
+            positions they actually occupy.
+          </p>
+        </div>
+
+        <div class="mec__embed" id="embed">
+          <img id="poster" src="/assets/mec/block-poster.jpg"
+               alt="Wireframe of the imaged block with scale bars marked every 100 micrometres and labelled to 2000. Two reconstructed cells sit inside it, one green with a dense arbor and a long process, one pink and smaller." />
+          <div class="mec__embed-cta" id="cta">
+            <button type="button" class="btn btn--cta" id="load3d">Load the interactive block</button>
+            <span class="mec__embed-note">About 7 MB of meshes</span>
+          </div>
+        </div>
+
+        <div class="vol__controls" style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+          <a class="btn btn--ghost" href="/mec/volume/">Open full screen</a>
+        </div>
+      </section>
+
+      <!-- The numbers -->
+      <section class="mec" aria-label="What has been counted so far">
+        <div class="more__head">
+          <h2>What is in there</h2>
+          <p class="more__lede">
+            Every nucleus in the block has been marked with a point, assigned to a cortical layer,
+            and sorted into a cluster by nucleus size. These are early numbers. Treat them as work
+            in progress.
+          </p>
+        </div>
+
+        <div class="mec__tiles">
+          <div class="mec__tile">
+            <div class="mec__tile-num">62,631</div>
+            <div class="mec__tile-label">Nuclei marked in the block</div>
+          </div>
+          <div class="mec__tile">
+            <div class="mec__tile-num">12,742</div>
+            <div class="mec__tile-label">Presumed pyramidal cells</div>
+          </div>
+          <div class="mec__tile">
+            <div class="mec__tile-num">1,370</div>
+            <div class="mec__tile-label">Presumed stellate cells</div>
+          </div>
+          <div class="mec__tile">
+            <div class="mec__tile-num mec__tile-num--soft">48,519</div>
+            <div class="mec__tile-label">Nuclei with no cell type yet</div>
+          </div>
+        </div>
+
+        <article class="card card--flat">
+          <div class="card__top"><h3>How many neurons? Nobody knows yet</h3></div>
+          <p class="card__body">
+            That is not a dodge, it is the honest state of the data. Of the 62,631 nuclei,
+            <strong>14,112</strong> fall into the two clusters that carry a cell type name,
+            pyramidal and stellate. The other 48,519 sit in six unnamed clusters. Some of those
+            are neurons, interneurons especially, and some are glia, blood vessels and other
+            non&#8209;neuronal cells. Nobody has separated them.
+          </p>
+          <p class="card__body">
+            So the number of neurons in this block is at least 14,112 and certainly a good deal
+            higher, and pinning it down is open work. The clustering is by nucleus size, which
+            correlates with cell type but does not determine it, so every type on this page is a
+            <strong>presumed</strong> type until a human has looked at the cell's shape.
+          </p>
+        </article>
+
+        <div class="mec__cols">
+          <article class="card card--flat">
+            <div class="card__top"><h3>Nuclei by layer</h3></div>
+            <p class="card__body">
+              Layer boundaries are drawn roughly, so read these as the shape of the tissue rather
+              than as exact counts. They count every nucleus, not just neurons.
+            </p>
+            <table class="mec__table">
+              <caption class="mec__caption">Nuclei marked per layer, 62,631 in total</caption>
+              <thead>
+                <tr><th scope="col">Layer</th><th scope="col">Nuclei</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">I</th><td>7,871</td><td><span class="mec__bar" style="--w:48.5%"></span></td></tr>
+                <tr><th scope="row">II</th><td>10,463</td><td><span class="mec__bar" style="--w:64.5%"></span></td></tr>
+                <tr><th scope="row">III</th><td>14,203</td><td><span class="mec__bar" style="--w:87.6%"></span></td></tr>
+                <tr><th scope="row">IV</th><td>4,200</td><td><span class="mec__bar" style="--w:25.9%"></span></td></tr>
+                <tr><th scope="row">V</th><td>16,215</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
+                <tr><th scope="row">VI</th><td>9,679</td><td><span class="mec__bar" style="--w:59.7%"></span></td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="card card--flat">
+            <div class="card__top"><h3>Stellate cells sit where they should</h3></div>
+            <p class="card__body">
+              Layer II is where stellate cells live, and it is the population most closely tied to
+              grid firing. That is the textbook claim, and this block agrees with it: of the 1,370
+              presumed stellate nuclei, <strong>1,085</strong> are in layer II. That is
+              <strong>79%</strong>, from a clustering that never saw the layer labels.
+            </p>
+            <table class="mec__table">
+              <caption class="mec__caption">Presumed stellate nuclei per layer, 1,370 in total</caption>
+              <thead>
+                <tr><th scope="col">Layer</th><th scope="col">Stellate</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">I</th><td>42</td><td><span class="mec__bar" style="--w:3.9%"></span></td></tr>
+                <tr><th scope="row">II</th><td>1,085</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
+                <tr><th scope="row">III</th><td>223</td><td><span class="mec__bar" style="--w:20.6%"></span></td></tr>
+                <tr><th scope="row">IV</th><td>8</td><td><span class="mec__bar" style="--w:0.7%"></span></td></tr>
+                <tr><th scope="row">V</th><td>10</td><td><span class="mec__bar" style="--w:0.9%"></span></td></tr>
+                <tr><th scope="row">VI</th><td>2</td><td><span class="mec__bar" style="--w:0.2%"></span></td></tr>
+              </tbody>
+            </table>
+            <p class="card__body">
+              Confirming or rejecting those calls, one cell at a time, is work that needs eyes on
+              it. That is where you come in.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- How to help -->
+      <section class="mec" aria-label="How to help">
+        <div class="more__head">
+          <h2>How to help</h2>
+          <p class="more__lede">Open the volume in EyeWire II and start looking.</p>
+        </div>
+
+        <article class="card card--flat">
+          <p class="card__body">
+            MEC is now in the dataset switcher in EyeWire II. Open the app, click
+            <strong>Data</strong> in the top bar, and pick <strong>Medial Entorhinal Cortex</strong>.
+            You will need to sign in with Google, twice, because the volume and the annotations
+            live behind separate services.
+          </p>
+          <p class="card__body">
+            Use a computer for this one. The phone build of EyeWire II does not carry MEC yet, so
+            the button below opens the desktop app on purpose.
+          </p>
+          <p class="card__body">
+            <strong>What works today:</strong> viewing the volume, loading cells, and proofreading
+            them. If a reconstruction has two cells fused together you can split them, and if a
+            branch has been cut off you can merge it back on. That is the core of the work.
+          </p>
+          <p class="card__body">
+            <strong>What does not work yet:</strong> marking a cell complete, assigning a cell
+            type, and anything that counts toward the leaderboard. Those write to annotation tables
+            that have not been set up for this volume yet. We would rather tell you that plainly
+            than have the buttons fail quietly. They are coming, and your proofreading in the
+            meantime is real and is saved.
+          </p>
+          <div class="card__actions">
+            <a class="btn btn--cta" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com" target="_blank" rel="noreferrer">Open EyeWire II</a>
+            <a class="btn btn--ghost" href="/help.html">New here? Start with the guide</a>
+            <a class="btn btn--ghost" href="/videos.html">Watch a tutorial</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Credit -->
+      <section class="mec" aria-label="Credit">
+        <article class="card card--flat">
+          <div class="card__top"><h3>Who made this</h3></div>
+          <p class="card__body">
+            The volume was imaged, aligned and segmented by Eric Hammerschmith with Zhihao Zheng in
+            the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at
+            Princeton. A team of professional proofreaders has been working through it ahead of
+            this release. The reconstruction you see on this page came out of their work.
+          </p>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__credit footer__credit--standalone">
+        <img class="footer__crest" src="/assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+        <span>Brought to you by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at <a href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">Princeton University</a>. <a href="/credits.html">Credits</a></span>
+      </div>
+      <div class="footer__tiny"><img src="/assets/images/footer-tiny.png" alt="A cool cat mascot wearing sunglasses" /></div>
+    </footer>
+
+<script>
+// The block is ~7 MB of meshes. It loads on request, not on page load, so
+// arriving here on a phone connection does not cost that by default. The
+// poster is a render of the same scene, so nothing is promised that the
+// interactive version does not deliver.
+document.getElementById("load3d").addEventListener("click", () => {
+  const embed = document.getElementById("embed");
+  const cta   = document.getElementById("cta");
+  const poster= document.getElementById("poster");
+  cta.innerHTML = '<span class="mec__embed-note">Loading the block…</span>';
+  const f = document.createElement("iframe");
+  f.src = "/mec/volume/?embed=1";
+  f.title = "The imaged MEC block with two reconstructed cells, interactive";
+  f.allow = "fullscreen";
+  f.addEventListener("load", () => { cta.remove(); poster.remove(); });
+  embed.appendChild(f);
+}, { once: true });
+</script>
+</body>
+</html>
