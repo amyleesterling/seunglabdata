@@ -47,6 +47,59 @@ def font(name, size):
     return ImageFont.load_default()
 
 
+# Layer boundaries for the depth scale, taken as the midpoints between the mean
+# nucleus y of consecutive layers. The layers' own y ranges overlap heavily, so
+# a scale drawn from raw ranges would show overlapping bands; midpoints give
+# one clean boundary per pair and stay faithful to where the layers sit.
+LAYER_MEAN_Y = {"I": 2265, "II": 2119, "III": 1972, "IV": 1844, "V": 1748, "VI": 1626}
+LAYER_ORDER = ["I", "II", "III", "IV", "V", "VI"]
+CORTEX_TOP_Y, CORTEX_BOTTOM_Y = 2383.0, 1536.0
+
+# Nuclei marked per layer across the WHOLE block. The reconstructed sample is
+# not proportional to these, so the scale shows both: a reader who saw only
+# "3 cells" next to layer IV could reasonably conclude the cortex has almost
+# nothing there, which is not what the count says.
+LAYER_NUCLEI = {"I": 7871, "II": 10463, "III": 14203,
+                "IV": 4200, "V": 16215, "VI": 9679}
+
+
+def layer_bounds():
+    """(layer, y_high, y_low) top down, in micrometres."""
+    ys = [LAYER_MEAN_Y[L] for L in LAYER_ORDER]
+    edges = [CORTEX_TOP_Y]
+    for a, b in zip(ys, ys[1:]):
+        edges.append((a + b) / 2.0)
+    edges.append(CORTEX_BOTTOM_Y)
+    return [(L, edges[i], edges[i + 1]) for i, L in enumerate(LAYER_ORDER)]
+
+
+def depth_scale(d, W, H, s, active, counts):
+    """A cortical depth scale down the right hand side, with the layer the
+    animation is currently revealing picked out."""
+    pad = int(44 * s)
+    x = W - pad - int(150 * s)
+    top, bot = int(H * 0.20), int(H * 0.78)
+    span = CORTEX_TOP_Y - CORTEX_BOTTOM_Y
+    f_lay = font("segoeuib.ttf", int(19 * s))
+    f_n = font("segoeui.ttf", int(15 * s))
+
+    d.text((x, top - int(34 * s)), "CORTICAL DEPTH", font=f_n, fill=DIM)
+    for L, hi, lo in layer_bounds():
+        y0 = top + int((CORTEX_TOP_Y - hi) / span * (bot - top))
+        y1 = top + int((CORTEX_TOP_Y - lo) / span * (bot - top))
+        on = (L == active)
+        d.rectangle([x, y0, x + int(7 * s), y1],
+                    fill=(90, 210, 236, 255) if on else (90, 210, 236, 46))
+        n = counts.get(L, 0)
+        d.text((x + int(18 * s), (y0 + y1) // 2 - int(13 * s)),
+               f"Layer {L}", font=f_lay, fill=INK if on else DIM)
+        marked = LAYER_NUCLEI.get(L)
+        line = (f"{n} of {marked:,} marked" if marked
+                else (f"{n} cells" if n else "none reconstructed"))
+        d.text((x + int(18 * s), (y0 + y1) // 2 + int(5 * s)),
+               line, font=f_n, fill=INK if on else DIM)
+
+
 def label(img, meta, note=None):
     d = ImageDraw.Draw(img, "RGBA")
     W, H = img.size
@@ -66,6 +119,10 @@ def label(img, meta, note=None):
            f"{block[0]:.0f} \u00d7 {block[1]:.0f} \u00d7 {block[2]:.0f} \u00b5m imaged block",
            font=f_sub, fill=DIM)
 
+    by_layer = meta.get("cycle_group_by") == "layer"
+    if by_layer:
+        depth_scale(d, W, H, s, note, meta.get("cycle_counts", {}))
+
     # Legend, bottom left, only the types actually present.
     counts = meta.get("counts", {})
     present = [t for t in TYPE_ORDER if counts.get(t)]
@@ -74,7 +131,7 @@ def label(img, meta, note=None):
     sw = int(14 * s)
     for t in present:
         colour = tuple(int(TYPE_HEX[t][i:i + 2], 16) for i in (1, 3, 5))
-        active = note == t
+        active = (note == t) and not by_layer
         d.rounded_rectangle([pad, y + int(4 * s), pad + sw, y + int(4 * s) + sw],
                             radius=int(3 * s), fill=colour + (255 if active else 190,))
         d.text((pad + sw + int(12 * s), y),

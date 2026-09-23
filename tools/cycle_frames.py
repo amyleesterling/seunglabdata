@@ -42,13 +42,31 @@ def ease(t):
     return t * t * (3.0 - 2.0 * t)
 
 
-def build_timeline(types):
-    """(weights per type, highlighted type) for every frame."""
+def build_timeline(types, accumulate=False, hold=HOLD, fade=FADE_IN):
+    """(weights per group, highlighted group) for every frame.
+
+    accumulate=False cycles: each group comes up alone and goes back down.
+    accumulate=True builds: each group comes up and STAYS, so the picture is
+    assembled piece by piece. That is what makes a descent through cortical
+    layers read as anatomy accumulating rather than as a slideshow.
+    """
     tl = []
+    if accumulate:
+        standing = {}
+        for t in types:
+            for i in range(fade):
+                tl.append((dict(standing, **{t: ease((i + 1) / fade)}), t))
+            standing[t] = 1.0
+            for _ in range(hold):
+                tl.append((dict(standing), t))
+        for _ in range(ALL_HOLD):
+            tl.append((dict(standing), None))
+        return tl
+
     for t in types:
-        for i in range(FADE_IN):
-            tl.append(({t: ease((i + 1) / FADE_IN)}, t))
-        for _ in range(HOLD):
+        for i in range(fade):
+            tl.append(({t: ease((i + 1) / fade)}, t))
+        for _ in range(hold):
             tl.append(({t: 1.0}, t))
         for i in range(FADE_OUT):
             tl.append(({t: ease(1.0 - (i + 1) / FADE_OUT)}, t))
@@ -64,6 +82,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("folder", help="folder holding plate.png and layer_*.png")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--accumulate", action="store_true",
+                    help="keep each group on screen once it has appeared, "
+                         "instead of fading it back out")
+    ap.add_argument("--hold", type=int, default=HOLD)
+    ap.add_argument("--fade", type=int, default=FADE_IN)
     args = ap.parse_args()
 
     meta_path = os.path.join(args.folder, "scene.json")
@@ -96,7 +119,7 @@ def main():
     out_dir = args.out or os.path.join(args.folder, "frames")
     os.makedirs(out_dir, exist_ok=True)
 
-    timeline = build_timeline(types)
+    timeline = build_timeline(types, args.accumulate, args.hold, args.fade)
     highlights = []
     for i, (weights, note) in enumerate(timeline):
         img = plate.copy()

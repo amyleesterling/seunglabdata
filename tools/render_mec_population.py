@@ -261,6 +261,8 @@ def main():
     # NOT "--cycle": Blender's own argument parser sees the Cycles addon's
     # --cycles-device and --cycles-print-stats and rejects the abbreviation
     # as ambiguous, before the script ever runs.
+    ap.add_argument("--group-by", default="type", choices=("type", "layer"),
+                    help="what each rendered alpha layer contains")
     ap.add_argument("--type-cycle", action="store_true", dest="type_cycle",
                     help="render one alpha layer per cell type plus a bare "
                          "plate, for the post pass to fade between")
@@ -465,7 +467,20 @@ def main():
         # fades would not line up.
         place(args.az)
         scene.render.image_settings.color_mode = "RGBA"
-        present = [t for t in TYPE_ORDER if t in counts]
+
+        # Grouping by LAYER renders one alpha layer per cortical layer while
+        # every cell keeps its own type colour, which is what makes the
+        # laminar reveal read as anatomy rather than as a legend.
+        if args.group_by == "layer":
+            key_of = lambda c: c.get("layer") or "?"
+            present = [L for L in ("I", "II", "III", "IV", "V", "VI", "?")
+                       if any(key_of(c) == L for c, _ in loaded)]
+            group_counts = {L: sum(1 for c, _ in loaded if key_of(c) == L)
+                            for L in present}
+        else:
+            key_of = lambda c: c["cell_type"]
+            present = [t for t in TYPE_ORDER if t in counts]
+            group_counts = {t: counts[t] for t in present}
 
         composite_ground(scene, True)
         for _, obj in loaded:
@@ -477,12 +492,14 @@ def main():
         composite_ground(scene, False)      # keep alpha on the cell layers
         for t in present:
             for c, obj in loaded:
-                obj.hide_render = c["cell_type"] != t
+                obj.hide_render = key_of(c) != t
             scene.render.filepath = os.path.join(args.out, f"layer_{t}.png")
             bpy.ops.render.render(write_still=True)
-            print(f"wrote layer_{t}.png  ({counts[t]} cells)")
+            print(f"wrote layer_{t}.png  ({group_counts[t]} cells)")
 
         meta["cycle_types"] = present
+        meta["cycle_group_by"] = args.group_by
+        meta["cycle_counts"] = group_counts
         with open(os.path.join(args.out, "scene.json"), "w") as fh:
             json.dump(meta, fh, indent=1)
         print(f"cycle layers done: {len(present)} types + plate")
