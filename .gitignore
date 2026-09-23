@@ -14,3 +14,8 @@ assets/mec/population/layers/labelled/
 assets/mec/population/layers/layer_*.png
 assets/mec/population/layers/plate.png
 assets/mec/renders/spin/
+assets/mec/population/depth/frames/
+assets/mec/population/depth/labelled/
+assets/mec/population/depth/layer_*.png
+assets/mec/population/depth/plate.png
+assets/mec/population/dense/

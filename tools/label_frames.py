@@ -100,6 +100,43 @@ def depth_scale(d, W, H, s, active, counts):
                line, font=f_n, fill=INK if on else DIM)
 
 
+def depth_sweep_bar(d, W, H, s, note, meta):
+    """Where the lit slab is, through the thin axis of the block.
+
+    The cortical depth scale is wrong for this shot: that one is about layers,
+    this one is about the 447 um sectioning depth, which is the axis the
+    turntable makes hard to judge.
+    """
+    groups = meta.get("cycle_types") or []
+    if note not in groups:
+        return
+    z0, z1 = meta.get("depth_range_um", [0.0, 1.0])
+    i = groups.index(note)
+    frac = (i + 0.5) / max(1, len(groups))
+    z_here = z0 + (z1 - z0) * frac
+
+    pad = int(44 * s)
+    bar_w = int(W * 0.34)
+    x0 = (W - bar_w) // 2
+    y = H - pad - int(54 * s)
+    f_lab = font("segoeuib.ttf", int(20 * s))
+    f_n = font("segoeui.ttf", int(15 * s))
+
+    d.rounded_rectangle([x0, y, x0 + bar_w, y + int(6 * s)],
+                        radius=int(3 * s), fill=(90, 210, 236, 52))
+    cx = x0 + int(bar_w * frac)
+    d.rounded_rectangle([cx - int(3 * s), y - int(5 * s),
+                         cx + int(3 * s), y + int(11 * s)],
+                        radius=int(3 * s), fill=(90, 210, 236, 255))
+    d.text((W // 2, y - int(34 * s)),
+           f"depth through the block   {z_here:.0f} µm",
+           font=f_lab, fill=INK, anchor="ms")
+    d.text((x0, y + int(18 * s)), f"{z0:.0f}", font=f_n, fill=DIM)
+    d.text((x0 + bar_w, y + int(18 * s)), f"{z1:.0f} µm",
+           font=f_n, fill=DIM, anchor="rs")
+
+
+
 def label(img, meta, note=None):
     d = ImageDraw.Draw(img, "RGBA")
     W, H = img.size
@@ -119,9 +156,12 @@ def label(img, meta, note=None):
            f"{block[0]:.0f} \u00d7 {block[1]:.0f} \u00d7 {block[2]:.0f} \u00b5m imaged block",
            font=f_sub, fill=DIM)
 
-    by_layer = meta.get("cycle_group_by") == "layer"
+    group_by = meta.get("cycle_group_by")
+    by_layer = group_by == "layer"
     if by_layer:
         depth_scale(d, W, H, s, note, meta.get("cycle_counts", {}))
+    elif group_by == "depth":
+        depth_sweep_bar(d, W, H, s, note, meta)
 
     # Legend, bottom left, only the types actually present.
     counts = meta.get("counts", {})
@@ -131,7 +171,7 @@ def label(img, meta, note=None):
     sw = int(14 * s)
     for t in present:
         colour = tuple(int(TYPE_HEX[t][i:i + 2], 16) for i in (1, 3, 5))
-        active = (note == t) and not by_layer
+        active = (note == t) and group_by not in ("layer", "depth")
         d.rounded_rectangle([pad, y + int(4 * s), pad + sw, y + int(4 * s) + sw],
                             radius=int(3 * s), fill=colour + (255 if active else 190,))
         d.text((pad + sw + int(12 * s), y),

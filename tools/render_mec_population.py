@@ -261,7 +261,8 @@ def main():
     # NOT "--cycle": Blender's own argument parser sees the Cycles addon's
     # --cycles-device and --cycles-print-stats and rejects the abbreviation
     # as ambiguous, before the script ever runs.
-    ap.add_argument("--group-by", default="type", choices=("type", "layer"),
+    ap.add_argument("--depth-bins", type=int, default=14)
+    ap.add_argument("--group-by", default="type", choices=("type", "layer", "depth"),
                     help="what each rendered alpha layer contains")
     ap.add_argument("--type-cycle", action="store_true", dest="type_cycle",
                     help="render one alpha layer per cell type plus a bare "
@@ -471,7 +472,27 @@ def main():
         # Grouping by LAYER renders one alpha layer per cortical layer while
         # every cell keeps its own type colour, which is what makes the
         # laminar reveal read as anatomy rather than as a legend.
-        if args.group_by == "layer":
+        if args.group_by == "depth":
+            # Bin by the soma's position through the THIN axis of the slab, the
+            # 447 um sectioning depth. A sweep along it shows what the turntable
+            # cannot: how little tissue there is front to back compared with the
+            # two millimetres across.
+            zs = [c["nucleus_um"][2] for c, _ in loaded if c.get("nucleus_um")]
+            z0, z1 = min(zs), max(zs)
+            nb = max(2, args.depth_bins)
+
+            def bin_of(c):
+                z = (c.get("nucleus_um") or [0, 0, z0])[2]
+                return min(nb - 1, int((z - z0) / max(1e-6, z1 - z0) * nb))
+
+            key_of = lambda c: f"z{bin_of(c):02d}"
+            present = sorted({key_of(c) for c, _ in loaded})
+            group_counts = {k: sum(1 for c, _ in loaded if key_of(c) == k)
+                            for k in present}
+            meta["depth_range_um"] = [round(z0, 1), round(z1, 1)]
+            print(f"depth bins over z {z0:.0f}..{z1:.0f} um: "
+                  + ", ".join(f"{k}={group_counts[k]}" for k in present))
+        elif args.group_by == "layer":
             key_of = lambda c: c.get("layer") or "?"
             present = [L for L in ("I", "II", "III", "IV", "V", "VI", "?")
                        if any(key_of(c) == L for c, _ in loaded)]

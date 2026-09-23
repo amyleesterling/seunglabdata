@@ -78,6 +78,26 @@ def build_timeline(types, accumulate=False, hold=HOLD, fade=FADE_IN):
     return tl
 
 
+def build_sweep(groups, frames, base, window):
+    """A lit window travelling across the groups, everything else held faint.
+
+    Used for the depth sweep. The groups outside the window are NOT hidden: the
+    point of the shot is where the lit slab sits INSIDE the whole block, and a
+    window moving through blackness shows position against nothing.
+    """
+    tl = []
+    n = len(groups)
+    for f in range(frames):
+        centre = -0.5 + (n) * (f / max(1, frames - 1))
+        w = {}
+        for i, g in enumerate(groups):
+            d = abs(i - centre) / window
+            w[g] = base + (1.0 - base) * max(0.0, 1.0 - d * d)
+        near = min(range(n), key=lambda i: abs(i - centre))
+        tl.append((w, groups[near]))
+    return tl
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("folder", help="folder holding plate.png and layer_*.png")
@@ -87,6 +107,13 @@ def main():
                          "instead of fading it back out")
     ap.add_argument("--hold", type=int, default=HOLD)
     ap.add_argument("--fade", type=int, default=FADE_IN)
+    ap.add_argument("--sweep", type=int, default=0, metavar="FRAMES",
+                    help="move a lit window across the groups over FRAMES "
+                         "frames, with everything else held at --base")
+    ap.add_argument("--base", type=float, default=0.16,
+                    help="how visible the groups outside the window are")
+    ap.add_argument("--window", type=float, default=1.6,
+                    help="width of the lit window, in groups")
     args = ap.parse_args()
 
     meta_path = os.path.join(args.folder, "scene.json")
@@ -119,7 +146,10 @@ def main():
     out_dir = args.out or os.path.join(args.folder, "frames")
     os.makedirs(out_dir, exist_ok=True)
 
-    timeline = build_timeline(types, args.accumulate, args.hold, args.fade)
+    if args.sweep:
+        timeline = build_sweep(types, args.sweep, args.base, args.window)
+    else:
+        timeline = build_timeline(types, args.accumulate, args.hold, args.fade)
     highlights = []
     for i, (weights, note) in enumerate(timeline):
         img = plate.copy()
