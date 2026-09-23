@@ -36,22 +36,36 @@ SUBSURFACE_SCALE = 0.012 * TARGET_SIZE
 # transform. These are the render colours; check them IN the render, never in a
 # picker.
 # Amy's house palette, taken from the CA3 page and scifi-ui rather than
-# invented: accent #3E96F0, mint #67f5cb, cyan #7ee0ff, gold #E8A93A,
-# orchid #e8afd8, lilac #bd9bd1, on the #07080B ground both sites use.
-# Still check them IN the render, never in a picker.
-TYPE_COLOUR = {
-    "stellate":        (0.404, 0.961, 0.796),   # #67f5cb mint
-    "pyramidal":       (0.243, 0.588, 0.941),   # #3E96F0 accent
-    # The pale end of the palette blows out under this rig and rendered as
-    # near-white: orchid, lilac and steel all lost their hue. Deepened here,
-    # same hues, so they READ as themselves in the render rather than in the
-    # picker. The UI keeps the light versions.
-    "inhibitory":      (0.776, 0.318, 0.639),   # #c651a3, orchid deepened
-    "microglia":       (0.910, 0.663, 0.227),   # #E8A93A gold
-    "astrocyte":       (0.561, 0.373, 0.690),   # #8f5fb0, lilac deepened
-    "oligodendrocyte": (0.310, 0.741, 0.902),   # #4fbde6, cyan deepened
-    "bipolar":         (0.490, 0.573, 0.671),   # #7d92ab, steel deepened
+# invented, and stated as sRGB HEX because that is how a palette is agreed.
+#
+# THESE MUST BE CONVERTED TO LINEAR before they touch a Blender colour socket.
+# Base Color, Emission Color and the compositor all work in linear, so pasting
+# the sRGB value straight in renders it lighter AND flatter: measured, mint
+# #67f5cb came out at saturation 0.30 against 0.88 intended, and every type
+# lost roughly half its saturation. Same mistake as the background, which was
+# fixed there and not here.
+TYPE_HEX = {
+    "stellate":        "#67f5cb",   # mint
+    "pyramidal":       "#3E96F0",   # accent
+    "inhibitory":      "#ff5fb0",   # hot orchid
+    "microglia":       "#E8A93A",   # gold
+    "astrocyte":       "#b06fe0",   # violet
+    "oligodendrocyte": "#3fd8ff",   # cyan
+    "bipolar":         "#8fb3d9",   # steel
 }
+
+
+def srgb_to_linear(c):
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def hex_rgb(h):
+    """sRGB hex -> LINEAR rgb triple, which is what Blender sockets expect."""
+    s = h.lstrip("#")
+    return tuple(srgb_to_linear(int(s[i:i + 2], 16) / 255.0) for i in (0, 2, 4))
+
+
+TYPE_COLOUR = {k: hex_rgb(v) for k, v in TYPE_HEX.items()}
 
 
 def argv_after_ddash():
@@ -112,14 +126,16 @@ def frame_object(obj):
     return span * scale, span
 
 
-def shade(obj, rgb):
+def shade(obj, rgb, emis=0.85, spec=0.0, sss=0.05):
     mat = bpy.data.materials.new("neuron")
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes["Principled BSDF"]
     bsdf.inputs["Base Color"].default_value = (*rgb, 1.0)
     bsdf.inputs["Roughness"].default_value = 0.62
+    if "Specular IOR Level" in bsdf.inputs:
+        bsdf.inputs["Specular IOR Level"].default_value = spec
     bsdf.inputs["IOR"].default_value = 1.04          # tissue in water, NOT 1.38
-    for name, value in (("Subsurface Weight", 0.35),
+    for name, value in (("Subsurface Weight", sss),
                         ("Subsurface Radius", (SUBSURFACE_SCALE,) * 3),
                         ("Subsurface Scale", SUBSURFACE_SCALE)):
         if name in bsdf.inputs:
@@ -127,10 +143,7 @@ def shade(obj, rgb):
     if "Emission Color" in bsdf.inputs:
         bsdf.inputs["Emission Color"].default_value = (*rgb, 1.0)
     if "Emission Strength" in bsdf.inputs:
-        # Neurites here are under a micrometre across, so at card size they
-        # catch almost no light. This is a lift so they read, NOT a
-        # replacement for the light rig, which is still doing the work.
-        bsdf.inputs["Emission Strength"].default_value = 0.16
+        bsdf.inputs["Emission Strength"].default_value = emis
     obj.data.materials.clear()
     obj.data.materials.append(mat)
     for poly in obj.data.polygons:
@@ -145,7 +158,7 @@ HDRI = os.path.join(bpy.utils.resource_path("LOCAL"),
 GROUND = (0.0021, 0.0024, 0.0034, 1.0)   # #07080B, the ground both of Amy's sites use
 
 
-def light_the_scene(hdri=True, hdri_strength=1.10, light_scale=0.0):
+def light_the_scene(hdri=True, hdri_strength=0.50, light_scale=0.0):
     """Three-point area lights scaled to the subject, PLUS a world HDRI.
 
     The playbook's baseline is a three point rig PLUS an HDRI. For THIS subject
@@ -316,11 +329,13 @@ def solve_framing(probe_path, dist_mult):
 
 def render_cell(cell, glb_path, out_path, size, samples, dist_mult=1.85,
                 shift_y=0.0, shift_x=0.0, autoframe=True,
-                hdri_strength=1.10, light_scale=0.0):
+                hdri_strength=0.50, light_scale=0.0,
+                emis=0.85, spec=0.0, sss=0.05):
     clear_scene()
     obj = import_glb(glb_path)
     scaled_span, raw_span = frame_object(obj)
-    shade(obj, TYPE_COLOUR.get(cell.get("cell_type", ""), (0.8, 0.8, 0.8)))
+    shade(obj, TYPE_COLOUR.get(cell.get("cell_type", ""), (0.8, 0.8, 0.8)),
+          emis=emis, spec=spec, sss=sss)
     light_the_scene(hdri_strength=hdri_strength, light_scale=light_scale)
     cam = add_camera(distance=TARGET_SIZE * dist_mult, shift_y=shift_y, shift_x=shift_x)
     measured = None
@@ -369,7 +384,10 @@ def main():
     ap.add_argument("--shifty", type=float, default=0.0)
     ap.add_argument("--shiftx", type=float, default=0.0)
     ap.add_argument("--no-autoframe", action="store_true")
-    ap.add_argument("--hdri", type=float, default=1.10)
+    ap.add_argument("--hdri", type=float, default=0.50)
+    ap.add_argument("--emis", type=float, default=0.85)
+    ap.add_argument("--spec", type=float, default=0.0)
+    ap.add_argument("--sss", type=float, default=0.05)
     ap.add_argument("--lights", type=float, default=0.0,
                     help="scale on the three point rig; 0 disables it")
     args = ap.parse_args(argv_after_ddash())
@@ -393,7 +411,8 @@ def main():
         span, d, sy, sx, probe, final = render_cell(
             cell, glb, out, args.size, args.samples, args.dist, args.shifty,
             args.shiftx, autoframe=not args.no_autoframe,
-            hdri_strength=args.hdri, light_scale=args.lights)
+            hdri_strength=args.hdri, light_scale=args.lights,
+            emis=args.emis, spec=args.spec, sss=args.sss)
         print(f"    span {tuple(round(v, 1) for v in span)} um")
         if probe:
             print(f"    probe fill {probe['fill']:.3f} off ({probe['cx']:+.3f},{probe['cy']:+.3f})"

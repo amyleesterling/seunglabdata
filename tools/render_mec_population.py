@@ -26,6 +26,7 @@ import os
 import sys
 
 import bpy
+import mathutils
 import numpy as np
 from mathutils import Vector
 
@@ -43,18 +44,42 @@ BLOCK_HI = (VOXEL_OFFSET + VOLUME_SIZE) * UM_PER_VOXEL
 HDRI = os.path.join(bpy.utils.resource_path("LOCAL"),
                     "datafiles", "studiolights", "world", "studio.exr")
 GROUND = (0.0021, 0.0024, 0.0034, 1.0)      # #07080B, linear
-BLOCK_RGB = (0.06, 0.42, 0.72)              # #3E96F0 accent, dimmed for the cage
+# The cage is context, not subject. At full accent blue with emission 0.9 it
+# was the brightest thing in frame and pulled the eye off the cells. Dark
+# slate: present when you look for it, invisible when you are not.
+BLOCK_RGB = (0.055, 0.085, 0.125)           # dark blue grey
 
-# Amy's house palette, from the CA3 page and scifi-ui.
-TYPE_COLOUR = {
-    "stellate":        (0.404, 0.961, 0.796),   # #67f5cb mint
-    "pyramidal":       (0.243, 0.588, 0.941),   # #3E96F0 accent
-    "inhibitory":      (0.910, 0.686, 0.847),   # #e8afd8 orchid
-    "microglia":       (0.910, 0.663, 0.227),   # #E8A93A gold
-    "astrocyte":       (0.741, 0.608, 0.820),   # #bd9bd1 lilac
-    "oligodendrocyte": (0.494, 0.878, 1.000),   # #7ee0ff cyan
-    "bipolar":         (0.769, 0.800, 0.847),   # #c4ccd8 steel
+# Amy's house palette, taken from the CA3 page and scifi-ui rather than
+# invented, and stated as sRGB HEX because that is how a palette is agreed.
+#
+# THESE MUST BE CONVERTED TO LINEAR before they touch a Blender colour socket.
+# Base Color, Emission Color and the compositor all work in linear, so pasting
+# the sRGB value straight in renders it lighter AND flatter: measured, mint
+# #67f5cb came out at saturation 0.30 against 0.88 intended, and every type
+# lost roughly half its saturation. Same mistake as the background, which was
+# fixed there and not here.
+TYPE_HEX = {
+    "stellate":        "#67f5cb",   # mint
+    "pyramidal":       "#3E96F0",   # accent
+    "inhibitory":      "#ff5fb0",   # hot orchid
+    "microglia":       "#E8A93A",   # gold
+    "astrocyte":       "#b06fe0",   # violet
+    "oligodendrocyte": "#3fd8ff",   # cyan
+    "bipolar":         "#8fb3d9",   # steel
 }
+
+
+def srgb_to_linear(c):
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def hex_rgb(h):
+    """sRGB hex -> LINEAR rgb triple, which is what Blender sockets expect."""
+    s = h.lstrip("#")
+    return tuple(srgb_to_linear(int(s[i:i + 2], 16) / 255.0) for i in (0, 2, 4))
+
+
+TYPE_COLOUR = {k: hex_rgb(v) for k, v in TYPE_HEX.items()}
 TYPE_ORDER = ["stellate", "pyramidal", "inhibitory", "astrocyte",
               "oligodendrocyte", "microglia", "bipolar"]
 
@@ -108,28 +133,42 @@ def material_for(cell_type):
     return mat
 
 
-def block_cage(parent):
-    """Wireframe of the imaged block, from its own bounds."""
-    lo, hi = BLOCK_LO, BLOCK_HI
+def block_cage(parent, axis_map):
+    """Wireframe of the imaged block, from its own bounds.
+
+    The cells go through the glTF importer, which converts the file's Y-up
+    frame to Blender's Z-up and bakes it into the vertices. A cage built
+    straight from the micrometre bounds does NOT, so it lands somewhere else
+    entirely. axis_map is measured from a real imported cell rather than
+    assumed, so this stays correct if the exporter ever changes.
+    """
+    lo, hi = axis_map(BLOCK_LO), axis_map(BLOCK_HI)
+    lo, hi = np.minimum(lo, hi), np.maximum(lo, hi)
     verts = [(x, y, z) for x in (lo[0], hi[0]) for y in (lo[1], hi[1]) for z in (lo[2], hi[2])]
-    edges = [(0, 1), (2, 3), (4, 5), (6, 7),
-             (0, 2), (1, 3), (4, 6), (5, 7),
-             (0, 4), (1, 5), (2, 6), (3, 7)]
+    # FACES, not edges. The Wireframe modifier builds tubes from face edges and
+    # produces nothing at all from a mesh that has only edges, which is why the
+    # cage was invisible the first two times.
+    faces = [(0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1),
+             (2, 3, 7, 6), (0, 2, 6, 4), (1, 5, 7, 3)]
     mesh = bpy.data.meshes.new("block")
-    mesh.from_pydata(verts, edges, [])
+    mesh.from_pydata(verts, [], faces)
     obj = bpy.data.objects.new("block", mesh)
     bpy.context.collection.objects.link(obj)
     # Wireframe so the cage renders as tubes rather than vanishing: EEVEE will
     # not draw bare edges.
     mod = obj.modifiers.new("wire", "WIREFRAME")
-    mod.thickness = 2.2
+    # Thickness is in the cage's OWN units, which are micrometres, and the whole
+    # assembly is then scaled by about 1/200 to fit TARGET_SIZE. A 2.2 um bar
+    # became 0.01 scene units and was invisible. Size it from the block instead.
+    mod.thickness = float(max(BLOCK_HI - BLOCK_LO)) * 0.003
+    mod.use_replace = True      # keep only the tubes, not the solid box
     mat = bpy.data.materials.new("cage")
     mat.use_nodes = True
     b = mat.node_tree.nodes["Principled BSDF"]
     b.inputs["Base Color"].default_value = (*BLOCK_RGB, 1.0)
     if "Emission Color" in b.inputs:
         b.inputs["Emission Color"].default_value = (*BLOCK_RGB, 1.0)
-        b.inputs["Emission Strength"].default_value = 0.9
+        b.inputs["Emission Strength"].default_value = 0.22
     obj.data.materials.append(mat)
     obj.parent = parent
     return obj
@@ -206,8 +245,13 @@ def main():
     ap.add_argument("--per-type", type=int, default=0, help="cap cells per type")
     ap.add_argument("--types", default="", help="comma separated; default all")
     ap.add_argument("--frames", type=int, default=0, help="0 = one still")
-    ap.add_argument("--elev", type=float, default=20.0)
-    ap.add_argument("--dist", type=float, default=2.25)
+    ap.add_argument("--elev", type=float, default=8.0)
+    ap.add_argument("--az", type=float, default=74.0,
+                    help=("start azimuth. The thin 447 um axis is Blender Y, so "
+                          "looking along it, near 90 degrees, shows the wide "
+                          "2031 x 1338 um face. Near 0 shows the narrow end."))
+    ap.add_argument("--dist", type=float, default=0.0,
+                    help="0 = fit the cage automatically")
     ap.add_argument("--hdri", type=float, default=1.10)
     ap.add_argument("--lights", type=float, default=0.0)
     args = ap.parse_args(argv_after_ddash())
@@ -255,17 +299,49 @@ def main():
     print(f"loaded {len(loaded)} cells: " +
           ", ".join(f"{t} {counts[t]}" for t in TYPE_ORDER if t in counts))
 
-    cage = block_cage(root)
+    # MEASURE the importer's axis convention from a cell whose micrometre bounds
+    # we already know, instead of hardcoding one. Section 5 of the playbook is
+    # about exactly this class of bug.
+    probe_cell, probe_obj = loaded[0]
+    tier0 = probe_cell["tiers"].get(args.tier) or next(iter(probe_cell["tiers"].values()))
+    known_lo = np.array(tier0["bbox_min_um"])
+    known_hi = np.array(tier0["bbox_max_um"])
+    got = world_pts(probe_obj)
+    got_lo, got_hi = got.min(0), got.max(0)
+    perm, sign = [], []
+    for k in range(3):
+        # which micrometre axis has the same extent as Blender axis k
+        j = int(np.argmin(np.abs((known_hi - known_lo) - (got_hi[k] - got_lo[k]))))
+        perm.append(j)
+        sign.append(1.0 if abs(got_lo[k] - known_lo[j]) < abs(got_lo[k] + known_hi[j]) else -1.0)
+    perm = np.array(perm); sign = np.array(sign)
+    print(f"importer axis map: Blender xyz <- um axes {perm.tolist()} signs {sign.tolist()}")
+
+    def axis_map(p):
+        return np.asarray(p)[perm] * sign
+
+    cage = block_cage(root, axis_map)
 
     # Scale and centre on the BLOCK, not on the cells, so the figure is a
     # statement about the volume and the cells sit where they sit inside it.
-    span = BLOCK_HI - BLOCK_LO
+    blo, bhi = axis_map(BLOCK_LO), axis_map(BLOCK_HI)
+    blo, bhi = np.minimum(blo, bhi), np.maximum(blo, bhi)
+    span = bhi - blo
     scale = TARGET_SIZE / float(span.max())
-    centre = (BLOCK_HI + BLOCK_LO) / 2.0
+    centre = (bhi + blo) / 2.0
+    # STANDING UP, not lying flat. After the importer's conversion the thin
+    # 447 um axis is Blender Y, which points away from the camera, so the block
+    # reads as a window you look into: 2031 um across, 1338 um tall, 447 um
+    # deep. Laying it flat like a table hid the layers, which are the thing the
+    # figure is about.
     root.scale = (scale, scale, scale)
-    root.location = tuple(-centre * scale)
-    # Data z is the thin axis; lay the slab flat, same convention as the web view.
-    root.rotation_euler = (-math.pi / 2, 0, 0)
+    root.rotation_euler = (0.0, 0.0, 0.0)
+    # An object's matrix is T * R * S, so LOCATION IS APPLIED AFTER ROTATION.
+    # Handing it a centre measured in unrotated space shifts the assembly by an
+    # unrotated vector in rotated space and throws it clear of the origin: the
+    # assert below caught exactly that, at reach 12.42 on a 10 unit block.
+    rot = mathutils.Euler(root.rotation_euler).to_matrix()
+    root.location = tuple(-(rot @ Vector(tuple(centre * scale))))
     bpy.context.view_layer.update()
 
     pts = np.vstack([world_pts(o) for _, o in loaded])
@@ -285,6 +361,62 @@ def main():
     configure_render(args.size, args.samples)
     os.makedirs(args.out, exist_ok=True)
 
+    # Fit the camera from its ACTUAL field of view, not a fudge factor. The
+    # first attempt used invented constants and put the camera inside the box.
+    #
+    # Blender's default sensor fit is AUTO, which fits the LARGER frame
+    # dimension, so on a 16:9 render the horizontal angle comes from the
+    # 36 mm sensor and the vertical is that scaled by 9/16. The tighter of the
+    # two is what has to contain the subject.
+    sensor_w = data.sensor_width
+    sensor_h = sensor_w * scene.render.resolution_y / scene.render.resolution_x
+    tan_h = (sensor_w / 2.0) / data.lens
+    tan_v = (sensor_h / 2.0) / data.lens
+    cage_pts = world_pts(cage)
+
+    def cam_dir(az_deg):
+        e, a = math.radians(args.elev), math.radians(az_deg)
+        return np.array([math.cos(e) * math.cos(a), math.cos(e) * math.sin(a), math.sin(e)])
+
+    def fits(d, u):
+        """Does every cage corner land inside the frame at this distance?"""
+        eye = u * d
+        fwd = -u / np.linalg.norm(u)
+        up0 = np.array([0.0, 0.0, 1.0])
+        right = np.cross(fwd, up0)
+        right /= np.linalg.norm(right)
+        up = np.cross(right, fwd)
+        rel = cage_pts - eye
+        z = rel @ fwd
+        if (z <= 0).any():
+            return False
+        return bool((np.abs(rel @ right) / z <= tan_h * 0.93).all()
+                    and (np.abs(rel @ up) / z <= tan_v * 0.93).all())
+
+    # A bounding sphere badly over-pads a flat slab seen near face on, which
+    # left the block small in a mostly empty frame. Solve the real projection
+    # instead, and for a turntable solve the WORST azimuth in the turn so the
+    # box never clips part way round.
+    azimuths = ([args.az] if args.frames <= 0
+                else [args.az + 360.0 * i / 24 for i in range(24)])
+    radius = float(np.linalg.norm(cage_pts, axis=1).max())
+    need = 0.0
+    for azd in azimuths:
+        u = cam_dir(azd)
+        lo_d, hi_d = 0.05 * radius, 12.0 * radius
+        for _ in range(40):
+            mid = (lo_d + hi_d) / 2.0
+            if fits(mid, u):
+                hi_d = mid
+            else:
+                lo_d = mid
+        need = max(need, hi_d)
+    auto_dist = need / TARGET_SIZE
+    if args.dist <= 0:
+        args.dist = auto_dist
+    print(f"cage radius {radius:.2f}, solved over {len(azimuths)} azimuth(s) "
+          f"-> dist {auto_dist:.2f}, using {args.dist:.2f}")
+
     def place(az_deg):
         e = math.radians(args.elev)
         a = math.radians(az_deg)
@@ -302,7 +434,7 @@ def main():
         json.dump(meta, fh, indent=1)
 
     if args.frames <= 0:
-        place(38.0)
+        place(args.az)
         scene.render.filepath = os.path.join(args.out, "still.png")
         bpy.ops.render.render(write_still=True)
         print("wrote", scene.render.filepath)
@@ -313,7 +445,7 @@ def main():
         out = os.path.join(args.out, f"frame_{i:04d}.png")
         if os.path.exists(out):
             continue
-        place(38.0 + 360.0 * i / args.frames)
+        place(args.az + 360.0 * i / args.frames)
         scene.render.filepath = out
         bpy.ops.render.render(write_still=True)
         if i % 20 == 0:
