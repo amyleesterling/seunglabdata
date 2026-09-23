@@ -491,6 +491,68 @@
         </div>
       </section>
 
+      <!-- Stellate patches -->
+      <section class="mec" aria-label="Stellate cells sit in patches">
+        <div class="more__head">
+          <h2>Stellate cells sit in patches</h2>
+          <p class="more__lede">
+            Something you can already measure from this block, before a single synapse has
+            been traced. Layer II stellate cells are not spread evenly through the layer. They
+            cluster.
+          </p>
+        </div>
+
+        <figure class="mec__figure mec__figure--wide">
+          <img src="/assets/mec/figures/stellate-patches.png" loading="lazy"
+               alt="Three panels. On the left, the positions of 1,085 stellate cell nuclei seen from above, with a density map showing large bright connected patches. In the middle, the same number of nuclei drawn at random from layer II, whose density map is nearly uniform. On the right, a graph of how many neighbouring stellate cells sit within a given radius: the observed line runs above the range expected by chance at every distance." />
+          <figcaption class="mec__caption">
+            Layer II seen face on, looking through the cortical surface. Left, where the
+            stellate cells actually are. Middle, the control.
+          </figcaption>
+        </figure>
+
+        <article class="card card--flat">
+          <p class="card__body">
+            <strong>The control is the whole argument.</strong> Comparing these positions
+            against points scattered evenly in a box would find clustering in any dataset,
+            because layer II is a curved sheet inside a block and not a box. So the comparison
+            is against <strong>1,085 nuclei drawn at random from layer II itself</strong>,
+            four hundred times over. That holds the sheet's shape and its density fixed, and
+            whatever is left is about stellate cells specifically.
+          </p>
+          <p class="card__body">
+            Nearest neighbour distance is <strong>10.7</strong>
+            <span class="nounit">&micro;m</span> where chance gives
+            <strong>11.5</strong> <span class="nounit">&micro;m</span>, and
+            <strong>none</strong> of the four hundred random draws came out as clustered as
+            the real thing. Counting neighbours within a fixed radius, there is an excess at
+            every distance tested, strongest at about <strong>60</strong>
+            <span class="nounit">&micro;m</span>.
+          </p>
+          <p class="card__body">
+            The shape of it is the interesting part. In three dimensions there is a
+            <em>deficit</em> of neighbours closer than <strong>10</strong>
+            <span class="nounit">&micro;m</span>, so no two of these cell bodies sit on top of
+            one another, and then a large excess from <strong>30</strong>
+            <span class="nounit">&micro;m</span> outward. Cells keep their distance and still
+            gather into groups. That is what a patchy arrangement looks like, and patches in
+            layer II of entorhinal cortex have been described before in stained tissue.
+          </p>
+          <p class="card__body">
+            <strong>What this does not say.</strong> "Stellate" here means a nucleus-size
+            cluster, not a cell anyone has looked at: it is about 84% stellate where it has
+            been checked, and it sits almost entirely in layer II, which is where stellate
+            cells belong. Mislabelled cells would <em>weaken</em> a clustering signal rather
+            than invent one, so the direction holds even though the label is not exact.
+            Nothing here is about wiring. It is a statement about where cell bodies sit, and
+            the point of the connectome is to find out whether the wiring respects it.
+          </p>
+          <div class="card__actions">
+            <a class="btn btn--ghost" href="/assets/mec/figures/stellate-patches.json">The numbers (JSON)</a>
+          </div>
+        </article>
+      </section>
+
       <!-- Check our working -->
       <section class="mec" aria-label="Check our working">
         <div class="more__head">
