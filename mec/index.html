@@ -491,64 +491,74 @@
         </div>
       </section>
 
-      <!-- Stellate patches -->
-      <section class="mec" aria-label="Stellate cells sit in patches">
+      <!-- Islands and ocean -->
+      <section class="mec" aria-label="Islands and ocean in layer two">
         <div class="more__head">
-          <h2>Stellate cells sit in patches</h2>
+          <h2>Islands and ocean</h2>
           <p class="more__lede">
-            Something you can already measure from this block, before a single synapse has
-            been traced. Layer II stellate cells are not spread evenly through the layer. They
-            cluster.
+            Layer II of this cortex is not a uniform sheet of cells. Pyramidal cells gather
+            into patches, and stellate cells sit in the water between them. You can see it in
+            the block before a single synapse has been traced, using nothing but the positions
+            of the cell nuclei.
           </p>
         </div>
 
         <figure class="mec__figure mec__figure--wide">
-          <img src="/assets/mec/figures/stellate-patches.png" loading="lazy"
-               alt="Three panels. On the left, the positions of 1,085 stellate cell nuclei seen from above, with a density map showing large bright connected patches. In the middle, the same number of nuclei drawn at random from layer II, whose density map is nearly uniform. On the right, a graph of how many neighbouring stellate cells sit within a given radius: the observed line runs above the range expected by chance at every distance." />
+          <img src="/assets/mec/figures/layer2-modules.png" loading="lazy"
+               alt="Three panels. Left, layer two seen face on: a blue density map of pyramidal cell nuclei showing distinct bright islands, with mint coloured stellate cell nuclei scattered in the darker gaps between them. Middle, the same numbers of each drawn at random from layer two, whose density map is almost flat and whose points show no such arrangement. Right, a graph in standard deviations from chance: pyramidal cells near other pyramidal cells run far above chance at short range and fall to zero by about 380 micrometres, while stellate cells near a pyramidal cell run far below chance and cross zero at 271 micrometres." />
           <figcaption class="mec__caption">
-            Layer II seen face on, looking through the cortical surface. Left, where the
-            stellate cells actually are. Middle, the control.
+            Layer II seen face on, looking through the cortical surface. Blue is the density of
+            pyramidal cell nuclei, mint dots are stellate cell nuclei. Middle panel is the
+            control. Both maps share their axes and their colour scale, so the comparison is
+            fair.
           </figcaption>
         </figure>
 
         <article class="card card--flat">
           <p class="card__body">
-            <strong>The control is the whole argument.</strong> Comparing these positions
-            against points scattered evenly in a box would find clustering in any dataset,
-            because layer II is a curved sheet inside a block and not a box. So the comparison
-            is against <strong>1,085 nuclei drawn at random from layer II itself</strong>,
-            four hundred times over. That holds the sheet's shape and its density fixed, and
-            whatever is left is about stellate cells specifically.
+            <strong>The control is the argument.</strong> Comparing against points scattered
+            evenly in a box would find structure in any dataset, because layer II is a curved
+            sheet inside a block and not a box. So every comparison here is against the same
+            number of nuclei <strong>drawn at random from layer II itself</strong>, two hundred
+            times over, which holds the sheet's shape and its density fixed.
           </p>
           <p class="card__body">
-            Nearest neighbour distance is <strong>10.7</strong>
-            <span class="nounit">&micro;m</span> where chance gives
-            <strong>11.5</strong> <span class="nounit">&micro;m</span>, and
-            <strong>none</strong> of the four hundred random draws came out as clustered as
-            the real thing. Counting neighbours within a fixed radius, there is an excess at
-            every distance tested, strongest at about <strong>60</strong>
-            <span class="nounit">&micro;m</span>.
+            Pyramidal cells sit near other pyramidal cells far more often than chance allows,
+            <strong>51</strong> standard deviations above it at 40
+            <span class="nounit">&micro;m</span>. That excess then dies away and reaches zero
+            by about <strong>380</strong> <span class="nounit">&micro;m</span>, which is what
+            a patch of finite size looks like rather than a general tendency to clump.
           </p>
           <p class="card__body">
-            The shape of it is the interesting part. In three dimensions there is a
-            <em>deficit</em> of neighbours closer than <strong>10</strong>
-            <span class="nounit">&micro;m</span>, so no two of these cell bodies sit on top of
-            one another, and then a large excess from <strong>30</strong>
-            <span class="nounit">&micro;m</span> outward. Cells keep their distance and still
-            gather into groups. That is what a patchy arrangement looks like, and patches in
-            layer II of entorhinal cortex have been described before in stained tissue.
+            Stellate cells do the opposite. Near a pyramidal cell there are far
+            <em>fewer</em> of them than chance allows, <strong>27</strong> standard deviations
+            below at 40 <span class="nounit">&micro;m</span>, and the shortfall persists out to
+            <strong>271</strong> <span class="nounit">&micro;m</span> before turning into a
+            mild excess beyond it. The two cell types are not merely clustered. They are
+            arranged around each other.
           </p>
           <p class="card__body">
-            <strong>What this does not say.</strong> "Stellate" here means a nucleus-size
-            cluster, not a cell anyone has looked at: it is about 84% stellate where it has
-            been checked, and it sits almost entirely in layer II, which is where stellate
-            cells belong. Mislabelled cells would <em>weaken</em> a clustering signal rather
-            than invent one, so the direction holds even though the label is not exact.
-            Nothing here is about wiring. It is a statement about where cell bodies sit, and
-            the point of the connectome is to find out whether the wiring respects it.
+            None of this is new biology. Calbindin positive pyramidal cells in layer II of the
+            medial entorhinal cortex were shown to sit in a patchy, grid like layout by
+            <a href="https://www.science.org/doi/10.1126/science.1243028" target="_blank" rel="noreferrer">Ray
+            and colleagues in 2014</a>, with reelin positive stellate cells occupying the space
+            between the patches, and the arrangement was tied to grid activity by
+            <a href="https://pubmed.ncbi.nlm.nih.gov/29513150/" target="_blank" rel="noreferrer">Naumann
+            and colleagues in 2018</a>. What is worth something here is that a reconstruction of
+            this block <em>recovers</em> that layout independently, which is a good sign about
+            the data. Zhihao Zheng spotted it in this volume straight away.
+          </p>
+          <p class="card__body">
+            <strong>What this does not say.</strong> "Pyramidal" and "stellate" here mean
+            nucleus size clusters, not cells anyone has looked at. The stellate cluster is
+            about 84% stellate where it has been checked and sits almost entirely in layer II,
+            where stellate cells belong. Mislabelled cells would <em>blur</em> an arrangement
+            like this rather than create one, so the direction holds even though the labels are
+            not exact. And none of it is about wiring yet. It says where cell bodies sit. The
+            point of tracing the connectome is to find out whether the wiring respects it.
           </p>
           <div class="card__actions">
-            <a class="btn btn--ghost" href="/assets/mec/figures/stellate-patches.json">The numbers (JSON)</a>
+            <a class="btn btn--ghost" href="/assets/mec/figures/layer2-modules.json">The numbers (JSON)</a>
           </div>
         </article>
       </section>
