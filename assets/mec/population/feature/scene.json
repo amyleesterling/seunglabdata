@@ -2,57 +2,57 @@
  "cells": [
   {
    "id": "astrocyte-01",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947408715489"
   },
   {
    "id": "astrocyte-03",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947529231820"
   },
   {
    "id": "astrocyte-04",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947505391325"
   },
   {
    "id": "astrocyte-05",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947568063768"
   },
   {
    "id": "astrocyte-06",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947496107662"
   },
   {
    "id": "astrocyte-07",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947405349796"
   },
   {
    "id": "astrocyte-08",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947518700295"
   },
   {
    "id": "astrocyte-09",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947465959301"
   },
   {
    "id": "astrocyte-10",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947498518648"
   },
   {
    "id": "astrocyte-11",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947463722067"
   },
   {
    "id": "astrocyte-12",
-   "cell_type": "glia",
+   "cell_type": "astrocyte",
    "root_id": "720575947400585301"
   },
   {
@@ -397,32 +397,32 @@
   },
   {
    "id": "microglia-03",
-   "cell_type": "glia",
+   "cell_type": "microglia",
    "root_id": "720575947568874300"
   },
   {
    "id": "microglia-07",
-   "cell_type": "glia",
+   "cell_type": "microglia",
    "root_id": "720575947489056440"
   },
   {
    "id": "microglia-08",
-   "cell_type": "glia",
+   "cell_type": "microglia",
    "root_id": "720575947454309031"
   },
   {
    "id": "microglia-09",
-   "cell_type": "glia",
+   "cell_type": "microglia",
    "root_id": "720575947471766018"
   },
   {
    "id": "microglia-10",
-   "cell_type": "glia",
+   "cell_type": "microglia",
    "root_id": "720575947535073186"
   },
   {
    "id": "microglia-11",
-   "cell_type": "glia",
+   "cell_type": "microglia",
    "root_id": "720575947517480842"
   },
   {
@@ -1117,47 +1117,47 @@
   },
   {
    "id": "oligodendrocyte-03",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947497201393"
   },
   {
    "id": "oligodendrocyte-04",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947461924421"
   },
   {
    "id": "oligodendrocyte-05",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947453291850"
   },
   {
    "id": "oligodendrocyte-06",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947475671431"
   },
   {
    "id": "oligodendrocyte-08",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947529231820"
   },
   {
    "id": "oligodendrocyte-09",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947450060464"
   },
   {
    "id": "oligodendrocyte-10",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947484354897"
   },
   {
    "id": "oligodendrocyte-11",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947428354804"
   },
   {
    "id": "oligodendrocyte-12",
-   "cell_type": "glia",
+   "cell_type": "oligodendrocyte",
    "root_id": "720575947518501847"
   },
   {
@@ -1282,11 +1282,13 @@
   }
  ],
  "counts": {
-  "glia": 26,
+  "astrocyte": 11,
   "bipolar": 4,
   "pyramidal": 161,
   "stellate": 53,
-  "inhibitory": 12
+  "inhibitory": 12,
+  "microglia": 6,
+  "oligodendrocyte": 9
  },
  "frames": 0,
  "block_um": [

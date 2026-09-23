@@ -23,6 +23,7 @@ import argparse
 import json
 import math
 import os
+import random
 import sys
 
 import bpy
@@ -105,11 +106,33 @@ def import_cell(path):
     return obj
 
 
-def material_for(cell_type):
-    name = f"type_{cell_type}"
+def random_colour(i, seed):
+    """A distinct colour per cell, spread evenly round the hue wheel.
+
+    Golden angle stepping rather than random hues: drawing hues at random
+    clumps them, so a few cells end up nearly the same colour while whole
+    sectors of the wheel go unused. Saturation and value stay in the range the
+    rest of the palette lives in, so the banner still looks like this project
+    and not like a test card.
+
+    This is DECORATION. It must never be used for a figure with a legend,
+    because a colour here means nothing at all.
+    """
+    import colorsys
+    rng = random.Random(seed * 9973 + i)
+    h = ((seed * 0.11 + i * 0.6180339887) % 1.0)
+    sat = 0.72 + rng.random() * 0.22
+    val = 0.86 + rng.random() * 0.14
+    r, g, b = colorsys.hsv_to_rgb(h, sat, val)
+    return tuple(srgb_to_linear(c) for c in (r, g, b))
+
+
+
+def material_for(cell_type, rgb=None, key=None):
+    name = key or f"type_{cell_type}"
     if name in bpy.data.materials:
         return bpy.data.materials[name]
-    rgb = TYPE_COLOUR.get(cell_type, (0.8, 0.8, 0.8))
+    rgb = rgb if rgb is not None else TYPE_COLOUR.get(cell_type, (0.8, 0.8, 0.8))
     mat = bpy.data.materials.new(name)
     mat.use_nodes = True
     bsdf = mat.node_tree.nodes["Principled BSDF"]
@@ -262,6 +285,10 @@ def main():
     # --cycles-device and --cycles-print-stats and rejects the abbreviation
     # as ambiguous, before the script ever runs.
     ap.add_argument("--depth-bins", type=int, default=14)
+    ap.add_argument("--random-colours", type=int, default=0, metavar="SEED",
+                    help="give every cell its own colour instead of a type "
+                         "colour; for a decorative banner ONLY, never for a "
+                         "figure that carries a legend")
     ap.add_argument("--no-cage", action="store_true",
                     help="drop the wireframe block; for a feature image where "
                          "the cells are the subject and a box would only box "
@@ -323,7 +350,12 @@ def main():
         if obj is None:
             continue
         obj.data.materials.clear()
-        obj.data.materials.append(material_for(c["cell_type"]))
+        if args.random_colours:
+            obj.data.materials.append(material_for(
+                c["cell_type"], rgb=random_colour(len(loaded), args.random_colours),
+                key=f"rand_{len(loaded)}"))
+        else:
+            obj.data.materials.append(material_for(c["cell_type"]))
         for poly in obj.data.polygons:
             poly.use_smooth = True
         obj.parent = root
