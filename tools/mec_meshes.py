@@ -55,23 +55,41 @@ UM_PER_VOXEL = RESOLUTION_NM / 1000.0
 BOUNDS_LO_UM = VOXEL_OFFSET * UM_PER_VOXEL
 BOUNDS_HI_UM = (VOXEL_OFFSET + VOLUME_SIZE) * UM_PER_VOXEL
 
-# Two tiers. Cards are small on screen and there are a dozen of them on a page,
-# so they get a flat budget. The detail view gets a DENSITY, measured off the
-# CA3 web mesh that already ships, with a cap so one long axon cannot blow the
-# page budget on its own.
+# Face density per unit AREA, never a single global face count: density varies
+# enormously by cell class, and one flat target cuts fibres to a few percent of
+# their faces while bloating compact cells many times over. The cap is a guard
+# against one 1.3 mm axon eating a page budget, not the target.
 TIERS = {
-    "card":   {"max_faces": 25_000,  "density": None},
-    "detail": {"max_faces": 260_000, "density": 10.25},
+    "card":   {"density": 1.4,  "max_faces": 60_000},
+    "detail": {"density": 10.25, "max_faces": 260_000},
 }
+MIN_COMPONENT_FACES = 25      # strip specks before decimating
+PCTL = (0.5, 99.5)            # percentile bounds; stray vertices wreck framing
 
-# Somata differ in size by cell class, so the probe shell does too.
+# Somata differ in size by cell class, so the probe shell does too. Glia get a
+# wider spread because their cytoplasm is a thin shell around the nucleus.
 PROBE_RADII_UM = {
-    "stellate": (6, 9), "pyramidal": (6, 9), "inhibitory": (5, 8), "bipolar": (5, 8),
-    "astrocyte": (3, 5), "oligodendrocyte": (3, 5), "microglia": (3, 5),
+    "stellate": (6, 8, 10), "pyramidal": (6, 8, 10),
+    "inhibitory": (5, 7, 9), "bipolar": (5, 7, 9),
+    "astrocyte": (4, 6, 8), "oligodendrocyte": (4, 6, 8), "microglia": (4, 6, 8),
 }
-PROBE_DIRS = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0),
-              (.7, .7, 0), (-.7, .7, 0), (.7, -.7, 0), (-.7, -.7, 0),
-              (0, 0, 1), (0, 0, -1)]
+PROBE_N_DIRS = 18
+# A segment with only a handful of mesh fragments is a nucleus blob or a speck,
+# not a cell. Measured: for glia the MOST agreed root is almost always a
+# 1-fragment object sitting at the nucleus, and the actual cell is the runner
+# up. Excluding these first, then ranking by agreement, gets the cell.
+MIN_CELL_FRAGMENTS = 4
+
+
+def probe_dirs(n=PROBE_N_DIRS):
+    """Evenly spread directions on a sphere. A 10 point axis cross leaves gaps
+    wide enough for a thin glial process to fall through."""
+    i = np.arange(n) + 0.5
+    phi = np.arccos(1 - 2 * i / n)
+    theta = np.pi * (1 + 5 ** 0.5) * i
+    return np.stack([np.cos(theta) * np.sin(phi),
+                     np.sin(theta) * np.sin(phi),
+                     np.cos(phi)], axis=1)
 
 
 def cave_token():
@@ -91,14 +109,15 @@ def resolve_root(cv, token, nucleus_um, cell_type):
     """Current root id for the cell whose nucleus sits at nucleus_um.
 
     Reading at the nucleus centre returns the NUCLEUS segment, not the cell, so
-    this probes a shell out in the soma cytoplasm and takes the candidate with
-    the largest mesh. Returns (root_id, mesh_fragments, probe_hits) or None.
+    this probes shells out in the soma cytoplasm, drops candidates too small to
+    be a cell, and takes the one the most probe points agree on.
+    Returns (root_id, mesh_fragments, probe_hits) or None.
     """
-    radii = PROBE_RADII_UM.get(cell_type, (5, 8))
+    radii = PROBE_RADII_UM.get(cell_type, (5, 7, 9))
     points = []
     for r in radii:
-        for direction in PROBE_DIRS:
-            p = (np.array(nucleus_um) + np.array(direction) * r) / UM_PER_VOXEL
+        for direction in probe_dirs():
+            p = (np.array(nucleus_um) + direction * r) / UM_PER_VOXEL
             points.append([int(round(v)) for v in p])
 
     def one(p):
@@ -115,15 +134,23 @@ def resolve_root(cv, token, nucleus_um, cell_type):
         for root in ex.map(one, points):
             if root:
                 hits[root] += 1
-    best = None
-    for root, n in hits.most_common(4):
+    # Rank by AGREEMENT, not by mesh size. Ranking by size selects mergers: it
+    # once returned a 1,448 fragment object spanning 1.36 mm as an 'astrocyte'.
+    # Nucleus blobs are excluded first by their fragment count.
+    scored = []
+    for root, n in hits.most_common(6):
         try:
             frags = len(manifest(root, token))
         except Exception:
             frags = 0
-        if best is None or frags > best[1]:
-            best = (root, frags, n)
-    return best
+        if frags < MIN_CELL_FRAGMENTS:
+            continue
+        scored.append((n, frags, root))
+    if not scored:
+        return None
+    scored.sort(reverse=True)
+    n, frags, root = scored[0]
+    return (root, frags, n)
 
 
 def manifest(root_id, token):
@@ -175,18 +202,46 @@ def fetch_mesh(root_id, token):
     return V / 1000.0, F
 
 
+def percentile_bounds(vertices):
+    """Extent ignoring strays. These meshes routinely carry a handful of
+    vertices thousands of micrometres from everything else, and a raw min/max
+    box collapses any auto-scale computed from it."""
+    lo = np.percentile(vertices, PCTL[0], axis=0)
+    hi = np.percentile(vertices, PCTL[1], axis=0)
+    return lo, hi
+
+
+def clean(mesh):
+    """Drop tiny disconnected specks before decimating."""
+    import trimesh
+    try:
+        labels = trimesh.graph.connected_component_labels(
+            mesh.face_adjacency, node_count=len(mesh.faces))
+    except Exception:
+        return mesh, 0
+    counts = np.bincount(labels)
+    keep = np.isin(labels, np.where(counts >= MIN_COMPONENT_FACES)[0])
+    dropped = int((~keep).sum())
+    if dropped and keep.any():
+        mesh.update_faces(keep)
+        mesh.remove_unreferenced_vertices()
+    return mesh, dropped
+
+
 def write_tier(verts_um, faces, out_path, tier):
     import trimesh
     import fast_simplification
     mesh = trimesh.Trimesh(vertices=verts_um, faces=faces, process=False)
     mesh.merge_vertices()
+    mesh, dropped = clean(mesh)
     before = mesh.bounds.copy()
+    faces_in = len(mesh.faces)
     area = float(mesh.area)
 
     spec = TIERS[tier]
-    target = spec["max_faces"]
-    if spec["density"] is not None:
-        target = min(int(area * spec["density"]), spec["max_faces"])
+    # No 'keep at least x% of the original faces' floor. That guard silently
+    # wins on every cell and has pushed a render from 6 s/frame to 128.
+    target = min(int(area * spec["density"]), spec["max_faces"])
     target = max(target, 200)
 
     if len(mesh.faces) > target:
@@ -199,12 +254,18 @@ def write_tier(verts_um, faces, out_path, tier):
 
     shift = float(np.abs(mesh.bounds - before).max())
     mesh.export(out_path)
+    lo, hi = percentile_bounds(np.asarray(mesh.vertices))
     return {
         "faces": int(len(mesh.faces)),
+        "faces_in": int(faces_in),
+        "specks_dropped": int(dropped),
+        "density_per_um2": round(len(mesh.faces) / area, 2) if area else None,
         "vertices": int(len(mesh.vertices)),
         "bytes": os.path.getsize(out_path),
         "bbox_min_um": mesh.bounds[0].round(2).tolist(),
         "bbox_max_um": mesh.bounds[1].round(2).tolist(),
+        "p_bbox_min_um": lo.round(2).tolist(),
+        "p_bbox_max_um": hi.round(2).tolist(),
         "decimation_bbox_shift_um": round(shift, 4),
         "surface_area_um2": round(area, 1),
     }
@@ -266,6 +327,8 @@ def main():
                 record["tiers"][tier] = dict(stats, file=os.path.basename(path))
                 print(f"   {tier:<7} {stats['faces']:>7} faces  "
                       f"{stats['bytes']/1e6:>6.2f} MB  "
+                      f"{stats['density_per_um2']}/um2  "
+                      f"specks -{stats['specks_dropped']}  "
                       f"bbox shift {stats['decimation_bbox_shift_um']} um")
             built.append(record)
         except Exception as exc:

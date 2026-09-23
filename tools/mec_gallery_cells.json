@@ -3,6 +3,51 @@
   "id": "stellate-01",
   "cell_type": "stellate",
   "nucleus_um": [
+   2281.7,
+   2089.7,
+   229.1
+  ],
+  "root_id": "720575947520731264",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 218.2,
+  "probe_hits": 37,
+  "mesh_fragments": 265
+ },
+ {
+  "id": "stellate-02",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2107.4,
+   2078.0,
+   230.2
+  ],
+  "root_id": "720575947582144519",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 217.1,
+  "probe_hits": 36,
+  "mesh_fragments": 293
+ },
+ {
+  "id": "stellate-03",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2370.6,
+   2050.8,
+   234.9
+  ],
+  "root_id": "720575947516084794",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 212.4,
+  "probe_hits": 32,
+  "mesh_fragments": 321
+ },
+ {
+  "id": "stellate-04",
+  "cell_type": "stellate",
+  "nucleus_um": [
    2382.1,
    2122.5,
    226.1
@@ -11,57 +56,8 @@
   "layer": "II",
   "size_cluster": 7,
   "edge_dist_um": 221.2,
-  "probe_hits": 12,
-  "mesh_fragments": 266,
-  "source_segment_id": "81988590493833553"
- },
- {
-  "id": "stellate-02",
-  "cell_type": "stellate",
-  "nucleus_um": [
-   2762.5,
-   2138.1,
-   224.7
-  ],
-  "root_id": "720575947491070475",
-  "layer": "II",
-  "size_cluster": 7,
-  "edge_dist_um": 222.6,
-  "probe_hits": 11,
-  "mesh_fragments": 302,
-  "source_segment_id": "85225621445553863"
- },
- {
-  "id": "stellate-03",
-  "cell_type": "stellate",
-  "nucleus_um": [
-   2127.9,
-   2108.9,
-   227.5
-  ],
-  "root_id": "720575947416921751",
-  "layer": "II",
-  "size_cluster": 7,
-  "edge_dist_um": 219.8,
-  "probe_hits": 11,
-  "mesh_fragments": 271,
-  "source_segment_id": "79736653308356868"
- },
- {
-  "id": "stellate-04",
-  "cell_type": "stellate",
-  "nucleus_um": [
-   2186.0,
-   2037.5,
-   227.1
-  ],
-  "root_id": "720575947566472472",
-  "layer": "II",
-  "size_cluster": 7,
-  "edge_dist_um": 220.2,
-  "probe_hits": 10,
-  "mesh_fragments": 283,
-  "source_segment_id": "80228615975480528"
+  "probe_hits": 30,
+  "mesh_fragments": 266
  },
  {
   "id": "stellate-05",
@@ -75,12 +71,56 @@
   "layer": "II",
   "size_cluster": 7,
   "edge_dist_um": 219.1,
-  "probe_hits": 10,
-  "mesh_fragments": 366,
-  "source_segment_id": "84522071443111010"
+  "probe_hits": 30,
+  "mesh_fragments": 366
  },
  {
   "id": "stellate-06",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2578.9,
+   2068.0,
+   231.5
+  ],
+  "root_id": "720575947560735335",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 215.8,
+  "probe_hits": 29,
+  "mesh_fragments": 330
+ },
+ {
+  "id": "stellate-07",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2762.5,
+   2138.1,
+   224.7
+  ],
+  "root_id": "720575947491070475",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 222.6,
+  "probe_hits": 27,
+  "mesh_fragments": 302
+ },
+ {
+  "id": "stellate-08",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2375.4,
+   2071.3,
+   214.2
+  ],
+  "root_id": "720575947483035380",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 213.9,
+  "probe_hits": 27,
+  "mesh_fragments": 361
+ },
+ {
+  "id": "stellate-09",
   "cell_type": "stellate",
   "nucleus_um": [
    2869.0,
@@ -91,44 +131,116 @@
   "layer": "II",
   "size_cluster": 7,
   "edge_dist_um": 221.9,
-  "probe_hits": 9,
-  "mesh_fragments": 221,
-  "source_segment_id": "86140689930653961"
+  "probe_hits": 25,
+  "mesh_fragments": 221
+ },
+ {
+  "id": "stellate-10",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2116.9,
+   2095.4,
+   215.2
+  ],
+  "root_id": "720575947569455640",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 214.8,
+  "probe_hits": 25,
+  "mesh_fragments": 216
+ },
+ {
+  "id": "stellate-11",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2556.7,
+   2051.1,
+   213.7
+  ],
+  "root_id": "720575947409466715",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 213.3,
+  "probe_hits": 25,
+  "mesh_fragments": 287
+ },
+ {
+  "id": "stellate-12",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2186.0,
+   2037.5,
+   227.1
+  ],
+  "root_id": "720575947566472472",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 220.2,
+  "probe_hits": 23,
+  "mesh_fragments": 283
  },
  {
   "id": "pyramidal-01",
   "cell_type": "pyramidal",
   "nucleus_um": [
-   2422.0,
-   2103.3,
-   224.9
+   2324.2,
+   2026.8,
+   226.6
   ],
-  "root_id": "720575947537528132",
+  "root_id": "720575947564538366",
   "layer": "II",
   "size_cluster": 6,
-  "edge_dist_um": 222.4,
-  "probe_hits": 9,
-  "mesh_fragments": 330,
-  "source_segment_id": "82340296776172269"
+  "edge_dist_um": 220.7,
+  "probe_hits": 23,
+  "mesh_fragments": 207
  },
  {
   "id": "pyramidal-02",
   "cell_type": "pyramidal",
   "nucleus_um": [
-   2418.2,
-   2156.0,
-   222.6
+   2067.2,
+   2050.6,
+   220.6
   ],
-  "root_id": "720575947422962921",
+  "root_id": "720575947563692488",
   "layer": "II",
   "size_cluster": 6,
-  "edge_dist_um": 222.3,
-  "probe_hits": 8,
-  "mesh_fragments": 184,
-  "source_segment_id": "82270409067930854"
+  "edge_dist_um": 220.3,
+  "probe_hits": 19,
+  "mesh_fragments": 216
  },
  {
   "id": "pyramidal-03",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2366.5,
+   2025.7,
+   223.1
+  ],
+  "root_id": "720575947541503474",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 222.7,
+  "probe_hits": 16,
+  "mesh_fragments": 171
+ },
+ {
+  "id": "pyramidal-04",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2700.0,
+   2054.7,
+   224.6
+  ],
+  "root_id": "720575947445514171",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 222.7,
+  "probe_hits": 16,
+  "mesh_fragments": 242
+ },
+ {
+  "id": "pyramidal-05",
   "cell_type": "pyramidal",
   "nucleus_um": [
    2425.3,
@@ -139,41 +251,143 @@
   "layer": "II",
   "size_cluster": 6,
   "edge_dist_um": 222.5,
-  "probe_hits": 7,
-  "mesh_fragments": 301,
-  "source_segment_id": "82269721873353017"
+  "probe_hits": 16,
+  "mesh_fragments": 301
  },
  {
-  "id": "pyramidal-04",
+  "id": "pyramidal-06",
   "cell_type": "pyramidal",
   "nucleus_um": [
-   2571.0,
-   2008.1,
-   223.6
+   2385.2,
+   2059.3,
+   225.3
   ],
-  "root_id": "720575947452371721",
+  "root_id": "720575947522984832",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 222.0,
+  "probe_hits": 16,
+  "mesh_fragments": 527
+ },
+ {
+  "id": "pyramidal-07",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2398.7,
+   2075.4,
+   227.0
+  ],
+  "root_id": "720575947446757811",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 220.3,
+  "probe_hits": 16,
+  "mesh_fragments": 424
+ },
+ {
+  "id": "pyramidal-08",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2537.5,
+   2112.0,
+   225.7
+  ],
+  "root_id": "720575947478054388",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 221.6,
+  "probe_hits": 15,
+  "mesh_fragments": 358
+ },
+ {
+  "id": "pyramidal-09",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2348.0,
+   1998.3,
+   221.1
+  ],
+  "root_id": "720575947550827561",
   "layer": "III",
   "size_cluster": 6,
-  "edge_dist_um": 223.2,
-  "probe_hits": 6,
-  "mesh_fragments": 566,
-  "source_segment_id": "83606178256982592"
+  "edge_dist_um": 220.8,
+  "probe_hits": 15,
+  "mesh_fragments": 186
+ },
+ {
+  "id": "pyramidal-10",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2422.0,
+   2103.3,
+   224.9
+  ],
+  "root_id": "720575947537528132",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 222.4,
+  "probe_hits": 14,
+  "mesh_fragments": 330
+ },
+ {
+  "id": "pyramidal-11",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2488.1,
+   2143.2,
+   222.0
+  ],
+  "root_id": "720575947538980424",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 221.6,
+  "probe_hits": 14,
+  "mesh_fragments": 242
+ },
+ {
+  "id": "pyramidal-12",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2647.3,
+   2117.6,
+   223.5
+  ],
+  "root_id": "720575947612969836",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 223.1,
+  "probe_hits": 13,
+  "mesh_fragments": 237
+ },
+ {
+  "id": "inhibitory-01",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   1893.1,
+   2111.5,
+   223.4
+  ],
+  "root_id": "720575947567168828",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 223.1,
+  "probe_hits": 42,
+  "mesh_fragments": 313
  },
  {
   "id": "inhibitory-02",
   "cell_type": "inhibitory",
   "nucleus_um": [
-   2488.8,
-   2078.0,
-   222.2
+   2342.1,
+   2119.9,
+   227.7
   ],
-  "root_id": "720575947556332272",
+  "root_id": "720575947532586523",
   "layer": "II",
-  "size_cluster": 5,
-  "edge_dist_um": 221.8,
-  "probe_hits": 11,
-  "mesh_fragments": 369,
-  "source_segment_id": "82832603107419251"
+  "size_cluster": 6,
+  "edge_dist_um": 219.6,
+  "probe_hits": 30,
+  "mesh_fragments": 590
  },
  {
   "id": "inhibitory-03",
@@ -187,28 +401,101 @@
   "layer": "II",
   "size_cluster": 6,
   "edge_dist_um": 223.3,
-  "probe_hits": 9,
-  "mesh_fragments": 578,
-  "source_segment_id": "82411146556687966"
+  "probe_hits": 26,
+  "mesh_fragments": 578
  },
  {
   "id": "inhibitory-04",
   "cell_type": "inhibitory",
   "nucleus_um": [
-   2272.3,
-   2145.3,
-   222.4
+   2134.0,
+   2087.4,
+   224.1
   ],
-  "root_id": "720575947499725303",
+  "root_id": "720575947529625250",
   "layer": "II",
-  "size_cluster": 5,
-  "edge_dist_um": 222.1,
-  "probe_hits": 5,
-  "mesh_fragments": 152,
-  "source_segment_id": "81074002978191059"
+  "size_cluster": 6,
+  "edge_dist_um": 223.2,
+  "probe_hits": 26,
+  "mesh_fragments": 516
  },
  {
   "id": "inhibitory-05",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2361.6,
+   1973.2,
+   221.3
+  ],
+  "root_id": "720575947523946015",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 220.9,
+  "probe_hits": 25,
+  "mesh_fragments": 212
+ },
+ {
+  "id": "inhibitory-06",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2488.8,
+   2078.0,
+   222.2
+  ],
+  "root_id": "720575947556332272",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 221.8,
+  "probe_hits": 22,
+  "mesh_fragments": 369
+ },
+ {
+  "id": "inhibitory-07",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2584.1,
+   2126.3,
+   227.7
+  ],
+  "root_id": "720575947477237428",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 219.6,
+  "probe_hits": 21,
+  "mesh_fragments": 340
+ },
+ {
+  "id": "inhibitory-08",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2388.5,
+   2095.6,
+   214.5
+  ],
+  "root_id": "720575947472545282",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 214.1,
+  "probe_hits": 20,
+  "mesh_fragments": 204
+ },
+ {
+  "id": "inhibitory-09",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2419.5,
+   2037.5,
+   217.7
+  ],
+  "root_id": "720575947482833908",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 217.3,
+  "probe_hits": 19,
+  "mesh_fragments": 163
+ },
+ {
+  "id": "inhibitory-10",
   "cell_type": "inhibitory",
   "nucleus_um": [
    2473.2,
@@ -219,24 +506,652 @@
   "layer": "III",
   "size_cluster": 6,
   "edge_dist_um": 220.4,
-  "probe_hits": 5,
-  "mesh_fragments": 113,
-  "source_segment_id": "82691522021598609"
+  "probe_hits": 18,
+  "mesh_fragments": 113
+ },
+ {
+  "id": "inhibitory-11",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2100.2,
+   2125.1,
+   214.8
+  ],
+  "root_id": "720575947429871927",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 214.5,
+  "probe_hits": 17,
+  "mesh_fragments": 136
+ },
+ {
+  "id": "inhibitory-12",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   2109.4,
+   2075.1,
+   215.8
+  ],
+  "root_id": "720575947465245509",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 215.5,
+  "probe_hits": 16,
+  "mesh_fragments": 412
+ },
+ {
+  "id": "astrocyte-01",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   1905.4,
+   2047.7,
+   240.3
+  ],
+  "root_id": "720575947547993641",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 207.0,
+  "probe_hits": 27,
+  "mesh_fragments": 135
+ },
+ {
+  "id": "astrocyte-02",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   1904.4,
+   2151.7,
+   252.4
+  ],
+  "root_id": "720575947531443874",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 194.9,
+  "probe_hits": 16,
+  "mesh_fragments": 192
+ },
+ {
+  "id": "astrocyte-03",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2035.7,
+   2133.0,
+   244.1
+  ],
+  "root_id": "720575947529231820",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 203.2,
+  "probe_hits": 13,
+  "mesh_fragments": 11
+ },
+ {
+  "id": "astrocyte-04",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2535.2,
+   2125.3,
+   221.6
+  ],
+  "root_id": "720575947477106676",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 221.2,
+  "probe_hits": 12,
+  "mesh_fragments": 197
+ },
+ {
+  "id": "astrocyte-05",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2039.0,
+   2073.1,
+   215.9
+  ],
+  "root_id": "720575947568063768",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 215.5,
+  "probe_hits": 12,
+  "mesh_fragments": 79
+ },
+ {
+  "id": "astrocyte-06",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   1874.4,
+   2110.2,
+   205.8
+  ],
+  "root_id": "720575947477332746",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 205.5,
+  "probe_hits": 12,
+  "mesh_fragments": 146
+ },
+ {
+  "id": "astrocyte-07",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   1882.4,
+   2120.4,
+   255.4
+  ],
+  "root_id": "720575947405349796",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 191.9,
+  "probe_hits": 11,
+  "mesh_fragments": 113
+ },
+ {
+  "id": "astrocyte-08",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2172.9,
+   2135.0,
+   243.0
+  ],
+  "root_id": "720575947518700295",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 204.3,
+  "probe_hits": 10,
+  "mesh_fragments": 5
+ },
+ {
+  "id": "astrocyte-09",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2168.1,
+   2015.2,
+   238.5
+  ],
+  "root_id": "720575947465959301",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 208.8,
+  "probe_hits": 9,
+  "mesh_fragments": 47
+ },
+ {
+  "id": "astrocyte-10",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2039.8,
+   2021.6,
+   259.4
+  ],
+  "root_id": "720575947498518648",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 187.9,
+  "probe_hits": 9,
+  "mesh_fragments": 17
+ },
+ {
+  "id": "astrocyte-11",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2327.0,
+   2095.1,
+   221.6
+  ],
+  "root_id": "720575947463722067",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 221.3,
+  "probe_hits": 8,
+  "mesh_fragments": 24
+ },
+ {
+  "id": "astrocyte-12",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2311.7,
+   2032.9,
+   206.6
+  ],
+  "root_id": "720575947400585301",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 206.2,
+  "probe_hits": 8,
+  "mesh_fragments": 13
+ },
+ {
+  "id": "oligodendrocyte-01",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2317.6,
+   2110.7,
+   282.1
+  ],
+  "root_id": "720575947545287235",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 165.2,
+  "probe_hits": 25,
+  "mesh_fragments": 284
+ },
+ {
+  "id": "oligodendrocyte-02",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2501.9,
+   2051.6,
+   242.0
+  ],
+  "root_id": "720575947422955241",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 205.3,
+  "probe_hits": 17,
+  "mesh_fragments": 146
+ },
+ {
+  "id": "oligodendrocyte-03",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2535.4,
+   2108.7,
+   211.5
+  ],
+  "root_id": "720575947540608840",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 211.2,
+  "probe_hits": 16,
+  "mesh_fragments": 250
+ },
+ {
+  "id": "oligodendrocyte-04",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   1931.8,
+   2105.6,
+   181.6
+  ],
+  "root_id": "720575947461924421",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 181.3,
+  "probe_hits": 12,
+  "mesh_fragments": 43
+ },
+ {
+  "id": "oligodendrocyte-05",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   1893.9,
+   2047.2,
+   224.4
+  ],
+  "root_id": "720575947484449995",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 222.9,
+  "probe_hits": 11,
+  "mesh_fragments": 151
+ },
+ {
+  "id": "oligodendrocyte-06",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2513.2,
+   2176.5,
+   184.0
+  ],
+  "root_id": "720575947444963771",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 183.6,
+  "probe_hits": 11,
+  "mesh_fragments": 209
+ },
+ {
+  "id": "oligodendrocyte-07",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   1872.6,
+   2037.0,
+   267.0
+  ],
+  "root_id": "720575947598258894",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 180.3,
+  "probe_hits": 11,
+  "mesh_fragments": 87
+ },
+ {
+  "id": "oligodendrocyte-08",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2046.2,
+   2144.0,
+   261.7
+  ],
+  "root_id": "720575947513499008",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 185.6,
+  "probe_hits": 10,
+  "mesh_fragments": 13
+ },
+ {
+  "id": "oligodendrocyte-09",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2523.6,
+   2094.6,
+   265.5
+  ],
+  "root_id": "720575947423031785",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 181.8,
+  "probe_hits": 10,
+  "mesh_fragments": 344
+ },
+ {
+  "id": "oligodendrocyte-10",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2126.8,
+   2104.6,
+   213.6
+  ],
+  "root_id": "720575947569455640",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 213.2,
+  "probe_hits": 8,
+  "mesh_fragments": 216
+ },
+ {
+  "id": "oligodendrocyte-11",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   1887.5,
+   2015.5,
+   257.4
+  ],
+  "root_id": "720575947523064122",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 189.9,
+  "probe_hits": 8,
+  "mesh_fragments": 76
+ },
+ {
+  "id": "oligodendrocyte-12",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   1877.0,
+   2070.3,
+   281.0
+  ],
+  "root_id": "720575947518501847",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 166.3,
+  "probe_hits": 8,
+  "mesh_fragments": 17
  },
  {
   "id": "microglia-01",
   "cell_type": "microglia",
   "nucleus_um": [
-   2366.0,
-   2096.9,
-   77.2
+   3076.4,
+   2258.9,
+   360.7
   ],
-  "root_id": "720575947459552163",
+  "root_id": "720575947467647684",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 86.6,
+  "probe_hits": 27,
+  "mesh_fragments": 152
+ },
+ {
+  "id": "microglia-02",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2513.9,
+   2108.9,
+   225.4
+  ],
+  "root_id": "720575947474183836",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 221.9,
+  "probe_hits": 19,
+  "mesh_fragments": 123
+ },
+ {
+  "id": "microglia-03",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   1907.2,
+   2137.1,
+   414.0
+  ],
+  "root_id": "720575947485843640",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 33.3,
+  "probe_hits": 19,
+  "mesh_fragments": 88
+ },
+ {
+  "id": "microglia-04",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2526.5,
+   2096.1,
+   354.9
+  ],
+  "root_id": "720575947554154992",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 92.4,
+  "probe_hits": 17,
+  "mesh_fragments": 315
+ },
+ {
+  "id": "microglia-05",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2064.9,
+   2054.9,
+   383.2
+  ],
+  "root_id": "720575947542152434",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 64.1,
+  "probe_hits": 14,
+  "mesh_fragments": 166
+ },
+ {
+  "id": "microglia-06",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   1955.1,
+   2102.0,
+   138.2
+  ],
+  "root_id": "720575947461922373",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 137.8,
+  "probe_hits": 10,
+  "mesh_fragments": 171
+ },
+ {
+  "id": "microglia-07",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   1931.0,
+   2078.5,
+   83.2
+  ],
+  "root_id": "720575947489056440",
+  "layer": "II",
+  "size_cluster": 0,
+  "edge_dist_um": 82.9,
+  "probe_hits": 8,
+  "mesh_fragments": 60
+ },
+ {
+  "id": "microglia-08",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2299.4,
+   2108.2,
+   77.0
+  ],
+  "root_id": "720575947519437696",
   "layer": "II",
   "size_cluster": 4,
-  "edge_dist_um": 76.8,
+  "edge_dist_um": 76.6,
+  "probe_hits": 7,
+  "mesh_fragments": 198
+ },
+ {
+  "id": "microglia-09",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2079.0,
+   2112.3,
+   67.0
+  ],
+  "root_id": "720575947471766018",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 66.7,
+  "probe_hits": 6,
+  "mesh_fragments": 13
+ },
+ {
+  "id": "microglia-10",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2327.8,
+   2100.5,
+   42.2
+  ],
+  "root_id": "720575947413681815",
+  "layer": "II",
+  "size_cluster": 2,
+  "edge_dist_um": 41.9,
+  "probe_hits": 4,
+  "mesh_fragments": 189
+ },
+ {
+  "id": "microglia-11",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2293.5,
+   2087.7,
+   286.5
+  ],
+  "root_id": "720575947521245824",
+  "layer": "II",
+  "size_cluster": 3,
+  "edge_dist_um": 160.8,
+  "probe_hits": 3,
+  "mesh_fragments": 78
+ },
+ {
+  "id": "microglia-12",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   1960.4,
+   2008.1,
+   57.9
+  ],
+  "root_id": "720575947565899068",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 57.5,
+  "probe_hits": 3,
+  "mesh_fragments": 124
+ },
+ {
+  "id": "bipolar-01",
+  "cell_type": "bipolar",
+  "nucleus_um": [
+   3052.3,
+   2255.4,
+   265.5
+  ],
+  "root_id": "720575947496304424",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 125.6,
+  "probe_hits": 12,
+  "mesh_fragments": 11
+ },
+ {
+  "id": "bipolar-02",
+  "cell_type": "bipolar",
+  "nucleus_um": [
+   2812.7,
+   2165.2,
+   388.6
+  ],
+  "root_id": "720575947545291892",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 58.7,
+  "probe_hits": 10,
+  "mesh_fragments": 28
+ },
+ {
+  "id": "bipolar-03",
+  "cell_type": "bipolar",
+  "nucleus_um": [
+   2510.6,
+   2059.5,
+   276.3
+  ],
+  "root_id": "720575947561842952",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 171.0,
   "probe_hits": 8,
-  "mesh_fragments": 60,
-  "source_segment_id": "81847645974841418"
+  "mesh_fragments": 166
+ },
+ {
+  "id": "bipolar-04",
+  "cell_type": "bipolar",
+  "nucleus_um": [
+   2695.7,
+   2106.9,
+   323.3
+  ],
+  "root_id": "720575947445170363",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 124.0,
+  "probe_hits": 8,
+  "mesh_fragments": 35
+ },
+ {
+  "id": "bipolar-05",
+  "cell_type": "bipolar",
+  "nucleus_um": [
+   2039.0,
+   2073.1,
+   215.9
+  ],
+  "root_id": "720575947568063768",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 215.5,
+  "probe_hits": 4,
+  "mesh_fragments": 79
  }
 ]

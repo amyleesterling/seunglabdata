@@ -42,6 +42,24 @@
       background:rgba(4,6,11,.35);
     }
     .mec__embed-note{ font-size:12.5px; color:rgba(230,240,250,.8); text-shadow:0 2px 10px rgba(0,0,0,.8); }
+    /* Meet an MEC neuron */
+    .meet__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:18px; }
+    .meet__card{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+                 background:linear-gradient(180deg,var(--panel),rgba(255,255,255,.04)); display:flex; flex-direction:column; }
+    .meet__stage{ position:relative; aspect-ratio:1/1; background:#04060b; }
+    .meet__stage img, .meet__stage canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; }
+    .meet__pending{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+                    color:var(--muted); font-size:12.5px; text-align:center; padding:0 18px; }
+    .meet__body{ padding:16px 16px 14px; display:flex; flex-direction:column; gap:8px; flex:1; }
+    .meet__eyebrow{ margin:0; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#42d5ec; }
+    .meet__body h3{ margin:0; font-size:18px; color:#eaf6ff; letter-spacing:-0.01em; }
+    .meet__line{ margin:0; font-size:13.5px; color:var(--muted); line-height:1.55; }
+    .meet__count{ margin:0; font-size:12.5px; color:#9fb4c4; }
+    .meet__nav{ display:flex; align-items:center; gap:10px; margin-top:auto; padding-top:6px; }
+    .meet__nav button{ font:inherit; font-size:12px; padding:5px 10px; border-radius:999px;
+                       border:1px solid var(--line); background:rgba(255,255,255,.05); color:#eaf6ff; cursor:pointer; }
+    .meet__nav button:hover{ background:rgba(255,255,255,.1); }
+    .meet__which{ font-size:11.5px; color:var(--muted); }
   </style>
 </head>
 <body>
@@ -251,6 +269,102 @@
         </div>
       </section>
 
+      <!-- Meet an MEC neuron -->
+      <section class="mec" aria-label="Meet an MEC neuron">
+        <div class="more__head">
+          <h2>Meet an MEC neuron</h2>
+          <p class="more__lede">
+            Real reconstructions from this block, one of each kind. Every type here is a
+            <strong>presumed</strong> type: it was called from nucleus size and then checked
+            against the cell's layer, not yet confirmed by a human looking at its shape.
+          </p>
+        </div>
+
+        <div class="meet__grid" id="meet-grid">
+          <article class="meet__card" data-type="stellate">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/stellate-01.png" alt="A stellate cell from layer two of the medial entorhinal cortex, rendered in mint green on black. Dendrites radiate outward from a bright cell body in every direction like a star, and a single axon descends below."
+                   loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Layer II</p>
+              <h3>Stellate cell</h3>
+              <p class="meet__line">
+                The grid cell candidate. Dendrites spread out from the soma in every direction,
+                like a star, and the axon leaves for the hippocampus. Layer II of the medial
+                entorhinal cortex is where grid firing was first recorded.
+              </p>
+              <p class="meet__count">1,370 presumed in this block, 79% of them in layer II.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+
+          <article class="meet__card" data-type="pyramidal">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/pyramidal-01.png" alt="A pyramidal cell rendered in blue on black. A dominant dendrite rises from the top of the cell body and shorter dendrites spread around its base."
+                   loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Layers II and III</p>
+              <h3>Pyramidal cell</h3>
+              <p class="meet__line">
+                The other principal cell. One dominant dendrite rises from the top of the soma
+                and a skirt of shorter ones spreads around its base. The commonest typed cell
+                in the block by a wide margin.
+              </p>
+              <p class="meet__count">12,742 presumed in this block.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+
+          <article class="meet__card" data-type="inhibitory">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/inhibitory-01.png" alt="An inhibitory interneuron rendered in pink on black, with a dense local arbor around the cell body."
+                   loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Layers II and III</p>
+              <h3>Inhibitory interneuron</h3>
+              <p class="meet__line">
+                Local cells that quiet their neighbours, and the reason this volume needs people.
+                They come in several shapes with no single look, and nucleus size does not
+                separate them from pyramidal cells, so an automatic pass cannot find them.
+                Human eyes can.
+              </p>
+              <p class="meet__count">480 labelled so far. How many there are is not known.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+
+          <article class="meet__card" data-type="microglia">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/microglia-01.png" alt="A microglial cell rendered in gold on black. A small cell body with fine, heavily branched processes reaching outward."
+                   loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Not a neuron</p>
+              <h3>Microglia</h3>
+              <p class="meet__line">
+                The brain's resident immune cell. A small body with fine, heavily branched
+                processes that are constantly reaching out and sampling the tissue around them.
+                Cells like this are part of why the neuron count is still an open question.
+              </p>
+              <p class="meet__count">24 labelled so far.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="vol__controls" style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
+          <button type="button" class="btn btn--cta" id="load-gallery">Load the interactive gallery</button>
+          <span class="mec__embed-note" style="align-self:center">Spins each cell in 3D. A few MB.</span>
+        </div>
+      </section>
+
       <!-- How to help -->
       <section class="mec" aria-label="How to help">
         <div class="more__head">
@@ -329,6 +443,133 @@ document.getElementById("load3d").addEventListener("click", () => {
   f.addEventListener("load", () => { cta.remove(); poster.remove(); });
   embed.appendChild(f);
 }, { once: true });
+</script>
+
+<script type="importmap">
+{ "imports": { "three": "/assets/mec/vendor/three.module.min.js",
+               "three/addons/": "/assets/mec/vendor/" } }
+</script>
+<script type="module">
+// The gallery reads the mesh manifest at run time rather than hardcoding cell
+// ids, so rebuilding the meshes after a proofreading session updates this page
+// with no edit. Root ids move; the manifest is the record of what was built.
+import * as THREE from "three";
+import { OrbitControls } from "/assets/mec/vendor/controls/OrbitControls.js";
+import { GLTFLoader } from "/assets/mec/vendor/loaders/GLTFLoader.js";
+
+// House palette, same hexes the CA3 page and scifi-ui use, so a cell looks the
+// same here as in its render.
+const COLOUR = {
+  stellate: 0x67f5cb, pyramidal: 0x3e96f0, inhibitory: 0xe8afd8,
+  microglia: 0xe8a93a, astrocyte: 0xbd9bd1, oligodendrocyte: 0x7ee0ff,
+  bipolar: 0xc4ccd8,
+};
+const loader = new GLTFLoader();
+
+function makeViewer(stage, colour) {
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x04060b);
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 5000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  stage.appendChild(renderer.domElement);
+
+  scene.add(new THREE.HemisphereLight(0x9fc6ff, 0x0a0e18, 1.2));
+  const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(0.6, 1, 0.8);
+  const fill = new THREE.DirectionalLight(0x88bbff, 0.55); fill.position.set(-0.8, -0.3, -0.6);
+  scene.add(key, fill);
+
+  const pivot = new THREE.Group();
+  scene.add(pivot);
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.dampingFactor = 0.07; controls.enablePan = false;
+  let spin = true;
+  renderer.domElement.addEventListener("pointerdown", () => { spin = false; });
+
+  function resize() {
+    const w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  new ResizeObserver(resize).observe(stage);
+  resize();
+  renderer.setAnimationLoop(() => {
+    if (spin) pivot.rotation.y += 0.0032;
+    controls.update(); renderer.render(scene, camera);
+  });
+
+  return {
+    show(url) {
+      pivot.clear();
+      return new Promise((res, rej) => loader.load(url, (g) => {
+        const cell = g.scene;
+        cell.traverse((o) => {
+          if (!o.isMesh) return;
+          // GLBs from mec_meshes.py carry POSITION only; without normals a lit
+          // material shades to black and the cell is invisible.
+          if (!o.geometry.getAttribute("normal")) o.geometry.computeVertexNormals();
+          o.material = new THREE.MeshStandardMaterial({
+            color: colour, roughness: 0.5, metalness: 0.0,
+            emissive: colour, emissiveIntensity: 0.22,
+          });
+        });
+        // Centre on the mesh's own measured bounds and frame to its longest
+        // axis, so cells of very different size all fill the card.
+        const bb = new THREE.Box3().setFromObject(cell);
+        const mid = bb.getCenter(new THREE.Vector3());
+        const span = bb.getSize(new THREE.Vector3());
+        cell.position.sub(mid);
+        pivot.add(cell);
+        const longest = Math.max(span.x, span.y, span.z) || 1;
+        const dist = longest * 1.35;
+        camera.position.set(dist * 0.55, dist * 0.42, dist * 0.85);
+        controls.target.set(0, 0, 0); controls.update();
+        spin = true;
+        res();
+      }, undefined, rej));
+    },
+  };
+}
+
+document.getElementById("load-gallery").addEventListener("click", async (ev) => {
+  const btn = ev.currentTarget;
+  btn.disabled = true; btn.textContent = "Loading cells…";
+  let manifest;
+  try {
+    const r = await fetch("/assets/mec/gallery/cells.json", { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    manifest = await r.json();
+  } catch (e) {
+    btn.textContent = "Cell meshes are not published yet";
+    console.error("gallery manifest failed:", e);
+    return;
+  }
+  const byType = {};
+  for (const c of manifest.cells || []) (byType[c.cell_type] ||= []).push(c);
+
+  for (const card of document.querySelectorAll(".meet__card")) {
+    const type = card.dataset.type;
+    const list = byType[type] || [];
+    const stage = card.querySelector(".meet__stage");
+    const nav = card.querySelector(".meet__nav");
+    if (!list.length) {
+      stage.querySelector(".meet__pending").textContent = "No mesh built for this type yet";
+      continue;
+    }
+    stage.innerHTML = "";
+    const viewer = makeViewer(stage, COLOUR[type] ?? 0xcccccc);
+    // One example per type. This is a cell type guide, not a cell browser.
+    const c = list[0];
+    const which = document.createElement("span");
+    which.className = "meet__which";
+    which.textContent = "root " + c.root_id;
+    nav.append(which);
+    await viewer.show("/assets/mec/gallery/" + c.tiers.card.file);
+  }
+  btn.textContent = "Gallery loaded";
+});
 </script>
 </body>
 </html>

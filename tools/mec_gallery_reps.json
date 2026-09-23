@@ -1,0 +1,107 @@
+[
+ {
+  "id": "stellate-01",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2281.7,
+   2089.7,
+   229.1
+  ],
+  "root_id": "720575947520731264",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 218.2,
+  "probe_hits": 37,
+  "mesh_fragments": 265
+ },
+ {
+  "id": "pyramidal-01",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2324.2,
+   2026.8,
+   226.6
+  ],
+  "root_id": "720575947564538366",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 220.7,
+  "probe_hits": 23,
+  "mesh_fragments": 207
+ },
+ {
+  "id": "inhibitory-01",
+  "cell_type": "inhibitory",
+  "nucleus_um": [
+   1893.1,
+   2111.5,
+   223.4
+  ],
+  "root_id": "720575947567168828",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 223.1,
+  "probe_hits": 42,
+  "mesh_fragments": 313
+ },
+ {
+  "id": "astrocyte-01",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   1905.4,
+   2047.7,
+   240.3
+  ],
+  "root_id": "720575947547993641",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 207.0,
+  "probe_hits": 27,
+  "mesh_fragments": 135
+ },
+ {
+  "id": "oligodendrocyte-01",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   2317.6,
+   2110.7,
+   282.1
+  ],
+  "root_id": "720575947545287235",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 165.2,
+  "probe_hits": 25,
+  "mesh_fragments": 284
+ },
+ {
+  "id": "microglia-01",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   3076.4,
+   2258.9,
+   360.7
+  ],
+  "root_id": "720575947467647684",
+  "layer": "II",
+  "size_cluster": 7,
+  "edge_dist_um": 86.6,
+  "probe_hits": 27,
+  "mesh_fragments": 152
+ },
+ {
+  "id": "bipolar-01",
+  "cell_type": "bipolar",
+  "nucleus_um": [
+   3052.3,
+   2255.4,
+   265.5
+  ],
+  "root_id": "720575947496304424",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 125.6,
+  "probe_hits": 12,
+  "mesh_fragments": 11
+ }
+]
