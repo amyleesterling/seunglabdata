@@ -1,0 +1,524 @@
+{
+ "block": {
+  "extent_um": [
+   2031.488,
+   1337.856,
+   446.94
+  ],
+  "min_um": [
+   1227.648,
+   1043.072,
+   0.36
+  ],
+  "max_um": [
+   3259.136,
+   2380.928,
+   447.3
+  ],
+  "resolution_nm": [
+   16,
+   16,
+   45
+  ]
+ },
+ "built_cells": 7,
+ "cells": [
+  {
+   "id": "astrocyte-01",
+   "cell_type": "astrocyte",
+   "nucleus_um": [
+    2535.2,
+    2125.3,
+    221.6
+   ],
+   "root_id": "720575947505391325",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 221.2,
+   "probe_hits": 2,
+   "mesh_fragments": 173,
+   "tiers": {
+    "card": {
+     "file": "astrocyte-01.card.glb",
+     "faces": 56132,
+     "vertices": 28315,
+     "bytes": 1014148,
+     "bbox_min_um": [
+      2480.95,
+      2079.83,
+      183.81
+     ],
+     "bbox_max_um": [
+      2556.24,
+      2154.99,
+      246.7
+     ],
+     "p_bbox_min_um": [
+      2485.98,
+      2083.38,
+      190.04
+     ],
+     "p_bbox_max_um": [
+      2551.72,
+      2149.36,
+      241.7
+     ],
+     "surface_area_um2": 17201.2
+    },
+    "detail": {
+     "file": "astrocyte-01.detail.glb",
+     "faces": 259998,
+     "vertices": 125261,
+     "bytes": 4623900,
+     "bbox_min_um": [
+      2480.59,
+      2079.53,
+      183.06
+     ],
+     "bbox_max_um": [
+      2556.51,
+      2155.23,
+      246.86
+     ],
+     "p_bbox_min_um": [
+      2486.05,
+      2083.45,
+      189.73
+     ],
+     "p_bbox_max_um": [
+      2551.56,
+      2149.41,
+      242.81
+     ],
+     "surface_area_um2": 27406.1
+    }
+   }
+  },
+  {
+   "id": "bipolar-01",
+   "cell_type": "bipolar",
+   "nucleus_um": [
+    3052.3,
+    2255.4,
+    265.5
+   ],
+   "root_id": "720575947496304424",
+   "layer": "II",
+   "size_cluster": 5,
+   "edge_dist_um": 125.6,
+   "probe_hits": 12,
+   "mesh_fragments": 11,
+   "tiers": {
+    "card": {
+     "file": "bipolar-01.card.glb",
+     "faces": 5952,
+     "vertices": 3372,
+     "bytes": 112664,
+     "bbox_min_um": [
+      2939.53,
+      2060.84,
+      246.65
+     ],
+     "bbox_max_um": [
+      3101.06,
+      2380.9,
+      375.72
+     ],
+     "p_bbox_min_um": [
+      2948.06,
+      2064.37,
+      246.99
+     ],
+     "p_bbox_max_um": [
+      3092.11,
+      2376.45,
+      368.58
+     ],
+     "surface_area_um2": 2579.5
+    },
+    "detail": {
+     "file": "bipolar-01.detail.glb",
+     "faces": 43595,
+     "vertices": 21876,
+     "bytes": 786440,
+     "bbox_min_um": [
+      2939.34,
+      2060.82,
+      246.63
+     ],
+     "bbox_max_um": [
+      3101.29,
+      2380.9,
+      375.93
+     ],
+     "p_bbox_min_um": [
+      2950.18,
+      2064.58,
+      247.27
+     ],
+     "p_bbox_max_um": [
+      3095.42,
+      2374.76,
+      369.02
+     ],
+     "surface_area_um2": 3689.9
+    }
+   }
+  },
+  {
+   "id": "inhibitory-01",
+   "cell_type": "inhibitory",
+   "nucleus_um": [
+    1893.1,
+    2111.5,
+    223.4
+   ],
+   "root_id": "720575947567168828",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 223.1,
+   "probe_hits": 42,
+   "mesh_fragments": 313,
+   "tiers": {
+    "card": {
+     "file": "inhibitory-01.card.glb",
+     "faces": 59998,
+     "vertices": 36899,
+     "bytes": 1163544,
+     "bbox_min_um": [
+      1639.73,
+      1882.12,
+      119.84
+     ],
+     "bbox_max_um": [
+      2090.43,
+      2299.88,
+      438.54
+     ],
+     "p_bbox_min_um": [
+      1715.2,
+      1906.19,
+      122.32
+     ],
+     "p_bbox_max_um": [
+      2057.47,
+      2294.13,
+      429.77
+     ],
+     "surface_area_um2": 34738.1
+    },
+    "detail": {
+     "file": "inhibitory-01.detail.glb",
+     "faces": 259998,
+     "vertices": 135948,
+     "bytes": 4752144,
+     "bbox_min_um": [
+      1639.73,
+      1881.99,
+      119.8
+     ],
+     "bbox_max_um": [
+      2091.32,
+      2299.88,
+      438.63
+     ],
+     "p_bbox_min_um": [
+      1713.9,
+      1905.81,
+      122.26
+     ],
+     "p_bbox_max_um": [
+      2058.33,
+      2294.07,
+      430.34
+     ],
+     "surface_area_um2": 51336.4
+    }
+   }
+  },
+  {
+   "id": "microglia-01",
+   "cell_type": "microglia",
+   "nucleus_um": [
+    2299.4,
+    2108.2,
+    77.0
+   ],
+   "root_id": "720575947454309031",
+   "layer": "II",
+   "size_cluster": 4,
+   "edge_dist_um": 76.6,
+   "probe_hits": 3,
+   "mesh_fragments": 43,
+   "tiers": {
+    "card": {
+     "file": "microglia-01.card.glb",
+     "faces": 3920,
+     "vertices": 2335,
+     "bytes": 75828,
+     "bbox_min_um": [
+      2236.48,
+      2050.55,
+      41.46
+     ],
+     "bbox_max_um": [
+      2340.42,
+      2129.62,
+      119.12
+     ],
+     "p_bbox_min_um": [
+      2240.27,
+      2055.78,
+      43.42
+     ],
+     "p_bbox_max_um": [
+      2332.85,
+      2128.95,
+      117.99
+     ],
+     "surface_area_um2": 1353.0
+    },
+    "detail": {
+     "file": "microglia-01.detail.glb",
+     "faces": 28716,
+     "vertices": 14465,
+     "bytes": 518956,
+     "bbox_min_um": [
+      2236.45,
+      2048.51,
+      39.35
+     ],
+     "bbox_max_um": [
+      2342.43,
+      2129.66,
+      119.23
+     ],
+     "p_bbox_min_um": [
+      2240.75,
+      2051.65,
+      42.86
+     ],
+     "p_bbox_max_um": [
+      2333.63,
+      2128.26,
+      117.96
+     ],
+     "surface_area_um2": 2338.0
+    }
+   }
+  },
+  {
+   "id": "oligodendrocyte-01",
+   "cell_type": "oligodendrocyte",
+   "nucleus_um": [
+    1893.9,
+    2047.2,
+    224.4
+   ],
+   "root_id": "720575947453291850",
+   "layer": "II",
+   "size_cluster": 5,
+   "edge_dist_um": 222.9,
+   "probe_hits": 2,
+   "mesh_fragments": 96,
+   "tiers": {
+    "card": {
+     "file": "oligodendrocyte-01.card.glb",
+     "faces": 43904,
+     "vertices": 21745,
+     "bytes": 788576,
+     "bbox_min_um": [
+      1874.35,
+      2033.8,
+      171.6
+     ],
+     "bbox_max_um": [
+      1935.23,
+      2083.59,
+      242.37
+     ],
+     "p_bbox_min_um": [
+      1879.05,
+      2037.8,
+      181.93
+     ],
+     "p_bbox_max_um": [
+      1932.03,
+      2079.08,
+      238.65
+     ],
+     "surface_area_um2": 13771.0
+    },
+    "detail": {
+     "file": "oligodendrocyte-01.detail.glb",
+     "faces": 259998,
+     "vertices": 124722,
+     "bytes": 4617436,
+     "bbox_min_um": [
+      1874.21,
+      2033.6,
+      171.42
+     ],
+     "bbox_max_um": [
+      1935.44,
+      2083.85,
+      243.93
+     ],
+     "p_bbox_min_um": [
+      1878.91,
+      2037.71,
+      181.94
+     ],
+     "p_bbox_max_um": [
+      1932.1,
+      2079.24,
+      238.93
+     ],
+     "surface_area_um2": 23140.3
+    }
+   }
+  },
+  {
+   "id": "pyramidal-01",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2324.2,
+    2026.8,
+    226.6
+   ],
+   "root_id": "720575947564538366",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 220.7,
+   "probe_hits": 23,
+   "mesh_fragments": 207,
+   "tiers": {
+    "card": {
+     "file": "pyramidal-01.card.glb",
+     "faces": 60000,
+     "vertices": 31788,
+     "bytes": 1102244,
+     "bbox_min_um": [
+      1748.01,
+      1480.65,
+      119.85
+     ],
+     "bbox_max_um": [
+      2683.86,
+      2332.46,
+      438.34
+     ],
+     "p_bbox_min_um": [
+      1820.04,
+      1503.22,
+      125.49
+     ],
+     "p_bbox_max_um": [
+      2669.53,
+      2312.94,
+      425.92
+     ],
+     "surface_area_um2": 26216.5
+    },
+    "detail": {
+     "file": "pyramidal-01.detail.glb",
+     "faces": 259998,
+     "vertices": 136239,
+     "bytes": 4755636,
+     "bbox_min_um": [
+      1747.92,
+      1480.63,
+      119.81
+     ],
+     "bbox_max_um": [
+      2684.85,
+      2332.78,
+      438.58
+     ],
+     "p_bbox_min_um": [
+      1837.25,
+      1509.87,
+      125.33
+     ],
+     "p_bbox_max_um": [
+      2666.63,
+      2312.05,
+      424.88
+     ],
+     "surface_area_um2": 36008.6
+    }
+   }
+  },
+  {
+   "id": "stellate-01",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2281.7,
+    2089.7,
+    229.1
+   ],
+   "root_id": "720575947520731264",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 218.2,
+   "probe_hits": 37,
+   "mesh_fragments": 265,
+   "tiers": {
+    "card": {
+     "file": "stellate-01.card.glb",
+     "faces": 59999,
+     "vertices": 32158,
+     "bytes": 1106672,
+     "bbox_min_um": [
+      2017.89,
+      1862.64,
+      119.81
+     ],
+     "bbox_max_um": [
+      2556.07,
+      2295.48,
+      438.61
+     ],
+     "p_bbox_min_um": [
+      2065.09,
+      1899.09,
+      129.21
+     ],
+     "p_bbox_max_um": [
+      2513.82,
+      2289.89,
+      426.76
+     ],
+     "surface_area_um2": 28944.7
+    },
+    "detail": {
+     "file": "stellate-01.detail.glb",
+     "faces": 260000,
+     "vertices": 139816,
+     "bytes": 4798584,
+     "bbox_min_um": [
+      2017.81,
+      1862.64,
+      119.8
+     ],
+     "bbox_max_um": [
+      2559.44,
+      2296.45,
+      438.63
+     ],
+     "p_bbox_min_um": [
+      2070.4,
+      1901.82,
+      129.93
+     ],
+     "p_bbox_max_um": [
+      2514.16,
+      2290.08,
+      425.82
+     ],
+     "surface_area_um2": 41819.1
+    }
+   }
+  }
+ ]
+}

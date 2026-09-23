@@ -277,6 +277,8 @@
             Real reconstructions from this block, one of each kind. Every type here is a
             <strong>presumed</strong> type: it was called from nucleus size and then checked
             against the cell's layer, not yet confirmed by a human looking at its shape.
+            Every one is a candidate for proofreading, not a confirmed call. The list of
+            segment IDs and soma coordinates is below so they can be checked.
           </p>
         </div>
 
@@ -284,7 +286,7 @@
           <article class="meet__card" data-type="stellate">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <img src="/assets/mec/renders/stellate-01.png" alt="A stellate cell from layer two of the medial entorhinal cortex, rendered in mint green on black. Dendrites radiate outward from a bright cell body in every direction like a star, and a single axon descends below."
+              <img src="/assets/mec/renders/web/stellate-01.jpg" alt="A stellate cell from layer two of the medial entorhinal cortex, rendered in mint green on black. Dendrites radiate outward from a bright cell body in every direction like a star, and a single axon descends below."
                    loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -303,7 +305,7 @@
           <article class="meet__card" data-type="pyramidal">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <img src="/assets/mec/renders/pyramidal-01.png" alt="A pyramidal cell rendered in blue on black. A dominant dendrite rises from the top of the cell body and shorter dendrites spread around its base."
+              <img src="/assets/mec/renders/web/pyramidal-01.jpg" alt="A pyramidal cell rendered in blue on black. A dominant dendrite rises from the top of the cell body and shorter dendrites spread around its base."
                    loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -322,7 +324,7 @@
           <article class="meet__card" data-type="inhibitory">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <img src="/assets/mec/renders/inhibitory-01.png" alt="An inhibitory interneuron rendered in pink on black, with a dense local arbor around the cell body."
+              <img src="/assets/mec/renders/web/inhibitory-01.jpg" alt="An inhibitory interneuron rendered in pink on black, with a dense local arbor around the cell body."
                    loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -339,10 +341,46 @@
             </div>
           </article>
 
+          <article class="meet__card" data-type="astrocyte">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/web/astrocyte-01.jpg" alt="An astrocyte rendered in lilac on black. A small cell body with many fine processes spreading in every direction into a bushy cloud." loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Not a neuron</p>
+              <h3>Astrocyte</h3>
+              <p class="meet__line">
+                A star-shaped support cell whose fine processes wrap synapses and blood
+                vessels. It is easy to mistake for a small neuron at a glance, which is part
+                of why the neuron count in this block is still open.
+              </p>
+              <p class="meet__count">188 labelled so far. Mostly nucleus-size cluster 4.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+
+          <article class="meet__card" data-type="oligodendrocyte">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/web/oligodendrocyte-01.jpg" alt="An oligodendrocyte rendered in cyan on black. A compact cell body with processes extending to several nearby axons." loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Not a neuron</p>
+              <h3>Oligodendrocyte</h3>
+              <p class="meet__line">
+                The cell that makes myelin. Each one reaches out and wraps segments of
+                several nearby axons, which is why its reconstruction looks like a hub with
+                sleeves hanging off it rather than a tree.
+              </p>
+              <p class="meet__count">137 labelled so far. Mostly nucleus-size cluster 3.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+
           <article class="meet__card" data-type="microglia">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <img src="/assets/mec/renders/microglia-01.png" alt="A microglial cell rendered in gold on black. A small cell body with fine, heavily branched processes reaching outward."
+              <img src="/assets/mec/renders/web/microglia-01.jpg" alt="A microglial cell rendered in gold on black. A small cell body with fine, heavily branched processes reaching outward."
                    loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -357,12 +395,79 @@
               <div class="meet__nav"></div>
             </div>
           </article>
+
+          <article class="meet__card" data-type="bipolar">
+            <div class="meet__stage">
+              <div class="meet__pending">Render pending</div>
+              <img src="/assets/mec/renders/web/bipolar-01.jpg" alt="A small bipolar cell rendered in steel blue on black. A compact cell body with one process leaving the top and one the bottom." loading="lazy" onerror="this.remove()" />
+            </div>
+            <div class="meet__body">
+              <p class="meet__eyebrow">Layer II</p>
+              <h3>Bipolar cell</h3>
+              <p class="meet__line">
+                Two processes, one out of each end of the cell body, and very little else.
+                The least certain type on this page: only five have been labelled in the
+                whole block, so there is almost nothing to check an example against.
+              </p>
+              <p class="meet__count">5 labelled so far.</p>
+              <div class="meet__nav"></div>
+            </div>
+          </article>
+
         </div>
 
         <div class="vol__controls" style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
           <button type="button" class="btn btn--cta" id="load-gallery">Load the interactive gallery</button>
           <span class="mec__embed-note" style="align-self:center">Spins each cell in 3D. A few MB.</span>
         </div>
+      </section>
+
+      <!-- Check our working -->
+      <section class="mec" aria-label="Check our working">
+        <div class="more__head">
+          <h2>Check our working</h2>
+          <p class="more__lede">
+            Every cell above was picked automatically, from a cell type prediction that has
+            not been proofread. Here is exactly what to open so you can tell us where we are
+            wrong.
+          </p>
+        </div>
+        <article class="card card--flat">
+          <p class="card__body">
+            How each one was chosen: the cell type prediction gives a nucleus. Reading the
+            segmentation at the nucleus centre returns the nucleus, not the cell, so the soma
+            is probed in 54 directions and the root that most points agree on is taken. For
+            glia, agreement alone is not enough. It picks the large neuron whose processes
+            surround the glial soma, so candidates are also rejected if they are too big to be
+            that type. That check replaced an "astrocyte" spanning <strong>483</strong>
+            <span class="nounit">&micro;m</span> and a "microglia" spanning
+            <strong>396</strong> <span class="nounit">&micro;m</span>. Both were neurons.
+          </p>
+          <table class="mec__table">
+            <caption class="mec__caption">Soma positions are voxels at 16 &times; 16 &times; 45 <span class="nounit">nm</span>, ready to paste into neuroglancer.</caption>
+            <thead>
+              <tr><th scope="col">Type</th><th scope="col">Segment ID</th><th scope="col">Soma, voxels</th><th scope="col">Span</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Stellate</th><td>720575947520731264</td><td>142606, 130606, 5091</td><td>444 &times; 388 &times; 296</td></tr>
+              <tr><th scope="row">Pyramidal</th><td>720575947564538366</td><td>145262, 126675, 5036</td><td>829 &times; 802 &times; 300</td></tr>
+              <tr><th scope="row">Inhibitory</th><td>720575947567168828</td><td>118319, 131969, 4964</td><td>344 &times; 388 &times; 308</td></tr>
+              <tr><th scope="row">Bipolar</th><td>720575947496304424</td><td>190769, 140962, 5900</td><td>145 &times; 310 &times; 122</td></tr>
+              <tr><th scope="row">Astrocyte</th><td>720575947505391325</td><td>158450, 132831, 4924</td><td>66 &times; 66 &times; 53</td></tr>
+              <tr><th scope="row">Oligodendrocyte</th><td>720575947453291850</td><td>118369, 127950, 4987</td><td>53 &times; 42 &times; 57</td></tr>
+              <tr><th scope="row">Microglia</th><td>720575947454309031</td><td>143712, 131762, 1711</td><td>93 &times; 77 &times; 75</td></tr>
+            </tbody>
+          </table>
+          <p class="card__body">
+            The one we trust least is the <strong>oligodendrocyte</strong>. Its size is right,
+            but an oligodendrocyte should read as a cell body with myelin sleeves along nearby
+            axons, and this one looks more like a second astrocyte. Treat it as unconfirmed.
+          </p>
+          <div class="card__actions">
+            <a class="btn btn--ghost" href="/assets/mec/gallery/proofread.csv" download>Download the list (CSV)</a>
+            <a class="btn btn--ghost" href="/assets/mec/gallery/cells.json">Full manifest (JSON)</a>
+          </div>
+        </article>
       </section>
 
       <!-- How to help -->

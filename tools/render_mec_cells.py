@@ -42,11 +42,15 @@ SUBSURFACE_SCALE = 0.012 * TARGET_SIZE
 TYPE_COLOUR = {
     "stellate":        (0.404, 0.961, 0.796),   # #67f5cb mint
     "pyramidal":       (0.243, 0.588, 0.941),   # #3E96F0 accent
-    "inhibitory":      (0.910, 0.686, 0.847),   # #e8afd8 orchid
+    # The pale end of the palette blows out under this rig and rendered as
+    # near-white: orchid, lilac and steel all lost their hue. Deepened here,
+    # same hues, so they READ as themselves in the render rather than in the
+    # picker. The UI keeps the light versions.
+    "inhibitory":      (0.776, 0.318, 0.639),   # #c651a3, orchid deepened
     "microglia":       (0.910, 0.663, 0.227),   # #E8A93A gold
-    "astrocyte":       (0.741, 0.608, 0.820),   # #bd9bd1 lilac
-    "oligodendrocyte": (0.494, 0.878, 1.000),   # #7ee0ff cyan
-    "bipolar":         (0.769, 0.800, 0.847),   # #c4ccd8 steel
+    "astrocyte":       (0.561, 0.373, 0.690),   # #8f5fb0, lilac deepened
+    "oligodendrocyte": (0.310, 0.741, 0.902),   # #4fbde6, cyan deepened
+    "bipolar":         (0.490, 0.573, 0.671),   # #7d92ab, steel deepened
 }
 
 
@@ -331,16 +335,24 @@ def render_cell(cell, glb_path, out_path, size, samples, dist_mult=1.85,
     bpy.context.scene.render.filepath = out_path
     bpy.ops.render.render(write_still=True)
     final = measure_render(out_path)
-    # A clipped card is a broken card, so back off once and re-render rather
-    # than shipping it. One retry, then accept whatever comes out.
-    if autoframe and final and final["clipped"]:
-        print("    clipped, backing off and re-rendering")
-        dist_mult *= 1.14
+    # A clipped card is a broken card. Keep backing off and re-centring until
+    # it fits, rather than shipping a cropped cell. One retry was not enough:
+    # an oligodendrocyte stayed clipped after a single 1.14x step, because the
+    # first pass had also left it off centre.
+    tries = 0
+    while autoframe and final and final["clipped"] and tries < 5:
+        tries += 1
+        dist_mult *= 1.16
+        shift_y += -final["cy"] * SHIFT_GAIN
+        shift_x += final["cx"] * SHIFT_GAIN
+        print(f"    clipped, retry {tries}: dist {dist_mult:.2f} shift ({shift_x:+.3f},{shift_y:+.3f})")
         for o in [o for o in bpy.data.objects if o.type == "CAMERA"]:
             bpy.data.objects.remove(o, do_unlink=True)
         add_camera(distance=TARGET_SIZE * dist_mult, shift_y=shift_y, shift_x=shift_x)
         bpy.ops.render.render(write_still=True)
         final = measure_render(out_path)
+    if final and final["clipped"]:
+        print("    STILL CLIPPED after retries; this card is not usable as is")
     return raw_span, dist_mult, shift_y, shift_x, measured, final
 
 

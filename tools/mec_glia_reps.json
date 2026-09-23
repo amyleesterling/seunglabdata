@@ -1,0 +1,47 @@
+[
+ {
+  "id": "astrocyte-01",
+  "cell_type": "astrocyte",
+  "nucleus_um": [
+   2535.2,
+   2125.3,
+   221.6
+  ],
+  "root_id": "720575947505391325",
+  "layer": "II",
+  "size_cluster": 6,
+  "edge_dist_um": 221.2,
+  "probe_hits": 2,
+  "mesh_fragments": 173
+ },
+ {
+  "id": "oligodendrocyte-01",
+  "cell_type": "oligodendrocyte",
+  "nucleus_um": [
+   1893.9,
+   2047.2,
+   224.4
+  ],
+  "root_id": "720575947453291850",
+  "layer": "II",
+  "size_cluster": 5,
+  "edge_dist_um": 222.9,
+  "probe_hits": 2,
+  "mesh_fragments": 96
+ },
+ {
+  "id": "microglia-01",
+  "cell_type": "microglia",
+  "nucleus_um": [
+   2299.4,
+   2108.2,
+   77.0
+  ],
+  "root_id": "720575947454309031",
+  "layer": "II",
+  "size_cluster": 4,
+  "edge_dist_um": 76.6,
+  "probe_hits": 3,
+  "mesh_fragments": 43
+ }
+]

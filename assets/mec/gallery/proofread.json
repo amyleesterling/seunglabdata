@@ -1,0 +1,170 @@
+[
+ {
+  "id": "astrocyte-01",
+  "cell_type": "astrocyte",
+  "root_id": "720575947505391325",
+  "soma_voxel_xyz": [
+   158450,
+   132831,
+   4924
+  ],
+  "soma_um_xyz": [
+   2535.2,
+   2125.3,
+   221.6
+  ],
+  "span_um": [
+   66,
+   66,
+   53
+  ],
+  "layer": "II",
+  "size_cluster": 6,
+  "probe_hits_of_54": 2,
+  "mesh_fragments": 173
+ },
+ {
+  "id": "bipolar-01",
+  "cell_type": "bipolar",
+  "root_id": "720575947496304424",
+  "soma_voxel_xyz": [
+   190769,
+   140962,
+   5900
+  ],
+  "soma_um_xyz": [
+   3052.3,
+   2255.4,
+   265.5
+  ],
+  "span_um": [
+   145,
+   310,
+   122
+  ],
+  "layer": "II",
+  "size_cluster": 5,
+  "probe_hits_of_54": 12,
+  "mesh_fragments": 11
+ },
+ {
+  "id": "inhibitory-01",
+  "cell_type": "inhibitory",
+  "root_id": "720575947567168828",
+  "soma_voxel_xyz": [
+   118319,
+   131969,
+   4964
+  ],
+  "soma_um_xyz": [
+   1893.1,
+   2111.5,
+   223.4
+  ],
+  "span_um": [
+   344,
+   388,
+   308
+  ],
+  "layer": "II",
+  "size_cluster": 6,
+  "probe_hits_of_54": 42,
+  "mesh_fragments": 313
+ },
+ {
+  "id": "microglia-01",
+  "cell_type": "microglia",
+  "root_id": "720575947454309031",
+  "soma_voxel_xyz": [
+   143712,
+   131762,
+   1711
+  ],
+  "soma_um_xyz": [
+   2299.4,
+   2108.2,
+   77.0
+  ],
+  "span_um": [
+   93,
+   77,
+   75
+  ],
+  "layer": "II",
+  "size_cluster": 4,
+  "probe_hits_of_54": 3,
+  "mesh_fragments": 43
+ },
+ {
+  "id": "oligodendrocyte-01",
+  "cell_type": "oligodendrocyte",
+  "root_id": "720575947453291850",
+  "soma_voxel_xyz": [
+   118369,
+   127950,
+   4987
+  ],
+  "soma_um_xyz": [
+   1893.9,
+   2047.2,
+   224.4
+  ],
+  "span_um": [
+   53,
+   42,
+   57
+  ],
+  "layer": "II",
+  "size_cluster": 5,
+  "probe_hits_of_54": 2,
+  "mesh_fragments": 96
+ },
+ {
+  "id": "pyramidal-01",
+  "cell_type": "pyramidal",
+  "root_id": "720575947564538366",
+  "soma_voxel_xyz": [
+   145262,
+   126675,
+   5036
+  ],
+  "soma_um_xyz": [
+   2324.2,
+   2026.8,
+   226.6
+  ],
+  "span_um": [
+   829,
+   802,
+   300
+  ],
+  "layer": "II",
+  "size_cluster": 6,
+  "probe_hits_of_54": 23,
+  "mesh_fragments": 207
+ },
+ {
+  "id": "stellate-01",
+  "cell_type": "stellate",
+  "root_id": "720575947520731264",
+  "soma_voxel_xyz": [
+   142606,
+   130606,
+   5091
+  ],
+  "soma_um_xyz": [
+   2281.7,
+   2089.7,
+   229.1
+  ],
+  "span_um": [
+   444,
+   388,
+   296
+  ],
+  "layer": "II",
+  "size_cluster": 7,
+  "probe_hits_of_54": 37,
+  "mesh_fragments": 265
+ }
+]

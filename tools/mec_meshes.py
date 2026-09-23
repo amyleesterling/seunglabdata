@@ -80,6 +80,23 @@ PROBE_N_DIRS = 18
 # up. Excluding these first, then ranking by agreement, gets the cell.
 MIN_CELL_FRAGMENTS = 4
 
+# Extent ceiling per type, in micrometres, for the LONGEST axis.
+#
+# This is the check that matters for glia, and it is not optional. Probe
+# agreement alone picks the big NEURON whose processes surround the glial soma,
+# because more probe points land on it than on the glial cytoplasm. Measured:
+# the highest-agreement "astrocyte" spanned 483 um and the highest-agreement
+# "oligodendrocyte" spanned 839 um. Real ones are tens of micrometres. The
+# right cell was a LOW agreement candidate with a small extent.
+#
+# Principal neurons here genuinely run hundreds of micrometres, so they get a
+# loose ceiling that only catches obvious mergers.
+EXTENT_CEILING_UM = {
+    "astrocyte": 90, "oligodendrocyte": 120, "microglia": 120, "bipolar": 400,
+    "stellate": 1100, "pyramidal": 1100, "inhibitory": 1100,
+}
+EXTENT_SAMPLE_FRAGMENTS = 24     # enough to bound a mesh without fetching it all
+
 
 def probe_dirs(n=PROBE_N_DIRS):
     """Evenly spread directions on a sphere. A 10 point axis cross leaves gaps
@@ -134,23 +151,65 @@ def resolve_root(cv, token, nucleus_um, cell_type):
         for root in ex.map(one, points):
             if root:
                 hits[root] += 1
-    # Rank by AGREEMENT, not by mesh size. Ranking by size selects mergers: it
-    # once returned a 1,448 fragment object spanning 1.36 mm as an 'astrocyte'.
-    # Nucleus blobs are excluded first by their fragment count.
+    # Two filters, then rank. Ranking by mesh SIZE selects mergers (it once
+    # returned a 1,448 fragment object spanning 1.36 mm as an 'astrocyte').
+    # Ranking by AGREEMENT alone selects the neighbouring neuron for glia.
+    # So: drop nucleus blobs by fragment count, drop anything too big to be
+    # this cell type, then take the most agreed of what is left.
+    ceiling = EXTENT_CEILING_UM.get(cell_type)
     scored = []
-    for root, n in hits.most_common(6):
+    for root, n in hits.most_common(8):
         try:
             frags = len(manifest(root, token))
         except Exception:
-            frags = 0
+            continue
         if frags < MIN_CELL_FRAGMENTS:
             continue
-        scored.append((n, frags, root))
+        span = None
+        if ceiling:
+            try:
+                span = float(sampled_extent_um(root, token).max())
+            except Exception:
+                span = None
+            if span is not None and span > ceiling:
+                continue
+        scored.append((n, frags, root, span))
     if not scored:
         return None
     scored.sort(reverse=True)
-    n, frags, root = scored[0]
+    n, frags, root, span = scored[0]
     return (root, frags, n)
+
+
+def sampled_extent_um(root_id, token):
+    """Bounding extent of a root from a SAMPLE of its mesh fragments.
+
+    Fetching every fragment to find out a cell is the wrong one is wasteful,
+    and a couple of dozen fragments spread through the list bound it well
+    enough to tell 50 micrometres from 500.
+    """
+    import DracoPy
+    frags = manifest(root_id, token)
+    if len(frags) > EXTENT_SAMPLE_FRAGMENTS:
+        idx = np.linspace(0, len(frags) - 1, EXTENT_SAMPLE_FRAGMENTS).astype(int)
+        frags = [frags[i] for i in idx]
+
+    def one(frag):
+        path, offset, length = frag.lstrip("~").rsplit(":", 2)
+        offset, length = int(offset), int(length)
+        req = urllib.request.Request(
+            f"{MESH_BASE}/{path}",
+            headers={"Range": f"bytes={offset}-{offset + length - 1}"})
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            raw = resp.read()
+        v = np.asarray(DracoPy.decode(raw).points, dtype=np.float64)
+        return v.min(0), v.max(0)
+
+    with ThreadPoolExecutor(max_workers=12) as ex:
+        parts = list(ex.map(one, frags))
+    lo = np.min([a for a, _ in parts], axis=0) / 1000.0
+    hi = np.max([b for _, b in parts], axis=0) / 1000.0
+    return hi - lo
 
 
 def manifest(root_id, token):
@@ -334,7 +393,24 @@ def main():
         except Exception as exc:
             print(f"   FAILED: {type(exc).__name__}: {exc}")
 
+    # MERGE into any existing manifest instead of overwriting it. Rebuilding
+    # three glia used to wipe the four neurons out of cells.json, leaving GLBs
+    # on disk that nothing referenced.
     out_manifest = os.path.join(args.out, "cells.json")
+    merged = {}
+    if os.path.exists(out_manifest):
+        try:
+            with open(out_manifest) as fh:
+                for c in json.load(fh).get("cells", []):
+                    if all(os.path.exists(os.path.join(args.out, t["file"]))
+                           for t in c.get("tiers", {}).values()):
+                        merged[c["id"]] = c
+        except Exception as exc:
+            print(f"could not read the existing manifest ({exc}), writing a fresh one")
+    for c in built:
+        merged[c["id"]] = c
+    built = [merged[k] for k in sorted(merged)]
+
     with open(out_manifest, "w") as fh:
         json.dump({
             "block": {

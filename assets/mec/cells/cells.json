@@ -1,0 +1,459 @@
+{
+ "block": {
+  "extent_um": [
+   2031.488,
+   1337.856,
+   446.94
+  ],
+  "min_um": [
+   1227.648,
+   1043.072,
+   0.36
+  ],
+  "max_um": [
+   3259.136,
+   2380.928,
+   447.3
+  ],
+  "resolution_nm": [
+   16,
+   16,
+   45
+  ]
+ },
+ "built_cells": 8,
+ "cells": [
+  {
+   "id": "stellate-01",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2382.1,
+    2122.5,
+    226.1
+   ],
+   "root_id": "720575947533956891",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 221.2,
+   "probe_hits": 12,
+   "mesh_fragments": 266,
+   "source_segment_id": "81988590493833553",
+   "tiers": {
+    "card": {
+     "faces": 26528,
+     "vertices": 17287,
+     "bytes": 526568,
+     "bbox_min_um": [
+      1947.05,
+      1483.65,
+      119.88
+     ],
+     "bbox_max_um": [
+      2676.82,
+      2322.81,
+      415.87
+     ],
+     "decimation_bbox_shift_um": 8.6339,
+     "surface_area_um2": 58641.0,
+     "file": "stellate-01.card.glb"
+    },
+    "detail": {
+     "faces": 260000,
+     "vertices": 142480,
+     "bytes": 4830544,
+     "bbox_min_um": [
+      1946.87,
+      1483.63,
+      119.81
+     ],
+     "bbox_max_um": [
+      2685.37,
+      2323.0,
+      417.51
+     ],
+     "decimation_bbox_shift_um": 0.1218,
+     "surface_area_um2": 58641.0,
+     "file": "stellate-01.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-02",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2762.5,
+    2138.1,
+    224.7
+   ],
+   "root_id": "720575947491070475",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 222.6,
+   "probe_hits": 11,
+   "mesh_fragments": 302,
+   "source_segment_id": "85225621445553863",
+   "tiers": {
+    "card": {
+     "faces": 24999,
+     "vertices": 15686,
+     "bytes": 489004,
+     "bbox_min_um": [
+      2218.86,
+      1581.04,
+      119.81
+     ],
+     "bbox_max_um": [
+      2992.1,
+      2336.55,
+      438.43
+     ],
+     "decimation_bbox_shift_um": 4.8319,
+     "surface_area_um2": 51547.2,
+     "file": "stellate-02.card.glb"
+    },
+    "detail": {
+     "faces": 260000,
+     "vertices": 141176,
+     "bytes": 4814908,
+     "bbox_min_um": [
+      2218.15,
+      1581.0,
+      119.76
+     ],
+     "bbox_max_um": [
+      2995.87,
+      2338.27,
+      438.63
+     ],
+     "decimation_bbox_shift_um": 1.0586,
+     "surface_area_um2": 51547.2,
+     "file": "stellate-02.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-03",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2127.9,
+    2108.9,
+    227.5
+   ],
+   "root_id": "720575947416921751",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 219.8,
+   "probe_hits": 11,
+   "mesh_fragments": 271,
+   "source_segment_id": "79736653308356868",
+   "tiers": {
+    "card": {
+     "faces": 24998,
+     "vertices": 15645,
+     "bytes": 488500,
+     "bbox_min_um": [
+      1436.83,
+      1338.86,
+      119.81
+     ],
+     "bbox_max_um": [
+      2351.18,
+      2299.53,
+      436.12
+     ],
+     "decimation_bbox_shift_um": 1.6394,
+     "surface_area_um2": 46056.5,
+     "file": "stellate-03.card.glb"
+    },
+    "detail": {
+     "faces": 260000,
+     "vertices": 139280,
+     "bytes": 4792152,
+     "bbox_min_um": [
+      1436.45,
+      1338.43,
+      119.8
+     ],
+     "bbox_max_um": [
+      2351.46,
+      2301.15,
+      436.39
+     ],
+     "decimation_bbox_shift_um": 1.1411,
+     "surface_area_um2": 46056.5,
+     "file": "stellate-03.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-04",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2186.0,
+    2037.5,
+    227.1
+   ],
+   "root_id": "720575947566472472",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 220.2,
+   "probe_hits": 10,
+   "mesh_fragments": 283,
+   "source_segment_id": "80228615975480528",
+   "tiers": {
+    "card": {
+     "faces": 24998,
+     "vertices": 16583,
+     "bytes": 499760,
+     "bbox_min_um": [
+      2022.67,
+      1820.7,
+      119.78
+     ],
+     "bbox_max_um": [
+      2432.87,
+      2291.54,
+      435.48
+     ],
+     "decimation_bbox_shift_um": 4.7161,
+     "surface_area_um2": 55297.2,
+     "file": "stellate-04.card.glb"
+    },
+    "detail": {
+     "faces": 259999,
+     "vertices": 141590,
+     "bytes": 4819860,
+     "bbox_min_um": [
+      2021.95,
+      1820.23,
+      119.78
+     ],
+     "bbox_max_um": [
+      2437.46,
+      2293.32,
+      438.53
+     ],
+     "decimation_bbox_shift_um": 0.124,
+     "surface_area_um2": 55297.2,
+     "file": "stellate-04.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-05",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2681.9,
+    2147.6,
+    219.5
+   ],
+   "root_id": "720575947491098094",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 219.1,
+   "probe_hits": 10,
+   "mesh_fragments": 366,
+   "source_segment_id": "84522071443111010",
+   "tiers": {
+    "card": {
+     "faces": 30634,
+     "vertices": 20172,
+     "bytes": 610456,
+     "bbox_min_um": [
+      1496.83,
+      1148.86,
+      119.87
+     ],
+     "bbox_max_um": [
+      3113.65,
+      2338.87,
+      438.64
+     ],
+     "decimation_bbox_shift_um": 12.3839,
+     "surface_area_um2": 67466.3,
+     "file": "stellate-05.card.glb"
+    },
+    "detail": {
+     "faces": 259999,
+     "vertices": 143767,
+     "bytes": 4845984,
+     "bbox_min_um": [
+      1496.74,
+      1148.81,
+      119.76
+     ],
+     "bbox_max_um": [
+      3125.71,
+      2340.88,
+      438.67
+     ],
+     "decimation_bbox_shift_um": 0.3284,
+     "surface_area_um2": 67466.3,
+     "file": "stellate-05.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-06",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2869.0,
+    2157.3,
+    222.3
+   ],
+   "root_id": "720575947517862794",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 221.9,
+   "probe_hits": 9,
+   "mesh_fragments": 221,
+   "source_segment_id": "86140689930653961",
+   "tiers": {
+    "card": {
+     "faces": 24999,
+     "vertices": 15279,
+     "bytes": 484124,
+     "bbox_min_um": [
+      2461.14,
+      1982.21,
+      119.77
+     ],
+     "bbox_max_um": [
+      3077.89,
+      2356.97,
+      431.87
+     ],
+     "decimation_bbox_shift_um": 1.8979,
+     "surface_area_um2": 42491.9,
+     "file": "stellate-06.card.glb"
+    },
+    "detail": {
+     "faces": 259998,
+     "vertices": 138918,
+     "bytes": 4787784,
+     "bbox_min_um": [
+      2459.21,
+      1981.58,
+      119.73
+     ],
+     "bbox_max_um": [
+      3079.51,
+      2357.34,
+      432.51
+     ],
+     "decimation_bbox_shift_um": 0.1159,
+     "surface_area_um2": 42491.9,
+     "file": "stellate-06.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-01",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2422.0,
+    2103.3,
+    224.9
+   ],
+   "root_id": "720575947537528132",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 222.4,
+   "probe_hits": 9,
+   "mesh_fragments": 330,
+   "source_segment_id": "82340296776172269",
+   "tiers": {
+    "card": {
+     "faces": 25000,
+     "vertices": 16278,
+     "bytes": 496120,
+     "bbox_min_um": [
+      2292.9,
+      1808.65,
+      119.88
+     ],
+     "bbox_max_um": [
+      2699.21,
+      2333.12,
+      427.41
+     ],
+     "decimation_bbox_shift_um": 11.4185,
+     "surface_area_um2": 50371.3,
+     "file": "pyramidal-01.card.glb"
+    },
+    "detail": {
+     "faces": 259998,
+     "vertices": 142562,
+     "bytes": 4831512,
+     "bbox_min_um": [
+      2289.51,
+      1797.26,
+      119.78
+     ],
+     "bbox_max_um": [
+      2701.18,
+      2333.12,
+      436.17
+     ],
+     "decimation_bbox_shift_um": 0.1762,
+     "surface_area_um2": 50371.3,
+     "file": "pyramidal-01.detail.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-02",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2418.2,
+    2156.0,
+    222.6
+   ],
+   "root_id": "720575947422962921",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 222.3,
+   "probe_hits": 8,
+   "mesh_fragments": 184,
+   "source_segment_id": "82270409067930854",
+   "tiers": {
+    "card": {
+     "faces": 24998,
+     "vertices": 15221,
+     "bytes": 483408,
+     "bbox_min_um": [
+      2326.09,
+      1911.81,
+      119.77
+     ],
+     "bbox_max_um": [
+      2972.07,
+      2299.98,
+      388.42
+     ],
+     "decimation_bbox_shift_um": 3.3582,
+     "surface_area_um2": 30263.6,
+     "file": "pyramidal-02.card.glb"
+    },
+    "detail": {
+     "faces": 260000,
+     "vertices": 136144,
+     "bytes": 4754524,
+     "bbox_min_um": [
+      2322.78,
+      1910.35,
+      119.77
+     ],
+     "bbox_max_um": [
+      2972.57,
+      2300.34,
+      388.67
+     ],
+     "decimation_bbox_shift_um": 0.077,
+     "surface_area_um2": 30263.6,
+     "file": "pyramidal-02.detail.glb"
+    }
+   }
+  }
+ ]
+}
