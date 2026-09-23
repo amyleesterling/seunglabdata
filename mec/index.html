@@ -42,6 +42,19 @@
       background:rgba(4,6,11,.35);
     }
     .mec__embed-note{ font-size:12.5px; color:rgba(230,240,250,.8); text-shadow:0 2px 10px rgba(0,0,0,.8); }
+    /* The interactive block sits above the At a glance panel, in the right
+       hand column. The column used to be a stats card floating in a lot of
+       empty space; the block is the first thing a reader wants to touch. */
+    .citizen__side{ display:flex; flex-direction:column; gap:20px; align-self:start; }
+    .citizen__block{ margin:0; }
+    .citizen__block-title{ margin:0 0 10px; font-size:13px; letter-spacing:.14em;
+      text-transform:uppercase; color:#42d5ec; }
+    .citizen__side .mec__caption{ margin:8px 0 0; font-size:12.5px; color:var(--muted); }
+    @media (min-width: 981px){
+      /* align-items:center on the grid would float a tall column oddly once
+         the block is in it, so this column pins to the top instead. */
+      .citizen__inner{ align-items:start; }
+    }
     /* Meet an MEC neuron */
     .meet__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:18px; }
     .meet__card{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
@@ -65,7 +78,11 @@
     .mec__figure img, .mec__figure video{ display:block; width:100%; height:auto;
       border:1px solid var(--line); border-radius:var(--radius); background:#04060b; }
     .mec__figure figcaption{ margin-top:8px; font-size:12.5px; color:var(--muted); }
-    .mec__videos{ display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; }
+    /* Full width. Two videos side by side made a 118 cell block unreadable,
+       and the depth scale's layer labels were illegible at half width. */
+    .mec__figure--wide{ margin:22px 0 0; }
+    .mec__figure--wide video{ width:100%; height:auto; aspect-ratio:16/9; }
+    .mec__figure--wide + .mec__figure--wide{ margin-top:34px; }
   </style>
 </head>
 <body>
@@ -135,6 +152,23 @@
             </p>
           </div>
 
+          <div class="citizen__side">
+            <figure class="citizen__block">
+              <figcaption class="citizen__block-title">The block, to scale</figcaption>
+              <div class="mec__embed" id="embed">
+          <img id="poster" src="/assets/mec/block-poster.jpg"
+               alt="Wireframe of the imaged block with scale bars marked every 100 micrometres and labelled to 2000. Two reconstructed cells sit inside it, one green with a dense arbor and a long process, one pink and smaller." />
+                <div class="mec__embed-cta" id="cta">
+            <button type="button" class="btn btn--cta" id="load3d">Load the interactive block</button>
+            <span class="mec__embed-note">About 7 MB of meshes</span>
+          </div>
+              </div>
+              <p class="mec__caption">Two reconstructed cells inside the imaged volume, at
+                true relative size and in the positions they actually occupy.</p>
+              <div class="vol__controls" style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+                <a class="btn btn--ghost" href="/mec/volume/">Open full screen</a>
+              </div>
+            </figure>
           <aside class="citizen__panel" aria-label="Dataset at a glance">
             <div class="citizen__panel-head">
               <p class="citizen__panel-title">At a glance</p>
@@ -148,33 +182,11 @@
               <div><dt>Nuclei marked</dt><dd>62,631</dd></div>
             </dl>
           </aside>
+          </div>
         </div>
       </section>
 
       <!-- The block, to scale -->
-      <section class="mec" aria-label="The block to scale">
-        <div class="more__head">
-          <h2>The block, to scale</h2>
-          <p class="more__lede">
-            Two reconstructed cells inside the imaged volume, at true relative size and in the
-            positions they actually occupy.
-          </p>
-        </div>
-
-        <div class="mec__embed" id="embed">
-          <img id="poster" src="/assets/mec/block-poster.jpg"
-               alt="Wireframe of the imaged block with scale bars marked every 100 micrometres and labelled to 2000. Two reconstructed cells sit inside it, one green with a dense arbor and a long process, one pink and smaller." />
-          <div class="mec__embed-cta" id="cta">
-            <button type="button" class="btn btn--cta" id="load3d">Load the interactive block</button>
-            <span class="mec__embed-note">About 7 MB of meshes</span>
-          </div>
-        </div>
-
-        <div class="vol__controls" style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-          <a class="btn btn--ghost" href="/mec/volume/">Open full screen</a>
-        </div>
-      </section>
-
       <!-- The numbers -->
       <section class="mec" aria-label="What has been counted so far">
         <div class="more__head">
@@ -298,43 +310,23 @@
           </figcaption>
         </figure>
 
-        <div class="mec__videos">
-          <figure class="mec__figure">
-            <video controls playsinline preload="none" width="1600" height="900"
-                   poster="/assets/mec/population/web/cycle-poster.jpg">
-              <source src="/assets/mec/population/mec_cycle.mp4" type="video/mp4" />
-            </video>
-            <figcaption class="mec__caption">
-              One type at a time, then all of them together.
-            </figcaption>
-          </figure>
-          <figure class="mec__figure">
-            <video controls playsinline preload="none" width="1600" height="900"
-                   poster="/assets/mec/population/web/turntable-poster.jpg">
-              <source src="/assets/mec/population/mec_turntable.mp4" type="video/mp4" />
-            </video>
-            <figcaption class="mec__caption">
-              A full turn, so you can see the block is a slab and not a cube.
-            </figcaption>
-          </figure>
-          <figure class="mec__figure">
-            <video controls playsinline preload="none" width="1600" height="900"
-                   poster="/assets/mec/population/web/layers-poster.jpg">
-              <source src="/assets/mec/population/mec_layers.mp4" type="video/mp4" />
-            </video>
-            <figcaption class="mec__caption">
-              Descending through the cortex one layer at a time. Watch layer IV.
-              It holds <strong>4,200</strong> marked nuclei against
-              <strong>14,203</strong> in layer III and <strong>16,215</strong> in
-              layer V: this is the <em>lamina dissecans</em>, the cell poor band
-              separating the superficial layers from the deep ones, and one of the
-              features that makes entorhinal cortex recognisable down a microscope.
-              The scale shows how many cells are drawn against how many nuclei are
-              marked in each layer, because the sample is not proportional and the
-              drawn counts on their own would give the wrong impression.
-            </figcaption>
-          </figure>
-        </div>
+
+        <figure class="mec__figure mec__figure--wide">
+          <video controls playsinline preload="none"
+                 poster="/assets/mec/population/web/layers-poster.jpg">
+            <source src="/assets/mec/population/mec_layers.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="mec__caption">
+            Descending through the cortex one layer at a time. Watch layer IV. It holds
+            <strong>4,200</strong> marked nuclei against <strong>14,203</strong> in layer III
+            and <strong>16,215</strong> in layer V: this is the <em>lamina dissecans</em>, the
+            cell poor band separating the superficial layers from the deep ones, and one of
+            the features that makes entorhinal cortex recognisable down a microscope. The
+            scale shows how many cells are drawn against how many nuclei are marked in each
+            layer, because the sample is not proportional and the drawn counts on their own
+            would give the wrong impression.
+          </figcaption>
+        </figure>
 
         <p class="card__body">
           The three glial types are drawn as one colour here. The automatic type prediction
@@ -350,12 +342,10 @@
         <div class="more__head">
           <h2>Meet an MEC neuron</h2>
           <p class="more__lede">
-            Real reconstructions from this block, one of each kind. Three of them, the
-            pyramidal cell, the oligodendrocyte and the microglia, were picked out by eye by
-            someone who knows this tissue. The other four are still <strong>presumed</strong>
-            types, called from nucleus size and checked against the cell's layer, with nobody
-            having looked at the shape yet. The table further down says which is which, and
-            gives the segment IDs and soma coordinates so you can check any of them.
+            Here are some of the most common cell types found in the medial entorhinal
+            cortex. We will be exploring them. Every one below is a real reconstruction from
+            this block, and the table further down gives the segment ID and soma coordinate
+            for each so you can open it yourself.
           </p>
         </div>
 
@@ -497,7 +487,7 @@
 
         <div class="vol__controls" style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
           <button type="button" class="btn btn--cta" id="load-gallery">Load the interactive gallery</button>
-          <span class="mec__embed-note" style="align-self:center">Spins each cell in 3D. A few MB.</span>
+          <span class="mec__embed-note" style="align-self:center">Spins each cell in 3D. About 10 MB.</span>
         </div>
       </section>
 
@@ -598,6 +588,54 @@
       </section>
 
       <!-- Credit -->
+      <!-- Render gallery -->
+      <section class="mec" aria-label="Render gallery">
+        <div class="more__head">
+          <h2>Gallery</h2>
+          <p class="more__lede">
+            Everything on this page is rendered from the reconstruction itself. No cell here
+            was drawn, straightened or stood in for by a model.
+          </p>
+        </div>
+
+        <figure class="mec__figure mec__figure--wide">
+          <video controls playsinline preload="none"
+                 poster="/assets/mec/renders/web/stellate-spin-poster.jpg">
+            <source src="/assets/mec/renders/mec_stellate_spin.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="mec__caption">
+            <strong>One stellate cell, turning.</strong> The grid cell candidate, at full mesh
+            detail. Dendrites leave the soma in every direction rather than in an apical trunk
+            and a basal skirt, which is what separates a stellate from a pyramidal cell, and
+            the bumps along them are dendritic spines. One axon runs away downward toward the
+            hippocampus.
+          </figcaption>
+        </figure>
+
+        <figure class="mec__figure mec__figure--wide">
+          <video controls playsinline preload="none"
+                 poster="/assets/mec/population/web/cycle-poster.jpg">
+            <source src="/assets/mec/population/mec_cycle.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="mec__caption">
+            <strong>One type at a time.</strong> Each class on its own, then all of them
+            fading in together at the end.
+          </figcaption>
+        </figure>
+
+        <figure class="mec__figure mec__figure--wide">
+          <video controls playsinline preload="none"
+                 poster="/assets/mec/population/web/turntable-poster.jpg">
+            <source src="/assets/mec/population/mec_turntable.mp4" type="video/mp4" />
+          </video>
+          <figcaption class="mec__caption">
+            <strong>A full turn.</strong> At the quarter turn you can see what the still
+            image hides: the imaged block is a thin slab, 447 <span class="nounit">&micro;m</span>
+            deep against 2031 <span class="nounit">&micro;m</span> wide.
+          </figcaption>
+        </figure>
+      </section>
+
       <section class="mec" aria-label="Credit">
         <article class="card card--flat">
           <div class="card__top"><h3>Who made this</h3></div>
@@ -653,11 +691,29 @@ import { GLTFLoader } from "/assets/mec/vendor/loaders/GLTFLoader.js";
 
 // House palette, same hexes the CA3 page and scifi-ui use, so a cell looks the
 // same here as in its render.
+// The palette lives in ONE file, /assets/mec/palette.json, written from
+// tools/mec_palette.json. It was duplicated here and drifted: this map still
+// held the pale pre-correction hexes, so the 3D viewer drew a washed out
+// bipolar and a lilac interneuron while the rendered thumbnails beside them
+// were lime and hot pink. The inline values below are only a fallback for a
+// failed fetch, and they are kept in step deliberately.
 const COLOUR = {
-  stellate: 0x67f5cb, pyramidal: 0x3e96f0, inhibitory: 0xe8afd8,
-  microglia: 0xe8a93a, astrocyte: 0xbd9bd1, oligodendrocyte: 0x7ee0ff,
-  bipolar: 0xc4ccd8,
+  stellate: 0x67f5cb, pyramidal: 0x3e96f0, inhibitory: 0xff5fb0,
+  microglia: 0xe8a93a, astrocyte: 0xb06fe0, oligodendrocyte: 0x3fd8ff,
+  bipolar: 0xa8e84a,
 };
+async function loadPalette() {
+  try {
+    const r = await fetch("/assets/mec/palette.json", { cache: "no-store" });
+    if (!r.ok) return;
+    const pal = await r.json();
+    for (const [k, v] of Object.entries(pal.types || {})) {
+      if (v && v.hex) COLOUR[k] = parseInt(v.hex.replace("#", ""), 16);
+    }
+  } catch (e) {
+    console.warn("palette fetch failed, using the built in colours:", e);
+  }
+}
 const loader = new GLTFLoader();
 
 function makeViewer(stage, colour) {
@@ -732,6 +788,7 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
   btn.disabled = true; btn.textContent = "Loading cells…";
   let manifest;
   try {
+    await loadPalette();
     const r = await fetch("/assets/mec/gallery/cells.json", { cache: "no-store" });
     if (!r.ok) throw new Error("HTTP " + r.status);
     manifest = await r.json();
@@ -760,7 +817,12 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
     which.className = "meet__which";
     which.textContent = "root " + c.root_id;
     nav.append(which);
-    await viewer.show("/assets/mec/gallery/" + c.tiers.card.file);
+    // The WEB tier, not card. Card is budgeted for the population figure,
+    // where a cell is a few pixels wide, and on a card it left the compact
+    // glia with almost no geometry: the oligodendrocyte had 3,350 faces
+    // against 24,546 at detail and its processes disappeared.
+    const tier = c.tiers.web || c.tiers.detail || c.tiers.card;
+    await viewer.show("/assets/mec/gallery/" + tier.file);
   }
   btn.textContent = "Gallery loaded";
 });

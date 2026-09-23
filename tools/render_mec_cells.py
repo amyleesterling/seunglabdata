@@ -322,10 +322,29 @@ def solve_framing(probe_path, dist_mult):
     return new_dist, shift_y, shift_x, m
 
 
+def spin_safety(obj):
+    """How much wider the silhouette can get as the object spins about Z.
+
+    Framing is solved for the pose the cell happens to be in. Spin it and a
+    long dendrite that pointed at the camera swings out sideways, and the cell
+    clips. The growth is exactly the ratio of the largest horizontal RADIUS to
+    the half width the camera was framed against, so it can be computed instead
+    of discovered frame by frame.
+    """
+    pts = [obj.matrix_world @ v.co for v in obj.data.vertices]
+    if not pts:
+        return 1.0
+    radius = max(math.hypot(p.x, p.y) for p in pts)
+    half_x = max(abs(p.x) for p in pts)
+    if half_x <= 1e-9:
+        return 1.0
+    return max(1.0, radius / half_x)
+
+
 def render_cell(cell, glb_path, out_path, size, samples, dist_mult=1.85,
                 shift_y=0.0, shift_x=0.0, autoframe=True,
                 hdri_strength=0.50, light_scale=0.0,
-                emis=0.85, spec=0.0, sss=0.05):
+                emis=0.85, spec=0.0, sss=0.05, spin=0, spin_dir=None):
     clear_scene()
     obj = import_glb(glb_path)
     scaled_span, raw_span = frame_object(obj)
@@ -363,6 +382,28 @@ def render_cell(cell, glb_path, out_path, size, samples, dist_mult=1.85,
         final = measure_render(out_path)
     if final and final["clipped"]:
         print("    STILL CLIPPED after retries; this card is not usable as is")
+
+    if spin and spin_dir:
+        grow = spin_safety(obj)
+        spin_dist = dist_mult * grow * 1.04
+        print(f"    spin: worst angle is {grow:.2f}x wider, "
+              f"dist {dist_mult:.2f} -> {spin_dist:.2f}")
+        for o in [o for o in bpy.data.objects if o.type == "CAMERA"]:
+            bpy.data.objects.remove(o, do_unlink=True)
+        add_camera(distance=TARGET_SIZE * spin_dist, shift_y=shift_y, shift_x=shift_x)
+        os.makedirs(spin_dir, exist_ok=True)
+        for i in range(spin):
+            f = os.path.join(spin_dir, f"frame_{i:04d}.png")
+            if os.path.exists(f):
+                continue
+            obj.rotation_euler[2] = 2.0 * math.pi * i / spin
+            bpy.context.scene.render.filepath = f
+            bpy.ops.render.render(write_still=True)
+            if i % 20 == 0:
+                print(f"      frame {i}/{spin}")
+        obj.rotation_euler[2] = 0.0
+        print(f"    wrote {spin} spin frames to {spin_dir}")
+
     return raw_span, dist_mult, shift_y, shift_x, measured, final
 
 
@@ -383,6 +424,9 @@ def main():
     ap.add_argument("--emis", type=float, default=0.85)
     ap.add_argument("--spec", type=float, default=0.0)
     ap.add_argument("--sss", type=float, default=0.05)
+    ap.add_argument("--spin", type=int, default=0,
+                    help="render this many frames of a full turn per cell")
+    ap.add_argument("--spin-out", default="", dest="spin_out")
     ap.add_argument("--lights", type=float, default=0.0,
                     help="scale on the three point rig; 0 disables it")
     args = ap.parse_args(argv_after_ddash())
@@ -407,7 +451,10 @@ def main():
             cell, glb, out, args.size, args.samples, args.dist, args.shifty,
             args.shiftx, autoframe=not args.no_autoframe,
             hdri_strength=args.hdri, light_scale=args.lights,
-            emis=args.emis, spec=args.spec, sss=args.sss)
+            emis=args.emis, spec=args.spec, sss=args.sss,
+            spin=args.spin,
+            spin_dir=(os.path.join(args.spin_out or args.out, cell['id'])
+                      if args.spin else None))
         print(f"    span {tuple(round(v, 1) for v in span)} um")
         if probe:
             print(f"    probe fill {probe['fill']:.3f} off ({probe['cx']:+.3f},{probe['cy']:+.3f})"

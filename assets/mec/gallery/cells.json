@@ -91,6 +91,34 @@
       242.81
      ],
      "surface_area_um2": 27406.1
+    },
+    "web": {
+     "file": "astrocyte-01.web.glb",
+     "faces": 109998,
+     "vertices": 125261,
+     "bytes": 1965872,
+     "bbox_min_um": [
+      2480.59,
+      2079.53,
+      183.06
+     ],
+     "bbox_max_um": [
+      2556.51,
+      2155.23,
+      246.86
+     ],
+     "p_bbox_min_um": [
+      2486.05,
+      2083.45,
+      189.73
+     ],
+     "p_bbox_max_um": [
+      2551.56,
+      2149.41,
+      242.81
+     ],
+     "surface_area_um2": 27406.1,
+     "derived_from": "detail"
     }
    },
    "note": "kept: Amy identified the cell previously labelled oligodendrocyte as an astrocyte, and this slot already held a good one"
@@ -163,6 +191,34 @@
       369.02
      ],
      "surface_area_um2": 3689.9
+    },
+    "web": {
+     "file": "bipolar-01.web.glb",
+     "faces": 43595,
+     "vertices": 21876,
+     "bytes": 786440,
+     "bbox_min_um": [
+      2939.34,
+      2060.82,
+      246.63
+     ],
+     "bbox_max_um": [
+      3101.29,
+      2380.9,
+      375.93
+     ],
+     "p_bbox_min_um": [
+      2950.18,
+      2064.58,
+      247.27
+     ],
+     "p_bbox_max_um": [
+      3095.42,
+      2374.76,
+      369.02
+     ],
+     "surface_area_um2": 3689.9,
+     "derived_from": "detail"
     }
    }
   },
@@ -234,6 +290,34 @@
       430.34
      ],
      "surface_area_um2": 51336.4
+    },
+    "web": {
+     "file": "inhibitory-01.web.glb",
+     "faces": 109998,
+     "vertices": 135948,
+     "bytes": 2065388,
+     "bbox_min_um": [
+      1639.73,
+      1881.99,
+      119.8
+     ],
+     "bbox_max_um": [
+      2091.32,
+      2299.88,
+      438.63
+     ],
+     "p_bbox_min_um": [
+      1713.9,
+      1905.81,
+      122.26
+     ],
+     "p_bbox_max_um": [
+      2058.33,
+      2294.07,
+      430.34
+     ],
+     "surface_area_um2": 51336.4,
+     "derived_from": "detail"
     }
    }
   },
@@ -318,6 +402,38 @@
      "decimation_bbox_shift_um": 0.1033,
      "surface_area_um2": 4820.4,
      "file": "microglia-01.detail.glb"
+    },
+    "web": {
+     "faces": 49408,
+     "faces_in": 1111028,
+     "specks_dropped": 1686,
+     "density_per_um2": 10.25,
+     "vertices": 24727,
+     "bytes": 890404,
+     "bbox_min_um": [
+      2044.18,
+      2020.85,
+      342.01
+     ],
+     "bbox_max_um": [
+      2134.08,
+      2100.39,
+      410.05
+     ],
+     "p_bbox_min_um": [
+      2051.79,
+      2029.06,
+      345.63
+     ],
+     "p_bbox_max_um": [
+      2131.86,
+      2096.99,
+      406.7
+     ],
+     "decimation_bbox_shift_um": 0.1033,
+     "surface_area_um2": 4820.4,
+     "file": "microglia-01.web.glb",
+     "derived_from": "detail"
     }
    }
   },
@@ -398,6 +514,38 @@
      "decimation_bbox_shift_um": 0.1699,
      "surface_area_um2": 2394.9,
      "file": "oligodendrocyte-01.detail.glb"
+    },
+    "web": {
+     "faces": 24546,
+     "faces_in": 558466,
+     "specks_dropped": 812,
+     "density_per_um2": 10.25,
+     "vertices": 12473,
+     "bytes": 445012,
+     "bbox_min_um": [
+      2012.67,
+      2057.9,
+      149.23
+     ],
+     "bbox_max_um": [
+      2092.07,
+      2115.05,
+      229.97
+     ],
+     "p_bbox_min_um": [
+      2014.16,
+      2063.84,
+      151.91
+     ],
+     "p_bbox_max_um": [
+      2087.08,
+      2111.35,
+      224.66
+     ],
+     "decimation_bbox_shift_um": 0.1699,
+     "surface_area_um2": 2394.9,
+     "file": "oligodendrocyte-01.web.glb",
+     "derived_from": "detail"
     }
    },
    "confidence": "named by eye and matched to the live segmentation",
@@ -481,6 +629,38 @@
      "decimation_bbox_shift_um": 0.0826,
      "surface_area_um2": 27116.6,
      "file": "pyramidal-01.detail.glb"
+    },
+    "web": {
+     "faces": 110000,
+     "faces_in": 6314991,
+     "specks_dropped": 8944,
+     "density_per_um2": 9.59,
+     "vertices": 133842,
+     "bytes": 2048632,
+     "bbox_min_um": [
+      2358.89,
+      1856.17,
+      119.83
+     ],
+     "bbox_max_um": [
+      2737.79,
+      2335.79,
+      436.36
+     ],
+     "p_bbox_min_um": [
+      2375.22,
+      1883.01,
+      149.51
+     ],
+     "p_bbox_max_um": [
+      2723.27,
+      2319.25,
+      424.12
+     ],
+     "decimation_bbox_shift_um": 0.0826,
+     "surface_area_um2": 27116.6,
+     "file": "pyramidal-01.web.glb",
+     "derived_from": "detail"
     }
    },
    "confidence": "named by eye and matched to the live segmentation",
@@ -554,6 +734,34 @@
       425.82
      ],
      "surface_area_um2": 41819.1
+    },
+    "web": {
+     "file": "stellate-01.web.glb",
+     "faces": 110000,
+     "vertices": 139816,
+     "bytes": 2051156,
+     "bbox_min_um": [
+      2017.81,
+      1862.64,
+      119.8
+     ],
+     "bbox_max_um": [
+      2559.44,
+      2296.45,
+      438.63
+     ],
+     "p_bbox_min_um": [
+      2070.4,
+      1901.82,
+      129.93
+     ],
+     "p_bbox_max_um": [
+      2514.16,
+      2290.08,
+      425.82
+     ],
+     "surface_area_um2": 41819.1,
+     "derived_from": "detail"
     }
    }
   }
