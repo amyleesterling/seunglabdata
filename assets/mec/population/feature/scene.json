@@ -336,6 +336,2636 @@
    "root_id": "720575947598822076"
   },
   {
+   "id": "dense-I-0014",
+   "cell_type": "pyramidal",
+   "root_id": "720575947532068770"
+  },
+  {
+   "id": "dense-I-0020",
+   "cell_type": "glia",
+   "root_id": "720575947566421824"
+  },
+  {
+   "id": "dense-I-0021",
+   "cell_type": "glia",
+   "root_id": "720575947493525434"
+  },
+  {
+   "id": "dense-I-0022",
+   "cell_type": "glia",
+   "root_id": "720575947475172362"
+  },
+  {
+   "id": "dense-I-0025",
+   "cell_type": "glia",
+   "root_id": "720575947520554015"
+  },
+  {
+   "id": "dense-I-0026",
+   "cell_type": "inhibitory",
+   "root_id": "720575947415007639"
+  },
+  {
+   "id": "dense-I-0027",
+   "cell_type": "glia",
+   "root_id": "720575947476258884"
+  },
+  {
+   "id": "dense-I-0028",
+   "cell_type": "glia",
+   "root_id": "720575947478104235"
+  },
+  {
+   "id": "dense-I-0030",
+   "cell_type": "pyramidal",
+   "root_id": "720575947436070823"
+  },
+  {
+   "id": "dense-I-0031",
+   "cell_type": "pyramidal",
+   "root_id": "720575947416792471"
+  },
+  {
+   "id": "dense-I-0032",
+   "cell_type": "glia",
+   "root_id": "720575947323678314"
+  },
+  {
+   "id": "dense-I-0033",
+   "cell_type": "pyramidal",
+   "root_id": "720575947546424873"
+  },
+  {
+   "id": "dense-I-0034",
+   "cell_type": "glia",
+   "root_id": "720575947492268281"
+  },
+  {
+   "id": "dense-I-0036",
+   "cell_type": "glia",
+   "root_id": "720575947582514814"
+  },
+  {
+   "id": "dense-I-0037",
+   "cell_type": "pyramidal",
+   "root_id": "720575947498101437"
+  },
+  {
+   "id": "dense-I-0038",
+   "cell_type": "glia",
+   "root_id": "720575947511361195"
+  },
+  {
+   "id": "dense-I-0039",
+   "cell_type": "inhibitory",
+   "root_id": "720575947507346453"
+  },
+  {
+   "id": "dense-I-0040",
+   "cell_type": "glia",
+   "root_id": "720575947499468023"
+  },
+  {
+   "id": "dense-I-0041",
+   "cell_type": "glia",
+   "root_id": "720575947432815412"
+  },
+  {
+   "id": "dense-I-0042",
+   "cell_type": "glia",
+   "root_id": "720575947577979291"
+  },
+  {
+   "id": "dense-I-0043",
+   "cell_type": "pyramidal",
+   "root_id": "720575947456160993"
+  },
+  {
+   "id": "dense-I-0044",
+   "cell_type": "glia",
+   "root_id": "720575947427663984"
+  },
+  {
+   "id": "dense-I-0045",
+   "cell_type": "glia",
+   "root_id": "720575947543883390"
+  },
+  {
+   "id": "dense-I-0046",
+   "cell_type": "pyramidal",
+   "root_id": "720575947550614825"
+  },
+  {
+   "id": "dense-I-0047",
+   "cell_type": "glia",
+   "root_id": "720575947455578817"
+  },
+  {
+   "id": "dense-I-0048",
+   "cell_type": "glia",
+   "root_id": "720575947480780454"
+  },
+  {
+   "id": "dense-I-0049",
+   "cell_type": "glia",
+   "root_id": "720575947468616063"
+  },
+  {
+   "id": "dense-I-0050",
+   "cell_type": "glia",
+   "root_id": "720575947450094426"
+  },
+  {
+   "id": "dense-I-0051",
+   "cell_type": "glia",
+   "root_id": "720575947435936167"
+  },
+  {
+   "id": "dense-I-0052",
+   "cell_type": "glia",
+   "root_id": "720575947456041872"
+  },
+  {
+   "id": "dense-I-0053",
+   "cell_type": "glia",
+   "root_id": "720575947383328169"
+  },
+  {
+   "id": "dense-I-0054",
+   "cell_type": "glia",
+   "root_id": "720575947492973107"
+  },
+  {
+   "id": "dense-I-0055",
+   "cell_type": "glia",
+   "root_id": "720575947423479041"
+  },
+  {
+   "id": "dense-I-0056",
+   "cell_type": "pyramidal",
+   "root_id": "720575947485630439"
+  },
+  {
+   "id": "dense-I-0057",
+   "cell_type": "glia",
+   "root_id": "720575947539065416"
+  },
+  {
+   "id": "dense-I-0058",
+   "cell_type": "inhibitory",
+   "root_id": "720575947526851189"
+  },
+  {
+   "id": "dense-I-0059",
+   "cell_type": "glia",
+   "root_id": "720575947531690176"
+  },
+  {
+   "id": "dense-I-0060",
+   "cell_type": "pyramidal",
+   "root_id": "720575947437307817"
+  },
+  {
+   "id": "dense-I-0061",
+   "cell_type": "pyramidal",
+   "root_id": "720575947430312065"
+  },
+  {
+   "id": "dense-I-0062",
+   "cell_type": "glia",
+   "root_id": "720575947458923748"
+  },
+  {
+   "id": "dense-I-0063",
+   "cell_type": "glia",
+   "root_id": "720575947421687664"
+  },
+  {
+   "id": "dense-I-0064",
+   "cell_type": "inhibitory",
+   "root_id": "720575947434882144"
+  },
+  {
+   "id": "dense-II-0065",
+   "cell_type": "pyramidal",
+   "root_id": "720575947561052846"
+  },
+  {
+   "id": "dense-II-0066",
+   "cell_type": "glia",
+   "root_id": "720575947504430380"
+  },
+  {
+   "id": "dense-II-0067",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505479354"
+  },
+  {
+   "id": "dense-II-0068",
+   "cell_type": "stellate",
+   "root_id": "720575947556873134"
+  },
+  {
+   "id": "dense-II-0069",
+   "cell_type": "stellate",
+   "root_id": "720575947457718241"
+  },
+  {
+   "id": "dense-II-0070",
+   "cell_type": "pyramidal",
+   "root_id": "720575947530534050"
+  },
+  {
+   "id": "dense-II-0071",
+   "cell_type": "stellate",
+   "root_id": "720575947451065776"
+  },
+  {
+   "id": "dense-II-0072",
+   "cell_type": "stellate",
+   "root_id": "720575947459573667"
+  },
+  {
+   "id": "dense-II-0073",
+   "cell_type": "pyramidal",
+   "root_id": "720575947538569122"
+  },
+  {
+   "id": "dense-II-0074",
+   "cell_type": "inhibitory",
+   "root_id": "720575947446887985"
+  },
+  {
+   "id": "dense-II-0075",
+   "cell_type": "pyramidal",
+   "root_id": "720575947522169984"
+  },
+  {
+   "id": "dense-II-0076",
+   "cell_type": "stellate",
+   "root_id": "720575947463554117"
+  },
+  {
+   "id": "dense-II-0077",
+   "cell_type": "inhibitory",
+   "root_id": "720575947541147122"
+  },
+  {
+   "id": "dense-II-0078",
+   "cell_type": "pyramidal",
+   "root_id": "720575947567861272"
+  },
+  {
+   "id": "dense-II-0079",
+   "cell_type": "glia",
+   "root_id": "720575947481677599"
+  },
+  {
+   "id": "dense-II-0080",
+   "cell_type": "inhibitory",
+   "root_id": "720575947528548025"
+  },
+  {
+   "id": "dense-II-0081",
+   "cell_type": "inhibitory",
+   "root_id": "720575947531376320"
+  },
+  {
+   "id": "dense-II-0082",
+   "cell_type": "pyramidal",
+   "root_id": "720575947548144169"
+  },
+  {
+   "id": "dense-II-0083",
+   "cell_type": "glia",
+   "root_id": "720575947481935051"
+  },
+  {
+   "id": "dense-II-0084",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525664314"
+  },
+  {
+   "id": "dense-II-0085",
+   "cell_type": "glia",
+   "root_id": "720575947536588028"
+  },
+  {
+   "id": "dense-II-0086",
+   "cell_type": "stellate",
+   "root_id": "720575947478300036"
+  },
+  {
+   "id": "dense-II-0087",
+   "cell_type": "inhibitory",
+   "root_id": "720575947506889963"
+  },
+  {
+   "id": "dense-II-0088",
+   "cell_type": "glia",
+   "root_id": "720575947487791353"
+  },
+  {
+   "id": "dense-II-0089",
+   "cell_type": "stellate",
+   "root_id": "720575947567686680"
+  },
+  {
+   "id": "dense-II-0090",
+   "cell_type": "pyramidal",
+   "root_id": "720575947482768321"
+  },
+  {
+   "id": "dense-II-0091",
+   "cell_type": "pyramidal",
+   "root_id": "720575947531679424"
+  },
+  {
+   "id": "dense-II-0092",
+   "cell_type": "pyramidal",
+   "root_id": "720575947542937842"
+  },
+  {
+   "id": "dense-II-0093",
+   "cell_type": "inhibitory",
+   "root_id": "720575947545416052"
+  },
+  {
+   "id": "dense-II-0094",
+   "cell_type": "glia",
+   "root_id": "720575947481875883"
+  },
+  {
+   "id": "dense-II-0095",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525162042"
+  },
+  {
+   "id": "dense-II-0096",
+   "cell_type": "glia",
+   "root_id": "720575947441711165"
+  },
+  {
+   "id": "dense-II-0097",
+   "cell_type": "stellate",
+   "root_id": "720575947542518002"
+  },
+  {
+   "id": "dense-II-0098",
+   "cell_type": "pyramidal",
+   "root_id": "720575947495741979"
+  },
+  {
+   "id": "dense-II-0099",
+   "cell_type": "stellate",
+   "root_id": "720575947507735913"
+  },
+  {
+   "id": "dense-II-0100",
+   "cell_type": "glia",
+   "root_id": "720575947447977904"
+  },
+  {
+   "id": "dense-II-0101",
+   "cell_type": "glia",
+   "root_id": "720575947556870503"
+  },
+  {
+   "id": "dense-II-0102",
+   "cell_type": "glia",
+   "root_id": "720575947567719448"
+  },
+  {
+   "id": "dense-II-0103",
+   "cell_type": "stellate",
+   "root_id": "720575947475736322"
+  },
+  {
+   "id": "dense-II-0104",
+   "cell_type": "stellate",
+   "root_id": "720575947533732356"
+  },
+  {
+   "id": "dense-II-0105",
+   "cell_type": "glia",
+   "root_id": "720575947533284288"
+  },
+  {
+   "id": "dense-II-0106",
+   "cell_type": "pyramidal",
+   "root_id": "720575947480729588"
+  },
+  {
+   "id": "dense-II-0107",
+   "cell_type": "glia",
+   "root_id": "720575947501592194"
+  },
+  {
+   "id": "dense-II-0108",
+   "cell_type": "glia",
+   "root_id": "720575947407161784"
+  },
+  {
+   "id": "dense-II-0109",
+   "cell_type": "pyramidal",
+   "root_id": "720575947519726111"
+  },
+  {
+   "id": "dense-II-0110",
+   "cell_type": "pyramidal",
+   "root_id": "720575947542414834"
+  },
+  {
+   "id": "dense-II-0111",
+   "cell_type": "pyramidal",
+   "root_id": "720575947523398385"
+  },
+  {
+   "id": "dense-II-0112",
+   "cell_type": "inhibitory",
+   "root_id": "720575947505194474"
+  },
+  {
+   "id": "dense-II-0113",
+   "cell_type": "pyramidal",
+   "root_id": "720575947500402423"
+  },
+  {
+   "id": "dense-II-0114",
+   "cell_type": "glia",
+   "root_id": "720575947615175276"
+  },
+  {
+   "id": "dense-II-0115",
+   "cell_type": "stellate",
+   "root_id": "720575947518286812"
+  },
+  {
+   "id": "dense-II-0116",
+   "cell_type": "stellate",
+   "root_id": "720575947520061228"
+  },
+  {
+   "id": "dense-II-0117",
+   "cell_type": "pyramidal",
+   "root_id": "720575947514474583"
+  },
+  {
+   "id": "dense-II-0118",
+   "cell_type": "pyramidal",
+   "root_id": "720575947541574130"
+  },
+  {
+   "id": "dense-II-0119",
+   "cell_type": "glia",
+   "root_id": "720575947358738147"
+  },
+  {
+   "id": "dense-II-0120",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527872930"
+  },
+  {
+   "id": "dense-II-0121",
+   "cell_type": "inhibitory",
+   "root_id": "720575947541417222"
+  },
+  {
+   "id": "dense-II-0122",
+   "cell_type": "stellate",
+   "root_id": "720575947540523139"
+  },
+  {
+   "id": "dense-II-0123",
+   "cell_type": "glia",
+   "root_id": "720575947484650235"
+  },
+  {
+   "id": "dense-II-0124",
+   "cell_type": "inhibitory",
+   "root_id": "720575947516322012"
+  },
+  {
+   "id": "dense-II-0125",
+   "cell_type": "inhibitory",
+   "root_id": "720575947538628742"
+  },
+  {
+   "id": "dense-II-0126",
+   "cell_type": "pyramidal",
+   "root_id": "720575947416993943"
+  },
+  {
+   "id": "dense-II-0127",
+   "cell_type": "pyramidal",
+   "root_id": "720575947460572997"
+  },
+  {
+   "id": "dense-II-0128",
+   "cell_type": "glia",
+   "root_id": "720575947433737947"
+  },
+  {
+   "id": "dense-II-0129",
+   "cell_type": "stellate",
+   "root_id": "720575947446407604"
+  },
+  {
+   "id": "dense-II-0130",
+   "cell_type": "pyramidal",
+   "root_id": "720575947507153341"
+  },
+  {
+   "id": "dense-II-0131",
+   "cell_type": "inhibitory",
+   "root_id": "720575947503536131"
+  },
+  {
+   "id": "dense-II-0132",
+   "cell_type": "stellate",
+   "root_id": "720575947521495071"
+  },
+  {
+   "id": "dense-II-0133",
+   "cell_type": "stellate",
+   "root_id": "720575947501037303"
+  },
+  {
+   "id": "dense-II-0134",
+   "cell_type": "stellate",
+   "root_id": "720575947598248300"
+  },
+  {
+   "id": "dense-II-0135",
+   "cell_type": "glia",
+   "root_id": "720575947486501250"
+  },
+  {
+   "id": "dense-II-0136",
+   "cell_type": "pyramidal",
+   "root_id": "720575947478057972"
+  },
+  {
+   "id": "dense-II-0137",
+   "cell_type": "pyramidal",
+   "root_id": "720575947451299121"
+  },
+  {
+   "id": "dense-II-0138",
+   "cell_type": "stellate",
+   "root_id": "720575947444787635"
+  },
+  {
+   "id": "dense-II-0139",
+   "cell_type": "stellate",
+   "root_id": "720575947483020276"
+  },
+  {
+   "id": "dense-II-0140",
+   "cell_type": "pyramidal",
+   "root_id": "720575947451237190"
+  },
+  {
+   "id": "dense-II-0141",
+   "cell_type": "glia",
+   "root_id": "720575947539129160"
+  },
+  {
+   "id": "dense-II-0142",
+   "cell_type": "glia",
+   "root_id": "720575947457544355"
+  },
+  {
+   "id": "dense-II-0143",
+   "cell_type": "pyramidal",
+   "root_id": "720575947480254196"
+  },
+  {
+   "id": "dense-II-0144",
+   "cell_type": "glia",
+   "root_id": "720575947496762721"
+  },
+  {
+   "id": "dense-II-0145",
+   "cell_type": "glia",
+   "root_id": "720575947497931394"
+  },
+  {
+   "id": "dense-II-0146",
+   "cell_type": "glia",
+   "root_id": "720575947461867589"
+  },
+  {
+   "id": "dense-II-0147",
+   "cell_type": "pyramidal",
+   "root_id": "720575947538885251"
+  },
+  {
+   "id": "dense-II-0149",
+   "cell_type": "glia",
+   "root_id": "720575947499583119"
+  },
+  {
+   "id": "dense-II-0150",
+   "cell_type": "pyramidal",
+   "root_id": "720575947462044741"
+  },
+  {
+   "id": "dense-II-0151",
+   "cell_type": "inhibitory",
+   "root_id": "720575947437067062"
+  },
+  {
+   "id": "dense-II-0152",
+   "cell_type": "glia",
+   "root_id": "720575947498592538"
+  },
+  {
+   "id": "dense-II-0153",
+   "cell_type": "glia",
+   "root_id": "720575947568442286"
+  },
+  {
+   "id": "dense-II-0154",
+   "cell_type": "pyramidal",
+   "root_id": "720575947482152641"
+  },
+  {
+   "id": "dense-II-0155",
+   "cell_type": "stellate",
+   "root_id": "720575947553915715"
+  },
+  {
+   "id": "dense-II-0156",
+   "cell_type": "glia",
+   "root_id": "720575947597694398"
+  },
+  {
+   "id": "dense-II-0157",
+   "cell_type": "inhibitory",
+   "root_id": "720575947501649165"
+  },
+  {
+   "id": "dense-II-0158",
+   "cell_type": "pyramidal",
+   "root_id": "720575947564962146"
+  },
+  {
+   "id": "dense-II-0159",
+   "cell_type": "inhibitory",
+   "root_id": "720575947536685339"
+  },
+  {
+   "id": "dense-II-0160",
+   "cell_type": "glia",
+   "root_id": "720575947435852199"
+  },
+  {
+   "id": "dense-II-0161",
+   "cell_type": "glia",
+   "root_id": "720575947350336838"
+  },
+  {
+   "id": "dense-II-0162",
+   "cell_type": "stellate",
+   "root_id": "720575947479567604"
+  },
+  {
+   "id": "dense-II-0163",
+   "cell_type": "pyramidal",
+   "root_id": "720575947441454755"
+  },
+  {
+   "id": "dense-II-0164",
+   "cell_type": "pyramidal",
+   "root_id": "720575947564877768"
+  },
+  {
+   "id": "dense-II-0165",
+   "cell_type": "stellate",
+   "root_id": "720575947514504391"
+  },
+  {
+   "id": "dense-II-0166",
+   "cell_type": "glia",
+   "root_id": "720575947524028544"
+  },
+  {
+   "id": "dense-II-0167",
+   "cell_type": "pyramidal",
+   "root_id": "720575947494593529"
+  },
+  {
+   "id": "dense-II-0168",
+   "cell_type": "stellate",
+   "root_id": "720575947520734592"
+  },
+  {
+   "id": "dense-II-0169",
+   "cell_type": "stellate",
+   "root_id": "720575947480774132"
+  },
+  {
+   "id": "dense-II-0170",
+   "cell_type": "pyramidal",
+   "root_id": "720575947562417255"
+  },
+  {
+   "id": "dense-III-0171",
+   "cell_type": "glia",
+   "root_id": "720575947431889318"
+  },
+  {
+   "id": "dense-III-0172",
+   "cell_type": "glia",
+   "root_id": "720575947381756323"
+  },
+  {
+   "id": "dense-III-0173",
+   "cell_type": "pyramidal",
+   "root_id": "720575947383772266"
+  },
+  {
+   "id": "dense-III-0174",
+   "cell_type": "stellate",
+   "root_id": "720575947535312388"
+  },
+  {
+   "id": "dense-III-0175",
+   "cell_type": "pyramidal",
+   "root_id": "720575947408703579"
+  },
+  {
+   "id": "dense-III-0176",
+   "cell_type": "glia",
+   "root_id": "720575947513021015"
+  },
+  {
+   "id": "dense-III-0177",
+   "cell_type": "pyramidal",
+   "root_id": "720575947469294143"
+  },
+  {
+   "id": "dense-III-0178",
+   "cell_type": "glia",
+   "root_id": "720575947532712384"
+  },
+  {
+   "id": "dense-III-0179",
+   "cell_type": "glia",
+   "root_id": "720575947490535247"
+  },
+  {
+   "id": "dense-III-0180",
+   "cell_type": "pyramidal",
+   "root_id": "720575947474344458"
+  },
+  {
+   "id": "dense-III-0181",
+   "cell_type": "pyramidal",
+   "root_id": "720575947566868504"
+  },
+  {
+   "id": "dense-III-0182",
+   "cell_type": "glia",
+   "root_id": "720575947448079433"
+  },
+  {
+   "id": "dense-III-0183",
+   "cell_type": "pyramidal",
+   "root_id": "720575947478866578"
+  },
+  {
+   "id": "dense-III-0184",
+   "cell_type": "pyramidal",
+   "root_id": "720575947476398399"
+  },
+  {
+   "id": "dense-III-0185",
+   "cell_type": "glia",
+   "root_id": "720575947454346147"
+  },
+  {
+   "id": "dense-III-0186",
+   "cell_type": "inhibitory",
+   "root_id": "720575947503256506"
+  },
+  {
+   "id": "dense-III-0187",
+   "cell_type": "glia",
+   "root_id": "720575947527649778"
+  },
+  {
+   "id": "dense-III-0188",
+   "cell_type": "pyramidal",
+   "root_id": "720575947513488832"
+  },
+  {
+   "id": "dense-III-0189",
+   "cell_type": "glia",
+   "root_id": "720575947431366523"
+  },
+  {
+   "id": "dense-III-0190",
+   "cell_type": "glia",
+   "root_id": "720575947522017928"
+  },
+  {
+   "id": "dense-III-0191",
+   "cell_type": "inhibitory",
+   "root_id": "720575947478216989"
+  },
+  {
+   "id": "dense-III-0192",
+   "cell_type": "glia",
+   "root_id": "720575947515727418"
+  },
+  {
+   "id": "dense-III-0193",
+   "cell_type": "inhibitory",
+   "root_id": "720575947444491955"
+  },
+  {
+   "id": "dense-III-0194",
+   "cell_type": "glia",
+   "root_id": "720575947516199328"
+  },
+  {
+   "id": "dense-III-0195",
+   "cell_type": "pyramidal",
+   "root_id": "720575947488084825"
+  },
+  {
+   "id": "dense-III-0196",
+   "cell_type": "pyramidal",
+   "root_id": "720575947488937446"
+  },
+  {
+   "id": "dense-III-0197",
+   "cell_type": "pyramidal",
+   "root_id": "720575947484763641"
+  },
+  {
+   "id": "dense-III-0198",
+   "cell_type": "pyramidal",
+   "root_id": "720575947550152846"
+  },
+  {
+   "id": "dense-III-0199",
+   "cell_type": "pyramidal",
+   "root_id": "720575947499129579"
+  },
+  {
+   "id": "dense-III-0200",
+   "cell_type": "pyramidal",
+   "root_id": "720575947536008098"
+  },
+  {
+   "id": "dense-III-0201",
+   "cell_type": "pyramidal",
+   "root_id": "720575947515539336"
+  },
+  {
+   "id": "dense-III-0202",
+   "cell_type": "inhibitory",
+   "root_id": "720575947544546300"
+  },
+  {
+   "id": "dense-III-0203",
+   "cell_type": "pyramidal",
+   "root_id": "720575947493879592"
+  },
+  {
+   "id": "dense-III-0204",
+   "cell_type": "glia",
+   "root_id": "720575947600527548"
+  },
+  {
+   "id": "dense-III-0205",
+   "cell_type": "pyramidal",
+   "root_id": "720575947443478715"
+  },
+  {
+   "id": "dense-III-0206",
+   "cell_type": "inhibitory",
+   "root_id": "720575947365730757"
+  },
+  {
+   "id": "dense-III-0207",
+   "cell_type": "glia",
+   "root_id": "720575947436715825"
+  },
+  {
+   "id": "dense-III-0208",
+   "cell_type": "pyramidal",
+   "root_id": "720575947484861736"
+  },
+  {
+   "id": "dense-III-0209",
+   "cell_type": "glia",
+   "root_id": "720575947494491895"
+  },
+  {
+   "id": "dense-III-0210",
+   "cell_type": "inhibitory",
+   "root_id": "720575947492893954"
+  },
+  {
+   "id": "dense-III-0211",
+   "cell_type": "inhibitory",
+   "root_id": "720575947523104448"
+  },
+  {
+   "id": "dense-III-0212",
+   "cell_type": "glia",
+   "root_id": "720575947405076144"
+  },
+  {
+   "id": "dense-III-0213",
+   "cell_type": "pyramidal",
+   "root_id": "720575947542344008"
+  },
+  {
+   "id": "dense-III-0214",
+   "cell_type": "glia",
+   "root_id": "720575947544885832"
+  },
+  {
+   "id": "dense-III-0215",
+   "cell_type": "pyramidal",
+   "root_id": "720575947498928752"
+  },
+  {
+   "id": "dense-III-0216",
+   "cell_type": "pyramidal",
+   "root_id": "720575947486937952"
+  },
+  {
+   "id": "dense-III-0217",
+   "cell_type": "pyramidal",
+   "root_id": "720575947568837685"
+  },
+  {
+   "id": "dense-III-0218",
+   "cell_type": "inhibitory",
+   "root_id": "720575947544554748"
+  },
+  {
+   "id": "dense-III-0219",
+   "cell_type": "glia",
+   "root_id": "720575947474709519"
+  },
+  {
+   "id": "dense-III-0220",
+   "cell_type": "glia",
+   "root_id": "720575947529430976"
+  },
+  {
+   "id": "dense-III-0221",
+   "cell_type": "glia",
+   "root_id": "720575947490776178"
+  },
+  {
+   "id": "dense-III-0222",
+   "cell_type": "glia",
+   "root_id": "720575947456274145"
+  },
+  {
+   "id": "dense-III-0223",
+   "cell_type": "glia",
+   "root_id": "720575947506286752"
+  },
+  {
+   "id": "dense-III-0224",
+   "cell_type": "pyramidal",
+   "root_id": "720575947503149424"
+  },
+  {
+   "id": "dense-III-0225",
+   "cell_type": "pyramidal",
+   "root_id": "720575947546276638"
+  },
+  {
+   "id": "dense-III-0226",
+   "cell_type": "pyramidal",
+   "root_id": "720575947515382215"
+  },
+  {
+   "id": "dense-III-0227",
+   "cell_type": "pyramidal",
+   "root_id": "720575947509870679"
+  },
+  {
+   "id": "dense-III-0228",
+   "cell_type": "pyramidal",
+   "root_id": "720575947463787539"
+  },
+  {
+   "id": "dense-III-0229",
+   "cell_type": "glia",
+   "root_id": "720575947473870009"
+  },
+  {
+   "id": "dense-III-0230",
+   "cell_type": "pyramidal",
+   "root_id": "720575947567730200"
+  },
+  {
+   "id": "dense-III-0231",
+   "cell_type": "pyramidal",
+   "root_id": "720575947516036373"
+  },
+  {
+   "id": "dense-III-0232",
+   "cell_type": "pyramidal",
+   "root_id": "720575947503734237"
+  },
+  {
+   "id": "dense-III-0233",
+   "cell_type": "glia",
+   "root_id": "720575947569370684"
+  },
+  {
+   "id": "dense-III-0234",
+   "cell_type": "pyramidal",
+   "root_id": "720575947537408131"
+  },
+  {
+   "id": "dense-III-0235",
+   "cell_type": "pyramidal",
+   "root_id": "720575947482222161"
+  },
+  {
+   "id": "dense-III-0236",
+   "cell_type": "glia",
+   "root_id": "720575947482753268"
+  },
+  {
+   "id": "dense-III-0237",
+   "cell_type": "inhibitory",
+   "root_id": "720575947511588369"
+  },
+  {
+   "id": "dense-III-0238",
+   "cell_type": "pyramidal",
+   "root_id": "720575947424625641"
+  },
+  {
+   "id": "dense-III-0239",
+   "cell_type": "inhibitory",
+   "root_id": "720575947580045319"
+  },
+  {
+   "id": "dense-III-0240",
+   "cell_type": "pyramidal",
+   "root_id": "720575947439586200"
+  },
+  {
+   "id": "dense-III-0241",
+   "cell_type": "glia",
+   "root_id": "720575947453690808"
+  },
+  {
+   "id": "dense-III-0242",
+   "cell_type": "glia",
+   "root_id": "720575947530693824"
+  },
+  {
+   "id": "dense-III-0243",
+   "cell_type": "pyramidal",
+   "root_id": "720575947612662892"
+  },
+  {
+   "id": "dense-III-0244",
+   "cell_type": "glia",
+   "root_id": "720575947517073964"
+  },
+  {
+   "id": "dense-III-0245",
+   "cell_type": "pyramidal",
+   "root_id": "720575947522367033"
+  },
+  {
+   "id": "dense-III-0246",
+   "cell_type": "inhibitory",
+   "root_id": "720575947482845684"
+  },
+  {
+   "id": "dense-III-0247",
+   "cell_type": "pyramidal",
+   "root_id": "720575947541989938"
+  },
+  {
+   "id": "dense-III-0248",
+   "cell_type": "pyramidal",
+   "root_id": "720575947484800081"
+  },
+  {
+   "id": "dense-III-0249",
+   "cell_type": "inhibitory",
+   "root_id": "720575947487332448"
+  },
+  {
+   "id": "dense-III-0250",
+   "cell_type": "glia",
+   "root_id": "720575947436837250"
+  },
+  {
+   "id": "dense-III-0251",
+   "cell_type": "pyramidal",
+   "root_id": "720575947473020141"
+  },
+  {
+   "id": "dense-III-0252",
+   "cell_type": "pyramidal",
+   "root_id": "720575947489077088"
+  },
+  {
+   "id": "dense-III-0253",
+   "cell_type": "pyramidal",
+   "root_id": "720575947528307953"
+  },
+  {
+   "id": "dense-III-0254",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505160129"
+  },
+  {
+   "id": "dense-III-0255",
+   "cell_type": "inhibitory",
+   "root_id": "720575947484752889"
+  },
+  {
+   "id": "dense-III-0256",
+   "cell_type": "glia",
+   "root_id": "720575947493954856"
+  },
+  {
+   "id": "dense-III-0257",
+   "cell_type": "glia",
+   "root_id": "720575947447662038"
+  },
+  {
+   "id": "dense-III-0258",
+   "cell_type": "pyramidal",
+   "root_id": "720575947540331080"
+  },
+  {
+   "id": "dense-III-0259",
+   "cell_type": "pyramidal",
+   "root_id": "720575947531871556"
+  },
+  {
+   "id": "dense-III-0260",
+   "cell_type": "glia",
+   "root_id": "720575947492465610"
+  },
+  {
+   "id": "dense-III-0261",
+   "cell_type": "pyramidal",
+   "root_id": "720575947459970436"
+  },
+  {
+   "id": "dense-III-0262",
+   "cell_type": "glia",
+   "root_id": "720575947423282409"
+  },
+  {
+   "id": "dense-III-0263",
+   "cell_type": "pyramidal",
+   "root_id": "720575947383871594"
+  },
+  {
+   "id": "dense-III-0264",
+   "cell_type": "pyramidal",
+   "root_id": "720575947475997172"
+  },
+  {
+   "id": "dense-III-0265",
+   "cell_type": "glia",
+   "root_id": "720575947450133604"
+  },
+  {
+   "id": "dense-III-0266",
+   "cell_type": "pyramidal",
+   "root_id": "720575947431132891"
+  },
+  {
+   "id": "dense-III-0267",
+   "cell_type": "pyramidal",
+   "root_id": "720575947596048590"
+  },
+  {
+   "id": "dense-III-0268",
+   "cell_type": "stellate",
+   "root_id": "720575947488597753"
+  },
+  {
+   "id": "dense-III-0269",
+   "cell_type": "stellate",
+   "root_id": "720575947547452484"
+  },
+  {
+   "id": "dense-III-0270",
+   "cell_type": "pyramidal",
+   "root_id": "720575947592834567"
+  },
+  {
+   "id": "dense-III-0271",
+   "cell_type": "pyramidal",
+   "root_id": "720575947522728299"
+  },
+  {
+   "id": "dense-III-0272",
+   "cell_type": "inhibitory",
+   "root_id": "720575947549330755"
+  },
+  {
+   "id": "dense-III-0273",
+   "cell_type": "glia",
+   "root_id": "720575947409320937"
+  },
+  {
+   "id": "dense-III-0274",
+   "cell_type": "glia",
+   "root_id": "720575947633694804"
+  },
+  {
+   "id": "dense-III-0275",
+   "cell_type": "pyramidal",
+   "root_id": "720575947471190660"
+  },
+  {
+   "id": "dense-III-0277",
+   "cell_type": "pyramidal",
+   "root_id": "720575947535111074"
+  },
+  {
+   "id": "dense-III-0278",
+   "cell_type": "pyramidal",
+   "root_id": "720575947483036505"
+  },
+  {
+   "id": "dense-III-0279",
+   "cell_type": "pyramidal",
+   "root_id": "720575947448687536"
+  },
+  {
+   "id": "dense-III-0280",
+   "cell_type": "pyramidal",
+   "root_id": "720575947497381099"
+  },
+  {
+   "id": "dense-III-0281",
+   "cell_type": "pyramidal",
+   "root_id": "720575947486898032"
+  },
+  {
+   "id": "dense-III-0282",
+   "cell_type": "pyramidal",
+   "root_id": "720575947498853099"
+  },
+  {
+   "id": "dense-III-0283",
+   "cell_type": "glia",
+   "root_id": "720575947458025379"
+  },
+  {
+   "id": "dense-III-0284",
+   "cell_type": "pyramidal",
+   "root_id": "720575947538260040"
+  },
+  {
+   "id": "dense-III-0285",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525165297"
+  },
+  {
+   "id": "dense-III-0286",
+   "cell_type": "pyramidal",
+   "root_id": "720575947515827226"
+  },
+  {
+   "id": "dense-III-0287",
+   "cell_type": "glia",
+   "root_id": "720575947511667304"
+  },
+  {
+   "id": "dense-III-0288",
+   "cell_type": "pyramidal",
+   "root_id": "720575947516889308"
+  },
+  {
+   "id": "dense-III-0289",
+   "cell_type": "pyramidal",
+   "root_id": "720575947563988680"
+  },
+  {
+   "id": "dense-III-0290",
+   "cell_type": "pyramidal",
+   "root_id": "720575947483299474"
+  },
+  {
+   "id": "dense-III-0291",
+   "cell_type": "pyramidal",
+   "root_id": "720575947532150946"
+  },
+  {
+   "id": "dense-III-0292",
+   "cell_type": "glia",
+   "root_id": "720575947595968974"
+  },
+  {
+   "id": "dense-III-0293",
+   "cell_type": "pyramidal",
+   "root_id": "720575947566853888"
+  },
+  {
+   "id": "dense-III-0294",
+   "cell_type": "glia",
+   "root_id": "720575947423060859"
+  },
+  {
+   "id": "dense-III-0295",
+   "cell_type": "pyramidal",
+   "root_id": "720575947567278652"
+  },
+  {
+   "id": "dense-III-0296",
+   "cell_type": "glia",
+   "root_id": "720575947545959377"
+  },
+  {
+   "id": "dense-III-0297",
+   "cell_type": "glia",
+   "root_id": "720575947533774115"
+  },
+  {
+   "id": "dense-III-0298",
+   "cell_type": "pyramidal",
+   "root_id": "720575947468801272"
+  },
+  {
+   "id": "dense-III-0299",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502468621"
+  },
+  {
+   "id": "dense-III-0300",
+   "cell_type": "glia",
+   "root_id": "720575947484793384"
+  },
+  {
+   "id": "dense-III-0301",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502713639"
+  },
+  {
+   "id": "dense-III-0302",
+   "cell_type": "pyramidal",
+   "root_id": "720575947446500283"
+  },
+  {
+   "id": "dense-IV-0303",
+   "cell_type": "glia",
+   "root_id": "720575947515272384"
+  },
+  {
+   "id": "dense-IV-0304",
+   "cell_type": "glia",
+   "root_id": "720575947502544930"
+  },
+  {
+   "id": "dense-IV-0305",
+   "cell_type": "pyramidal",
+   "root_id": "720575947491289312"
+  },
+  {
+   "id": "dense-IV-0306",
+   "cell_type": "pyramidal",
+   "root_id": "720575947485641551"
+  },
+  {
+   "id": "dense-IV-0307",
+   "cell_type": "pyramidal",
+   "root_id": "720575947457285651"
+  },
+  {
+   "id": "dense-IV-0308",
+   "cell_type": "glia",
+   "root_id": "720575947531313392"
+  },
+  {
+   "id": "dense-IV-0309",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505123522"
+  },
+  {
+   "id": "dense-IV-0310",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525343111"
+  },
+  {
+   "id": "dense-IV-0311",
+   "cell_type": "pyramidal",
+   "root_id": "720575947458965667"
+  },
+  {
+   "id": "dense-IV-0312",
+   "cell_type": "pyramidal",
+   "root_id": "720575947494043693"
+  },
+  {
+   "id": "dense-IV-0313",
+   "cell_type": "glia",
+   "root_id": "720575947546642760"
+  },
+  {
+   "id": "dense-IV-0314",
+   "cell_type": "glia",
+   "root_id": "720575947461814845"
+  },
+  {
+   "id": "dense-IV-0315",
+   "cell_type": "glia",
+   "root_id": "720575947489094233"
+  },
+  {
+   "id": "dense-IV-0316",
+   "cell_type": "pyramidal",
+   "root_id": "720575947490946763"
+  },
+  {
+   "id": "dense-IV-0317",
+   "cell_type": "glia",
+   "root_id": "720575947427993487"
+  },
+  {
+   "id": "dense-IV-0318",
+   "cell_type": "pyramidal",
+   "root_id": "720575947596172238"
+  },
+  {
+   "id": "dense-IV-0319",
+   "cell_type": "glia",
+   "root_id": "720575947488600797"
+  },
+  {
+   "id": "dense-IV-0320",
+   "cell_type": "pyramidal",
+   "root_id": "720575947460064317"
+  },
+  {
+   "id": "dense-IV-0321",
+   "cell_type": "glia",
+   "root_id": "720575947450891404"
+  },
+  {
+   "id": "dense-IV-0322",
+   "cell_type": "pyramidal",
+   "root_id": "720575947489368942"
+  },
+  {
+   "id": "dense-IV-0323",
+   "cell_type": "glia",
+   "root_id": "720575947460345149"
+  },
+  {
+   "id": "dense-IV-0324",
+   "cell_type": "glia",
+   "root_id": "720575947525553769"
+  },
+  {
+   "id": "dense-IV-0325",
+   "cell_type": "glia",
+   "root_id": "720575947479760210"
+  },
+  {
+   "id": "dense-IV-0326",
+   "cell_type": "pyramidal",
+   "root_id": "720575947537689475"
+  },
+  {
+   "id": "dense-IV-0327",
+   "cell_type": "pyramidal",
+   "root_id": "720575947508524109"
+  },
+  {
+   "id": "dense-IV-0328",
+   "cell_type": "pyramidal",
+   "root_id": "720575947524578725"
+  },
+  {
+   "id": "dense-IV-0329",
+   "cell_type": "glia",
+   "root_id": "720575947476712194"
+  },
+  {
+   "id": "dense-IV-0330",
+   "cell_type": "glia",
+   "root_id": "720575947495152750"
+  },
+  {
+   "id": "dense-IV-0331",
+   "cell_type": "glia",
+   "root_id": "720575947514355225"
+  },
+  {
+   "id": "dense-IV-0332",
+   "cell_type": "pyramidal",
+   "root_id": "720575947484118361"
+  },
+  {
+   "id": "dense-IV-0333",
+   "cell_type": "pyramidal",
+   "root_id": "720575947462222305"
+  },
+  {
+   "id": "dense-IV-0334",
+   "cell_type": "pyramidal",
+   "root_id": "720575947482740481"
+  },
+  {
+   "id": "dense-IV-0335",
+   "cell_type": "pyramidal",
+   "root_id": "720575947603955651"
+  },
+  {
+   "id": "dense-IV-0336",
+   "cell_type": "glia",
+   "root_id": "720575947491093176"
+  },
+  {
+   "id": "dense-IV-0337",
+   "cell_type": "pyramidal",
+   "root_id": "720575947501572545"
+  },
+  {
+   "id": "dense-IV-0338",
+   "cell_type": "pyramidal",
+   "root_id": "720575947477377290"
+  },
+  {
+   "id": "dense-IV-0339",
+   "cell_type": "glia",
+   "root_id": "720575947478537209"
+  },
+  {
+   "id": "dense-IV-0340",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502333418"
+  },
+  {
+   "id": "dense-IV-0341",
+   "cell_type": "pyramidal",
+   "root_id": "720575947568185620"
+  },
+  {
+   "id": "dense-IV-0342",
+   "cell_type": "glia",
+   "root_id": "720575947551500364"
+  },
+  {
+   "id": "dense-IV-0343",
+   "cell_type": "glia",
+   "root_id": "720575947448119870"
+  },
+  {
+   "id": "dense-V-0344",
+   "cell_type": "glia",
+   "root_id": "720575947486053598"
+  },
+  {
+   "id": "dense-V-0345",
+   "cell_type": "pyramidal",
+   "root_id": "720575947541585650"
+  },
+  {
+   "id": "dense-V-0346",
+   "cell_type": "pyramidal",
+   "root_id": "720575947520748395"
+  },
+  {
+   "id": "dense-V-0347",
+   "cell_type": "glia",
+   "root_id": "720575947538527180"
+  },
+  {
+   "id": "dense-V-0348",
+   "cell_type": "glia",
+   "root_id": "720575947474421195"
+  },
+  {
+   "id": "dense-V-0349",
+   "cell_type": "pyramidal",
+   "root_id": "720575947499465762"
+  },
+  {
+   "id": "dense-V-0350",
+   "cell_type": "glia",
+   "root_id": "720575947414998167"
+  },
+  {
+   "id": "dense-V-0351",
+   "cell_type": "glia",
+   "root_id": "720575947530869606"
+  },
+  {
+   "id": "dense-V-0352",
+   "cell_type": "glia",
+   "root_id": "720575947489687375"
+  },
+  {
+   "id": "dense-V-0353",
+   "cell_type": "pyramidal",
+   "root_id": "720575947577440958"
+  },
+  {
+   "id": "dense-V-0354",
+   "cell_type": "glia",
+   "root_id": "720575947441063743"
+  },
+  {
+   "id": "dense-V-0355",
+   "cell_type": "glia",
+   "root_id": "720575947488199161"
+  },
+  {
+   "id": "dense-V-0356",
+   "cell_type": "glia",
+   "root_id": "720575947519036204"
+  },
+  {
+   "id": "dense-V-0357",
+   "cell_type": "glia",
+   "root_id": "720575947491723816"
+  },
+  {
+   "id": "dense-V-0358",
+   "cell_type": "glia",
+   "root_id": "720575947418630052"
+  },
+  {
+   "id": "dense-V-0359",
+   "cell_type": "pyramidal",
+   "root_id": "720575947543369796"
+  },
+  {
+   "id": "dense-V-0360",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527290752"
+  },
+  {
+   "id": "dense-V-0361",
+   "cell_type": "glia",
+   "root_id": "720575947493520680"
+  },
+  {
+   "id": "dense-V-0362",
+   "cell_type": "pyramidal",
+   "root_id": "720575947524922412"
+  },
+  {
+   "id": "dense-V-0363",
+   "cell_type": "pyramidal",
+   "root_id": "720575947548290812"
+  },
+  {
+   "id": "dense-V-0364",
+   "cell_type": "pyramidal",
+   "root_id": "720575947439969456"
+  },
+  {
+   "id": "dense-V-0365",
+   "cell_type": "pyramidal",
+   "root_id": "720575947587675911"
+  },
+  {
+   "id": "dense-V-0366",
+   "cell_type": "glia",
+   "root_id": "720575947532651323"
+  },
+  {
+   "id": "dense-V-0367",
+   "cell_type": "glia",
+   "root_id": "720575947500023409"
+  },
+  {
+   "id": "dense-V-0368",
+   "cell_type": "pyramidal",
+   "root_id": "720575947464244356"
+  },
+  {
+   "id": "dense-V-0369",
+   "cell_type": "glia",
+   "root_id": "720575947391907780"
+  },
+  {
+   "id": "dense-V-0370",
+   "cell_type": "glia",
+   "root_id": "720575947458824474"
+  },
+  {
+   "id": "dense-V-0371",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527144096"
+  },
+  {
+   "id": "dense-V-0372",
+   "cell_type": "pyramidal",
+   "root_id": "720575947504148616"
+  },
+  {
+   "id": "dense-V-0373",
+   "cell_type": "glia",
+   "root_id": "720575947487917346"
+  },
+  {
+   "id": "dense-V-0374",
+   "cell_type": "glia",
+   "root_id": "720575947498124074"
+  },
+  {
+   "id": "dense-V-0375",
+   "cell_type": "pyramidal",
+   "root_id": "720575947420042660"
+  },
+  {
+   "id": "dense-V-0376",
+   "cell_type": "glia",
+   "root_id": "720575947517469129"
+  },
+  {
+   "id": "dense-V-0377",
+   "cell_type": "pyramidal",
+   "root_id": "720575947467528149"
+  },
+  {
+   "id": "dense-V-0378",
+   "cell_type": "glia",
+   "root_id": "720575947492568621"
+  },
+  {
+   "id": "dense-V-0379",
+   "cell_type": "glia",
+   "root_id": "720575947528585735"
+  },
+  {
+   "id": "dense-V-0380",
+   "cell_type": "glia",
+   "root_id": "720575947524357809"
+  },
+  {
+   "id": "dense-V-0381",
+   "cell_type": "pyramidal",
+   "root_id": "720575947491102327"
+  },
+  {
+   "id": "dense-V-0382",
+   "cell_type": "glia",
+   "root_id": "720575947451891761"
+  },
+  {
+   "id": "dense-V-0383",
+   "cell_type": "glia",
+   "root_id": "720575947502406733"
+  },
+  {
+   "id": "dense-V-0384",
+   "cell_type": "pyramidal",
+   "root_id": "720575947447337254"
+  },
+  {
+   "id": "dense-V-0385",
+   "cell_type": "glia",
+   "root_id": "720575947418139300"
+  },
+  {
+   "id": "dense-V-0386",
+   "cell_type": "glia",
+   "root_id": "720575947435744130"
+  },
+  {
+   "id": "dense-V-0387",
+   "cell_type": "glia",
+   "root_id": "720575947491096616"
+  },
+  {
+   "id": "dense-V-0388",
+   "cell_type": "glia",
+   "root_id": "720575947545219652"
+  },
+  {
+   "id": "dense-V-0389",
+   "cell_type": "pyramidal",
+   "root_id": "720575947509288781"
+  },
+  {
+   "id": "dense-V-0390",
+   "cell_type": "glia",
+   "root_id": "720575947542868292"
+  },
+  {
+   "id": "dense-V-0391",
+   "cell_type": "pyramidal",
+   "root_id": "720575947493161256"
+  },
+  {
+   "id": "dense-V-0392",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505813865"
+  },
+  {
+   "id": "dense-V-0393",
+   "cell_type": "pyramidal",
+   "root_id": "720575947478030246"
+  },
+  {
+   "id": "dense-V-0394",
+   "cell_type": "glia",
+   "root_id": "720575947463828135"
+  },
+  {
+   "id": "dense-V-0395",
+   "cell_type": "pyramidal",
+   "root_id": "720575947523552617"
+  },
+  {
+   "id": "dense-V-0396",
+   "cell_type": "pyramidal",
+   "root_id": "720575947465237513"
+  },
+  {
+   "id": "dense-V-0397",
+   "cell_type": "glia",
+   "root_id": "720575947460475197"
+  },
+  {
+   "id": "dense-V-0398",
+   "cell_type": "glia",
+   "root_id": "720575947448392844"
+  },
+  {
+   "id": "dense-V-0399",
+   "cell_type": "pyramidal",
+   "root_id": "720575947559805870"
+  },
+  {
+   "id": "dense-V-0400",
+   "cell_type": "glia",
+   "root_id": "720575947447424178"
+  },
+  {
+   "id": "dense-V-0401",
+   "cell_type": "pyramidal",
+   "root_id": "720575947497317057"
+  },
+  {
+   "id": "dense-V-0402",
+   "cell_type": "glia",
+   "root_id": "720575947564419790"
+  },
+  {
+   "id": "dense-V-0403",
+   "cell_type": "glia",
+   "root_id": "720575947488486980"
+  },
+  {
+   "id": "dense-V-0404",
+   "cell_type": "pyramidal",
+   "root_id": "720575947566526005"
+  },
+  {
+   "id": "dense-V-0405",
+   "cell_type": "pyramidal",
+   "root_id": "720575947554874029"
+  },
+  {
+   "id": "dense-V-0406",
+   "cell_type": "glia",
+   "root_id": "720575947553555454"
+  },
+  {
+   "id": "dense-V-0407",
+   "cell_type": "glia",
+   "root_id": "720575947485285998"
+  },
+  {
+   "id": "dense-V-0408",
+   "cell_type": "glia",
+   "root_id": "720575947492398376"
+  },
+  {
+   "id": "dense-V-0409",
+   "cell_type": "glia",
+   "root_id": "720575947459362946"
+  },
+  {
+   "id": "dense-V-0410",
+   "cell_type": "glia",
+   "root_id": "720575947418591140"
+  },
+  {
+   "id": "dense-V-0411",
+   "cell_type": "glia",
+   "root_id": "720575947438068320"
+  },
+  {
+   "id": "dense-V-0412",
+   "cell_type": "glia",
+   "root_id": "720575947464399429"
+  },
+  {
+   "id": "dense-V-0413",
+   "cell_type": "glia",
+   "root_id": "720575947463310805"
+  },
+  {
+   "id": "dense-V-0414",
+   "cell_type": "glia",
+   "root_id": "720575947520016415"
+  },
+  {
+   "id": "dense-V-0415",
+   "cell_type": "pyramidal",
+   "root_id": "720575947566125877"
+  },
+  {
+   "id": "dense-V-0416",
+   "cell_type": "pyramidal",
+   "root_id": "720575947479228818"
+  },
+  {
+   "id": "dense-V-0417",
+   "cell_type": "glia",
+   "root_id": "720575947533075474"
+  },
+  {
+   "id": "dense-V-0418",
+   "cell_type": "glia",
+   "root_id": "720575947534040480"
+  },
+  {
+   "id": "dense-V-0419",
+   "cell_type": "pyramidal",
+   "root_id": "720575947567738880"
+  },
+  {
+   "id": "dense-V-0420",
+   "cell_type": "pyramidal",
+   "root_id": "720575947462400317"
+  },
+  {
+   "id": "dense-V-0421",
+   "cell_type": "pyramidal",
+   "root_id": "720575947464365893"
+  },
+  {
+   "id": "dense-V-0422",
+   "cell_type": "pyramidal",
+   "root_id": "720575947518982073"
+  },
+  {
+   "id": "dense-V-0423",
+   "cell_type": "pyramidal",
+   "root_id": "720575947456655635"
+  },
+  {
+   "id": "dense-V-0424",
+   "cell_type": "pyramidal",
+   "root_id": "720575947447333681"
+  },
+  {
+   "id": "dense-V-0425",
+   "cell_type": "glia",
+   "root_id": "720575947491464903"
+  },
+  {
+   "id": "dense-V-0426",
+   "cell_type": "glia",
+   "root_id": "720575947543451460"
+  },
+  {
+   "id": "dense-V-0427",
+   "cell_type": "glia",
+   "root_id": "720575947542951491"
+  },
+  {
+   "id": "dense-V-0428",
+   "cell_type": "glia",
+   "root_id": "720575947473148114"
+  },
+  {
+   "id": "dense-V-0429",
+   "cell_type": "glia",
+   "root_id": "720575947497364811"
+  },
+  {
+   "id": "dense-V-0430",
+   "cell_type": "pyramidal",
+   "root_id": "720575947450420573"
+  },
+  {
+   "id": "dense-V-0431",
+   "cell_type": "glia",
+   "root_id": "720575947572737596"
+  },
+  {
+   "id": "dense-V-0432",
+   "cell_type": "pyramidal",
+   "root_id": "720575947437164102"
+  },
+  {
+   "id": "dense-V-0433",
+   "cell_type": "pyramidal",
+   "root_id": "720575947463748053"
+  },
+  {
+   "id": "dense-V-0434",
+   "cell_type": "glia",
+   "root_id": "720575947500015041"
+  },
+  {
+   "id": "dense-V-0435",
+   "cell_type": "pyramidal",
+   "root_id": "720575947528882338"
+  },
+  {
+   "id": "dense-V-0436",
+   "cell_type": "glia",
+   "root_id": "720575947416839352"
+  },
+  {
+   "id": "dense-V-0437",
+   "cell_type": "pyramidal",
+   "root_id": "720575947523912647"
+  },
+  {
+   "id": "dense-V-0438",
+   "cell_type": "glia",
+   "root_id": "720575947499334477"
+  },
+  {
+   "id": "dense-V-0439",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502448321"
+  },
+  {
+   "id": "dense-V-0440",
+   "cell_type": "glia",
+   "root_id": "720575947502988266"
+  },
+  {
+   "id": "dense-V-0442",
+   "cell_type": "glia",
+   "root_id": "720575947444557025"
+  },
+  {
+   "id": "dense-V-0443",
+   "cell_type": "glia",
+   "root_id": "720575947564402638"
+  },
+  {
+   "id": "dense-V-0444",
+   "cell_type": "glia",
+   "root_id": "720575947567365581"
+  },
+  {
+   "id": "dense-V-0445",
+   "cell_type": "glia",
+   "root_id": "720575947546136475"
+  },
+  {
+   "id": "dense-V-0446",
+   "cell_type": "pyramidal",
+   "root_id": "720575947554142893"
+  },
+  {
+   "id": "dense-V-0447",
+   "cell_type": "glia",
+   "root_id": "720575947552683931"
+  },
+  {
+   "id": "dense-V-0448",
+   "cell_type": "pyramidal",
+   "root_id": "720575947450597681"
+  },
+  {
+   "id": "dense-V-0449",
+   "cell_type": "pyramidal",
+   "root_id": "720575947495868526"
+  },
+  {
+   "id": "dense-V-0450",
+   "cell_type": "pyramidal",
+   "root_id": "720575947509833899"
+  },
+  {
+   "id": "dense-V-0451",
+   "cell_type": "glia",
+   "root_id": "720575947488306978"
+  },
+  {
+   "id": "dense-V-0452",
+   "cell_type": "glia",
+   "root_id": "720575947477049487"
+  },
+  {
+   "id": "dense-V-0453",
+   "cell_type": "pyramidal",
+   "root_id": "720575947499810381"
+  },
+  {
+   "id": "dense-V-0454",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521137792"
+  },
+  {
+   "id": "dense-V-0455",
+   "cell_type": "pyramidal",
+   "root_id": "720575947461481021"
+  },
+  {
+   "id": "dense-V-0456",
+   "cell_type": "pyramidal",
+   "root_id": "720575947454818835"
+  },
+  {
+   "id": "dense-V-0457",
+   "cell_type": "pyramidal",
+   "root_id": "720575947448318513"
+  },
+  {
+   "id": "dense-V-0458",
+   "cell_type": "pyramidal",
+   "root_id": "720575947435608728"
+  },
+  {
+   "id": "dense-V-0459",
+   "cell_type": "glia",
+   "root_id": "720575947421608789"
+  },
+  {
+   "id": "dense-V-0460",
+   "cell_type": "glia",
+   "root_id": "720575947502594893"
+  },
+  {
+   "id": "dense-V-0461",
+   "cell_type": "pyramidal",
+   "root_id": "720575947421672774"
+  },
+  {
+   "id": "dense-V-0462",
+   "cell_type": "glia",
+   "root_id": "720575947455138687"
+  },
+  {
+   "id": "dense-V-0463",
+   "cell_type": "glia",
+   "root_id": "720575947583154516"
+  },
+  {
+   "id": "dense-V-0464",
+   "cell_type": "glia",
+   "root_id": "720575947476136970"
+  },
+  {
+   "id": "dense-V-0465",
+   "cell_type": "pyramidal",
+   "root_id": "720575947507506537"
+  },
+  {
+   "id": "dense-V-0466",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521644315"
+  },
+  {
+   "id": "dense-V-0467",
+   "cell_type": "glia",
+   "root_id": "720575947418624676"
+  },
+  {
+   "id": "dense-V-0468",
+   "cell_type": "glia",
+   "root_id": "720575947584254398"
+  },
+  {
+   "id": "dense-V-0469",
+   "cell_type": "pyramidal",
+   "root_id": "720575947524459295"
+  },
+  {
+   "id": "dense-V-0470",
+   "cell_type": "glia",
+   "root_id": "720575947590565820"
+  },
+  {
+   "id": "dense-V-0471",
+   "cell_type": "glia",
+   "root_id": "720575947545344000"
+  },
+  {
+   "id": "dense-V-0472",
+   "cell_type": "pyramidal",
+   "root_id": "720575947481452047"
+  },
+  {
+   "id": "dense-V-0473",
+   "cell_type": "pyramidal",
+   "root_id": "720575947478957028"
+  },
+  {
+   "id": "dense-V-0474",
+   "cell_type": "pyramidal",
+   "root_id": "720575947522389207"
+  },
+  {
+   "id": "dense-VI-0475",
+   "cell_type": "glia",
+   "root_id": "720575947446789859"
+  },
+  {
+   "id": "dense-VI-0476",
+   "cell_type": "glia",
+   "root_id": "720575947532300558"
+  },
+  {
+   "id": "dense-VI-0477",
+   "cell_type": "glia",
+   "root_id": "720575947494386886"
+  },
+  {
+   "id": "dense-VI-0478",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502670571"
+  },
+  {
+   "id": "dense-VI-0479",
+   "cell_type": "glia",
+   "root_id": "720575947486516087"
+  },
+  {
+   "id": "dense-VI-0480",
+   "cell_type": "pyramidal",
+   "root_id": "720575947511495501"
+  },
+  {
+   "id": "dense-VI-0481",
+   "cell_type": "glia",
+   "root_id": "720575947560344679"
+  },
+  {
+   "id": "dense-VI-0482",
+   "cell_type": "glia",
+   "root_id": "720575947452416861"
+  },
+  {
+   "id": "dense-VI-0483",
+   "cell_type": "glia",
+   "root_id": "720575947507594253"
+  },
+  {
+   "id": "dense-VI-0484",
+   "cell_type": "pyramidal",
+   "root_id": "720575947486838510"
+  },
+  {
+   "id": "dense-VI-0485",
+   "cell_type": "glia",
+   "root_id": "720575947506363395"
+  },
+  {
+   "id": "dense-VI-0486",
+   "cell_type": "glia",
+   "root_id": "720575947515524961"
+  },
+  {
+   "id": "dense-VI-0487",
+   "cell_type": "glia",
+   "root_id": "720575947475211391"
+  },
+  {
+   "id": "dense-VI-0488",
+   "cell_type": "glia",
+   "root_id": "720575947555903811"
+  },
+  {
+   "id": "dense-VI-0489",
+   "cell_type": "glia",
+   "root_id": "720575947463928516"
+  },
+  {
+   "id": "dense-VI-0490",
+   "cell_type": "glia",
+   "root_id": "720575947486289015"
+  },
+  {
+   "id": "dense-VI-0491",
+   "cell_type": "glia",
+   "root_id": "720575947484584692"
+  },
+  {
+   "id": "dense-VI-0492",
+   "cell_type": "glia",
+   "root_id": "720575947500926310"
+  },
+  {
+   "id": "dense-VI-0493",
+   "cell_type": "pyramidal",
+   "root_id": "720575947445273929"
+  },
+  {
+   "id": "dense-VI-0494",
+   "cell_type": "glia",
+   "root_id": "720575947561623157"
+  },
+  {
+   "id": "dense-VI-0495",
+   "cell_type": "glia",
+   "root_id": "720575947477484625"
+  },
+  {
+   "id": "dense-VI-0496",
+   "cell_type": "glia",
+   "root_id": "720575947538612852"
+  },
+  {
+   "id": "dense-VI-0497",
+   "cell_type": "glia",
+   "root_id": "720575947420097123"
+  },
+  {
+   "id": "dense-VI-0498",
+   "cell_type": "pyramidal",
+   "root_id": "720575947516065920"
+  },
+  {
+   "id": "dense-VI-0499",
+   "cell_type": "glia",
+   "root_id": "720575947410216599"
+  },
+  {
+   "id": "dense-VI-0500",
+   "cell_type": "glia",
+   "root_id": "720575947555276318"
+  },
+  {
+   "id": "dense-VI-0501",
+   "cell_type": "glia",
+   "root_id": "720575947483551890"
+  },
+  {
+   "id": "dense-VI-0502",
+   "cell_type": "glia",
+   "root_id": "720575947544734107"
+  },
+  {
+   "id": "dense-VI-0503",
+   "cell_type": "glia",
+   "root_id": "720575947572155537"
+  },
+  {
+   "id": "dense-VI-0504",
+   "cell_type": "glia",
+   "root_id": "720575947506677261"
+  },
+  {
+   "id": "dense-VI-0505",
+   "cell_type": "pyramidal",
+   "root_id": "720575947536495090"
+  },
+  {
+   "id": "dense-VI-0506",
+   "cell_type": "glia",
+   "root_id": "720575947544160068"
+  },
+  {
+   "id": "dense-VI-0507",
+   "cell_type": "glia",
+   "root_id": "720575947426588486"
+  },
+  {
+   "id": "dense-VI-0508",
+   "cell_type": "pyramidal",
+   "root_id": "720575947458409412"
+  },
+  {
+   "id": "dense-VI-0509",
+   "cell_type": "pyramidal",
+   "root_id": "720575947524695751"
+  },
+  {
+   "id": "dense-VI-0510",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521404204"
+  },
+  {
+   "id": "dense-VI-0511",
+   "cell_type": "glia",
+   "root_id": "720575947522153260"
+  },
+  {
+   "id": "dense-VI-0512",
+   "cell_type": "glia",
+   "root_id": "720575947514256420"
+  },
+  {
+   "id": "dense-VI-0513",
+   "cell_type": "glia",
+   "root_id": "720575947373535338"
+  },
+  {
+   "id": "dense-VI-0514",
+   "cell_type": "glia",
+   "root_id": "720575947498376013"
+  },
+  {
+   "id": "dense-VI-0515",
+   "cell_type": "pyramidal",
+   "root_id": "720575947514930732"
+  },
+  {
+   "id": "dense-VI-0516",
+   "cell_type": "glia",
+   "root_id": "720575947461917245"
+  },
+  {
+   "id": "dense-VI-0517",
+   "cell_type": "glia",
+   "root_id": "720575947511574171"
+  },
+  {
+   "id": "dense-VI-0518",
+   "cell_type": "glia",
+   "root_id": "720575947396062058"
+  },
+  {
+   "id": "dense-VI-0519",
+   "cell_type": "glia",
+   "root_id": "720575947445910601"
+  },
+  {
+   "id": "dense-VI-0520",
+   "cell_type": "pyramidal",
+   "root_id": "720575947526503559"
+  },
+  {
+   "id": "dense-VI-0521",
+   "cell_type": "glia",
+   "root_id": "720575947475802626"
+  },
+  {
+   "id": "dense-VI-0522",
+   "cell_type": "pyramidal",
+   "root_id": "720575947445451593"
+  },
+  {
+   "id": "dense-VI-0523",
+   "cell_type": "glia",
+   "root_id": "720575947500523909"
+  },
+  {
+   "id": "dense-VI-0524",
+   "cell_type": "glia",
+   "root_id": "720575947450933597"
+  },
+  {
+   "id": "dense-VI-0525",
+   "cell_type": "glia",
+   "root_id": "720575947558866440"
+  },
+  {
+   "id": "dense-VI-0526",
+   "cell_type": "glia",
+   "root_id": "720575947493063169"
+  },
+  {
+   "id": "dense-VI-0527",
+   "cell_type": "glia",
+   "root_id": "720575947475163402"
+  },
+  {
+   "id": "dense-VI-0528",
+   "cell_type": "glia",
+   "root_id": "720575947564938050"
+  },
+  {
+   "id": "dense-VI-0529",
+   "cell_type": "glia",
+   "root_id": "720575947444141737"
+  },
+  {
+   "id": "dense-VI-0530",
+   "cell_type": "glia",
+   "root_id": "720575947486770551"
+  },
+  {
+   "id": "dense-VI-0531",
+   "cell_type": "glia",
+   "root_id": "720575947447610685"
+  },
+  {
+   "id": "dense-VI-0532",
+   "cell_type": "pyramidal",
+   "root_id": "720575947584406535"
+  },
+  {
+   "id": "dense-VI-0533",
+   "cell_type": "pyramidal",
+   "root_id": "720575947508117384"
+  },
+  {
+   "id": "dense-VI-0534",
+   "cell_type": "glia",
+   "root_id": "720575947476663401"
+  },
+  {
+   "id": "dense-VI-0535",
+   "cell_type": "glia",
+   "root_id": "720575947492197825"
+  },
+  {
+   "id": "dense-VI-0536",
+   "cell_type": "glia",
+   "root_id": "720575947434795227"
+  },
+  {
+   "id": "dense-VI-0537",
+   "cell_type": "glia",
+   "root_id": "720575947431040016"
+  },
+  {
+   "id": "dense-VI-0538",
+   "cell_type": "pyramidal",
+   "root_id": "720575947520950889"
+  },
+  {
+   "id": "dense-VI-0539",
+   "cell_type": "glia",
+   "root_id": "720575947583840536"
+  },
+  {
+   "id": "dense-VI-0540",
+   "cell_type": "glia",
+   "root_id": "720575947558619144"
+  },
+  {
+   "id": "dense-VI-0541",
+   "cell_type": "pyramidal",
+   "root_id": "720575947493939626"
+  },
+  {
+   "id": "dense-VI-0542",
+   "cell_type": "pyramidal",
+   "root_id": "720575947392084779"
+  },
+  {
+   "id": "dense-VI-0543",
+   "cell_type": "glia",
+   "root_id": "720575947486942830"
+  },
+  {
+   "id": "dense-VI-0544",
+   "cell_type": "glia",
+   "root_id": "720575947461882693"
+  },
+  {
+   "id": "dense-VI-0545",
+   "cell_type": "glia",
+   "root_id": "720575947473054864"
+  },
+  {
+   "id": "dense-VI-0546",
+   "cell_type": "glia",
+   "root_id": "720575947413199606"
+  },
+  {
+   "id": "dense-VI-0547",
+   "cell_type": "pyramidal",
+   "root_id": "720575947461926227"
+  },
+  {
+   "id": "dense-VI-0548",
+   "cell_type": "glia",
+   "root_id": "720575947639913520"
+  },
+  {
+   "id": "dense-VI-0549",
+   "cell_type": "pyramidal",
+   "root_id": "720575947455975699"
+  },
+  {
+   "id": "dense-VI-0550",
+   "cell_type": "glia",
+   "root_id": "720575947523336647"
+  },
+  {
+   "id": "dense-VI-0551",
+   "cell_type": "glia",
+   "root_id": "720575947416680262"
+  },
+  {
    "id": "inhibitory-01",
    "cell_type": "inhibitory",
    "root_id": "720575947567168828"
@@ -1284,9 +3914,10 @@
  "counts": {
   "astrocyte": 11,
   "bipolar": 4,
-  "pyramidal": 161,
-  "stellate": 53,
-  "inhibitory": 12,
+  "pyramidal": 377,
+  "stellate": 81,
+  "glia": 250,
+  "inhibitory": 44,
   "microglia": 6,
   "oligodendrocyte": 9
  },
