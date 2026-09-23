@@ -1,0 +1,1297 @@
+{
+ "cells": [
+  {
+   "id": "astrocyte-01",
+   "cell_type": "glia",
+   "root_id": "720575947408715489"
+  },
+  {
+   "id": "astrocyte-03",
+   "cell_type": "glia",
+   "root_id": "720575947529231820"
+  },
+  {
+   "id": "astrocyte-04",
+   "cell_type": "glia",
+   "root_id": "720575947505391325"
+  },
+  {
+   "id": "astrocyte-05",
+   "cell_type": "glia",
+   "root_id": "720575947568063768"
+  },
+  {
+   "id": "astrocyte-06",
+   "cell_type": "glia",
+   "root_id": "720575947496107662"
+  },
+  {
+   "id": "astrocyte-07",
+   "cell_type": "glia",
+   "root_id": "720575947405349796"
+  },
+  {
+   "id": "astrocyte-08",
+   "cell_type": "glia",
+   "root_id": "720575947518700295"
+  },
+  {
+   "id": "astrocyte-09",
+   "cell_type": "glia",
+   "root_id": "720575947465959301"
+  },
+  {
+   "id": "astrocyte-10",
+   "cell_type": "glia",
+   "root_id": "720575947498518648"
+  },
+  {
+   "id": "astrocyte-11",
+   "cell_type": "glia",
+   "root_id": "720575947463722067"
+  },
+  {
+   "id": "astrocyte-12",
+   "cell_type": "glia",
+   "root_id": "720575947400585301"
+  },
+  {
+   "id": "bipolar-01",
+   "cell_type": "bipolar",
+   "root_id": "720575947496304424"
+  },
+  {
+   "id": "bipolar-02",
+   "cell_type": "bipolar",
+   "root_id": "720575947545291892"
+  },
+  {
+   "id": "bipolar-04",
+   "cell_type": "bipolar",
+   "root_id": "720575947445170363"
+  },
+  {
+   "id": "bipolar-05",
+   "cell_type": "bipolar",
+   "root_id": "720575947568063768"
+  },
+  {
+   "id": "deep-pyramidal-003",
+   "cell_type": "pyramidal",
+   "root_id": "720575947499144695"
+  },
+  {
+   "id": "deep-pyramidal-004",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502488567"
+  },
+  {
+   "id": "deep-pyramidal-005",
+   "cell_type": "pyramidal",
+   "root_id": "720575947504984160"
+  },
+  {
+   "id": "deep-pyramidal-006",
+   "cell_type": "pyramidal",
+   "root_id": "720575947448715187"
+  },
+  {
+   "id": "deep-pyramidal-007",
+   "cell_type": "pyramidal",
+   "root_id": "720575947528797169"
+  },
+  {
+   "id": "deep-pyramidal-008",
+   "cell_type": "pyramidal",
+   "root_id": "720575947385930090"
+  },
+  {
+   "id": "deep-pyramidal-009",
+   "cell_type": "pyramidal",
+   "root_id": "720575947487008440"
+  },
+  {
+   "id": "deep-pyramidal-010",
+   "cell_type": "pyramidal",
+   "root_id": "720575947534246691"
+  },
+  {
+   "id": "deep-pyramidal-011",
+   "cell_type": "pyramidal",
+   "root_id": "720575947488759514"
+  },
+  {
+   "id": "deep-pyramidal-012",
+   "cell_type": "pyramidal",
+   "root_id": "720575947563234099"
+  },
+  {
+   "id": "deep-pyramidal-013",
+   "cell_type": "pyramidal",
+   "root_id": "720575947523843720"
+  },
+  {
+   "id": "deep-pyramidal-014",
+   "cell_type": "pyramidal",
+   "root_id": "720575947501857319"
+  },
+  {
+   "id": "deep-pyramidal-015",
+   "cell_type": "pyramidal",
+   "root_id": "720575947530489017"
+  },
+  {
+   "id": "deep-pyramidal-016",
+   "cell_type": "pyramidal",
+   "root_id": "720575947530049479"
+  },
+  {
+   "id": "deep-pyramidal-017",
+   "cell_type": "pyramidal",
+   "root_id": "720575947537518404"
+  },
+  {
+   "id": "deep-pyramidal-018",
+   "cell_type": "pyramidal",
+   "root_id": "720575947517026512"
+  },
+  {
+   "id": "deep-pyramidal-019",
+   "cell_type": "pyramidal",
+   "root_id": "720575947483035841"
+  },
+  {
+   "id": "deep-pyramidal-020",
+   "cell_type": "pyramidal",
+   "root_id": "720575947557030787"
+  },
+  {
+   "id": "deep-pyramidal-021",
+   "cell_type": "pyramidal",
+   "root_id": "720575947563027303"
+  },
+  {
+   "id": "deep-pyramidal-022",
+   "cell_type": "pyramidal",
+   "root_id": "720575947535191714"
+  },
+  {
+   "id": "deep-pyramidal-023",
+   "cell_type": "pyramidal",
+   "root_id": "720575947474798346"
+  },
+  {
+   "id": "deep-pyramidal-024",
+   "cell_type": "pyramidal",
+   "root_id": "720575947532856422"
+  },
+  {
+   "id": "deep-pyramidal-025",
+   "cell_type": "pyramidal",
+   "root_id": "720575947558244894"
+  },
+  {
+   "id": "deep-pyramidal-026",
+   "cell_type": "pyramidal",
+   "root_id": "720575947552158158"
+  },
+  {
+   "id": "deep-pyramidal-027",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525377930"
+  },
+  {
+   "id": "deep-pyramidal-028",
+   "cell_type": "pyramidal",
+   "root_id": "720575947510017003"
+  },
+  {
+   "id": "deep-pyramidal-029",
+   "cell_type": "pyramidal",
+   "root_id": "720575947503240874"
+  },
+  {
+   "id": "deep-pyramidal-030",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502295751"
+  },
+  {
+   "id": "deep-pyramidal-031",
+   "cell_type": "pyramidal",
+   "root_id": "720575947454290083"
+  },
+  {
+   "id": "deep-pyramidal-032",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521179497"
+  },
+  {
+   "id": "deep-pyramidal-033",
+   "cell_type": "pyramidal",
+   "root_id": "720575947592177199"
+  },
+  {
+   "id": "deep-pyramidal-034",
+   "cell_type": "pyramidal",
+   "root_id": "720575947565604706"
+  },
+  {
+   "id": "deep-pyramidal-035",
+   "cell_type": "pyramidal",
+   "root_id": "720575947419411876"
+  },
+  {
+   "id": "deep-pyramidal-036",
+   "cell_type": "pyramidal",
+   "root_id": "720575947504966799"
+  },
+  {
+   "id": "deep-pyramidal-037",
+   "cell_type": "pyramidal",
+   "root_id": "720575947478122628"
+  },
+  {
+   "id": "deep-pyramidal-038",
+   "cell_type": "pyramidal",
+   "root_id": "720575947511382656"
+  },
+  {
+   "id": "deep-pyramidal-039",
+   "cell_type": "pyramidal",
+   "root_id": "720575947515455352"
+  },
+  {
+   "id": "deep-pyramidal-040",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505269648"
+  },
+  {
+   "id": "deep-pyramidal-041",
+   "cell_type": "pyramidal",
+   "root_id": "720575947425768983"
+  },
+  {
+   "id": "deep-pyramidal-042",
+   "cell_type": "pyramidal",
+   "root_id": "720575947471063800"
+  },
+  {
+   "id": "deep-pyramidal-043",
+   "cell_type": "pyramidal",
+   "root_id": "720575947506219450"
+  },
+  {
+   "id": "deep-pyramidal-044",
+   "cell_type": "pyramidal",
+   "root_id": "720575947543061320"
+  },
+  {
+   "id": "deep-stellate-045",
+   "cell_type": "stellate",
+   "root_id": "720575947526226234"
+  },
+  {
+   "id": "deep-stellate-046",
+   "cell_type": "stellate",
+   "root_id": "720575947580423687"
+  },
+  {
+   "id": "deep-stellate-047",
+   "cell_type": "stellate",
+   "root_id": "720575947502785423"
+  },
+  {
+   "id": "deep-stellate-048",
+   "cell_type": "stellate",
+   "root_id": "720575947484513576"
+  },
+  {
+   "id": "deep-stellate-049",
+   "cell_type": "stellate",
+   "root_id": "720575947563252424"
+  },
+  {
+   "id": "deep-stellate-050",
+   "cell_type": "stellate",
+   "root_id": "720575947563903944"
+  },
+  {
+   "id": "deep-stellate-051",
+   "cell_type": "stellate",
+   "root_id": "720575947484612058"
+  },
+  {
+   "id": "deep-stellate-052",
+   "cell_type": "stellate",
+   "root_id": "720575947480752377"
+  },
+  {
+   "id": "deep-stellate-053",
+   "cell_type": "stellate",
+   "root_id": "720575947505391069"
+  },
+  {
+   "id": "deep-stellate-054",
+   "cell_type": "stellate",
+   "root_id": "720575947598822076"
+  },
+  {
+   "id": "inhibitory-01",
+   "cell_type": "inhibitory",
+   "root_id": "720575947567168828"
+  },
+  {
+   "id": "inhibitory-02",
+   "cell_type": "inhibitory",
+   "root_id": "720575947532586523"
+  },
+  {
+   "id": "inhibitory-03",
+   "cell_type": "inhibitory",
+   "root_id": "720575947560901294"
+  },
+  {
+   "id": "inhibitory-04",
+   "cell_type": "inhibitory",
+   "root_id": "720575947529625250"
+  },
+  {
+   "id": "inhibitory-05",
+   "cell_type": "inhibitory",
+   "root_id": "720575947523946015"
+  },
+  {
+   "id": "inhibitory-06",
+   "cell_type": "inhibitory",
+   "root_id": "720575947556332272"
+  },
+  {
+   "id": "inhibitory-07",
+   "cell_type": "inhibitory",
+   "root_id": "720575947477237428"
+  },
+  {
+   "id": "inhibitory-08",
+   "cell_type": "inhibitory",
+   "root_id": "720575947472545282"
+  },
+  {
+   "id": "inhibitory-09",
+   "cell_type": "inhibitory",
+   "root_id": "720575947482833908"
+  },
+  {
+   "id": "inhibitory-10",
+   "cell_type": "inhibitory",
+   "root_id": "720575947459765587"
+  },
+  {
+   "id": "inhibitory-11",
+   "cell_type": "inhibitory",
+   "root_id": "720575947429871927"
+  },
+  {
+   "id": "inhibitory-12",
+   "cell_type": "inhibitory",
+   "root_id": "720575947465245509"
+  },
+  {
+   "id": "microglia-03",
+   "cell_type": "glia",
+   "root_id": "720575947568874300"
+  },
+  {
+   "id": "microglia-07",
+   "cell_type": "glia",
+   "root_id": "720575947489056440"
+  },
+  {
+   "id": "microglia-08",
+   "cell_type": "glia",
+   "root_id": "720575947454309031"
+  },
+  {
+   "id": "microglia-09",
+   "cell_type": "glia",
+   "root_id": "720575947471766018"
+  },
+  {
+   "id": "microglia-10",
+   "cell_type": "glia",
+   "root_id": "720575947535073186"
+  },
+  {
+   "id": "microglia-11",
+   "cell_type": "glia",
+   "root_id": "720575947517480842"
+  },
+  {
+   "id": "more-II-000",
+   "cell_type": "pyramidal",
+   "root_id": "720575947568982844"
+  },
+  {
+   "id": "more-II-002",
+   "cell_type": "pyramidal",
+   "root_id": "720575947488098912"
+  },
+  {
+   "id": "more-II-003",
+   "cell_type": "pyramidal",
+   "root_id": "720575947520607007"
+  },
+  {
+   "id": "more-II-004",
+   "cell_type": "stellate",
+   "root_id": "720575947454194515"
+  },
+  {
+   "id": "more-II-005",
+   "cell_type": "stellate",
+   "root_id": "720575947506411120"
+  },
+  {
+   "id": "more-II-006",
+   "cell_type": "pyramidal",
+   "root_id": "720575947449672241"
+  },
+  {
+   "id": "more-II-007",
+   "cell_type": "pyramidal",
+   "root_id": "720575947562844725"
+  },
+  {
+   "id": "more-II-008",
+   "cell_type": "pyramidal",
+   "root_id": "720575947460066467"
+  },
+  {
+   "id": "more-II-009",
+   "cell_type": "stellate",
+   "root_id": "720575947561574498"
+  },
+  {
+   "id": "more-II-010",
+   "cell_type": "pyramidal",
+   "root_id": "720575947506961095"
+  },
+  {
+   "id": "more-II-011",
+   "cell_type": "pyramidal",
+   "root_id": "720575947526221959"
+  },
+  {
+   "id": "more-II-012",
+   "cell_type": "stellate",
+   "root_id": "720575947477788838"
+  },
+  {
+   "id": "more-II-013",
+   "cell_type": "pyramidal",
+   "root_id": "720575947490322616"
+  },
+  {
+   "id": "more-II-014",
+   "cell_type": "pyramidal",
+   "root_id": "720575947530200935"
+  },
+  {
+   "id": "more-II-015",
+   "cell_type": "pyramidal",
+   "root_id": "720575947523140800"
+  },
+  {
+   "id": "more-II-016",
+   "cell_type": "stellate",
+   "root_id": "720575947489284177"
+  },
+  {
+   "id": "more-II-017",
+   "cell_type": "pyramidal",
+   "root_id": "720575947532904098"
+  },
+  {
+   "id": "more-II-018",
+   "cell_type": "pyramidal",
+   "root_id": "720575947479177638"
+  },
+  {
+   "id": "more-II-019",
+   "cell_type": "stellate",
+   "root_id": "720575947563571966"
+  },
+  {
+   "id": "more-II-020",
+   "cell_type": "pyramidal",
+   "root_id": "720575947515585037"
+  },
+  {
+   "id": "more-II-021",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527033536"
+  },
+  {
+   "id": "more-II-022",
+   "cell_type": "stellate",
+   "root_id": "720575947560099943"
+  },
+  {
+   "id": "more-II-024",
+   "cell_type": "pyramidal",
+   "root_id": "720575947455381923"
+  },
+  {
+   "id": "more-II-025",
+   "cell_type": "stellate",
+   "root_id": "720575947493410041"
+  },
+  {
+   "id": "more-II-026",
+   "cell_type": "pyramidal",
+   "root_id": "720575947538868220"
+  },
+  {
+   "id": "more-II-027",
+   "cell_type": "stellate",
+   "root_id": "720575947417696663"
+  },
+  {
+   "id": "more-II-028",
+   "cell_type": "stellate",
+   "root_id": "720575947450709168"
+  },
+  {
+   "id": "more-III-029",
+   "cell_type": "pyramidal",
+   "root_id": "720575947481332095"
+  },
+  {
+   "id": "more-III-030",
+   "cell_type": "pyramidal",
+   "root_id": "720575947533580992"
+  },
+  {
+   "id": "more-III-031",
+   "cell_type": "pyramidal",
+   "root_id": "720575947548746537"
+  },
+  {
+   "id": "more-III-032",
+   "cell_type": "stellate",
+   "root_id": "720575947612558956"
+  },
+  {
+   "id": "more-III-033",
+   "cell_type": "pyramidal",
+   "root_id": "720575947554388990"
+  },
+  {
+   "id": "more-III-034",
+   "cell_type": "pyramidal",
+   "root_id": "720575947515844629"
+  },
+  {
+   "id": "more-III-035",
+   "cell_type": "pyramidal",
+   "root_id": "720575947459886755"
+  },
+  {
+   "id": "more-III-036",
+   "cell_type": "pyramidal",
+   "root_id": "720575947526064113"
+  },
+  {
+   "id": "more-III-037",
+   "cell_type": "pyramidal",
+   "root_id": "720575947560978350"
+  },
+  {
+   "id": "more-III-038",
+   "cell_type": "pyramidal",
+   "root_id": "720575947596101582"
+  },
+  {
+   "id": "more-III-039",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505214064"
+  },
+  {
+   "id": "more-III-040",
+   "cell_type": "pyramidal",
+   "root_id": "720575947510592855"
+  },
+  {
+   "id": "more-III-041",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525140538"
+  },
+  {
+   "id": "more-III-042",
+   "cell_type": "pyramidal",
+   "root_id": "720575947492973254"
+  },
+  {
+   "id": "more-III-043",
+   "cell_type": "pyramidal",
+   "root_id": "720575947443441851"
+  },
+  {
+   "id": "more-III-044",
+   "cell_type": "pyramidal",
+   "root_id": "720575947503547175"
+  },
+  {
+   "id": "more-III-045",
+   "cell_type": "pyramidal",
+   "root_id": "720575947615252588"
+  },
+  {
+   "id": "more-III-046",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521821376"
+  },
+  {
+   "id": "more-III-047",
+   "cell_type": "pyramidal",
+   "root_id": "720575947484330065"
+  },
+  {
+   "id": "more-III-048",
+   "cell_type": "pyramidal",
+   "root_id": "720575947453572515"
+  },
+  {
+   "id": "more-III-049",
+   "cell_type": "pyramidal",
+   "root_id": "720575947563941806"
+  },
+  {
+   "id": "more-III-050",
+   "cell_type": "pyramidal",
+   "root_id": "720575947486924543"
+  },
+  {
+   "id": "more-III-051",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527726833"
+  },
+  {
+   "id": "more-III-052",
+   "cell_type": "pyramidal",
+   "root_id": "720575947512705101"
+  },
+  {
+   "id": "more-III-053",
+   "cell_type": "pyramidal",
+   "root_id": "720575947504200897"
+  },
+  {
+   "id": "more-III-054",
+   "cell_type": "pyramidal",
+   "root_id": "720575947519595555"
+  },
+  {
+   "id": "more-III-055",
+   "cell_type": "stellate",
+   "root_id": "720575947503678576"
+  },
+  {
+   "id": "more-III-056",
+   "cell_type": "stellate",
+   "root_id": "720575947484357457"
+  },
+  {
+   "id": "more-III-057",
+   "cell_type": "stellate",
+   "root_id": "720575947597750716"
+  },
+  {
+   "id": "more-III-058",
+   "cell_type": "stellate",
+   "root_id": "720575947539452466"
+  },
+  {
+   "id": "more-III-059",
+   "cell_type": "pyramidal",
+   "root_id": "720575947500225527"
+  },
+  {
+   "id": "more-III-060",
+   "cell_type": "stellate",
+   "root_id": "720575947450020401"
+  },
+  {
+   "id": "more-III-061",
+   "cell_type": "stellate",
+   "root_id": "720575947514071504"
+  },
+  {
+   "id": "more-III-062",
+   "cell_type": "stellate",
+   "root_id": "720575947423146217"
+  },
+  {
+   "id": "more-III-063",
+   "cell_type": "stellate",
+   "root_id": "720575947477773778"
+  },
+  {
+   "id": "more-III-064",
+   "cell_type": "stellate",
+   "root_id": "720575947380857962"
+  },
+  {
+   "id": "more-III-065",
+   "cell_type": "stellate",
+   "root_id": "720575947479176703"
+  },
+  {
+   "id": "more-III-066",
+   "cell_type": "stellate",
+   "root_id": "720575947614111084"
+  },
+  {
+   "id": "more-III-067",
+   "cell_type": "pyramidal",
+   "root_id": "720575947454362019"
+  },
+  {
+   "id": "more-IV-068",
+   "cell_type": "pyramidal",
+   "root_id": "720575947457572036"
+  },
+  {
+   "id": "more-IV-069",
+   "cell_type": "pyramidal",
+   "root_id": "720575947488198649"
+  },
+  {
+   "id": "more-IV-070",
+   "cell_type": "stellate",
+   "root_id": "720575947648219184"
+  },
+  {
+   "id": "more-IV-071",
+   "cell_type": "pyramidal",
+   "root_id": "720575947413410294"
+  },
+  {
+   "id": "more-IV-072",
+   "cell_type": "pyramidal",
+   "root_id": "720575947501789288"
+  },
+  {
+   "id": "more-IV-073",
+   "cell_type": "pyramidal",
+   "root_id": "720575947525823593"
+  },
+  {
+   "id": "more-IV-074",
+   "cell_type": "pyramidal",
+   "root_id": "720575947499899178"
+  },
+  {
+   "id": "more-IV-075",
+   "cell_type": "pyramidal",
+   "root_id": "720575947495182315"
+  },
+  {
+   "id": "more-IV-076",
+   "cell_type": "pyramidal",
+   "root_id": "720575947456984659"
+  },
+  {
+   "id": "more-IV-077",
+   "cell_type": "stellate",
+   "root_id": "720575947445651056"
+  },
+  {
+   "id": "more-IV-078",
+   "cell_type": "pyramidal",
+   "root_id": "720575947522921863"
+  },
+  {
+   "id": "more-V-079",
+   "cell_type": "pyramidal",
+   "root_id": "720575947504534275"
+  },
+  {
+   "id": "more-V-080",
+   "cell_type": "pyramidal",
+   "root_id": "720575947418057124"
+  },
+  {
+   "id": "more-V-081",
+   "cell_type": "pyramidal",
+   "root_id": "720575947542061595"
+  },
+  {
+   "id": "more-V-082",
+   "cell_type": "pyramidal",
+   "root_id": "720575947473423004"
+  },
+  {
+   "id": "more-V-083",
+   "cell_type": "pyramidal",
+   "root_id": "720575947475444543"
+  },
+  {
+   "id": "more-V-084",
+   "cell_type": "pyramidal",
+   "root_id": "720575947514977259"
+  },
+  {
+   "id": "more-V-085",
+   "cell_type": "pyramidal",
+   "root_id": "720575947479068426"
+  },
+  {
+   "id": "more-V-086",
+   "cell_type": "pyramidal",
+   "root_id": "720575947418003364"
+  },
+  {
+   "id": "more-V-087",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527700209"
+  },
+  {
+   "id": "more-V-088",
+   "cell_type": "pyramidal",
+   "root_id": "720575947527257504"
+  },
+  {
+   "id": "more-V-089",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521655175"
+  },
+  {
+   "id": "more-V-090",
+   "cell_type": "pyramidal",
+   "root_id": "720575947520819350"
+  },
+  {
+   "id": "more-V-091",
+   "cell_type": "pyramidal",
+   "root_id": "720575947455541769"
+  },
+  {
+   "id": "more-V-092",
+   "cell_type": "pyramidal",
+   "root_id": "720575947595929038"
+  },
+  {
+   "id": "more-V-093",
+   "cell_type": "pyramidal",
+   "root_id": "720575947524177951"
+  },
+  {
+   "id": "more-V-094",
+   "cell_type": "pyramidal",
+   "root_id": "720575947448089267"
+  },
+  {
+   "id": "more-V-095",
+   "cell_type": "pyramidal",
+   "root_id": "720575947502372941"
+  },
+  {
+   "id": "more-V-096",
+   "cell_type": "pyramidal",
+   "root_id": "720575947469173567"
+  },
+  {
+   "id": "more-V-097",
+   "cell_type": "pyramidal",
+   "root_id": "720575947542698226"
+  },
+  {
+   "id": "more-V-098",
+   "cell_type": "pyramidal",
+   "root_id": "720575947438208787"
+  },
+  {
+   "id": "more-V-099",
+   "cell_type": "pyramidal",
+   "root_id": "720575947555376231"
+  },
+  {
+   "id": "more-V-100",
+   "cell_type": "pyramidal",
+   "root_id": "720575947485404189"
+  },
+  {
+   "id": "more-V-101",
+   "cell_type": "pyramidal",
+   "root_id": "720575947530751291"
+  },
+  {
+   "id": "more-V-102",
+   "cell_type": "pyramidal",
+   "root_id": "720575947439117976"
+  },
+  {
+   "id": "more-V-103",
+   "cell_type": "stellate",
+   "root_id": "720575947504557338"
+  },
+  {
+   "id": "more-V-104",
+   "cell_type": "pyramidal",
+   "root_id": "720575947551597998"
+  },
+  {
+   "id": "more-V-105",
+   "cell_type": "pyramidal",
+   "root_id": "720575947411462390"
+  },
+  {
+   "id": "more-V-106",
+   "cell_type": "pyramidal",
+   "root_id": "720575947488385658"
+  },
+  {
+   "id": "more-V-107",
+   "cell_type": "stellate",
+   "root_id": "720575947412076009"
+  },
+  {
+   "id": "more-V-108",
+   "cell_type": "stellate",
+   "root_id": "720575947501339383"
+  },
+  {
+   "id": "more-V-109",
+   "cell_type": "pyramidal",
+   "root_id": "720575947518990650"
+  },
+  {
+   "id": "more-V-110",
+   "cell_type": "stellate",
+   "root_id": "720575947475500298"
+  },
+  {
+   "id": "more-V-111",
+   "cell_type": "stellate",
+   "root_id": "720575947477742317"
+  },
+  {
+   "id": "more-V-112",
+   "cell_type": "stellate",
+   "root_id": "720575947523911273"
+  },
+  {
+   "id": "more-VI-113",
+   "cell_type": "pyramidal",
+   "root_id": "720575947484525469"
+  },
+  {
+   "id": "more-VI-114",
+   "cell_type": "pyramidal",
+   "root_id": "720575947443058505"
+  },
+  {
+   "id": "more-VI-115",
+   "cell_type": "pyramidal",
+   "root_id": "720575947619529923"
+  },
+  {
+   "id": "more-VI-116",
+   "cell_type": "pyramidal",
+   "root_id": "720575947571647121"
+  },
+  {
+   "id": "more-VI-117",
+   "cell_type": "pyramidal",
+   "root_id": "720575947453249885"
+  },
+  {
+   "id": "more-VI-118",
+   "cell_type": "pyramidal",
+   "root_id": "720575947509681322"
+  },
+  {
+   "id": "more-VI-119",
+   "cell_type": "pyramidal",
+   "root_id": "720575947449018646"
+  },
+  {
+   "id": "more-VI-120",
+   "cell_type": "pyramidal",
+   "root_id": "720575947520675085"
+  },
+  {
+   "id": "more-VI-121",
+   "cell_type": "pyramidal",
+   "root_id": "720575947505894032"
+  },
+  {
+   "id": "more-VI-122",
+   "cell_type": "pyramidal",
+   "root_id": "720575947486231415"
+  },
+  {
+   "id": "more-VI-123",
+   "cell_type": "pyramidal",
+   "root_id": "720575947512531021"
+  },
+  {
+   "id": "more-VI-124",
+   "cell_type": "pyramidal",
+   "root_id": "720575947456107027"
+  },
+  {
+   "id": "more-VI-125",
+   "cell_type": "pyramidal",
+   "root_id": "720575947467993609"
+  },
+  {
+   "id": "more-VI-126",
+   "cell_type": "pyramidal",
+   "root_id": "720575947463520009"
+  },
+  {
+   "id": "more-VI-127",
+   "cell_type": "pyramidal",
+   "root_id": "720575947532930843"
+  },
+  {
+   "id": "more-VI-128",
+   "cell_type": "pyramidal",
+   "root_id": "720575947487160672"
+  },
+  {
+   "id": "more-VI-129",
+   "cell_type": "pyramidal",
+   "root_id": "720575947547502467"
+  },
+  {
+   "id": "more-VI-130",
+   "cell_type": "pyramidal",
+   "root_id": "720575947441297304"
+  },
+  {
+   "id": "more-VI-131",
+   "cell_type": "pyramidal",
+   "root_id": "720575947460372345"
+  },
+  {
+   "id": "more-VI-132",
+   "cell_type": "stellate",
+   "root_id": "720575947491652006"
+  },
+  {
+   "id": "more-VI-133",
+   "cell_type": "pyramidal",
+   "root_id": "720575947536190532"
+  },
+  {
+   "id": "more-VI-134",
+   "cell_type": "pyramidal",
+   "root_id": "720575947449957937"
+  },
+  {
+   "id": "more-VI-135",
+   "cell_type": "pyramidal",
+   "root_id": "720575947544176380"
+  },
+  {
+   "id": "more-VI-136",
+   "cell_type": "pyramidal",
+   "root_id": "720575947489612181"
+  },
+  {
+   "id": "more-VI-137",
+   "cell_type": "pyramidal",
+   "root_id": "720575947521455404"
+  },
+  {
+   "id": "more-VI-138",
+   "cell_type": "pyramidal",
+   "root_id": "720575947494451799"
+  },
+  {
+   "id": "more-VI-139",
+   "cell_type": "pyramidal",
+   "root_id": "720575947477217369"
+  },
+  {
+   "id": "oligodendrocyte-03",
+   "cell_type": "glia",
+   "root_id": "720575947497201393"
+  },
+  {
+   "id": "oligodendrocyte-04",
+   "cell_type": "glia",
+   "root_id": "720575947461924421"
+  },
+  {
+   "id": "oligodendrocyte-05",
+   "cell_type": "glia",
+   "root_id": "720575947453291850"
+  },
+  {
+   "id": "oligodendrocyte-06",
+   "cell_type": "glia",
+   "root_id": "720575947475671431"
+  },
+  {
+   "id": "oligodendrocyte-08",
+   "cell_type": "glia",
+   "root_id": "720575947529231820"
+  },
+  {
+   "id": "oligodendrocyte-09",
+   "cell_type": "glia",
+   "root_id": "720575947450060464"
+  },
+  {
+   "id": "oligodendrocyte-10",
+   "cell_type": "glia",
+   "root_id": "720575947484354897"
+  },
+  {
+   "id": "oligodendrocyte-11",
+   "cell_type": "glia",
+   "root_id": "720575947428354804"
+  },
+  {
+   "id": "oligodendrocyte-12",
+   "cell_type": "glia",
+   "root_id": "720575947518501847"
+  },
+  {
+   "id": "pyramidal-01",
+   "cell_type": "pyramidal",
+   "root_id": "720575947564538366"
+  },
+  {
+   "id": "pyramidal-02",
+   "cell_type": "pyramidal",
+   "root_id": "720575947563692488"
+  },
+  {
+   "id": "pyramidal-03",
+   "cell_type": "pyramidal",
+   "root_id": "720575947541503474"
+  },
+  {
+   "id": "pyramidal-04",
+   "cell_type": "pyramidal",
+   "root_id": "720575947445514171"
+  },
+  {
+   "id": "pyramidal-05",
+   "cell_type": "pyramidal",
+   "root_id": "720575947553262110"
+  },
+  {
+   "id": "pyramidal-06",
+   "cell_type": "pyramidal",
+   "root_id": "720575947522984832"
+  },
+  {
+   "id": "pyramidal-07",
+   "cell_type": "pyramidal",
+   "root_id": "720575947446757811"
+  },
+  {
+   "id": "pyramidal-08",
+   "cell_type": "pyramidal",
+   "root_id": "720575947478054388"
+  },
+  {
+   "id": "pyramidal-09",
+   "cell_type": "pyramidal",
+   "root_id": "720575947550827561"
+  },
+  {
+   "id": "pyramidal-10",
+   "cell_type": "pyramidal",
+   "root_id": "720575947537528132"
+  },
+  {
+   "id": "pyramidal-11",
+   "cell_type": "pyramidal",
+   "root_id": "720575947538980424"
+  },
+  {
+   "id": "pyramidal-12",
+   "cell_type": "pyramidal",
+   "root_id": "720575947612969836"
+  },
+  {
+   "id": "stellate-01",
+   "cell_type": "stellate",
+   "root_id": "720575947520731264"
+  },
+  {
+   "id": "stellate-02",
+   "cell_type": "stellate",
+   "root_id": "720575947582144519"
+  },
+  {
+   "id": "stellate-03",
+   "cell_type": "stellate",
+   "root_id": "720575947516084794"
+  },
+  {
+   "id": "stellate-04",
+   "cell_type": "stellate",
+   "root_id": "720575947533956891"
+  },
+  {
+   "id": "stellate-05",
+   "cell_type": "stellate",
+   "root_id": "720575947491098094"
+  },
+  {
+   "id": "stellate-06",
+   "cell_type": "stellate",
+   "root_id": "720575947560735335"
+  },
+  {
+   "id": "stellate-07",
+   "cell_type": "stellate",
+   "root_id": "720575947491070475"
+  },
+  {
+   "id": "stellate-08",
+   "cell_type": "stellate",
+   "root_id": "720575947483035380"
+  },
+  {
+   "id": "stellate-09",
+   "cell_type": "stellate",
+   "root_id": "720575947517862794"
+  },
+  {
+   "id": "stellate-10",
+   "cell_type": "stellate",
+   "root_id": "720575947569455640"
+  },
+  {
+   "id": "stellate-11",
+   "cell_type": "stellate",
+   "root_id": "720575947409466715"
+  },
+  {
+   "id": "stellate-12",
+   "cell_type": "stellate",
+   "root_id": "720575947566472472"
+  }
+ ],
+ "counts": {
+  "glia": 26,
+  "bipolar": 4,
+  "pyramidal": 161,
+  "stellate": 53,
+  "inhibitory": 12
+ },
+ "frames": 0,
+ "block_um": [
+  2031.49,
+  1337.86,
+  446.94
+ ]
+}

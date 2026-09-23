@@ -5,7 +5,8 @@
 - Keep each numbered ID (e.g. `[index-3]`) EXACTLY. Return every line as `[id] <Chinese>`, one per line, same order.
 - Do NOT translate these names, leave them in English: EyeWire, EyeWire II, FlyWire, BANC, MICrONS, Pyr, Neuroglancer, Spelunker, Codex, Princeton University, Seung Lab, Nurro, Rika, Trailblaze, connectome.quest.
 - Do NOT translate URLs, emails, file names, or code. Keep numbers and symbols (>, +, commas) as-is. Keep it concise and warm.
-- Lines starting with `(image alt)` are accessibility descriptions for images, translate the description after that marker.
+- Lines starting with `(image alt)` are accessibility descriptions for images, and lines starting with `(aria label)` are screen-reader labels for controls. Translate the text after the marker, keep the marker in English.
+- The `atlas/` section of the site is a separate app and its text is not in this file.
 
 ## index.html
 [index-1] The citizen science home of connectomics.
@@ -25,10 +26,9 @@
 [index-15] Datasets
 [index-16] Co‑authored publications
 [index-17] Citations
-[index-18] Join the quest tomap the brain
-[index-19] The citizen science home of the Seung Lab. Anyone can help map the brain one neuron at a time, through projects like EyeWire and FlyWire. Student, gamer, artist, retiree, or simply curious, there's a place for you here.
+[index-18] Join the quest to map the brain
 [index-20] Citizen Science
-[index-21] Citizen scientists have been a part of Seung Lab since 2012, ever since the AI-powered brain-mapping game EyeWire proved to the world that science accelerates when we invite everyone to join the quest.
+[index-21] Citizen scientists have been mapping the brain since 2012, when first of its kind EyeWire pioneered AI in citizen science. The AI revolution is enabling many new connectomics datasets to come online, and we need your help to map them!
 [index-22] If you're a citizen scientist: Thank you! Your contributions have been invaluable to advancing our understanding of neural circuits and brain function.
 [index-23] Citizen science at the Seung Lab centers on mapping and identifying neurons across several public datasets. These datasets share a common visualization and annotation environment: Neuroglancer. A complete Neuroglancer user guide is available here: Neuroglancer 101 . New here? Jump to the resources below to get started.
 [index-24] We need your help!
@@ -94,7 +94,7 @@
 [index-84] Explore FlyWire Academy Free, interactive brain‑mapping lessons for high school and college.
 [index-85] Neurons of mouse hippocampus region CA3
 [index-86] (image alt) Princeton University shield
-[index-87] (image alt) Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background. No visible text. Tone is scientific and detailed.
+[index-87] (image alt) Colored 3D renderings of neurons showing a central yellow trunk with green and blue branches and small orange synaptic boutons on a black background.
 [index-88] (image alt) EyeWire II, mouse retina neurons
 [index-89] (image alt) FlyWire BANC, proofreading the fly brain and ventral nerve cord
 [index-90] (image alt) Nurro, the connectome cat, holding up a little heart
@@ -106,6 +106,33 @@
 [index-96] (image alt) CA3 MF axon and postsynaptic pyr visualization (CA3)
 [index-97] (image alt) A cool cat mascot wearing sunglasses
 
+[index-98] Neuro 101
+[index-99] Connectome 101
+[index-100] Credits
+[index-101] Start mapping
+[index-102] Stats
+[index-103] Location
+[index-104] Approx. neurons
+[index-105] Approx. cells
+[index-106] Mouse visual cortex
+[index-107] Mouse hippocampus (CA3)
+[index-108] In progress
+[index-109] Name
+[index-110] Country
+[index-111] EyeWire username (optional)
+[index-112] Papers
+[index-113] Immersive
+[index-114] Site
+[index-115] coming soon(ish): Mouse Connectome. ETA 2036
+[index-116] (aria label) Citizen science statistics
+[index-117] (aria label) Datasets that need volunteers
+[index-118] (aria label) Dataset cards
+[index-119] (aria label) Follow EyeWire on X
+[index-120] (aria label) Follow FlyWire on X
+[index-121] (aria label) Follow Pyr on X
+[index-122] (aria label) Subscribe to updates from our team
+[index-123] (aria label) How to get started
+[index-124] (aria label) Easter egg
 ## learn.html
 [learn-1] Learn, Citizen Neuroscience
 [learn-2] Inner Cosmos: explore the brain from the whole organ down to a single synapse, and see how mapping neurons helps us understand how brains work.
@@ -116,6 +143,9 @@
 [learn-7] There is far more brain left to map than any lab can finish alone, and that is where you come in. Join the community mapping neuron by neuron and help us continue the journey of discovery.
 [learn-8] (image alt) Princeton University shield
 
+[learn-9] Get involved
+[learn-10] (aria label) Toggle fullscreen
+[learn-11] (aria label) Share this page
 ## videos.html
 [videos-1] Videos, Citizen Neuroscience
 [videos-2] Neuron animations and video tutorials from the citizen science projects of the Seung Lab.
@@ -189,6 +219,7 @@
 [videos-70] (image alt) Neurotransmitter animation
 [videos-71] (image alt) Bolt Neurons
 
+[videos-72] Visit channel ↗
 ## help.html
 [help-1] Help, Citizen Neuroscience
 [help-2] Get help mapping the brain: contact support, join the forum, and learn the proofreading software.
@@ -240,6 +271,12 @@
 [help-48] (image alt) Nurro the cat, celebrating
 [help-49] (image alt) Nurro the cat, a curious citizen scientist, looking into a microscope
 
+[help-50] Watch the playlist ↗
+[help-51] Visit the forum ↗
+[help-52] Your name
+[help-53] Your email
+[help-54] (aria label) Watch: How to merge two pieces of a neuron
+[help-55] (aria label) Watch: Advanced Spelunker, Adding Annotations and Tags
 ## access.html
 [access-1] Get Access, Citizen Neuroscience
 [access-2] How to earn proofreading access to a new connectomics dataset. The same process works for every dataset.
@@ -268,6 +305,8 @@
 [access-25] (image alt) Rika, a friendly guide, welcoming you
 [access-26] (image alt) Nurro the cat, a curious citizen scientist, looking into a microscope
 
+[access-27] (aria label) How to get access
+[access-28] (aria label) Access steps
 ## forum.html
 [forum-1] Community forum, Citizen Neuroscience
 [forum-2] Ask questions, get unstuck, and report issues across our citizen science datasets. These tools are early and in beta, so feedback is welcome.
@@ -297,3 +336,27 @@
 [forum-26] The original brain-mapping game that started it all.
 [forum-27] Ask & discuss Gameplay questions and help from the EyeWire community.
 [forum-28] (image alt) Princeton University shield
+[forum-29] (aria label) Fly forums
+[forum-30] (aria label) Mouse forums
+
+## credits.html
+[credits-1] Credits | Map the Brain
+[credits-2] Credits for Connectome Quest, a Seung Lab citizen neuroscience project at Princeton University.
+[credits-3] About this project
+[credits-4] Credits
+[credits-5] Connectome Quest brings together public datasets, learning tools, and ways for people to contribute to connectomics.
+[credits-6] Research community
+[credits-7] Connectome Quest is presented by Seung Lab at the Princeton Neuroscience Institute, Princeton University.
+[credits-8] Educational experiences
+[credits-9] Neuro 101 introduces the brain across scales. Connectome 101, the interactive Connectome Atlas, was created by Amy Sterling, @amyneurons.
+[credits-10] Data and imagery
+[credits-11] Scientific images, videos, and dataset resources are credited near the material they accompany. Rights remain with their respective makers and projects.
+[credits-12] Source
+[credits-13] The website source is available on GitHub. Dataset records link to their official project pages and publications.
+[credits-14] Return to Map the Brain
+[credits-15] (aria label) Project credits
+
+## play/index.html
+[play-1] Play, Map the Brain
+[play-2] Map real neurons in EyeWire II: real electron microscopy, real segmentation, and a path into citizen neuroscience.
+[play-3] Enter EyeWire II

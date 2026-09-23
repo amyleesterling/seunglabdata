@@ -219,11 +219,11 @@ def composite_ground(scene, on=True):
     nt.links.new(over.outputs[0], out.inputs[0])
 
 
-def configure_render(size, samples):
+def configure_render(size, samples, aspect=(16, 9)):
     scene = bpy.context.scene
     scene.render.engine = "BLENDER_EEVEE_NEXT"
     scene.render.resolution_x = size
-    scene.render.resolution_y = int(size * 9 / 16)
+    scene.render.resolution_y = int(round(size * aspect[1] / aspect[0]))
     scene.render.resolution_percentage = 100
     scene.render.film_transparent = True
     scene.view_settings.view_transform = "Standard"
@@ -262,6 +262,14 @@ def main():
     # --cycles-device and --cycles-print-stats and rejects the abbreviation
     # as ambiguous, before the script ever runs.
     ap.add_argument("--depth-bins", type=int, default=14)
+    ap.add_argument("--no-cage", action="store_true",
+                    help="drop the wireframe block; for a feature image where "
+                         "the cells are the subject and a box would only box "
+                         "them in")
+    ap.add_argument("--aspect", default="16:9",
+                    help="frame aspect as W:H, e.g. 4:3 or 5:4 for a banner")
+    ap.add_argument("--fill", type=float, default=1.0,
+                    help="<1 crops in on the subject, >1 pads it out")
     ap.add_argument("--group-by", default="type", choices=("type", "layer", "depth"),
                     help="what each rendered alpha layer contains")
     ap.add_argument("--type-cycle", action="store_true", dest="type_cycle",
@@ -347,7 +355,10 @@ def main():
     def axis_map(p):
         return np.asarray(p)[perm] * sign
 
-    cage = block_cage(root, axis_map)
+    # A feature image has no cage: the cells are the subject, and a wireframe
+    # box around them only says "this is a sample of a volume", which is the
+    # job of the figures further down the page, not of a banner.
+    cage = None if args.no_cage else block_cage(root, axis_map)
 
     # Scale and centre on the BLOCK, not on the cells, so the figure is a
     # statement about the volume and the cells sit where they sit inside it.
@@ -385,7 +396,8 @@ def main():
     cam = bpy.data.objects.new("cam", data)
     bpy.context.collection.objects.link(cam)
     scene.camera = cam
-    configure_render(args.size, args.samples)
+    aspect = tuple(int(x) for x in args.aspect.split(":"))
+    configure_render(args.size, args.samples, aspect)
     os.makedirs(args.out, exist_ok=True)
 
     # Fit the camera from its ACTUAL field of view, not a fudge factor. The
@@ -399,7 +411,20 @@ def main():
     sensor_h = sensor_w * scene.render.resolution_y / scene.render.resolution_x
     tan_h = (sensor_w / 2.0) / data.lens
     tan_v = (sensor_h / 2.0) / data.lens
-    cage_pts = world_pts(cage)
+    # With no cage there is nothing to frame against, so frame against the
+    # cells themselves. Percentile bounds, not the raw extremes: a single axon
+    # running 1.3 mm out of the field would otherwise set the camera distance
+    # for everything and leave the population a speck in the middle.
+    if cage is not None:
+        cage_pts = world_pts(cage)
+    else:
+        pts = np.concatenate([world_pts(o) for _, o in loaded])
+        lo = np.percentile(pts, 1.5, axis=0)
+        hi = np.percentile(pts, 98.5, axis=0)
+        cage_pts = np.array([[x, y, z] for x in (lo[0], hi[0])
+                             for y in (lo[1], hi[1]) for z in (lo[2], hi[2])])
+        print(f"no cage: framing on the cells, "
+              f"{np.round(hi - lo, 2)} across at 1.5 to 98.5 percentile")
 
     def cam_dir(az_deg):
         e, a = math.radians(args.elev), math.radians(az_deg)
@@ -438,7 +463,7 @@ def main():
             else:
                 lo_d = mid
         need = max(need, hi_d)
-    auto_dist = need / TARGET_SIZE
+    auto_dist = need / TARGET_SIZE * args.fill
     if args.dist <= 0:
         args.dist = auto_dist
     print(f"cage radius {radius:.2f}, solved over {len(azimuths)} azimuth(s) "
