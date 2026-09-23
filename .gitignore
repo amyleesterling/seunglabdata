@@ -1,0 +1,11 @@
+# Render intermediates. The mp4 and the labelled still ARE the deliverables;
+# the per frame PNGs are how they were made. 240 frames is ~300 MB per
+# sequence, and a GitHub Pages repo carries that weight forever.
+# The frames stay on disk for review, they just do not go into git.
+assets/mec/population/turntable/
+assets/mec/population/turntable66/
+assets/mec/population/turntable118/
+assets/mec/population/cycle/frames/
+assets/mec/population/cycle/labelled/
+assets/mec/population/cycle/layer_*.png
+assets/mec/population/cycle/plate.png

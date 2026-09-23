@@ -21,27 +21,15 @@ import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
-# Amy's house palette, as sRGB hex, matching the render colours exactly.
-TYPE_HEX = {
-    "stellate":        "#67f5cb",
-    "pyramidal":       "#3e96f0",
-    "inhibitory":      "#e8afd8",
-    "astrocyte":       "#bd9bd1",
-    "oligodendrocyte": "#7ee0ff",
-    "microglia":       "#e8a93a",
-    "bipolar":         "#c4ccd8",
-}
-TYPE_ORDER = ["stellate", "pyramidal", "inhibitory", "astrocyte",
-              "oligodendrocyte", "microglia", "bipolar"]
-TYPE_LABEL = {
-    "stellate": "Stellate",
-    "pyramidal": "Pyramidal",
-    "inhibitory": "Inhibitory interneuron",
-    "astrocyte": "Astrocyte",
-    "oligodendrocyte": "Oligodendrocyte",
-    "microglia": "Microglia",
-    "bipolar": "Bipolar",
-}
+# The palette lives in ONE file. It used to be duplicated here, drifted from
+# the render scripts, and the legend swatches showed pale lilac while the cells
+# rendered hot pink. A key that disagrees with its own figure is a correctness
+# bug, not a style one.
+_PAL = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                   "mec_palette.json"), encoding="utf-8"))
+TYPE_HEX = {k: v["hex"] for k, v in _PAL["types"].items()}
+TYPE_LABEL = {k: v["label"] for k, v in _PAL["types"].items()}
+TYPE_ORDER = _PAL["order"]
 
 INK = (234, 246, 255)
 DIM = (159, 180, 196)
@@ -94,12 +82,8 @@ def label(img, meta, note=None):
                fill=INK if active else DIM)
         y += row
 
-    d.text((W - pad, H - pad - int(20 * s)), "connectome.quest/mec",
+    d.text((W - pad, H - pad), "connectome.quest/mec",
            font=f_small, fill=DIM, anchor="rs")
-    # Say what the figure does not support. These are a selection, so the
-    # picture is about position and shape, not about how many there are.
-    d.text((W - pad, H - pad), "A selection, not a census", font=f_small,
-           fill=DIM, anchor="rs")
     return img
 
 
@@ -125,11 +109,21 @@ def main():
     if not names:
         sys.exit(f"no PNGs in {args.folder}")
 
+    # A cycle animation holds one type for many frames, so the highlight has to
+    # come from the timeline the compositor actually built. Falling back to
+    # "one type per frame" made the legend strobe instead of tracking the
+    # animation, which is why the per-frame list is preferred.
+    by_frame = meta.get("highlight_by_frame") or []
     cycle = meta.get("cycle_types") or []
+    if by_frame and len(by_frame) != len(names):
+        print(f"warning: {len(by_frame)} highlights for {len(names)} frames; "
+              "labelling by frame index anyway")
     for i, name in enumerate(names):
         img = Image.open(os.path.join(args.folder, name)).convert("RGB")
         note = args.highlight
-        if not note and cycle:
+        if not note and by_frame:
+            note = by_frame[i] if i < len(by_frame) else None
+        elif not note and cycle:
             note = cycle[i % len(cycle)]
         label(img, meta, note)
         img.save(os.path.join(out_dir, name))

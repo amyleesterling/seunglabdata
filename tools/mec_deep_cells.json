@@ -1,0 +1,827 @@
+[
+ {
+  "id": "deep-pyramidal-000",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2540.3,
+   1921.0,
+   48.2
+  ],
+  "root_id": "720575947515687512",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 47.9,
+  "probe_hits": 14,
+  "mesh_fragments": 106
+ },
+ {
+  "id": "deep-pyramidal-001",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2906.1,
+   2058.8,
+   143.2
+  ],
+  "root_id": "720575947527357425",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 142.9,
+  "probe_hits": 12,
+  "mesh_fragments": 133
+ },
+ {
+  "id": "deep-pyramidal-002",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2231.8,
+   1854.5,
+   344.3
+  ],
+  "root_id": "720575947537110563",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 103.0,
+  "probe_hits": 20,
+  "mesh_fragments": 254
+ },
+ {
+  "id": "deep-pyramidal-003",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2362.4,
+   1918.0,
+   367.0
+  ],
+  "root_id": "720575947499144695",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 80.3,
+  "probe_hits": 16,
+  "mesh_fragments": 56
+ },
+ {
+  "id": "deep-pyramidal-004",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2215.7,
+   1890.8,
+   53.3
+  ],
+  "root_id": "720575947502488567",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 52.9,
+  "probe_hits": 17,
+  "mesh_fragments": 95
+ },
+ {
+  "id": "deep-pyramidal-005",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2938.1,
+   1605.6,
+   158.6
+  ],
+  "root_id": "720575947504984160",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 158.3,
+  "probe_hits": 10,
+  "mesh_fragments": 113
+ },
+ {
+  "id": "deep-pyramidal-006",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2741.5,
+   1986.6,
+   195.8
+  ],
+  "root_id": "720575947448715187",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 195.5,
+  "probe_hits": 18,
+  "mesh_fragments": 253
+ },
+ {
+  "id": "deep-pyramidal-007",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2749.2,
+   1830.1,
+   248.1
+  ],
+  "root_id": "720575947528797169",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 199.2,
+  "probe_hits": 15,
+  "mesh_fragments": 248
+ },
+ {
+  "id": "deep-pyramidal-008",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2145.0,
+   1640.4,
+   177.8
+  ],
+  "root_id": "720575947385930090",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 177.4,
+  "probe_hits": 7,
+  "mesh_fragments": 84
+ },
+ {
+  "id": "deep-pyramidal-009",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2271.0,
+   1759.5,
+   269.8
+  ],
+  "root_id": "720575947487008440",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 177.5,
+  "probe_hits": 11,
+  "mesh_fragments": 113
+ },
+ {
+  "id": "deep-pyramidal-010",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2205.4,
+   1970.2,
+   316.8
+  ],
+  "root_id": "720575947534246691",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 130.5,
+  "probe_hits": 13,
+  "mesh_fragments": 190
+ },
+ {
+  "id": "deep-pyramidal-011",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1893.4,
+   1846.5,
+   393.6
+  ],
+  "root_id": "720575947488759514",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 53.7,
+  "probe_hits": 13,
+  "mesh_fragments": 140
+ },
+ {
+  "id": "deep-pyramidal-012",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2974.2,
+   1965.6,
+   70.2
+  ],
+  "root_id": "720575947563234099",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 69.9,
+  "probe_hits": 12,
+  "mesh_fragments": 131
+ },
+ {
+  "id": "deep-pyramidal-013",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2032.9,
+   1594.9,
+   79.3
+  ],
+  "root_id": "720575947523843720",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 79.0,
+  "probe_hits": 17,
+  "mesh_fragments": 47
+ },
+ {
+  "id": "deep-pyramidal-014",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2222.3,
+   1860.4,
+   258.5
+  ],
+  "root_id": "720575947501857319",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 188.8,
+  "probe_hits": 12,
+  "mesh_fragments": 263
+ },
+ {
+  "id": "deep-pyramidal-015",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2944.8,
+   1924.6,
+   173.4
+  ],
+  "root_id": "720575947530489017",
+  "layer": "IV",
+  "size_cluster": 6,
+  "edge_dist_um": 173.1,
+  "probe_hits": 13,
+  "mesh_fragments": 131
+ },
+ {
+  "id": "deep-pyramidal-016",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2955.5,
+   1806.8,
+   392.5
+  ],
+  "root_id": "720575947530049479",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 54.8,
+  "probe_hits": 15,
+  "mesh_fragments": 62
+ },
+ {
+  "id": "deep-pyramidal-017",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2494.0,
+   2004.2,
+   291.1
+  ],
+  "root_id": "720575947537518404",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 156.2,
+  "probe_hits": 17,
+  "mesh_fragments": 346
+ },
+ {
+  "id": "deep-pyramidal-018",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2415.1,
+   2001.2,
+   299.0
+  ],
+  "root_id": "720575947517026512",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 148.3,
+  "probe_hits": 19,
+  "mesh_fragments": 479
+ },
+ {
+  "id": "deep-pyramidal-019",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2286.6,
+   1980.4,
+   125.0
+  ],
+  "root_id": "720575947483035841",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 124.6,
+  "probe_hits": 5,
+  "mesh_fragments": 186
+ },
+ {
+  "id": "deep-pyramidal-020",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2653.4,
+   1812.0,
+   322.1
+  ],
+  "root_id": "720575947557030787",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 125.2,
+  "probe_hits": 9,
+  "mesh_fragments": 74
+ },
+ {
+  "id": "deep-pyramidal-021",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2057.0,
+   1979.9,
+   233.8
+  ],
+  "root_id": "720575947563027303",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 213.5,
+  "probe_hits": 11,
+  "mesh_fragments": 205
+ },
+ {
+  "id": "deep-pyramidal-022",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2866.2,
+   2073.6,
+   307.1
+  ],
+  "root_id": "720575947535191714",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 140.2,
+  "probe_hits": 15,
+  "mesh_fragments": 213
+ },
+ {
+  "id": "deep-pyramidal-023",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2457.6,
+   1592.3,
+   132.5
+  ],
+  "root_id": "720575947474798346",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 132.2,
+  "probe_hits": 12,
+  "mesh_fragments": 149
+ },
+ {
+  "id": "deep-pyramidal-024",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2786.6,
+   1620.7,
+   205.4
+  ],
+  "root_id": "720575947532856422",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 205.1,
+  "probe_hits": 9,
+  "mesh_fragments": 62
+ },
+ {
+  "id": "deep-pyramidal-025",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2731.8,
+   1600.5,
+   54.4
+  ],
+  "root_id": "720575947558244894",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 54.0,
+  "probe_hits": 11,
+  "mesh_fragments": 69
+ },
+ {
+  "id": "deep-pyramidal-026",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2614.5,
+   1741.3,
+   69.7
+  ],
+  "root_id": "720575947552158158",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 69.3,
+  "probe_hits": 16,
+  "mesh_fragments": 35
+ },
+ {
+  "id": "deep-pyramidal-027",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2961.9,
+   1918.7,
+   146.3
+  ],
+  "root_id": "720575947525377930",
+  "layer": "IV",
+  "size_cluster": 6,
+  "edge_dist_um": 146.0,
+  "probe_hits": 13,
+  "mesh_fragments": 62
+ },
+ {
+  "id": "deep-pyramidal-028",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2925.6,
+   2031.1,
+   392.1
+  ],
+  "root_id": "720575947510017003",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 55.2,
+  "probe_hits": 10,
+  "mesh_fragments": 23
+ },
+ {
+  "id": "deep-pyramidal-029",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2571.5,
+   1656.3,
+   239.3
+  ],
+  "root_id": "720575947503240874",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 208.0,
+  "probe_hits": 14,
+  "mesh_fragments": 191
+ },
+ {
+  "id": "deep-pyramidal-030",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2042.4,
+   1625.1,
+   351.0
+  ],
+  "root_id": "720575947502295751",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 96.3,
+  "probe_hits": 9,
+  "mesh_fragments": 68
+ },
+ {
+  "id": "deep-pyramidal-031",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1892.6,
+   1893.4,
+   112.8
+  ],
+  "root_id": "720575947454290083",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 112.5,
+  "probe_hits": 13,
+  "mesh_fragments": 86
+ },
+ {
+  "id": "deep-pyramidal-032",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2966.8,
+   1675.8,
+   345.8
+  ],
+  "root_id": "720575947521179497",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 101.5,
+  "probe_hits": 13,
+  "mesh_fragments": 57
+ },
+ {
+  "id": "deep-pyramidal-033",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2074.9,
+   1954.6,
+   64.1
+  ],
+  "root_id": "720575947592177199",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 63.7,
+  "probe_hits": 14,
+  "mesh_fragments": 106
+ },
+ {
+  "id": "deep-pyramidal-034",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2406.7,
+   1657.1,
+   315.8
+  ],
+  "root_id": "720575947565604706",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 131.5,
+  "probe_hits": 14,
+  "mesh_fragments": 115
+ },
+ {
+  "id": "deep-pyramidal-035",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2670.6,
+   1688.3,
+   321.8
+  ],
+  "root_id": "720575947419411876",
+  "layer": "V",
+  "size_cluster": 6,
+  "edge_dist_um": 125.5,
+  "probe_hits": 9,
+  "mesh_fragments": 157
+ },
+ {
+  "id": "deep-pyramidal-036",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1900.3,
+   1626.1,
+   152.1
+  ],
+  "root_id": "720575947504966799",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 151.7,
+  "probe_hits": 13,
+  "mesh_fragments": 63
+ },
+ {
+  "id": "deep-pyramidal-037",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1883.4,
+   1989.1,
+   383.5
+  ],
+  "root_id": "720575947478122628",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 63.8,
+  "probe_hits": 13,
+  "mesh_fragments": 144
+ },
+ {
+  "id": "deep-pyramidal-038",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1887.7,
+   1959.7,
+   71.0
+  ],
+  "root_id": "720575947511382656",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 70.6,
+  "probe_hits": 11,
+  "mesh_fragments": 57
+ },
+ {
+  "id": "deep-pyramidal-039",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   2958.6,
+   1596.9,
+   140.8
+  ],
+  "root_id": "720575947515455352",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 140.4,
+  "probe_hits": 16,
+  "mesh_fragments": 69
+ },
+ {
+  "id": "deep-pyramidal-040",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1887.5,
+   1882.1,
+   249.0
+  ],
+  "root_id": "720575947505269648",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 198.3,
+  "probe_hits": 17,
+  "mesh_fragments": 163
+ },
+ {
+  "id": "deep-pyramidal-041",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   3088.4,
+   2171.6,
+   315.3
+  ],
+  "root_id": "720575947425768983",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 132.0,
+  "probe_hits": 3,
+  "mesh_fragments": 293
+ },
+ {
+  "id": "deep-pyramidal-042",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1882.9,
+   1615.6,
+   400.4
+  ],
+  "root_id": "720575947471063800",
+  "layer": "VI",
+  "size_cluster": 6,
+  "edge_dist_um": 46.9,
+  "probe_hits": 13,
+  "mesh_fragments": 122
+ },
+ {
+  "id": "deep-pyramidal-043",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   1897.5,
+   1962.8,
+   165.9
+  ],
+  "root_id": "720575947506219450",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 165.5,
+  "probe_hits": 13,
+  "mesh_fragments": 91
+ },
+ {
+  "id": "deep-pyramidal-044",
+  "cell_type": "pyramidal",
+  "nucleus_um": [
+   3080.7,
+   2168.8,
+   276.2
+  ],
+  "root_id": "720575947543061320",
+  "layer": "III",
+  "size_cluster": 6,
+  "edge_dist_um": 171.1,
+  "probe_hits": 12,
+  "mesh_fragments": 60
+ },
+ {
+  "id": "deep-stellate-045",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2709.8,
+   2074.9,
+   239.3
+  ],
+  "root_id": "720575947526226234",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 208.0,
+  "probe_hits": 28,
+  "mesh_fragments": 351
+ },
+ {
+  "id": "deep-stellate-046",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2134.3,
+   2003.7,
+   272.1
+  ],
+  "root_id": "720575947580423687",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 175.2,
+  "probe_hits": 26,
+  "mesh_fragments": 311
+ },
+ {
+  "id": "deep-stellate-047",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2500.6,
+   2029.3,
+   68.9
+  ],
+  "root_id": "720575947502785423",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 68.5,
+  "probe_hits": 24,
+  "mesh_fragments": 197
+ },
+ {
+  "id": "deep-stellate-048",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2682.9,
+   2057.7,
+   48.0
+  ],
+  "root_id": "720575947484513576",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 47.7,
+  "probe_hits": 25,
+  "mesh_fragments": 150
+ },
+ {
+  "id": "deep-stellate-049",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2154.8,
+   1976.1,
+   368.6
+  ],
+  "root_id": "720575947563252424",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 78.7,
+  "probe_hits": 28,
+  "mesh_fragments": 308
+ },
+ {
+  "id": "deep-stellate-050",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2373.4,
+   2025.5,
+   383.5
+  ],
+  "root_id": "720575947563903944",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 63.8,
+  "probe_hits": 26,
+  "mesh_fragments": 191
+ },
+ {
+  "id": "deep-stellate-051",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2044.4,
+   1826.6,
+   320.7
+  ],
+  "root_id": "720575947484612058",
+  "layer": "IV",
+  "size_cluster": 7,
+  "edge_dist_um": 126.6,
+  "probe_hits": 19,
+  "mesh_fragments": 228
+ },
+ {
+  "id": "deep-stellate-052",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2683.9,
+   2072.6,
+   351.3
+  ],
+  "root_id": "720575947480752377",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 96.0,
+  "probe_hits": 29,
+  "mesh_fragments": 332
+ },
+ {
+  "id": "deep-stellate-053",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   2482.4,
+   1991.9,
+   177.4
+  ],
+  "root_id": "720575947505391069",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 177.0,
+  "probe_hits": 13,
+  "mesh_fragments": 294
+ },
+ {
+  "id": "deep-stellate-054",
+  "cell_type": "stellate",
+  "nucleus_um": [
+   3043.3,
+   2150.7,
+   92.7
+  ],
+  "root_id": "720575947598822076",
+  "layer": "III",
+  "size_cluster": 7,
+  "edge_dist_um": 92.4,
+  "probe_hits": 24,
+  "mesh_fragments": 112
+ }
+]

@@ -362,15 +362,30 @@ def main():
         cid = cell["id"]
         print(f"\n[{i}/{len(cells)}] {cid} ({cell.get('cell_type','?')})")
         try:
-            found = resolve_root(cv, token, cell["nucleus_um"], cell.get("cell_type", ""))
-            if not found:
-                print("   no root resolved at that nucleus, skipping")
-                continue
-            root, frags, hits = found
-            hint = cell.get("root_id")
-            if hint and str(hint) != str(root):
-                print(f"   root moved since the list was written: {hint} -> {root}")
-            print(f"   root {root}  fragments {frags}  probe hits {hits}")
+            # A PINNED root skips resolution. Resolving from the soma reads the
+            # live segmentation around a point, and for a small glial cell most
+            # of those points land in the neighbour pressed against it: the
+            # microglia Amy picked resolved to a spongiform astrocyte of
+            # plausible size. Where a cell has been matched to a known mesh by
+            # overlap, that answer is better than anything a probe can do, so
+            # it is used directly and says so.
+            if cell.get("pin_root") and cell.get("root_id"):
+                root = str(cell["root_id"])
+                frags = len(manifest(root, token))
+                hits = None
+                print(f"   root {root} PINNED ({cell.get('pin_reason','no reason given')})")
+                print(f"   fragments {frags}")
+            else:
+                found = resolve_root(cv, token, cell["nucleus_um"],
+                                     cell.get("cell_type", ""))
+                if not found:
+                    print("   no root resolved at that nucleus, skipping")
+                    continue
+                root, frags, hits = found
+                hint = cell.get("root_id")
+                if hint and str(hint) != str(root):
+                    print(f"   root moved since the list was written: {hint} -> {root}")
+                print(f"   root {root}  fragments {frags}  probe hits {hits}")
 
             verts, faces = fetch_mesh(root, token)
             print(f"   assembled {len(verts)} verts, {len(faces)} faces, "

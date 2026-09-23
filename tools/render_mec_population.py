@@ -49,24 +49,19 @@ GROUND = (0.0021, 0.0024, 0.0034, 1.0)      # #07080B, linear
 # slate: present when you look for it, invisible when you are not.
 BLOCK_RGB = (0.055, 0.085, 0.125)           # dark blue grey
 
-# Amy's house palette, taken from the CA3 page and scifi-ui rather than
-# invented, and stated as sRGB HEX because that is how a palette is agreed.
+# The palette lives in ONE file, tools/mec_palette.json, so the render and the
+# legend cannot drift. They did: the legend kept the old pale lilac while the
+# cells rendered hot pink.
 #
-# THESE MUST BE CONVERTED TO LINEAR before they touch a Blender colour socket.
-# Base Color, Emission Color and the compositor all work in linear, so pasting
-# the sRGB value straight in renders it lighter AND flatter: measured, mint
-# #67f5cb came out at saturation 0.30 against 0.88 intended, and every type
-# lost roughly half its saturation. Same mistake as the background, which was
-# fixed there and not here.
-TYPE_HEX = {
-    "stellate":        "#67f5cb",   # mint
-    "pyramidal":       "#3E96F0",   # accent
-    "inhibitory":      "#ff5fb0",   # hot orchid
-    "microglia":       "#E8A93A",   # gold
-    "astrocyte":       "#b06fe0",   # violet
-    "oligodendrocyte": "#3fd8ff",   # cyan
-    "bipolar":         "#8fb3d9",   # steel
-}
+# The hexes are sRGB. Blender colour sockets are LINEAR, so they MUST go
+# through srgb_to_linear on the way in. Pasting sRGB straight into Base Color
+# cost half the saturation on every cell type.
+_PAL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         "mec_palette.json")
+with open(_PAL_PATH, encoding="utf-8") as _fh:
+    _PAL = json.load(_fh)
+TYPE_HEX = {k: v["hex"] for k, v in _PAL["types"].items()}
+TYPE_ORDER = _PAL["order"]
 
 
 def srgb_to_linear(c):
@@ -80,8 +75,7 @@ def hex_rgb(h):
 
 
 TYPE_COLOUR = {k: hex_rgb(v) for k, v in TYPE_HEX.items()}
-TYPE_ORDER = ["stellate", "pyramidal", "inhibitory", "astrocyte",
-              "oligodendrocyte", "microglia", "bipolar"]
+
 
 
 def argv_after_ddash():
@@ -202,8 +196,15 @@ def light_the_scene(hdri_strength=1.10, light_scale=0.0):
         bpy.context.collection.objects.link(o)
 
 
-def composite_ground(scene):
-    scene.use_nodes = True
+def composite_ground(scene, on=True):
+    """Put the background colour behind a film-transparent render.
+
+    Turned OFF for cycle layers, which have to keep their alpha so the post
+    pass can fade each cell type in and out over a single shared plate.
+    """
+    scene.use_nodes = bool(on)
+    if not on:
+        return
     nt = scene.node_tree
     nt.nodes.clear()
     rl = nt.nodes.new("CompositorNodeRLayers")
@@ -244,6 +245,9 @@ def main():
     ap.add_argument("--tier", default="card")
     ap.add_argument("--per-type", type=int, default=0, help="cap cells per type")
     ap.add_argument("--types", default="", help="comma separated; default all")
+    ap.add_argument("--group-glia", action="store_true",
+                    help="colour astrocyte, oligodendrocyte and microglia as "
+                         "one 'glia' class")
     ap.add_argument("--frames", type=int, default=0, help="0 = one still")
     ap.add_argument("--elev", type=float, default=8.0)
     ap.add_argument("--az", type=float, default=74.0,
@@ -254,11 +258,31 @@ def main():
                     help="0 = fit the cage automatically")
     ap.add_argument("--hdri", type=float, default=1.10)
     ap.add_argument("--lights", type=float, default=0.0)
+    # NOT "--cycle": Blender's own argument parser sees the Cycles addon's
+    # --cycles-device and --cycles-print-stats and rejects the abbreviation
+    # as ambiguous, before the script ever runs.
+    ap.add_argument("--type-cycle", action="store_true", dest="type_cycle",
+                    help="render one alpha layer per cell type plus a bare "
+                         "plate, for the post pass to fade between")
     args = ap.parse_args(argv_after_ddash())
 
     with open(args.cells) as fh:
         manifest = json.load(fh)
     cells = manifest["cells"]
+
+    # The three glial names come from a nucleus-size prediction that an expert
+    # has contradicted: the cell this project called an oligodendrocyte was an
+    # astrocyte, and the one it called a microglia was an oligodendrocyte. The
+    # glia here sit across six clusters with no consistent mapping, so the
+    # figure can honestly say "glia" and cannot honestly say which kind.
+    if args.group_glia:
+        members = set(_PAL.get("glia_members", []))
+        n = 0
+        for c in cells:
+            if c["cell_type"] in members:
+                c["cell_type"] = "glia"
+                n += 1
+        print(f"grouped {n} cells into one glia class")
     if args.types:
         want = {t.strip() for t in args.types.split(",") if t.strip()}
         cells = [c for c in cells if c["cell_type"] in want]
@@ -432,6 +456,37 @@ def main():
             "block_um": (BLOCK_HI - BLOCK_LO).round(2).tolist()}
     with open(os.path.join(args.out, "scene.json"), "w") as fh:
         json.dump(meta, fh, indent=1)
+
+    if args.type_cycle:
+        # One camera, one cage, one render per type. EVERY cell stays loaded
+        # and unwanted ones are only hidden from the render, because the
+        # camera fit and the axis probe both read the loaded scene: filtering
+        # the cells instead would have moved the camera between layers and the
+        # fades would not line up.
+        place(args.az)
+        scene.render.image_settings.color_mode = "RGBA"
+        present = [t for t in TYPE_ORDER if t in counts]
+
+        composite_ground(scene, True)
+        for _, obj in loaded:
+            obj.hide_render = True
+        scene.render.filepath = os.path.join(args.out, "plate.png")
+        bpy.ops.render.render(write_still=True)
+        print("wrote plate.png (cage and background, no cells)")
+
+        composite_ground(scene, False)      # keep alpha on the cell layers
+        for t in present:
+            for c, obj in loaded:
+                obj.hide_render = c["cell_type"] != t
+            scene.render.filepath = os.path.join(args.out, f"layer_{t}.png")
+            bpy.ops.render.render(write_still=True)
+            print(f"wrote layer_{t}.png  ({counts[t]} cells)")
+
+        meta["cycle_types"] = present
+        with open(os.path.join(args.out, "scene.json"), "w") as fh:
+            json.dump(meta, fh, indent=1)
+        print(f"cycle layers done: {len(present)} types + plate")
+        return
 
     if args.frames <= 0:
         place(args.az)

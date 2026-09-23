@@ -1,0 +1,52 @@
+{
+ "_comment": "sRGB hex. Anything writing these into a Blender colour socket MUST convert to linear first: the sockets are linear, and pasting sRGB straight in cost half the saturation on every type. Anything drawing a UI swatch uses them as-is.",
+ "types": {
+  "stellate": {
+   "hex": "#67f5cb",
+   "label": "Stellate"
+  },
+  "pyramidal": {
+   "hex": "#3E96F0",
+   "label": "Pyramidal"
+  },
+  "inhibitory": {
+   "hex": "#ff5fb0",
+   "label": "Inhibitory interneuron"
+  },
+  "astrocyte": {
+   "hex": "#b06fe0",
+   "label": "Astrocyte"
+  },
+  "oligodendrocyte": {
+   "hex": "#3fd8ff",
+   "label": "Oligodendrocyte"
+  },
+  "microglia": {
+   "hex": "#E8A93A",
+   "label": "Microglia"
+  },
+  "bipolar": {
+   "hex": "#A8E84A",
+   "label": "Bipolar"
+  },
+  "glia": {
+   "hex": "#b06fe0",
+   "label": "Glia"
+  }
+ },
+ "order": [
+  "stellate",
+  "pyramidal",
+  "inhibitory",
+  "bipolar",
+  "astrocyte",
+  "oligodendrocyte",
+  "microglia",
+  "glia"
+ ],
+ "glia_members": [
+  "astrocyte",
+  "oligodendrocyte",
+  "microglia"
+ ]
+}

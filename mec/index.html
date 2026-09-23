@@ -60,6 +60,12 @@
                        border:1px solid var(--line); background:rgba(255,255,255,.05); color:#eaf6ff; cursor:pointer; }
     .meet__nav button:hover{ background:rgba(255,255,255,.1); }
     .meet__which{ font-size:11.5px; color:var(--muted); }
+    /* Everything reconstructed so far */
+    .mec__figure{ margin:18px 0 0; }
+    .mec__figure img, .mec__figure video{ display:block; width:100%; height:auto;
+      border:1px solid var(--line); border-radius:var(--radius); background:#04060b; }
+    .mec__figure figcaption{ margin-top:8px; font-size:12.5px; color:var(--muted); }
+    .mec__videos{ display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:18px; }
   </style>
 </head>
 <body>
@@ -269,16 +275,70 @@
         </div>
       </section>
 
+      <!-- The whole block -->
+      <section class="mec" aria-label="Everything reconstructed so far">
+        <div class="more__head">
+          <h2>Everything we have pulled out so far</h2>
+          <p class="more__lede">
+            A sample of reconstructed cells, each drawn where it actually sits in the block and
+            coloured by type. This is a sample, not a census: the block holds tens of thousands
+            of cells and these are the ones picked out so far.
+          </p>
+        </div>
+
+        <figure class="mec__figure">
+          <img src="/assets/mec/population/web/still.jpg"
+               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
+               loading="lazy" />
+          <figcaption class="mec__caption">
+            Cells sit at their true positions and true relative sizes inside the imaged block.
+            The lower part of the box is empty because it lies below layer VI, where no nuclei
+            have been marked: probing it finds tissue, but almost all of it is still in small
+            pieces rather than whole cells.
+          </figcaption>
+        </figure>
+
+        <div class="mec__videos">
+          <figure class="mec__figure">
+            <video controls playsinline preload="none" width="1600" height="900"
+                   poster="/assets/mec/population/web/cycle-poster.jpg">
+              <source src="/assets/mec/population/mec_cycle.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="mec__caption">
+              One type at a time, then all of them together.
+            </figcaption>
+          </figure>
+          <figure class="mec__figure">
+            <video controls playsinline preload="none" width="1600" height="900"
+                   poster="/assets/mec/population/web/turntable-poster.jpg">
+              <source src="/assets/mec/population/mec_turntable.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="mec__caption">
+              A full turn, so you can see the block is a slab and not a cube.
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="card__body">
+          The three glial types are drawn as one colour here. The automatic type prediction
+          calls glia by nucleus size, and when an expert checked two of them, both were wrong:
+          the cell called an oligodendrocyte was an astrocyte, and the one called a microglia
+          was an oligodendrocyte. Splitting them into three colours would be claiming something
+          this project cannot yet support, so until they are proofread they are simply glia.
+        </p>
+      </section>
+
       <!-- Meet an MEC neuron -->
       <section class="mec" aria-label="Meet an MEC neuron">
         <div class="more__head">
           <h2>Meet an MEC neuron</h2>
           <p class="more__lede">
-            Real reconstructions from this block, one of each kind. Every type here is a
-            <strong>presumed</strong> type: it was called from nucleus size and then checked
-            against the cell's layer, not yet confirmed by a human looking at its shape.
-            Every one is a candidate for proofreading, not a confirmed call. The list of
-            segment IDs and soma coordinates is below so they can be checked.
+            Real reconstructions from this block, one of each kind. Three of them, the
+            pyramidal cell, the oligodendrocyte and the microglia, were picked out by eye by
+            someone who knows this tissue. The other four are still <strong>presumed</strong>
+            types, called from nucleus size and checked against the cell's layer, with nobody
+            having looked at the shape yet. The table further down says which is which, and
+            gives the segment IDs and soma coordinates so you can check any of them.
           </p>
         </div>
 
@@ -313,8 +373,10 @@
               <h3>Pyramidal cell</h3>
               <p class="meet__line">
                 The other principal cell. One dominant dendrite rises from the top of the soma
-                and a skirt of shorter ones spreads around its base. The commonest typed cell
-                in the block by a wide margin.
+                and a skirt of shorter ones spreads around its base. In the medial entorhinal
+                cortex pyramidal and stellate cells grade into one another, and there is a real
+                argument that they are a continuum rather than two types, so this one was
+                chosen by eye as a clear example.
               </p>
               <p class="meet__count">12,742 presumed in this block.</p>
               <div class="meet__nav"></div>
@@ -354,7 +416,7 @@
                 vessels. It is easy to mistake for a small neuron at a glance, which is part
                 of why the neuron count in this block is still open.
               </p>
-              <p class="meet__count">188 labelled so far. Mostly nucleus-size cluster 4.</p>
+              <p class="meet__count">188 labelled so far. This one is still an automatic call, and the glial predictions have already been wrong once.</p>
               <div class="meet__nav"></div>
             </div>
           </article>
@@ -362,17 +424,17 @@
           <article class="meet__card" data-type="oligodendrocyte">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <img src="/assets/mec/renders/web/oligodendrocyte-01.jpg" alt="An oligodendrocyte rendered in cyan on black. A compact cell body with processes extending to several nearby axons." loading="lazy" onerror="this.remove()" />
+              <img src="/assets/mec/renders/web/oligodendrocyte-01.jpg" alt="An oligodendrocyte rendered in cyan on black. A compact cell body with many branching processes, several of which close into small loops where the cell has wrapped itself around an axon." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
               <p class="meet__eyebrow">Not a neuron</p>
               <h3>Oligodendrocyte</h3>
               <p class="meet__line">
-                The cell that makes myelin. Each one reaches out and wraps segments of
-                several nearby axons, which is why its reconstruction looks like a hub with
-                sleeves hanging off it rather than a tree.
+                The cell that makes myelin. Follow the processes out and you will find
+                small closed loops: each one is this cell wrapped right around a myelinated
+                axon. A single oligodendrocyte insulates many axons at once.
               </p>
-              <p class="meet__count">137 labelled so far. Mostly nucleus-size cluster 3.</p>
+              <p class="meet__count">137 labelled so far, but the automatic labels for glia are not reliable yet.</p>
               <div class="meet__nav"></div>
             </div>
           </article>
@@ -391,7 +453,7 @@
                 processes that are constantly reaching out and sampling the tissue around them.
                 Cells like this are part of why the neuron count is still an open question.
               </p>
-              <p class="meet__count">24 labelled so far.</p>
+              <p class="meet__count">24 labelled so far. Intact examples are rare, because microglia merge easily with the cells around them.</p>
               <div class="meet__nav"></div>
             </div>
           </article>
@@ -427,41 +489,51 @@
         <div class="more__head">
           <h2>Check our working</h2>
           <p class="more__lede">
-            Every cell above was picked automatically, from a cell type prediction that has
-            not been proofread. Here is exactly what to open so you can tell us where we are
-            wrong.
+            Four of the cells above were picked automatically, from a cell type prediction
+            that has not been proofread. Three were then replaced by hand after Amy Sterling
+            looked at them and told us what they actually were. Here is exactly what to open
+            so you can tell us where we are still wrong.
           </p>
         </div>
         <article class="card card--flat">
           <p class="card__body">
-            How each one was chosen: the cell type prediction gives a nucleus. Reading the
-            segmentation at the nucleus centre returns the nucleus, not the cell, so the soma
-            is probed in 54 directions and the root that most points agree on is taken. For
-            glia, agreement alone is not enough. It picks the large neuron whose processes
-            surround the glial soma, so candidates are also rejected if they are too big to be
-            that type. That check replaced an "astrocyte" spanning <strong>483</strong>
-            <span class="nounit">&micro;m</span> and a "microglia" spanning
-            <strong>396</strong> <span class="nounit">&micro;m</span>. Both were neurons.
+            How the automatic ones are chosen: the cell type prediction gives a nucleus.
+            Reading the segmentation at the nucleus centre returns the nucleus, not the cell,
+            so the soma is probed in 54 directions and the root that most points agree on is
+            taken. Candidates too big to be their type are rejected, which is what caught an
+            "astrocyte" spanning <strong>483</strong> <span class="nounit">&micro;m</span> and
+            a "microglia" spanning <strong>396</strong> <span class="nounit">&micro;m</span>.
+            Both were neurons.
+          </p>
+          <p class="card__body">
+            <strong>That was still not enough for glia.</strong> Size tells an astrocyte from
+            a neuron, but it does not tell an astrocyte from an oligodendrocyte: they are the
+            same size. Checked by eye, the cell this page called an oligodendrocyte was an
+            astrocyte, and the one it called a microglia was an oligodendrocyte. The
+            replacements are pinned to the cells Amy picked by measuring how much the
+            reconstructions actually overlap, which puts them at <strong>0.96</strong> to
+            <strong>0.97</strong> on a scale where 1 is the same cell. The automatic type
+            predictions for glia should be treated as unreliable until someone has looked.
           </p>
           <table class="mec__table">
-            <caption class="mec__caption">Soma positions are voxels at 16 &times; 16 &times; 45 <span class="nounit">nm</span>, ready to paste into neuroglancer.</caption>
+            <caption class="mec__caption">Soma positions are voxels at 16 &times; 16 &times; 45 <span class="nounit">nm</span>, ready to paste into neuroglancer. Span is the reconstruction measured between its 0.5th and 99.5th percentile bounds, so one stray fragment cannot inflate it.</caption>
             <thead>
-              <tr><th scope="col">Type</th><th scope="col">Segment ID</th><th scope="col">Soma, voxels</th><th scope="col">Span</th></tr>
+              <tr><th scope="col">Type</th><th scope="col">Segment ID</th><th scope="col">Soma, voxels</th><th scope="col">Span</th><th scope="col">How it was called</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Stellate</th><td>720575947520731264</td><td>142606, 130606, 5091</td><td>444 &times; 388 &times; 296</td></tr>
-              <tr><th scope="row">Pyramidal</th><td>720575947564538366</td><td>145262, 126675, 5036</td><td>829 &times; 802 &times; 300</td></tr>
-              <tr><th scope="row">Inhibitory</th><td>720575947567168828</td><td>118319, 131969, 4964</td><td>344 &times; 388 &times; 308</td></tr>
-              <tr><th scope="row">Bipolar</th><td>720575947496304424</td><td>190769, 140962, 5900</td><td>145 &times; 310 &times; 122</td></tr>
-              <tr><th scope="row">Astrocyte</th><td>720575947505391325</td><td>158450, 132831, 4924</td><td>66 &times; 66 &times; 53</td></tr>
-              <tr><th scope="row">Oligodendrocyte</th><td>720575947453291850</td><td>118369, 127950, 4987</td><td>53 &times; 42 &times; 57</td></tr>
-              <tr><th scope="row">Microglia</th><td>720575947454309031</td><td>143712, 131762, 1711</td><td>93 &times; 77 &times; 75</td></tr>
+              <tr><th scope="row">Stellate</th><td>720575947520731264</td><td>142606, 130606, 5091</td><td>444 &times; 388 &times; 296</td><td>Automatic, from a nucleus-size prediction</td></tr>
+              <tr><th scope="row">Pyramidal</th><td>720575947422955241</td><td>156431, 128281, 5398</td><td>348 &times; 436 &times; 275</td><td>Named by eye, then matched to the live segmentation</td></tr>
+              <tr><th scope="row">Inhibitory</th><td>720575947567168828</td><td>118319, 131969, 4964</td><td>344 &times; 388 &times; 308</td><td>Automatic, from a nucleus-size prediction</td></tr>
+              <tr><th scope="row">Bipolar</th><td>720575947496304424</td><td>190769, 140962, 5900</td><td>145 &times; 310 &times; 122</td><td>Automatic, from a nucleus-size prediction</td></tr>
+              <tr><th scope="row">Astrocyte</th><td>720575947505391325</td><td>158450, 132831, 4924</td><td>66 &times; 66 &times; 53</td><td>Automatic, from a nucleus-size prediction</td></tr>
+              <tr><th scope="row">Oligodendrocyte</th><td>720575947480485108</td><td>128137, 130562, 4213</td><td>73 &times; 48 &times; 73</td><td>Named by eye, then matched to the live segmentation</td></tr>
+              <tr><th scope="row">Microglia</th><td>720575947495909088</td><td>131562, 128894, 8191</td><td>80 &times; 68 &times; 61</td><td>Named by eye, then matched to the live segmentation</td></tr>
             </tbody>
           </table>
           <p class="card__body">
-            The one we trust least is the <strong>oligodendrocyte</strong>. Its size is right,
-            but an oligodendrocyte should read as a cell body with myelin sleeves along nearby
-            axons, and this one looks more like a second astrocyte. Treat it as unconfirmed.
+            The ones to check next are the <strong>astrocyte</strong> and the
+            <strong>bipolar cell</strong>. Both were still picked automatically, and the glial
+            type predictions have already been wrong once here.
           </p>
           <div class="card__actions">
             <a class="btn btn--ghost" href="/assets/mec/gallery/proofread.csv" download>Download the list (CSV)</a>

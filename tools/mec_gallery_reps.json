@@ -18,16 +18,19 @@
   "id": "pyramidal-01",
   "cell_type": "pyramidal",
   "nucleus_um": [
-   2324.2,
-   2026.8,
-   226.6
+   2502.9,
+   2052.5,
+   242.9
   ],
-  "root_id": "720575947564538366",
+  "root_id": "720575947422955241",
   "layer": "II",
   "size_cluster": 6,
-  "edge_dist_um": 220.7,
-  "probe_hits": 23,
-  "mesh_fragments": 207
+  "source_root_flat": "83043572034995010",
+  "note": "chosen by Amy Sterling as a clearly pyramidal example; MEC pyramidal and stellate form a continuum and the previous pick sat on the border",
+  "verified_by": "Amy Sterling, 2026-09-23",
+  "pin_root": true,
+  "pin_reason": "full-mesh span matches Amy's cell exactly at 378.9 x 479.7 x 316.6 um",
+  "confidence": "named by eye and matched to the live segmentation"
  },
  {
   "id": "inhibitory-01",
@@ -48,46 +51,55 @@
   "id": "astrocyte-01",
   "cell_type": "astrocyte",
   "nucleus_um": [
-   1905.4,
-   2047.7,
-   240.3
+   2535.2,
+   2125.3,
+   221.6
   ],
-  "root_id": "720575947547993641",
+  "root_id": "720575947505391325",
   "layer": "II",
-  "size_cluster": 5,
+  "size_cluster": 6,
   "edge_dist_um": 207.0,
   "probe_hits": 27,
-  "mesh_fragments": 135
+  "mesh_fragments": 135,
+  "note": "kept: Amy identified the cell previously labelled oligodendrocyte as an astrocyte, and this slot already held a good one"
  },
  {
   "id": "oligodendrocyte-01",
   "cell_type": "oligodendrocyte",
   "nucleus_um": [
-   2317.6,
-   2110.7,
-   282.1
+   2050.2,
+   2089.0,
+   189.6
   ],
-  "root_id": "720575947545287235",
+  "root_id": "720575947480485108",
   "layer": "II",
-  "size_cluster": 7,
-  "edge_dist_um": 165.2,
-  "probe_hits": 25,
-  "mesh_fragments": 284
+  "size_cluster": 4,
+  "source_root_flat": "79103196903426744",
+  "note": "chosen by Amy Sterling; several processes show the loop where the cell wraps a myelinated axon",
+  "verified_by": "Amy Sterling, 2026-09-23",
+  "pin_root": true,
+  "pin_reason": "matched to Amy's mesh by voxel overlap, IoU 0.960, covers 98.7% of her cell",
+  "match_iou": 0.96,
+  "confidence": "named by eye and matched to the live segmentation"
  },
  {
   "id": "microglia-01",
   "cell_type": "microglia",
   "nucleus_um": [
-   3076.4,
-   2258.9,
-   360.7
+   2105.0,
+   2062.3,
+   368.6
   ],
-  "root_id": "720575947467647684",
+  "root_id": "720575947495909088",
   "layer": "II",
-  "size_cluster": 7,
-  "edge_dist_um": 86.6,
-  "probe_hits": 27,
-  "mesh_fragments": 152
+  "size_cluster": 3,
+  "source_root_flat": "79243660587620042",
+  "note": "chosen by Amy Sterling; good microglia are hard to find because they merge easily with neighbours, and this one carries a minor axon merge in the segmentation she inspected",
+  "verified_by": "Amy Sterling, 2026-09-23",
+  "pin_root": true,
+  "pin_reason": "matched to Amy's mesh by voxel overlap, IoU 0.971, covers 99.2% of her cell",
+  "match_iou": 0.971,
+  "confidence": "named by eye and matched to the live segmentation"
  },
  {
   "id": "bipolar-01",

@@ -21,7 +21,7 @@
    45
   ]
  },
- "built_cells": 7,
+ "built_cells": 9,
  "cells": [
   {
    "id": "astrocyte-01",
@@ -92,7 +92,8 @@
      ],
      "surface_area_um2": 27406.1
     }
-   }
+   },
+   "note": "kept: Amy identified the cell previously labelled oligodendrocyte as an astrocyte, and this slot already held a good one"
   },
   {
    "id": "bipolar-01",
@@ -240,70 +241,83 @@
    "id": "microglia-01",
    "cell_type": "microglia",
    "nucleus_um": [
-    2299.4,
-    2108.2,
-    77.0
+    2105.0,
+    2062.3,
+    368.6
    ],
-   "root_id": "720575947454309031",
+   "root_id": "720575947495909088",
    "layer": "II",
-   "size_cluster": 4,
-   "edge_dist_um": 76.6,
-   "probe_hits": 3,
-   "mesh_fragments": 43,
+   "size_cluster": 3,
+   "source_root_flat": "79243660587620042",
+   "note": "chosen by Amy Sterling; good microglia are hard to find because they merge easily with neighbours, and this one carries a minor axon merge in the segmentation she inspected",
+   "verified_by": "Amy Sterling, 2026-09-23",
+   "pin_root": true,
+   "pin_reason": "matched to Amy's mesh by voxel overlap, IoU 0.971, covers 99.2% of her cell",
+   "match_iou": 0.971,
+   "confidence": "named by eye and matched to the live segmentation",
+   "mesh_fragments": 52,
    "tiers": {
     "card": {
-     "file": "microglia-01.card.glb",
-     "faces": 3920,
-     "vertices": 2335,
-     "bytes": 75828,
+     "faces": 6748,
+     "faces_in": 1111028,
+     "specks_dropped": 1686,
+     "density_per_um2": 1.4,
+     "vertices": 3988,
+     "bytes": 129600,
      "bbox_min_um": [
-      2236.48,
-      2050.55,
-      41.46
+      2044.22,
+      2020.97,
+      342.22
      ],
      "bbox_max_um": [
-      2340.42,
-      2129.62,
-      119.12
+      2133.91,
+      2100.13,
+      409.53
      ],
      "p_bbox_min_um": [
-      2240.27,
-      2055.78,
-      43.42
+      2053.46,
+      2029.63,
+      346.19
      ],
      "p_bbox_max_um": [
-      2332.85,
-      2128.95,
-      117.99
+      2131.44,
+      2096.17,
+      406.6
      ],
-     "surface_area_um2": 1353.0
+     "decimation_bbox_shift_um": 0.5837,
+     "surface_area_um2": 4820.4,
+     "file": "microglia-01.card.glb"
     },
     "detail": {
-     "file": "microglia-01.detail.glb",
-     "faces": 28716,
-     "vertices": 14465,
-     "bytes": 518956,
+     "faces": 49408,
+     "faces_in": 1111028,
+     "specks_dropped": 1686,
+     "density_per_um2": 10.25,
+     "vertices": 24727,
+     "bytes": 890404,
      "bbox_min_um": [
-      2236.45,
-      2048.51,
-      39.35
+      2044.18,
+      2020.85,
+      342.01
      ],
      "bbox_max_um": [
-      2342.43,
-      2129.66,
-      119.23
+      2134.08,
+      2100.39,
+      410.05
      ],
      "p_bbox_min_um": [
-      2240.75,
-      2051.65,
-      42.86
+      2051.79,
+      2029.06,
+      345.63
      ],
      "p_bbox_max_um": [
-      2333.63,
-      2128.26,
-      117.96
+      2131.86,
+      2096.99,
+      406.7
      ],
-     "surface_area_um2": 2338.0
+     "decimation_bbox_shift_um": 0.1033,
+     "surface_area_um2": 4820.4,
+     "file": "microglia-01.detail.glb"
     }
    }
   },
@@ -311,143 +325,166 @@
    "id": "oligodendrocyte-01",
    "cell_type": "oligodendrocyte",
    "nucleus_um": [
-    1893.9,
-    2047.2,
-    224.4
+    2050.2,
+    2089.0,
+    189.6
    ],
-   "root_id": "720575947453291850",
+   "root_id": "720575947480485108",
    "layer": "II",
-   "size_cluster": 5,
-   "edge_dist_um": 222.9,
-   "probe_hits": 2,
-   "mesh_fragments": 96,
+   "size_cluster": 4,
+   "source_root_flat": "79103196903426744",
+   "note": "chosen by Amy Sterling; several processes show the loop where the cell wraps a myelinated axon",
+   "verified_by": "Amy Sterling, 2026-09-23",
+   "mesh_fragments": 34,
    "tiers": {
     "card": {
-     "file": "oligodendrocyte-01.card.glb",
-     "faces": 43904,
-     "vertices": 21745,
-     "bytes": 788576,
+     "faces": 3350,
+     "faces_in": 558466,
+     "specks_dropped": 812,
+     "density_per_um2": 1.4,
+     "vertices": 2036,
+     "bytes": 65404,
      "bbox_min_um": [
-      1874.35,
-      2033.8,
-      171.6
+      2012.89,
+      2063.48,
+      149.42
      ],
      "bbox_max_um": [
-      1935.23,
-      2083.59,
-      242.37
+      2091.75,
+      2114.15,
+      227.97
      ],
      "p_bbox_min_um": [
-      1879.05,
-      2037.8,
-      181.93
+      2014.08,
+      2067.02,
+      152.67
      ],
      "p_bbox_max_um": [
-      1932.03,
-      2079.08,
-      238.65
+      2086.68,
+      2109.35,
+      220.74
      ],
-     "surface_area_um2": 13771.0
+     "decimation_bbox_shift_um": 5.6225,
+     "surface_area_um2": 2394.9,
+     "file": "oligodendrocyte-01.card.glb"
     },
     "detail": {
-     "file": "oligodendrocyte-01.detail.glb",
-     "faces": 259998,
-     "vertices": 124722,
-     "bytes": 4617436,
+     "faces": 24546,
+     "faces_in": 558466,
+     "specks_dropped": 812,
+     "density_per_um2": 10.25,
+     "vertices": 12473,
+     "bytes": 445012,
      "bbox_min_um": [
-      1874.21,
-      2033.6,
-      171.42
+      2012.67,
+      2057.9,
+      149.23
      ],
      "bbox_max_um": [
-      1935.44,
-      2083.85,
-      243.93
+      2092.07,
+      2115.05,
+      229.97
      ],
      "p_bbox_min_um": [
-      1878.91,
-      2037.71,
-      181.94
+      2014.16,
+      2063.84,
+      151.91
      ],
      "p_bbox_max_um": [
-      1932.1,
-      2079.24,
-      238.93
+      2087.08,
+      2111.35,
+      224.66
      ],
-     "surface_area_um2": 23140.3
+     "decimation_bbox_shift_um": 0.1699,
+     "surface_area_um2": 2394.9,
+     "file": "oligodendrocyte-01.detail.glb"
     }
-   }
+   },
+   "confidence": "named by eye and matched to the live segmentation",
+   "pin_reason": "matched to Amy's mesh by voxel overlap, IoU 0.960, covers 98.7% of her cell",
+   "match_iou": 0.96
   },
   {
    "id": "pyramidal-01",
    "cell_type": "pyramidal",
    "nucleus_um": [
-    2324.2,
-    2026.8,
-    226.6
+    2502.9,
+    2052.5,
+    242.9
    ],
-   "root_id": "720575947564538366",
+   "root_id": "720575947422955241",
    "layer": "II",
    "size_cluster": 6,
-   "edge_dist_um": 220.7,
-   "probe_hits": 23,
-   "mesh_fragments": 207,
+   "source_root_flat": "83043572034995010",
+   "note": "chosen by Amy Sterling as a clearly pyramidal example; MEC pyramidal and stellate form a continuum and the previous pick sat on the border",
+   "verified_by": "Amy Sterling, 2026-09-23",
+   "mesh_fragments": 146,
    "tiers": {
     "card": {
-     "file": "pyramidal-01.card.glb",
-     "faces": 60000,
-     "vertices": 31788,
-     "bytes": 1102244,
+     "faces": 37963,
+     "faces_in": 6314991,
+     "specks_dropped": 8944,
+     "density_per_um2": 1.4,
+     "vertices": 20982,
+     "bytes": 708128,
      "bbox_min_um": [
-      1748.01,
-      1480.65,
-      119.85
+      2358.86,
+      1856.38,
+      119.99
      ],
      "bbox_max_um": [
-      2683.86,
-      2332.46,
-      438.34
+      2737.72,
+      2335.65,
+      436.28
      ],
      "p_bbox_min_um": [
-      1820.04,
-      1503.22,
-      125.49
+      2375.14,
+      1884.08,
+      147.81
      ],
      "p_bbox_max_um": [
-      2669.53,
-      2312.94,
-      425.92
+      2726.55,
+      2320.07,
+      424.9
      ],
-     "surface_area_um2": 26216.5
+     "decimation_bbox_shift_um": 0.2963,
+     "surface_area_um2": 27116.6,
+     "file": "pyramidal-01.card.glb"
     },
     "detail": {
-     "file": "pyramidal-01.detail.glb",
-     "faces": 259998,
-     "vertices": 136239,
-     "bytes": 4755636,
+     "faces": 259999,
+     "faces_in": 6314991,
+     "specks_dropped": 8944,
+     "density_per_um2": 9.59,
+     "vertices": 133842,
+     "bytes": 4726880,
      "bbox_min_um": [
-      1747.92,
-      1480.63,
-      119.81
+      2358.89,
+      1856.17,
+      119.83
      ],
      "bbox_max_um": [
-      2684.85,
-      2332.78,
-      438.58
+      2737.79,
+      2335.79,
+      436.36
      ],
      "p_bbox_min_um": [
-      1837.25,
-      1509.87,
-      125.33
+      2375.22,
+      1883.01,
+      149.51
      ],
      "p_bbox_max_um": [
-      2666.63,
-      2312.05,
-      424.88
+      2723.27,
+      2319.25,
+      424.12
      ],
-     "surface_area_um2": 36008.6
+     "decimation_bbox_shift_um": 0.0826,
+     "surface_area_um2": 27116.6,
+     "file": "pyramidal-01.detail.glb"
     }
-   }
+   },
+   "confidence": "named by eye and matched to the live segmentation",
+   "pin_reason": "full-mesh span matches Amy's cell exactly at 378.9 x 479.7 x 316.6 um"
   },
   {
    "id": "stellate-01",

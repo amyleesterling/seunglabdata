@@ -35,24 +35,19 @@ SUBSURFACE_SCALE = 0.012 * TARGET_SIZE
 # Solid colours, chosen to stay distinct under a 5200 W key with Standard view
 # transform. These are the render colours; check them IN the render, never in a
 # picker.
-# Amy's house palette, taken from the CA3 page and scifi-ui rather than
-# invented, and stated as sRGB HEX because that is how a palette is agreed.
+# The palette lives in ONE file, tools/mec_palette.json, so the render and the
+# legend cannot drift. They did: the legend kept the old pale lilac while the
+# cells rendered hot pink.
 #
-# THESE MUST BE CONVERTED TO LINEAR before they touch a Blender colour socket.
-# Base Color, Emission Color and the compositor all work in linear, so pasting
-# the sRGB value straight in renders it lighter AND flatter: measured, mint
-# #67f5cb came out at saturation 0.30 against 0.88 intended, and every type
-# lost roughly half its saturation. Same mistake as the background, which was
-# fixed there and not here.
-TYPE_HEX = {
-    "stellate":        "#67f5cb",   # mint
-    "pyramidal":       "#3E96F0",   # accent
-    "inhibitory":      "#ff5fb0",   # hot orchid
-    "microglia":       "#E8A93A",   # gold
-    "astrocyte":       "#b06fe0",   # violet
-    "oligodendrocyte": "#3fd8ff",   # cyan
-    "bipolar":         "#8fb3d9",   # steel
-}
+# The hexes are sRGB. Blender colour sockets are LINEAR, so they MUST go
+# through srgb_to_linear on the way in. Pasting sRGB straight into Base Color
+# cost half the saturation on every cell type.
+_PAL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                         "mec_palette.json")
+with open(_PAL_PATH, encoding="utf-8") as _fh:
+    _PAL = json.load(_fh)
+TYPE_HEX = {k: v["hex"] for k, v in _PAL["types"].items()}
+TYPE_ORDER = _PAL["order"]
 
 
 def srgb_to_linear(c):

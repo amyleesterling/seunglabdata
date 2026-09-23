@@ -1,0 +1,44 @@
+[
+ {
+  "id": "wm-002",
+  "cell_type": "unclassified",
+  "nucleus_um": [
+   2954.4,
+   1387.5,
+   391.4
+  ],
+  "root_id": "720575947481556654",
+  "pin_root": true,
+  "pin_reason": "found by grid probe below layer VI; no nucleus annotation exists there",
+  "mesh_fragments": 191,
+  "layer": "below VI"
+ },
+ {
+  "id": "wm-000",
+  "cell_type": "unclassified",
+  "nucleus_um": [
+   2345.0,
+   1272.5,
+   279.7
+  ],
+  "root_id": "720575947535179555",
+  "pin_root": true,
+  "pin_reason": "found by grid probe below layer VI; no nucleus annotation exists there",
+  "mesh_fragments": 85,
+  "layer": "below VI"
+ },
+ {
+  "id": "wm-001",
+  "cell_type": "unclassified",
+  "nucleus_um": [
+   2751.3,
+   1387.5,
+   279.7
+  ],
+  "root_id": "720575947542306947",
+  "pin_root": true,
+  "pin_reason": "found by grid probe below layer VI; no nucleus annotation exists there",
+  "mesh_fragments": 82,
+  "layer": "below VI"
+ }
+]

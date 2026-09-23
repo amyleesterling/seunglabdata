@@ -1,8 +1,8 @@
-id,cell_type,root_id,soma_x_vx,soma_y_vx,soma_z_vx,span_x_um,span_y_um,span_z_um,layer,size_cluster,probe_hits_of_54,mesh_fragments
-astrocyte-01,astrocyte,720575947505391325,158450,132831,4924,66,66,53,II,6,2,173
-bipolar-01,bipolar,720575947496304424,190769,140962,5900,145,310,122,II,5,12,11
-inhibitory-01,inhibitory,720575947567168828,118319,131969,4964,344,388,308,II,6,42,313
-microglia-01,microglia,720575947454309031,143712,131762,1711,93,77,75,II,4,3,43
-oligodendrocyte-01,oligodendrocyte,720575947453291850,118369,127950,4987,53,42,57,II,5,2,96
-pyramidal-01,pyramidal,720575947564538366,145262,126675,5036,829,802,300,II,6,23,207
-stellate-01,stellate,720575947520731264,142606,130606,5091,444,388,296,II,7,37,265
+id,cell_type,root_id,segmentation,chosen_by,confidence,soma_x_vx,soma_y_vx,soma_z_vx,span_x_um,span_y_um,span_z_um,layer,mesh_fragments,match_iou,note
+astrocyte-01,astrocyte,720575947505391325,seg_20260713164845 (pni_mec chunkedgraph),"automatic, from a nucleus-size prediction",unconfirmed,158450,132831,4924,66,66,53,II,173,,"kept: Amy identified the cell previously labelled oligodendrocyte as an astrocyte, and this slot already held a good one"
+bipolar-01,bipolar,720575947496304424,seg_20260713164845 (pni_mec chunkedgraph),"automatic, from a nucleus-size prediction",unconfirmed,190769,140962,5900,145,310,122,II,11,,
+inhibitory-01,inhibitory,720575947567168828,seg_20260713164845 (pni_mec chunkedgraph),"automatic, from a nucleus-size prediction",unconfirmed,118319,131969,4964,344,388,308,II,313,,
+microglia-01,microglia,720575947495909088,seg_20260713164845 (pni_mec chunkedgraph),"Amy Sterling, 2026-09-23",named by eye and matched to the live segmentation,131562,128894,8191,80,68,61,II,52,0.971,"chosen by Amy Sterling; good microglia are hard to find because they merge easily with neighbours, and this one carries a minor axon merge in the segmentation she inspected"
+oligodendrocyte-01,oligodendrocyte,720575947480485108,seg_20260713164845 (pni_mec chunkedgraph),"Amy Sterling, 2026-09-23",named by eye and matched to the live segmentation,128137,130562,4213,73,48,73,II,34,0.96,chosen by Amy Sterling; several processes show the loop where the cell wraps a myelinated axon
+pyramidal-01,pyramidal,720575947422955241,seg_20260713164845 (pni_mec chunkedgraph),"Amy Sterling, 2026-09-23",named by eye and matched to the live segmentation,156431,128281,5398,348,436,275,II,146,,chosen by Amy Sterling as a clearly pyramidal example; MEC pyramidal and stellate form a continuum and the previous pick sat on the border
+stellate-01,stellate,720575947520731264,seg_20260713164845 (pni_mec chunkedgraph),"automatic, from a nucleus-size prediction",unconfirmed,142606,130606,5091,444,388,296,II,265,,
