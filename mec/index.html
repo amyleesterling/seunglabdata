@@ -80,6 +80,95 @@
     .mec__figure figcaption{ margin-top:8px; font-size:12.5px; color:var(--muted); }
     /* Full width. Two videos side by side made a 118 cell block unreadable,
        and the depth scale's layer labels were illegible at half width. */
+    /* ---- hero -------------------------------------------------------------
+       Full bleed render with the page lifted up over its lower half, so the
+       image dissolves behind the content instead of ending in a hard line.
+       The banner is 66.7% of its width tall, and -29% lifts the page about
+       44% of the way up it. Keep the two numbers in step if the render's
+       aspect changes. */
+    .mechero{ position:relative; margin:0 0 10px; background:#04060b; }
+    .mechero__fig{ margin:0; position:relative; background:#04060b; }
+    .mechero__fig img{ display:block; width:100%; height:auto; border:0; }
+    .mechero__fig::after{
+      content:""; position:absolute; left:0; right:0; bottom:0; height:64%;
+      background:linear-gradient(to bottom, rgba(4,6,11,0) 0%, rgba(4,6,11,.34) 28%,
+        rgba(4,6,11,.78) 62%, #04060b 93%);
+      pointer-events:none;
+    }
+    .mechero__panel{
+      position:absolute; z-index:3; top:clamp(16px,4vw,44px);
+      left:0; right:0; margin-inline:auto;
+      width:min(690px, calc(100% - 40px));
+      background:linear-gradient(178deg, rgba(13,26,45,.80), rgba(7,14,26,.86) 62%, rgba(6,12,22,.90));
+      border:1px solid rgba(122,186,246,.26); border-radius:3px;
+      backdrop-filter:blur(9px) saturate(1.15);
+      -webkit-backdrop-filter:blur(9px) saturate(1.15);
+      box-shadow:0 0 0 1px rgba(6,12,22,.55), 0 18px 54px rgba(0,0,0,.62),
+                 0 0 40px rgba(62,150,240,.10);
+    }
+    .mechero__panel::before{
+      content:""; position:absolute; left:9%; right:9%; top:-1px; height:1px;
+      background:linear-gradient(90deg, transparent, rgba(150,212,255,.85) 22%,
+        rgba(214,240,255,1) 50%, rgba(150,212,255,.85) 78%, transparent);
+      box-shadow:0 0 11px rgba(120,196,255,.62);
+    }
+    .mechero__panel i{
+      position:absolute; width:11px; height:11px; pointer-events:none;
+      border:0 solid rgba(150,208,252,.55);
+    }
+    .mechero__panel i.tl{ top:6px; left:6px; border-top-width:1px; border-left-width:1px; }
+    .mechero__panel i.tr{ top:6px; right:6px; border-top-width:1px; border-right-width:1px; }
+    .mechero__panel i.bl{ bottom:6px; left:6px; border-bottom-width:1px; border-left-width:1px; }
+    .mechero__panel i.br{ bottom:6px; right:6px; border-bottom-width:1px; border-right-width:1px; }
+    .mechero__inner{ position:relative; z-index:1;
+      padding:clamp(20px,2.9vw,30px) clamp(20px,3.2vw,34px) clamp(18px,2.6vw,26px); }
+    .mechero__eyebrow{
+      display:flex; align-items:center; gap:9px; margin:0 0 13px;
+      font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
+      color:rgba(140,190,240,.9);
+    }
+    .mechero__eyebrow s{ width:5px; height:5px; border-radius:50%; flex:0 0 auto;
+      background:rgb(120,205,255); box-shadow:0 0 8px rgba(120,205,255,.9); text-decoration:none; }
+    .mechero__eyebrow u{ flex:1 1 auto; height:5px; text-decoration:none;
+      background-image:repeating-linear-gradient(90deg, rgba(140,196,246,.42) 0 1px, transparent 1px 7px); }
+    .mechero__panel h1{ margin:0; font-size:clamp(26px,4.4vw,38px); font-weight:500;
+      letter-spacing:-.02em; line-height:1.08; color:#eaf6ff; }
+    .mechero__lede{ margin:9px 0 0; font-size:15px; line-height:1.62; color:#A7BCD6; max-width:46ch; }
+    .mechero__rule{ height:1px; margin:17px 0 0;
+      background:linear-gradient(90deg, rgba(122,186,246,.34), rgba(122,186,246,.05) 72%, transparent); }
+    .mechero__meta{ margin:12px 0 0; font-size:11.5px; letter-spacing:.1em;
+      text-transform:uppercase; color:rgba(126,146,172,.95);
+      display:flex; flex-wrap:wrap; gap:4px 16px; }
+    .mechero__meta b{ color:#CBD8E8; font-weight:500; letter-spacing:.06em; }
+    @media (min-width:721px){ .mechero{ margin-bottom:-29%; } }
+    @media (max-width:720px){
+      /* Below this the panel would cover the render entirely, so it drops
+         underneath it and the lift is switched off. */
+      .mechero__panel{ position:static; width:auto; margin:-14% 16px 0; backdrop-filter:none; }
+      .mechero__fig::after{ height:46%; }
+    }
+    @media (max-width:560px){
+      /* The eyebrow is a flex row of dot, label, rail and second label. At this
+         width it squeezed onto two lines with the rail stranded between them,
+         so the rail goes and the two labels sit on one line. */
+      /* Shrink the rail rather than hiding it. display:none removed the only
+         thing separating the two labels, and flex gap does not reliably apply
+         between the anonymous items that raw text makes, so they ran together
+         as "RECONSTRUCTIONMOUSE MEC". */
+      .mechero__eyebrow u{ flex:0 0 16px; }
+      .mechero__eyebrow{ gap:7px; font-size:9px; letter-spacing:.14em; flex-wrap:nowrap; }
+      .mechero__meta{ gap:3px 12px; font-size:11px; }
+    }
+    @media (hover:hover) and (min-width:721px){
+      .mechero__panel{ transition:transform .28s cubic-bezier(.22,.61,.36,1),
+        box-shadow .28s cubic-bezier(.22,.61,.36,1), border-color .28s ease; }
+      .mechero__panel:hover{ transform:translateY(-4px);
+        border-color:rgba(122,186,246,.42);
+        box-shadow:0 0 0 1px rgba(6,12,22,.55), 0 30px 74px rgba(0,0,0,.70), 0 0 56px rgba(62,150,240,.18); }
+    }
+    @media (prefers-reduced-motion:reduce){
+      .mechero__panel{ transition:none; } .mechero__panel:hover{ transform:none; }
+    }
     .mec__figure--wide{ margin:22px 0 0; }
     .mec__figure--wide video{ width:100%; height:auto; aspect-ratio:16/9; }
     .mec__figure--wide + .mec__figure--wide{ margin-top:34px; }
@@ -103,21 +192,30 @@
       </div>
     </nav>
 
-    <header class="hero">
-      <div class="hero__media" role="img" aria-label="Seven reconstructed neurons from the mouse medial entorhinal cortex, each a different colour, their dendrites spreading outward and two long axons running across the bottom of a black volume">
-        <img src="/assets/images/mec-neurons.jpg" alt="Seven reconstructed neurons from the mouse medial entorhinal cortex on a black background, coloured green, blue, pink, magenta, teal and gold. Each has a dense bush of dendrites around its cell body, and two long axons run diagonally across the lower half of the frame." />
-        <div class="hero__scrim" aria-hidden="true"></div>
-        <div class="wrap hero__overlay">
-          <p class="hero__eyebrow">New dataset</p>
-          <h1>Medial entorhinal<br />cortex</h1>
-          <p class="hero__lede">
-            The part of the brain that keeps track of where you are. We imaged a block of it in
-            electron microscopy, and now it needs mapping. It is the newest volume open to
-            <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> citizen
-            scientists in <strong>EyeWire II</strong>.
-          </p>
+    <header class="mechero">
+      <figure class="mechero__fig">
+        <img src="/assets/images/mec-banner-hero.jpg"
+             alt="Several hundred reconstructed cells from the mouse medial entorhinal cortex filling the frame, each drawn in its own colour, dendrites overlapping into a dense tangle with long axons trailing away below." />
+        <div class="mechero__panel">
+          <i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
+          <div class="mechero__inner">
+            <p class="mechero__eyebrow"><s></s>connectomic reconstruction<u></u>mouse mec</p>
+            <h1>Medial entorhinal cortex</h1>
+            <p class="mechero__lede">
+              The part of the brain that keeps track of where you are. We imaged a block of it
+              in electron microscopy, and now it needs mapping. It is the newest volume open to
+              <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> citizen
+              scientists in <strong>EyeWire II</strong>.
+            </p>
+            <div class="mechero__rule"></div>
+            <p class="mechero__meta">
+              <span><b>782</b> cells reconstructed</span>
+              <span><b>62,631</b> nuclei marked</span>
+              <span><b>2.0 &times; 1.3 &times; 0.45</b> mm</span>
+            </p>
+          </div>
         </div>
-      </div>
+      </figure>
     </header>
 
     <main class="wrap">

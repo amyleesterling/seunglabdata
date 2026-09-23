@@ -447,6 +447,19 @@ def main():
     # cells themselves. Percentile bounds, not the raw extremes: a single axon
     # running 1.3 mm out of the field would otherwise set the camera distance
     # for everything and leave the population a speck in the middle.
+    if cage is None:
+        # Re-centre on the CELLS. The root was centred on the block, which is
+        # right when the block is drawn, because then the figure is a statement
+        # about the volume. With no cage there is no block on screen, and the
+        # cells fill only its upper part, so aiming at the block's centre put
+        # the population up and to the left with a third of the frame empty.
+        pts0 = np.concatenate([world_pts(o) for _, o in loaded])
+        mid = (np.percentile(pts0, 1.5, axis=0)
+               + np.percentile(pts0, 98.5, axis=0)) / 2.0
+        root.location = tuple(np.array(root.location) - mid)
+        bpy.context.view_layer.update()
+        print(f"no cage: re-centred on the cells, moved {np.round(-mid, 3)}")
+
     if cage is not None:
         cage_pts = world_pts(cage)
     else:
