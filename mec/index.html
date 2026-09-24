@@ -369,10 +369,10 @@
       <i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
       <p class="gate__eyebrow"><s></s>not yet released<u></u>mouse mec</p>
       <h1 id="gate-h">Medial entorhinal cortex</h1>
-      <p>This dataset page is not public yet. Enter the word you were given to read it.</p>
+      <p>This dataset page is not public yet. Enter the secret access code to read it.</p>
       <form class="gate__form" id="gate-form" autocomplete="off">
-        <input type="password" id="gate-input" placeholder="PASSWORD"
-               aria-label="Password" autocomplete="current-password" />
+        <input type="password" id="gate-input" placeholder="SECRET ACCESS CODE"
+               aria-label="Secret access code" autocomplete="current-password" />
         <button type="submit">Enter</button>
       </form>
       <p class="gate__msg" id="gate-msg" role="status" aria-live="polite"></p>
@@ -421,7 +421,7 @@
           return;
         }
         if (ok) { open_(); return; }
-        msg.textContent = "That is not the word. Try again.";
+        msg.textContent = "That is not the code. Try again.";
         gate.classList.add("gate--wrong");
         input.select();
         setTimeout(function () { gate.classList.remove("gate--wrong"); }, 450);
