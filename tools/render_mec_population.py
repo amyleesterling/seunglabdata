@@ -768,11 +768,32 @@ def main():
         n = len(loaded)
         centres, clo, chi = cell_centres(loaded)
         rgbs = [TYPE_COLOUR.get(c["cell_type"], (0.8, 0.8, 0.8)) for c, _ in loaded]
+        # Sampled surface points per cell, for the near cull.
+        #
+        # The cull cannot use the cell's bounding RADIUS. An arbor is hundreds
+        # of micrometres across but almost entirely empty space, so in the
+        # dense middle the camera is inside nearly every cell's sphere at once
+        # and culling on that blanked whole frames. What matters is whether
+        # actual geometry is at the lens, so sample each cell's surface and
+        # measure the nearest sampled point.
+        samp_pts, samp_idx = [], []
+        for j, (_, o) in enumerate(loaded):
+            wp = world_pts(o)
+            step = max(1, len(wp) // 140)
+            sub = wp[::step]
+            samp_pts.append(sub)
+            samp_idx.append(np.full(len(sub), j))
+        samp_pts = np.concatenate(samp_pts)
+        samp_idx = np.concatenate(samp_idx)
+        NEAR_CLIP = TARGET_SIZE * 0.013          # about 26 um at this scale
+        print(f"near cull over {len(samp_pts)} sampled points, "
+              f"clip {NEAR_CLIP:.3f} units")
         span = chi - clo
         axis = int(np.argmax(span))                     # travel along the longest
         mid = (chi + clo) / 2.0
         half = span[axis] / 2.0
         REACH = float(np.linalg.norm(span) * 0.16)      # how near counts as near
+        LOOK = REACH * 3.4                              # how far ahead cells wake up
         FADE = 24.0                                     # frames a cell takes to arrive
 
         FLY = max(1, int(args.flythrough * 0.68))
@@ -782,7 +803,10 @@ def main():
         def path_point(u):
             """u in [-1, 1] along the travel axis, with a gentle weave."""
             p = mid.copy()
-            p[axis] = mid[axis] + u * half * 1.55
+            # 1.05, not 1.55. Overshooting the block by half its length again
+            # put the camera outside the tissue looking away from it for a
+            # third of the shot: 634 cells visible, none culled, frame black.
+            p[axis] = mid[axis] + u * half * 1.05
             o1 = (axis + 1) % 3
             o2 = (axis + 2) % 3
             p[o1] += math.sin(u * math.pi * 1.1) * span[o1] * 0.22
@@ -797,15 +821,29 @@ def main():
         for i in range(args.flythrough):
             out = os.path.join(args.out, "frame_%04d.png" % i)
             if i < FLY:
-                u = -1.0 + 2.0 * ease_io(i / max(1, FLY - 1))
+                # Constant speed down the path. Easing it made the camera
+                # loiter at the ends, which are the emptiest part, and race
+                # through the middle, which is the part worth seeing.
+                u = -1.0 + 2.0 * (i / max(1, FLY - 1))
                 eye = path_point(u)
-                tgt = path_point(min(1.0, u + 0.18))
+                # Aim ahead, but biased back toward the middle of the block, so
+                # the view always contains tissue rather than the way out.
+                tgt = path_point(min(1.0, u + 0.22)) * 0.62 + mid * 0.38
                 cam.data.lens = 34.0                    # wide, so it feels close
                 if not os.path.exists(out):
                     look_at(cam, eye, tgt)
-                d = np.linalg.norm(centres - eye, axis=1)
+                # Light what is AHEAD, not only what has been reached. Lighting
+                # on arrival alone left the first seconds black, because the
+                # camera starts outside the block with nothing within reach.
+                rel = centres - eye
+                d = np.linalg.norm(rel, axis=1)
+                fwd = (np.array(tgt) - np.array(eye))
+                fwd = fwd / max(1e-9, np.linalg.norm(fwd))
+                along = rel @ fwd
+                lateral = np.sqrt(np.maximum(d ** 2 - along ** 2, 0.0))
+                ahead = (along > 0) & (along < LOOK) & (lateral < REACH * 1.3)
                 for j in range(n):
-                    if lit_at[j] is None and d[j] < REACH:
+                    if lit_at[j] is None and (d[j] < REACH or ahead[j]):
                         lit_at[j] = i
             else:
                 k = ease_io((i - FLY) / max(1, OUT - 1))
@@ -826,8 +864,18 @@ def main():
 
             if os.path.exists(out):
                 continue
+            eye_now = np.array(cam.location)
+            dmin = np.full(n, 1e9)
+            np.minimum.at(dmin, samp_idx,
+                          np.linalg.norm(samp_pts - eye_now, axis=1))
             for j, (_, o) in enumerate(loaded):
                 if lit_at[j] is None:
+                    o.hide_render = True
+                    continue
+                # NEAR CULL, on real geometry: drop a cell only while some of
+                # its surface is at the lens. Its fade state is kept, so it
+                # returns lit rather than starting over once the camera clears.
+                if dmin[j] < NEAR_CLIP:
                     o.hide_render = True
                     continue
                 lvl = min(1.0, (i - lit_at[j]) / FADE)
@@ -839,9 +887,12 @@ def main():
 
             scene.render.filepath = out
             bpy.ops.render.render(write_still=True)
-            if i % 30 == 0:
-                print("  frame %d/%d, %d cells lit" % (i, args.flythrough,
-                                                       sum(x is not None for x in lit_at)))
+            if i % 40 == 0:
+                vis = sum(1 for _, o in loaded if not o.hide_render)
+                culled = int((dmin < NEAR_CLIP).sum())
+                print("  frame %d/%d  lit %d  visible %d  nearculled %d  eye %s"
+                      % (i, args.flythrough, sum(x is not None for x in lit_at),
+                         vis, culled, np.round(eye_now, 2)))
 
         meta["frames"] = args.flythrough
         meta["mode"] = "flythrough"

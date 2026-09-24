@@ -114,7 +114,11 @@
     .mec__figure{ margin:18px 0 0; }
     .mec__figure img, .mec__figure video{ display:block; width:100%; height:auto;
       border:1px solid var(--line); border-radius:var(--radius); background:#04060b; }
-    .mec__figure figcaption{ margin-top:8px; font-size:12.5px; color:var(--muted); }
+    /* NO font-size here. `.mec__figure figcaption` is more specific than the
+       shared `.mec__caption` rule and sits in an inline block, so setting a
+       size here silently overrode the page's text scale and made every
+       video caption 12.5px against 16px body copy. */
+    .mec__figure figcaption{ margin-top:8px; color:var(--muted); }
     /* Full width. Two videos side by side made a 118 cell block unreadable,
        and the depth scale's layer labels were illegible at half width. */
     /* ---- hero -------------------------------------------------------------
@@ -241,6 +245,43 @@
        were breaking out to the full viewport, which turned the page into a
        slide deck with captions attached and pushed the copy out of sight. */
     .mec__figure--wide{ margin:22px 0 0; width:100%; }
+    /* A poster frame of a still render and a poster frame of a video look
+       identical until you hover, so every video carries a play badge until it
+       is started. */
+    .mec__vidwrap{ position:relative; }
+    .mec__play{
+      position:absolute; inset:0; margin:0; padding:0; border:0; cursor:pointer;
+      display:grid; place-items:center; background:rgba(4,6,11,.22);
+      transition:background .18s ease;
+    }
+    .mec__play:hover{ background:rgba(4,6,11,.10); }
+    .mec__play span{
+      width:84px; height:84px; border-radius:50%;
+      border:1px solid rgba(150,208,252,.5);
+      background:linear-gradient(180deg, rgba(13,26,45,.74), rgba(6,12,22,.82));
+      backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+      box-shadow:0 0 0 1px rgba(6,12,22,.5), 0 14px 40px rgba(0,0,0,.55),
+                 0 0 40px rgba(62,150,240,.22);
+      display:grid; place-items:center;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .mec__play:hover span{ transform:scale(1.06);
+      box-shadow:0 0 0 1px rgba(6,12,22,.5), 0 18px 52px rgba(0,0,0,.6),
+                 0 0 56px rgba(62,150,240,.34); }
+    .mec__play span::before{
+      content:""; width:0; height:0; margin-left:6px;
+      border-left:24px solid #dff0ff;
+      border-top:15px solid transparent; border-bottom:15px solid transparent;
+      filter:drop-shadow(0 0 8px rgba(120,196,255,.55));
+    }
+    @media (max-width:620px){
+      .mec__play span{ width:68px; height:68px; }
+      .mec__play span::before{ border-left-width:20px; border-top-width:13px; border-bottom-width:13px; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .mec__play span, .mec__play{ transition:none; }
+      .mec__play:hover span{ transform:none; }
+    }
     .mec__figure--wide video{ width:100%; height:auto; aspect-ratio:16/9; }
     .mec__figure--wide + .mec__figure--wide{ margin-top:34px; }
   </style>
@@ -1355,5 +1396,34 @@ async function buildGallery() {
 })();
 </script>
 
+
+<script>
+// Play badges. A poster frame of a video is indistinguishable from a still
+// render, so each video gets a badge until it starts. The badge is a real
+// button, not an overlay div, so it is focusable and announces itself.
+(function () {
+  document.querySelectorAll(".mec__figure--wide video").forEach(function (v) {
+    var wrap = document.createElement("div");
+    wrap.className = "mec__vidwrap";
+    v.parentNode.insertBefore(wrap, v);
+    wrap.appendChild(v);
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "mec__play";
+    btn.setAttribute("aria-label", "Play this video");
+    btn.appendChild(document.createElement("span"));
+    wrap.appendChild(btn);
+
+    btn.addEventListener("click", function () { v.play(); });
+    v.addEventListener("play", function () { btn.style.display = "none"; });
+    v.addEventListener("pause", function () {
+      if (!v.ended) return;            // a pause mid-way keeps the controls
+      btn.style.display = "";
+    });
+    v.addEventListener("ended", function () { btn.style.display = ""; });
+  });
+})();
+</script>
 </body>
 </html>
