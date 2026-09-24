@@ -91,20 +91,6 @@
     .meet__table{ width:100%; margin:10px 0 0; font-size:12px; }
     .meet__table caption{ font-size:11.5px; }
     .meet__table td, .meet__table th{ padding:2px 4px; }
-    /* The spin video sits under the poster image; the image is removed once
-       the video can actually play, so a browser that will not play it still
-       shows the still rather than a black square. */
-    .meet__stage video{ position:absolute; inset:0; width:100%; height:100%;
-      display:block; object-fit:cover; }
-    .meet__pause{ position:absolute; right:8px; bottom:8px; z-index:3;
-      width:28px; height:28px; border-radius:50%; cursor:pointer;
-      border:1px solid rgba(150,208,252,.4); background:rgba(4,6,11,.62);
-      color:#dff0ff; font-size:11px; line-height:1; letter-spacing:1px;
-      display:flex; align-items:center; justify-content:center;
-      opacity:0; transition:opacity .18s ease; }
-    .meet__card:hover .meet__pause, .meet__pause:focus-visible,
-    .meet__pause[data-paused="1"]{ opacity:1; }
-    @media (hover:none){ .meet__pause{ opacity:1; } }
     .meet__controls{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px; }
     /* Everything reconstructed so far */
     .mec__figure{ margin:18px 0 0; }
@@ -119,7 +105,7 @@
        The banner is 66.7% of its width tall, and -29% lifts the page about
        44% of the way up it. Keep the two numbers in step if the render's
        aspect changes. */
-    .mechero{ position:relative; margin:0 0 10px; background:#04060b; }
+    .mechero{ position:relative; margin:0; background:#04060b; }
     .mechero__fig{ margin:0; position:relative; background:#04060b; }
     .mechero__fig img{
       display:block; width:100%; height:auto; border:0;
@@ -131,7 +117,7 @@
     .mechero__fig::after{
       content:""; position:absolute; left:0; right:0; bottom:0; height:64%;
       background:linear-gradient(to bottom, rgba(4,6,11,0) 0%, rgba(4,6,11,.34) 28%,
-        rgba(4,6,11,.78) 62%, #04060b 93%);
+        rgba(4,6,11,.80) 60%, #04060b 88%);
       pointer-events:none;
     }
     .mechero__panel{
@@ -200,11 +186,11 @@
       .mec__tablewrap table{ min-width:460px; }
     }
     .mec__tablewrap{ overflow-x:auto; }
-    /* The lift used to be -29%, which is a percentage of the page WIDTH and so
-       grew without limit on a wide screen while the hero's height was capped.
-       A viewport-height overlap is predictable at every size: the content
-       always rises the same visible distance into the faded lower edge. */
-    @media (min-width:721px){ .mechero{ margin-bottom:min(-9vh, -70px); } }
+    /* NO negative lift. It pulled the first paragraph up underneath the hero
+       and clipped the top line of the article. The gradient already fades the
+       image into the page background, which is the same colour, so there is no
+       hard edge to hide and nothing to gain by overlapping live text. */
+    .mechero{ margin-bottom:0; }
     @media (max-width:720px){
       /* Below this the panel would cover the render entirely, so it drops
          underneath it and the lift is switched off. */
@@ -325,8 +311,7 @@
                      alt="Wireframe of the imaged block with scale bars marked every 100 micrometres and labelled to 2000. Two reconstructed cells sit inside it, one green with a dense arbor and a long process, one pink and smaller." />
               </div>
               <div class="mec__embed-cta" id="cta">
-                <button type="button" class="btn btn--cta" id="load3d">Load the interactive block</button>
-                <span class="mec__embed-note">About 7 MB of meshes</span>
+                <span class="mec__embed-note" id="embed-status">Loading the block, about 7 MB of meshes</span>
               </div>
               <p class="mec__caption">Two reconstructed cells inside the imaged volume, at
                 true relative size and in the positions they actually occupy.</p>
@@ -353,14 +338,14 @@
       </section>
 
       <!-- The block, to scale -->
-      <!-- The numbers -->
-      <section class="mec" aria-label="What has been counted so far">
+      <!-- Dataset stats -->
+      <section class="mec" aria-label="Dataset stats">
         <div class="more__head">
-          <h2>What is in there</h2>
+          <h2>Dataset Stats</h2>
           <p class="more__lede">
             Every nucleus in the block has been marked with a point, assigned to a cortical layer,
-            and sorted into a cluster by nucleus size. These are early numbers. Treat them as work
-            in progress.
+            and sorted into a cluster by nucleus size. These are early numbers and will change as
+            proofreading advances.
           </p>
         </div>
 
@@ -386,11 +371,11 @@
         <article class="card card--flat">
           <div class="card__top"><h3>How many neurons? Nobody knows yet</h3></div>
           <p class="card__body">
-            That is not a dodge, it is the honest state of the data. Of the 62,631 nuclei,
+            Of the 62,631 nuclei,
             <strong>14,112</strong> fall into the two clusters that carry a cell type name,
             pyramidal and stellate. The other 48,519 sit in six unnamed clusters. Some of those
             are neurons, interneurons especially, and some are glia, blood vessels and other
-            non&#8209;neuronal cells. Nobody has separated them.
+            non&#8209;neuronal cells.
           </p>
           <p class="card__body">
             So the number of neurons in this block is at least 14,112 and certainly a good deal
@@ -404,8 +389,7 @@
           <article class="card card--flat">
             <div class="card__top"><h3>Nuclei by layer</h3></div>
             <p class="card__body">
-              Layer boundaries are drawn roughly, so read these as the shape of the tissue rather
-              than as exact counts. They count every nucleus, not just neurons.
+              Layer boundaries are drawn roughly. They count every nucleus, not just neurons.
             </p>
             <div class="mec__tablewrap"><table class="mec__table">
               <caption class="mec__caption">Nuclei marked per layer, 62,631 in total</caption>
@@ -437,18 +421,6 @@
           </p>
         </div>
 
-
-        <figure class="mec__figure mec__figure--wide">
-          <img src="/assets/mec/population/web/still.jpg"
-               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
-               loading="lazy" />
-          <figcaption class="mec__caption">
-            Cells sit at their true positions and true relative sizes inside the imaged block.
-            The lower part of the box is empty because it lies below layer VI, where no nuclei
-            have been marked: probing it finds tissue, but almost all of it is still in small
-            pieces rather than whole cells.
-          </figcaption>
-        </figure>
 
         <figure class="mec__figure mec__figure--wide">
           <video controls playsinline preload="none"
@@ -487,9 +459,8 @@
             for each so you can open it yourself.
           </p>
           <div class="meet__controls">
-            <button type="button" class="btn btn--cta" id="load-gallery">Load the interactive gallery</button>
-            <span class="mec__embed-note">Each card already spins. This swaps them for 3D you can
-              drag and turn, about 10 MB.</span>
+            <span class="mec__embed-note" id="gallery-status">Loading the cells in 3D, about 10 MB.
+              Drag any card to turn it.</span>
           </div>
           <p hidden>
           </p>
@@ -499,11 +470,6 @@
           <article class="meet__card" data-type="stellate">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="stellate-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/stellate-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/stellate-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/stellate-01.jpg" alt="A stellate cell from layer two of the medial entorhinal cortex, rendered in mint green on black. Dendrites radiate outward from a bright cell body in every direction like a star, and a single axon descends below."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -525,11 +491,6 @@
           <article class="meet__card" data-type="pyramidal">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="pyramidal-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/pyramidal-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/pyramidal-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/pyramidal-01.jpg" alt="A pyramidal cell rendered in blue on black. A dominant dendrite rises from the top of the cell body and shorter dendrites spread around its base."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -551,11 +512,6 @@
           <article class="meet__card" data-type="inhibitory">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="inhibitory-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/inhibitory-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/inhibitory-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/inhibitory-01.jpg" alt="An inhibitory interneuron rendered in pink on black, with a dense local arbor around the cell body."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -576,11 +532,6 @@
           <article class="meet__card" data-type="astrocyte">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="astrocyte-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/astrocyte-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/astrocyte-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/astrocyte-01.jpg" alt="An astrocyte rendered in lilac on black. A small cell body with many fine processes spreading in every direction into a bushy cloud." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -599,11 +550,6 @@
           <article class="meet__card" data-type="oligodendrocyte">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="oligodendrocyte-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/oligodendrocyte-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/oligodendrocyte-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/oligodendrocyte-01.jpg" alt="An oligodendrocyte rendered in cyan on black. A compact cell body with many branching processes, several of which close into small loops where the cell has wrapped itself around an axon." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -622,11 +568,6 @@
           <article class="meet__card" data-type="microglia">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="microglia-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/microglia-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/microglia-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/microglia-01.jpg" alt="A microglial cell rendered in gold on black. A small cell body with fine, heavily branched processes reaching outward."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -646,11 +587,6 @@
           <article class="meet__card" data-type="bipolar">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
-              <video class="meet__spin" data-cell="bipolar-01" autoplay muted loop playsinline
-                     preload="metadata" poster="/assets/mec/renders/web/bipolar-01.jpg" aria-hidden="true">
-                <source src="/assets/mec/spin/bipolar-01.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/bipolar-01.jpg" alt="A small bipolar cell rendered in steel blue on black. A compact cell body with one process leaving the top and one the bottom." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -926,6 +862,18 @@
         </figure>
 
         <figure class="mec__figure mec__figure--wide">
+          <img src="/assets/mec/population/web/still.jpg"
+               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
+               loading="lazy" />
+          <figcaption class="mec__caption">
+            Cells sit at their true positions and true relative sizes inside the imaged block.
+            The lower part of the box is empty because it lies below layer VI, where no nuclei
+            have been marked: probing it finds tissue, but almost all of it is still in small
+            pieces rather than whole cells.
+          </figcaption>
+        </figure>
+
+        <figure class="mec__figure mec__figure--wide">
           <video controls playsinline preload="none"
                  poster="/assets/mec/renders/web/stellate-spin-poster.jpg">
             <source src="/assets/mec/renders/mec_stellate_spin.mp4" type="video/mp4" />
@@ -996,18 +944,45 @@
 // arriving here on a phone connection does not cost that by default. The
 // poster is a render of the same scene, so nothing is promised that the
 // interactive version does not deliver.
-document.getElementById("load3d").addEventListener("click", () => {
+// The block loads itself and turns. It waits until it is near the viewport
+// rather than firing on page load, so a phone does not spend 7 MB on something
+// still below the fold, and the poster image stays up until the iframe is
+// genuinely ready so the card never flashes empty.
+(function () {
   const embed = document.getElementById("embed");
-  const cta   = document.getElementById("cta");
-  const poster= document.getElementById("poster");
-  cta.innerHTML = '<span class="mec__embed-note">Loading the block…</span>';
-  const f = document.createElement("iframe");
-  f.src = "/mec/volume/?embed=1";
-  f.title = "The imaged MEC block with two reconstructed cells, interactive";
-  f.allow = "fullscreen";
-  f.addEventListener("load", () => { cta.remove(); poster.remove(); });
-  embed.appendChild(f);
-}, { once: true });
+  const cta = document.getElementById("cta");
+  const poster = document.getElementById("poster");
+  if (!embed) return;
+  let started = false;
+
+  function load() {
+    if (started) return;
+    started = true;
+    const f = document.createElement("iframe");
+    f.src = "/mec/volume/?embed=1";
+    f.title = "The imaged MEC block with two reconstructed cells, turning";
+    f.allow = "fullscreen";
+    f.addEventListener("load", () => {
+      if (cta) cta.remove();
+      if (poster) poster.remove();
+    });
+    f.addEventListener("error", () => {
+      const s = document.getElementById("embed-status");
+      if (s) s.textContent = "The interactive block could not load.";
+    });
+    embed.appendChild(f);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => {
+      if (es.some((e) => e.isIntersecting)) { load(); io.disconnect(); }
+    }, { rootMargin: "400px" });
+    io.observe(embed);
+    setTimeout(load, 6000);   // an observer that never fires must not strand it
+  } else {
+    load();
+  }
+})();
 </script>
 
 <script type="importmap">
@@ -1079,7 +1054,7 @@ function makeViewer(stage, colour) {
   new ResizeObserver(resize).observe(stage);
   resize();
   renderer.setAnimationLoop(() => {
-    if (spin) pivot.rotation.y += 0.0032;
+    if (spin) pivot.rotation.y += 0.0011;   // a full turn in about 95 s
     controls.update(); renderer.render(scene, camera);
   });
 
@@ -1116,9 +1091,11 @@ function makeViewer(stage, colour) {
   };
 }
 
-document.getElementById("load-gallery").addEventListener("click", async (ev) => {
-  const btn = ev.currentTarget;
-  btn.disabled = true; btn.textContent = "Loading cells…";
+// The gallery loads itself, when it scrolls near. It is about 10 MB, so it
+// waits rather than firing on page load, and the still images stay up until
+// each viewer has its mesh.
+async function buildGallery() {
+  const status = document.getElementById("gallery-status");
   let manifest;
   try {
     await loadPalette();
@@ -1126,7 +1103,7 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
     if (!r.ok) throw new Error("HTTP " + r.status);
     manifest = await r.json();
   } catch (e) {
-    btn.textContent = "Cell meshes are not published yet";
+    if (status) status.textContent = "Cell meshes are not published yet.";
     console.error("gallery manifest failed:", e);
     return;
   }
@@ -1142,7 +1119,7 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
       stage.querySelector(".meet__pending").textContent = "No mesh built for this type yet";
       continue;
     }
-    stage.innerHTML = "";   // drops the spin video and its pause button too
+    stage.innerHTML = "";
     const viewer = makeViewer(stage, COLOUR[type] ?? 0xcccccc);
     // One example per type. This is a cell type guide, not a cell browser.
     const c = list[0];
@@ -1157,52 +1134,27 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
     const tier = c.tiers.web || c.tiers.detail || c.tiers.card;
     await viewer.show("/assets/mec/gallery/" + tier.file);
   }
-  btn.textContent = "Gallery loaded";
-});
-</script>
+  if (status) status.textContent = "Drag any cell to turn it.";
+}
 
-<script>
-// Spinning cards.
-//
-// Seven looping videos cost 0.5 MB, which is LESS than the seven still JPEGs
-// they sit on top of, so this is not an extra download; it replaces one.
-// The 3D gallery stays behind its button because that one really is 10 MB.
 (function () {
-  const vids = [...document.querySelectorAll(".meet__spin")];
-  if (!vids.length) return;
-  const calm = matchMedia("(prefers-reduced-motion: reduce)");
-
-  vids.forEach((v) => {
-    const card = v.closest(".meet__card");
-    const img = card.querySelector(".meet__stage img");
-    const btn = card.querySelector(".meet__pause");
-
-    // Only drop the poster image once the video can really play. A browser
-    // that refuses the codec should be left with the still, not a black hole.
-    v.addEventListener("loadeddata", () => { if (img) img.style.opacity = "0"; });
-    v.addEventListener("error", () => { v.remove(); if (btn) btn.remove(); });
-
-    btn.addEventListener("click", () => {
-      if (v.paused) { v.play(); btn.removeAttribute("data-paused"); btn.setAttribute("aria-label", "Pause this cell"); }
-      else { v.pause(); btn.setAttribute("data-paused", "1"); btn.setAttribute("aria-label", "Play this cell"); }
-    });
-  });
-
-  // Seven videos decoding at once is real work on a phone, so only the ones on
-  // screen actually run. A card the reader has paused stays paused.
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      const v = e.target;
-      const btn = v.closest(".meet__card").querySelector(".meet__pause");
-      if (btn && btn.getAttribute("data-paused") === "1") return;
-      if (e.isIntersecting && !calm.matches) v.play().catch(() => {});
-      else v.pause();
-    });
-  }, { rootMargin: "120px" });
-  vids.forEach((v) => io.observe(v));
-
-  if (calm.matches) vids.forEach((v) => { v.pause(); v.removeAttribute("autoplay"); });
+  const grid = document.querySelector(".meet__grid");
+  if (!grid) return;
+  let started = false;
+  const go = () => { if (!started) { started = true; buildGallery(); } };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => {
+      if (es.some((e) => e.isIntersecting)) { go(); io.disconnect(); }
+    }, { rootMargin: "500px" });
+    io.observe(grid);
+    // A belt and braces timer. An observer that never fires, which happens in
+    // a background tab, would otherwise leave the cards as stills forever.
+    setTimeout(go, 6000);
+  } else {
+    go();
+  }
 })();
 </script>
+
 </body>
 </html>
