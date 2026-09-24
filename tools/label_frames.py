@@ -158,7 +158,9 @@ def label(img, meta, note=None, scale=1.0):
     block = meta.get("block_um") or [0, 0, 0]
     n = len(meta.get("cells", []))
     d.text((pad, pad + int(48 * s)),
-           f"{n} reconstructed cells in a "
+           # NOT "reconstructed": n is how many cells are DRAWN in this
+           # figure, and the number reconstructed in the block is far larger.
+           f"{n} cells drawn, in a "
            f"{block[0]:.0f} \u00d7 {block[1]:.0f} \u00d7 {block[2]:.0f} \u00b5m imaged block",
            font=f_sub, fill=DIM)
 
