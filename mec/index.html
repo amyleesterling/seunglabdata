@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://connectome.quest/assets/images/mec-neurons.jpg" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
-  <link rel="stylesheet" href="/styles.css?v=b4d04a15" />
+  <link rel="stylesheet" href="/styles.css?v=b6a3a802" />
   <style>
     /* Solid colours, no gradient text. */
     .mec__tiles{
@@ -45,16 +45,34 @@
       display:flex; align-items:center; justify-content:center; gap:12px;
       flex-wrap:wrap; margin-top:10px;
     }
-    .mec__embed-note{ font-size:12.5px; color:rgba(230,240,250,.8); text-shadow:0 2px 10px rgba(0,0,0,.8); }
+    .mec__embed-note{ color:rgba(230,240,250,.8); text-shadow:0 2px 10px rgba(0,0,0,.8); }
     /* The interactive block sits above the At a glance panel, in the right
        hand column. The column used to be a stats card floating in a lot of
        empty space; the block is the first thing a reader wants to touch. */
     .citizen__side{ display:flex; flex-direction:column; gap:20px; align-self:start; min-width:0; }
+    .citizen__panel--stats{ margin:0 0 18px; }
+    /* Cortical layer diagram. Inline SVG so it takes the page's colours and
+       stays sharp at any zoom, and so the layer names are real text. */
+    .layerdiag{ width:100%; height:auto; display:block; margin:14px 0 4px; }
+    .layerdiag text{ font-family:inherit; fill:#9fb4c4; }
+    .ld-roman{ font-size:21px; font-weight:600; fill:#eaf6ff; }
+    .ld-name{ font-size:17px; font-weight:600; fill:#eaf6ff; }
+    .ld-sub{ font-size:14px; fill:#8fa6b8; }
+    .ld-num{ font-size:16px; font-weight:600; fill:#eaf6ff; }
+    .ld-cap{ font-size:12.5px; letter-spacing:.17em; fill:#6f869a; }
+    .ld-hot{ fill:#67f5cb; }
+    @media (max-width:620px){
+      .ld-name{ font-size:16px; } .ld-sub{ font-size:13px; }
+      .ld-num{ font-size:15px; } .ld-roman{ font-size:20px; }
+    }
+    .mec__prose{ margin:18px 0 0; }
+    .mec__prose h3{ margin:0 0 8px; font-size:18px; color:#eaf6ff; }
+
     .citizen__intro{ min-width:0; }
     .citizen__block{ margin:0; }
     .citizen__block-title{ margin:0 0 10px; font-size:13px; letter-spacing:.14em;
       text-transform:uppercase; color:#42d5ec; }
-    .citizen__side .mec__caption{ margin:8px 0 0; font-size:12.5px; color:var(--muted); }
+    .citizen__side .mec__caption{ margin:8px 0 0; color:var(--muted); }
     @media (min-width: 981px){
       /* align-items:center on the grid would float a tall column oddly once
          the block is in it, so this column pins to the top instead. */
@@ -67,18 +85,18 @@
     .meet__stage{ position:relative; aspect-ratio:1/1; background:#04060b; }
     .meet__stage img, .meet__stage canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:cover; }
     .meet__pending{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-                    color:var(--muted); font-size:12.5px; text-align:center; padding:0 18px; }
+                    color:var(--muted); font-size:14px; text-align:center; padding:0 18px; }
     .meet__body{ padding:16px 16px 14px; display:flex; flex-direction:column; gap:8px; flex:1; }
-    .meet__eyebrow{ margin:0; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#42d5ec; }
+    .meet__eyebrow{ margin:0; letter-spacing:.18em; text-transform:uppercase; color:#42d5ec; }
     .meet__body h3{ margin:0; font-size:18px; color:#eaf6ff; letter-spacing:-0.01em; }
-    .meet__line{ margin:0; font-size:13.5px; color:var(--muted); line-height:1.55; }
-    .meet__count{ margin:0; font-size:12.5px; color:#9fb4c4; }
+    .meet__line{ margin:0; color:var(--muted); }
+    .meet__count{ margin:0; color:#9fb4c4; }
     .meet__nav{ display:flex; align-items:center; gap:10px; margin-top:auto; padding-top:6px; }
     .meet__nav button{ font:inherit; font-size:12px; padding:5px 10px; border-radius:999px;
                        border:1px solid var(--line); background:rgba(255,255,255,.05); color:#eaf6ff; cursor:pointer; }
     .meet__nav button:hover{ background:rgba(255,255,255,.1); }
-    .meet__which{ font-size:11.5px; color:var(--muted); }
-    .meet__more{ font-size:12.5px; color:#42d5ec; text-decoration:none;
+    .meet__which{ font-size:13.5px; color:var(--muted); }
+    .meet__more{ font-size:15px; color:#42d5ec; text-decoration:none;
       border-bottom:1px solid rgba(66,213,236,.35); padding-bottom:1px; }
     .meet__more:hover{ border-bottom-color:#42d5ec; }
     @media (max-width:620px){ .meet__more{ font-size:14px; } }
@@ -88,7 +106,7 @@
     /* The stellate card carries a per layer table. It has to be compact: the
        card grid is auto-fit minmax(260px,1fr), so anything that forces a wider
        column reflows the whole gallery. */
-    .meet__table{ width:100%; margin:10px 0 0; font-size:12px; }
+    .meet__table{ width:100%; margin:10px 0 0; }
     .meet__table caption{ font-size:11.5px; }
     .meet__table td, .meet__table th{ padding:2px 4px; }
     .meet__controls{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px; }
@@ -123,10 +141,7 @@
     .mechero__panel{
       position:absolute; z-index:3; top:clamp(16px,4vw,44px);
       left:0; right:0; margin-inline:auto;
-      /* Same box as .wrap, so the panel's left edge lands exactly where the
-         article's text begins underneath it. The copy inside keeps its own
-         measure, so a wider panel does not mean a longer line. */
-      width:min(1100px, calc(100% - 48px));
+      width:min(690px, calc(100% - 40px));
       background:linear-gradient(178deg, rgba(13,26,45,.80), rgba(7,14,26,.86) 62%, rgba(6,12,22,.90));
       border:1px solid rgba(122,186,246,.26); border-radius:3px;
       backdrop-filter:blur(9px) saturate(1.15);
@@ -152,7 +167,7 @@
       padding:clamp(20px,2.9vw,30px) clamp(20px,3.2vw,34px) clamp(18px,2.6vw,26px); }
     .mechero__eyebrow{
       display:flex; align-items:center; gap:9px; margin:0 0 13px;
-      font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
+      font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
       color:rgba(140,190,240,.9);
     }
     .mechero__eyebrow s{ width:5px; height:5px; border-radius:50%; flex:0 0 auto;
@@ -161,10 +176,10 @@
       background-image:repeating-linear-gradient(90deg, rgba(140,196,246,.42) 0 1px, transparent 1px 7px); }
     .mechero__panel h1{ margin:0; font-size:clamp(26px,4.4vw,38px); font-weight:500;
       letter-spacing:-.02em; line-height:1.08; color:#eaf6ff; }
-    .mechero__lede{ margin:9px 0 0; font-size:15px; line-height:1.62; color:#A7BCD6; max-width:52ch; }
+    .mechero__lede{ margin:9px 0 0; font-size:15px; line-height:1.62; color:#A7BCD6; max-width:46ch; }
     .mechero__rule{ height:1px; margin:17px 0 0;
       background:linear-gradient(90deg, rgba(122,186,246,.34), rgba(122,186,246,.05) 72%, transparent); }
-    .mechero__meta{ margin:12px 0 0; font-size:11.5px; letter-spacing:.1em;
+    .mechero__meta{ margin:12px 0 0; font-size:13.5px; letter-spacing:.1em;
       text-transform:uppercase; color:rgba(126,146,172,.95);
       display:flex; flex-wrap:wrap; gap:4px 16px; }
     .mechero__meta b{ color:#CBD8E8; font-weight:500; letter-spacing:.06em; }
@@ -180,7 +195,7 @@
       .meet__eyebrow{ font-size:12.5px; }
       .mec__embed-note{ font-size:15px; }
       .mechero__lede{ font-size:17px; line-height:1.6; }
-      .mechero__meta{ font-size:13px; }
+      .mechero__meta{ font-size:14px; }
       .citizen__block-title{ font-size:13.5px; }
       .citizen__side .mec__caption, .mec__caption{ font-size:15px; line-height:1.55; }
       .meet__table{ font-size:13px; }
@@ -322,19 +337,6 @@
               </div>
             </figure>
 
-          <aside class="citizen__panel" aria-label="Dataset at a glance">
-            <div class="citizen__panel-head">
-              <p class="citizen__panel-title">At a glance</p>
-            </div>
-            <dl class="card__stats">
-              <div><dt>Species</dt><dd>Mouse</dd></div>
-              <div><dt>Region</dt><dd>Medial entorhinal cortex</dd></div>
-              <div><dt>Imaging</dt><dd>Serial section electron microscopy</dd></div>
-              <div><dt>Resolution</dt><dd>16 &times; 16 &times; <span class="nounit">45 nm</span></dd></div>
-              <div><dt>Segmented extent</dt><dd>About 2.0 &times; 1.3 &times; <span class="nounit">0.45 mm</span></dd></div>
-              <div><dt>Nuclei marked</dt><dd>62,631</dd></div>
-            </dl>
-          </aside>
           </div>
         </div>
       </section>
@@ -351,6 +353,19 @@
           </p>
         </div>
 
+        <aside class="citizen__panel citizen__panel--stats" aria-label="Dataset at a glance">
+          <div class="citizen__panel-head">
+            <p class="citizen__panel-title">At a glance</p>
+          </div>
+          <dl class="card__stats">
+            <div><dt>Species</dt><dd>Mouse</dd></div>
+            <div><dt>Region</dt><dd>Medial entorhinal cortex</dd></div>
+            <div><dt>Imaging</dt><dd>Serial section electron microscopy</dd></div>
+            <div><dt>Resolution</dt><dd>16 &times; 16 &times; <span class="nounit">45 nm</span></dd></div>
+            <div><dt>Segmented extent</dt><dd>About 2.0 &times; 1.3 &times; <span class="nounit">0.45 mm</span></dd></div>
+            <div><dt>Nuclei marked</dt><dd>62,631</dd></div>
+          </dl>
+        </aside>
         <div class="mec__tiles">
           <div class="mec__tile">
             <div class="mec__tile-num">62,631</div>
@@ -370,8 +385,8 @@
           </div>
         </div>
 
-        <article class="card card--flat">
-          <div class="card__top"><h3>How many neurons? Nobody knows yet</h3></div>
+        <div class="mec__prose">
+          <h3>How many neurons? Nobody knows yet</h3>
           <p class="card__body">
             Of the 62,631 nuclei,
             <strong>14,112</strong> fall into the two clusters that carry a cell type name,
@@ -385,11 +400,65 @@
             correlates with cell type but does not determine it, so every type on this page is a
             <strong>presumed</strong> type until a human has looked at the cell's shape.
           </p>
-        </article>
+        </div>
 
         <div class="mec__cols">
           <article class="card card--flat">
             <div class="card__top"><h3>Nuclei by layer</h3></div>
+          <svg class="layerdiag" viewBox="0 0 900 430" role="img" aria-label="Diagram of the six cortical layers of the medial entorhinal cortex, drawn at their true thickness. Layer four, the lamina dissecans, is the sparsest at 37.5 nuclei per micrometre of depth, against 148.8 in layer five.">
+          <defs><linearGradient id="ldg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3fd8ff" stop-opacity=".95"/><stop offset="1" stop-color="#3E96F0" stop-opacity=".55"/></linearGradient></defs>
+          <text x="26" y="20" class="ld-cap">PIAL SURFACE</text>
+          <rect x="26" y="34.0" width="92" height="82.5" fill="#3fd8ff" fill-opacity="0.304" stroke="rgba(122,186,246,.35)" stroke-width="1"/>
+          <text x="72" y="80.3" class="ld-roman" text-anchor="middle">I</text>
+          <text x="140" y="72.3" class="ld-name">Layer I</text>
+          <text x="140" y="88.3" class="ld-sub">few cell bodies, mostly fibres</text>
+          <rect x="560" y="66.3" width="250" height="7" rx="3.5" fill="rgba(122,186,246,.13)"/>
+          <rect x="560" y="66.3" width="69.3" height="7" rx="3.5" fill="url(#ldg)"/>
+          <text x="820" y="76.3" class="ld-num">7,871</text>
+          <text x="560" y="90.3" class="ld-sub">41 per µm of depth</text>
+          <rect x="26" y="116.5" width="92" height="63.3" fill="#3fd8ff" fill-opacity="0.410" stroke="rgba(122,186,246,.35)" stroke-width="1"/>
+          <text x="72" y="153.2" class="ld-roman" text-anchor="middle">II</text>
+          <text x="140" y="145.2" class="ld-name">Layer II</text>
+          <text x="140" y="161.2" class="ld-sub">stellate cells, and the pyramidal islands</text>
+          <rect x="560" y="139.2" width="250" height="7" rx="3.5" fill="rgba(122,186,246,.13)"/>
+          <rect x="560" y="139.2" width="120.0" height="7" rx="3.5" fill="url(#ldg)"/>
+          <text x="820" y="149.2" class="ld-num">10,463</text>
+          <text x="560" y="163.2" class="ld-sub">71 per µm of depth</text>
+          <rect x="26" y="179.8" width="92" height="59.4" fill="#3fd8ff" fill-opacity="0.521" stroke="rgba(122,186,246,.35)" stroke-width="1"/>
+          <text x="72" y="214.5" class="ld-roman" text-anchor="middle">III</text>
+          <text x="140" y="206.5" class="ld-name">Layer III</text>
+          <text x="140" y="222.5" class="ld-sub">pyramidal cells</text>
+          <rect x="560" y="200.5" width="250" height="7" rx="3.5" fill="rgba(122,186,246,.13)"/>
+          <rect x="560" y="200.5" width="173.6" height="7" rx="3.5" fill="url(#ldg)"/>
+          <text x="820" y="210.5" class="ld-num">14,203</text>
+          <text x="560" y="224.5" class="ld-sub">103 per µm of depth</text>
+          <rect x="26" y="239.3" width="92" height="48.4" fill="#3fd8ff" fill-opacity="0.291" stroke="#67f5cb" stroke-width="1.4"/>
+          <text x="72" y="268.5" class="ld-roman ld-hot" text-anchor="middle">IV</text>
+          <text x="140" y="260.5" class="ld-name ld-hot">Layer IV</text>
+          <text x="140" y="276.5" class="ld-sub">lamina dissecans, the cell poor band</text>
+          <rect x="560" y="254.5" width="250" height="7" rx="3.5" fill="rgba(122,186,246,.13)"/>
+          <rect x="560" y="254.5" width="63.0" height="7" rx="3.5" fill="url(#ldg)"/>
+          <text x="820" y="264.5" class="ld-num">4,200</text>
+          <text x="560" y="278.5" class="ld-sub">38 per µm of depth</text>
+          <rect x="26" y="287.7" width="92" height="47.1" fill="#3fd8ff" fill-opacity="0.680" stroke="rgba(122,186,246,.35)" stroke-width="1"/>
+          <text x="72" y="316.2" class="ld-roman" text-anchor="middle">V</text>
+          <text x="140" y="308.2" class="ld-name">Layer V</text>
+          <text x="140" y="324.2" class="ld-sub">the densest layer in this block</text>
+          <rect x="560" y="302.2" width="250" height="7" rx="3.5" fill="rgba(122,186,246,.13)"/>
+          <rect x="560" y="302.2" width="250.0" height="7" rx="3.5" fill="url(#ldg)"/>
+          <text x="820" y="312.2" class="ld-num">16,215</text>
+          <text x="560" y="326.2" class="ld-sub">149 per µm of depth</text>
+          <rect x="26" y="334.8" width="92" height="65.2" fill="#3fd8ff" fill-opacity="0.384" stroke="rgba(122,186,246,.35)" stroke-width="1"/>
+          <text x="72" y="372.4" class="ld-roman" text-anchor="middle">VI</text>
+          <text x="140" y="364.4" class="ld-name">Layer VI</text>
+          <text x="140" y="380.4" class="ld-sub">deepest layer, then white matter</text>
+          <rect x="560" y="358.4" width="250" height="7" rx="3.5" fill="rgba(122,186,246,.13)"/>
+          <rect x="560" y="358.4" width="107.7" height="7" rx="3.5" fill="url(#ldg)"/>
+          <text x="820" y="368.4" class="ld-num">9,679</text>
+          <text x="560" y="382.4" class="ld-sub">64 per µm of depth</text>
+          <text x="26" y="420" class="ld-cap">WHITE MATTER</text>
+          <text x="560" y="22" class="ld-cap">NUCLEI MARKED</text>
+          </svg>
             <p class="card__body">
               Layer boundaries are drawn roughly. They count every nucleus, not just neurons.
             </p>
@@ -457,8 +526,7 @@
           <p class="more__lede">
             Here are some of the most common cell types found in the medial entorhinal
             cortex. We will be exploring them. Every one below is a real reconstruction from
-            this block, and the table further down gives the segment ID and soma coordinate
-            for each so you can open it yourself.
+            this block, and each card shows the segment ID so you can open it yourself.
           </p>
           <div class="meet__controls">
             <span class="mec__embed-note" id="gallery-status">Loading the cells in 3D, about 10 MB.
@@ -737,64 +805,6 @@
           </p>
           <div class="card__actions">
             <a class="btn btn--ghost" href="/assets/mec/figures/layer2-modules.json">The numbers (JSON)</a>
-          </div>
-        </article>
-      </section>
-
-      <!-- Check our working -->
-      <section class="mec" aria-label="Check our working">
-        <div class="more__head">
-          <h2>Check our working</h2>
-          <p class="more__lede">
-            Four of the cells above were picked automatically, from a cell type prediction
-            that has not been proofread. Three were then replaced by hand after Amy Sterling
-            looked at them and told us what they actually were. Here is exactly what to open
-            so you can tell us where we are still wrong.
-          </p>
-        </div>
-        <article class="card card--flat">
-          <p class="card__body">
-            How the automatic ones are chosen: the cell type prediction gives a nucleus.
-            Reading the segmentation at the nucleus centre returns the nucleus, not the cell,
-            so the soma is probed in 54 directions and the root that most points agree on is
-            taken. Candidates too big to be their type are rejected, which is what caught an
-            "astrocyte" spanning <strong>483</strong> <span class="nounit">&micro;m</span> and
-            a "microglia" spanning <strong>396</strong> <span class="nounit">&micro;m</span>.
-            Both were neurons.
-          </p>
-          <p class="card__body">
-            <strong>That was still not enough for glia.</strong> Size tells an astrocyte from
-            a neuron, but it does not tell an astrocyte from an oligodendrocyte: they are the
-            same size. Checked by eye, the cell this page called an oligodendrocyte was an
-            astrocyte, and the one it called a microglia was an oligodendrocyte. The
-            replacements are pinned to the cells Amy picked by measuring how much the
-            reconstructions actually overlap, which puts them at <strong>0.96</strong> to
-            <strong>0.97</strong> on a scale where 1 is the same cell. The automatic type
-            predictions for glia should be treated as unreliable until someone has looked.
-          </p>
-          <div class="mec__tablewrap"><table class="mec__table">
-            <caption class="mec__caption">Soma positions are voxels at 16 &times; 16 &times; 45 <span class="nounit">nm</span>, ready to paste into neuroglancer. Span is the reconstruction measured between its 0.5th and 99.5th percentile bounds, so one stray fragment cannot inflate it.</caption>
-            <thead>
-              <tr><th scope="col">Type</th><th scope="col">Segment ID</th><th scope="col">Soma, voxels</th><th scope="col">Span</th><th scope="col">How it was called</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Stellate</th><td>720575947520731264</td><td>142606, 130606, 5091</td><td>444 &times; 388 &times; 296</td><td>Automatic, from a nucleus-size prediction</td></tr>
-              <tr><th scope="row">Pyramidal</th><td>720575947422955241</td><td>156431, 128281, 5398</td><td>348 &times; 436 &times; 275</td><td>Named by eye, then matched to the live segmentation</td></tr>
-              <tr><th scope="row">Inhibitory</th><td>720575947567168828</td><td>118319, 131969, 4964</td><td>344 &times; 388 &times; 308</td><td>Automatic, from a nucleus-size prediction</td></tr>
-              <tr><th scope="row">Bipolar</th><td>720575947496304424</td><td>190769, 140962, 5900</td><td>145 &times; 310 &times; 122</td><td>Automatic, from a nucleus-size prediction</td></tr>
-              <tr><th scope="row">Astrocyte</th><td>720575947505391325</td><td>158450, 132831, 4924</td><td>66 &times; 66 &times; 53</td><td>Automatic, from a nucleus-size prediction</td></tr>
-              <tr><th scope="row">Oligodendrocyte</th><td>720575947480485108</td><td>128137, 130562, 4213</td><td>73 &times; 48 &times; 73</td><td>Named by eye, then matched to the live segmentation</td></tr>
-              <tr><th scope="row">Microglia</th><td>720575947495909088</td><td>131562, 128894, 8191</td><td>80 &times; 68 &times; 61</td><td>Named by eye, then matched to the live segmentation</td></tr>
-            </tbody>
-          </table></div>
-          <p class="card__body">
-            The ones to check next are the <strong>astrocyte</strong> and the
-            <strong>bipolar cell</strong>. Both were still picked automatically, and the glial
-            type predictions have already been wrong once here.
-          </p>
-          <div class="card__actions">
-            <a class="btn btn--ghost" href="/assets/mec/gallery/proofread.csv" download>Download the list (CSV)</a>
-            <a class="btn btn--ghost" href="/assets/mec/gallery/cells.json">Full manifest (JSON)</a>
           </div>
         </article>
       </section>

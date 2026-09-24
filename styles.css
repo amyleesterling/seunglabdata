@@ -1756,3 +1756,20 @@ h2{
   .topnav__link{ font-size: 15px; }
   .footer, .footer p, .footer a{ font-size: 14.5px; }
 }
+
+
+/* ---- one text scale ---------------------------------------------------------
+   Prose and the captions that sit next to it were set at different sizes, so a
+   description changed size and leading halfway through: a figcaption at 12.5px
+   butted against a paragraph at 14px. Nothing that carries a sentence is below
+   16px now, and nothing that carries a label is below 13.5px. */
+.card__body, .more__lede, .mec__caption, figcaption,
+.vol__note, .meet__line{
+  font-size: 16px;
+  line-height: 1.62;
+}
+.card__stats dt, .card__stats dd, .meet__count, .mec__embed-note,
+.vol__key, .mec__table, .mec__table td, .mec__table th{
+  font-size: 14px;
+}
+.mec__table thead th, .meet__eyebrow, .citizen__block-title{ font-size: 13px; }

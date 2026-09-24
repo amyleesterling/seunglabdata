@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
-  <link rel="stylesheet" href="/styles.css?v=b4d04a15" />
+  <link rel="stylesheet" href="/styles.css?v=b6a3a802" />
   <style>
     .vol__stage{
       width: 100%;
@@ -36,8 +36,20 @@
       display:flex; flex-wrap:wrap; gap:16px 22px;
       margin-top:16px; padding-top:14px; border-top:1px solid var(--line);
     }
-    .vol__key{ display:flex; align-items:center; gap:9px; font-size:13px; color:var(--muted); }
-    .vol__swatch{ width:13px; height:13px; border-radius:3px; flex:0 0 auto; }
+    .vol__key{
+      display:flex; align-items:center; gap:8px;
+      font-size:11px; letter-spacing:.17em; text-transform:uppercase;
+      color:rgba(206,224,240,.92);
+      padding:5px 12px 5px 10px; border-radius:2px;
+      border:1px solid rgba(122,186,246,.22);
+      background:linear-gradient(180deg, rgba(13,26,45,.72), rgba(6,12,22,.82));
+    }
+    /* A lit dot rather than a filled square: the swatch reads as a source, the
+       way the rest of this project's chrome does. */
+    .vol__key i{
+      width:7px; height:7px; border-radius:50%; flex:0 0 auto;
+      background:var(--c); box-shadow:0 0 9px var(--c), 0 0 2px var(--c);
+    }
     .vol__note{
       margin-top:18px; color:var(--muted); font-size:14px; line-height:1.62; max-width:70ch;
     }
@@ -57,8 +69,10 @@
     body.is-embed .vol__controls{ position:fixed; left:10px; bottom:10px; margin:0; z-index:5; gap:6px; }
     body.is-embed .vol__controls .btn{ font-size:12px; padding:6px 10px; }
     /* Legend goes top right so it cannot land on the controls at small sizes. */
-    body.is-embed .vol__legend{ position:fixed; right:10px; top:10px; margin:0; padding:0; border:0; z-index:5; flex-direction:column; gap:5px; align-items:flex-end; }
-    body.is-embed .vol__key{ font-size:11.5px; text-shadow:0 1px 6px rgba(0,0,0,.9); }
+    /* Bottom right, opposite the controls, so the two never collide and the
+       top of the frame stays clear for the block itself. */
+    body.is-embed .vol__legend{ position:fixed; right:10px; bottom:10px; margin:0; padding:0; border:0; z-index:5; gap:6px; }
+    body.is-embed .vol__key{ font-size:10px; }
   </style>
 </head>
 <body>
@@ -102,9 +116,8 @@
       </div>
 
       <div class="vol__legend">
-        <span class="vol__key"><span class="vol__swatch" style="background:#5fd0ff"></span>The imaged block</span>
-        <span class="vol__key"><span class="vol__swatch" style="background:#6ee7a5"></span>Pyramidal cell</span>
-        <span class="vol__key"><span class="vol__swatch" style="background:#ff6fae"></span>Stellate cell</span>
+        <span class="vol__key"><i style="--c:#6ee7a5"></i>Pyramidal</span>
+        <span class="vol__key"><i style="--c:#ff6fae"></i>Stellate</span>
       </div>
 
       <p class="vol__note">
@@ -283,7 +296,7 @@ fill.position.set(-0.7, -0.3, -0.5);
 scene.add(fill);
 
 // ---- the cells -------------------------------------------------------------------
-let spin = true, loaded = 0;
+let spin = true, loaded = 0, driftT = 0;
 const loader = new GLTFLoader();
 for (const spec of CELLS) {
   loader.load(spec.file, (gltf) => {
@@ -371,7 +384,7 @@ function frame(dir, pad, spinning) {
 // Face on to the wide face, tilted just enough to read as a solid rather than
 // a rectangle. The old default looked down on the block and it read as a flat
 // table, which hid the cells inside it.
-const HOME = new THREE.Vector3(0.20, 0.14, 1);
+const HOME = new THREE.Vector3(0.055, 0.03, 1);
 frame(HOME, 1.05, true);
 
 document.getElementById("btn-top").onclick   = () => { spin = false; sync(); frame(new THREE.Vector3(0, 1, 0.001), 1.05, false); };
@@ -406,7 +419,14 @@ resize();
 window.__mec = { scene, root, camera, controls, renderer, BLOCK_MIN, BLOCK_MAX, BOX, CENTRE, frame, HOME };
 
 renderer.setAnimationLoop(() => {
-  if (spin) root.rotation.z += 0.0016;
+  if (spin) {
+    // Drift, not a turntable. The block is a wide thin slab: a full rotation
+    // from a face on start puts it edge on within a few seconds, which reads
+    // as "sideways". A slow oscillation keeps it alive and always legible.
+    driftT += 0.0016;
+    root.rotation.z = Math.sin(driftT) * 0.17;          // about +- 10 degrees
+    root.rotation.x = Math.sin(driftT * 0.62) * 0.05;
+  }
   controls.update();
   renderer.render(scene, camera);
 });
