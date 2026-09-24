@@ -78,6 +78,8 @@ def depth_scale(d, W, H, s, active, counts):
     animation is currently revealing picked out."""
     pad = int(44 * s)
     x = W - pad - int(150 * s)
+    if x < W * 0.42:                 # portrait: the scale has no room on the
+        x = int(W * 0.06)            # right, so it moves to the left margin
     top, bot = int(H * 0.20), int(H * 0.78)
     span = CORTEX_TOP_Y - CORTEX_BOTTOM_Y
     f_lay = font("segoeuib.ttf", int(19 * s))
@@ -137,10 +139,14 @@ def depth_sweep_bar(d, W, H, s, note, meta):
 
 
 
-def label(img, meta, note=None):
+def label(img, meta, note=None, scale=1.0):
     d = ImageDraw.Draw(img, "RGBA")
     W, H = img.size
-    s = W / 1600.0                      # every size is relative to the frame
+    # Every size is relative to the frame. That is right for a 16:9 render on a
+    # desktop and wrong everywhere else: the same frame shown 375 px wide on a
+    # phone draws its 38 px title at nine. `scale` is how a portrait cut asks
+    # for type sized against the screen it will actually be read on.
+    s = (W / 1600.0) * scale
     pad = int(44 * s)
 
     f_title = font("segoeuib.ttf", int(38 * s))
@@ -188,6 +194,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("folder")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--scale", type=float, default=1.0,
+                    help="multiply every label size; about 2.2 for a portrait "
+                         "cut meant for a phone")
     ap.add_argument("--highlight", default=None,
                     help="cell type to emphasise in the legend")
     args = ap.parse_args()
@@ -222,7 +231,7 @@ def main():
             note = by_frame[i] if i < len(by_frame) else None
         elif not note and cycle:
             note = cycle[i % len(cycle)]
-        label(img, meta, note)
+        label(img, meta, note, scale=args.scale)
         img.save(os.path.join(out_dir, name))
     print(f"labelled {len(names)} image(s) -> {out_dir}")
 

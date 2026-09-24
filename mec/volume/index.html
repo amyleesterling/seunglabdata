@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=b4d04a15" />
   <style>
     .vol__stage{
       width: 100%;
@@ -103,8 +103,8 @@
 
       <div class="vol__legend">
         <span class="vol__key"><span class="vol__swatch" style="background:#5fd0ff"></span>The imaged block</span>
-        <span class="vol__key"><span class="vol__swatch" style="background:#6ee7a5"></span>720575947479816185</span>
-        <span class="vol__key"><span class="vol__swatch" style="background:#ff6fae"></span>720575947562963772</span>
+        <span class="vol__key"><span class="vol__swatch" style="background:#6ee7a5"></span>Pyramidal cell</span>
+        <span class="vol__key"><span class="vol__swatch" style="background:#ff6fae"></span>Stellate cell</span>
       </div>
 
       <p class="vol__note">
@@ -183,7 +183,11 @@ const scene    = new THREE.Scene();
 scene.background = new THREE.Color(0x04060b);
 
 const camera = new THREE.PerspectiveCamera(38, 16 / 10, 1, 40000);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+// ?poster=1 keeps the drawing buffer so the still can be captured from the
+// real scene. It is OFF normally: preserving the buffer costs memory and
+// blocks some compositing fast paths, and nothing but the capture needs it.
+const WANT_POSTER = new URLSearchParams(location.search).has("poster");
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: WANT_POSTER });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 stage.appendChild(renderer.domElement);
@@ -317,21 +321,62 @@ for (const spec of CELLS) {
 // ---- camera presets ---------------------------------------------------------------
 // Distance is quoted for a 16:10 stage. A narrower viewport, a phone or the
 // embed on a small screen, has to pull back or the block runs off the sides.
-let lastFrame = { dir: null, dist: 0 };
-function frame(dir, dist) {
-  lastFrame = { dir: dir.clone(), dist };
+let lastFrame = { dir: null, pad: 1 };
+
+// Fit from the box's actual CORNERS, not from its bounding sphere. A sphere
+// round a 2031 x 1338 x 447 slab has a radius of 1236, and seen near face on
+// that pads the frame by about a third: the block ended up a ribbon across the
+// middle of a phone screen with most of the view empty. Solving the real
+// projection is the same fix the Blender population figure needed.
+const CORNERS = [];
+for (const sx of [-1, 1]) for (const sy of [-1, 1]) for (const sz of [-1, 1]) {
+  CORNERS.push(new THREE.Vector3(sx * BOX.x / 2, sy * BOX.y / 2, sz * BOX.z / 2));
+}
+
+// The block turns while it idles, so the fit has to hold for the WHOLE turn or
+// a corner swings out of frame part way round.
+function fitDistance(dir, pad, spinning) {
+  const vFov = THREE.MathUtils.degToRad(camera.fov);
   const a = camera.aspect || 1.6;
-  const k = a < 1.6 ? 1.6 / a : 1;
-  camera.position.copy(dir).normalize().multiplyScalar(dist * k);
+  const tanV = Math.tan(vFov / 2);
+  const tanH = tanV * a;
+  const u = dir.clone().normalize();
+  const fwd = u.clone().negate();
+  const right = new THREE.Vector3().crossVectors(fwd, new THREE.Vector3(0, 0, 1));
+  if (right.lengthSq() < 1e-6) right.set(1, 0, 0);
+  right.normalize();
+  const up = new THREE.Vector3().crossVectors(right, fwd).normalize();
+
+  const angles = spinning ? [0, 1, 2, 3, 4, 5, 6, 7].map((i) => i * Math.PI / 4) : [root.rotation.z];
+  let need = 0;
+  for (const ang of angles) {
+    const m = new THREE.Matrix4().makeRotationZ(ang);
+    for (const c of CORNERS) {
+      const p = c.clone().applyMatrix4(m);
+      // Distance at which this corner just touches each frustum plane.
+      const z = p.dot(fwd), x = Math.abs(p.dot(right)), y = Math.abs(p.dot(up));
+      need = Math.max(need, x / tanH - z, y / tanV - z);
+    }
+  }
+  return Math.max(need, 1) * pad;
+}
+
+function frame(dir, pad, spinning) {
+  lastFrame = { dir: dir.clone(), pad, spinning: !!spinning };
+  camera.position.copy(dir).normalize().multiplyScalar(fitDistance(dir, pad, !!spinning));
   controls.target.set(0, 0, 0);
   controls.update();
 }
-const HOME = new THREE.Vector3(0.62, 0.46, 1);
-frame(HOME, 3800);
 
-document.getElementById("btn-top").onclick   = () => { spin = false; sync(); frame(new THREE.Vector3(0, 1, 0.001), 3500); };
-document.getElementById("btn-edge").onclick  = () => { spin = false; sync(); frame(new THREE.Vector3(0.05, 0.02, 1), 3200); };
-document.getElementById("btn-reset").onclick = () => { spin = true;  sync(); frame(HOME, 3800); };
+// Face on to the wide face, tilted just enough to read as a solid rather than
+// a rectangle. The old default looked down on the block and it read as a flat
+// table, which hid the cells inside it.
+const HOME = new THREE.Vector3(0.20, 0.14, 1);
+frame(HOME, 1.05, true);
+
+document.getElementById("btn-top").onclick   = () => { spin = false; sync(); frame(new THREE.Vector3(0, 1, 0.001), 1.05, false); };
+document.getElementById("btn-edge").onclick  = () => { spin = false; sync(); frame(new THREE.Vector3(0.05, 0.02, 1), 1.05, false); };
+document.getElementById("btn-reset").onclick = () => { spin = true;  sync(); frame(HOME, 1.05, true); };
 const spinBtn = document.getElementById("btn-spin");
 spinBtn.onclick = () => { spin = !spin; sync(); };
 function sync(){ spinBtn.textContent = spin ? "Pause spin" : "Resume spin"; }
@@ -349,7 +394,9 @@ function resize() {
   camera.updateProjectionMatrix();
   // Re-apply the last framing so a resize past the 16:10 threshold does not
   // leave the block cropped.
-  if (lastFrame.dir && prev !== camera.aspect) frame(lastFrame.dir, lastFrame.dist);
+  // Re-fit on resize. It used to pass lastFrame.dist, which no longer
+  // exists, so a rotated phone kept a distance solved for the old aspect.
+  if (lastFrame.dir && prev !== camera.aspect) frame(lastFrame.dir, lastFrame.pad, lastFrame.spinning);
 }
 new ResizeObserver(resize).observe(stage);
 resize();

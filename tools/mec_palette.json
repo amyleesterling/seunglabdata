@@ -22,11 +22,11 @@
    "label": "Oligodendrocyte"
   },
   "microglia": {
-   "hex": "#E8A93A",
+   "hex": "#E8823C",
    "label": "Microglia"
   },
   "bipolar": {
-   "hex": "#A8E84A",
+   "hex": "#F5B84A",
    "label": "Bipolar"
   },
   "glia": {

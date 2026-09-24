@@ -106,26 +106,63 @@ def import_cell(path):
     return obj
 
 
-def random_colour(i, seed):
-    """A distinct colour per cell, spread evenly round the hue wheel.
+# Hue arcs the banner colours are drawn from, in degrees, with weights.
+#
+# Stepping the golden angle across the WHOLE wheel spreads hues evenly, which
+# sounds right and looks wrong: a sixth of the wheel is yellow-green and olive,
+# so a sixth of the cells came out that colour and the picture read as "too much
+# green". Restricting the wheel to the arcs Amy actually wants, and stepping
+# evenly WITHIN them, keeps the even spread and drops the greens entirely.
+#
+# Weighted to Amy's brief: blues, purples, yellow and pinks dominant, teal as an
+# accent. The gold band stays NARROW in hue even though its weight is high,
+# because a wide yellow band is exactly where olive lives.
+HUE_ARCS = [
+    (170, 196, 0.55),   # teal and turquoise, an accent now rather than a third
+    (200, 255, 1.90),   # all the blues
+    (258, 305, 1.70),   # purples
+    (310, 350, 1.50),   # pinks and magentas
+    (36,   52, 1.05),   # warm golden yellow
+]
+_ARC_TOTAL = sum(w for _, _, w in HUE_ARCS)
 
-    Golden angle stepping rather than random hues: drawing hues at random
-    clumps them, so a few cells end up nearly the same colour while whole
-    sectors of the wheel go unused. Saturation and value stay in the range the
-    rest of the palette lives in, so the banner still looks like this project
-    and not like a test card.
+
+def hue_from_arcs(t):
+    """Map t in [0,1) onto the allowed arcs, proportional to their weights."""
+    x = (t % 1.0) * _ARC_TOTAL
+    for lo, hi, w in HUE_ARCS:
+        if x <= w:
+            return (lo + (hi - lo) * (x / w)) / 360.0
+        x -= w
+    lo, hi, _ = HUE_ARCS[-1]
+    return hi / 360.0
+
+
+def random_colour(i, seed):
+    """A distinct colour per cell, spread evenly across the allowed hues.
+
+    Golden angle stepping rather than random hues: drawing at random clumps
+    them, so several cells end up nearly the same colour while whole stretches
+    go unused.
+
+    Gold gets its saturation and value pinned high. Olive is just a dark or
+    desaturated yellow, so letting those two vary freely in the yellow band is
+    precisely how you produce the colour this palette exists to avoid.
 
     This is DECORATION. It must never be used for a figure with a legend,
     because a colour here means nothing at all.
     """
     import colorsys
     rng = random.Random(seed * 9973 + i)
-    h = ((seed * 0.11 + i * 0.6180339887) % 1.0)
-    sat = 0.72 + rng.random() * 0.22
-    val = 0.86 + rng.random() * 0.14
+    h = hue_from_arcs(seed * 0.11 + i * 0.6180339887)
+    if 30 / 360.0 <= h <= 60 / 360.0:
+        sat = 0.82 + rng.random() * 0.12
+        val = 0.95 + rng.random() * 0.05
+    else:
+        sat = 0.70 + rng.random() * 0.26
+        val = 0.84 + rng.random() * 0.16
     r, g, b = colorsys.hsv_to_rgb(h, sat, val)
     return tuple(srgb_to_linear(c) for c in (r, g, b))
-
 
 
 def material_for(cell_type, rgb=None, key=None):

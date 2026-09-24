@@ -1734,3 +1734,25 @@ h2{
   overflow: hidden;
   white-space: nowrap;
 }
+
+
+/* ---- mobile type scale ------------------------------------------------------
+   Almost every size in this file is a fixed px value tuned for a desktop
+   column: body copy at 13 to 14px, captions and stat rows at 12 to 12.5px.
+   Read on a phone at arm's length those are too small, so at phone widths the
+   whole scale steps up. Desktop is untouched. */
+@media (max-width: 620px){
+  body{ font-size: 16.5px; }
+  p, li{ font-size: 16.5px; line-height: 1.62; }
+  .card__body{ font-size: 16px; line-height: 1.62; }
+  .card__stats dt, .card__stats dd{ font-size: 14.5px; }
+  .more__lede{ font-size: 16px; line-height: 1.58; }
+  .mec__caption, figcaption{ font-size: 15px; line-height: 1.55; }
+  .mec__table, .mec__table td, .mec__table th{ font-size: 14px; }
+  .mec__table thead th{ font-size: 13.5px; }
+  .btn{ font-size: 15.5px; }
+  .vol__note{ font-size: 16px; }
+  .vol__key{ font-size: 14px; }
+  .topnav__link{ font-size: 15px; }
+  .footer, .footer p, .footer a{ font-size: 14.5px; }
+}

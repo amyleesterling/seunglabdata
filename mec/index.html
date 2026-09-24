@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://connectome.quest/assets/images/mec-neurons.jpg" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=b4d04a15" />
   <style>
     /* Solid colours, no gradient text. */
     .mec__tiles{
@@ -28,7 +28,12 @@
     .mec__tile-num--soft{ color:#9fb4c4; }
     .mec__tile-label{ margin-top:8px; font-size:.82rem; color:rgba(220,230,240,.85); line-height:1.4; }
     .mec__embed{
-      position:relative; width:100%; aspect-ratio:16/10; min-height:300px;
+      /* NO min-height in px next to an aspect-ratio. min-height:300px with
+         16/10 forces a minimum WIDTH of 480px, and since a grid item defaults
+         to min-width:auto that floor propagated up and made the whole page
+         504px wide on a 375px phone. Everything was clipped by the screen
+         edge because of this one line. */
+      position:relative; width:100%; aspect-ratio:16/10; min-width:0;
       border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
       background:#04060b; margin-top:18px;
     }
@@ -37,15 +42,15 @@
       object-fit:cover;
     }
     .mec__embed-cta{
-      position:absolute; inset:0; display:flex; flex-direction:column;
-      align-items:center; justify-content:center; gap:12px;
-      background:rgba(4,6,11,.35);
+      display:flex; align-items:center; justify-content:center; gap:12px;
+      flex-wrap:wrap; margin-top:10px;
     }
     .mec__embed-note{ font-size:12.5px; color:rgba(230,240,250,.8); text-shadow:0 2px 10px rgba(0,0,0,.8); }
     /* The interactive block sits above the At a glance panel, in the right
        hand column. The column used to be a stats card floating in a lot of
        empty space; the block is the first thing a reader wants to touch. */
-    .citizen__side{ display:flex; flex-direction:column; gap:20px; align-self:start; }
+    .citizen__side{ display:flex; flex-direction:column; gap:20px; align-self:start; min-width:0; }
+    .citizen__intro{ min-width:0; }
     .citizen__block{ margin:0; }
     .citizen__block-title{ margin:0 0 10px; font-size:13px; letter-spacing:.14em;
       text-transform:uppercase; color:#42d5ec; }
@@ -55,7 +60,7 @@
          the block is in it, so this column pins to the top instead. */
       .citizen__inner{ align-items:start; }
     }
-    /* Meet an MEC neuron */
+    /* Meet the cells of MEC */
     .meet__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:18px; }
     .meet__card{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
                  background:linear-gradient(180deg,var(--panel),rgba(255,255,255,.04)); display:flex; flex-direction:column; }
@@ -73,6 +78,27 @@
                        border:1px solid var(--line); background:rgba(255,255,255,.05); color:#eaf6ff; cursor:pointer; }
     .meet__nav button:hover{ background:rgba(255,255,255,.1); }
     .meet__which{ font-size:11.5px; color:var(--muted); }
+    /* The stellate card carries a per layer table. It has to be compact: the
+       card grid is auto-fit minmax(260px,1fr), so anything that forces a wider
+       column reflows the whole gallery. */
+    .meet__table{ width:100%; margin:10px 0 0; font-size:12px; }
+    .meet__table caption{ font-size:11.5px; }
+    .meet__table td, .meet__table th{ padding:2px 4px; }
+    /* The spin video sits under the poster image; the image is removed once
+       the video can actually play, so a browser that will not play it still
+       shows the still rather than a black square. */
+    .meet__stage video{ position:absolute; inset:0; width:100%; height:100%;
+      display:block; object-fit:cover; }
+    .meet__pause{ position:absolute; right:8px; bottom:8px; z-index:3;
+      width:28px; height:28px; border-radius:50%; cursor:pointer;
+      border:1px solid rgba(150,208,252,.4); background:rgba(4,6,11,.62);
+      color:#dff0ff; font-size:11px; line-height:1; letter-spacing:1px;
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transition:opacity .18s ease; }
+    .meet__card:hover .meet__pause, .meet__pause:focus-visible,
+    .meet__pause[data-paused="1"]{ opacity:1; }
+    @media (hover:none){ .meet__pause{ opacity:1; } }
+    .meet__controls{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px; }
     /* Everything reconstructed so far */
     .mec__figure{ margin:18px 0 0; }
     .mec__figure img, .mec__figure video{ display:block; width:100%; height:auto;
@@ -140,6 +166,27 @@
       text-transform:uppercase; color:rgba(126,146,172,.95);
       display:flex; flex-wrap:wrap; gap:4px 16px; }
     .mechero__meta b{ color:#CBD8E8; font-weight:500; letter-spacing:.06em; }
+
+    /* Page specific mobile sizes. The shared stylesheet now carries the
+       general scale; only the classes that live on this page are set here, and
+       they are set LARGER, not smaller, so the two cannot fight. */
+    @media (max-width: 620px){
+      .more__head h2{ font-size:27px; }
+      .meet__line{ font-size:16px; line-height:1.6; }
+      .meet__count{ font-size:14.5px; }
+      .meet__body h3{ font-size:20px; }
+      .meet__eyebrow{ font-size:12.5px; }
+      .mec__embed-note{ font-size:15px; }
+      .mechero__lede{ font-size:17px; line-height:1.6; }
+      .mechero__meta{ font-size:13px; }
+      .citizen__block-title{ font-size:13.5px; }
+      .citizen__side .mec__caption, .mec__caption{ font-size:15px; line-height:1.55; }
+      .meet__table{ font-size:13px; }
+      .mec__tablewrap{ overflow-x:auto; -webkit-overflow-scrolling:touch;
+        margin-inline:-4px; padding-inline:4px; }
+      .mec__tablewrap table{ min-width:460px; }
+    }
+    .mec__tablewrap{ overflow-x:auto; }
     @media (min-width:721px){ .mechero{ margin-bottom:-29%; } }
     @media (max-width:720px){
       /* Below this the panel would cover the render entirely, so it drops
@@ -169,7 +216,18 @@
     @media (prefers-reduced-motion:reduce){
       .mechero__panel{ transition:none; } .mechero__panel:hover{ transform:none; }
     }
-    .mec__figure--wide{ margin:22px 0 0; }
+    .mec__figure--wide{
+      margin:22px 0 0;
+      /* Break out of the reading column. Every label is baked into the render
+         and sized against the frame, so a 1600 px render squeezed into a
+         640 px column draws its own captions at about five pixels on a phone. */
+      width:100vw; max-width:100vw;
+      margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
+    }
+    .mec__figure--wide figcaption{
+      max-width:1100px; margin-inline:auto;
+      padding-inline:clamp(16px, 4vw, 28px);
+    }
     .mec__figure--wide video{ width:100%; height:auto; aspect-ratio:16/9; }
     .mec__figure--wide + .mec__figure--wide{ margin-top:34px; }
   </style>
@@ -195,14 +253,14 @@
     <header class="mechero">
       <figure class="mechero__fig">
         <img src="/assets/images/mec-banner-hero.jpg"
-             alt="Several hundred reconstructed cells from the mouse medial entorhinal cortex filling the frame, each drawn in its own colour, dendrites overlapping into a dense tangle with long axons trailing away below." />
+             alt="Several hundred reconstructed cells from the mouse medial entorhinal cortex filling the frame, coloured by cell type: blue pyramidal cells throughout, a band of mint green stellate cells across the upper part, pink interneurons and purple glia scattered among them." />
         <div class="mechero__panel">
           <i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i>
           <div class="mechero__inner">
             <p class="mechero__eyebrow"><s></s>connectomic reconstruction<u></u>mouse mec</p>
-            <h1>Medial entorhinal cortex</h1>
+            <h1>Medial entorhinal cortex (MEC)</h1>
             <p class="mechero__lede">
-              The part of the brain that keeps track of where you are. We imaged a block of it
+              A part of the brain that helps keeps track of where you are. We imaged a block of it
               in electron microscopy, and now it needs mapping. It is the newest volume open to
               <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> citizen
               scientists in <strong>EyeWire II</strong>.
@@ -241,12 +299,9 @@
               place. It is one of the first regions to degenerate in Alzheimer's disease.
             </p>
             <p>
-              In the Allen Mouse Brain Atlas the medial entorhinal cortex appears as
-              <strong>ENTm</strong> and <strong>ENTmv</strong>, the dorsal and ventral zones of the
-              entorhinal area's medial part. Both sit in the retrohippocampal region, at the back
-              and underside of the cortex. If you want to see where that is in a whole mouse brain,
-              the <a href="https://whatisabrain.com/mouse" target="_blank" rel="noreferrer">mouse
-              wiring explorer</a> places every region in the Allen reference brain.
+              It sits at the back and underside of the cortex, and you can see exactly where in
+              the <a href="https://whatisabrain.com/mouse" target="_blank" rel="noreferrer">interactive
+              mouse brain</a>.
             </p>
           </div>
 
@@ -254,12 +309,12 @@
             <figure class="citizen__block">
               <figcaption class="citizen__block-title">The block, to scale</figcaption>
               <div class="mec__embed" id="embed">
-          <img id="poster" src="/assets/mec/block-poster.jpg"
-               alt="Wireframe of the imaged block with scale bars marked every 100 micrometres and labelled to 2000. Two reconstructed cells sit inside it, one green with a dense arbor and a long process, one pink and smaller." />
-                <div class="mec__embed-cta" id="cta">
-            <button type="button" class="btn btn--cta" id="load3d">Load the interactive block</button>
-            <span class="mec__embed-note">About 7 MB of meshes</span>
-          </div>
+                <img id="poster" src="/assets/mec/block-poster.jpg"
+                     alt="Wireframe of the imaged block with scale bars marked every 100 micrometres and labelled to 2000. Two reconstructed cells sit inside it, one green with a dense arbor and a long process, one pink and smaller." />
+              </div>
+              <div class="mec__embed-cta" id="cta">
+                <button type="button" class="btn btn--cta" id="load3d">Load the interactive block</button>
+                <span class="mec__embed-note">About 7 MB of meshes</span>
               </div>
               <p class="mec__caption">Two reconstructed cells inside the imaged volume, at
                 true relative size and in the positions they actually occupy.</p>
@@ -267,6 +322,18 @@
                 <a class="btn btn--ghost" href="/mec/volume/">Open full screen</a>
               </div>
             </figure>
+        <figure class="mec__figure mec__figure--wide">
+          <img src="/assets/mec/population/web/still.jpg"
+               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
+               loading="lazy" />
+          <figcaption class="mec__caption">
+            Cells sit at their true positions and true relative sizes inside the imaged block.
+            The lower part of the box is empty because it lies below layer VI, where no nuclei
+            have been marked: probing it finds tissue, but almost all of it is still in small
+            pieces rather than whole cells.
+          </figcaption>
+        </figure>
+
           <aside class="citizen__panel" aria-label="Dataset at a glance">
             <div class="citizen__panel-head">
               <p class="citizen__panel-title">At a glance</p>
@@ -339,7 +406,7 @@
               Layer boundaries are drawn roughly, so read these as the shape of the tissue rather
               than as exact counts. They count every nucleus, not just neurons.
             </p>
-            <table class="mec__table">
+            <div class="mec__tablewrap"><table class="mec__table">
               <caption class="mec__caption">Nuclei marked per layer, 62,631 in total</caption>
               <thead>
                 <tr><th scope="col">Layer</th><th scope="col">Nuclei</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
@@ -352,36 +419,9 @@
                 <tr><th scope="row">V</th><td>16,215</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
                 <tr><th scope="row">VI</th><td>9,679</td><td><span class="mec__bar" style="--w:59.7%"></span></td></tr>
               </tbody>
-            </table>
+            </table></div>
           </article>
 
-          <article class="card card--flat">
-            <div class="card__top"><h3>Stellate cells sit where they should</h3></div>
-            <p class="card__body">
-              Layer II is where stellate cells live, and it is the population most closely tied to
-              grid firing. That is the textbook claim, and this block agrees with it: of the 1,370
-              presumed stellate nuclei, <strong>1,085</strong> are in layer II. That is
-              <strong>79%</strong>, from a clustering that never saw the layer labels.
-            </p>
-            <table class="mec__table">
-              <caption class="mec__caption">Presumed stellate nuclei per layer, 1,370 in total</caption>
-              <thead>
-                <tr><th scope="col">Layer</th><th scope="col">Stellate</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">I</th><td>42</td><td><span class="mec__bar" style="--w:3.9%"></span></td></tr>
-                <tr><th scope="row">II</th><td>1,085</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
-                <tr><th scope="row">III</th><td>223</td><td><span class="mec__bar" style="--w:20.6%"></span></td></tr>
-                <tr><th scope="row">IV</th><td>8</td><td><span class="mec__bar" style="--w:0.7%"></span></td></tr>
-                <tr><th scope="row">V</th><td>10</td><td><span class="mec__bar" style="--w:0.9%"></span></td></tr>
-                <tr><th scope="row">VI</th><td>2</td><td><span class="mec__bar" style="--w:0.2%"></span></td></tr>
-              </tbody>
-            </table>
-            <p class="card__body">
-              Confirming or rejecting those calls, one cell at a time, is work that needs eyes on
-              it. That is where you come in.
-            </p>
-          </article>
         </div>
       </section>
 
@@ -395,18 +435,6 @@
             of cells and these are the ones picked out so far.
           </p>
         </div>
-
-        <figure class="mec__figure">
-          <img src="/assets/mec/population/web/still.jpg"
-               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
-               loading="lazy" />
-          <figcaption class="mec__caption">
-            Cells sit at their true positions and true relative sizes inside the imaged block.
-            The lower part of the box is empty because it lies below layer VI, where no nuclei
-            have been marked: probing it finds tissue, but almost all of it is still in small
-            pieces rather than whole cells.
-          </figcaption>
-        </figure>
 
 
         <figure class="mec__figure mec__figure--wide">
@@ -435,15 +463,22 @@
         </p>
       </section>
 
-      <!-- Meet an MEC neuron -->
-      <section class="mec" aria-label="Meet an MEC neuron">
+      <!-- Meet the cells of MEC -->
+      <section class="mec" aria-label="Meet the cells of MEC">
         <div class="more__head">
-          <h2>Meet an MEC neuron</h2>
+          <h2>Meet the cells of MEC</h2>
           <p class="more__lede">
             Here are some of the most common cell types found in the medial entorhinal
             cortex. We will be exploring them. Every one below is a real reconstruction from
             this block, and the table further down gives the segment ID and soma coordinate
             for each so you can open it yourself.
+          </p>
+          <div class="meet__controls">
+            <button type="button" class="btn btn--cta" id="load-gallery">Load the interactive gallery</button>
+            <span class="mec__embed-note">Each card already spins. This swaps them for 3D you can
+              drag and turn, about 10 MB.</span>
+          </div>
+          <p hidden>
           </p>
         </div>
 
@@ -451,6 +486,11 @@
           <article class="meet__card" data-type="stellate">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="stellate-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/stellate-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/stellate-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/stellate-01.jpg" alt="A stellate cell from layer two of the medial entorhinal cortex, rendered in mint green on black. Dendrites radiate outward from a bright cell body in every direction like a star, and a single axon descends below."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -462,7 +502,26 @@
                 like a star, and the axon leaves for the hippocampus. Layer II of the medial
                 entorhinal cortex is where grid firing was first recorded.
               </p>
-              <p class="meet__count">1,370 presumed in this block, 79% of them in layer II.</p>
+              <p class="meet__count">
+                Layer II is where stellate cells live, and it is the population most closely
+                tied to grid firing. That is the textbook claim, and this block agrees: of the
+                1,370 presumed stellate nuclei, <strong>1,085</strong> are in layer II, which
+                is <strong>79%</strong>, from a clustering that never saw the layer labels.
+              </p>
+              <div class="mec__tablewrap"><table class="mec__table meet__table">
+              <caption class="mec__caption">Presumed stellate nuclei per layer, 1,370 in total</caption>
+              <thead>
+                <tr><th scope="col">Layer</th><th scope="col">Stellate</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">I</th><td>42</td><td><span class="mec__bar" style="--w:3.9%"></span></td></tr>
+                <tr><th scope="row">II</th><td>1,085</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
+                <tr><th scope="row">III</th><td>223</td><td><span class="mec__bar" style="--w:20.6%"></span></td></tr>
+                <tr><th scope="row">IV</th><td>8</td><td><span class="mec__bar" style="--w:0.7%"></span></td></tr>
+                <tr><th scope="row">V</th><td>10</td><td><span class="mec__bar" style="--w:0.9%"></span></td></tr>
+                <tr><th scope="row">VI</th><td>2</td><td><span class="mec__bar" style="--w:0.2%"></span></td></tr>
+              </tbody>
+            </table></div>
               <div class="meet__nav"></div>
             </div>
           </article>
@@ -470,6 +529,11 @@
           <article class="meet__card" data-type="pyramidal">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="pyramidal-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/pyramidal-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/pyramidal-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/pyramidal-01.jpg" alt="A pyramidal cell rendered in blue on black. A dominant dendrite rises from the top of the cell body and shorter dendrites spread around its base."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -491,6 +555,11 @@
           <article class="meet__card" data-type="inhibitory">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="inhibitory-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/inhibitory-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/inhibitory-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/inhibitory-01.jpg" alt="An inhibitory interneuron rendered in pink on black, with a dense local arbor around the cell body."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -511,6 +580,11 @@
           <article class="meet__card" data-type="astrocyte">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="astrocyte-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/astrocyte-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/astrocyte-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/astrocyte-01.jpg" alt="An astrocyte rendered in lilac on black. A small cell body with many fine processes spreading in every direction into a bushy cloud." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -529,6 +603,11 @@
           <article class="meet__card" data-type="oligodendrocyte">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="oligodendrocyte-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/oligodendrocyte-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/oligodendrocyte-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/oligodendrocyte-01.jpg" alt="An oligodendrocyte rendered in cyan on black. A compact cell body with many branching processes, several of which close into small loops where the cell has wrapped itself around an axon." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -547,6 +626,11 @@
           <article class="meet__card" data-type="microglia">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="microglia-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/microglia-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/microglia-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/microglia-01.jpg" alt="A microglial cell rendered in gold on black. A small cell body with fine, heavily branched processes reaching outward."
                    loading="lazy" onerror="this.remove()" />
             </div>
@@ -566,6 +650,11 @@
           <article class="meet__card" data-type="bipolar">
             <div class="meet__stage">
               <div class="meet__pending">Render pending</div>
+              <video class="meet__spin" data-cell="bipolar-01" autoplay muted loop playsinline
+                     preload="metadata" poster="/assets/mec/renders/web/bipolar-01.jpg" aria-hidden="true">
+                <source src="/assets/mec/spin/bipolar-01.mp4" type="video/mp4" />
+              </video>
+              <button type="button" class="meet__pause" aria-label="Pause this cell"><span aria-hidden="true">&#10073;&#10073;</span></button>
               <img src="/assets/mec/renders/web/bipolar-01.jpg" alt="A small bipolar cell rendered in steel blue on black. A compact cell body with one process leaving the top and one the bottom." loading="lazy" onerror="this.remove()" />
             </div>
             <div class="meet__body">
@@ -584,8 +673,6 @@
         </div>
 
         <div class="vol__controls" style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
-          <button type="button" class="btn btn--cta" id="load-gallery">Load the interactive gallery</button>
-          <span class="mec__embed-note" style="align-self:center">Spins each cell in 3D. About 10 MB.</span>
         </div>
       </section>
 
@@ -692,7 +779,7 @@
             <strong>0.97</strong> on a scale where 1 is the same cell. The automatic type
             predictions for glia should be treated as unreliable until someone has looked.
           </p>
-          <table class="mec__table">
+          <div class="mec__tablewrap"><table class="mec__table">
             <caption class="mec__caption">Soma positions are voxels at 16 &times; 16 &times; 45 <span class="nounit">nm</span>, ready to paste into neuroglancer. Span is the reconstruction measured between its 0.5th and 99.5th percentile bounds, so one stray fragment cannot inflate it.</caption>
             <thead>
               <tr><th scope="col">Type</th><th scope="col">Segment ID</th><th scope="col">Soma, voxels</th><th scope="col">Span</th><th scope="col">How it was called</th></tr>
@@ -706,7 +793,7 @@
               <tr><th scope="row">Oligodendrocyte</th><td>720575947480485108</td><td>128137, 130562, 4213</td><td>73 &times; 48 &times; 73</td><td>Named by eye, then matched to the live segmentation</td></tr>
               <tr><th scope="row">Microglia</th><td>720575947495909088</td><td>131562, 128894, 8191</td><td>80 &times; 68 &times; 61</td><td>Named by eye, then matched to the live segmentation</td></tr>
             </tbody>
-          </table>
+          </table></div>
           <p class="card__body">
             The ones to check next are the <strong>astrocyte</strong> and the
             <strong>bipolar cell</strong>. Both were still picked automatically, and the glial
@@ -884,8 +971,8 @@ import { GLTFLoader } from "/assets/mec/vendor/loaders/GLTFLoader.js";
 // failed fetch, and they are kept in step deliberately.
 const COLOUR = {
   stellate: 0x67f5cb, pyramidal: 0x3e96f0, inhibitory: 0xff5fb0,
-  microglia: 0xe8a93a, astrocyte: 0xb06fe0, oligodendrocyte: 0x3fd8ff,
-  bipolar: 0xa8e84a,
+  microglia: 0xe8823c, astrocyte: 0xb06fe0, oligodendrocyte: 0x3fd8ff,
+  bipolar: 0xf5b84a,
 };
 async function loadPalette() {
   try {
@@ -994,7 +1081,7 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
       stage.querySelector(".meet__pending").textContent = "No mesh built for this type yet";
       continue;
     }
-    stage.innerHTML = "";
+    stage.innerHTML = "";   // drops the spin video and its pause button too
     const viewer = makeViewer(stage, COLOUR[type] ?? 0xcccccc);
     // One example per type. This is a cell type guide, not a cell browser.
     const c = list[0];
@@ -1011,6 +1098,50 @@ document.getElementById("load-gallery").addEventListener("click", async (ev) => 
   }
   btn.textContent = "Gallery loaded";
 });
+</script>
+
+<script>
+// Spinning cards.
+//
+// Seven looping videos cost 0.5 MB, which is LESS than the seven still JPEGs
+// they sit on top of, so this is not an extra download; it replaces one.
+// The 3D gallery stays behind its button because that one really is 10 MB.
+(function () {
+  const vids = [...document.querySelectorAll(".meet__spin")];
+  if (!vids.length) return;
+  const calm = matchMedia("(prefers-reduced-motion: reduce)");
+
+  vids.forEach((v) => {
+    const card = v.closest(".meet__card");
+    const img = card.querySelector(".meet__stage img");
+    const btn = card.querySelector(".meet__pause");
+
+    // Only drop the poster image once the video can really play. A browser
+    // that refuses the codec should be left with the still, not a black hole.
+    v.addEventListener("loadeddata", () => { if (img) img.style.opacity = "0"; });
+    v.addEventListener("error", () => { v.remove(); if (btn) btn.remove(); });
+
+    btn.addEventListener("click", () => {
+      if (v.paused) { v.play(); btn.removeAttribute("data-paused"); btn.setAttribute("aria-label", "Pause this cell"); }
+      else { v.pause(); btn.setAttribute("data-paused", "1"); btn.setAttribute("aria-label", "Play this cell"); }
+    });
+  });
+
+  // Seven videos decoding at once is real work on a phone, so only the ones on
+  // screen actually run. A card the reader has paused stays paused.
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const v = e.target;
+      const btn = v.closest(".meet__card").querySelector(".meet__pause");
+      if (btn && btn.getAttribute("data-paused") === "1") return;
+      if (e.isIntersecting && !calm.matches) v.play().catch(() => {});
+      else v.pause();
+    });
+  }, { rootMargin: "120px" });
+  vids.forEach((v) => io.observe(v));
+
+  if (calm.matches) vids.forEach((v) => { v.pause(); v.removeAttribute("autoplay"); });
+})();
 </script>
 </body>
 </html>
