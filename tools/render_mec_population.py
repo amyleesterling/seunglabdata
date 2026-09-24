@@ -187,6 +187,73 @@ def material_for(cell_type, rgb=None, key=None):
     return mat
 
 
+def ease_io(t):
+    """Smoothstep. Linear camera moves start and stop with a visible jerk."""
+    t = max(0.0, min(1.0, float(t)))
+    return t * t * (3.0 - 2.0 * t)
+
+
+def solo_material(obj, rgb, level):
+    """Per object material whose brightness IS the fade.
+
+    Fading with ALPHA would make EEVEE sort several hundred overlapping
+    transparent meshes, which is slow and wrong looking. Fading the colour
+    towards black on a black background reads the same and needs no
+    transparency at all. A cell at level 0 is hidden outright rather than drawn
+    black, because a black mesh still writes depth and would punch holes in the
+    cells behind it.
+    """
+    name = "fade_" + obj.name
+    mat = bpy.data.materials.get(name)
+    if mat is None:
+        mat = bpy.data.materials.new(name)
+        mat.use_nodes = True
+        b = mat.node_tree.nodes["Principled BSDF"]
+        b.inputs["Roughness"].default_value = 0.62
+        b.inputs["IOR"].default_value = 1.04
+        for k, v in (("Subsurface Weight", 0.30), ("Subsurface Scale", 0.012 * TARGET_SIZE)):
+            if k in b.inputs:
+                b.inputs[k].default_value = v
+        obj.data.materials.clear()
+        obj.data.materials.append(mat)
+    b = mat.node_tree.nodes["Principled BSDF"]
+    lit = tuple(c * level for c in rgb)
+    b.inputs["Base Color"].default_value = (*lit, 1.0)
+    if "Emission Color" in b.inputs:
+        b.inputs["Emission Color"].default_value = (*lit, 1.0)
+    if "Emission Strength" in b.inputs:
+        b.inputs["Emission Strength"].default_value = 0.22 * level
+    return mat
+
+
+def cell_centres(loaded):
+    """World-space centre of every loaded cell, and the population's bounds."""
+    cs = []
+    for _, o in loaded:
+        p = world_pts(o)
+        cs.append((np.percentile(p, 2, axis=0) + np.percentile(p, 98, axis=0)) / 2.0)
+    cs = np.array(cs)
+    return cs, cs.min(0), cs.max(0)
+
+
+def look_at(cam, eye, target):
+    cam.location = tuple(eye)
+    d = Vector(tuple(target)) - Vector(tuple(eye))
+    cam.rotation_euler = d.to_track_quat("-Z", "Y").to_euler()
+
+
+def frames_differ(a_path, b_path):
+    """Two rendered frames are not the same image. A sequence that never moves
+    looks perfect in any single frame, which is how a static turntable shipped."""
+    import hashlib
+    try:
+        with open(a_path, "rb") as fa, open(b_path, "rb") as fb:
+            return hashlib.sha1(fa.read()).hexdigest() != hashlib.sha1(fb.read()).hexdigest()
+    except Exception:
+        return True
+
+
+
 def block_cage(parent, axis_map):
     """Wireframe of the imaged block, from its own bounds.
 
@@ -322,6 +389,12 @@ def main():
     # --cycles-device and --cycles-print-stats and rejects the abbreviation
     # as ambiguous, before the script ever runs.
     ap.add_argument("--depth-bins", type=int, default=14)
+    ap.add_argument("--buildup", type=int, default=0, metavar="FRAMES",
+                    help="cells arrive one after another, then all hold, with a "
+                         "slow push in and a few degrees of drift")
+    ap.add_argument("--flythrough", type=int, default=0, metavar="FRAMES",
+                    help="camera travels through the block lighting cells as it "
+                         "passes, then pulls back to reveal the whole volume")
     ap.add_argument("--random-colours", type=int, default=0, metavar="SEED",
                     help="give every cell its own colour instead of a type "
                          "colour; for a decorative banner ONLY, never for a "
@@ -631,6 +704,153 @@ def main():
         with open(os.path.join(args.out, "scene.json"), "w") as fh:
             json.dump(meta, fh, indent=1)
         print(f"cycle layers done: {len(present)} types + plate")
+        return
+
+    if args.buildup:
+        # Cells arrive one after another and stay, over a slow push in and a
+        # few degrees of drift. The camera MOVES, so unlike the type cycle this
+        # cannot be composited from layers: every frame is its own render.
+        n = len(loaded)
+        order = list(range(n))
+        random.Random(5).shuffle(order)          # scattered, not a wipe
+        rgbs = [TYPE_COLOUR.get(c["cell_type"], (0.8, 0.8, 0.8)) for c, _ in loaded]
+
+        SOLO = max(1, int(args.buildup * 0.26))  # one cell at a time
+        BUILD = max(1, int(args.buildup * 0.46)) # they accumulate
+        HOLD = args.buildup - SOLO - BUILD       # everything, held
+
+        os.makedirs(args.out, exist_ok=True)
+        solo_pick = [order[int(i * n / SOLO)] for i in range(SOLO)]
+        for _, o in loaded:
+            o.hide_render = True
+
+        for i in range(args.buildup):
+            out = os.path.join(args.out, "frame_%04d.png" % i)
+            if os.path.exists(out):
+                continue
+            t = i / max(1, args.buildup - 1)
+            place(args.az - 4.0 + 8.0 * ease_io(t))
+            cam.data.lens = 50.0 / (1.0 + 0.20 * ease_io(t))   # slow push in
+
+            if i < SOLO:
+                want = {solo_pick[i]}
+            elif i < SOLO + BUILD:
+                k = (i - SOLO + 1) / BUILD
+                want = set(order[:max(1, int(round(k * n)))])
+            else:
+                want = set(range(n))
+
+            for j, (_, o) in enumerate(loaded):
+                on = j in want
+                o.hide_render = not on
+                if on:
+                    solo_material(o, rgbs[j], 1.0)
+
+            scene.render.filepath = out
+            bpy.ops.render.render(write_still=True)
+            if i % 30 == 0:
+                print("  frame %d/%d, %d cells up" % (i, args.buildup, len(want)))
+
+        meta["frames"] = args.buildup
+        meta["mode"] = "buildup"
+        with open(os.path.join(args.out, "scene.json"), "w") as fh:
+            json.dump(meta, fh, indent=1)
+        a = os.path.join(args.out, "frame_0000.png")
+        b = os.path.join(args.out, "frame_%04d.png" % (args.buildup // 2))
+        print("frames differ:", frames_differ(a, b))
+        print("wrote %d frames to %s" % (args.buildup, args.out))
+        return
+
+    if args.flythrough:
+        # A path down the long axis of the block. Cells light up as the camera
+        # comes near them and stay lit, so a trail builds up behind it, then the
+        # camera pulls back and the whole population is there.
+        n = len(loaded)
+        centres, clo, chi = cell_centres(loaded)
+        rgbs = [TYPE_COLOUR.get(c["cell_type"], (0.8, 0.8, 0.8)) for c, _ in loaded]
+        span = chi - clo
+        axis = int(np.argmax(span))                     # travel along the longest
+        mid = (chi + clo) / 2.0
+        half = span[axis] / 2.0
+        REACH = float(np.linalg.norm(span) * 0.16)      # how near counts as near
+        FADE = 24.0                                     # frames a cell takes to arrive
+
+        FLY = max(1, int(args.flythrough * 0.68))
+        OUT = args.flythrough - FLY
+        lit_at = [None] * n                             # frame each cell was reached
+
+        def path_point(u):
+            """u in [-1, 1] along the travel axis, with a gentle weave."""
+            p = mid.copy()
+            p[axis] = mid[axis] + u * half * 1.55
+            o1 = (axis + 1) % 3
+            o2 = (axis + 2) % 3
+            p[o1] += math.sin(u * math.pi * 1.1) * span[o1] * 0.22
+            p[o2] += math.cos(u * math.pi * 0.7) * span[o2] * 0.16
+            return p
+
+        wide_dir = None
+        os.makedirs(args.out, exist_ok=True)
+        for _, o in loaded:
+            o.hide_render = True
+
+        for i in range(args.flythrough):
+            out = os.path.join(args.out, "frame_%04d.png" % i)
+            if i < FLY:
+                u = -1.0 + 2.0 * ease_io(i / max(1, FLY - 1))
+                eye = path_point(u)
+                tgt = path_point(min(1.0, u + 0.18))
+                cam.data.lens = 34.0                    # wide, so it feels close
+                if not os.path.exists(out):
+                    look_at(cam, eye, tgt)
+                d = np.linalg.norm(centres - eye, axis=1)
+                for j in range(n):
+                    if lit_at[j] is None and d[j] < REACH:
+                        lit_at[j] = i
+            else:
+                k = ease_io((i - FLY) / max(1, OUT - 1))
+                if wide_dir is None:
+                    e = math.radians(args.elev)
+                    a = math.radians(args.az)
+                    wide_dir = np.array([math.cos(e) * math.cos(a),
+                                         math.cos(e) * math.sin(a), math.sin(e)])
+                far = wide_dir * (TARGET_SIZE * args.dist)
+                eye = path_point(1.0) * (1.0 - k) + far * k
+                tgt = mid * (1.0 - k) + np.zeros(3) * k
+                cam.data.lens = 34.0 + 16.0 * k
+                if not os.path.exists(out):
+                    look_at(cam, eye, tgt)
+                for j in range(n):
+                    if lit_at[j] is None:
+                        lit_at[j] = i               # anything missed arrives now
+
+            if os.path.exists(out):
+                continue
+            for j, (_, o) in enumerate(loaded):
+                if lit_at[j] is None:
+                    o.hide_render = True
+                    continue
+                lvl = min(1.0, (i - lit_at[j]) / FADE)
+                if lvl <= 0.02:
+                    o.hide_render = True
+                else:
+                    o.hide_render = False
+                    solo_material(o, rgbs[j], ease_io(lvl))
+
+            scene.render.filepath = out
+            bpy.ops.render.render(write_still=True)
+            if i % 30 == 0:
+                print("  frame %d/%d, %d cells lit" % (i, args.flythrough,
+                                                       sum(x is not None for x in lit_at)))
+
+        meta["frames"] = args.flythrough
+        meta["mode"] = "flythrough"
+        with open(os.path.join(args.out, "scene.json"), "w") as fh:
+            json.dump(meta, fh, indent=1)
+        a = os.path.join(args.out, "frame_0000.png")
+        b = os.path.join(args.out, "frame_%04d.png" % (args.flythrough // 2))
+        print("frames differ:", frames_differ(a, b))
+        print("wrote %d frames to %s" % (args.flythrough, args.out))
         return
 
     if args.frames <= 0:

@@ -78,6 +78,13 @@
                        border:1px solid var(--line); background:rgba(255,255,255,.05); color:#eaf6ff; cursor:pointer; }
     .meet__nav button:hover{ background:rgba(255,255,255,.1); }
     .meet__which{ font-size:11.5px; color:var(--muted); }
+    .meet__more{ font-size:12.5px; color:#42d5ec; text-decoration:none;
+      border-bottom:1px solid rgba(66,213,236,.35); padding-bottom:1px; }
+    .meet__more:hover{ border-bottom-color:#42d5ec; }
+    @media (max-width:620px){ .meet__more{ font-size:14px; } }
+    /* An anchored section has to clear the sticky top bar, or its heading
+       lands underneath it when you jump there. */
+    #stellate, #islands{ scroll-margin-top:86px; }
     /* The stellate card carries a per layer table. It has to be compact: the
        card grid is auto-fit minmax(260px,1fr), so anything that forces a wider
        column reflows the whole gallery. */
@@ -508,27 +515,10 @@
                 like a star, and the axon leaves for the hippocampus. Layer II of the medial
                 entorhinal cortex is where grid firing was first recorded.
               </p>
-              <p class="meet__count">
-                Layer II is where stellate cells live, and it is the population most closely
-                tied to grid firing. That is the textbook claim, and this block agrees: of the
-                1,370 presumed stellate nuclei, <strong>1,085</strong> are in layer II, which
-                is <strong>79%</strong>, from a clustering that never saw the layer labels.
-              </p>
-              <div class="mec__tablewrap"><table class="mec__table meet__table">
-              <caption class="mec__caption">Presumed stellate nuclei per layer, 1,370 in total</caption>
-              <thead>
-                <tr><th scope="col">Layer</th><th scope="col">Stellate</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
-              </thead>
-              <tbody>
-                <tr><th scope="row">I</th><td>42</td><td><span class="mec__bar" style="--w:3.9%"></span></td></tr>
-                <tr><th scope="row">II</th><td>1,085</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
-                <tr><th scope="row">III</th><td>223</td><td><span class="mec__bar" style="--w:20.6%"></span></td></tr>
-                <tr><th scope="row">IV</th><td>8</td><td><span class="mec__bar" style="--w:0.7%"></span></td></tr>
-                <tr><th scope="row">V</th><td>10</td><td><span class="mec__bar" style="--w:0.9%"></span></td></tr>
-                <tr><th scope="row">VI</th><td>2</td><td><span class="mec__bar" style="--w:0.2%"></span></td></tr>
-              </tbody>
-            </table></div>
-              <div class="meet__nav"></div>
+              <p class="meet__count">1,370 presumed in this block, 79% of them in layer II.</p>
+              <div class="meet__nav">
+                <a class="meet__more" href="#stellate">More on stellate cells &#8594;</a>
+              </div>
             </div>
           </article>
 
@@ -682,8 +672,67 @@
         </div>
       </section>
 
+      <!-- Stellate cells -->
+      <section class="mec" id="stellate" aria-label="Stellate cells">
+        <div class="more__head">
+          <h2>Stellate cells</h2>
+          <p class="more__lede">
+            The cell type this region is known for, and the one most closely tied to grid
+            firing. Here is where they sit and what is known about them in this block.
+          </p>
+        </div>
+
+        <article class="card card--flat">
+          <p class="card__body">
+            Stellate cells are the principal cells of layer II. Dendrites leave the soma in
+            every direction rather than in one dominant trunk with a skirt beneath it, which is
+            what separates them from pyramidal cells, and their axons carry the output of this
+            cortex into the hippocampus. Grid firing was first recorded in layer II of the
+            medial entorhinal cortex, and stellate cells are the population most often held
+            responsible for it.
+          </p>
+          <p class="card__body">
+            <strong>They are where the textbook says they should be.</strong> Of the
+            <strong>1,370</strong> presumed stellate nuclei in this block,
+            <strong>1,085</strong> are in layer II. That is <strong>79%</strong>, and it comes
+            out of a clustering by nucleus size that never saw the layer labels, so the layer
+            and the type agree without either being told about the other.
+          </p>
+          <div class="mec__tablewrap"><table class="mec__table">
+              <caption class="mec__caption">Presumed stellate nuclei per layer, 1,370 in total</caption>
+              <thead>
+                <tr><th scope="col">Layer</th><th scope="col">Stellate</th><th scope="col"><span class="visually-hidden">Share</span></th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">I</th><td>42</td><td><span class="mec__bar" style="--w:3.9%"></span></td></tr>
+                <tr><th scope="row">II</th><td>1,085</td><td><span class="mec__bar" style="--w:100%"></span></td></tr>
+                <tr><th scope="row">III</th><td>223</td><td><span class="mec__bar" style="--w:20.6%"></span></td></tr>
+                <tr><th scope="row">IV</th><td>8</td><td><span class="mec__bar" style="--w:0.7%"></span></td></tr>
+                <tr><th scope="row">V</th><td>10</td><td><span class="mec__bar" style="--w:0.9%"></span></td></tr>
+                <tr><th scope="row">VI</th><td>2</td><td><span class="mec__bar" style="--w:0.2%"></span></td></tr>
+              </tbody>
+            </table></div>
+          <p class="card__body">
+            <strong>They avoid the pyramidal patches.</strong> Layer II is not a uniform sheet:
+            pyramidal cells gather into islands and stellate cells occupy the water between
+            them. Measured here, a stellate cell is <strong>27</strong> standard deviations
+            less likely than chance to sit within 40 <span class="nounit">&micro;m</span> of a
+            pyramidal cell, and that shortfall runs out to <strong>271</strong>
+            <span class="nounit">&micro;m</span>. It is set out in
+            <a href="#islands">Islands and ocean</a> below.
+          </p>
+          <p class="card__body">
+            <strong>What is still uncertain.</strong> "Stellate" here means a nucleus-size
+            cluster, about 84% stellate where it has been checked against labelled cells. It is
+            the cleanest of the automatic type calls on this page, and it is still a prediction
+            rather than a cell anyone has looked at. The example in the gallery above is one we
+            would particularly like proofread.
+          </p>
+        </article>
+      </section>
+
       <!-- Islands and ocean -->
-      <section class="mec" aria-label="Islands and ocean in layer two">
+      <section class="mec" id="islands" aria-label="Islands and ocean in layer two">
         <div class="more__head">
           <h2>Islands and ocean</h2>
           <p class="more__lede">
