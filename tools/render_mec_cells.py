@@ -322,6 +322,14 @@ def solve_framing(probe_path, dist_mult):
     return new_dist, shift_y, shift_x, m
 
 
+def _frame_digest(path):
+    """Cheap content hash of a rendered frame, for proving two differ."""
+    import hashlib
+    with open(path, "rb") as fh:
+        return hashlib.sha1(fh.read()).hexdigest()
+
+
+
 def spin_safety(obj):
     """How much wider the silhouette can get as the object spins about Z.
 
@@ -384,6 +392,11 @@ def render_cell(cell, glb_path, out_path, size, samples, dist_mult=1.85,
         print("    STILL CLIPPED after retries; this card is not usable as is")
 
     if spin and spin_dir:
+        # The glTF importer leaves rotation_mode on QUATERNION, and an object in
+        # quaternion mode IGNORES rotation_euler entirely, without complaint.
+        # Every frame of the first spin came out byte identical because of this:
+        # 180 copies of one picture, shipped as an animation.
+        obj.rotation_mode = "XYZ"
         grow = spin_safety(obj)
         spin_dist = dist_mult * grow * 1.04
         print(f"    spin: worst angle is {grow:.2f}x wider, "
@@ -402,6 +415,19 @@ def render_cell(cell, glb_path, out_path, size, samples, dist_mult=1.85,
             if i % 20 == 0:
                 print(f"      frame {i}/{spin}")
         obj.rotation_euler[2] = 0.0
+
+        # Prove it actually turned. A silently static sequence is the one
+        # failure a glance at a single frame cannot catch, so compare two.
+        try:
+            import struct, zlib  # noqa: F401
+            a = _frame_digest(os.path.join(spin_dir, "frame_0000.png"))
+            b = _frame_digest(os.path.join(spin_dir, f"frame_{spin // 4:04d}.png"))
+            if a == b:
+                print("    ERROR: the spin frames are IDENTICAL, nothing rotated")
+            else:
+                print("    spin verified: frames differ")
+        except Exception as exc:
+            print(f"    could not verify the spin: {type(exc).__name__}: {exc}")
         print(f"    wrote {spin} spin frames to {spin_dir}")
 
     return raw_span, dist_mult, shift_y, shift_x, measured, final

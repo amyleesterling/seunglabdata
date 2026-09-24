@@ -114,7 +114,13 @@
        aspect changes. */
     .mechero{ position:relative; margin:0 0 10px; background:#04060b; }
     .mechero__fig{ margin:0; position:relative; background:#04060b; }
-    .mechero__fig img{ display:block; width:100%; height:auto; border:0; }
+    .mechero__fig img{
+      display:block; width:100%; height:auto; border:0;
+      /* Cap the hero. At 2000px wide the 3:2 banner is 1333px tall, taller
+         than most windows, so it filled the screen and pushed the page's first
+         card into the middle of the render. */
+      max-height:min(78vh, 860px); object-fit:cover; object-position:center 46%;
+    }
     .mechero__fig::after{
       content:""; position:absolute; left:0; right:0; bottom:0; height:64%;
       background:linear-gradient(to bottom, rgba(4,6,11,0) 0%, rgba(4,6,11,.34) 28%,
@@ -187,7 +193,11 @@
       .mec__tablewrap table{ min-width:460px; }
     }
     .mec__tablewrap{ overflow-x:auto; }
-    @media (min-width:721px){ .mechero{ margin-bottom:-29%; } }
+    /* The lift used to be -29%, which is a percentage of the page WIDTH and so
+       grew without limit on a wide screen while the hero's height was capped.
+       A viewport-height overlap is predictable at every size: the content
+       always rises the same visible distance into the faded lower edge. */
+    @media (min-width:721px){ .mechero{ margin-bottom:min(-9vh, -70px); } }
     @media (max-width:720px){
       /* Below this the panel would cover the render entirely, so it drops
          underneath it and the lift is switched off. */
@@ -216,18 +226,10 @@
     @media (prefers-reduced-motion:reduce){
       .mechero__panel{ transition:none; } .mechero__panel:hover{ transform:none; }
     }
-    .mec__figure--wide{
-      margin:22px 0 0;
-      /* Break out of the reading column. Every label is baked into the render
-         and sized against the frame, so a 1600 px render squeezed into a
-         640 px column draws its own captions at about five pixels on a phone. */
-      width:100vw; max-width:100vw;
-      margin-left:calc(50% - 50vw); margin-right:calc(50% - 50vw);
-    }
-    .mec__figure--wide figcaption{
-      max-width:1100px; margin-inline:auto;
-      padding-inline:clamp(16px, 4vw, 28px);
-    }
+    /* Figures sit in the reading column, the same width as the text. They
+       were breaking out to the full viewport, which turned the page into a
+       slide deck with captions attached and pushed the copy out of sight. */
+    .mec__figure--wide{ margin:22px 0 0; width:100%; }
     .mec__figure--wide video{ width:100%; height:auto; aspect-ratio:16/9; }
     .mec__figure--wide + .mec__figure--wide{ margin-top:34px; }
   </style>
@@ -299,8 +301,11 @@
               place. It is one of the first regions to degenerate in Alzheimer's disease.
             </p>
             <p>
-              It sits at the back and underside of the cortex, and you can see exactly where in
-              the <a href="https://whatisabrain.com/mouse" target="_blank" rel="noreferrer">interactive
+              The region sits at the back and underside of the cortex, in the retrohippocampal
+              area, pressed up against the hippocampus it feeds. It is a thin sheet of cells
+              folded over on itself, which is why a block of it a couple of millimetres across
+              contains every cortical layer at once. You can see exactly where it is in the
+              <a href="https://whatisabrain.com/mouse" target="_blank" rel="noreferrer">interactive
               mouse brain</a>.
             </p>
           </div>
@@ -322,17 +327,6 @@
                 <a class="btn btn--ghost" href="/mec/volume/">Open full screen</a>
               </div>
             </figure>
-        <figure class="mec__figure mec__figure--wide">
-          <img src="/assets/mec/population/web/still.jpg"
-               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
-               loading="lazy" />
-          <figcaption class="mec__caption">
-            Cells sit at their true positions and true relative sizes inside the imaged block.
-            The lower part of the box is empty because it lies below layer VI, where no nuclei
-            have been marked: probing it finds tissue, but almost all of it is still in small
-            pieces rather than whole cells.
-          </figcaption>
-        </figure>
 
           <aside class="citizen__panel" aria-label="Dataset at a glance">
             <div class="citizen__panel-head">
@@ -436,6 +430,18 @@
           </p>
         </div>
 
+
+        <figure class="mec__figure mec__figure--wide">
+          <img src="/assets/mec/population/web/still.jpg"
+               alt="Reconstructed neurons filling a wireframe box that represents the imaged block. Mint green stellate cells and pink interneurons sit in a dense band across the upper part, blue pyramidal cells spread below them, and purple glia are scattered through. Two long green axons run out towards the lower right."
+               loading="lazy" />
+          <figcaption class="mec__caption">
+            Cells sit at their true positions and true relative sizes inside the imaged block.
+            The lower part of the box is empty because it lies below layer VI, where no nuclei
+            have been marked: probing it finds tissue, but almost all of it is still in small
+            pieces rather than whole cells.
+          </figcaption>
+        </figure>
 
         <figure class="mec__figure mec__figure--wide">
           <video controls playsinline preload="none"
@@ -916,6 +922,12 @@
             the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at
             Princeton. A team of professional proofreaders has been working through it ahead of
             this release. The reconstruction you see on this page came out of their work.
+          </p>
+          <p class="card__body">
+            This page and the renders on it were made by
+            <strong>Amy Sterling</strong>.
+            Every image here is rendered from the reconstruction itself: no cell was drawn,
+            straightened, or stood in for by a model.
           </p>
         </article>
       </section>
