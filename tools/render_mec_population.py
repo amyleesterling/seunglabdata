@@ -33,6 +33,7 @@ import numpy as np
 from mathutils import Vector
 
 TARGET_SIZE = 10.0
+EMISSION = [0.22]          # set from --emission
 PCTL = (0.5, 99.5)
 
 # Straight from the segmentation info file.
@@ -223,7 +224,7 @@ def solo_material(obj, rgb, level):
     if "Emission Color" in b.inputs:
         b.inputs["Emission Color"].default_value = (*lit, 1.0)
     if "Emission Strength" in b.inputs:
-        b.inputs["Emission Strength"].default_value = 0.22 * level
+        b.inputs["Emission Strength"].default_value = EMISSION[0] * level
     return mat
 
 
@@ -428,6 +429,12 @@ def main():
     ap.add_argument("--buildup", type=int, default=0, metavar="FRAMES",
                     help="cells arrive one after another, then all hold, with a "
                          "slow push in and a few degrees of drift")
+    ap.add_argument("--emission", type=float, default=0.22,
+                    help="self illumination of the fade material. It is a FLOOR "
+                         "the lamps cannot reach below: with several hundred "
+                         "cells lit, halving the headlamp and the world only "
+                         "took the flythrough from mean 172 to 138, because "
+                         "this was carrying the rest")
     ap.add_argument("--headlamp", type=float, default=2600.0,
                     help="energy of a light carried by the camera; it is what "
                          "gives the interior depth, since a world HDRI alone "
@@ -467,6 +474,14 @@ def main():
     ap.add_argument("--flythrough", type=int, default=0, metavar="FRAMES",
                     help="camera travels through the block lighting cells as it "
                          "passes, then pulls back to reveal the whole volume")
+    ap.add_argument("--recolour", default="",
+                    help="override type colours for ONE figure, as "
+                         "type=#hex,type=#hex. The palette is the site's source "
+                         "of truth and normally wins; this exists because two "
+                         "classes that sit beside each other in the palette can "
+                         "be impossible to tell apart in a figure whose whole "
+                         "point is which is which. Any figure using it says so "
+                         "in its caption")
     ap.add_argument("--random-colours", type=int, default=0, metavar="SEED",
                     help="give every cell its own colour instead of a type "
                          "colour; for a decorative banner ONLY, never for a "
@@ -485,6 +500,17 @@ def main():
                     help="render one alpha layer per cell type plus a bare "
                          "plate, for the post pass to fade between")
     args = ap.parse_args(argv_after_ddash())
+    EMISSION[0] = args.emission
+
+    if args.recolour:
+        for pair in args.recolour.split(","):
+            k, _, v = pair.partition("=")
+            k, v = k.strip(), v.strip()
+            if k not in TYPE_COLOUR:
+                sys.exit("--recolour: unknown type %r" % k)
+            TYPE_COLOUR[k] = hex_rgb(v)
+            TYPE_HEX[k] = v
+            print("recoloured %s -> %s" % (k, v))
 
     with open(args.cells) as fh:
         manifest = json.load(fh)
@@ -533,7 +559,8 @@ def main():
         # not in the repo: a fresh clone has the manifest entries without the
         # files. Skipping on a missing file would quietly render a smaller
         # population and still look entirely plausible.
-        want = [c["tiers"].get("close")] if args.tier == "card" else []
+        want = [c["tiers"].get("macro")] if args.ladder else []
+        want += [c["tiers"].get("close")] if args.tier == "card" else []
         want += [c["tiers"].get(args.tier)] + list(c["tiers"].values())
         path = tier = None
         for t in want:
@@ -875,13 +902,19 @@ def main():
             TYPE_ORDER.index(loaded[j][0]["cell_type"])
             if loaded[j][0]["cell_type"] in TYPE_ORDER else 99,
             centres[j][depth_axis]))
-        RAD = TARGET_SIZE * 0.92
+        RAD = TARGET_SIZE * 1.50
         pts = fibonacci_sphere(n) * RAD
         target = np.zeros((n, 3))
         for slot, j in enumerate(order):
             target[j] = pts[slot]
-        # The object's own coordinates are absolute, so the move is a delta.
-        delta = target - (centres - mid)
+        # The move is a delta, and it has to be expressed in the PARENT's
+        # space. Every cell is a child of root, and root carries the scale that
+        # maps micrometres onto the 10 unit scene, about 0.005. Handing
+        # obj.location a delta measured in world units therefore moved each
+        # cell half a percent of the intended distance: the first run looked
+        # like a plain turntable because nothing visibly left the block.
+        rs = float(root.scale[0])
+        delta = (target - (centres - mid)) / rs
 
         OUT_F = max(1, int(args.explode * 0.30))
         HOLD_F = max(1, int(args.explode * 0.26))
@@ -943,7 +976,8 @@ def main():
             # spine is in frame.
             best = -1.0
             for j, (c, _) in enumerate(loaded):
-                t = c["tiers"].get("close") or c["tiers"].get("detail")
+                t = (c["tiers"].get("macro") or c["tiers"].get("detail")
+                     or c["tiers"].get("close"))
                 if not t or c["cell_type"] not in ("stellate", "pyramidal"):
                     continue
                 d = t.get("density_per_um2", 0)
@@ -965,8 +999,36 @@ def main():
         print("ladder target %s, %.2f units from its soma"
               % (np.round(endp, 3), float(np.linalg.norm(endp - soma_pt))))
 
+        # Outward normal at the end point, estimated from its own neighbours.
+        # On a tube, the local mean of nearby surface points sits inside the
+        # surface, so endp minus that mean points out of it.
+        near_pts = wp[np.linalg.norm(wp - endp, axis=1) < TARGET_SIZE * 0.012]
+        if len(near_pts) > 8:
+            nrm = endp - near_pts.mean(axis=0)
+            n = np.linalg.norm(nrm)
+            out_dir = nrm / n if n > 1e-9 else None
+        else:
+            out_dir = None
+        print("ladder approach: %s"
+              % ("local surface normal" if out_dir is not None
+                 else "no normal found, keeping the global direction"))
+
+        lamp_data = bpy.data.lights.new("headlamp", type="POINT")
+        lamp_data.shadow_soft_size = TARGET_SIZE * 0.02
+        lamp = bpy.data.objects.new("headlamp", lamp_data)
+        bpy.context.collection.objects.link(lamp)
+
         D0 = TARGET_SIZE * max(args.dist, 1.25)      # the whole block in frame
-        D1 = TARGET_SIZE * 0.0022                    # about 45 nanometres away
+        ltier = (loaded[pick][0]["tiers"].get("macro")
+                 or loaded[pick][0]["tiers"].get("detail")
+                 or loaded[pick][0]["tiers"].get("close"))
+        dens = float(ltier.get("density_per_um2", 6.0))
+        edge_um = math.sqrt(2.0 / max(1e-6, dens))
+        # 50 edges across the frame, and the 42 mm lens frames 0.86 * distance.
+        end_um = 50.0 * edge_um / 0.86
+        D1 = end_um * float(scale)               # scale maps micrometres to units
+        print("ladder: %.2f faces/um2, edge %.2f um, stopping %.0f um out, "
+              "framing %.0f um" % (dens, edge_um, end_um, end_um * 0.86))
         eye_dir = None
         os.makedirs(args.out, exist_ok=True)
 
@@ -979,11 +1041,18 @@ def main():
                 e, a = math.radians(args.elev), math.radians(args.az)
                 eye_dir = np.array([math.cos(e) * math.cos(a),
                                     math.cos(e) * math.sin(a), math.sin(e)])
+            # Start on the standard view of the block, arrive on the normal.
+            if out_dir is not None:
+                k = ease_io(min(1.0, t / 0.75))
+                d_now = eye_dir * (1.0 - k) + out_dir * k
+                d_now = d_now / max(1e-9, np.linalg.norm(d_now))
+            else:
+                d_now = eye_dir
             # Aim drifts from the middle of the block to the target, finishing
             # the move early so the last third is a pure approach.
             aim = mid * (1.0 - ease_io(min(1.0, t / 0.55))) \
                 + endp * ease_io(min(1.0, t / 0.55))
-            eye = aim + eye_dir * dist
+            eye = aim + d_now * dist
             if not os.path.exists(out):
                 look_at(cam, eye, aim)
             cam.data.lens = 42.0
@@ -992,7 +1061,7 @@ def main():
             # narrows, or the last two decades are spent inside an opaque wall.
             # The band is tied to the camera distance, so it is the same rule
             # at every scale rather than a hand tuned curve.
-            keep = dist * 9.0
+            keep = dist * 3.0
             if os.path.exists(out):
                 continue
             for j, (_, o) in enumerate(loaded):
@@ -1007,6 +1076,11 @@ def main():
                 else:
                     o.hide_render = False
                     solo_material(o, rgbs[j], lvl * 0.7)
+
+            lamp.location = tuple(np.array(eye)
+                                  + np.cross(d_now, [0, 0, 1.0]) * dist * 0.35
+                                  + np.array([0, 0, 1.0]) * dist * 0.25)
+            lamp_data.energy = args.headlamp * (dist / TARGET_SIZE) ** 2 * 3.0
 
             scene.render.filepath = out
             bpy.ops.render.render(write_still=True)
@@ -1312,7 +1386,7 @@ def main():
         f0 = f0 / max(1e-9, np.linalg.norm(f0))
         al0 = rel0 @ f0
         lat0 = np.sqrt(np.maximum(d0 ** 2 - al0 ** 2, 0.0))
-        seed = (d0 < REACH) | ((al0 > 0) & (al0 < LOOK * 1.6) & (lat0 < REACH * 1.6))
+        seed = (d0 < REACH) | ((al0 > 0) & (al0 < LOOK * 0.7) & (lat0 < REACH * 0.9))
         for j in np.flatnonzero(seed):
             lit_at[int(j)] = -int(FADE)
         print("opening primed with %d cells already up" % int(seed.sum()))

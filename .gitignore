@@ -43,3 +43,17 @@ assets/mec/population/t_fly*/
 # Python bytecode. It was committed by accident and changes on every run.
 __pycache__/
 *.pyc
+
+# The macro tier is one cell at 75 faces/um2, 18 MB, for the bottom of the
+# scale ladder. A render input like the close tier, never served.
+assets/mec/cells/*.macro.glb
+assets/mec/population/islands2/
+assets/mec/population/islands2_still/
+assets/mec/population/explode/
+assets/mec/population/ladder/
+assets/mec/population/islands/
+assets/mec/population/islands_still/
+assets/mec/population/tour/
+assets/mec/population/ladder2/
+assets/mec/population/fly2/
+assets/mec/population/ladder3/

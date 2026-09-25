@@ -75,6 +75,13 @@ TIERS = {
     # faces, which will not fit. This sits between.
     "close":  {"density": 6.0,  "max_faces": 140_000},
     "detail": {"density": 10.25, "max_faces": 260_000},
+    # For a shot that ends a few micrometres from the surface, where a spine
+    # head is a whole object rather than a bump. At the close tier's 6 faces
+    # per um2 the edges are about 0.6 um long, so anything framed tighter than
+    # roughly 30 um is visibly faceted. 75 is the established close-up density
+    # (see RENDERING_NEURONS.md); it is affordable for ONE cell and for nobody
+    # else, which is why nothing selects it automatically.
+    "macro":  {"density": 75.0, "max_faces": 1_200_000},
 }
 MIN_COMPONENT_FACES = 25      # strip specks before decimating
 PCTL = (0.5, 99.5)            # percentile bounds; stray vertices wreck framing

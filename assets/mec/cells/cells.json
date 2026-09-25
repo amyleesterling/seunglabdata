@@ -1005,6 +1005,37 @@
      "decimation_bbox_shift_um": 0.2209,
      "surface_area_um2": 13681.6,
      "file": "deep-pyramidal-003.close.glb"
+    },
+    "macro": {
+     "faces": 1026115,
+     "faces_in": 3097873,
+     "specks_dropped": 6724,
+     "density_per_um2": 75.0,
+     "vertices": 512957,
+     "bytes": 18469660,
+     "bbox_min_um": [
+      2141.65,
+      1713.63,
+      198.91
+     ],
+     "bbox_max_um": [
+      2595.24,
+      2239.4,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2175.99,
+      1735.56,
+      213.92
+     ],
+     "p_bbox_max_um": [
+      2569.79,
+      2228.04,
+      434.54
+     ],
+     "decimation_bbox_shift_um": 0.0191,
+     "surface_area_um2": 13681.6,
+     "file": "deep-pyramidal-003.macro.glb"
     }
    }
   },
