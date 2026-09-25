@@ -25,6 +25,7 @@ import math
 import os
 import random
 import sys
+import traceback
 
 import bpy
 import mathutils
@@ -274,6 +275,21 @@ def catmull(pts, t):
                   + (-p[0] + 3 * p[1] - 3 * p[2] + p[3]) * u3)
 
 
+def fibonacci_sphere(n):
+    """n points spread evenly over a sphere, in order from one pole to the other.
+
+    Ordered, which is the point: hand it cells sorted by type and each type
+    lands on its own band of latitude, so the sphere reads as stripes and the
+    width of a stripe is how many cells of that type there are.
+    """
+    i = np.arange(n, dtype=float) + 0.5
+    z = 1.0 - 2.0 * i / n
+    r = np.sqrt(np.maximum(0.0, 1.0 - z * z))
+    phi = np.pi * (1.0 + 5.0 ** 0.5) * i
+    return np.stack([r * np.cos(phi), r * np.sin(phi), z], axis=1)
+
+
+
 def block_cage(parent, axis_map):
     """Wireframe of the imaged block, from its own bounds.
 
@@ -421,6 +437,16 @@ def main():
                          "lens, so they neither occlude nor crowd. 0.55 was a "
                          "1100 um band, half the block, and dimmed the whole "
                          "scene")
+    ap.add_argument("--explode", type=int, default=0, metavar="FRAMES",
+                    help="cells leave their true positions for a sphere where "
+                         "each type holds its own band of latitude, hold, then "
+                         "go home. The census and the geography in one move")
+    ap.add_argument("--ladder", type=int, default=0, metavar="FRAMES",
+                    help="one continuous zoom from the whole block down to a "
+                         "single dendritic spine, no cuts")
+    ap.add_argument("--ladder-cell", default="", dest="ladder_cell",
+                    help="id of the cell the ladder ends on; default is the "
+                         "stellate with the most detailed mesh available")
     ap.add_argument("--soma-tour", type=int, default=0, metavar="FRAMES",
                     dest="soma_tour",
                     help="drift slowly from one soma to the next with a real "
@@ -832,6 +858,174 @@ def main():
         print("wrote %d frames to %s" % (args.buildup, args.out))
         return
 
+    if args.explode:
+        # THE CENSUS AND THE GEOGRAPHY IN ONE MOVE. Cells leave their true
+        # positions for a sphere on which each type holds a band of latitude,
+        # hold there long enough to be counted, then go home. A still of the
+        # sphere says what is in the block; a still of the end says where.
+        n = len(loaded)
+        centres, clo, chi = cell_centres(loaded)
+        mid = (chi + clo) / 2.0
+        rgbs = [TYPE_COLOUR.get(c["cell_type"], (0.8, 0.8, 0.8)) for c, _ in loaded]
+
+        # Sorted by type, then by depth inside the type, so a band is coherent
+        # rather than speckled.
+        depth_axis = int(np.argmin(chi - clo))
+        order = sorted(range(n), key=lambda j: (
+            TYPE_ORDER.index(loaded[j][0]["cell_type"])
+            if loaded[j][0]["cell_type"] in TYPE_ORDER else 99,
+            centres[j][depth_axis]))
+        RAD = TARGET_SIZE * 0.92
+        pts = fibonacci_sphere(n) * RAD
+        target = np.zeros((n, 3))
+        for slot, j in enumerate(order):
+            target[j] = pts[slot]
+        # The object's own coordinates are absolute, so the move is a delta.
+        delta = target - (centres - mid)
+
+        OUT_F = max(1, int(args.explode * 0.30))
+        HOLD_F = max(1, int(args.explode * 0.26))
+        BACK_F = max(1, int(args.explode * 0.30))
+        os.makedirs(args.out, exist_ok=True)
+        home = [np.array(o.location) for _, o in loaded]
+
+        for i in range(args.explode):
+            out = os.path.join(args.out, "frame_%04d.png" % i)
+            if i < OUT_F:
+                k = ease_io(i / max(1, OUT_F - 1))
+            elif i < OUT_F + HOLD_F:
+                k = 1.0
+            elif i < OUT_F + HOLD_F + BACK_F:
+                k = 1.0 - ease_io((i - OUT_F - HOLD_F) / max(1, BACK_F - 1))
+            else:
+                k = 0.0
+            # One slow revolution across the whole shot, so the sphere is read
+            # as a sphere and not as a disc.
+            place(args.az + 360.0 * (i / max(1, args.explode - 1)))
+            if os.path.exists(out):
+                continue
+            for j, (_, o) in enumerate(loaded):
+                o.location = tuple(home[j] + delta[j] * k)
+            bpy.context.view_layer.update()
+            scene.render.filepath = out
+            bpy.ops.render.render(write_still=True)
+            if i % 40 == 0:
+                print("  frame %d/%d  out %.2f" % (i, args.explode, k))
+
+        meta["frames"] = args.explode
+        meta["mode"] = "explode"
+        with open(os.path.join(args.out, "scene.json"), "w") as fh:
+            json.dump(meta, fh, indent=1)
+        a = os.path.join(args.out, "frame_0000.png")
+        b = os.path.join(args.out, "frame_%04d.png" % (args.explode // 2))
+        print("frames differ:", frames_differ(a, b))
+        print("wrote %d frames to %s" % (args.explode, args.out))
+        return
+
+    if args.ladder:
+        # ONE CONTINUOUS ZOOM, block to spine. The range is about four orders
+        # of magnitude, so the approach is EXPONENTIAL: a linear one spends
+        # most of its length crossing empty space and then arrives too fast to
+        # read. Constant relative zoom rate means every decade gets equal time.
+        n = len(loaded)
+        centres, clo, chi = cell_centres(loaded)
+        mid = (chi + clo) / 2.0
+        rgbs = [TYPE_COLOUR.get(c["cell_type"], (0.8, 0.8, 0.8)) for c, _ in loaded]
+
+        pick = None
+        if args.ladder_cell:
+            for j, (c, _) in enumerate(loaded):
+                if c["id"] == args.ladder_cell:
+                    pick = j
+        if pick is None:
+            # Whoever has the most faces per micrometre is who holds up at the
+            # bottom of the ladder. A card tier cell is faceted long before a
+            # spine is in frame.
+            best = -1.0
+            for j, (c, _) in enumerate(loaded):
+                t = c["tiers"].get("close") or c["tiers"].get("detail")
+                if not t or c["cell_type"] not in ("stellate", "pyramidal"):
+                    continue
+                d = t.get("density_per_um2", 0)
+                if d > best:
+                    best, pick = d, j
+        if pick is None:
+            sys.exit("no cell with a close or detail mesh to end the ladder on")
+        print("ladder ends on %s (%s)" % (loaded[pick][0]["id"],
+                                          loaded[pick][0]["cell_type"]))
+
+        # The end point: a piece of surface well away from the soma, which is
+        # where spines are. The soma is smooth and makes a dull last frame.
+        wp = world_pts(loaded[pick][1])
+        soma_pt = np.array(list(root.matrix_world
+                                @ Vector(tuple(axis_map(loaded[pick][0]["nucleus_um"])))))
+        far = np.linalg.norm(wp - soma_pt, axis=1)
+        cand = wp[(far > np.percentile(far, 55)) & (far < np.percentile(far, 80))]
+        endp = cand[len(cand) // 2] if len(cand) else wp[len(wp) // 2]
+        print("ladder target %s, %.2f units from its soma"
+              % (np.round(endp, 3), float(np.linalg.norm(endp - soma_pt))))
+
+        D0 = TARGET_SIZE * max(args.dist, 1.25)      # the whole block in frame
+        D1 = TARGET_SIZE * 0.0022                    # about 45 nanometres away
+        eye_dir = None
+        os.makedirs(args.out, exist_ok=True)
+
+        for i in range(args.ladder):
+            out = os.path.join(args.out, "frame_%04d.png" % i)
+            t = i / max(1, args.ladder - 1)
+            # Equal time per decade.
+            dist = D0 * (D1 / D0) ** ease_io(t)
+            if eye_dir is None:
+                e, a = math.radians(args.elev), math.radians(args.az)
+                eye_dir = np.array([math.cos(e) * math.cos(a),
+                                    math.cos(e) * math.sin(a), math.sin(e)])
+            # Aim drifts from the middle of the block to the target, finishing
+            # the move early so the last third is a pure approach.
+            aim = mid * (1.0 - ease_io(min(1.0, t / 0.55))) \
+                + endp * ease_io(min(1.0, t / 0.55))
+            eye = aim + eye_dir * dist
+            if not os.path.exists(out):
+                look_at(cam, eye, aim)
+            cam.data.lens = 42.0
+
+            # Everything that is not the target cell fades out as the frame
+            # narrows, or the last two decades are spent inside an opaque wall.
+            # The band is tied to the camera distance, so it is the same rule
+            # at every scale rather than a hand tuned curve.
+            keep = dist * 9.0
+            if os.path.exists(out):
+                continue
+            for j, (_, o) in enumerate(loaded):
+                if j == pick:
+                    o.hide_render = False
+                    solo_material(o, rgbs[j], 1.0)
+                    continue
+                d = float(np.linalg.norm(centres[j] - aim))
+                lvl = ease_io(1.0 - (d / max(1e-6, keep)))
+                if lvl <= 0.02:
+                    o.hide_render = True
+                else:
+                    o.hide_render = False
+                    solo_material(o, rgbs[j], lvl * 0.7)
+
+            scene.render.filepath = out
+            bpy.ops.render.render(write_still=True)
+            if i % 40 == 0:
+                print("  frame %d/%d  dist %.4f units (%.1f um)  visible %d"
+                      % (i, args.ladder, dist, dist / scale,
+                         sum(1 for _, o in loaded if not o.hide_render)))
+
+        meta["frames"] = args.ladder
+        meta["mode"] = "ladder"
+        meta["ladder_cell"] = loaded[pick][0]["id"]
+        with open(os.path.join(args.out, "scene.json"), "w") as fh:
+            json.dump(meta, fh, indent=1)
+        a = os.path.join(args.out, "frame_0000.png")
+        b = os.path.join(args.out, "frame_%04d.png" % (args.ladder // 2))
+        print("frames differ:", frames_differ(a, b))
+        print("wrote %d frames to %s" % (args.ladder, args.out))
+        return
+
     if args.soma_tour:
         # A lens, not a diagram. The camera drifts from one cell body to the
         # next and the focus racks with it, so exactly one cell is sharp at a
@@ -1095,6 +1289,19 @@ def main():
         OUT = args.flythrough - FLY
         lit_at = [None] * n                             # frame each cell was reached
 
+        def path_point(u):
+            """u in [-1, 1] along the travel axis, with a gentle weave."""
+            p = mid.copy()
+            # 1.05, not 1.55. Overshooting the block by half its length again
+            # put the camera outside the tissue looking away from it for a
+            # third of the shot: 634 cells visible, none culled, frame black.
+            p[axis] = mid[axis] + u * half * 1.05
+            o1 = (axis + 1) % 3
+            o2 = (axis + 2) % 3
+            p[o1] += math.sin(u * math.pi * 1.1) * span[o1] * 0.22
+            p[o2] += math.cos(u * math.pi * 0.7) * span[o2] * 0.16
+            return p
+
         # PRIME THE OPENING. Everything the camera can already see at u = -1 is
         # dated FADE frames in the past, so it is fully up on frame 0.
         eye0 = path_point(-1.0)
@@ -1110,18 +1317,6 @@ def main():
             lit_at[int(j)] = -int(FADE)
         print("opening primed with %d cells already up" % int(seed.sum()))
 
-        def path_point(u):
-            """u in [-1, 1] along the travel axis, with a gentle weave."""
-            p = mid.copy()
-            # 1.05, not 1.55. Overshooting the block by half its length again
-            # put the camera outside the tissue looking away from it for a
-            # third of the shot: 634 cells visible, none culled, frame black.
-            p[axis] = mid[axis] + u * half * 1.05
-            o1 = (axis + 1) % 3
-            o2 = (axis + 2) % 3
-            p[o1] += math.sin(u * math.pi * 1.1) * span[o1] * 0.22
-            p[o2] += math.cos(u * math.pi * 0.7) * span[o2] * 0.16
-            return p
 
         wide_dir = None
         os.makedirs(args.out, exist_ok=True)
@@ -1244,4 +1439,19 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # BLENDER EXITS 0 EVEN WHEN THE SCRIPT RAISES. A chained render script then
+    # reads success and moves on: the flythrough leg once raised on its first
+    # line, rendered nothing, and the chain log said "flythrough done". So
+    # convert a traceback into a non-zero exit, and print a sentinel on success
+    # that a caller can grep for instead of trusting the exit code alone.
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception:
+        traceback.print_exc()
+        sys.stdout.flush()
+        sys.stderr.flush()
+        sys.exit(1)
+    print("RENDER_OK")
+    sys.stdout.flush()

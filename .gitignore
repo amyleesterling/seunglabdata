@@ -39,3 +39,7 @@ assets/mec/population/tour/
 assets/mec/population/fly2/
 assets/mec/population/slowturn/
 assets/mec/population/t_fly*/
+
+# Python bytecode. It was committed by accident and changes on every run.
+__pycache__/
+*.pyc

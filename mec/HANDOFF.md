@@ -77,10 +77,14 @@ CPU down to 62%, 2.0 cells/min; 8 builders gave 6.6 cells/min). Low CPU with
 many processes means paging. Each builder writes its **own** `cells.json`, so
 merge them in one process or the last one wins.
 
-Known unfixed bug: `fetch_mesh` assumes every fragment is `path:offset:length`.
-A few cells (e.g. `720575947522615248`) have fragments in unsharded
-`<segid>:0:<chunk-range>` form, which raises `ValueError` and skips the cell.
-Four candidate URL forms were probed against `MESH_BASE`; all 404'd.
+**Fragments come in two forms, in two directories.** Most are a byte range in a
+shard (`~4/128452-0.shard:27143548:1289`) under `initial/`. A few are whole
+unsharded files named `<segid>:0:<chunk range>`, and those live under
+**`graphene_meshes/dynamic/`**. Parsing every fragment as `path:offset:length`
+raised `ValueError` on the chunk range and skipped the WHOLE cell: 4 of 168
+fragments were enough to lose `720575947522615248` entirely. Fixed in
+`fragment_request()`. If a cell fails to build for no visible reason, check this
+first.
 
 ## 4. Renderer modes
 
@@ -95,6 +99,8 @@ All via `blender --background --factory-startup --python tools/render_mec_popula
 | `--buildup N` | cells arrive one by one, then hold |
 | `--flythrough N` | camera weaves through the block lighting cells as it passes |
 | `--soma-tour N` | slow drift soma to soma with the focus racking |
+| `--explode N` | cells leave their positions for a sphere banded by type, then go home |
+| `--ladder N` | one continuous zoom, whole block down to a single spine |
 
 Common: `--group-glia` (glia subtypes are unreliable, draw them as one class),
 `--no-cage`, `--fill`, `--aspect`, `--random-colours SEED` (decorative only,
@@ -187,9 +193,43 @@ stops a millimetre apart have to be crossed inside one leg, which is a whip pan.
 - Fade with **brightness, not alpha**. Alpha makes EEVEE sort hundreds of
   overlapping transparent meshes. Hide at level 0, because a black mesh still
   writes depth and punches holes in what is behind it.
+- **Blender exits 0 even when the script raises.** A chained render script then
+  reads success and moves on: the flythrough leg once raised on its first line,
+  rendered nothing, and the chain log said "flythrough done". `main()` is wrapped
+  to exit non-zero, and it prints `RENDER_OK` on success. Grep for the sentinel,
+  do not trust the exit code.
+- **Python does not hoist a nested def.** The line above is how that was found:
+  the priming block called `path_point()` four lines before it was defined.
 - Python **block-buffers stdout when redirected**, so progress prints sit in the
   buffer and the log looks dead. `python -u`, or `PYTHONUNBUFFERED=1`. Blender's
   embedded Python resists both; trust the frame count on disk instead.
+
+## 6b. Contacts, and why they are not synapses
+
+`tools/mec_contacts.py` and `tools/mec_contacts_hires.py` find where one cell's
+surface comes within a threshold of every other built cell's. They exist because
+the CAVE synapse table is down, and they are a fallback, not a replacement.
+
+Run on `720575947522615248`, with a control that displaces each candidate 12 um
+(same shape, same neighbourhood, wrong registration):
+
+- Coarse pass, decimated meshes, 1.5 um: **151 cells touch it, median enrichment
+  over the control 1.20.** A randomly displaced copy touches about as often.
+- Full resolution pass, 0.15 um, top 40: **median enrichment 0.86**, and **5 of
+  the 7 that looked strong at coarse resolution collapsed** (x12 to x0.7).
+- Two survive: `dense-III-0186` (inhibitory, 111 contact points, **zero** in the
+  control) and `more-III-035` (pyramidal, 28 points, zero in the control).
+
+So proximity at mesh resolution is not a synapse detector and must never be
+captioned as one. A synaptic cleft is about 20 nm; these meshes have roughly a
+micrometre between vertices, and membranes in neuropil touch constantly. What it
+can do, **given a partner list from someone else**, is say where along an axon
+each contact sits, which is reliable because the partnership is already known.
+
+Amy's neuroglancer state holding the real partners is at
+`global.brain-wire-test.org/nglstate/api/v1/5175516449472512`. It cannot be read
+with a CAVE token: `Bearer` gives 401, `token` gives 400, and both query
+parameter forms redirect to `accounts.google.com`. It needs her Google session.
 
 ## 7. Page conventions
 

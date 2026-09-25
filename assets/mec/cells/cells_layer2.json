@@ -1,0 +1,6142 @@
+{
+ "block": {
+  "extent_um": [
+   2031.488,
+   1337.856,
+   446.94
+  ],
+  "min_um": [
+   1227.648,
+   1043.072,
+   0.36
+  ],
+  "max_um": [
+   3259.136,
+   2380.928,
+   447.3
+  ],
+  "resolution_nm": [
+   16,
+   16,
+   45
+  ]
+ },
+ "built_cells": 66,
+ "cells": [
+  {
+   "id": "dense-II-0065",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2498.3,
+    2081.0,
+    370.4
+   ],
+   "root_id": "720575947561052846",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 224,
+   "probe_hits": 20,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 10487584,
+     "specks_dropped": 26124,
+     "density_per_um2": 1.29,
+     "vertices": 31908,
+     "bytes": 1103684,
+     "bbox_min_um": [
+      2120.93,
+      1550.47,
+      119.93
+     ],
+     "bbox_max_um": [
+      2668.04,
+      2304.51,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2161.85,
+      1570.25,
+      168.53
+     ],
+     "p_bbox_max_um": [
+      2635.43,
+      2297.09,
+      435.82
+     ],
+     "decimation_bbox_shift_um": 1.1898,
+     "surface_area_um2": 46512.0,
+     "file": "dense-II-0065.card.glb"
+    },
+    "close": {
+     "faces": 139999,
+     "faces_in": 10487584,
+     "specks_dropped": 26124,
+     "density_per_um2": 3.01,
+     "vertices": 76239,
+     "bytes": 2595640,
+     "bbox_min_um": [
+      2120.93,
+      1550.29,
+      119.81
+     ],
+     "bbox_max_um": [
+      2668.55,
+      2305.64,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2163.26,
+      1571.52,
+      172.98
+     ],
+     "p_bbox_max_um": [
+      2633.58,
+      2296.91,
+      435.71
+     ],
+     "decimation_bbox_shift_um": 0.2012,
+     "surface_area_um2": 46512.0,
+     "file": "dense-II-0065.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0067",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2084.4,
+    2019.3,
+    160.4
+   ],
+   "root_id": "720575947505479354",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 173,
+   "probe_hits": 25,
+   "tiers": {
+    "card": {
+     "faces": 41920,
+     "faces_in": 6812863,
+     "specks_dropped": 11282,
+     "density_per_um2": 1.4,
+     "vertices": 22575,
+     "bytes": 774728,
+     "bbox_min_um": [
+      1891.23,
+      1788.61,
+      119.82
+     ],
+     "bbox_max_um": [
+      2277.86,
+      2285.28,
+      339.04
+     ],
+     "p_bbox_min_um": [
+      1918.81,
+      1813.44,
+      121.62
+     ],
+     "p_bbox_max_um": [
+      2252.7,
+      2277.98,
+      307.85
+     ],
+     "decimation_bbox_shift_um": 0.5214,
+     "surface_area_um2": 29944.6,
+     "file": "dense-II-0067.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0068",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2437.9,
+    2081.3,
+    379.3
+   ],
+   "root_id": "720575947556873134",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 259,
+   "probe_hits": 22,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 10420554,
+     "specks_dropped": 19896,
+     "density_per_um2": 1.29,
+     "vertices": 31956,
+     "bytes": 1104248,
+     "bbox_min_um": [
+      1878.93,
+      1392.78,
+      138.48
+     ],
+     "bbox_max_um": [
+      2696.01,
+      2328.08,
+      438.56
+     ],
+     "p_bbox_min_um": [
+      1930.82,
+      1411.55,
+      161.79
+     ],
+     "p_bbox_max_um": [
+      2669.6,
+      2319.99,
+      436.23
+     ],
+     "decimation_bbox_shift_um": 0.9447,
+     "surface_area_um2": 46679.5,
+     "file": "dense-II-0068.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0069",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2401.0,
+    2062.1,
+    379.3
+   ],
+   "root_id": "720575947457718241",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 252,
+   "probe_hits": 25,
+   "tiers": {
+    "card": {
+     "faces": 54112,
+     "faces_in": 8823508,
+     "specks_dropped": 16426,
+     "density_per_um2": 1.4,
+     "vertices": 29578,
+     "bytes": 1005068,
+     "bbox_min_um": [
+      2206.26,
+      1857.6,
+      194.18
+     ],
+     "bbox_max_um": [
+      2569.82,
+      2311.08,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2245.43,
+      1898.11,
+      210.43
+     ],
+     "p_bbox_max_um": [
+      2557.17,
+      2303.0,
+      437.39
+     ],
+     "decimation_bbox_shift_um": 1.0962,
+     "surface_area_um2": 38652.7,
+     "file": "dense-II-0069.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0070",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2011.9,
+    2093.6,
+    201.1
+   ],
+   "root_id": "720575947530534050",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 204,
+   "probe_hits": 19,
+   "tiers": {
+    "card": {
+     "faces": 53084,
+     "faces_in": 8609619,
+     "specks_dropped": 10828,
+     "density_per_um2": 1.4,
+     "vertices": 29416,
+     "bytes": 990788,
+     "bbox_min_um": [
+      1699.93,
+      1506.25,
+      119.86
+     ],
+     "bbox_max_um": [
+      2557.09,
+      2294.4,
+      410.58
+     ],
+     "p_bbox_min_um": [
+      1741.67,
+      1537.0,
+      122.7
+     ],
+     "p_bbox_max_um": [
+      2447.22,
+      2287.48,
+      388.98
+     ],
+     "decimation_bbox_shift_um": 4.2998,
+     "surface_area_um2": 37918.8,
+     "file": "dense-II-0070.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0071",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2937.6,
+    2178.8,
+    198.8
+   ],
+   "root_id": "720575947451065776",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 62,
+   "probe_hits": 18,
+   "tiers": {
+    "card": {
+     "faces": 20894,
+     "faces_in": 3344130,
+     "specks_dropped": 6800,
+     "density_per_um2": 1.4,
+     "vertices": 11410,
+     "bytes": 388432,
+     "bbox_min_um": [
+      2720.14,
+      2001.45,
+      119.86
+     ],
+     "bbox_max_um": [
+      2992.47,
+      2244.07,
+      249.47
+     ],
+     "p_bbox_min_um": [
+      2747.46,
+      2014.7,
+      127.52
+     ],
+     "p_bbox_max_um": [
+      2982.43,
+      2232.75,
+      246.3
+     ],
+     "decimation_bbox_shift_um": 0.5412,
+     "surface_area_um2": 14924.7,
+     "file": "dense-II-0071.card.glb"
+    },
+    "close": {
+     "faces": 89546,
+     "faces_in": 3344130,
+     "specks_dropped": 6800,
+     "density_per_um2": 6.0,
+     "vertices": 47695,
+     "bytes": 1647680,
+     "bbox_min_um": [
+      2720.11,
+      2001.02,
+      119.77
+     ],
+     "bbox_max_um": [
+      2992.91,
+      2244.18,
+      249.65
+     ],
+     "p_bbox_min_um": [
+      2746.33,
+      2013.25,
+      126.61
+     ],
+     "p_bbox_max_um": [
+      2982.51,
+      2232.39,
+      246.3
+     ],
+     "decimation_bbox_shift_um": 0.2304,
+     "surface_area_um2": 14924.7,
+     "file": "dense-II-0071.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0072",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2602.8,
+    2149.9,
+    389.1
+   ],
+   "root_id": "720575947459573667",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 197,
+   "probe_hits": 23,
+   "tiers": {
+    "card": {
+     "faces": 57240,
+     "faces_in": 9315101,
+     "specks_dropped": 16024,
+     "density_per_um2": 1.4,
+     "vertices": 30740,
+     "bytes": 1056548,
+     "bbox_min_um": [
+      2373.02,
+      1632.82,
+      246.62
+     ],
+     "bbox_max_um": [
+      2751.32,
+      2328.69,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2395.42,
+      1651.16,
+      253.31
+     ],
+     "p_bbox_max_um": [
+      2727.17,
+      2322.02,
+      437.24
+     ],
+     "decimation_bbox_shift_um": 0.6977,
+     "surface_area_um2": 40887.5,
+     "file": "dense-II-0072.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 9315101,
+     "specks_dropped": 16024,
+     "density_per_um2": 3.42,
+     "vertices": 77612,
+     "bytes": 2612132,
+     "bbox_min_um": [
+      2372.94,
+      1632.82,
+      246.62
+     ],
+     "bbox_max_um": [
+      2751.55,
+      2329.32,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2397.5,
+      1652.96,
+      253.62
+     ],
+     "p_bbox_max_um": [
+      2728.47,
+      2322.53,
+      437.04
+     ],
+     "decimation_bbox_shift_um": 0.134,
+     "surface_area_um2": 40887.5,
+     "file": "dense-II-0072.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0073",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2927.9,
+    2178.8,
+    261.7
+   ],
+   "root_id": "720575947538569122",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 205,
+   "probe_hits": 11,
+   "tiers": {
+    "card": {
+     "faces": 50519,
+     "faces_in": 8386274,
+     "specks_dropped": 9450,
+     "density_per_um2": 1.4,
+     "vertices": 28415,
+     "bytes": 947992,
+     "bbox_min_um": [
+      2604.01,
+      1971.22,
+      246.62
+     ],
+     "bbox_max_um": [
+      3098.21,
+      2380.9,
+      432.96
+     ],
+     "p_bbox_min_um": [
+      2649.45,
+      2042.8,
+      247.16
+     ],
+     "p_bbox_max_um": [
+      3079.51,
+      2363.13,
+      375.49
+     ],
+     "decimation_bbox_shift_um": 3.3457,
+     "surface_area_um2": 36085.1,
+     "file": "dense-II-0073.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 8386274,
+     "specks_dropped": 9450,
+     "density_per_um2": 3.88,
+     "vertices": 78649,
+     "bytes": 2624576,
+     "bbox_min_um": [
+      2603.45,
+      1970.86,
+      246.62
+     ],
+     "bbox_max_um": [
+      3098.46,
+      2380.9,
+      436.19
+     ],
+     "p_bbox_min_um": [
+      2647.51,
+      2042.59,
+      247.39
+     ],
+     "p_bbox_max_um": [
+      3081.36,
+      2365.27,
+      379.2
+     ],
+     "decimation_bbox_shift_um": 0.2038,
+     "surface_area_um2": 36085.1,
+     "file": "dense-II-0073.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0075",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2037.2,
+    2036.5,
+    402.4
+   ],
+   "root_id": "720575947522169984",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 144,
+   "probe_hits": 12,
+   "tiers": {
+    "card": {
+     "faces": 31956,
+     "faces_in": 5261376,
+     "specks_dropped": 6760,
+     "density_per_um2": 1.4,
+     "vertices": 17912,
+     "bytes": 599200,
+     "bbox_min_um": [
+      1905.05,
+      1864.83,
+      119.9
+     ],
+     "bbox_max_um": [
+      2312.3,
+      2281.44,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1917.82,
+      1897.64,
+      143.07
+     ],
+     "p_bbox_max_um": [
+      2264.44,
+      2276.18,
+      435.54
+     ],
+     "decimation_bbox_shift_um": 3.364,
+     "surface_area_um2": 22826.0,
+     "file": "dense-II-0075.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0076",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2088.4,
+    2072.1,
+    142.2
+   ],
+   "root_id": "720575947463554117",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 151,
+   "probe_hits": 19,
+   "tiers": {
+    "card": {
+     "faces": 44785,
+     "faces_in": 7182368,
+     "specks_dropped": 11646,
+     "density_per_um2": 1.4,
+     "vertices": 24106,
+     "bytes": 827480,
+     "bbox_min_um": [
+      1915.99,
+      1941.58,
+      119.82
+     ],
+     "bbox_max_um": [
+      2335.06,
+      2289.44,
+      373.03
+     ],
+     "p_bbox_min_um": [
+      1937.25,
+      1954.96,
+      120.49
+     ],
+     "p_bbox_max_um": [
+      2292.8,
+      2281.58,
+      346.84
+     ],
+     "decimation_bbox_shift_um": 1.7577,
+     "surface_area_um2": 31990.3,
+     "file": "dense-II-0076.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0078",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1995.5,
+    2089.7,
+    218.7
+   ],
+   "root_id": "720575947567861272",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 347,
+   "probe_hits": 17,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 13722774,
+     "specks_dropped": 9564,
+     "density_per_um2": 1.01,
+     "vertices": 34397,
+     "bytes": 1133528,
+     "bbox_min_um": [
+      1768.37,
+      1580.2,
+      119.82
+     ],
+     "bbox_max_um": [
+      2503.64,
+      2293.71,
+      436.06
+     ],
+     "p_bbox_min_um": [
+      1816.32,
+      1634.86,
+      129.01
+     ],
+     "p_bbox_max_um": [
+      2433.34,
+      2288.31,
+      417.51
+     ],
+     "decimation_bbox_shift_um": 5.5223,
+     "surface_area_um2": 59332.9,
+     "file": "dense-II-0078.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0082",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1966.8,
+    2001.4,
+    394.3
+   ],
+   "root_id": "720575947548144169",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 211,
+   "probe_hits": 13,
+   "tiers": {
+    "card": {
+     "faces": 37312,
+     "faces_in": 6238384,
+     "specks_dropped": 7126,
+     "density_per_um2": 1.4,
+     "vertices": 22447,
+     "bytes": 717900,
+     "bbox_min_um": [
+      1854.24,
+      1771.41,
+      119.81
+     ],
+     "bbox_max_um": [
+      2532.22,
+      2168.15,
+      438.62
+     ],
+     "p_bbox_min_um": [
+      1869.54,
+      1811.37,
+      127.94
+     ],
+     "p_bbox_max_um": [
+      2471.06,
+      2157.08,
+      435.5
+     ],
+     "decimation_bbox_shift_um": 2.028,
+     "surface_area_um2": 26651.6,
+     "file": "dense-II-0082.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0084",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2473.7,
+    2134.8,
+    272.9
+   ],
+   "root_id": "720575947525664314",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 313,
+   "probe_hits": 19,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 13318394,
+     "specks_dropped": 11834,
+     "density_per_um2": 1.05,
+     "vertices": 33942,
+     "bytes": 1128080,
+     "bbox_min_um": [
+      1845.55,
+      1548.02,
+      119.84
+     ],
+     "bbox_max_um": [
+      2956.74,
+      2326.36,
+      436.56
+     ],
+     "p_bbox_min_um": [
+      1940.02,
+      1617.09,
+      125.81
+     ],
+     "p_bbox_max_um": [
+      2874.47,
+      2316.01,
+      391.48
+     ],
+     "decimation_bbox_shift_um": 2.0714,
+     "surface_area_um2": 57030.9,
+     "file": "dense-II-0084.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0086",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2452.2,
+    2049.5,
+    228.3
+   ],
+   "root_id": "720575947478300036",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 358,
+   "probe_hits": 24,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 14187008,
+     "specks_dropped": 20626,
+     "density_per_um2": 0.96,
+     "vertices": 32160,
+     "bytes": 1106680,
+     "bbox_min_um": [
+      1767.77,
+      1374.57,
+      119.93
+     ],
+     "bbox_max_um": [
+      2753.12,
+      2333.1,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1803.22,
+      1385.32,
+      131.37
+     ],
+     "p_bbox_max_um": [
+      2706.32,
+      2324.91,
+      434.96
+     ],
+     "decimation_bbox_shift_um": 0.8422,
+     "surface_area_um2": 62472.8,
+     "file": "dense-II-0086.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 14187008,
+     "specks_dropped": 20626,
+     "density_per_um2": 2.24,
+     "vertices": 77680,
+     "bytes": 2612924,
+     "bbox_min_um": [
+      1767.77,
+      1374.57,
+      119.83
+     ],
+     "bbox_max_um": [
+      2753.3,
+      2333.77,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1812.7,
+      1388.25,
+      131.74
+     ],
+     "p_bbox_max_um": [
+      2706.45,
+      2324.53,
+      434.23
+     ],
+     "decimation_bbox_shift_um": 0.3492,
+     "surface_area_um2": 62472.8,
+     "file": "dense-II-0086.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0089",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2320.1,
+    2092.8,
+    151.3
+   ],
+   "root_id": "720575947567686680",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 261,
+   "probe_hits": 24,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 10317501,
+     "specks_dropped": 13658,
+     "density_per_um2": 1.32,
+     "vertices": 32436,
+     "bytes": 1110004,
+     "bbox_min_um": [
+      2086.21,
+      1640.83,
+      119.81
+     ],
+     "bbox_max_um": [
+      2645.83,
+      2322.01,
+      402.34
+     ],
+     "p_bbox_min_um": [
+      2114.11,
+      1668.45,
+      121.37
+     ],
+     "p_bbox_max_um": [
+      2604.12,
+      2298.57,
+      357.64
+     ],
+     "decimation_bbox_shift_um": 0.7059,
+     "surface_area_um2": 45584.8,
+     "file": "dense-II-0089.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0090",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2377.0,
+    2092.8,
+    130.4
+   ],
+   "root_id": "720575947482768321",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 330,
+   "probe_hits": 17,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 10999824,
+     "specks_dropped": 6288,
+     "density_per_um2": 1.28,
+     "vertices": 35983,
+     "bytes": 1152552,
+     "bbox_min_um": [
+      1842.69,
+      1551.5,
+      119.85
+     ],
+     "bbox_max_um": [
+      2974.66,
+      2323.86,
+      435.91
+     ],
+     "p_bbox_min_um": [
+      1977.65,
+      1563.2,
+      120.85
+     ],
+     "p_bbox_max_um": [
+      2892.82,
+      2319.18,
+      407.69
+     ],
+     "decimation_bbox_shift_um": 10.3294,
+     "surface_area_um2": 46718.1,
+     "file": "dense-II-0090.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0091",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2412.0,
+    2134.8,
+    159.4
+   ],
+   "root_id": "720575947531679424",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 350,
+   "probe_hits": 17,
+   "tiers": {
+    "card": {
+     "faces": 53266,
+     "faces_in": 8935078,
+     "specks_dropped": 5452,
+     "density_per_um2": 1.4,
+     "vertices": 29894,
+     "bytes": 998708,
+     "bbox_min_um": [
+      2303.0,
+      1928.05,
+      119.77
+     ],
+     "bbox_max_um": [
+      2712.58,
+      2312.13,
+      279.47
+     ],
+     "p_bbox_min_um": [
+      2319.87,
+      1965.37,
+      120.71
+     ],
+     "p_bbox_max_um": [
+      2638.9,
+      2305.13,
+      271.51
+     ],
+     "decimation_bbox_shift_um": 1.4342,
+     "surface_area_um2": 38047.3,
+     "file": "dense-II-0091.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0092",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2019.6,
+    2143.5,
+    355.1
+   ],
+   "root_id": "720575947542937842",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 202,
+   "probe_hits": 21,
+   "tiers": {
+    "card": {
+     "faces": 54630,
+     "faces_in": 8952600,
+     "specks_dropped": 9350,
+     "density_per_um2": 1.4,
+     "vertices": 30264,
+     "bytes": 1019516,
+     "bbox_min_um": [
+      1752.47,
+      1749.93,
+      119.85
+     ],
+     "bbox_max_um": [
+      2138.04,
+      2313.9,
+      438.33
+     ],
+     "p_bbox_min_um": [
+      1765.45,
+      1807.72,
+      124.88
+     ],
+     "p_bbox_max_um": [
+      2125.77,
+      2304.63,
+      431.55
+     ],
+     "decimation_bbox_shift_um": 0.9122,
+     "surface_area_um2": 39021.6,
+     "file": "dense-II-0092.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0095",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2577.4,
+    2202.4,
+    237.8
+   ],
+   "root_id": "720575947525162042",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 101,
+   "probe_hits": 17,
+   "tiers": {
+    "card": {
+     "faces": 29444,
+     "faces_in": 4840642,
+     "specks_dropped": 5302,
+     "density_per_um2": 1.4,
+     "vertices": 16927,
+     "bytes": 557240,
+     "bbox_min_um": [
+      1922.6,
+      1712.74,
+      119.81
+     ],
+     "bbox_max_um": [
+      2748.6,
+      2321.81,
+      435.26
+     ],
+     "p_bbox_min_um": [
+      2065.23,
+      1749.9,
+      123.43
+     ],
+     "p_bbox_max_um": [
+      2724.28,
+      2302.61,
+      425.81
+     ],
+     "decimation_bbox_shift_um": 1.0479,
+     "surface_area_um2": 21034.3,
+     "file": "dense-II-0095.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0097",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2209.8,
+    2090.0,
+    61.0
+   ],
+   "root_id": "720575947542518002",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 127,
+   "probe_hits": 27,
+   "tiers": {
+    "card": {
+     "faces": 46814,
+     "faces_in": 7517816,
+     "specks_dropped": 17208,
+     "density_per_um2": 1.4,
+     "vertices": 24941,
+     "bytes": 861848,
+     "bbox_min_um": [
+      1983.46,
+      1696.97,
+      3.76
+     ],
+     "bbox_max_um": [
+      2565.22,
+      2279.68,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      2000.97,
+      1720.26,
+      5.4
+     ],
+     "p_bbox_max_um": [
+      2538.54,
+      2273.5,
+      118.29
+     ],
+     "decimation_bbox_shift_um": 1.0764,
+     "surface_area_um2": 33439.8,
+     "file": "dense-II-0097.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0098",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2988.5,
+    2224.1,
+    227.6
+   ],
+   "root_id": "720575947495741979",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 47,
+   "probe_hits": 16,
+   "tiers": {
+    "card": {
+     "faces": 15748,
+     "faces_in": 2547916,
+     "specks_dropped": 2510,
+     "density_per_um2": 1.4,
+     "vertices": 8545,
+     "bytes": 292300,
+     "bbox_min_um": [
+      2841.46,
+      2096.71,
+      203.86
+     ],
+     "bbox_max_um": [
+      3092.76,
+      2301.55,
+      246.47
+     ],
+     "p_bbox_min_um": [
+      2850.59,
+      2103.99,
+      208.11
+     ],
+     "p_bbox_max_um": [
+      3086.1,
+      2296.38,
+      246.23
+     ],
+     "decimation_bbox_shift_um": 1.6983,
+     "surface_area_um2": 11250.0,
+     "file": "dense-II-0098.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0099",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2122.2,
+    2124.8,
+    32.0
+   ],
+   "root_id": "720575947507735913",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 130,
+   "probe_hits": 26,
+   "tiers": {
+    "card": {
+     "faces": 41381,
+     "faces_in": 6720908,
+     "specks_dropped": 12496,
+     "density_per_um2": 1.4,
+     "vertices": 22911,
+     "bytes": 772292,
+     "bbox_min_um": [
+      1920.97,
+      1712.48,
+      3.76
+     ],
+     "bbox_max_um": [
+      2416.46,
+      2274.37,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      1950.25,
+      1794.75,
+      4.58
+     ],
+     "p_bbox_max_um": [
+      2358.32,
+      2270.06,
+      117.61
+     ],
+     "decimation_bbox_shift_um": 3.8795,
+     "surface_area_um2": 29559.2,
+     "file": "dense-II-0099.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0103",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2302.5,
+    2119.2,
+    317.8
+   ],
+   "root_id": "720575947475736322",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 188,
+   "probe_hits": 26,
+   "tiers": {
+    "card": {
+     "faces": 50926,
+     "faces_in": 8224040,
+     "specks_dropped": 12496,
+     "density_per_um2": 1.4,
+     "vertices": 27452,
+     "bytes": 941324,
+     "bbox_min_um": [
+      2055.69,
+      1828.84,
+      119.88
+     ],
+     "bbox_max_um": [
+      2622.63,
+      2311.0,
+      438.67
+     ],
+     "p_bbox_min_um": [
+      2079.67,
+      1855.4,
+      125.92
+     ],
+     "p_bbox_max_um": [
+      2573.52,
+      2301.93,
+      434.75
+     ],
+     "decimation_bbox_shift_um": 0.8215,
+     "surface_area_um2": 36376.7,
+     "file": "dense-II-0103.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0104",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    3002.9,
+    2162.9,
+    263.0
+   ],
+   "root_id": "720575947533732356",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 162,
+   "probe_hits": 28,
+   "tiers": {
+    "card": {
+     "faces": 51598,
+     "faces_in": 8286500,
+     "specks_dropped": 16006,
+     "density_per_um2": 1.4,
+     "vertices": 27409,
+     "bytes": 948872,
+     "bbox_min_um": [
+      2356.39,
+      1553.49,
+      246.62
+     ],
+     "bbox_max_um": [
+      3129.17,
+      2380.65,
+      436.25
+     ],
+     "p_bbox_min_um": [
+      2388.55,
+      1563.8,
+      247.34
+     ],
+     "p_bbox_max_um": [
+      3110.55,
+      2356.62,
+      426.66
+     ],
+     "decimation_bbox_shift_um": 0.4785,
+     "surface_area_um2": 36857.5,
+     "file": "dense-II-0104.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 8286500,
+     "specks_dropped": 16006,
+     "density_per_um2": 3.8,
+     "vertices": 75777,
+     "bytes": 2590116,
+     "bbox_min_um": [
+      2356.39,
+      1553.46,
+      246.61
+     ],
+     "bbox_max_um": [
+      3129.51,
+      2380.9,
+      436.29
+     ],
+     "p_bbox_min_um": [
+      2392.41,
+      1566.01,
+      247.46
+     ],
+     "p_bbox_max_um": [
+      3110.57,
+      2356.94,
+      425.9
+     ],
+     "decimation_bbox_shift_um": 0.1405,
+     "surface_area_um2": 36857.5,
+     "file": "dense-II-0104.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0106",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2007.6,
+    2044.7,
+    206.8
+   ],
+   "root_id": "720575947480729588",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 313,
+   "probe_hits": 15,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 11510944,
+     "specks_dropped": 8146,
+     "density_per_um2": 1.21,
+     "vertices": 34544,
+     "bytes": 1135292,
+     "bbox_min_um": [
+      1855.5,
+      1766.2,
+      119.81
+     ],
+     "bbox_max_um": [
+      2377.46,
+      2288.96,
+      422.68
+     ],
+     "p_bbox_min_um": [
+      1902.36,
+      1800.67,
+      121.4
+     ],
+     "p_bbox_max_um": [
+      2327.62,
+      2277.86,
+      372.19
+     ],
+     "decimation_bbox_shift_um": 6.3969,
+     "surface_area_um2": 49669.5,
+     "file": "dense-II-0106.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0109",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1915.1,
+    2097.9,
+    159.2
+   ],
+   "root_id": "720575947519726111",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 219,
+   "probe_hits": 13,
+   "tiers": {
+    "card": {
+     "faces": 40086,
+     "faces_in": 6635311,
+     "specks_dropped": 5278,
+     "density_per_um2": 1.4,
+     "vertices": 22687,
+     "bytes": 754064,
+     "bbox_min_um": [
+      1688.86,
+      1641.5,
+      119.81
+     ],
+     "bbox_max_um": [
+      2138.1,
+      2303.56,
+      435.83
+     ],
+     "p_bbox_min_um": [
+      1701.4,
+      1678.8,
+      120.82
+     ],
+     "p_bbox_max_um": [
+      2107.45,
+      2299.3,
+      380.4
+     ],
+     "decimation_bbox_shift_um": 6.261,
+     "surface_area_um2": 28633.1,
+     "file": "dense-II-0109.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 6635311,
+     "specks_dropped": 5278,
+     "density_per_um2": 4.89,
+     "vertices": 76488,
+     "bytes": 2598644,
+     "bbox_min_um": [
+      1688.82,
+      1641.07,
+      119.79
+     ],
+     "bbox_max_um": [
+      2144.25,
+      2303.98,
+      435.98
+     ],
+     "p_bbox_min_um": [
+      1702.86,
+      1694.76,
+      120.83
+     ],
+     "p_bbox_max_um": [
+      2109.29,
+      2298.67,
+      393.39
+     ],
+     "decimation_bbox_shift_um": 0.4251,
+     "surface_area_um2": 28633.1,
+     "file": "dense-II-0109.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0110",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2041.3,
+    2156.0,
+    197.9
+   ],
+   "root_id": "720575947542414834",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 324,
+   "probe_hits": 13,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 10948019,
+     "specks_dropped": 9206,
+     "density_per_um2": 1.28,
+     "vertices": 34335,
+     "bytes": 1132784,
+     "bbox_min_um": [
+      1842.05,
+      1901.79,
+      119.81
+     ],
+     "bbox_max_um": [
+      2394.47,
+      2282.77,
+      436.19
+     ],
+     "p_bbox_min_um": [
+      1922.21,
+      1938.98,
+      122.82
+     ],
+     "p_bbox_max_um": [
+      2341.53,
+      2275.92,
+      422.9
+     ],
+     "decimation_bbox_shift_um": 1.12,
+     "surface_area_um2": 47011.3,
+     "file": "dense-II-0110.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0111",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1911.0,
+    2127.4,
+    366.5
+   ],
+   "root_id": "720575947523398385",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 164,
+   "probe_hits": 14,
+   "tiers": {
+    "card": {
+     "faces": 34604,
+     "faces_in": 5656958,
+     "specks_dropped": 6614,
+     "density_per_um2": 1.4,
+     "vertices": 19293,
+     "bytes": 647544,
+     "bbox_min_um": [
+      1601.35,
+      1500.45,
+      158.22
+     ],
+     "bbox_max_um": [
+      2450.35,
+      2309.55,
+      438.54
+     ],
+     "p_bbox_min_um": [
+      1617.0,
+      1525.46,
+      182.76
+     ],
+     "p_bbox_max_um": [
+      2390.96,
+      2306.05,
+      435.5
+     ],
+     "decimation_bbox_shift_um": 0.5191,
+     "surface_area_um2": 24718.6,
+     "file": "dense-II-0111.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0113",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1906.9,
+    2071.0,
+    88.7
+   ],
+   "root_id": "720575947500402423",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 88,
+   "probe_hits": 14,
+   "tiers": {
+    "card": {
+     "faces": 24264,
+     "faces_in": 3991409,
+     "specks_dropped": 5606,
+     "density_per_um2": 1.4,
+     "vertices": 13219,
+     "bytes": 450584,
+     "bbox_min_um": [
+      1785.09,
+      1990.43,
+      3.8
+     ],
+     "bbox_max_um": [
+      2081.05,
+      2278.51,
+      119.24
+     ],
+     "p_bbox_min_um": [
+      1815.92,
+      1995.28,
+      7.01
+     ],
+     "p_bbox_max_um": [
+      2076.39,
+      2275.96,
+      118.22
+     ],
+     "decimation_bbox_shift_um": 4.1418,
+     "surface_area_um2": 17332.7,
+     "file": "dense-II-0113.card.glb"
+    },
+    "close": {
+     "faces": 103996,
+     "faces_in": 3991409,
+     "specks_dropped": 5606,
+     "density_per_um2": 6.0,
+     "vertices": 55141,
+     "bytes": 1910436,
+     "bbox_min_um": [
+      1784.97,
+      1990.21,
+      3.76
+     ],
+     "bbox_max_um": [
+      2085.15,
+      2278.79,
+      119.3
+     ],
+     "p_bbox_min_um": [
+      1815.56,
+      1995.54,
+      7.14
+     ],
+     "p_bbox_max_um": [
+      2077.03,
+      2276.05,
+      118.16
+     ],
+     "decimation_bbox_shift_um": 0.1033,
+     "surface_area_um2": 17332.7,
+     "file": "dense-II-0113.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0115",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    3058.4,
+    2196.5,
+    210.0
+   ],
+   "root_id": "720575947518286812",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 28,
+   "probe_hits": 17,
+   "tiers": {
+    "card": {
+     "faces": 10794,
+     "faces_in": 1476760,
+     "specks_dropped": 5812,
+     "density_per_um2": 1.4,
+     "vertices": 5557,
+     "bytes": 196996,
+     "bbox_min_um": [
+      2965.33,
+      2053.01,
+      203.02
+     ],
+     "bbox_max_um": [
+      3128.72,
+      2299.18,
+      215.53
+     ],
+     "p_bbox_min_um": [
+      2970.58,
+      2062.24,
+      203.08
+     ],
+     "p_bbox_max_um": [
+      3123.34,
+      2294.57,
+      215.53
+     ],
+     "decimation_bbox_shift_um": 2.0197,
+     "surface_area_um2": 7711.1,
+     "file": "dense-II-0115.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0116",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2688.0,
+    2123.5,
+    294.1
+   ],
+   "root_id": "720575947520061228",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 410,
+   "probe_hits": 24,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 14789417,
+     "specks_dropped": 21132,
+     "density_per_um2": 0.92,
+     "vertices": 31865,
+     "bytes": 1103140,
+     "bbox_min_um": [
+      2093.46,
+      1521.54,
+      119.87
+     ],
+     "bbox_max_um": [
+      2987.93,
+      2343.74,
+      438.58
+     ],
+     "p_bbox_min_um": [
+      2157.39,
+      1536.13,
+      125.77
+     ],
+     "p_bbox_max_um": [
+      2936.63,
+      2334.5,
+      437.12
+     ],
+     "decimation_bbox_shift_um": 4.3588,
+     "surface_area_um2": 65082.4,
+     "file": "dense-II-0116.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 14789417,
+     "specks_dropped": 21132,
+     "density_per_um2": 2.15,
+     "vertices": 77005,
+     "bytes": 2604828,
+     "bbox_min_um": [
+      2092.91,
+      1521.29,
+      119.77
+     ],
+     "bbox_max_um": [
+      2988.15,
+      2343.96,
+      438.62
+     ],
+     "p_bbox_min_um": [
+      2167.34,
+      1540.89,
+      126.05
+     ],
+     "p_bbox_max_um": [
+      2933.15,
+      2334.11,
+      436.7
+     ],
+     "decimation_bbox_shift_um": 3.805,
+     "surface_area_um2": 65082.4,
+     "file": "dense-II-0116.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0117",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2915.8,
+    2160.6,
+    346.9
+   ],
+   "root_id": "720575947514474583",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 331,
+   "probe_hits": 14,
+   "tiers": {
+    "card": {
+     "faces": 43081,
+     "faces_in": 7137416,
+     "specks_dropped": 7150,
+     "density_per_um2": 1.4,
+     "vertices": 24452,
+     "bytes": 811184,
+     "bbox_min_um": [
+      2815.45,
+      2080.86,
+      246.75
+     ],
+     "bbox_max_um": [
+      3103.54,
+      2359.66,
+      389.94
+     ],
+     "p_bbox_min_um": [
+      2825.05,
+      2091.69,
+      262.58
+     ],
+     "p_bbox_max_um": [
+      3070.99,
+      2325.97,
+      388.39
+     ],
+     "decimation_bbox_shift_um": 11.2803,
+     "surface_area_um2": 30774.2,
+     "file": "dense-II-0117.card.glb"
+    },
+    "close": {
+     "faces": 139999,
+     "faces_in": 7137416,
+     "specks_dropped": 7150,
+     "density_per_um2": 4.55,
+     "vertices": 78425,
+     "bytes": 2621880,
+     "bbox_min_um": [
+      2814.57,
+      2070.29,
+      246.75
+     ],
+     "bbox_max_um": [
+      3103.71,
+      2359.84,
+      390.01
+     ],
+     "p_bbox_min_um": [
+      2824.01,
+      2089.04,
+      261.36
+     ],
+     "p_bbox_max_um": [
+      3070.08,
+      2325.69,
+      388.43
+     ],
+     "decimation_bbox_shift_um": 0.7103,
+     "surface_area_um2": 30774.2,
+     "file": "dense-II-0117.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0118",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2314.2,
+    2043.6,
+    362.1
+   ],
+   "root_id": "720575947541574130",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 371,
+   "probe_hits": 28,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 11316493,
+     "specks_dropped": 22308,
+     "density_per_um2": 1.22,
+     "vertices": 33805,
+     "bytes": 1126436,
+     "bbox_min_um": [
+      1992.83,
+      1741.08,
+      119.83
+     ],
+     "bbox_max_um": [
+      2599.41,
+      2314.89,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2128.84,
+      1757.24,
+      164.31
+     ],
+     "p_bbox_max_um": [
+      2548.13,
+      2289.35,
+      435.71
+     ],
+     "decimation_bbox_shift_um": 0.4612,
+     "surface_area_um2": 48988.0,
+     "file": "dense-II-0118.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0120",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2232.3,
+    2029.8,
+    170.5
+   ],
+   "root_id": "720575947527872930",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 162,
+   "probe_hits": 14,
+   "tiers": {
+    "card": {
+     "faces": 36654,
+     "faces_in": 6027763,
+     "specks_dropped": 6962,
+     "density_per_um2": 1.4,
+     "vertices": 20592,
+     "bytes": 687740,
+     "bbox_min_um": [
+      2090.85,
+      1741.34,
+      119.85
+     ],
+     "bbox_max_um": [
+      2573.36,
+      2299.59,
+      438.48
+     ],
+     "p_bbox_min_um": [
+      2109.61,
+      1764.83,
+      120.99
+     ],
+     "p_bbox_max_um": [
+      2551.21,
+      2285.97,
+      403.52
+     ],
+     "decimation_bbox_shift_um": 2.7529,
+     "surface_area_um2": 26182.5,
+     "file": "dense-II-0120.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0122",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2874.1,
+    2119.2,
+    260.4
+   ],
+   "root_id": "720575947540523139",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 199,
+   "probe_hits": 27,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 10938815,
+     "specks_dropped": 20716,
+     "density_per_um2": 1.22,
+     "vertices": 31955,
+     "bytes": 1104236,
+     "bbox_min_um": [
+      1579.55,
+      1166.26,
+      240.63
+     ],
+     "bbox_max_um": [
+      3032.7,
+      2377.49,
+      438.5
+     ],
+     "p_bbox_min_um": [
+      1607.75,
+      1170.21,
+      246.91
+     ],
+     "p_bbox_max_um": [
+      3015.6,
+      2344.45,
+      428.62
+     ],
+     "decimation_bbox_shift_um": 1.0829,
+     "surface_area_um2": 49076.4,
+     "file": "dense-II-0122.card.glb"
+    },
+    "close": {
+     "faces": 139999,
+     "faces_in": 10938815,
+     "specks_dropped": 20716,
+     "density_per_um2": 2.85,
+     "vertices": 76987,
+     "bytes": 2604624,
+     "bbox_min_um": [
+      1579.44,
+      1166.23,
+      239.82
+     ],
+     "bbox_max_um": [
+      3033.69,
+      2377.61,
+      438.57
+     ],
+     "p_bbox_min_um": [
+      1610.83,
+      1170.66,
+      246.9
+     ],
+     "p_bbox_max_um": [
+      3015.66,
+      2345.61,
+      429.01
+     ],
+     "decimation_bbox_shift_um": 0.2758,
+     "surface_area_um2": 49076.4,
+     "file": "dense-II-0122.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0126",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1882.4,
+    2048.8,
+    108.8
+   ],
+   "root_id": "720575947416993943",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 53,
+   "probe_hits": 11,
+   "tiers": {
+    "card": {
+     "faces": 18626,
+     "faces_in": 3053774,
+     "specks_dropped": 4190,
+     "density_per_um2": 1.4,
+     "vertices": 10411,
+     "bytes": 349224,
+     "bbox_min_um": [
+      1672.05,
+      1945.92,
+      3.76
+     ],
+     "bbox_max_um": [
+      2171.45,
+      2301.87,
+      119.26
+     ],
+     "p_bbox_min_um": [
+      1682.51,
+      1961.7,
+      7.04
+     ],
+     "p_bbox_max_um": [
+      2137.73,
+      2289.52,
+      118.6
+     ],
+     "decimation_bbox_shift_um": 3.4429,
+     "surface_area_um2": 13304.8,
+     "file": "dense-II-0126.card.glb"
+    },
+    "close": {
+     "faces": 79826,
+     "faces_in": 3053774,
+     "specks_dropped": 4190,
+     "density_per_um2": 6.0,
+     "vertices": 42781,
+     "bytes": 1472076,
+     "bbox_min_um": [
+      1671.98,
+      1943.46,
+      3.76
+     ],
+     "bbox_max_um": [
+      2174.73,
+      2302.66,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      1681.11,
+      1960.15,
+      6.97
+     ],
+     "p_bbox_max_um": [
+      2143.69,
+      2291.71,
+      118.48
+     ],
+     "decimation_bbox_shift_um": 0.1656,
+     "surface_area_um2": 13304.8,
+     "file": "dense-II-0126.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0127",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2202.4,
+    2083.1,
+    85.8
+   ],
+   "root_id": "720575947460572997",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 209,
+   "probe_hits": 31,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 15155818,
+     "specks_dropped": 22282,
+     "density_per_um2": 0.88,
+     "vertices": 35666,
+     "bytes": 1148760,
+     "bbox_min_um": [
+      1845.1,
+      1780.5,
+      3.76
+     ],
+     "bbox_max_um": [
+      2402.09,
+      2277.02,
+      119.28
+     ],
+     "p_bbox_min_um": [
+      1911.76,
+      1838.99,
+      4.98
+     ],
+     "p_bbox_max_um": [
+      2391.37,
+      2271.76,
+      118.86
+     ],
+     "decimation_bbox_shift_um": 1.1278,
+     "surface_area_um2": 68162.0,
+     "file": "dense-II-0127.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0129",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    3031.8,
+    2181.6,
+    241.3
+   ],
+   "root_id": "720575947446407604",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 22,
+   "probe_hits": 20,
+   "tiers": {
+    "card": {
+     "faces": 9438,
+     "faces_in": 1467510,
+     "specks_dropped": 5246,
+     "density_per_um2": 1.4,
+     "vertices": 4911,
+     "bytes": 172972,
+     "bbox_min_um": [
+      2984.02,
+      2125.62,
+      216.67
+     ],
+     "bbox_max_um": [
+      3094.9,
+      2293.65,
+      246.53
+     ],
+     "p_bbox_min_um": [
+      2988.87,
+      2129.77,
+      216.91
+     ],
+     "p_bbox_max_um": [
+      3087.9,
+      2284.65,
+      246.53
+     ],
+     "decimation_bbox_shift_um": 1.3071,
+     "surface_area_um2": 6742.7,
+     "file": "dense-II-0129.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0130",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2544.9,
+    2156.3,
+    53.6
+   ],
+   "root_id": "720575947507153341",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 29,
+   "probe_hits": 10,
+   "tiers": {
+    "card": {
+     "faces": 21174,
+     "faces_in": 3552052,
+     "specks_dropped": 2762,
+     "density_per_um2": 1.4,
+     "vertices": 11795,
+     "bytes": 396416,
+     "bbox_min_um": [
+      2415.21,
+      2069.53,
+      3.89
+     ],
+     "bbox_max_um": [
+      2680.26,
+      2229.13,
+      119.23
+     ],
+     "p_bbox_min_um": [
+      2420.87,
+      2080.1,
+      5.17
+     ],
+     "p_bbox_max_um": [
+      2666.61,
+      2221.74,
+      117.93
+     ],
+     "decimation_bbox_shift_um": 2.1619,
+     "surface_area_um2": 15125.1,
+     "file": "dense-II-0130.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0132",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2212.9,
+    2019.8,
+    393.2
+   ],
+   "root_id": "720575947521495071",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 231,
+   "probe_hits": 21,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 10184224,
+     "specks_dropped": 20226,
+     "density_per_um2": 1.32,
+     "vertices": 31923,
+     "bytes": 1103864,
+     "bbox_min_um": [
+      1503.92,
+      1261.04,
+      131.71
+     ],
+     "bbox_max_um": [
+      2433.31,
+      2295.55,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1540.09,
+      1280.59,
+      169.7
+     ],
+     "p_bbox_max_um": [
+      2417.63,
+      2288.94,
+      436.66
+     ],
+     "decimation_bbox_shift_um": 0.2614,
+     "surface_area_um2": 45597.4,
+     "file": "dense-II-0132.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0133",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2378.8,
+    2157.3,
+    236.5
+   ],
+   "root_id": "720575947501037303",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 251,
+   "probe_hits": 28,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 11138032,
+     "specks_dropped": 13512,
+     "density_per_um2": 1.21,
+     "vertices": 32122,
+     "bytes": 1106224,
+     "bbox_min_um": [
+      1402.72,
+      1297.5,
+      119.81
+     ],
+     "bbox_max_um": [
+      2742.05,
+      2335.87,
+      436.3
+     ],
+     "p_bbox_min_um": [
+      1438.93,
+      1321.92,
+      121.99
+     ],
+     "p_bbox_max_um": [
+      2706.18,
+      2327.73,
+      428.16
+     ],
+     "decimation_bbox_shift_um": 0.3379,
+     "surface_area_um2": 49581.5,
+     "file": "dense-II-0133.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0134",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2795.8,
+    2159.9,
+    196.9
+   ],
+   "root_id": "720575947598248300",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 298,
+   "probe_hits": 28,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 12209945,
+     "specks_dropped": 16130,
+     "density_per_um2": 1.1,
+     "vertices": 32464,
+     "bytes": 1110356,
+     "bbox_min_um": [
+      1732.15,
+      1254.86,
+      119.77
+     ],
+     "bbox_max_um": [
+      2974.22,
+      2294.6,
+      438.37
+     ],
+     "p_bbox_min_um": [
+      1780.45,
+      1271.93,
+      122.66
+     ],
+     "p_bbox_max_um": [
+      2947.4,
+      2279.12,
+      423.6
+     ],
+     "decimation_bbox_shift_um": 1.2611,
+     "surface_area_um2": 54477.6,
+     "file": "dense-II-0134.card.glb"
+    },
+    "close": {
+     "faces": 139999,
+     "faces_in": 12209945,
+     "specks_dropped": 16130,
+     "density_per_um2": 2.57,
+     "vertices": 77918,
+     "bytes": 2615796,
+     "bbox_min_um": [
+      1732.0,
+      1254.85,
+      119.77
+     ],
+     "bbox_max_um": [
+      2974.44,
+      2295.03,
+      438.61
+     ],
+     "p_bbox_min_um": [
+      1786.49,
+      1272.97,
+      122.65
+     ],
+     "p_bbox_max_um": [
+      2947.95,
+      2279.35,
+      422.65
+     ],
+     "decimation_bbox_shift_um": 1.0467,
+     "surface_area_um2": 54477.6,
+     "file": "dense-II-0134.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0136",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2535.2,
+    2113.3,
+    149.3
+   ],
+   "root_id": "720575947478057972",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 301,
+   "probe_hits": 10,
+   "tiers": {
+    "card": {
+     "faces": 38537,
+     "faces_in": 6459584,
+     "specks_dropped": 4162,
+     "density_per_um2": 1.4,
+     "vertices": 21846,
+     "bytes": 725384,
+     "bbox_min_um": [
+      2324.97,
+      1541.74,
+      119.76
+     ],
+     "bbox_max_um": [
+      2686.14,
+      2331.04,
+      250.83
+     ],
+     "p_bbox_min_um": [
+      2378.86,
+      1590.62,
+      120.64
+     ],
+     "p_bbox_max_um": [
+      2674.1,
+      2324.25,
+      240.89
+     ],
+     "decimation_bbox_shift_um": 4.6591,
+     "surface_area_um2": 27528.5,
+     "file": "dense-II-0136.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0137",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1948.9,
+    2045.2,
+    272.4
+   ],
+   "root_id": "720575947451299121",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 181,
+   "probe_hits": 7,
+   "tiers": {
+    "card": {
+     "faces": 42192,
+     "faces_in": 6977444,
+     "specks_dropped": 7228,
+     "density_per_um2": 1.4,
+     "vertices": 24167,
+     "bytes": 797096,
+     "bbox_min_um": [
+      1781.22,
+      1700.94,
+      126.5
+     ],
+     "bbox_max_um": [
+      2422.51,
+      2294.89,
+      438.3
+     ],
+     "p_bbox_min_um": [
+      1790.03,
+      1757.77,
+      138.63
+     ],
+     "p_bbox_max_um": [
+      2381.17,
+      2290.26,
+      429.74
+     ],
+     "decimation_bbox_shift_um": 5.5612,
+     "surface_area_um2": 30138.6,
+     "file": "dense-II-0137.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 6977444,
+     "specks_dropped": 7228,
+     "density_per_um2": 4.65,
+     "vertices": 76775,
+     "bytes": 2602092,
+     "bbox_min_um": [
+      1781.22,
+      1700.94,
+      121.06
+     ],
+     "bbox_max_um": [
+      2423.9,
+      2295.5,
+      438.6
+     ],
+     "p_bbox_min_um": [
+      1800.02,
+      1774.11,
+      139.43
+     ],
+     "p_bbox_max_um": [
+      2388.35,
+      2289.5,
+      428.44
+     ],
+     "decimation_bbox_shift_um": 0.2831,
+     "surface_area_um2": 30138.6,
+     "file": "dense-II-0137.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0138",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2538.0,
+    2082.3,
+    358.4
+   ],
+   "root_id": "720575947444787635",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 321,
+   "probe_hits": 22,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 11685136,
+     "specks_dropped": 19176,
+     "density_per_um2": 1.17,
+     "vertices": 32482,
+     "bytes": 1110572,
+     "bbox_min_um": [
+      1921.97,
+      1388.33,
+      120.07
+     ],
+     "bbox_max_um": [
+      2764.87,
+      2326.02,
+      438.53
+     ],
+     "p_bbox_min_um": [
+      2005.65,
+      1413.1,
+      232.76
+     ],
+     "p_bbox_max_um": [
+      2711.86,
+      2316.82,
+      434.87
+     ],
+     "decimation_bbox_shift_um": 1.6082,
+     "surface_area_um2": 51344.0,
+     "file": "dense-II-0138.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 11685136,
+     "specks_dropped": 19176,
+     "density_per_um2": 2.73,
+     "vertices": 77287,
+     "bytes": 2608212,
+     "bbox_min_um": [
+      1920.94,
+      1387.86,
+      119.82
+     ],
+     "bbox_max_um": [
+      2765.22,
+      2326.09,
+      438.65
+     ],
+     "p_bbox_min_um": [
+      2015.6,
+      1416.84,
+      213.23
+     ],
+     "p_bbox_max_um": [
+      2713.01,
+      2315.88,
+      434.97
+     ],
+     "decimation_bbox_shift_um": 1.539,
+     "surface_area_um2": 51344.0,
+     "file": "dense-II-0138.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0139",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2267.9,
+    2089.2,
+    260.4
+   ],
+   "root_id": "720575947483020276",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 351,
+   "probe_hits": 27,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 13808539,
+     "specks_dropped": 16918,
+     "density_per_um2": 1.0,
+     "vertices": 33467,
+     "bytes": 1122384,
+     "bbox_min_um": [
+      2030.35,
+      1547.92,
+      119.83
+     ],
+     "bbox_max_um": [
+      2636.07,
+      2312.9,
+      438.59
+     ],
+     "p_bbox_min_um": [
+      2070.34,
+      1569.46,
+      130.13
+     ],
+     "p_bbox_max_um": [
+      2602.28,
+      2298.03,
+      432.19
+     ],
+     "decimation_bbox_shift_um": 13.7574,
+     "surface_area_um2": 60205.3,
+     "file": "dense-II-0139.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0140",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2556.7,
+    2109.7,
+    123.4
+   ],
+   "root_id": "720575947451237190",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 31,
+   "probe_hits": 25,
+   "tiers": {
+    "card": {
+     "faces": 13280,
+     "faces_in": 2020572,
+     "specks_dropped": 5866,
+     "density_per_um2": 1.4,
+     "vertices": 6807,
+     "bytes": 241828,
+     "bbox_min_um": [
+      2404.06,
+      1935.71,
+      119.77
+     ],
+     "bbox_max_um": [
+      2743.91,
+      2326.54,
+      349.8
+     ],
+     "p_bbox_min_um": [
+      2407.36,
+      1941.05,
+      119.91
+     ],
+     "p_bbox_max_um": [
+      2734.88,
+      2323.81,
+      338.31
+     ],
+     "decimation_bbox_shift_um": 1.8066,
+     "surface_area_um2": 9487.0,
+     "file": "dense-II-0140.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0143",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2146.0,
+    2096.4,
+    213.8
+   ],
+   "root_id": "720575947480254196",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 221,
+   "probe_hits": 20,
+   "tiers": {
+    "card": {
+     "faces": 58423,
+     "faces_in": 9437636,
+     "specks_dropped": 12640,
+     "density_per_um2": 1.4,
+     "vertices": 31868,
+     "bytes": 1084280,
+     "bbox_min_um": [
+      1393.47,
+      1345.81,
+      119.85
+     ],
+     "bbox_max_um": [
+      2377.28,
+      2284.98,
+      436.35
+     ],
+     "p_bbox_min_um": [
+      1428.35,
+      1360.29,
+      123.45
+     ],
+     "p_bbox_max_um": [
+      2356.15,
+      2279.06,
+      419.1
+     ],
+     "decimation_bbox_shift_um": 1.1308,
+     "surface_area_um2": 41732.0,
+     "file": "dense-II-0143.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0147",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2621.4,
+    2132.7,
+    349.9
+   ],
+   "root_id": "720575947538885251",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 433,
+   "probe_hits": 12,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 13680698,
+     "specks_dropped": 13830,
+     "density_per_um2": 1.02,
+     "vertices": 34045,
+     "bytes": 1129296,
+     "bbox_min_um": [
+      1935.28,
+      1852.22,
+      120.13
+     ],
+     "bbox_max_um": [
+      3079.86,
+      2375.58,
+      438.35
+     ],
+     "p_bbox_min_um": [
+      2082.63,
+      1948.55,
+      214.91
+     ],
+     "p_bbox_max_um": [
+      3024.59,
+      2365.46,
+      434.27
+     ],
+     "decimation_bbox_shift_um": 1.7803,
+     "surface_area_um2": 58550.7,
+     "file": "dense-II-0147.card.glb"
+    },
+    "close": {
+     "faces": 139996,
+     "faces_in": 13680698,
+     "specks_dropped": 13830,
+     "density_per_um2": 2.39,
+     "vertices": 80600,
+     "bytes": 2647940,
+     "bbox_min_um": [
+      1935.28,
+      1852.15,
+      120.0
+     ],
+     "bbox_max_um": [
+      3079.86,
+      2377.27,
+      438.54
+     ],
+     "p_bbox_min_um": [
+      2078.86,
+      1956.69,
+      183.64
+     ],
+     "p_bbox_max_um": [
+      3023.72,
+      2365.88,
+      434.25
+     ],
+     "decimation_bbox_shift_um": 0.6677,
+     "surface_area_um2": 58550.7,
+     "file": "dense-II-0147.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0150",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1872.4,
+    2150.9,
+    264.4
+   ],
+   "root_id": "720575947462044741",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 126,
+   "probe_hits": 10,
+   "tiers": {
+    "card": {
+     "faces": 35635,
+     "faces_in": 5868649,
+     "specks_dropped": 6270,
+     "density_per_um2": 1.4,
+     "vertices": 19917,
+     "bytes": 667412,
+     "bbox_min_um": [
+      1708.9,
+      1788.97,
+      119.85
+     ],
+     "bbox_max_um": [
+      2268.17,
+      2304.83,
+      436.19
+     ],
+     "p_bbox_min_um": [
+      1743.79,
+      1808.29,
+      125.12
+     ],
+     "p_bbox_max_um": [
+      2178.29,
+      2299.61,
+      418.54
+     ],
+     "decimation_bbox_shift_um": 12.15,
+     "surface_area_um2": 25453.7,
+     "file": "dense-II-0150.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0154",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2047.5,
+    2145.5,
+    284.7
+   ],
+   "root_id": "720575947482152641",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 162,
+   "probe_hits": 9,
+   "tiers": {
+    "card": {
+     "faces": 31885,
+     "faces_in": 5246537,
+     "specks_dropped": 5122,
+     "density_per_um2": 1.4,
+     "vertices": 17841,
+     "bytes": 597500,
+     "bbox_min_um": [
+      1792.94,
+      2065.87,
+      120.41
+     ],
+     "bbox_max_um": [
+      2216.38,
+      2284.46,
+      438.54
+     ],
+     "p_bbox_min_um": [
+      1824.31,
+      2082.2,
+      172.15
+     ],
+     "p_bbox_max_um": [
+      2189.2,
+      2280.14,
+      433.43
+     ],
+     "decimation_bbox_shift_um": 4.931,
+     "surface_area_um2": 22776.3,
+     "file": "dense-II-0154.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0155",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2426.6,
+    2115.3,
+    379.2
+   ],
+   "root_id": "720575947553915715",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 301,
+   "probe_hits": 32,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 11876562,
+     "specks_dropped": 20972,
+     "density_per_um2": 1.15,
+     "vertices": 32271,
+     "bytes": 1108036,
+     "bbox_min_um": [
+      2035.9,
+      1493.46,
+      153.91
+     ],
+     "bbox_max_um": [
+      2710.48,
+      2331.48,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2085.28,
+      1518.37,
+      205.37
+     ],
+     "p_bbox_max_um": [
+      2685.84,
+      2320.81,
+      436.0
+     ],
+     "decimation_bbox_shift_um": 3.2719,
+     "surface_area_um2": 52367.9,
+     "file": "dense-II-0155.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0158",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2181.1,
+    2129.2,
+    296.2
+   ],
+   "root_id": "720575947564962146",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 124,
+   "probe_hits": 29,
+   "tiers": {
+    "card": {
+     "faces": 55386,
+     "faces_in": 8756261,
+     "specks_dropped": 27964,
+     "density_per_um2": 1.4,
+     "vertices": 29849,
+     "bytes": 1023608,
+     "bbox_min_um": [
+      1932.22,
+      1865.78,
+      144.2
+     ],
+     "bbox_max_um": [
+      2432.23,
+      2295.58,
+      438.58
+     ],
+     "p_bbox_min_um": [
+      1986.74,
+      1881.99,
+      185.44
+     ],
+     "p_bbox_max_um": [
+      2408.08,
+      2290.85,
+      433.8
+     ],
+     "decimation_bbox_shift_um": 0.4053,
+     "surface_area_um2": 39562.5,
+     "file": "dense-II-0158.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0162",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    3055.1,
+    2194.4,
+    71.2
+   ],
+   "root_id": "720575947479567604",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 99,
+   "probe_hits": 27,
+   "tiers": {
+    "card": {
+     "faces": 34606,
+     "faces_in": 5633348,
+     "specks_dropped": 15446,
+     "density_per_um2": 1.4,
+     "vertices": 18686,
+     "bytes": 640292,
+     "bbox_min_um": [
+      2722.74,
+      2035.9,
+      9.28
+     ],
+     "bbox_max_um": [
+      3197.25,
+      2301.08,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      2751.82,
+      2043.8,
+      13.51
+     ],
+     "p_bbox_max_um": [
+      3177.34,
+      2289.07,
+      118.91
+     ],
+     "decimation_bbox_shift_um": 2.2834,
+     "surface_area_um2": 24719.6,
+     "file": "dense-II-0162.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0163",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2563.8,
+    2149.9,
+    265.9
+   ],
+   "root_id": "720575947441454755",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 88,
+   "probe_hits": 25,
+   "tiers": {
+    "card": {
+     "faces": 32300,
+     "faces_in": 5048044,
+     "specks_dropped": 12106,
+     "density_per_um2": 1.4,
+     "vertices": 16706,
+     "bytes": 588848,
+     "bbox_min_um": [
+      2185.87,
+      1922.04,
+      120.1
+     ],
+     "bbox_max_um": [
+      2758.12,
+      2341.35,
+      438.42
+     ],
+     "p_bbox_min_um": [
+      2217.57,
+      1947.91,
+      129.96
+     ],
+     "p_bbox_max_um": [
+      2746.91,
+      2332.69,
+      433.81
+     ],
+     "decimation_bbox_shift_um": 0.7244,
+     "surface_area_um2": 23073.4,
+     "file": "dense-II-0163.card.glb"
+    },
+    "close": {
+     "faces": 138438,
+     "faces_in": 5048044,
+     "specks_dropped": 12106,
+     "density_per_um2": 6.0,
+     "vertices": 69550,
+     "bytes": 2496648,
+     "bbox_min_um": [
+      2185.83,
+      1921.89,
+      119.78
+     ],
+     "bbox_max_um": [
+      2758.75,
+      2341.38,
+      438.61
+     ],
+     "p_bbox_min_um": [
+      2216.18,
+      1947.55,
+      129.97
+     ],
+     "p_bbox_max_um": [
+      2746.84,
+      2333.73,
+      434.03
+     ],
+     "decimation_bbox_shift_um": 0.0992,
+     "surface_area_um2": 23073.4,
+     "file": "dense-II-0163.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0164",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1957.1,
+    2079.0,
+    89.9
+   ],
+   "root_id": "720575947564877768",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 126,
+   "probe_hits": 17,
+   "tiers": {
+    "card": {
+     "faces": 51348,
+     "faces_in": 8320330,
+     "specks_dropped": 8282,
+     "density_per_um2": 1.4,
+     "vertices": 30391,
+     "bytes": 981656,
+     "bbox_min_um": [
+      1848.11,
+      2002.16,
+      3.74
+     ],
+     "bbox_max_um": [
+      2076.28,
+      2287.45,
+      119.28
+     ],
+     "p_bbox_min_um": [
+      1883.4,
+      2020.14,
+      4.6
+     ],
+     "p_bbox_max_um": [
+      2049.58,
+      2282.01,
+      118.12
+     ],
+     "decimation_bbox_shift_um": 1.1486,
+     "surface_area_um2": 36678.5,
+     "file": "dense-II-0164.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0165",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2109.2,
+    2118.7,
+    108.3
+   ],
+   "root_id": "720575947514504391",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 94,
+   "probe_hits": 25,
+   "tiers": {
+    "card": {
+     "faces": 34561,
+     "faces_in": 5519842,
+     "specks_dropped": 9376,
+     "density_per_um2": 1.4,
+     "vertices": 19183,
+     "bytes": 645716,
+     "bbox_min_um": [
+      1892.1,
+      1945.73,
+      3.81
+     ],
+     "bbox_max_um": [
+      2615.65,
+      2283.31,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      1915.0,
+      1954.15,
+      5.39
+     ],
+     "p_bbox_max_um": [
+      2548.29,
+      2272.71,
+      118.63
+     ],
+     "decimation_bbox_shift_um": 4.2069,
+     "surface_area_um2": 24688.6,
+     "file": "dense-II-0165.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0167",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2469.6,
+    2051.1,
+    292.7
+   ],
+   "root_id": "720575947494593529",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 124,
+   "probe_hits": 11,
+   "tiers": {
+    "card": {
+     "faces": 33786,
+     "faces_in": 5597428,
+     "specks_dropped": 9062,
+     "density_per_um2": 1.4,
+     "vertices": 18869,
+     "bytes": 632644,
+     "bbox_min_um": [
+      2249.0,
+      1838.09,
+      120.06
+     ],
+     "bbox_max_um": [
+      2723.94,
+      2321.53,
+      436.12
+     ],
+     "p_bbox_min_um": [
+      2259.77,
+      1861.86,
+      128.85
+     ],
+     "p_bbox_max_um": [
+      2712.29,
+      2304.95,
+      409.89
+     ],
+     "decimation_bbox_shift_um": 0.6731,
+     "surface_area_um2": 24134.1,
+     "file": "dense-II-0167.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 5597428,
+     "specks_dropped": 9062,
+     "density_per_um2": 5.8,
+     "vertices": 74802,
+     "bytes": 2578388,
+     "bbox_min_um": [
+      2249.0,
+      1838.04,
+      119.81
+     ],
+     "bbox_max_um": [
+      2724.18,
+      2322.04,
+      436.33
+     ],
+     "p_bbox_min_um": [
+      2260.7,
+      1862.19,
+      127.22
+     ],
+     "p_bbox_max_um": [
+      2713.97,
+      2305.71,
+      404.17
+     ],
+     "decimation_bbox_shift_um": 0.1678,
+     "surface_area_um2": 24134.1,
+     "file": "dense-II-0167.close.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0168",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2345.2,
+    2085.6,
+    215.7
+   ],
+   "root_id": "720575947520734592",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 235,
+   "probe_hits": 28,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 12729766,
+     "specks_dropped": 16210,
+     "density_per_um2": 1.06,
+     "vertices": 32072,
+     "bytes": 1105648,
+     "bbox_min_um": [
+      1885.18,
+      1498.47,
+      119.8
+     ],
+     "bbox_max_um": [
+      2585.23,
+      2311.89,
+      388.08
+     ],
+     "p_bbox_min_um": [
+      1931.93,
+      1522.08,
+      123.4
+     ],
+     "p_bbox_max_um": [
+      2557.15,
+      2298.82,
+      359.18
+     ],
+     "decimation_bbox_shift_um": 2.4058,
+     "surface_area_um2": 56385.4,
+     "file": "dense-II-0168.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0169",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2129.2,
+    2099.5,
+    188.1
+   ],
+   "root_id": "720575947480774132",
+   "layer": "II",
+   "size_cluster": 7,
+   "mesh_fragments": 339,
+   "probe_hits": 25,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 12645336,
+     "specks_dropped": 17442,
+     "density_per_um2": 1.07,
+     "vertices": 32262,
+     "bytes": 1107900,
+     "bbox_min_um": [
+      1490.51,
+      1393.86,
+      119.77
+     ],
+     "bbox_max_um": [
+      2436.49,
+      2297.55,
+      408.77
+     ],
+     "p_bbox_min_um": [
+      1539.83,
+      1413.28,
+      121.71
+     ],
+     "p_bbox_max_um": [
+      2383.46,
+      2288.27,
+      365.71
+     ],
+     "decimation_bbox_shift_um": 2.0934,
+     "surface_area_um2": 56194.3,
+     "file": "dense-II-0169.card.glb"
+    }
+   }
+  },
+  {
+   "id": "dense-II-0170",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2905.6,
+    2179.8,
+    233.0
+   ],
+   "root_id": "720575947562417255",
+   "layer": "II",
+   "size_cluster": 6,
+   "mesh_fragments": 183,
+   "probe_hits": 23,
+   "tiers": {
+    "card": {
+     "faces": 48814,
+     "faces_in": 8046023,
+     "specks_dropped": 7024,
+     "density_per_um2": 1.4,
+     "vertices": 28532,
+     "bytes": 928936,
+     "bbox_min_um": [
+      2013.26,
+      1618.41,
+      119.77
+     ],
+     "bbox_max_um": [
+      3152.62,
+      2346.93,
+      438.62
+     ],
+     "p_bbox_min_um": [
+      2055.89,
+      1640.64,
+      120.69
+     ],
+     "p_bbox_max_um": [
+      3122.97,
+      2322.29,
+      399.36
+     ],
+     "decimation_bbox_shift_um": 0.3395,
+     "surface_area_um2": 34867.6,
+     "file": "dense-II-0170.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 8046023,
+     "specks_dropped": 7024,
+     "density_per_um2": 4.02,
+     "vertices": 74767,
+     "bytes": 2577992,
+     "bbox_min_um": [
+      2013.26,
+      1618.41,
+      119.76
+     ],
+     "bbox_max_um": [
+      3152.8,
+      2347.03,
+      438.63
+     ],
+     "p_bbox_min_um": [
+      2055.92,
+      1640.7,
+      120.65
+     ],
+     "p_bbox_max_um": [
+      3122.83,
+      2319.61,
+      399.05
+     ],
+     "decimation_bbox_shift_um": 0.1657,
+     "surface_area_um2": 34867.6,
+     "file": "dense-II-0170.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-000",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1901.8,
+    2096.6,
+    405.1
+   ],
+   "root_id": "720575947568982844",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 42.2,
+   "probe_hits": 4,
+   "mesh_fragments": 127,
+   "tiers": {
+    "card": {
+     "faces": 27844,
+     "faces_in": 4518640,
+     "specks_dropped": 5738,
+     "density_per_um2": 1.4,
+     "vertices": 15606,
+     "bytes": 522184,
+     "bbox_min_um": [
+      1601.0,
+      1698.29,
+      200.07
+     ],
+     "bbox_max_um": [
+      2107.91,
+      2305.75,
+      438.59
+     ],
+     "p_bbox_min_um": [
+      1630.7,
+      1726.66,
+      233.73
+     ],
+     "p_bbox_max_um": [
+      2037.16,
+      2299.66,
+      435.67
+     ],
+     "decimation_bbox_shift_um": 11.2014,
+     "surface_area_um2": 19889.6,
+     "file": "more-II-000.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-002",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2414.6,
+    2173.2,
+    163.1
+   ],
+   "root_id": "720575947488098912",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 162.7,
+   "probe_hits": 13,
+   "mesh_fragments": 277,
+   "tiers": {
+    "card": {
+     "faces": 48663,
+     "faces_in": 8098870,
+     "specks_dropped": 5028,
+     "density_per_um2": 1.4,
+     "vertices": 27838,
+     "bytes": 918792,
+     "bbox_min_um": [
+      2148.02,
+      1580.61,
+      119.77
+     ],
+     "bbox_max_um": [
+      2923.49,
+      2316.48,
+      269.84
+     ],
+     "p_bbox_min_um": [
+      2192.87,
+      1638.33,
+      120.43
+     ],
+     "p_bbox_max_um": [
+      2821.82,
+      2307.92,
+      263.44
+     ],
+     "decimation_bbox_shift_um": 1.0482,
+     "surface_area_um2": 34760.4,
+     "file": "more-II-002.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-003",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2206.5,
+    2086.1,
+    361.9
+   ],
+   "root_id": "720575947520607007",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 85.4,
+   "probe_hits": 17,
+   "mesh_fragments": 204,
+   "tiers": {
+    "card": {
+     "faces": 54666,
+     "faces_in": 8864946,
+     "specks_dropped": 16978,
+     "density_per_um2": 1.4,
+     "vertices": 29517,
+     "bytes": 1010980,
+     "bbox_min_um": [
+      1952.89,
+      1925.32,
+      119.8
+     ],
+     "bbox_max_um": [
+      2505.8,
+      2295.5,
+      438.65
+     ],
+     "p_bbox_min_um": [
+      2026.89,
+      1953.84,
+      127.77
+     ],
+     "p_bbox_max_um": [
+      2455.31,
+      2286.77,
+      435.43
+     ],
+     "decimation_bbox_shift_um": 9.4481,
+     "surface_area_um2": 39048.0,
+     "file": "more-II-003.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-004",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2237.7,
+    2028.0,
+    332.6
+   ],
+   "root_id": "720575947454194515",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 114.8,
+   "probe_hits": 25,
+   "mesh_fragments": 293,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 12435800,
+     "specks_dropped": 19338,
+     "density_per_um2": 1.08,
+     "vertices": 31888,
+     "bytes": 1103420,
+     "bbox_min_um": [
+      1815.44,
+      1473.92,
+      119.86
+     ],
+     "bbox_max_um": [
+      2521.06,
+      2299.48,
+      438.61
+     ],
+     "p_bbox_min_um": [
+      1871.04,
+      1492.41,
+      128.64
+     ],
+     "p_bbox_max_um": [
+      2453.41,
+      2289.16,
+      435.16
+     ],
+     "decimation_bbox_shift_um": 0.8205,
+     "surface_area_um2": 55405.3,
+     "file": "more-II-004.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-005",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2953.2,
+    2146.3,
+    212.9
+   ],
+   "root_id": "720575947506411120",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 212.6,
+   "probe_hits": 25,
+   "mesh_fragments": 113,
+   "tiers": {
+    "card": {
+     "faces": 36054,
+     "faces_in": 5785988,
+     "specks_dropped": 9402,
+     "density_per_um2": 1.4,
+     "vertices": 19909,
+     "bytes": 672344,
+     "bbox_min_um": [
+      2494.43,
+      2050.16,
+      119.77
+     ],
+     "bbox_max_um": [
+      3085.16,
+      2324.43,
+      246.53
+     ],
+     "p_bbox_min_um": [
+      2523.08,
+      2059.17,
+      126.7
+     ],
+     "p_bbox_max_um": [
+      3074.99,
+      2309.82,
+      245.98
+     ],
+     "decimation_bbox_shift_um": 0.9154,
+     "surface_area_um2": 25754.2,
+     "file": "more-II-005.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 5785988,
+     "specks_dropped": 9402,
+     "density_per_um2": 5.44,
+     "vertices": 74723,
+     "bytes": 2577440,
+     "bbox_min_um": [
+      2493.5,
+      2049.96,
+      119.77
+     ],
+     "bbox_max_um": [
+      3085.66,
+      2325.16,
+      246.57
+     ],
+     "p_bbox_min_um": [
+      2526.52,
+      2059.18,
+      127.08
+     ],
+     "p_bbox_max_um": [
+      3074.43,
+      2308.92,
+      245.94
+     ],
+     "decimation_bbox_shift_um": 0.1002,
+     "surface_area_um2": 25754.2,
+     "file": "more-II-005.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-006",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1915.6,
+    2078.7,
+    340.5
+   ],
+   "root_id": "720575947449672241",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 106.8,
+   "probe_hits": 14,
+   "mesh_fragments": 223,
+   "tiers": {
+    "card": {
+     "faces": 45043,
+     "faces_in": 7432235,
+     "specks_dropped": 8928,
+     "density_per_um2": 1.4,
+     "vertices": 25346,
+     "bytes": 845452,
+     "bbox_min_um": [
+      1677.75,
+      1801.35,
+      119.87
+     ],
+     "bbox_max_um": [
+      2184.92,
+      2301.63,
+      436.11
+     ],
+     "p_bbox_min_um": [
+      1715.02,
+      1845.39,
+      146.7
+     ],
+     "p_bbox_max_um": [
+      2145.48,
+      2296.46,
+      430.16
+     ],
+     "decimation_bbox_shift_um": 12.4838,
+     "surface_area_um2": 32174.5,
+     "file": "more-II-006.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-007",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2596.1,
+    2102.8,
+    335.0
+   ],
+   "root_id": "720575947562844725",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 112.3,
+   "probe_hits": 14,
+   "mesh_fragments": 322,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 12054645,
+     "specks_dropped": 12384,
+     "density_per_um2": 1.15,
+     "vertices": 34118,
+     "bytes": 1130192,
+     "bbox_min_um": [
+      2036.61,
+      2012.07,
+      166.49
+     ],
+     "bbox_max_um": [
+      2918.35,
+      2335.12,
+      438.48
+     ],
+     "p_bbox_min_um": [
+      2118.05,
+      2032.96,
+      246.71
+     ],
+     "p_bbox_max_um": [
+      2898.89,
+      2329.76,
+      433.18
+     ],
+     "decimation_bbox_shift_um": 5.8721,
+     "surface_area_um2": 52035.2,
+     "file": "more-II-007.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 12054645,
+     "specks_dropped": 12384,
+     "density_per_um2": 2.69,
+     "vertices": 80661,
+     "bytes": 2648700,
+     "bbox_min_um": [
+      2033.32,
+      2011.02,
+      166.41
+     ],
+     "bbox_max_um": [
+      2920.4,
+      2335.58,
+      438.62
+     ],
+     "p_bbox_min_um": [
+      2115.85,
+      2032.28,
+      244.04
+     ],
+     "p_bbox_max_um": [
+      2891.58,
+      2330.01,
+      433.21
+     ],
+     "decimation_bbox_shift_um": 2.5826,
+     "surface_area_um2": 52035.2,
+     "file": "more-II-007.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-008",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2774.8,
+    2140.2,
+    78.8
+   ],
+   "root_id": "720575947460066467",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 78.5,
+   "probe_hits": 12,
+   "mesh_fragments": 101,
+   "tiers": {
+    "card": {
+     "faces": 39774,
+     "faces_in": 6532934,
+     "specks_dropped": 6082,
+     "density_per_um2": 1.4,
+     "vertices": 22594,
+     "bytes": 749200,
+     "bbox_min_um": [
+      2634.8,
+      2034.78,
+      3.76
+     ],
+     "bbox_max_um": [
+      2908.56,
+      2213.47,
+      119.3
+     ],
+     "p_bbox_min_um": [
+      2645.01,
+      2041.67,
+      4.73
+     ],
+     "p_bbox_max_um": [
+      2894.57,
+      2197.85,
+      116.69
+     ],
+     "decimation_bbox_shift_um": 1.0476,
+     "surface_area_um2": 28411.4,
+     "file": "more-II-008.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-009",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2214.7,
+    2069.8,
+    336.5
+   ],
+   "root_id": "720575947561574498",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 110.8,
+   "probe_hits": 22,
+   "mesh_fragments": 192,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 10444360,
+     "specks_dropped": 17496,
+     "density_per_um2": 1.3,
+     "vertices": 32433,
+     "bytes": 1109984,
+     "bbox_min_um": [
+      1498.48,
+      1404.6,
+      120.9
+     ],
+     "bbox_max_um": [
+      2514.86,
+      2296.85,
+      438.45
+     ],
+     "p_bbox_min_um": [
+      1549.83,
+      1407.45,
+      163.31
+     ],
+     "p_bbox_max_um": [
+      2476.08,
+      2287.44,
+      433.61
+     ],
+     "decimation_bbox_shift_um": 1.0916,
+     "surface_area_um2": 46286.3,
+     "file": "more-II-009.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-010",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1901.6,
+    2154.2,
+    175.2
+   ],
+   "root_id": "720575947506961095",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 174.8,
+   "probe_hits": 7,
+   "mesh_fragments": 206,
+   "tiers": {
+    "card": {
+     "faces": 32998,
+     "faces_in": 5467702,
+     "specks_dropped": 4776,
+     "density_per_um2": 1.4,
+     "vertices": 18299,
+     "bytes": 616348,
+     "bbox_min_um": [
+      1747.85,
+      2049.24,
+      119.8
+     ],
+     "bbox_max_um": [
+      2178.54,
+      2306.79,
+      435.5
+     ],
+     "p_bbox_min_um": [
+      1764.75,
+      2060.94,
+      121.56
+     ],
+     "p_bbox_max_um": [
+      2154.75,
+      2299.9,
+      423.71
+     ],
+     "decimation_bbox_shift_um": 2.2064,
+     "surface_area_um2": 23570.9,
+     "file": "more-II-010.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-011",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    1912.8,
+    2125.8,
+    179.5
+   ],
+   "root_id": "720575947526221959",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 179.1,
+   "probe_hits": 16,
+   "mesh_fragments": 221,
+   "tiers": {
+    "card": {
+     "faces": 38401,
+     "faces_in": 6346179,
+     "specks_dropped": 4952,
+     "density_per_um2": 1.4,
+     "vertices": 21581,
+     "bytes": 720568,
+     "bbox_min_um": [
+      1667.85,
+      1729.05,
+      119.82
+     ],
+     "bbox_max_um": [
+      2432.08,
+      2297.58,
+      438.33
+     ],
+     "p_bbox_min_um": [
+      1699.02,
+      1771.01,
+      120.82
+     ],
+     "p_bbox_max_um": [
+      2259.3,
+      2293.01,
+      422.62
+     ],
+     "decimation_bbox_shift_um": 1.233,
+     "surface_area_um2": 27429.9,
+     "file": "more-II-011.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-012",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2113.3,
+    2014.0,
+    259.8
+   ],
+   "root_id": "720575947477788838",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 187.5,
+   "probe_hits": 22,
+   "mesh_fragments": 267,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 11734312,
+     "specks_dropped": 17488,
+     "density_per_um2": 1.16,
+     "vertices": 32491,
+     "bytes": 1110680,
+     "bbox_min_um": [
+      1941.78,
+      1510.62,
+      119.81
+     ],
+     "bbox_max_um": [
+      2388.13,
+      2298.9,
+      397.17
+     ],
+     "p_bbox_min_um": [
+      1974.54,
+      1553.0,
+      127.96
+     ],
+     "p_bbox_max_um": [
+      2374.17,
+      2288.0,
+      379.13
+     ],
+     "decimation_bbox_shift_um": 1.1995,
+     "surface_area_um2": 51752.1,
+     "file": "more-II-012.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-013",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2538.5,
+    2129.9,
+    363.7
+   ],
+   "root_id": "720575947490322616",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 83.6,
+   "probe_hits": 15,
+   "mesh_fragments": 385,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 14408317,
+     "specks_dropped": 17476,
+     "density_per_um2": 0.97,
+     "vertices": 33563,
+     "bytes": 1123540,
+     "bbox_min_um": [
+      2081.15,
+      1582.34,
+      246.67
+     ],
+     "bbox_max_um": [
+      2820.02,
+      2336.01,
+      438.33
+     ],
+     "p_bbox_min_um": [
+      2259.72,
+      1640.57,
+      256.98
+     ],
+     "p_bbox_max_um": [
+      2763.93,
+      2330.53,
+      434.63
+     ],
+     "decimation_bbox_shift_um": 8.7848,
+     "surface_area_um2": 61888.5,
+     "file": "more-II-013.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 14408317,
+     "specks_dropped": 17476,
+     "density_per_um2": 2.26,
+     "vertices": 79765,
+     "bytes": 2637964,
+     "bbox_min_um": [
+      2081.15,
+      1582.34,
+      246.67
+     ],
+     "bbox_max_um": [
+      2823.53,
+      2336.26,
+      438.62
+     ],
+     "p_bbox_min_um": [
+      2270.9,
+      1648.84,
+      256.57
+     ],
+     "p_bbox_max_um": [
+      2765.89,
+      2330.81,
+      434.59
+     ],
+     "decimation_bbox_shift_um": 8.7848,
+     "surface_area_um2": 61888.5,
+     "file": "more-II-013.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-014",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2995.2,
+    2206.5,
+    103.8
+   ],
+   "root_id": "720575947530200935",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 103.5,
+   "probe_hits": 7,
+   "mesh_fragments": 43,
+   "tiers": {
+    "card": {
+     "faces": 11244,
+     "faces_in": 1891872,
+     "specks_dropped": 2212,
+     "density_per_um2": 1.4,
+     "vertices": 7129,
+     "bytes": 221252,
+     "bbox_min_um": [
+      2870.82,
+      2126.29,
+      3.8
+     ],
+     "bbox_max_um": [
+      3079.04,
+      2283.1,
+      119.23
+     ],
+     "p_bbox_min_um": [
+      2874.74,
+      2144.14,
+      14.58
+     ],
+     "p_bbox_max_um": [
+      3068.03,
+      2275.05,
+      118.91
+     ],
+     "decimation_bbox_shift_um": 0.154,
+     "surface_area_um2": 8032.3,
+     "file": "more-II-014.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-015",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2239.0,
+    2084.6,
+    140.6
+   ],
+   "root_id": "720575947523140800",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 140.2,
+   "probe_hits": 10,
+   "mesh_fragments": 131,
+   "tiers": {
+    "card": {
+     "faces": 27025,
+     "faces_in": 4516565,
+     "specks_dropped": 6250,
+     "density_per_um2": 1.4,
+     "vertices": 15069,
+     "bytes": 505904,
+     "bbox_min_um": [
+      1854.54,
+      1804.17,
+      119.82
+     ],
+     "bbox_max_um": [
+      2419.85,
+      2281.47,
+      334.69
+     ],
+     "p_bbox_min_um": [
+      1923.95,
+      1817.47,
+      120.7
+     ],
+     "p_bbox_max_um": [
+      2412.7,
+      2279.98,
+      320.49
+     ],
+     "decimation_bbox_shift_um": 2.7811,
+     "surface_area_um2": 19304.4,
+     "file": "more-II-015.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-016",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2980.1,
+    2150.9,
+    298.1
+   ],
+   "root_id": "720575947489284177",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 149.2,
+   "probe_hits": 24,
+   "mesh_fragments": 223,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 10353579,
+     "specks_dropped": 18246,
+     "density_per_um2": 1.32,
+     "vertices": 32148,
+     "bytes": 1106564,
+     "bbox_min_um": [
+      2394.28,
+      1599.99,
+      246.62
+     ],
+     "bbox_max_um": [
+      3133.85,
+      2347.06,
+      436.34
+     ],
+     "p_bbox_min_um": [
+      2432.61,
+      1608.48,
+      247.32
+     ],
+     "p_bbox_max_um": [
+      3113.09,
+      2340.02,
+      433.07
+     ],
+     "decimation_bbox_shift_um": 4.6287,
+     "surface_area_um2": 45547.8,
+     "file": "more-II-016.card.glb"
+    },
+    "close": {
+     "faces": 139999,
+     "faces_in": 10353579,
+     "specks_dropped": 18246,
+     "density_per_um2": 3.07,
+     "vertices": 77249,
+     "bytes": 2607760,
+     "bbox_min_um": [
+      2394.28,
+      1595.38,
+      246.62
+     ],
+     "bbox_max_um": [
+      3134.53,
+      2347.3,
+      436.39
+     ],
+     "p_bbox_min_um": [
+      2442.14,
+      1608.79,
+      247.39
+     ],
+     "p_bbox_max_um": [
+      3111.16,
+      2339.55,
+      432.4
+     ],
+     "decimation_bbox_shift_um": 0.4789,
+     "surface_area_um2": 45547.8,
+     "file": "more-II-016.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-017",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2460.4,
+    2116.4,
+    109.0
+   ],
+   "root_id": "720575947532904098",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 108.7,
+   "probe_hits": 13,
+   "mesh_fragments": 54,
+   "tiers": {
+    "card": {
+     "faces": 26088,
+     "faces_in": 4324294,
+     "specks_dropped": 3498,
+     "density_per_um2": 1.4,
+     "vertices": 14752,
+     "bytes": 490868,
+     "bbox_min_um": [
+      2378.8,
+      2058.0,
+      3.95
+     ],
+     "bbox_max_um": [
+      2681.69,
+      2288.99,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      2389.44,
+      2071.7,
+      13.09
+     ],
+     "p_bbox_max_um": [
+      2676.33,
+      2283.44,
+      118.91
+     ],
+     "decimation_bbox_shift_um": 0.7872,
+     "surface_area_um2": 18635.3,
+     "file": "more-II-017.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-018",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2012.7,
+    2074.6,
+    233.5
+   ],
+   "root_id": "720575947479177638",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 213.8,
+   "probe_hits": 11,
+   "mesh_fragments": 328,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 12127593,
+     "specks_dropped": 8920,
+     "density_per_um2": 1.16,
+     "vertices": 35178,
+     "bytes": 1142912,
+     "bbox_min_um": [
+      1707.66,
+      1705.31,
+      119.99
+     ],
+     "bbox_max_um": [
+      2429.64,
+      2281.28,
+      436.3
+     ],
+     "p_bbox_min_um": [
+      1768.8,
+      1776.03,
+      132.53
+     ],
+     "p_bbox_max_um": [
+      2370.2,
+      2273.91,
+      423.61
+     ],
+     "decimation_bbox_shift_um": 4.9572,
+     "surface_area_um2": 51896.0,
+     "file": "more-II-018.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-019",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2135.8,
+    2074.6,
+    185.3
+   ],
+   "root_id": "720575947563571966",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 184.9,
+   "probe_hits": 22,
+   "mesh_fragments": 240,
+   "tiers": {
+    "card": {
+     "faces": 54566,
+     "faces_in": 8777192,
+     "specks_dropped": 13172,
+     "density_per_um2": 1.4,
+     "vertices": 30021,
+     "bytes": 1015824,
+     "bbox_min_um": [
+      1850.92,
+      1830.21,
+      119.82
+     ],
+     "bbox_max_um": [
+      2548.08,
+      2293.3,
+      436.09
+     ],
+     "p_bbox_min_um": [
+      1863.32,
+      1861.1,
+      120.96
+     ],
+     "p_bbox_max_um": [
+      2487.67,
+      2288.23,
+      417.08
+     ],
+     "decimation_bbox_shift_um": 0.3179,
+     "surface_area_um2": 38976.0,
+     "file": "more-II-019.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-020",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2475.3,
+    2177.8,
+    224.7
+   ],
+   "root_id": "720575947515585037",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 203.1,
+   "probe_hits": 14,
+   "mesh_fragments": 207,
+   "tiers": {
+    "card": {
+     "faces": 43323,
+     "faces_in": 7281160,
+     "specks_dropped": 4350,
+     "density_per_um2": 1.4,
+     "vertices": 25299,
+     "bytes": 824248,
+     "bbox_min_um": [
+      2368.85,
+      1803.56,
+      119.8
+     ],
+     "bbox_max_um": [
+      2612.9,
+      2308.43,
+      295.87
+     ],
+     "p_bbox_min_um": [
+      2373.92,
+      1824.55,
+      122.13
+     ],
+     "p_bbox_max_um": [
+      2583.15,
+      2304.77,
+      283.25
+     ],
+     "decimation_bbox_shift_um": 0.6094,
+     "surface_area_um2": 30946.5,
+     "file": "more-II-020.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-021",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2830.6,
+    2176.3,
+    280.1
+   ],
+   "root_id": "720575947527033536",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 167.2,
+   "probe_hits": 11,
+   "mesh_fragments": 41,
+   "tiers": {
+    "card": {
+     "faces": 11804,
+     "faces_in": 1916154,
+     "specks_dropped": 4288,
+     "density_per_um2": 1.4,
+     "vertices": 6499,
+     "bytes": 220420,
+     "bbox_min_um": [
+      2782.94,
+      2029.29,
+      246.68
+     ],
+     "bbox_max_um": [
+      3070.38,
+      2291.0,
+      435.88
+     ],
+     "p_bbox_min_um": [
+      2795.21,
+      2032.78,
+      248.4
+     ],
+     "p_bbox_max_um": [
+      3029.93,
+      2276.89,
+      425.43
+     ],
+     "decimation_bbox_shift_um": 23.2059,
+     "surface_area_um2": 8432.3,
+     "file": "more-II-021.card.glb"
+    },
+    "close": {
+     "faces": 50592,
+     "faces_in": 1916154,
+     "specks_dropped": 4288,
+     "density_per_um2": 6.0,
+     "vertices": 25826,
+     "bytes": 917804,
+     "bbox_min_um": [
+      2782.9,
+      2029.11,
+      246.63
+     ],
+     "bbox_max_um": [
+      3093.53,
+      2291.02,
+      436.25
+     ],
+     "p_bbox_min_um": [
+      2795.47,
+      2032.85,
+      248.44
+     ],
+     "p_bbox_max_um": [
+      3064.47,
+      2279.07,
+      426.43
+     ],
+     "decimation_bbox_shift_um": 0.0868,
+     "surface_area_um2": 8432.3,
+     "file": "more-II-021.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-022",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2565.9,
+    2079.2,
+    277.7
+   ],
+   "root_id": "720575947560099943",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 169.6,
+   "probe_hits": 27,
+   "mesh_fragments": 302,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 14484251,
+     "specks_dropped": 25508,
+     "density_per_um2": 0.94,
+     "vertices": 32349,
+     "bytes": 1108976,
+     "bbox_min_um": [
+      1826.96,
+      1411.17,
+      119.79
+     ],
+     "bbox_max_um": [
+      2816.99,
+      2337.67,
+      438.57
+     ],
+     "p_bbox_min_um": [
+      1888.02,
+      1414.23,
+      144.24
+     ],
+     "p_bbox_max_um": [
+      2745.35,
+      2322.92,
+      433.72
+     ],
+     "decimation_bbox_shift_um": 3.948,
+     "surface_area_um2": 63528.9,
+     "file": "more-II-022.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 14484251,
+     "specks_dropped": 25508,
+     "density_per_um2": 2.2,
+     "vertices": 77185,
+     "bytes": 2607008,
+     "bbox_min_um": [
+      1826.85,
+      1411.21,
+      119.79
+     ],
+     "bbox_max_um": [
+      2816.99,
+      2337.68,
+      438.62
+     ],
+     "p_bbox_min_um": [
+      1895.84,
+      1416.18,
+      145.2
+     ],
+     "p_bbox_max_um": [
+      2754.73,
+      2322.78,
+      432.77
+     ],
+     "decimation_bbox_shift_um": 3.948,
+     "surface_area_um2": 63528.9,
+     "file": "more-II-022.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-024",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2812.2,
+    2118.1,
+    113.7
+   ],
+   "root_id": "720575947455381923",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 113.3,
+   "probe_hits": 20,
+   "mesh_fragments": 34,
+   "tiers": {
+    "card": {
+     "faces": 17392,
+     "faces_in": 2858024,
+     "specks_dropped": 4720,
+     "density_per_um2": 1.4,
+     "vertices": 9738,
+     "bytes": 326344,
+     "bbox_min_um": [
+      2671.37,
+      2049.84,
+      3.81
+     ],
+     "bbox_max_um": [
+      2910.11,
+      2215.45,
+      119.27
+     ],
+     "p_bbox_min_um": [
+      2680.68,
+      2054.64,
+      5.67
+     ],
+     "p_bbox_max_um": [
+      2897.78,
+      2210.83,
+      119.25
+     ],
+     "decimation_bbox_shift_um": 1.5363,
+     "surface_area_um2": 12423.6,
+     "file": "more-II-024.card.glb"
+    },
+    "close": {
+     "faces": 74540,
+     "faces_in": 2858024,
+     "specks_dropped": 4720,
+     "density_per_um2": 6.0,
+     "vertices": 39542,
+     "bytes": 1369772,
+     "bbox_min_um": [
+      2670.38,
+      2048.38,
+      3.75
+     ],
+     "bbox_max_um": [
+      2910.17,
+      2215.51,
+      119.28
+     ],
+     "p_bbox_min_um": [
+      2680.84,
+      2054.35,
+      5.53
+     ],
+     "p_bbox_max_um": [
+      2896.92,
+      2210.55,
+      119.2
+     ],
+     "decimation_bbox_shift_um": 0.1217,
+     "surface_area_um2": 12423.6,
+     "file": "more-II-024.close.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-025",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2524.9,
+    2157.6,
+    69.3
+   ],
+   "root_id": "720575947493410041",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 68.9,
+   "probe_hits": 31,
+   "mesh_fragments": 103,
+   "tiers": {
+    "card": {
+     "faces": 48805,
+     "faces_in": 7913946,
+     "specks_dropped": 18490,
+     "density_per_um2": 1.4,
+     "vertices": 26803,
+     "bytes": 908084,
+     "bbox_min_um": [
+      2203.36,
+      1998.74,
+      3.76
+     ],
+     "bbox_max_um": [
+      2720.26,
+      2273.99,
+      119.22
+     ],
+     "p_bbox_min_um": [
+      2239.18,
+      2018.63,
+      5.28
+     ],
+     "p_bbox_max_um": [
+      2698.46,
+      2265.18,
+      117.78
+     ],
+     "decimation_bbox_shift_um": 3.8816,
+     "surface_area_um2": 34862.5,
+     "file": "more-II-025.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-026",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2326.3,
+    2089.2,
+    310.1
+   ],
+   "root_id": "720575947538868220",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 137.2,
+   "probe_hits": 12,
+   "mesh_fragments": 226,
+   "tiers": {
+    "card": {
+     "faces": 47046,
+     "faces_in": 7842035,
+     "specks_dropped": 8790,
+     "density_per_um2": 1.4,
+     "vertices": 26625,
+     "bytes": 884840,
+     "bbox_min_um": [
+      2117.79,
+      1542.6,
+      120.01
+     ],
+     "bbox_max_um": [
+      2605.4,
+      2302.12,
+      438.56
+     ],
+     "p_bbox_min_um": [
+      2136.96,
+      1638.6,
+      138.78
+     ],
+     "p_bbox_max_um": [
+      2582.81,
+      2294.46,
+      435.84
+     ],
+     "decimation_bbox_shift_um": 2.5823,
+     "surface_area_um2": 33605.9,
+     "file": "more-II-026.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-027",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2045.4,
+    2090.0,
+    129.1
+   ],
+   "root_id": "720575947417696663",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 128.7,
+   "probe_hits": 22,
+   "mesh_fragments": 197,
+   "tiers": {
+    "card": {
+     "faces": 53194,
+     "faces_in": 8585360,
+     "specks_dropped": 12692,
+     "density_per_um2": 1.4,
+     "vertices": 28934,
+     "bytes": 986328,
+     "bbox_min_um": [
+      1686.45,
+      1585.22,
+      119.8
+     ],
+     "bbox_max_um": [
+      2373.34,
+      2291.69,
+      400.36
+     ],
+     "p_bbox_min_um": [
+      1727.05,
+      1606.06,
+      120.9
+     ],
+     "p_bbox_max_um": [
+      2338.33,
+      2286.49,
+      344.83
+     ],
+     "decimation_bbox_shift_um": 1.2703,
+     "surface_area_um2": 37997.0,
+     "file": "more-II-027.card.glb"
+    }
+   }
+  },
+  {
+   "id": "more-II-028",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2838.0,
+    2139.4,
+    45.8
+   ],
+   "root_id": "720575947450709168",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 45.4,
+   "probe_hits": 17,
+   "mesh_fragments": 199,
+   "tiers": {
+    "card": {
+     "faces": 57907,
+     "faces_in": 9756790,
+     "specks_dropped": 8264,
+     "density_per_um2": 1.4,
+     "vertices": 32613,
+     "bytes": 1087028,
+     "bbox_min_um": [
+      2446.52,
+      2065.08,
+      3.81
+     ],
+     "bbox_max_um": [
+      3097.62,
+      2286.05,
+      119.26
+     ],
+     "p_bbox_min_um": [
+      2486.77,
+      2078.72,
+      5.16
+     ],
+     "p_bbox_max_um": [
+      3070.74,
+      2268.84,
+      118.16
+     ],
+     "decimation_bbox_shift_um": 0.6821,
+     "surface_area_um2": 41363.8,
+     "file": "more-II-028.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-01",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2324.2,
+    2026.8,
+    226.6
+   ],
+   "root_id": "720575947564538366",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 220.7,
+   "probe_hits": 23,
+   "mesh_fragments": 207,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 10342503,
+     "specks_dropped": 15932,
+     "density_per_um2": 1.3,
+     "vertices": 31788,
+     "bytes": 1102244,
+     "bbox_min_um": [
+      1748.01,
+      1480.65,
+      119.85
+     ],
+     "bbox_max_um": [
+      2683.86,
+      2332.46,
+      438.34
+     ],
+     "p_bbox_min_um": [
+      1820.04,
+      1503.22,
+      125.49
+     ],
+     "p_bbox_max_um": [
+      2669.53,
+      2312.94,
+      425.92
+     ],
+     "decimation_bbox_shift_um": 1.1376,
+     "surface_area_um2": 46016.1,
+     "file": "pyramidal-01.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-02",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2067.2,
+    2050.6,
+    220.6
+   ],
+   "root_id": "720575947563692488",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 220.3,
+   "probe_hits": 19,
+   "mesh_fragments": 216,
+   "tiers": {
+    "card": {
+     "faces": 58600,
+     "faces_in": 9529706,
+     "specks_dropped": 13556,
+     "density_per_um2": 1.4,
+     "vertices": 31766,
+     "bytes": 1085184,
+     "bbox_min_um": [
+      1931.08,
+      1897.06,
+      119.83
+     ],
+     "bbox_max_um": [
+      2414.09,
+      2299.72,
+      394.8
+     ],
+     "p_bbox_min_um": [
+      1948.5,
+      1933.47,
+      122.19
+     ],
+     "p_bbox_max_um": [
+      2390.96,
+      2287.54,
+      365.64
+     ],
+     "decimation_bbox_shift_um": 1.1942,
+     "surface_area_um2": 41858.6,
+     "file": "pyramidal-02.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-05",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2425.3,
+    2076.9,
+    222.9
+   ],
+   "root_id": "720575947553262110",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 222.5,
+   "probe_hits": 16,
+   "mesh_fragments": 301,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 11198002,
+     "specks_dropped": 9866,
+     "density_per_um2": 1.26,
+     "vertices": 34772,
+     "bytes": 1138024,
+     "bbox_min_um": [
+      2240.24,
+      1576.03,
+      119.81
+     ],
+     "bbox_max_um": [
+      2911.05,
+      2290.73,
+      436.05
+     ],
+     "p_bbox_min_um": [
+      2281.15,
+      1635.8,
+      123.31
+     ],
+     "p_bbox_max_um": [
+      2718.48,
+      2288.14,
+      415.85
+     ],
+     "decimation_bbox_shift_um": 8.0665,
+     "surface_area_um2": 47591.8,
+     "file": "pyramidal-05.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-06",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2385.2,
+    2059.3,
+    225.3
+   ],
+   "root_id": "720575947522984832",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 222.0,
+   "probe_hits": 16,
+   "mesh_fragments": 527,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 14483257,
+     "specks_dropped": 14775,
+     "density_per_um2": 0.97,
+     "vertices": 33808,
+     "bytes": 1126476,
+     "bbox_min_um": [
+      2171.25,
+      1773.43,
+      119.99
+     ],
+     "bbox_max_um": [
+      2866.77,
+      2325.68,
+      435.02
+     ],
+     "p_bbox_min_um": [
+      2259.89,
+      1868.51,
+      138.57
+     ],
+     "p_bbox_max_um": [
+      2723.23,
+      2312.19,
+      404.95
+     ],
+     "decimation_bbox_shift_um": 5.9211,
+     "surface_area_um2": 61973.2,
+     "file": "pyramidal-06.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-07",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2398.7,
+    2075.4,
+    227.0
+   ],
+   "root_id": "720575947446757811",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 220.3,
+   "probe_hits": 16,
+   "mesh_fragments": 424,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 13099191,
+     "specks_dropped": 11782,
+     "density_per_um2": 1.06,
+     "vertices": 33778,
+     "bytes": 1126112,
+     "bbox_min_um": [
+      2113.0,
+      1620.68,
+      119.91
+     ],
+     "bbox_max_um": [
+      2945.53,
+      2333.15,
+      438.65
+     ],
+     "p_bbox_min_um": [
+      2171.85,
+      1697.5,
+      125.57
+     ],
+     "p_bbox_max_um": [
+      2754.45,
+      2326.87,
+      429.78
+     ],
+     "decimation_bbox_shift_um": 11.3093,
+     "surface_area_um2": 56741.7,
+     "file": "pyramidal-07.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-08",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2537.5,
+    2112.0,
+    225.7
+   ],
+   "root_id": "720575947478054388",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 221.6,
+   "probe_hits": 15,
+   "mesh_fragments": 358,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 11561630,
+     "specks_dropped": 7082,
+     "density_per_um2": 1.23,
+     "vertices": 35627,
+     "bytes": 1148288,
+     "bbox_min_um": [
+      2310.93,
+      1813.8,
+      119.77
+     ],
+     "bbox_max_um": [
+      2948.01,
+      2310.0,
+      436.3
+     ],
+     "p_bbox_min_um": [
+      2386.77,
+      1917.05,
+      121.3
+     ],
+     "p_bbox_max_um": [
+      2910.87,
+      2302.82,
+      388.29
+     ],
+     "decimation_bbox_shift_um": 10.9549,
+     "surface_area_um2": 48934.3,
+     "file": "pyramidal-08.card.glb"
+    },
+    "close": {
+     "faces": 139999,
+     "faces_in": 11561630,
+     "specks_dropped": 7082,
+     "density_per_um2": 2.86,
+     "vertices": 80150,
+     "bytes": 2642564,
+     "bbox_min_um": [
+      2310.93,
+      1813.77,
+      119.77
+     ],
+     "bbox_max_um": [
+      2957.76,
+      2310.0,
+      436.3
+     ],
+     "p_bbox_min_um": [
+      2387.04,
+      1927.93,
+      121.11
+     ],
+     "p_bbox_max_um": [
+      2919.09,
+      2302.62,
+      394.97
+     ],
+     "decimation_bbox_shift_um": 1.199,
+     "surface_area_um2": 48934.3,
+     "file": "pyramidal-08.close.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-10",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2422.0,
+    2103.3,
+    224.9
+   ],
+   "root_id": "720575947537528132",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 222.4,
+   "probe_hits": 14,
+   "mesh_fragments": 330,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 11764993,
+     "specks_dropped": 9980,
+     "density_per_um2": 1.19,
+     "vertices": 33613,
+     "bytes": 1124144,
+     "bbox_min_um": [
+      2290.21,
+      1797.36,
+      119.82
+     ],
+     "bbox_max_um": [
+      2700.95,
+      2333.12,
+      430.37
+     ],
+     "p_bbox_min_um": [
+      2310.8,
+      1842.73,
+      123.42
+     ],
+     "p_bbox_max_um": [
+      2677.26,
+      2321.59,
+      355.71
+     ],
+     "decimation_bbox_shift_um": 5.972,
+     "surface_area_um2": 50342.3,
+     "file": "pyramidal-10.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-11",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2488.1,
+    2143.2,
+    222.0
+   ],
+   "root_id": "720575947538980424",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 221.6,
+   "probe_hits": 14,
+   "mesh_fragments": 242,
+   "tiers": {
+    "card": {
+     "faces": 40783,
+     "faces_in": 6796014,
+     "specks_dropped": 4132,
+     "density_per_um2": 1.4,
+     "vertices": 23577,
+     "bytes": 773108,
+     "bbox_min_um": [
+      2377.03,
+      2034.23,
+      119.77
+     ],
+     "bbox_max_um": [
+      2637.78,
+      2326.48,
+      376.28
+     ],
+     "p_bbox_min_um": [
+      2391.01,
+      2052.0,
+      121.41
+     ],
+     "p_bbox_max_um": [
+      2619.22,
+      2298.37,
+      328.47
+     ],
+     "decimation_bbox_shift_um": 2.2508,
+     "surface_area_um2": 29131.7,
+     "file": "pyramidal-11.card.glb"
+    }
+   }
+  },
+  {
+   "id": "pyramidal-12",
+   "cell_type": "pyramidal",
+   "nucleus_um": [
+    2647.3,
+    2117.6,
+    223.5
+   ],
+   "root_id": "720575947612969836",
+   "layer": "II",
+   "size_cluster": 6,
+   "edge_dist_um": 223.1,
+   "probe_hits": 13,
+   "mesh_fragments": 237,
+   "tiers": {
+    "card": {
+     "faces": 37992,
+     "faces_in": 6303904,
+     "specks_dropped": 5616,
+     "density_per_um2": 1.4,
+     "vertices": 21199,
+     "bytes": 711076,
+     "bbox_min_um": [
+      2523.37,
+      1682.41,
+      119.77
+     ],
+     "bbox_max_um": [
+      2992.96,
+      2372.72,
+      436.35
+     ],
+     "p_bbox_min_um": [
+      2535.23,
+      1734.18,
+      122.65
+     ],
+     "p_bbox_max_um": [
+      2970.34,
+      2349.01,
+      432.12
+     ],
+     "decimation_bbox_shift_um": 4.2755,
+     "surface_area_um2": 27138.8,
+     "file": "pyramidal-12.card.glb"
+    },
+    "close": {
+     "faces": 139998,
+     "faces_in": 6303904,
+     "specks_dropped": 5616,
+     "density_per_um2": 5.16,
+     "vertices": 76673,
+     "bytes": 2600832,
+     "bbox_min_um": [
+      2523.29,
+      1682.31,
+      119.75
+     ],
+     "bbox_max_um": [
+      2997.17,
+      2372.78,
+      436.33
+     ],
+     "p_bbox_min_um": [
+      2537.12,
+      1736.32,
+      122.67
+     ],
+     "p_bbox_max_um": [
+      2967.9,
+      2345.29,
+      431.35
+     ],
+     "decimation_bbox_shift_um": 0.1135,
+     "surface_area_um2": 27138.8,
+     "file": "pyramidal-12.close.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-01",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2281.7,
+    2089.7,
+    229.1
+   ],
+   "root_id": "720575947520731264",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 218.2,
+   "probe_hits": 37,
+   "mesh_fragments": 265,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 12581277,
+     "specks_dropped": 18418,
+     "density_per_um2": 1.08,
+     "vertices": 32158,
+     "bytes": 1106672,
+     "bbox_min_um": [
+      2017.89,
+      1862.64,
+      119.81
+     ],
+     "bbox_max_um": [
+      2556.07,
+      2295.48,
+      438.61
+     ],
+     "p_bbox_min_um": [
+      2065.09,
+      1899.09,
+      129.21
+     ],
+     "p_bbox_max_um": [
+      2513.82,
+      2289.89,
+      426.76
+     ],
+     "decimation_bbox_shift_um": 3.617,
+     "surface_area_um2": 55613.5,
+     "file": "stellate-01.card.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-02",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2107.4,
+    2078.0,
+    230.2
+   ],
+   "root_id": "720575947582144519",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 217.1,
+   "probe_hits": 36,
+   "mesh_fragments": 293,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 14212063,
+     "specks_dropped": 21997,
+     "density_per_um2": 0.96,
+     "vertices": 33150,
+     "bytes": 1118588,
+     "bbox_min_um": [
+      1759.82,
+      1441.91,
+      119.86
+     ],
+     "bbox_max_um": [
+      2445.16,
+      2299.13,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1800.63,
+      1479.91,
+      122.71
+     ],
+     "p_bbox_max_um": [
+      2395.78,
+      2291.33,
+      413.73
+     ],
+     "decimation_bbox_shift_um": 0.4191,
+     "surface_area_um2": 62516.1,
+     "file": "stellate-02.card.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-03",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2370.6,
+    2050.8,
+    234.9
+   ],
+   "root_id": "720575947516084794",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 212.4,
+   "probe_hits": 32,
+   "mesh_fragments": 321,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 14683833,
+     "specks_dropped": 21548,
+     "density_per_um2": 0.93,
+     "vertices": 31969,
+     "bytes": 1104392,
+     "bbox_min_um": [
+      1977.94,
+      1491.47,
+      119.94
+     ],
+     "bbox_max_um": [
+      2587.04,
+      2301.17,
+      437.43
+     ],
+     "p_bbox_min_um": [
+      2037.54,
+      1519.06,
+      141.57
+     ],
+     "p_bbox_max_um": [
+      2556.56,
+      2296.69,
+      433.34
+     ],
+     "decimation_bbox_shift_um": 3.1253,
+     "surface_area_um2": 64810.4,
+     "file": "stellate-03.card.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-04",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2382.1,
+    2122.5,
+    226.1
+   ],
+   "root_id": "720575947533956891",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 221.2,
+   "probe_hits": 30,
+   "mesh_fragments": 266,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 13246724,
+     "specks_dropped": 17310,
+     "density_per_um2": 1.02,
+     "vertices": 32055,
+     "bytes": 1105428,
+     "bbox_min_um": [
+      1947.05,
+      1483.65,
+      119.88
+     ],
+     "bbox_max_um": [
+      2679.14,
+      2322.99,
+      417.47
+     ],
+     "p_bbox_min_um": [
+      1998.06,
+      1497.26,
+      123.22
+     ],
+     "p_bbox_max_um": [
+      2630.07,
+      2316.54,
+      399.58
+     ],
+     "decimation_bbox_shift_um": 6.3123,
+     "surface_area_um2": 58586.8,
+     "file": "stellate-04.card.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-05",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2681.9,
+    2147.6,
+    219.5
+   ],
+   "root_id": "720575947491098094",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 219.1,
+   "probe_hits": 30,
+   "mesh_fragments": 366,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 15297325,
+     "specks_dropped": 21272,
+     "density_per_um2": 0.89,
+     "vertices": 32659,
+     "bytes": 1112672,
+     "bbox_min_um": [
+      1496.83,
+      1148.86,
+      119.84
+     ],
+     "bbox_max_um": [
+      3123.56,
+      2339.65,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1558.29,
+      1184.97,
+      124.94
+     ],
+     "p_bbox_max_um": [
+      2847.26,
+      2330.65,
+      429.68
+     ],
+     "decimation_bbox_shift_um": 2.4723,
+     "surface_area_um2": 67400.9,
+     "file": "stellate-05.card.glb"
+    },
+    "close": {
+     "faces": 139996,
+     "faces_in": 15297325,
+     "specks_dropped": 21272,
+     "density_per_um2": 2.08,
+     "vertices": 77283,
+     "bytes": 2608136,
+     "bbox_min_um": [
+      1496.83,
+      1148.86,
+      119.76
+     ],
+     "bbox_max_um": [
+      3123.69,
+      2340.72,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1570.71,
+      1191.45,
+      124.59
+     ],
+     "p_bbox_max_um": [
+      2873.36,
+      2329.79,
+      429.72
+     ],
+     "decimation_bbox_shift_um": 2.3449,
+     "surface_area_um2": 67400.9,
+     "file": "stellate-05.close.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-06",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2578.9,
+    2068.0,
+    231.5
+   ],
+   "root_id": "720575947560735335",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 215.8,
+   "probe_hits": 29,
+   "mesh_fragments": 330,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 14982532,
+     "specks_dropped": 20356,
+     "density_per_um2": 0.91,
+     "vertices": 31791,
+     "bytes": 1102256,
+     "bbox_min_um": [
+      1977.8,
+      1498.7,
+      119.88
+     ],
+     "bbox_max_um": [
+      3007.49,
+      2329.37,
+      436.31
+     ],
+     "p_bbox_min_um": [
+      2043.94,
+      1521.09,
+      127.06
+     ],
+     "p_bbox_max_um": [
+      2971.96,
+      2315.58,
+      427.07
+     ],
+     "decimation_bbox_shift_um": 0.7032,
+     "surface_area_um2": 66234.2,
+     "file": "stellate-06.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 14982532,
+     "specks_dropped": 20356,
+     "density_per_um2": 2.11,
+     "vertices": 76247,
+     "bytes": 2595752,
+     "bbox_min_um": [
+      1977.65,
+      1498.7,
+      119.8
+     ],
+     "bbox_max_um": [
+      3007.83,
+      2329.98,
+      436.33
+     ],
+     "p_bbox_min_um": [
+      2048.86,
+      1523.04,
+      128.34
+     ],
+     "p_bbox_max_um": [
+      2972.61,
+      2315.77,
+      426.52
+     ],
+     "decimation_bbox_shift_um": 0.3178,
+     "surface_area_um2": 66234.2,
+     "file": "stellate-06.close.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-07",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2762.5,
+    2138.1,
+    224.7
+   ],
+   "root_id": "720575947491070475",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 222.6,
+   "probe_hits": 27,
+   "mesh_fragments": 302,
+   "tiers": {
+    "card": {
+     "faces": 59999,
+     "faces_in": 11679776,
+     "specks_dropped": 14546,
+     "density_per_um2": 1.16,
+     "vertices": 31908,
+     "bytes": 1103672,
+     "bbox_min_um": [
+      2218.26,
+      1581.06,
+      119.81
+     ],
+     "bbox_max_um": [
+      2994.98,
+      2337.99,
+      438.59
+     ],
+     "p_bbox_min_um": [
+      2259.9,
+      1590.35,
+      122.63
+     ],
+     "p_bbox_max_um": [
+      2950.75,
+      2326.86,
+      414.45
+     ],
+     "decimation_bbox_shift_um": 1.944,
+     "surface_area_um2": 51502.1,
+     "file": "stellate-07.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 11679776,
+     "specks_dropped": 14546,
+     "density_per_um2": 2.72,
+     "vertices": 77173,
+     "bytes": 2606864,
+     "bbox_min_um": [
+      2218.2,
+      1581.02,
+      119.81
+     ],
+     "bbox_max_um": [
+      2995.87,
+      2338.01,
+      438.63
+     ],
+     "p_bbox_min_um": [
+      2271.07,
+      1593.78,
+      122.95
+     ],
+     "p_bbox_max_um": [
+      2950.41,
+      2326.91,
+      411.95
+     ],
+     "decimation_bbox_shift_um": 1.0586,
+     "surface_area_um2": 51502.1,
+     "file": "stellate-07.close.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-08",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2375.4,
+    2071.3,
+    214.2
+   ],
+   "root_id": "720575947483035380",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 213.9,
+   "probe_hits": 27,
+   "mesh_fragments": 361,
+   "tiers": {
+    "card": {
+     "faces": 59997,
+     "faces_in": 14403908,
+     "specks_dropped": 19534,
+     "density_per_um2": 0.95,
+     "vertices": 32175,
+     "bytes": 1106852,
+     "bbox_min_um": [
+      1764.46,
+      1472.99,
+      119.81
+     ],
+     "bbox_max_um": [
+      2637.29,
+      2312.65,
+      438.48
+     ],
+     "p_bbox_min_um": [
+      1809.2,
+      1478.93,
+      121.94
+     ],
+     "p_bbox_max_um": [
+      2563.25,
+      2300.15,
+      413.44
+     ],
+     "decimation_bbox_shift_um": 6.7504,
+     "surface_area_um2": 63221.4,
+     "file": "stellate-08.card.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-09",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2869.0,
+    2157.3,
+    222.3
+   ],
+   "root_id": "720575947517862794",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 221.9,
+   "probe_hits": 25,
+   "mesh_fragments": 221,
+   "tiers": {
+    "card": {
+     "faces": 59426,
+     "faces_in": 9643780,
+     "specks_dropped": 13604,
+     "density_per_um2": 1.4,
+     "vertices": 31976,
+     "bytes": 1097608,
+     "bbox_min_um": [
+      2459.23,
+      1981.66,
+      119.77
+     ],
+     "bbox_max_um": [
+      3079.53,
+      2357.06,
+      432.26
+     ],
+     "p_bbox_min_um": [
+      2495.98,
+      2018.29,
+      124.61
+     ],
+     "p_bbox_max_um": [
+      3050.2,
+      2335.41,
+      419.89
+     ],
+     "decimation_bbox_shift_um": 0.3641,
+     "surface_area_um2": 42448.1,
+     "file": "stellate-09.card.glb"
+    },
+    "close": {
+     "faces": 140000,
+     "faces_in": 9643780,
+     "specks_dropped": 13604,
+     "density_per_um2": 3.3,
+     "vertices": 76852,
+     "bytes": 2603008,
+     "bbox_min_um": [
+      2459.23,
+      1981.47,
+      119.73
+     ],
+     "bbox_max_um": [
+      3079.51,
+      2357.28,
+      432.33
+     ],
+     "p_bbox_min_um": [
+      2497.47,
+      2018.09,
+      124.47
+     ],
+     "p_bbox_max_um": [
+      3047.84,
+      2334.66,
+      418.29
+     ],
+     "decimation_bbox_shift_um": 0.289,
+     "surface_area_um2": 42448.1,
+     "file": "stellate-09.close.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-10",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2116.9,
+    2095.4,
+    215.2
+   ],
+   "root_id": "720575947569455640",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 214.8,
+   "probe_hits": 25,
+   "mesh_fragments": 216,
+   "tiers": {
+    "card": {
+     "faces": 60000,
+     "faces_in": 10009207,
+     "specks_dropped": 11554,
+     "density_per_um2": 1.36,
+     "vertices": 32767,
+     "bytes": 1113996,
+     "bbox_min_um": [
+      1766.29,
+      1652.14,
+      119.84
+     ],
+     "bbox_max_um": [
+      2397.37,
+      2292.5,
+      438.56
+     ],
+     "p_bbox_min_um": [
+      1784.24,
+      1694.77,
+      123.86
+     ],
+     "p_bbox_max_um": [
+      2321.62,
+      2279.74,
+      427.25
+     ],
+     "decimation_bbox_shift_um": 5.7356,
+     "surface_area_um2": 44036.5,
+     "file": "stellate-10.card.glb"
+    }
+   }
+  },
+  {
+   "id": "stellate-12",
+   "cell_type": "stellate",
+   "nucleus_um": [
+    2186.0,
+    2037.5,
+    227.1
+   ],
+   "root_id": "720575947566472472",
+   "layer": "II",
+   "size_cluster": 7,
+   "edge_dist_um": 220.2,
+   "probe_hits": 23,
+   "mesh_fragments": 283,
+   "tiers": {
+    "card": {
+     "faces": 59998,
+     "faces_in": 12459580,
+     "specks_dropped": 18384,
+     "density_per_um2": 1.09,
+     "vertices": 32116,
+     "bytes": 1106156,
+     "bbox_min_um": [
+      2023.15,
+      1820.36,
+      119.78
+     ],
+     "bbox_max_um": [
+      2435.81,
+      2293.16,
+      438.39
+     ],
+     "p_bbox_min_um": [
+      2044.83,
+      1856.75,
+      125.65
+     ],
+     "p_bbox_max_um": [
+      2415.39,
+      2288.42,
+      424.73
+     ],
+     "decimation_bbox_shift_um": 1.7699,
+     "surface_area_um2": 55240.1,
+     "file": "stellate-12.card.glb"
+    }
+   }
+  }
+ ]
+}

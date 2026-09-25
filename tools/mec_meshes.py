@@ -46,6 +46,14 @@ CAVE = "https://hc.himc-cave.com"
 TABLE = "pni_mec"
 MESH_BASE = ("https://storage.googleapis.com/princeton-eric-mec-prod-east1"
              "/ws/seg_20260713164845/graphene_meshes/initial")
+# TWO FRAGMENT FORMS, IN TWO DIRECTORIES.
+# Most fragments are a byte range inside a shard: "~4/128452-0.shard:27143548:1289",
+# under initial/. A few are whole unsharded files named "<segid>:0:<chunk range>",
+# e.g. "479914835292021445:0:81920-90112_73728-81920_0-4096", and those live
+# under dynamic/ instead. Parsing every fragment as path:offset:length raised
+# ValueError on the chunk range and skipped the WHOLE cell, which is why some
+# cells failed to build for no visible reason: 4 of 168 fragments were enough.
+MESH_DYNAMIC = MESH_BASE.rsplit("/", 1)[0] + "/dynamic"
 
 # Straight from the segmentation info file. Everything is checked against these.
 VOXEL_OFFSET = np.array([76728, 65192, 8])
@@ -200,11 +208,7 @@ def sampled_extent_um(root_id, token):
         frags = [frags[i] for i in idx]
 
     def one(frag):
-        path, offset, length = frag.lstrip("~").rsplit(":", 2)
-        offset, length = int(offset), int(length)
-        req = urllib.request.Request(
-            f"{MESH_BASE}/{path}",
-            headers={"Range": f"bytes={offset}-{offset + length - 1}"})
+        req = fragment_request(frag)
         with urllib.request.urlopen(req, timeout=120) as resp:
             raw = resp.read()
         v = np.asarray(DracoPy.decode(raw).points, dtype=np.float64)
@@ -215,6 +219,18 @@ def sampled_extent_um(root_id, token):
     lo = np.min([a for a, _ in parts], axis=0) / 1000.0
     hi = np.max([b for _, b in parts], axis=0) / 1000.0
     return hi - lo
+
+
+def fragment_request(frag):
+    """A urllib request for one mesh fragment, either form. See MESH_DYNAMIC."""
+    frag = frag.lstrip("~")
+    if ".shard:" in frag:
+        path, offset, length = frag.rsplit(":", 2)
+        offset, length = int(offset), int(length)
+        return urllib.request.Request(
+            f"{MESH_BASE}/{path}",
+            headers={"Range": f"bytes={offset}-{offset + length - 1}"})
+    return urllib.request.Request(f"{MESH_DYNAMIC}/{frag}")
 
 
 def manifest(root_id, token):
@@ -228,11 +244,7 @@ def fetch_mesh(root_id, token):
     frags = manifest(root_id, token)
 
     def one(frag):
-        path, offset, length = frag.lstrip("~").rsplit(":", 2)
-        offset, length = int(offset), int(length)
-        req = urllib.request.Request(
-            f"{MESH_BASE}/{path}",
-            headers={"Range": f"bytes={offset}-{offset + length - 1}"})
+        req = fragment_request(frag)
         with urllib.request.urlopen(req, timeout=180) as resp:
             raw = resp.read()
         mesh = DracoPy.decode(raw)
