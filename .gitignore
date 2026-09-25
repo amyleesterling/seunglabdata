@@ -29,3 +29,13 @@ assets/mec/population/p_layers/
 assets/mec/population/p_depth/
 assets/mec/population/p_turn/
 assets/mec/population/poster_hi/
+
+# Close tier meshes are a local RENDER input, not a web asset: 244 cells at
+# 140k faces is 485 MB and nothing on the page ever fetches them. The manifest
+# still lists the tier, and the renderer falls back with a loud warning when
+# the files are not on disk. Rebuild with tools/mec_path_cells.json.
+assets/mec/cells/*.close.glb
+assets/mec/population/tour/
+assets/mec/population/fly2/
+assets/mec/population/slowturn/
+assets/mec/population/t_fly*/

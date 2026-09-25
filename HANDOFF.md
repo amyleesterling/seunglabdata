@@ -11,6 +11,12 @@ A public site for the Seung Lab's connectomics datasets and citizen science. Vis
   - **HTTPS is on and enforced.** It had to be kicked off manually via the Pages API: cert state was `None`, so I re-registered the custom domain (`gh api -X PUT repos/amyleesterling/seunglabdata/pages -f cname=connectome.quest`) which provisioned a Let's Encrypt cert, then set `https_enforced=true`. If HTTPS ever breaks, check `gh api repos/amyleesterling/seunglabdata/pages` (cname + https_certificate.state).
 - **Inner Cosmos** (separate project, embedded on the Learn page): `C:\Users\amyle\hidden-worlds` → GitHub `amyleesterling/inner_cosmos` → **https://amyleesterling.github.io/inner_cosmos/**. Vite + React + TS + Tailwind + Three.js. **Deploy = commit + push to `main`** (GitHub Actions `deploy.yml`; run `npm run build` first to verify). `C:\Users\amyle\inner_cosmos` is a STALE clone of the same repo — always edit `hidden-worlds`.
 
+## MEC
+The medial entorhinal cortex dataset page, `/mec/`, is the first dataset EyeWire
+citizen scientists will test and has its own handoff: **`mec/HANDOFF.md`**. Read
+that before touching `tools/mec_*.py`, `tools/render_mec_*.py` or `mec/`. The
+page is behind a word, which is a speed bump and not access control.
+
 ## Pages (all in seunglabdata; nav = Neuro 101 · Videos · Help · Forum · Access · Connectome 101, single row on mobile)
 - `index.html` — **Map the Brain homepage**. Text-led opening, uncropped neuron banner, "We need your help" (EyeWire II + FlyWire BANC highlight cards), "More datasets" grid (FlyWire, EyeWire, MICrONS, Pyr), Citizen Science stats, "Resources for Citizen Scientists", footer with a tiny cat mascot. Each dataset card has a stats footer (Location + Approx. neurons/cells) and a right-aligned **Twitter-bird follow icon**.
 - `learn.html` — **Neuro 101**. Full-viewport iframe of the Inner Cosmos **/explore** guided zoom, then a "Why we map the brain" section + "Get involved" button. Share/Fullscreen controls are top-left (so they don't collide with the Inner Cosmos nav).

@@ -254,6 +254,26 @@ def frames_differ(a_path, b_path):
 
 
 
+def catmull(pts, t):
+    """Position along a Catmull-Rom spline through pts, t in [0, 1].
+
+    Straight segments between stops would give the camera a visible corner at
+    every soma. A spline through the same points keeps the move continuous.
+    """
+    n = len(pts)
+    if n == 1:
+        return np.array(pts[0], dtype=float)
+    x = max(0.0, min(1.0, float(t))) * (n - 1)
+    i = min(int(x), n - 2)
+    u = x - i
+    p = [np.array(pts[max(0, min(n - 1, i + k))], dtype=float) for k in (-1, 0, 1, 2)]
+    u2, u3 = u * u, u * u * u
+    return 0.5 * ((2 * p[1])
+                  + (-p[0] + p[2]) * u
+                  + (2 * p[0] - 5 * p[1] + 4 * p[2] - p[3]) * u2
+                  + (-p[0] + 3 * p[1] - 3 * p[2] + p[3]) * u3)
+
+
 def block_cage(parent, axis_map):
     """Wireframe of the imaged block, from its own bounds.
 
@@ -392,6 +412,32 @@ def main():
     ap.add_argument("--buildup", type=int, default=0, metavar="FRAMES",
                     help="cells arrive one after another, then all hold, with a "
                          "slow push in and a few degrees of drift")
+    ap.add_argument("--headlamp", type=float, default=2600.0,
+                    help="energy of a light carried by the camera; it is what "
+                         "gives the interior depth, since a world HDRI alone "
+                         "lights everything equally")
+    ap.add_argument("--near-fade", type=float, default=0.12, dest="near_fade",
+                    help="cells fade out within this FRACTION of TARGET_SIZE of the "
+                         "lens, so they neither occlude nor crowd. 0.55 was a "
+                         "1100 um band, half the block, and dimmed the whole "
+                         "scene")
+    ap.add_argument("--soma-tour", type=int, default=0, metavar="FRAMES",
+                    dest="soma_tour",
+                    help="drift slowly from one soma to the next with a real "
+                         "lens: the focus racks onto each cell in turn and "
+                         "everything else goes soft")
+    ap.add_argument("--tour-stops", type=int, default=10, dest="tour_stops",
+                    help="how many somata the tour visits")
+    ap.add_argument("--tour-cast", type=int, default=6, dest="tour_cast",
+                    help="how many neighbours are drawn around the cell in "
+                         "focus. This, not the near fade, is what decides "
+                         "whether the frame reads: the tissue is opaque at "
+                         "every distance, so the only way to see one cell is "
+                         "to draw few")
+    ap.add_argument("--fstop", type=float, default=2.0,
+                    help="aperture. Smaller is shallower; below about 1.4 at "
+                         "this scale the soma itself stops being sharp front "
+                         "to back")
     ap.add_argument("--flythrough", type=int, default=0, metavar="FRAMES",
                     help="camera travels through the block lighting cells as it "
                          "passes, then pulls back to reveal the whole volume")
@@ -449,12 +495,31 @@ def main():
     bpy.context.collection.objects.link(root)
 
     mesh_dir = os.path.dirname(os.path.abspath(args.cells))
-    loaded, counts = [], {}
+    loaded, counts, missing = [], {}, []
     for c in cells:
-        tier = c["tiers"].get(args.tier) or next(iter(c["tiers"].values()))
-        path = os.path.join(mesh_dir, tier["file"])
-        if not os.path.exists(path):
-            print(f"  missing {path}, skipping")
+        # LOD by build time, not per frame: a cell the camera passes close to
+        # carries a "close" tier, and it is preferred wherever it exists. Card
+        # density is right for a population figure and visibly faceted at arm's
+        # length, which is what the first flythrough showed on every near
+        # branch.
+        # Preference order, then FALL BACK rather than drop the cell. The close
+        # tier is 485 MB and is a local render input, not a web asset, so it is
+        # not in the repo: a fresh clone has the manifest entries without the
+        # files. Skipping on a missing file would quietly render a smaller
+        # population and still look entirely plausible.
+        want = [c["tiers"].get("close")] if args.tier == "card" else []
+        want += [c["tiers"].get(args.tier)] + list(c["tiers"].values())
+        path = tier = None
+        for t in want:
+            if not t:
+                continue
+            p = os.path.join(mesh_dir, t["file"])
+            if os.path.exists(p):
+                tier, path = t, p
+                break
+        if path is None:
+            print(f"  no mesh on disk for {c['id']}, skipping")
+            missing.append(c["id"])
             continue
         obj = import_cell(path)
         if obj is None:
@@ -475,6 +540,12 @@ def main():
         sys.exit("no cells loaded")
     print(f"loaded {len(loaded)} cells: " +
           ", ".join(f"{t} {counts[t]}" for t in TYPE_ORDER if t in counts))
+    if missing:
+        # Loud, because a figure is a claim about a population and quietly
+        # rendering a different one is the failure that looks like success.
+        print(f"WARNING: {len(missing)} of {len(cells)} cells have no mesh on "
+              f"disk and are NOT in this render: {', '.join(missing[:8])}"
+              + (" ..." if len(missing) > 8 else ""))
 
     # MEASURE the importer's axis convention from a cell whose micrometre bounds
     # we already know, instead of hardcoding one. Section 5 of the playbook is
@@ -761,6 +832,215 @@ def main():
         print("wrote %d frames to %s" % (args.buildup, args.out))
         return
 
+    if args.soma_tour:
+        # A lens, not a diagram. The camera drifts from one cell body to the
+        # next and the focus racks with it, so exactly one cell is sharp at a
+        # time and the rest of the tissue is the soft field it sits in. The
+        # near fade and the carried light are the same as in the flythrough:
+        # without them the interior is a flat wall with no depth to defocus.
+        n = len(loaded)
+        FR = args.soma_tour
+        rgbs = [TYPE_COLOUR.get(c["cell_type"], (0.8, 0.8, 0.8)) for c, _ in loaded]
+
+        # Soma positions, carried through the SAME transform as the meshes.
+        # The nucleus is given in micrometres in the volume's own frame, so it
+        # has to go through the importer's axis map and then the root object's
+        # matrix, or it lands somewhere the cell is not.
+        M = root.matrix_world
+        somas = np.array([list(M @ Vector(tuple(axis_map(c["nucleus_um"]))))
+                          for c, _ in loaded])
+        # Check rather than trust: each mapped soma should sit inside its own
+        # cell. A silent axis error here would aim the camera at empty space.
+        off = []
+        for j, (_, o) in enumerate(loaded):
+            wp = world_pts(o)
+            off.append(float(np.min(np.linalg.norm(wp[::37] - somas[j], axis=1))))
+        off = np.array(off)
+        print("soma mapping: median %.3f, worst %.3f units from own surface"
+              % (np.median(off), off.max()))
+        assert np.median(off) < TARGET_SIZE * 0.02, "soma positions do not land on the cells"
+
+        # Who is worth stopping at: a neuron with a close tier mesh, because
+        # the card tier is visibly faceted at the distance this shot works at.
+        NEURON = {"stellate", "pyramidal", "inhibitory", "bipolar"}
+        ok = [j for j, (c, _) in enumerate(loaded)
+              if c["cell_type"] in NEURON and "close" in c.get("tiers", {})
+              and off[j] < TARGET_SIZE * 0.03]
+        if len(ok) < args.tour_stops:
+            ok = [j for j, (c, _) in enumerate(loaded) if c["cell_type"] in NEURON]
+        centres, clo, chi = cell_centres(loaded)
+        span = chi - clo
+
+        # NEIGHBOUR TO NEIGHBOUR, not spread across the block. Farthest point
+        # sampling is the right way to cover a volume and the wrong way to plan
+        # a camera move: stops a millimetre apart have to be crossed inside one
+        # leg, which is a whip pan through tissue, not the slow drift this shot
+        # is. Each hop is far enough to be a different cell and near enough to
+        # stay inside the same neighbourhood the whole way.
+        MINHOP = TARGET_SIZE * 0.025          # about 50 um
+        MAXHOP = TARGET_SIZE * 0.115          # about 235 um
+        start = ok[int(np.argmin(np.linalg.norm(
+            somas[ok] - np.median(somas[ok], axis=0), axis=1)))]
+        pick, left = [start], [j for j in ok if j != start]
+        while len(pick) < args.tour_stops and left:
+            d = np.linalg.norm(somas[left] - somas[pick[-1]], axis=1)
+            near = [i for i in np.argsort(d) if MINHOP <= d[i] <= MAXHOP]
+            if not near:
+                near = [int(np.argmin(np.where(d >= MINHOP, d, np.inf)))]
+            j = left.pop(int(near[0]))
+            pick.append(j)
+        hops = [float(np.linalg.norm(somas[pick[k + 1]] - somas[pick[k]]))
+                for k in range(len(pick) - 1)]
+        print("tour of %d somata: %s" % (len(pick),
+              ", ".join(loaded[j][0]["id"] for j in pick)))
+        print("hops, units: %s" % np.round(hops, 3).tolist())
+
+        # Vantage points. The camera stands off each soma by VIEW, from a
+        # direction that turns a little at every stop, so the move arcs through
+        # the tissue instead of sliding along one line.
+        # 0.085 put the lens 173 um from the soma, which frames 114 um: inside
+        # the arbor rather than in front of the cell. A stellate dendritic
+        # field is about 300 um across, so stand far enough back to hold one.
+        VIEW = TARGET_SIZE * 0.19
+        vantage = []
+        for k, j in enumerate(pick):
+            a = 2.0 * math.pi * (k / max(1, len(pick))) * 1.35 + 0.6
+            e = math.radians(12.0 * math.sin(k * 1.1))
+            d = np.array([math.cos(e) * math.cos(a),
+                          math.cos(e) * math.sin(a), math.sin(e)])
+            vantage.append(somas[j] + d * VIEW)
+
+        samp_pts, samp_idx = [], []
+        for j, (_, o) in enumerate(loaded):
+            wp = world_pts(o)
+            step = max(1, len(wp) // 140)
+            samp_pts.append(wp[::step])
+            samp_idx.append(np.full(len(wp[::step]), j))
+        samp_pts = np.concatenate(samp_pts)
+        samp_idx = np.concatenate(samp_idx)
+        # The band has to reach PAST the stand-off, not stop short of it. Its
+        # whole job is to clear the tissue between the lens and the cell being
+        # looked at, and in a block this dense that tissue is continuous: end
+        # the band inside the stand-off and the subject is buried behind a wall
+        # of defocused foreground, which is what the first full run rendered.
+        # The subject itself is exempt below, so widening this does not dim it.
+        # With the cast small, this no longer has to open up the frame. All it
+        # does now is keep a branch from sitting on the lens.
+        NEAR0 = VIEW * 0.10
+        NEAR1 = VIEW * 0.55
+
+        lamp_data = bpy.data.lights.new("headlamp", type="POINT")
+        lamp_data.energy = args.headlamp * 0.30   # dimmer: few cells, and near
+        lamp_data.shadow_soft_size = TARGET_SIZE * 0.08
+        lamp = bpy.data.objects.new("headlamp", lamp_data)
+        bpy.context.collection.objects.link(lamp)
+
+        cam.data.lens = 55.0
+        cam.data.dof.use_dof = True
+        cam.data.dof.aperture_fstop = args.fstop
+        cam.data.dof.aperture_blades = 7          # a round bokeh, not a square
+
+        # Time: each stop gets a hold, each leg a move. Holding is what makes
+        # the rack readable; a continuous glide never settles on anything.
+        K = len(pick)
+        legs = K - 1
+        HOLD = max(1, int(FR * 0.52 / K))
+        MOVE = max(1, int((FR - HOLD * K) / max(1, legs)))
+        marks = []
+        for k in range(K):
+            for _ in range(HOLD):
+                marks.append((k, 0.0))
+            if k < legs:
+                for t in range(MOVE):
+                    marks.append((k, (t + 1) / MOVE))
+        while len(marks) < FR:
+            marks.append(marks[-1])
+        marks = marks[:FR]
+
+        FADE = 20.0
+        # Each cell carries its own brightness, eased toward whether it is in
+        # the cast this frame. No priming needed: the opening cast starts at
+        # its target, so frame 0 is already standing.
+        cur = np.zeros(n)
+        os.makedirs(args.out, exist_ok=True)
+        for _, o in loaded:
+            o.hide_render = True
+
+        for i in range(FR):
+            out = os.path.join(args.out, "frame_%04d.png" % i)
+            k, frac = marks[i]
+            u = (k + ease_io(frac)) / max(1, legs)
+            eye = catmull(vantage, u)
+            # Aim: the soma being visited, easing across to the next one only
+            # while the camera is actually travelling.
+            j_now, j_next = pick[k], pick[min(K - 1, k + 1)]
+            aim = somas[j_now] * (1 - ease_io(frac)) + somas[j_next] * ease_io(frac)
+            focus_on = j_now if frac < 0.5 else j_next
+
+            if not os.path.exists(out):
+                look_at(cam, eye, aim)
+            # The focus distance is measured to the soma itself, every frame,
+            # so the rack is a consequence of the geometry rather than a curve
+            # that has to be kept in step with the camera by hand.
+            cam.data.dof.focus_distance = float(np.linalg.norm(
+                somas[focus_on] - np.array(eye)))
+
+            # THE CAST: the cell in focus and its nearest neighbours by soma
+            # position. Everything else is not drawn at all.
+            near_rank = np.argsort(np.linalg.norm(somas - somas[focus_on], axis=1))
+            cast = set(int(x) for x in near_rank[:args.tour_cast + 1])
+            cast.add(int(focus_on))
+            want = np.zeros(n)
+            for j in cast:
+                want[j] = 1.0
+            if i == 0:
+                cur[:] = want            # open already standing, not fading up
+            else:
+                cur += np.clip(want - cur, -1.0 / FADE, 1.0 / FADE)
+
+            if os.path.exists(out):
+                continue
+            eye_now = np.array(cam.location)
+            dmin = np.full(n, 1e9)
+            np.minimum.at(dmin, samp_idx,
+                          np.linalg.norm(samp_pts - eye_now, axis=1))
+            for j, (_, o) in enumerate(loaded):
+                lvl = ease_io(float(cur[j]))
+                if j == focus_on:
+                    lvl = min(1.0, lvl * 1.15 + 0.10)
+                else:
+                    lvl = min(lvl, ease_io((dmin[j] - NEAR0)
+                                           / max(1e-6, NEAR1 - NEAR0))) * 0.35
+                if lvl <= 0.02:
+                    o.hide_render = True
+                else:
+                    o.hide_render = False
+                    solo_material(o, rgbs[j], lvl)
+
+            cm = cam.matrix_world
+            lamp.location = (Vector(cam.location)
+                             + cm.to_quaternion() @ Vector((TARGET_SIZE * 0.06,
+                                                            TARGET_SIZE * 0.09,
+                                                            TARGET_SIZE * 0.03)))
+            scene.render.filepath = out
+            bpy.ops.render.render(write_still=True)
+            if i % 40 == 0:
+                print("  frame %d/%d  stop %d/%d  focus %s at %.3f  cast %d  visible %d"
+                      % (i, FR, k + 1, K, loaded[focus_on][0]["id"],
+                         cam.data.dof.focus_distance, len(cast),
+                         sum(1 for _, o in loaded if not o.hide_render)))
+
+        meta["frames"] = FR
+        meta["mode"] = "soma_tour"
+        meta["tour"] = [loaded[j][0]["id"] for j in pick]
+        with open(os.path.join(args.out, "scene.json"), "w") as fh:
+            json.dump(meta, fh, indent=1)
+        a = os.path.join(args.out, "frame_0000.png")
+        b = os.path.join(args.out, "frame_%04d.png" % (FR // 2))
+        print("frames differ:", frames_differ(a, b))
+        print("wrote %d frames to %s" % (FR, args.out))
+        return
+
     if args.flythrough:
         # A path down the long axis of the block. Cells light up as the camera
         # comes near them and stay lit, so a trail builds up behind it, then the
@@ -785,9 +1065,24 @@ def main():
             samp_idx.append(np.full(len(sub), j))
         samp_pts = np.concatenate(samp_pts)
         samp_idx = np.concatenate(samp_idx)
-        NEAR_CLIP = TARGET_SIZE * 0.013          # about 26 um at this scale
-        print(f"near cull over {len(samp_pts)} sampled points, "
-              f"clip {NEAR_CLIP:.3f} units")
+        # A hard cull pops. Fade instead, over a band: fully gone at NEAR0,
+        # fully present by NEAR1. Coverage in the first cut ran 96 to 99% of
+        # the frame, a solid wall of tissue with no black in it and therefore
+        # no depth; letting the nearest cells go transparent opens that up.
+        NEAR0 = TARGET_SIZE * 0.014
+        NEAR1 = TARGET_SIZE * args.near_fade
+        print(f"near fade over {len(samp_pts)} sampled points, "
+              f"{NEAR0:.3f} to {NEAR1:.3f} units")
+
+        # A light the camera carries. The world HDRI lights every surface the
+        # same wherever it is, which is why the interior read as flat spaghetti.
+        # A local light falls off with distance, so near structure is modelled
+        # and far structure drops away: that IS the depth cue.
+        lamp_data = bpy.data.lights.new("headlamp", type="POINT")
+        lamp_data.energy = args.headlamp
+        lamp_data.shadow_soft_size = TARGET_SIZE * 0.08
+        lamp = bpy.data.objects.new("headlamp", lamp_data)
+        bpy.context.collection.objects.link(lamp)
         span = chi - clo
         axis = int(np.argmax(span))                     # travel along the longest
         mid = (chi + clo) / 2.0
@@ -799,6 +1094,21 @@ def main():
         FLY = max(1, int(args.flythrough * 0.68))
         OUT = args.flythrough - FLY
         lit_at = [None] * n                             # frame each cell was reached
+
+        # PRIME THE OPENING. Everything the camera can already see at u = -1 is
+        # dated FADE frames in the past, so it is fully up on frame 0.
+        eye0 = path_point(-1.0)
+        tgt0 = path_point(-1.0 + 0.22) * 0.62 + mid * 0.38
+        rel0 = centres - eye0
+        d0 = np.linalg.norm(rel0, axis=1)
+        f0 = np.array(tgt0) - np.array(eye0)
+        f0 = f0 / max(1e-9, np.linalg.norm(f0))
+        al0 = rel0 @ f0
+        lat0 = np.sqrt(np.maximum(d0 ** 2 - al0 ** 2, 0.0))
+        seed = (d0 < REACH) | ((al0 > 0) & (al0 < LOOK * 1.6) & (lat0 < REACH * 1.6))
+        for j in np.flatnonzero(seed):
+            lit_at[int(j)] = -int(FADE)
+        print("opening primed with %d cells already up" % int(seed.sum()))
 
         def path_point(u):
             """u in [-1, 1] along the travel axis, with a gentle weave."""
@@ -875,21 +1185,30 @@ def main():
                 # NEAR CULL, on real geometry: drop a cell only while some of
                 # its surface is at the lens. Its fade state is kept, so it
                 # returns lit rather than starting over once the camera clears.
-                if dmin[j] < NEAR_CLIP:
-                    o.hide_render = True
-                    continue
+                # Two independent fades, and the dimmer wins: how long since
+                # the cell woke up, and how close it now is to the lens.
                 lvl = min(1.0, (i - lit_at[j]) / FADE)
+                near = (dmin[j] - NEAR0) / max(1e-6, NEAR1 - NEAR0)
+                lvl = min(ease_io(lvl), ease_io(near))
                 if lvl <= 0.02:
                     o.hide_render = True
                 else:
                     o.hide_render = False
-                    solo_material(o, rgbs[j], ease_io(lvl))
+                    solo_material(o, rgbs[j], lvl)
+
+            # Off the lens axis, or it lights everything head on and flattens
+            # exactly what it was added to model.
+            cm = cam.matrix_world
+            lamp.location = (Vector(cam.location)
+                             + cm.to_quaternion() @ Vector((TARGET_SIZE * 0.10,
+                                                            TARGET_SIZE * 0.13,
+                                                            TARGET_SIZE * 0.04)))
 
             scene.render.filepath = out
             bpy.ops.render.render(write_still=True)
             if i % 40 == 0:
                 vis = sum(1 for _, o in loaded if not o.hide_render)
-                culled = int((dmin < NEAR_CLIP).sum())
+                culled = int((dmin < NEAR0).sum())
                 print("  frame %d/%d  lit %d  visible %d  nearculled %d  eye %s"
                       % (i, args.flythrough, sum(x is not None for x in lit_at),
                          vis, culled, np.round(eye_now, 2)))

@@ -61,6 +61,11 @@ BOUNDS_HI_UM = (VOXEL_OFFSET + VOLUME_SIZE) * UM_PER_VOXEL
 # against one 1.3 mm axon eating a page budget, not the target.
 TIERS = {
     "card":   {"density": 1.4,  "max_faces": 60_000},
+    # For cells the camera passes within a couple of hundred micrometres of in
+    # a flythrough. Card density is fine at population scale and visibly
+    # faceted at arm's length; full detail for 434 such cells would be 113M
+    # faces, which will not fit. This sits between.
+    "close":  {"density": 6.0,  "max_faces": 140_000},
     "detail": {"density": 10.25, "max_faces": 260_000},
 }
 MIN_COMPONENT_FACES = 25      # strip specks before decimating
