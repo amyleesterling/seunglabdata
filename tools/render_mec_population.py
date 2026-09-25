@@ -933,8 +933,17 @@ def main():
             else:
                 k = 0.0
             # One slow revolution across the whole shot, so the sphere is read
-            # as a sphere and not as a disc.
-            place(args.az + 360.0 * (i / max(1, args.explode - 1)))
+            # as a sphere and not as a disc. The camera also pulls back WITH
+            # the explosion: a frame wide enough to hold the sphere leaves the
+            # block a speck at the start, and a frame that fits the block cuts
+            # the sphere off. One distance cannot serve both.
+            az = args.az + 360.0 * (i / max(1, args.explode - 1))
+            e, a = math.radians(args.elev), math.radians(az)
+            d = TARGET_SIZE * args.dist * (1.0 + 1.6 * k)
+            cam.location = (d * math.cos(e) * math.cos(a),
+                            d * math.cos(e) * math.sin(a),
+                            d * math.sin(e))
+            cam.rotation_euler = (Vector((0, 0, 0)) - Vector(cam.location))                 .to_track_quat("-Z", "Y").to_euler()
             if os.path.exists(out):
                 continue
             for j, (_, o) in enumerate(loaded):
@@ -1013,6 +1022,16 @@ def main():
               % ("local surface normal" if out_dir is not None
                  else "no normal found, keeping the global direction"))
 
+        samp_pts, samp_idx = [], []
+        for j, (_, o) in enumerate(loaded):
+            w = world_pts(o)
+            step = max(1, len(w) // 220)
+            samp_pts.append(w[::step])
+            samp_idx.append(np.full(len(w[::step]), j))
+        samp_pts = np.concatenate(samp_pts)
+        samp_idx = np.concatenate(samp_idx)
+        print("ladder cull over %d sampled surface points" % len(samp_pts))
+
         lamp_data = bpy.data.lights.new("headlamp", type="POINT")
         lamp_data.shadow_soft_size = TARGET_SIZE * 0.02
         lamp = bpy.data.objects.new("headlamp", lamp_data)
@@ -1064,13 +1083,15 @@ def main():
             keep = dist * 3.0
             if os.path.exists(out):
                 continue
+            dmin = np.full(len(loaded), 1e9)
+            np.minimum.at(dmin, samp_idx,
+                          np.linalg.norm(samp_pts - np.array(aim), axis=1))
             for j, (_, o) in enumerate(loaded):
                 if j == pick:
                     o.hide_render = False
                     solo_material(o, rgbs[j], 1.0)
                     continue
-                d = float(np.linalg.norm(centres[j] - aim))
-                lvl = ease_io(1.0 - (d / max(1e-6, keep)))
+                lvl = ease_io(1.0 - (float(dmin[j]) / max(1e-6, keep)))
                 if lvl <= 0.02:
                     o.hide_render = True
                 else:
