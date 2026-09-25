@@ -60,6 +60,7 @@ Density is faces per µm² of surface area, with a hard face cap.
 | `close` | 6.0 | 140 k | the **244** cells within 150 µm of the flythrough path | **no** |
 | `detail` | 10.25 | 260 k | gallery cells | yes |
 | `web` | — | 110 k | derived from detail by `tools/web_tier.py` | yes |
+| `macro` | 75.0 | 1.2 M | the **13** cells the scale ladder ends among | **no** |
 
 **The close tier is 485 MB and is deliberately gitignored.** It is a render
 input, never served. The manifest still lists it, so a fresh clone has entries
@@ -101,6 +102,10 @@ All via `blender --background --factory-startup --python tools/render_mec_popula
 | `--soma-tour N` | slow drift soma to soma with the focus racking |
 | `--explode N` | cells leave their positions for a sphere banded by type, then go home |
 | `--ladder N` | one continuous zoom, whole block down to a single spine |
+
+Also `--recolour type=#hex` (override the palette for ONE figure, and say so in
+its caption), `--emission` (the fade material's self illumination, a floor the
+lamps cannot reach below), `--tour-cast`, `--tour-stops`, `--fstop`.
 
 Common: `--group-glia` (glia subtypes are unreliable, draw them as one class),
 `--no-cage`, `--fill`, `--aspect`, `--random-colours SEED` (decorative only,
@@ -162,6 +167,34 @@ that assert; a silent axis error aims the camera at empty space.
 The stops walk **neighbour to neighbour**, hops of 50–235 µm. Farthest point
 sampling is right for covering a volume and wrong for planning a camera move:
 stops a millimetre apart have to be crossed inside one leg, which is a whip pan.
+
+## 5b. The two modes that took the most attempts
+
+**Exploded census, four takes.** Each failure was a different bug. (1) The
+offsets were measured in world space and assigned to `obj.location`, which is
+in the PARENT's space, and root carries the micrometre to scene scale of about
+0.005, so every cell moved half a percent of the way and it looked like a plain
+turntable. (2) The sphere was packed tighter than one arbor is wide. (3) A
+single camera distance cannot hold both a 10 unit block and a 33 unit sphere,
+so the camera pulls back with the bloom.
+
+**Scale ladder, five takes.** (1) The camera approached along a fixed global
+azimuth, which says nothing about which side of a dendrite it ends on: the last
+hundred frames rendered the inside of a surface, pure black. It arrives on the
+local outward normal now, estimated from the end point's own neighbours. (2) It
+sized its ending against the macro tier while the loader was handing it the
+close tier. (3) It had no light of its own, so the end came back at mean 12.8
+with 8% coverage. (4) The cull measured distance to each cell's CENTRE, which
+is the middle of an arbor hundreds of micrometres wide, so close to the target
+every neighbour read as far away and was dropped: one dendrite in an empty
+frame. It culls on sampled surface points now, which is the same correction the
+flythrough needed when it was culling on bounding radii. (5) The neighbours were
+still card tier at 1.4 faces per um2 and looked like folded paper a few
+micrometres from the lens, so the twelve nearest were rebuilt at 75.
+
+**The ending distance is set by the mesh, not by how close it is possible to
+fly.** At d faces per um2 the average edge is sqrt(2/d) micrometres, and a frame
+narrower than about fifty of those reads as facets.
 
 ## 6. Rules that were learned the hard way
 
@@ -267,11 +300,14 @@ type cycle / laminar descent / depth sweep / turntable, islands-and-ocean
 analysis with an in-sample null, layer diagram, hero banner, homepage card,
 mobile type scale, 6400 × 3600 print render, the gate.
 
-In flight tonight: soma tour (600 frames), flythrough re-render on close-tier
-meshes (460), slow banner turn (480). Gallery markup for flythrough, soma tour
-and buildup is already in `index.html` and expects
-`mec_flythrough.mp4`, `mec_soma_tour.mp4`, `mec_buildup.mp4` plus posters at
-`assets/mec/population/web/{flythrough,soma_tour,buildup}-poster.jpg`.
+Rendered and live as of the night of 24 to 25 September: the flythrough rebuilt
+on close tier meshes, the soma tour, islands and ocean seen down the cortical
+depth axis, the exploded census, the slow banner turn, the scale ladder, and the
+buildup that had been sitting rendered and unused.
+
+Before committing, run the check that every `<source>` and `poster` on the page
+exists on disk. A `<video>` whose source 404s renders as a black box with a play
+badge on it, which looks exactly like a render that failed.
 
 Open:
 - Synapse partner animation along the axon of `720575947522615248`. **Blocked**:

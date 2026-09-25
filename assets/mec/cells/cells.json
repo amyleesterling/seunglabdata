@@ -3946,6 +3946,37 @@
      "decimation_bbox_shift_um": 0.346,
      "surface_area_um2": 57960.6,
      "file": "deep-stellate-052.close.glb"
+    },
+    "macro": {
+     "faces": 1199999,
+     "faces_in": 13011480,
+     "specks_dropped": 20632,
+     "density_per_um2": 20.7,
+     "vertices": 601339,
+     "bytes": 21616840,
+     "bbox_min_um": [
+      1687.19,
+      1287.09,
+      119.77
+     ],
+     "bbox_max_um": [
+      2914.31,
+      2331.96,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      1694.04,
+      1294.98,
+      147.78
+     ],
+     "p_bbox_max_um": [
+      2841.68,
+      2323.61,
+      435.07
+     ],
+     "decimation_bbox_shift_um": 0.0098,
+     "surface_area_um2": 57960.6,
+     "file": "deep-stellate-052.macro.glb"
     }
    }
   },
@@ -4778,6 +4809,37 @@
      "decimation_bbox_shift_um": 4.8078,
      "surface_area_um2": 123662.0,
      "file": "dense-I-0037.card.glb"
+    },
+    "macro": {
+     "faces": 1199999,
+     "faces_in": 29146211,
+     "specks_dropped": 17152,
+     "density_per_um2": 9.7,
+     "vertices": 610099,
+     "bytes": 21721976,
+     "bbox_min_um": [
+      1967.29,
+      1581.17,
+      119.77
+     ],
+     "bbox_max_um": [
+      3259.1,
+      2326.52,
+      436.46
+     ],
+     "p_bbox_min_um": [
+      2058.46,
+      1781.7,
+      121.74
+     ],
+     "p_bbox_max_um": [
+      2978.23,
+      2305.78,
+      421.85
+     ],
+     "decimation_bbox_shift_um": 0.1021,
+     "surface_area_um2": 123662.0,
+     "file": "dense-I-0037.macro.glb"
     }
    }
   },
@@ -4872,6 +4934,37 @@
      "decimation_bbox_shift_um": 16.174,
      "surface_area_um2": 15261.3,
      "file": "dense-I-0039.card.glb"
+    },
+    "macro": {
+     "faces": 1144597,
+     "faces_in": 3650172,
+     "specks_dropped": 2114,
+     "density_per_um2": 75.0,
+     "vertices": 572087,
+     "bytes": 20601000,
+     "bbox_min_um": [
+      2259.54,
+      1944.8,
+      119.77
+     ],
+     "bbox_max_um": [
+      2822.75,
+      2326.06,
+      436.3
+     ],
+     "p_bbox_min_um": [
+      2301.2,
+      1964.16,
+      123.41
+     ],
+     "p_bbox_max_um": [
+      2764.6,
+      2322.04,
+      423.94
+     ],
+     "decimation_bbox_shift_um": 0.0162,
+     "surface_area_um2": 15261.3,
+     "file": "dense-I-0039.macro.glb"
     }
    }
   },
@@ -6156,6 +6249,37 @@
      "decimation_bbox_shift_um": 0.2012,
      "surface_area_um2": 46512.0,
      "file": "dense-II-0065.close.glb"
+    },
+    "macro": {
+     "faces": 1199998,
+     "faces_in": 10487584,
+     "specks_dropped": 26124,
+     "density_per_um2": 25.8,
+     "vertices": 601957,
+     "bytes": 21624252,
+     "bbox_min_um": [
+      2120.91,
+      1550.25,
+      119.81
+     ],
+     "bbox_max_um": [
+      2668.72,
+      2305.69,
+      438.65
+     ],
+     "p_bbox_min_um": [
+      2166.84,
+      1574.18,
+      177.21
+     ],
+     "p_bbox_max_um": [
+      2636.48,
+      2296.49,
+      435.61
+     ],
+     "decimation_bbox_shift_um": 0.0355,
+     "surface_area_um2": 46512.0,
+     "file": "dense-II-0065.macro.glb"
     }
    }
   },
@@ -6297,6 +6421,37 @@
      "decimation_bbox_shift_um": 0.9447,
      "surface_area_um2": 46679.5,
      "file": "dense-II-0068.card.glb"
+    },
+    "macro": {
+     "faces": 1200000,
+     "faces_in": 10420554,
+     "specks_dropped": 19896,
+     "density_per_um2": 25.71,
+     "vertices": 601111,
+     "bytes": 21614128,
+     "bbox_min_um": [
+      1878.53,
+      1392.65,
+      138.39
+     ],
+     "bbox_max_um": [
+      2696.95,
+      2328.8,
+      438.66
+     ],
+     "p_bbox_min_um": [
+      1937.07,
+      1414.17,
+      168.69
+     ],
+     "p_bbox_max_um": [
+      2672.61,
+      2320.52,
+      435.98
+     ],
+     "decimation_bbox_shift_um": 0.0287,
+     "surface_area_um2": 46679.5,
+     "file": "dense-II-0068.macro.glb"
     }
    }
   },
@@ -6344,6 +6499,37 @@
      "decimation_bbox_shift_um": 1.0962,
      "surface_area_um2": 38652.7,
      "file": "dense-II-0069.card.glb"
+    },
+    "macro": {
+     "faces": 1199999,
+     "faces_in": 8823508,
+     "specks_dropped": 16426,
+     "density_per_um2": 31.05,
+     "vertices": 601174,
+     "bytes": 21614876,
+     "bbox_min_um": [
+      2205.17,
+      1857.45,
+      194.06
+     ],
+     "bbox_max_um": [
+      2570.03,
+      2311.65,
+      438.65
+     ],
+     "p_bbox_min_um": [
+      2250.47,
+      1904.12,
+      212.02
+     ],
+     "p_bbox_max_um": [
+      2557.83,
+      2302.43,
+      437.21
+     ],
+     "decimation_bbox_shift_um": 0.0451,
+     "surface_area_um2": 38652.7,
+     "file": "dense-II-0069.macro.glb"
     }
    }
   },
@@ -10269,6 +10455,37 @@
      "decimation_bbox_shift_um": 1.539,
      "surface_area_um2": 51344.0,
      "file": "dense-II-0138.close.glb"
+    },
+    "macro": {
+     "faces": 1200000,
+     "faces_in": 11685136,
+     "specks_dropped": 19176,
+     "density_per_um2": 23.37,
+     "vertices": 601270,
+     "bytes": 21616040,
+     "bbox_min_um": [
+      1920.77,
+      1387.77,
+      119.78
+     ],
+     "bbox_max_um": [
+      2766.4,
+      2327.61,
+      438.65
+     ],
+     "p_bbox_min_um": [
+      2016.78,
+      1418.06,
+      196.56
+     ],
+     "p_bbox_max_um": [
+      2729.9,
+      2316.15,
+      435.09
+     ],
+     "decimation_bbox_shift_um": 0.0363,
+     "surface_area_um2": 51344.0,
+     "file": "dense-II-0138.macro.glb"
     }
    }
   },
@@ -18099,6 +18316,37 @@
      "decimation_bbox_shift_um": 1.8364,
      "surface_area_um2": 54708.2,
      "file": "dense-III-0268.close.glb"
+    },
+    "macro": {
+     "faces": 1199998,
+     "faces_in": 12442507,
+     "specks_dropped": 24606,
+     "density_per_um2": 21.93,
+     "vertices": 601931,
+     "bytes": 21623944,
+     "bbox_min_um": [
+      2112.46,
+      1722.41,
+      144.7
+     ],
+     "bbox_max_um": [
+      2857.88,
+      2334.04,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2142.63,
+      1770.32,
+      227.69
+     ],
+     "p_bbox_max_um": [
+      2729.28,
+      2320.29,
+      435.9
+     ],
+     "decimation_bbox_shift_um": 0.0401,
+     "surface_area_um2": 54708.2,
+     "file": "dense-III-0268.macro.glb"
     }
    }
   },
@@ -18786,6 +19034,37 @@
      "decimation_bbox_shift_um": 0.2344,
      "surface_area_um2": 30689.6,
      "file": "dense-III-0279.close.glb"
+    },
+    "macro": {
+     "faces": 1199998,
+     "faces_in": 7185538,
+     "specks_dropped": 14502,
+     "density_per_um2": 39.1,
+     "vertices": 599846,
+     "bytes": 21598928,
+     "bbox_min_um": [
+      2394.32,
+      1844.0,
+      246.63
+     ],
+     "bbox_max_um": [
+      2852.91,
+      2311.43,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2419.55,
+      1872.25,
+      262.65
+     ],
+     "p_bbox_max_um": [
+      2800.91,
+      2305.17,
+      435.99
+     ],
+     "decimation_bbox_shift_um": 0.0276,
+     "surface_area_um2": 30689.6,
+     "file": "dense-III-0279.macro.glb"
     }
    }
   },
@@ -33696,6 +33975,37 @@
      "decimation_bbox_shift_um": 8.0569,
      "surface_area_um2": 121046.9,
      "file": "inhibitory-02.card.glb"
+    },
+    "macro": {
+     "faces": 1200000,
+     "faces_in": 27100157,
+     "specks_dropped": 26594,
+     "density_per_um2": 9.91,
+     "vertices": 602340,
+     "bytes": 21628876,
+     "bbox_min_um": [
+      1949.18,
+      1752.87,
+      119.77
+     ],
+     "bbox_max_um": [
+      2958.77,
+      2339.52,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2019.34,
+      1805.23,
+      121.75
+     ],
+     "p_bbox_max_um": [
+      2843.02,
+      2319.95,
+      433.41
+     ],
+     "decimation_bbox_shift_um": 0.0913,
+     "surface_area_um2": 121046.9,
+     "file": "inhibitory-02.macro.glb"
     }
    }
   },
@@ -35336,6 +35646,37 @@
      "decimation_bbox_shift_um": 8.7848,
      "surface_area_um2": 61888.5,
      "file": "more-II-013.close.glb"
+    },
+    "macro": {
+     "faces": 1200000,
+     "faces_in": 14408317,
+     "specks_dropped": 17476,
+     "density_per_um2": 19.39,
+     "vertices": 599969,
+     "bytes": 21600424,
+     "bbox_min_um": [
+      2072.36,
+      1582.35,
+      246.62
+     ],
+     "bbox_max_um": [
+      2824.5,
+      2336.56,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2248.78,
+      1658.54,
+      256.91
+     ],
+     "p_bbox_max_um": [
+      2764.9,
+      2330.48,
+      434.62
+     ],
+     "decimation_bbox_shift_um": 0.0481,
+     "surface_area_um2": 61888.5,
+     "file": "more-II-013.macro.glb"
     }
    }
   },
@@ -36719,6 +37060,37 @@
      "decimation_bbox_shift_um": 4.5055,
      "surface_area_um2": 53586.4,
      "file": "more-III-037.close.glb"
+    },
+    "macro": {
+     "faces": 1199999,
+     "faces_in": 12511368,
+     "specks_dropped": 22092,
+     "density_per_um2": 22.39,
+     "vertices": 600456,
+     "bytes": 21606260,
+     "bbox_min_um": [
+      2078.28,
+      1461.04,
+      126.14
+     ],
+     "bbox_max_um": [
+      2797.05,
+      2323.12,
+      438.64
+     ],
+     "p_bbox_min_um": [
+      2188.64,
+      1551.79,
+      171.51
+     ],
+     "p_bbox_max_um": [
+      2704.45,
+      2307.45,
+      431.1
+     ],
+     "decimation_bbox_shift_um": 0.1111,
+     "surface_area_um2": 53586.4,
+     "file": "more-III-037.macro.glb"
     }
    }
   },
