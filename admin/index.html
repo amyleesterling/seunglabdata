@@ -65,9 +65,14 @@
     .todo ul { margin: 0; padding: 0; list-style: none; }
     .todo li { display: grid; grid-template-columns: 22px 1fr; gap: 6px; padding: 7px 0; border-top: 1px solid rgba(122,186,246,.08); font-size: 15px; }
     .todo li:first-child { border-top: 0; }
-    .todo li .box { width: 14px; height: 14px; margin-top: 4px; border: 1.5px solid var(--muted); border-radius: 3px; }
+    .todo li .box { width: 18px; height: 18px; margin-top: 2px; padding: 0; border: 1.5px solid var(--muted); border-radius: 4px;
+      background: transparent; cursor: pointer; color: #04121e; font-size: 13px; font-weight: 700; line-height: 1; }
+    .todo li .box:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+    .todo li { cursor: default; }
     .todo li.done { color: var(--dim); text-decoration: line-through; }
     .todo li.done .box { background: var(--good); border-color: var(--good); }
+    .todo li.done .box::after { content: "✓"; }
+    .todo li { grid-template-columns: 26px 1fr; }
     .todo li small { display: block; color: var(--dim); font-size: 13px; text-decoration: none; }
 
     table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -216,12 +221,38 @@
     function renderTodo(groups) {
       document.getElementById("todo-body").innerHTML = groups.map(function (g) {
         return "<h3>" + esc(g.title) + "</h3><ul>" + g.items.map(function (it) {
-          return '<li class="' + (it.done ? "done" : "") + '"><span class="box"></span><span>' +
+          var id = keyOf(it);
+          var done = it.done || ticks[id];
+          return '<li class="' + (done ? "done" : "") + '" data-id="' + id + '"' + (it.done ? ' data-fixed="1"' : "") +
+            '><button type="button" class="box" role="checkbox" aria-checked="' + (done ? "true" : "false") + '" aria-label="Done"></button><span>' +
             (it.html ? DOMPurify.sanitize(it.html) : esc(it.text)) +
             (it.note ? "<small>" + DOMPurify.sanitize(it.note) + "</small>" : "") + "</span></li>";
         }).join("") + "</ul>";
       }).join("") || "Nothing on the list.";
     }
+
+    // Ticks live in this browser (localStorage), keyed by the item's text,
+    // so a tick survives reloads and re-seals of the list. Items the list
+    // itself marks done stay done.
+    var TICK_KEY = "cq-admin-ticks";
+    var ticks = {};
+    try { ticks = JSON.parse(localStorage.getItem(TICK_KEY) || "{}"); } catch (e) {}
+    function keyOf(it) {
+      var t = it.text || it.html || "", h = 0;
+      for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0;
+      return "t" + (h >>> 0).toString(36);
+    }
+    document.addEventListener("click", function (e) {
+      var box = e.target.closest && e.target.closest(".todo .box");
+      if (!box) return;
+      var li = box.closest("li");
+      if (li.dataset.fixed) return;
+      var on = !li.classList.contains("done");
+      li.classList.toggle("done", on);
+      box.setAttribute("aria-checked", on ? "true" : "false");
+      if (on) ticks[li.dataset.id] = 1; else delete ticks[li.dataset.id];
+      try { localStorage.setItem(TICK_KEY, JSON.stringify(ticks)); } catch (err) {}
+    });
 
     function renderWhere(rows) {
       document.getElementById("where-body").innerHTML = "<table><tbody>" + rows.map(function (r) {
