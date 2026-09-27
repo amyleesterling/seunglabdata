@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Merge and Cut, Citizen Neuroscience</title>
+  <meta name="description" content="The two proofreading moves in EyeWire II: merge a lost branch back onto its cell, cut apart two neurons the AI fused. Keys, pictures, and the interactive tutorials." />
+  <link rel="icon" type="image/png" href="../assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="../assets/images/favicon-pyr.png" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .pr-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 18px; }
+    @media (max-width: 760px){ .pr-grid{ grid-template-columns: 1fr; } }
+    .pr-fig img{ display:block; width:100%; height:auto; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); }
+    .pr-fig figcaption{ margin-top: 8px; font-size: 14px; opacity: .85; }
+    .pr-fig a{ color: inherit; }
+    .pr-keys{ border-collapse: collapse; margin-top: 12px; }
+    .pr-keys td{ padding: 8px 22px 8px 0; vertical-align: middle; }
+    .pr-keys kbd{ display:inline-block; padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.07); font: inherit; font-size: 14px; }
+    .pr-merge{ color: #60c060; font-weight: 700; }
+    .pr-cut{ color: #e06060; font-weight: 700; }
+    .pr-steps li{ margin: 6px 0; }
+  </style>
+</head>
+<body>
+    <nav class="topnav">
+      <div class="wrap topnav__inner">
+        <a class="topnav__brand" href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">
+          <img class="topnav__crest" src="../assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+          <span>Princeton University</span>
+        </a>
+        <div class="topnav__links">
+          <a class="topnav__link" href="../learn.html">Neuro 101</a>
+          <a class="topnav__link" href="../videos.html">Videos</a>
+          <a class="topnav__link is-active" href="../help.html">Help</a>
+          <a class="topnav__link" href="../forum.html">Forum</a>
+          <a class="topnav__link" href="../access.html">Access</a>
+          <a class="topnav__link" href="../atlas/">Connectome 101</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="wrap">
+      <section class="pagehead">
+        <div class="pagehead__text">
+          <p class="hero__eyebrow">Proofreading</p>
+          <h1>Merge and Cut</h1>
+          <p class="pagehead__lede">
+            AI reconstructions of neurons are impressive, but not perfect. Sometimes the AI misses a branch and
+            leaves it as its own segment. Sometimes it runs two neurons into one. Two moves fix both, and
+            EyeWire II teaches each one on a real cell that is yours while you practise.
+          </p>
+        </div>
+      </section>
+
+      <section class="help2" id="cheat-sheet" aria-label="Cheat sheet">
+        <h2>Cheat sheet</h2>
+        <p class="help2__lede">Keep this tab open beside the viewer.</p>
+        <table class="pr-keys">
+          <tr><td><span class="pr-merge">Merge</span> tool</td><td><kbd>M</kbd></td></tr>
+          <tr><td><span class="pr-cut">Cut</span> tool</td><td><kbd>C</kbd></td></tr>
+          <tr><td>Place a point</td><td><kbd>Ctrl</kbd> + click</td></tr>
+          <tr><td>Switch red and blue (cut)</td><td><kbd>G</kbd></td></tr>
+          <tr><td>Submit</td><td><kbd>Enter</kbd>, or the Submit button on the bar at the bottom</td></tr>
+          <tr><td>Leave the tool</td><td><kbd>Esc</kbd></td></tr>
+          <tr><td>Fix a bad merge</td><td>Cut the pieces apart</td></tr>
+          <tr><td>Fix a bad cut</td><td>Merge them back</td></tr>
+        </table>
+        <p class="help2__lede" style="margin-top:14px">There is no undo key. Every edit is reversible with the opposite edit.</p>
+      </section>
+
+      <section class="help2" id="merge" aria-label="Merge">
+        <h2><span class="pr-merge">Merge</span>: reconnect a lost branch</h2>
+        <p class="help2__lede">A merge joins two segments that belong to the same neuron.</p>
+        <div class="pr-grid">
+          <figure class="pr-fig">
+            <a href="../assets/images/proofreading-merge-example.jpg" target="_blank" rel="noopener"><img src="../assets/images/proofreading-merge-example.jpg" alt="A purple dendrite with a yellow branch the AI left as a separate segment" /></a>
+            <figcaption>The yellow branch belongs to the purple cell, but the AI left it as its own segment. <a href="../assets/images/proofreading-merge-example.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+          </figure>
+          <div>
+            <ol class="pr-steps">
+              <li>Select the segmentation layer (press <kbd>2</kbd>, or right-click its chip at the top).</li>
+              <li>Press <kbd>M</kbd>. The merge bar appears at the bottom.</li>
+              <li><kbd>Ctrl</kbd> + click the loose branch, then <kbd>Ctrl</kbd> + click the cell close to where the branch should join.</li>
+              <li>Press <strong>Submit merge</strong> or <kbd>Enter</kbd>. The server says "trying..." then "done", and the branch takes the cell's colour.</li>
+            </ol>
+            <p>Merged the wrong thing? Cut it apart again. If a black box appears where the pieces meet, the new mesh is still being built: refresh the page.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="help2" id="cut" aria-label="Cut">
+        <h2><span class="pr-cut">Cut</span>: separate two neurons</h2>
+        <p class="help2__lede">A cut splits one segment into two. Red points go on one side of the join, blue on the other, and the server finds the best place to separate them.</p>
+        <div class="pr-grid">
+          <figure class="pr-fig">
+            <a href="../assets/images/proofreading-cut-before.jpg" target="_blank" rel="noopener"><img src="../assets/images/proofreading-cut-before.jpg" alt="Before: a thin axon runs into a dendrite and the AI made them one segment" /></a>
+            <figcaption>Before: a thin axon runs into this dendrite, and the AI made them one segment. <a href="../assets/images/proofreading-cut-before.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+          </figure>
+          <figure class="pr-fig">
+            <a href="../assets/images/proofreading-cut-after.jpg" target="_blank" rel="noopener"><img src="../assets/images/proofreading-cut-after.jpg" alt="After the cut: the axon, in yellow, is its own segment again" /></a>
+            <figcaption>After the cut: the axon (yellow) is its own segment again. <a href="../assets/images/proofreading-cut-after.jpg" target="_blank" rel="noopener">Open full size ↗</a></figcaption>
+          </figure>
+        </div>
+        <ol class="pr-steps" style="margin-top:18px">
+          <li>Press <kbd>C</kbd>. The cut bar appears at the bottom, red group active.</li>
+          <li><kbd>Ctrl</kbd> + click three or four red points on the piece that doesn't belong, working back from the join.</li>
+          <li>Press <kbd>G</kbd> to switch to blue, then <kbd>Ctrl</kbd> + click three or four blue points on the cell, just past the join.</li>
+          <li>Keep every point on this one segment. Points on a neighbour make the server refuse the cut ("supervoxels must belong to the same segment").</li>
+          <li>Press <strong>Submit cut</strong> or <kbd>Enter</kbd>. Wait for "splitting..." to finish.</li>
+        </ol>
+        <p>Cut in the wrong place? Merge the pieces back and try again.</p>
+      </section>
+
+      <section class="help2" id="tutorials" aria-label="Interactive tutorials">
+        <h2>Try it on a real cell</h2>
+        <p class="help2__lede">
+          In EyeWire II, open the book menu at the top right and pick <strong>Merge</strong> or <strong>Cut</strong>.
+          Each tutorial hands you a sandbox cell that is yours alone while you work, walks you through the edit,
+          and puts the cell back for the next person when you finish. If every cell is busy you join a short
+          line and get a notification when one is yours.
+        </p>
+        <div class="card__actions">
+          <a class="btn btn--cta" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/" target="_blank" rel="noreferrer">Open EyeWire II ↗</a>
+          <a class="btn btn--ghost" href="../help.html#tutorials">Video tutorials</a>
+        </div>
+      </section>
+    </main>
+</body>
+</html>
