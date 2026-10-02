@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog | Map the Brain</title>
-  <meta name="description" content="News and updates from EyeWire II and the Seung Lab citizen science projects." />
+  <meta name="description" content="A post from the Map the Brain blog." />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
   <link rel="stylesheet" href="/styles.css" />
@@ -29,22 +29,16 @@
   </nav>
 
   <main class="wrap blog-page">
-    <header class="pagehead">
-      <p class="hero__eyebrow">News and updates</p>
-      <h1>Blog</h1>
-      <p class="hero__lede">What is new in EyeWire II and the other brain mapping projects, written for the people who play them.</p>
-    </header>
-
-    <!-- Posts are written in the game (profile, Blog tab) and loaded by /assets/blog.js.
-         The entry below only shows if the database cannot be reached. See HANDOFF.md. -->
-    <section class="blog-list" id="blogList" aria-label="Posts">
-      <article class="blog-item">
-        <p class="blog-item__date"><time datetime="2026-10-02">October 2, 2026</time></p>
-        <h2><a href="/blog/scripts-and-api.html">Write your own scripts for EyeWire II</a></h2>
-        <p>EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.</p>
-        <a class="blog-item__more" href="/blog/scripts-and-api.html">Read the post</a>
-      </article>
-    </section>
+    <article class="blog-post" id="blogPost">
+      <header class="pagehead">
+        <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
+        <h1 id="blogTitle">Loading...</h1>
+        <p class="blog-post__meta" id="blogMeta"></p>
+      </header>
+      <div id="blogBody"></div>
+      <noscript><p>This post needs JavaScript to load. All posts are listed on the <a href="/blog/">blog page</a>.</p></noscript>
+      <p class="blog-post__back"><a href="/blog/">All posts</a></p>
+    </article>
 
     <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
       <div class="subscribe__copy">
