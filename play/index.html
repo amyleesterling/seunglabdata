@@ -21,17 +21,12 @@
   <meta name="twitter:description" content="Map real neurons in EyeWire II: real electron microscopy, real segmentation, and a path into citizen neuroscience." />
   <meta name="twitter:image" content="https://connectome.quest/assets/images/eyewire-ii-og.jpg" />
   <script>
-    // Straight redirect into the app, no wrapper. Phones and small tablets
-    // go to the mobile build (welcome sheet, bottom nav, fullscreen 3D).
-    // TEMPORARY split: once eyewire-ii-mobile merges into
-    // eyewire-ii-community, point both at community.
-    (function () {
-      var mobile = window.matchMedia(
-        '(max-width: 900px) and (pointer: coarse), (max-width: 640px)').matches;
-      location.replace(mobile
-        ? 'https://eyewire-ii-mobile-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/'
-        : 'https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/');
-    })();
+    // Straight redirect into the app, no wrapper. One address for every
+    // device: the mobile build merged into eyewire-ii-community (welcome
+    // sheet, bottom nav), and the old eyewire-ii-mobile address no longer
+    // has a build of its own, so it fell through to the stock neuroglancer
+    // page (2026-10-02).
+    location.replace('https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/');
   </script>
   <style>html, body { margin: 0; height: 100%; background: #000; }</style>
 </head>
