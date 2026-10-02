@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Write your own scripts for EyeWire II | Map the Brain</title>
+  <meta name="description" content="EyeWire II now has a small, stable set of tools for player scripts, and a guide to writing them with Tampermonkey." />
+  <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <nav class="topnav">
+    <div class="wrap topnav__inner">
+      <a class="topnav__brand" href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">
+        <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+        <span>Princeton University</span>
+      </a>
+      <div class="topnav__links">
+        <a class="topnav__link" href="/learn.html">Neuro 101</a>
+        <a class="topnav__link" href="/videos.html">Videos</a>
+        <a class="topnav__link" href="/help.html">Help</a>
+        <a class="topnav__link" href="/forum.html">Forum</a>
+        <a class="topnav__link is-active" href="/blog/">Blog</a>
+        <a class="topnav__link" href="/access.html">Access</a>
+        <a class="topnav__link" href="/atlas/">Connectome 101</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap blog-page">
+    <article class="blog-post">
+      <header class="pagehead">
+        <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
+        <h1>Write your own scripts for EyeWire II</h1>
+        <p class="blog-post__meta"><time datetime="2026-10-02">October 2, 2026</time> · Amy and the EyeWire team</p>
+      </header>
+
+      <p>Players of the original EyeWire built some of its best features themselves. Bigger annotation dots, extra statistics, faster ways to get around: many of them started as a script one player wrote for their own browser and then shared.</p>
+      <p>EyeWire II now supports that properly. There is a guide for getting started, and a small set of tools made for scripts to use.</p>
+
+      <h2>What a script is</h2>
+      <p>A script is a small piece of code that changes the game on your computer only. It runs through Tampermonkey, a free browser extension. Nobody else sees your script, and you do not need permission to write one.</p>
+
+      <h2>What scripts can use</h2>
+      <p>Until now a script had to reach into the inner workings of the game, which change with almost every update. So scripts broke often. The new tools are the parts we promise to keep working:</p>
+      <ul>
+        <li><strong>Your cells and your view.</strong> The cells you have selected, the cell under the crosshairs, your claims, and where you are looking.</li>
+        <li><strong>Events.</strong> Run your code when you claim, release or complete a cell, when your selection changes, or when you switch datasets.</li>
+        <li><strong>A button and a panel.</strong> Add your own button to the top bar and your own side panel.</li>
+        <li><strong>Annotation layers.</strong> Make a layer of your own and add points and lines to it.</li>
+        <li><strong>Settings.</strong> Save your script's settings in your browser.</li>
+      </ul>
+      <p>Everything else is still open. Scripts can reach the viewer directly for anything the tools do not cover.</p>
+      <p class="blog-post__cta"><a class="blog-post__button" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/scripts.html" target="_blank" rel="noreferrer">Open the scripts guide</a></p>
+      <p>The guide has setup steps, the full list of tools, and six example scripts you can copy.</p>
+
+      <h2>A word on safety</h2>
+      <p>A script runs as you. It can do anything you can do in the game, including editing cells with your sign in. Scripts you write yourself are fine. Before you install a script from someone else, read it, or ask in chat whether others use it. Scripts are made by players and are not reviewed by the EyeWire team.</p>
+
+      <h2>Tell us what is missing</h2>
+      <p>We asked the script writers on the forum what they need, and the answer was that scripts grow out of whatever rough edge someone notices that week. So the list of tools starts small on purpose. If your script needs something that is not there, <a href="/forum.html">ask on the forum</a> and we will add it.</p>
+
+      <h2>Also new this week</h2>
+      <ul>
+        <li><strong>Split screen replaces the 4 panel view.</strong> Press Space to flip between split screen and the single panel under your mouse. Nothing lands you in 4 panel any more.</li>
+        <li><strong>Your view saves itself.</strong> Annotations, layers and position are saved to your account as you work. Open the game on any computer and it offers to pick up where you left off.</li>
+        <li><strong>Save view on a claim.</strong> In the Cell Library, the cell you are working on has a Save view button, so your annotations stay with the cell.</li>
+        <li><strong>The fly brain and nerve cord.</strong> BANC is now in the dataset switcher, and the three MICrONS versions share one card.</li>
+        <li><strong>Claim several cells at once.</strong> The Cell Library can fill your claims from the Available list in one click.</li>
+        <li><strong>A faster Cell Library.</strong> Your own cells load first, and long lists draw 200 rows at a time.</li>
+      </ul>
+
+      <p class="blog-post__back"><a href="/blog/">All posts</a></p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__credit footer__credit--standalone">
+      <a href="/index.html">Return to Map the Brain</a>
+    </div>
+  </footer>
+</body>
+</html>
