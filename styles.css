@@ -1802,3 +1802,4 @@ h2{
 }
 .blog-post__button:hover{ background: #f2d87f; color: #10131c; }
 .blog-post__back{ margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); }
+.blog-page .subscribe{ margin-top: 56px; }

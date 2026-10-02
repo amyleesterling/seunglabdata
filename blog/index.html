@@ -44,6 +44,50 @@
         <a class="blog-item__more" href="/blog/scripts-and-api.html">Read the post</a>
       </article>
     </section>
+
+    <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
+      <div class="subscribe__copy">
+        <p class="res__badge">Stay in the loop</p>
+        <h2>Get new posts by email</h2>
+        <p class="subscribe__lede">
+          New posts, new datasets and events, straight to your inbox.
+          We'll never share your information.
+        </p>
+      </div>
+      <form class="subscribe__form" id="subscribeForm" novalidate>
+        <div class="subscribe__grid">
+          <label class="cform__field">
+            <span>Name</span>
+            <input id="sub-name" name="name" type="text" autocomplete="name" required />
+          </label>
+          <label class="cform__field">
+            <span>Email</span>
+            <input id="sub-email" name="email" type="email" autocomplete="email" required />
+          </label>
+          <label class="cform__field">
+            <span>Country</span>
+            <input id="sub-country" name="country" type="text" autocomplete="country-name" required />
+          </label>
+          <label class="cform__field">
+            <span>EyeWire username <em>(optional)</em></span>
+            <input id="sub-username" name="eyewire_username" type="text" autocomplete="off" />
+          </label>
+        </div>
+        <!-- bot trap -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+        <div class="subscribe__foot">
+          <button class="btn btn--cta" id="sub-submit" type="submit">Subscribe</button>
+          <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="subscribe__success" id="subscribeSuccess" hidden>
+        <img class="subscribe__nurro" src="/assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
+        <h3>You're on the list!</h3>
+        <p>Nurro will keep you posted. Welcome to the quest.</p>
+        <p class="subscribe__egg"><a href="https://amyleesterling.github.io/science-experiment/scale-test" target="_blank" rel="noreferrer">psst… ever wondered how small a neuron really is?</a></p>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -51,5 +95,6 @@
       <a href="/index.html">Return to Map the Brain</a>
     </div>
   </footer>
+  <script src="/assets/subscribe.js"></script>
 </body>
 </html>
