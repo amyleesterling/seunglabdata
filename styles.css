@@ -1831,3 +1831,11 @@ h2{
 .blog-post code{ font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .92em; }
 .blog-post ol{ margin: 0 0 16px; padding-left: 22px; }
 #blogBody{ min-height: 30vh; overflow-wrap: anywhere; }
+.blog-post figcaption{ margin-top: 8px; color: rgba(255,255,255,.6); font-size: 14px; line-height: 1.5; }
+.blog-post__pair{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; align-items: start; }
+.blog-post__pair .blog-post__figure{ margin: 0; }
+@media (max-width: 620px){ .blog-post__pair{ grid-template-columns: 1fr; } }
+.blog-post__callout{ margin: 0 0 16px; padding: 16px 18px 1px; border: 1px solid rgba(230,199,96,.5); border-radius: 14px; background: rgba(230,199,96,.07); }
+.blog-post__video{ margin: 22px 0; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+.blog-post__video iframe{ display: block; width: 100%; height: 100%; border: 0; }
+.blog-post hr{ margin: 36px 0; border: 0; border-top: 1px solid var(--line); }
