@@ -37,6 +37,13 @@
 
     <!-- Posts are written in the game (profile, Blog tab) and loaded by /assets/blog.js.
          The entry below only shows if the database cannot be reached. See HANDOFF.md. -->
+    <!-- Shown by blog.js once the posts have loaded. -->
+    <div class="blog-search" id="blogSearchBox" role="search" hidden>
+      <label class="blog-search__label" for="blogSearch">Search the blog</label>
+      <input class="blog-search__input" id="blogSearch" type="search" placeholder="Search posts" autocomplete="off" />
+      <p class="blog-search__count" id="blogCount" role="status" aria-live="polite"></p>
+    </div>
+
     <section class="blog-list" id="blogList" aria-label="Posts">
       <article class="blog-item">
         <p class="blog-item__date"><time datetime="2026-10-02">October 2, 2026</time></p>

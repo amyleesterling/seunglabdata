@@ -79,32 +79,70 @@ function el(tag, cls, text) {
 }
 function postUrl(slug) { return '/blog/post.html?p=' + encodeURIComponent(slug); }
 
-// ── The list (blog/index.html) ─────────────────────────────────────────
+// ── The list (blog/index.html), with search ────────────────────────────
 var list = document.getElementById('blogList');
 if (list) {
-  get('select=slug,title,summary,cover_url,author_name,published_at&status=eq.published&order=published_at.desc&limit=100')
+  var search = document.getElementById('blogSearch');
+  var count = document.getElementById('blogCount');
+  var all = [];
+  var draw = function () {
+    var words = (search ? search.value : '').toLowerCase().split(/\s+/).filter(Boolean);
+    var shown = all.filter(function (p) {
+      return words.every(function (w) { return p._text.indexOf(w) !== -1; });
+    });
+    list.textContent = '';
+    shown.forEach(function (p) {
+      var item = el('article', 'blog-item');
+      if (p.cover_url && IMG_OK.test(p.cover_url)) {
+        item.className += ' blog-item--cover';
+        var pic = el('a', 'blog-item__cover');
+        pic.href = postUrl(p.slug);
+        pic.setAttribute('tabindex', '-1');
+        pic.setAttribute('aria-hidden', 'true');
+        var img = el('img');
+        img.src = p.cover_url;
+        img.alt = '';
+        img.loading = 'lazy';
+        pic.appendChild(img);
+        item.appendChild(pic);
+      }
+      var text = el('div', 'blog-item__text');
+      var date = el('p', 'blog-item__date');
+      var time = el('time', '', day(p.published_at));
+      time.setAttribute('datetime', String(p.published_at || '').slice(0, 10));
+      date.appendChild(time);
+      if (p.author_name) date.appendChild(document.createTextNode(' · ' + p.author_name));
+      var h = el('h2');
+      var a = el('a', '', p.title);
+      a.href = postUrl(p.slug);
+      h.appendChild(a);
+      text.appendChild(date);
+      text.appendChild(h);
+      if (p.summary) text.appendChild(el('p', '', p.summary));
+      var more = el('a', 'blog-item__more', 'Read the post');
+      more.href = postUrl(p.slug);
+      text.appendChild(more);
+      item.appendChild(text);
+      list.appendChild(item);
+    });
+    if (!shown.length) list.appendChild(el('p', 'blog-empty', 'No posts match that search.'));
+    if (count) count.textContent = words.length ? shown.length + (shown.length === 1 ? ' post' : ' posts') + ' found' : '';
+  };
+  get('select=slug,title,summary,body,cover_url,author_name,published_at&status=eq.published&order=published_at.desc&limit=100')
     .then(function (posts) {
       if (!posts.length) return;               // keep whatever the page shipped with
-      list.textContent = '';
-      posts.forEach(function (p) {
-        var item = el('article', 'blog-item');
-        var date = el('p', 'blog-item__date');
-        var time = el('time', '', day(p.published_at));
-        time.setAttribute('datetime', String(p.published_at || '').slice(0, 10));
-        date.appendChild(time);
-        if (p.author_name) date.appendChild(document.createTextNode(' · ' + p.author_name));
-        var h = el('h2');
-        var a = el('a', '', p.title);
-        a.href = postUrl(p.slug);
-        h.appendChild(a);
-        item.appendChild(date);
-        item.appendChild(h);
-        if (p.summary) item.appendChild(el('p', '', p.summary));
-        var more = el('a', 'blog-item__more', 'Read the post');
-        more.href = postUrl(p.slug);
-        item.appendChild(more);
-        list.appendChild(item);
+      all = posts.map(function (p) {
+        p._text = [p.title, p.summary, p.author_name, p.body].join(' ').toLowerCase();
+        return p;
       });
+      var box = document.getElementById('blogSearchBox');
+      if (box) box.hidden = false;
+      if (search) {
+        search.addEventListener('input', draw);
+        var q = new URLSearchParams(location.search).get('q');
+        if (q) search.value = q;
+      }
+      draw();
     })
     .catch(function () { /* the page keeps its built in list */ });
 }
