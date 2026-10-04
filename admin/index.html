@@ -125,6 +125,7 @@
     </header>
     <nav class="jump">
       <a href="#todo">To do</a>
+      <a href="#exact-replies">Slack replies</a>
       <a href="#triage">Triage right now</a>
       <a href="#runs">Robot activity</a>
       <a href="#how">How the robot works</a>
@@ -337,6 +338,14 @@
         if (!r.ok) throw new Error("HTTP " + r.status);
         el.innerHTML = DOMPurify.sanitize(marked.parse(await r.text()));
         el.querySelectorAll("a").forEach(function (a) { a.target = "_blank"; a.rel = "noopener"; });
+        // Headings get ids ("Exact replies" -> #exact-replies) so Slack can
+        // link straight to a part of the guide.
+        el.querySelectorAll("h2, h3").forEach(function (h) {
+          var id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+          if (id && !document.getElementById(id)) h.id = id;
+        });
+        var want = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (want && el.contains(want)) want.scrollIntoView();
       } catch (e) { el.textContent = "Could not load the doc (" + e.message + ")."; }
     }
   })();
