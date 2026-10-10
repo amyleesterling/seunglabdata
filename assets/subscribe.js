@@ -13,11 +13,9 @@
     e.preventDefault();
     var name = document.getElementById('sub-name').value.trim();
     var email = document.getElementById('sub-email').value.trim();
-    var country = document.getElementById('sub-country').value.trim();
-    var username = document.getElementById('sub-username').value.trim();
     if (form._honey && form._honey.value) return; // bot trap
-    if (!name || !email || !country) {
-      statusEl.textContent = 'Please add your name, email, and country.';
+    if (!name || !email) {
+      statusEl.textContent = 'Please add your first name and email.';
       return;
     }
     if (ENDPOINT.indexOf('http') !== 0) {
@@ -38,8 +36,11 @@
       body: new URLSearchParams({
         name: name,
         email: email,
-        country: country,
-        eyewire_username: username || ''
+        // The blog form asks for a first name and an email only (Ames
+        // 2026-10-10). These two are still sent, empty, so the sheet's
+        // columns stay where the signup script expects them.
+        country: '',
+        eyewire_username: ''
       })
     })
       .then(function () {
