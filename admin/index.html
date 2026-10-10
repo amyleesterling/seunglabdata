@@ -145,7 +145,7 @@
 
     <section id="triage">
       <h2>Triage right now</h2>
-      <p class="muted">Live from the feedback_triage table: everything open, plus anything finished in the last 5 days.</p>
+      <p class="muted">Live from the feedback_triage table: everything open, plus anything finished in the last 5 days. Every report appears here as soon as it comes in; a suggested fix is only made when you ask for one.</p>
       <div class="card scroll" id="triage-body">Loading…</div>
     </section>
 
@@ -272,8 +272,18 @@
     };
     var REC = { nothing: "No action", message: "Message", bug_fix_spec: "Bug fix", new_feature: "Feature" };
 
+    // A report on the board with no suggestion yet: nothing is suggested
+    // until an approver asks (since 2026-10-10). Same words as the robot.
+    function isNewReport(t) { return t.status === "proposed" && /^No suggestion yet/.test(t.rationale || ""); }
+    function typeOf(t) {
+      if (isNewReport(t)) return "New report";
+      if (/^No suggestion yet/.test(t.rationale || "")) return "No suggestion";
+      return REC[t.recommendation] || t.recommendation;
+    }
+
     function whereIs(t) {
       if (t.impl_state) return STATE[t.impl_state] || [t.impl_state, ""];
+      if (isNewReport(t)) return /^Suggest:/.test(t.approver_note || "") ? ["Suggestion asked for", "wait"] : ["On the board, no suggestion asked", ""];
       if (t.status === "proposed") return ["Waiting for approve or dismiss", "wait"];
       if (t.status === "done") return ["Done", "good"];
       if (t.status === "dismissed") return ["Dismissed", ""];
@@ -285,7 +295,7 @@
       var el = document.getElementById("triage-body");
       try {
         var since = new Date(Date.now() - 5 * 864e5).toISOString();
-        var q = SB_URL + "/rest/v1/feedback_triage?select=id,status,recommendation,source_excerpt,reviewed_by,impl_state,preview_url,impl_run_url,impl_branch,approver_slack_id,nag_count,slack_ts,created_at,result_note" +
+        var q = SB_URL + "/rest/v1/feedback_triage?select=id,status,recommendation,source_excerpt,reviewed_by,impl_state,preview_url,impl_run_url,impl_branch,approver_slack_id,nag_count,slack_ts,created_at,result_note,rationale,approver_note" +
           "&or=(status.in.(proposed,approved),reviewed_at.gte." + since + ",tested_at.gte." + since + ")&order=created_at.desc&limit=60";
         var r = await fetch(q, { headers: { apikey: SB_ANON, Authorization: "Bearer " + SB_ANON } });
         if (!r.ok) throw new Error("HTTP " + r.status);
@@ -301,7 +311,7 @@
             if (t.impl_branch) links.push('<a href="https://github.com/' + REPO + "/tree/" + esc(t.impl_branch) + '" target="_blank" rel="noopener">Branch</a>');
             var extra = t.impl_state && (t.impl_state === "testing" || t.impl_state === "live_testing" || t.impl_state === "needs_info") && t.nag_count
               ? '<br><span class="muted">reminded ' + t.nag_count + " times</span>" : "";
-            return "<tr><td class='report'>" + esc(t.source_excerpt) + "</td><td>" + esc(REC[t.recommendation] || t.recommendation) +
+            return "<tr><td class='report'>" + esc(t.source_excerpt) + "</td><td>" + esc(typeOf(t)) +
               "</td><td><span class='pill " + w[1] + "'>" + esc(w[0]) + "</span>" + extra + "</td><td class='hide muted'>" +
               esc((t.created_at || "").slice(0, 10)) + "</td><td class='links'>" + links.join("") + "</td></tr>";
           }).join("") + "</tbody></table>";
