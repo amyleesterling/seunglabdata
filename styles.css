@@ -1839,3 +1839,54 @@ h2{
 .blog-post__video{ margin: 22px 0; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #000; }
 .blog-post__video iframe{ display: block; width: 100%; height: 100%; border: 0; }
 .blog-post hr{ margin: 36px 0; border: 0; border-top: 1px solid var(--line); }
+
+/* ── The blog on a light page (Ames 2026-10-11: easier to read a lot of text),
+      with the game's lettering for headings and its cyan bullets, as a post
+      looks in a Pyr notification. Only pages whose <body> is .blog-light. ── */
+body.blog-light{
+  --bg: #f4f6fa; --text: #151b27; --muted: #3a4557; --line: rgba(20,30,50,.14);
+  --panel: #ffffff; --panel2: #ffffff; --shadow: 0 10px 30px rgba(20,30,50,.10);
+  --blog-ink: #0b101a; --blog-teal: #0a7286; --blog-soft: #5a6578;
+}
+body.blog-light::before{ background: var(--bg); }
+/* The top bar stays as it is on every other page. */
+body.blog-light .topnav{
+  --text: rgba(255,255,255,.92); --muted: rgba(255,255,255,.72); --line: rgba(255,255,255,.12);
+  background: rgba(7,10,18,.94);
+}
+body.blog-light main a, body.blog-light .footer a{ color: var(--blog-teal); }
+body.blog-light main a:hover, body.blog-light .footer a:hover{ color: #8a6200; }
+body.blog-light .hero__eyebrow, body.blog-light .hero__eyebrow a{ color: var(--blog-teal); }
+body.blog-light .pagehead h1, body.blog-light .blog-post h1{
+  font-family: 'Orbitron', ui-sans-serif, system-ui, sans-serif; font-weight: 600;
+  font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; letter-spacing: 0.01em; color: var(--blog-ink);
+}
+body.blog-light .blog-item__date, body.blog-light .blog-post__meta, body.blog-light .blog-post figcaption,
+body.blog-light .blog-search__count{ color: var(--blog-soft); }
+body.blog-light .blog-item h2{ font-family: 'Orbitron', ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 21px; line-height: 1.3; }
+body.blog-light .blog-item h2 a{ color: var(--blog-ink); }
+body.blog-light .blog-item h2 a:hover{ color: var(--blog-teal); }
+/* Section headings: the game's small spaced capitals. */
+body.blog-light .blog-post h2, body.blog-light .blog-post h3{
+  font-family: 'Orbitron', ui-sans-serif, system-ui, sans-serif; font-weight: 600;
+  font-size: 15px; line-height: 1.4; letter-spacing: 0.18em; text-transform: uppercase;
+  margin: 38px 0 10px; color: var(--blog-teal);
+}
+body.blog-light .blog-post h3{ font-size: 13.5px; margin-top: 28px; }
+body.blog-light .blog-post strong{ color: var(--blog-ink); font-weight: 700; }
+body.blog-light .blog-post li::marker{ color: #17a2bd; }
+body.blog-light .blog-post blockquote{ border-left-color: #17a2bd; background: rgba(23,162,189,.07); padding: 8px 0 8px 16px; }
+body.blog-light .blog-post pre{ background: #e9edf3; }
+body.blog-light .blog-post__callout{ background: rgba(230,199,96,.2); border-color: rgba(170,130,20,.5); }
+body.blog-light .blog-post__button, body.blog-light main a.blog-post__button{ color: #10131c; }
+body.blog-light .blog-item__cover{ background: #e9edf3; }
+body.blog-light .blog-search__input{ background: #ffffff; }
+body.blog-light .blog-search__input:focus{ border-color: var(--blog-teal); }
+body.blog-light .blog-search__input::placeholder{ color: #7a8496; }
+body.blog-light .subscribe{ background: #ffffff; }
+body.blog-light .subscribe__copy h2, body.blog-light .subscribe__success h3{ color: var(--blog-ink); }
+body.blog-light .subscribe__grid input{ background: #f7f9fc; }
+body.blog-light .subscribe__grid input:focus{ border-color: var(--blog-teal); }
+body.blog-light .subscribe__nurro{ filter: drop-shadow(0 8px 16px rgba(20,30,50,.2)); }
+body.blog-light .res__badge{ color: #0a5a6b; background: rgba(23,162,189,.12); border-color: rgba(23,162,189,.4); }
+body.blog-light .footer, body.blog-light .footer__credit{ color: var(--blog-soft); }
