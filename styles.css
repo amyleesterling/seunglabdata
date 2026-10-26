@@ -1936,3 +1936,8 @@ body.blog-light .footer, body.blog-light .footer__credit{ color: var(--blog-soft
   .earlyaccess{ grid-template-columns: 1fr; padding: 20px 16px; }
   .earlyaccess__grid{ grid-template-columns: 1fr; }
 }
+/* After sending: the form goes (.cform's display would otherwise beat
+   [hidden]) and the thanks takes its place beside the intro. */
+.earlyaccess [hidden]{ display: none !important; }
+.earlyaccess__done{ grid-column: 2; grid-row: 1; }
+@media (max-width: 820px){ .earlyaccess__done{ grid-column: auto; grid-row: auto; } }
