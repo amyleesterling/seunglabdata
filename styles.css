@@ -1890,3 +1890,49 @@ body.blog-light .subscribe__grid input:focus{ border-color: var(--blog-teal); }
 body.blog-light .subscribe__nurro{ filter: drop-shadow(0 8px 16px rgba(20,30,50,.2)); }
 body.blog-light .res__badge{ color: #0a5a6b; background: rgba(23,162,189,.12); border-color: rgba(23,162,189,.4); }
 body.blog-light .footer, body.blog-light .footer__credit{ color: var(--blog-soft); }
+
+/* ===== Access: early access to Pyr (2026-10-26) ===== */
+.earlyaccess{
+  margin-top: 26px;
+  padding: 24px;
+  border: 1px solid rgba(66,213,236,.35);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.03));
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 24px;
+  align-items: start;
+}
+.earlyaccess__intro h2{
+  margin: 0 0 10px;
+  font-size: clamp(21px, 2.3vw, 28px);
+  letter-spacing: -0.02em;
+  color: #eaf6ff;
+}
+.earlyaccess__intro p:not(.hero__eyebrow){ margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.earlyaccess__grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.earlyaccess__form textarea{ min-height: 64px; }
+.cform__field span em{ font-style: normal; opacity: .7; }
+.earlyaccess__agree{ display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); line-height: 1.45; cursor: pointer; }
+.earlyaccess__agree input{ width: 18px; height: 18px; margin: 1px 0 0; flex: 0 0 auto; accent-color: #42d5ec; }
+.earlyaccess__trap{ position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.earlyaccess__done{ outline: none; }
+.earlyaccess__thanks{
+  margin: 0;
+  padding: 12px 14px;
+  border-left: 3px solid #42d5ec;
+  border-radius: 0 10px 10px 0;
+  background: rgba(66,213,236,.08);
+  color: #eaf6ff;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.earlyaccess__sign{ margin: 10px 0 18px; font-style: italic; color: var(--muted); font-size: 14px; }
+.earlyaccess__done h3{ margin: 0 0 8px; font-size: 15px; color: #eaf6ff; }
+.earlyaccess__links{ margin: 0; padding-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.earlyaccess__links li{ margin-bottom: 6px; }
+@media (max-width: 820px){
+  .earlyaccess{ grid-template-columns: 1fr; padding: 20px 16px; }
+  .earlyaccess__grid{ grid-template-columns: 1fr; }
+}

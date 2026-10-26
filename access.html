@@ -42,6 +42,57 @@
         <img class="pagehead__mascot" src="assets/images/rika-welcome.png" alt="Rika, a friendly guide, welcoming you" />
       </section>
 
+      <!-- Early access to Pyr (Ames 2026-10-26). The request goes to the game's
+           own beta list (ng-extend functions, ewAccessRequest, access.visitorBeta):
+           a report on the triage board, a bell to every admin, a Slack post. -->
+      <section class="earlyaccess" id="request" aria-labelledby="earlyaccess-title">
+        <div class="earlyaccess__intro">
+          <p class="hero__eyebrow">Closed beta</p>
+          <h2 id="earlyaccess-title">Request early access to Pyr</h2>
+          <p>
+            Pyr is our new brain mapping game, where you proofread real neurons in the mouse retina
+            (EyeWire II). It's invite only while we get it ready. Ask to join and we'll add you as soon as we can.
+          </p>
+        </div>
+        <form class="cform earlyaccess__form" id="earlyForm" novalidate>
+          <div class="earlyaccess__grid">
+            <label class="cform__field">
+              <span>Your name</span>
+              <input id="ea-name" name="name" type="text" maxlength="80" autocomplete="name" required />
+            </label>
+            <label class="cform__field">
+              <span>Your email</span>
+              <input id="ea-email" name="email" type="email" maxlength="254" autocomplete="email" required />
+            </label>
+          </div>
+          <label class="cform__field">
+            <span>Anything you'd like us to know? <em>(optional)</em></span>
+            <textarea id="ea-note" name="note" rows="2" maxlength="500" placeholder="Where you heard about Pyr, or your EyeWire username"></textarea>
+          </label>
+          <label class="earlyaccess__agree">
+            <input id="ea-agree" type="checkbox" required />
+            <span>I've read and agree to the <a href="https://edit.flywire.ai/principles.html" target="_blank" rel="noreferrer">community principles</a>.</span>
+          </label>
+          <!-- bot trap: people never see or fill this -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="earlyaccess__trap" />
+          <div class="subscribe__foot">
+            <button class="btn btn--cta" id="ea-submit" type="submit">Request early access</button>
+            <p class="cform__status" id="ea-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="earlyaccess__done" id="earlyDone" hidden tabindex="-1">
+          <p class="earlyaccess__thanks">Thanks for requesting early access to map the brain! We'll let you know by email when you're in. Then sign in to <a href="play/">Pyr</a> with the same email.</p>
+          <p class="earlyaccess__sign">The Pyr (pronounced "peer") team at Princeton University</p>
+          <h3>While you wait</h3>
+          <ul class="earlyaccess__links">
+            <li><a href="https://eyewire.org" target="_blank" rel="noreferrer">Play EyeWire</a>, the original brain mapping game, right in your browser.</li>
+            <li><a href="learn.html">Neuro 101</a>, a guided zoom from a whole brain down to a single neuron.</li>
+            <li><a href="atlas/">Connectome 101</a>, what a connectome is and how scientists map one.</li>
+            <li><a href="videos.html">Neuron videos</a>, animations of real neurons from mouse and fly brains.</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Prototype tutorial section temporarily removed 2026-07-07 while a bug is fixed.
            Restore from git history (commit before this one) — reminder set for 2026-07-09. -->
 
@@ -52,7 +103,7 @@
           <li class="step">
             <div class="step__num">1</div>
             <h3>Unlock early access</h3>
-            <p>Pick the dataset you want to help map, <a href="https://eyewire.ai" target="_blank" rel="noreferrer">EyeWire II</a> (mouse retina) or <a href="https://flywire.ai/banc" target="_blank" rel="noreferrer">BANC</a> (fly). Read our <a href="https://edit.flywire.ai/principles.html" target="_blank" rel="noreferrer">community principles</a>, then <a id="accessRequest" href="#">email us</a> to say you agree and request access.</p>
+            <p>Pick the dataset you want to help map, <a href="https://eyewire.ai" target="_blank" rel="noreferrer">EyeWire II</a> (mouse retina) or <a href="https://flywire.ai/banc" target="_blank" rel="noreferrer">BANC</a> (fly). Read our <a href="https://edit.flywire.ai/principles.html" target="_blank" rel="noreferrer">community principles</a>, then <a href="#request">request early access</a> to Pyr above. For BANC, <a id="accessRequest" href="#">email us</a> to say you agree and request access.</p>
           </li>
           <li class="step">
             <div class="step__num">2</div>
@@ -104,6 +155,66 @@
           + '&body=' + encodeURIComponent("I'd like early access to (dataset): \n\nI've read and agree to the community principles.");
         var e = document.getElementById('emailUs');
         if (e) e.href = 'mailto:' + addr;
+      })();
+
+      // Early access to Pyr: sent to the game's beta list. The same checks as
+      // the server (ng-extend functions/access-request.js), which checks again.
+      (function () {
+        var ENDPOINT = 'https://us-central1-eyewire-ii-e4d52.cloudfunctions.net/ewAccessRequest';
+        var NAME_OK = /^[\p{L}\p{M}][\p{L}\p{M} .'-]*$/u;
+        var EMAIL_OK = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
+        var form = document.getElementById('earlyForm');
+        if (!form) return;
+        var statusEl = document.getElementById('ea-status');
+        var btn = document.getElementById('ea-submit');
+        function problem(name, email, agree) {
+          if (!name) return 'Please add your name.';
+          if (!NAME_OK.test(name)) return 'Your name can have letters, spaces, periods, apostrophes and hyphens only.';
+          if (!email) return 'Please add your email.';
+          if (!EMAIL_OK.test(email)) return 'That email does not look right.';
+          if (!agree) return 'Please tick the box to say you agree to the community principles.';
+          return '';
+        }
+        function done() {
+          form.hidden = true;
+          var d = document.getElementById('earlyDone');
+          d.hidden = false;
+          d.focus();
+        }
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          var name = document.getElementById('ea-name').value.trim().replace(/\s+/g, ' ');
+          var email = document.getElementById('ea-email').value.trim();
+          var note = document.getElementById('ea-note').value.trim();
+          var agree = document.getElementById('ea-agree').checked;
+          var err = problem(name, email, agree);
+          statusEl.textContent = err;
+          if (err) return;
+          btn.disabled = true;
+          var label = btn.textContent;
+          btn.textContent = 'Sending…';
+          fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'access.visitorBeta', name: name, email: email, note: note || undefined,
+              agree: true, website: form.website.value || undefined })
+          })
+            .then(function (r) {
+              return r.json().catch(function () { return {}; }).then(function (b) {
+                if (!r.ok) throw new Error(b && b.error || 'That did not go through. Please try again.');
+                done();
+              });
+            })
+            .catch(function (e2) {
+              statusEl.textContent = (e2 && e2.message && !/fetch/i.test(e2.message)) ? e2.message
+                : "We couldn't send that just now. Please try again in a moment.";
+            })
+            .finally(function () {
+              btn.disabled = false;
+              btn.textContent = label;
+            });
+        });
+        form.addEventListener('input', function () { statusEl.textContent = ''; });
       })();
     </script>
 </body>
