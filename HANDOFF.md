@@ -33,7 +33,7 @@ page is behind a word, which is a speed bump and not access control.
 - Background is a subtle deep-indigo top glow; keep it dark and understated.
 - Mascots displayed **small**; source art is huge, so resize (PIL/ImageMagick) into `assets/images/` before use. On the repo: `rika-welcome.png`, `nurro-experiment.png`, `trailblaze.png`, `footer-tiny.png` (cat), `favicon-pyr.png`; Inner Cosmos hero at `hidden-worlds/public/hero-rika-nurro.png`.
 - **Favicon** = the Pyr logo (`assets/images/favicon-pyr.png`), linked on every page.
-- The Princeton crest in the top navigation links to the Princeton Neuroscience Institute at `https://pni.princeton.edu/`.
+- The top navigation's brand (Princeton crest and name, then the Pyr icon and "Pyr") links to the home page (Ames 2026-10-26). The footer's "Princeton University" still links to the Princeton Neuroscience Institute.
 - Support/contact email is assembled at runtime in JS (not a plain-text literal) to avoid scrapers.
 
 ## Dataset facts (approx counts, confirmed by Amy)
