@@ -80,13 +80,14 @@
             <textarea id="ea-note" name="note" rows="2" maxlength="500" placeholder="Where you heard about Pyr"></textarea>
           </label>
           <label class="earlyaccess__agree">
-            <input id="ea-agree" type="checkbox" required />
-            <span>I've read and agree to the <a href="https://edit.flywire.ai/principles.html" target="_blank" rel="noreferrer">community principles</a>.</span>
+            <input id="ea-agree" type="checkbox" required aria-required="true" />
+            <span>I've read and agree to the <a href="https://eyewire.ai/principles" target="_blank" rel="noreferrer">Eyewire II Principles</a>. <em>(required)</em></span>
           </label>
           <!-- bot trap: people never see or fill this -->
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="earlyaccess__trap" />
           <div class="subscribe__foot">
-            <button class="btn btn--cta" id="ea-submit" type="submit">Request early access</button>
+            <!-- Mandatory (Ames 2026-10-27): the button waits for the tick. -->
+            <button class="btn btn--cta" id="ea-submit" type="submit" disabled>Request early access</button>
             <p class="cform__status" id="ea-status" role="status" aria-live="polite"></p>
           </div>
         </form>
@@ -186,7 +187,7 @@
           if (!EMAIL_OK.test(email)) return 'That email does not look right.';
           if (ewName && !EW_NAME_OK.test(ewName)) return 'An EyeWire username has letters, numbers, dots, dashes and underscores only.';
           if (ewRank && !EW_RANK_OK.test(ewRank)) return 'An EyeWire rank has letters, numbers and spaces only.';
-          if (!agree) return 'Please tick the box to say you agree to the community principles.';
+          if (!agree) return 'Please tick the box to say you agree to the Eyewire II Principles.';
           return '';
         }
         function done() {
@@ -227,11 +228,19 @@
                 : "We couldn't send that just now. Please try again in a moment.";
             })
             .finally(function () {
-              btn.disabled = false;
               btn.textContent = label;
+              syncButton();
             });
         });
         form.addEventListener('input', function () { statusEl.textContent = ''; });
+        // The button can only be pressed once the principles box is ticked.
+        var agreeBox = document.getElementById('ea-agree');
+        function syncButton() {
+          btn.disabled = !agreeBox.checked;
+          btn.title = agreeBox.checked ? '' : 'Tick the box to agree to the Eyewire II Principles first';
+        }
+        agreeBox.addEventListener('change', syncButton);
+        syncButton();
       })();
     </script>
 </body>
