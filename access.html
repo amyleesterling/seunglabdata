@@ -86,8 +86,7 @@
           <!-- bot trap: people never see or fill this -->
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="earlyaccess__trap" />
           <div class="subscribe__foot">
-            <!-- Mandatory (Ames 2026-10-27): the button waits for the tick. -->
-            <button class="btn btn--cta" id="ea-submit" type="submit" disabled>Request early access</button>
+            <button class="btn btn--cta" id="ea-submit" type="submit">Request early access</button>
             <p class="cform__status" id="ea-status" role="status" aria-live="polite"></p>
           </div>
         </form>
@@ -206,7 +205,7 @@
           var ewRank = document.getElementById('ea-ewrank').value.trim().replace(/\s+/g, ' ');
           var err = problem(name, email, agree, ewName, ewRank);
           statusEl.textContent = err;
-          if (err) return;
+          if (err) { if (!agree && /tick the box/.test(err)) flagAgree(); return; }
           btn.disabled = true;
           var label = btn.textContent;
           btn.textContent = 'Sending…';
@@ -228,19 +227,22 @@
                 : "We couldn't send that just now. Please try again in a moment.";
             })
             .finally(function () {
+              btn.disabled = false;
               btn.textContent = label;
-              syncButton();
             });
         });
         form.addEventListener('input', function () { statusEl.textContent = ''; });
-        // The button can only be pressed once the principles box is ticked.
+        // Sent without the tick (Ames 2026-10-27): the agreement box lights up
+        // and takes the focus, until it is ticked.
         var agreeBox = document.getElementById('ea-agree');
-        function syncButton() {
-          btn.disabled = !agreeBox.checked;
-          btn.title = agreeBox.checked ? '' : 'Tick the box to agree to the Eyewire II Principles first';
+        var agreeRow = agreeBox.closest('.earlyaccess__agree');
+        function flagAgree() {
+          agreeRow.classList.remove('is-missing');
+          void agreeRow.offsetWidth; // restart the shake
+          agreeRow.classList.add('is-missing');
+          agreeBox.focus();
         }
-        agreeBox.addEventListener('change', syncButton);
-        syncButton();
+        agreeBox.addEventListener('change', function () { if (agreeBox.checked) { agreeRow.classList.remove('is-missing'); statusEl.textContent = ''; } });
       })();
     </script>
 </body>
