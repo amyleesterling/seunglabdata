@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>404, False Split Detected</title>
   <meta name="robots" content="noindex" />
+  <script>
+    // /blog/<slug>/ for a post published in the last few minutes, before its
+    // page is built (tools/build-blog.mjs, every 15 minutes): draw it from
+    // the database instead of showing this page.
+    (function () {
+      var m = /^\/blog\/([a-z0-9]+(?:-[a-z0-9]+)*)\/?$/.exec(location.pathname);
+      if (m) location.replace('/blog/post.html?p=' + m[1]);
+    })();
+  </script>
   <meta name="description" content="This page is not connected to the rest of the site. Help us reconnect the brain instead." />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />

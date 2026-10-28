@@ -90,6 +90,10 @@ function blogSlug(title) {
   return String(title || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80).replace(/-+$/, '');
 }
 
+// The build script (tools/build-blog.mjs) runs this file to draw the static
+// pages with the very same renderer.
+globalThis.BlogRender = { renderBlogMarkdown: renderBlogMarkdown, blogSlug: blogSlug };
+
 function get(query) {
   return fetch(API + '?' + query, { headers: { apikey: KEY } }).then(function (r) {
     if (!r.ok) throw new Error('blog ' + r.status);
@@ -106,7 +110,11 @@ function el(tag, cls, text) {
   if (text != null) e.textContent = text;
   return e;
 }
-function postUrl(slug) { return '/blog/post.html?p=' + encodeURIComponent(slug); }
+// Every post has its own page at /blog/<slug>/ (built by tools/build-blog.mjs),
+// which is what link previews and search engines read. A post published in
+// the last few minutes may not have its page yet: the 404 page then sends
+// the reader on to post.html, which draws it here.
+function postUrl(slug) { return '/blog/' + encodeURIComponent(slug) + '/'; }
 
 // ── The list (blog/index.html), with search ────────────────────────────
 var list = document.getElementById('blogList');

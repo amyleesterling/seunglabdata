@@ -1,0 +1,20 @@
+# Map the Brain
+
+> The citizen science home of connectomics, from the Seung Lab at Princeton University. Volunteers map neurons in brain images in Pyr, the lab's brain mapping game (formerly EyeWire II), and help build connectomes: complete wiring diagrams of brains.
+
+## Start here
+- [Home](https://connectome.quest/): the projects that need help, and how to join
+- [Connectome 101](https://connectome.quest/atlas/): what a connectome is
+- [Neuro 101](https://connectome.quest/learn.html): neuroscience for beginners
+- [Help](https://connectome.quest/help.html): how to play and get help
+- [Access](https://connectome.quest/access.html): ask for access to edit
+
+## Blog
+- [All posts](https://connectome.quest/blog/) ([RSS](https://connectome.quest/blog/feed.xml))
+- [Super Quests: MEC Inhibitory Interneurons](https://connectome.quest/blog/super-quests-mec-inhibitory-interneurons/): Some neurons ask for an afternoon. These could keep you exploring for weeks. We’re introducing Super Quests in Pyr: a chance to help map enormous inhibitory interneurons in the medial entorhinal cortex (MEC), a brain region involved in navigation and memory. These cells have sprawling branches…
+- [How to unlock Edit access in Pyr](https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/): Practice in the Sandbox, then show us ten edits you would make, right inside Pyr. Here is how the access check works, what happens after you send, and where to find help while you learn.
+- [The Cilia Quest: a new way to help in Pyr](https://connectome.quest/blog/the-cilia-quest-a-new-way-to-help-in-pyr/): Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell.
+- [Achievements in Pyr: how the steps work](https://connectome.quest/blog/achievements-in-pyr-how-the-steps-work/): Overview of achievement tiers in Pyr.
+- [Upgrades to chat](https://connectome.quest/blog/upgrades-to-chat/): Chat in Pyr has a set of new tools. Search the conversation, add bold and underline, see where new messages begin, and find your own messages at a glance.
+- [Highlight mode: color in what you have checked](https://connectome.quest/blog/highlight-mode/): A new tool for keeping track of your work on a big cell. Mark a stretch of a branch and its surface takes a color, so you can see what is done and what is left.
+- [Write your own scripts for EyeWire II](https://connectome.quest/blog/scripts-and-api/): EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.

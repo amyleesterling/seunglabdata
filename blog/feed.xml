@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Map the Brain blog</title>
+    <link>https://connectome.quest/blog/</link>
+    <atom:link href="https://connectome.quest/blog/feed.xml" rel="self" type="application/rss+xml" />
+    <description>What is new in Pyr and the other brain mapping projects of the Seung Lab, Princeton University.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 28 Oct 2026 17:59:36 GMT</lastBuildDate>
+    <item>
+      <title>Super Quests: MEC Inhibitory Interneurons</title>
+      <link>https://connectome.quest/blog/super-quests-mec-inhibitory-interneurons/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/super-quests-mec-inhibitory-interneurons/</guid>
+      <pubDate>Wed, 28 Oct 2026 17:59:36 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>Some neurons ask for an afternoon. These could keep you exploring for weeks.
+
+We’re introducing Super Quests in Pyr: a chance to help map enormous inhibitory interneurons in the medial entorhinal cortex (MEC), a brain region involved in navigation and memory.
+
+These cells have sprawling branches…</description>
+      <content:encoded><![CDATA[<p>Some neurons ask for an afternoon. These could keep you exploring for weeks.</p>
+<p>We’re introducing Super Quests in Pyr: a chance to help map enormous inhibitory interneurons in the medial entorhinal cortex (MEC), a brain region involved in navigation and memory.</p>
+<p>The medial entorhinal cortex helps the brain keep track of where you are. It is home to grid cells, which fire in a regular pattern as an animal moves through space. Interneurons are the cells that hold that activity in check: they inhibit their neighbors, and the giant ones reach a great many of them.</p>
+<p>The new Super Quest features <strong>giant</strong> interneurons of the MEC. Each has so many branches that it can take weeks to finish. Nobody has mapped these cell types before. You can be among the first to see one whole and help us decipher what they do!</p>
+<p><strong>A precise question: who do they inhibit?</strong></p>
+<p>The lab has selected 29 cells and grouped them by their predicted targets:</p>
+<ul><li>Pyramidal Target — 17 cells: predicted to inhibit pyramidal neurons exclusively.</li><li>Non-Pyramidal Target — 12 cells: predicted to inhibit non-pyramidal cells exclusively.</li></ul>
+<p>Those are predictions. Your proofreading will help us reconstruct these neurons and analyze their connections to find out whether the predictions hold.</p>
+<h3>How a Super Quest works</h3>
+<p>Open the Cell Library on MEC and pick the <strong>Super Quests</strong> chip. You may claim one at a time and keep it for up to two months (if you need longer, just message us). A Super Quest sits beside your other claims and does not count against them.</p>
+<p>Marks. Mark the AIS, where the axon leaves the cell; it is the one mark that is required. Others are optional. You could use True End for a branch that stops naturally, and Checked for a place you have looked at and found right, so you know where you have been. Hide marks clears them from the view when you want to see the cell itself. We are working on Highlight mode in MEC. For now, annotations highlight the immediately surrounding area on a cell, so you can add lots of annotations to effectively highlight a branch.</p>
+<p>Your time is counted. This is how the lab learns how long these cells really take and will help us estimate the amount of time required for proofreading in this and future datasets. Pyr adds up your active time on the cell and shows it on the row, such as 14 h 20 min so far. It counts only while the cell is on screen, Pyr is the tab in front, and you have used the mouse or keys in the last 5 minutes. There is no need to hurry. It is most important to map the cells accurately.</p>
+<p>&quot;Save view&quot; keeps your layers and marks with the claim, and the claim keeps the cell's ID through every merge and split.</p>
+<p>A special achievement is waiting for anyone who accurately completes a Super Quest.</p>
+<p><strong>Thank you for contributing to neuroscience!</strong></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>How to unlock Edit access in Pyr</title>
+      <link>https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/</guid>
+      <pubDate>Fri, 16 Oct 2026 21:08:22 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>Practice in the Sandbox, then show us ten edits you would make, right inside Pyr. Here is how the access check works, what happens after you send, and where to find help while you learn.</description>
+      <content:encoded><![CDATA[<p>The Sandbox is where everyone starts in Pyr. Every signed in player can cut and merge there, and nothing you do in it touches real science. Once those tools feel natural, you can ask for edit access so that you can edit real neurons and help map the brain.</p>
+<h2>Getting started</h2>
+<p>Everything you need to learn lives in the menu at the top right of Pyr (the burger icon).</p>
+<ul><li><strong>Site Tour.</strong> A quick walk around the screen: the top bar, the views and where everything is.</li><li><strong>Tutorials.</strong> Take them in order. <strong>Get Started</strong> shows you how to move around a cell in 3D and step through the electron microscope images. <strong>Advanced Interface</strong> covers layers, coordinates, annotations and settings. <strong>Merge</strong> and <strong>Cut</strong> teach the two edits on practice cells, so a slip costs nothing.</li><li><strong>Merger Sandbox.</strong> Practice cells, each with a merger to find and cut. The menu keeps count of how many you have done.</li><li><strong>Utilize Chat</strong> if you have questions, or <strong>ask for help in the Cell Library</strong> (neuron icon in the top bar).</li></ul>
+<h2>What we ask for</h2>
+<p>Before you can contribute to real science, you must demonstrate that you know your way around a neuron. For this, submit test edits on cells in the sandbox or on the Retina dataset where you found mergers or missed extensions. 10 demo edits are currently required:</p>
+<ul><li><strong>Seven cuts.</strong> Find places where two cells were wrongly joined. Place red and blue Multicut (cut) points on each side of where you would cut.</li><li><strong>Three merges.</strong> Find places where one cell was wrongly broken in two. Press M, then Ctrl+click the two pieces to place merge points.</li></ul>
+<p><strong>Place the points, but do not submit the edit.</strong> Leave each mistake in place, so we can see it the way you found it.</p>
+<h2>How to request Edit access</h2>
+<ul><li>Open the menu at the top right and choose <strong>Ask for retina access</strong>, at the very bottom.</li><li>Place your cut or merge points, then press <strong>Save this view as cut 1</strong> (or merge 1). Pyr keeps the view, every point you placed, and a note if you want to add one. The points are cleared afterwards, so the next one starts fresh.</li><li>Click any saved example to fly back to it, or press <strong>Replace</strong> to swap in a better one.</li><li>On a laptop, press <strong>Slim</strong> to make the box small while you work.</li><li>When all ten are saved, press <strong>Send for review</strong>.</li></ul>
+<h2>What happens next</h2>
+<p>Someone from the team looks at every example and every point you placed and you will hear back in your notifications.</p>
+<p>If your edits look right, your edit access is granted and the world of connectomics opens to you. If a few need another look, we mark them and tell you why. Redo those and send again.</p>
+<p>Taking more than one try is normal. You are never locked out and there is no limit on tries. If you have practiced in the Sandbox for two weeks and still feel unsure, reach out to us. We are happy to help.</p>
+<h2>Help while you learn</h2>
+<ul><li><strong>The tutorials in Pyr.</strong> After Get Started, open the menu at the top right and take Merge, Cut and Advanced Interface.</li><li><strong>Chat and the Cell Library.</strong> Ask in chat, or ask for help on a cell from the Cell Library (the neuron icon in the top bar).</li><li><strong>Videos.</strong> <a href="https://www.youtube.com/watch?v=48GS9Sizrvw" target="_blank" rel="noopener noreferrer">How to merge</a>, <a href="https://www.youtube.com/watch?v=DB6wmQWGsck" target="_blank" rel="noopener noreferrer">how to split</a>, and <a href="https://www.youtube.com/watch?v=CGooeAhSryg" target="_blank" rel="noopener noreferrer">Find Path</a>, which helps you trace a merger back to where it starts. There is also a full <a href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCw0BLFWKrc49JHKWK1o41Ud" target="_blank" rel="noopener noreferrer">playlist of advanced tutorials</a>. We are working on tutorials using the new Pyr interface.</li><li><strong>The <a href="https://blog.pyr.ai/2024/12/20/proofreading-101-climb-into-spelunker/" target="_blank" rel="noopener noreferrer">Proofreading Guide</a>.</strong></li><li><strong>Chat</strong></li></ul>
+<p>Once you are in, you are part of the team building new maps of the brain. For science!</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Cilia Quest: a new way to help in Pyr</title>
+      <link>https://connectome.quest/blog/the-cilia-quest-a-new-way-to-help-in-pyr/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/the-cilia-quest-a-new-way-to-help-in-pyr/</guid>
+      <pubDate>Tue, 13 Oct 2026 20:45:54 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell.</description>
+      <content:encoded><![CDATA[<p>Until now there was one way to help in Pyr: pick a cell and proofread it until it is complete. Today there is a second. A Quest asks one question about a cell, and you answer it by marking what you find. You do not have to proofread the cell to do it.</p>
+<p>The first is the <strong>Cilia Quest</strong>, on the Retina dataset.</p>
+<blockquote><p>We're on the hunt for primary cilia, important cellular appendages that receive and process environmental signals. Cilia serve as “antennas” that cells use to sense the chemistry of their environment. Each cell only has one primary cilium, will you be the one to find it?</p></blockquote>
+<h2>What you are looking for</h2>
+<p>Each cell in the Quest is a starburst cell from the retina. Somewhere on its cell body there may be a cilium, a thin appendage that projects from the cell. At its base sits the basal body, and close by is a second structure, the daughter centriole.</p>
+<p>You mark three things, each in its own layer:</p>
+<ul><li><strong>Cilium centerline</strong>, a line drawn along the cilium.</li></ul>
+<ul><li><strong>Basal body</strong>, one point.</li></ul>
+<ul><li><strong>Daughter centriole</strong>, one point.</li></ul>
+<p>Some cells have no visible cilium. That is an answer too, and you may still be able to find the two centrioles inside the cell.</p>
+<h2>How to do one</h2>
+<ol><li>Open the <strong>Cell Library</strong> and click <strong>Quests</strong>. If you are on another dataset, press <strong>Switch to Retina</strong>.</li></ol>
+<ol><li>Press <strong>Claim</strong> on an open cell. The view goes to it and the three layers open.</li></ol>
+<ol><li>Find the cilium and mark it. For the centerline, hold <strong>Ctrl</strong> and click along the cilium, then press <strong>Enter</strong>. <strong>Backspace</strong> takes back the last point and <strong>Esc</strong> cancels the line.</li></ol>
+<ol><li>Put the crosshairs inside the cell and press <strong>Submit</strong>. Choose a cilium status from the list, and add a note if something needs explaining. Under each status the form says when to use it.</li></ol>
+<p>You can hold three cells at a time. <strong>Release</strong> sends a cell back for someone else.</p>
+<h2>Help along the way</h2>
+<p>Press <strong>Instructions</strong> at the top of the Quests tab. You will find:</p>
+<ul><li>The lab's guide to locating and annotating cilia.</li></ul>
+<ul><li>A <a href="https://www.youtube.com/watch?v=-l2-R-9vX6o&amp;t=1525s" target="_blank" rel="noopener noreferrer">training video</a>.</li></ul>
+<ul><li>A reference that opens three real cells with the lab's own annotations. Each one shows a different status and says when that status applies.</li></ul>
+<p>Not sure about a cell? There is a status for that. Choose <strong>Need help</strong> and say why in the notes.</p>
+<h2>Where your answer goes</h2>
+<p>When you submit, your status, your notes and a link to your view go to the lab, with your name and the date. Pyr celebrates with you and tells you how many annotations you placed on that cell and how many Quests you have completed. Your profile keeps the count.</p>
+<h2>A new tool for everyone</h2>
+<p>The centerline needed a line with more than two points, so every annotation layer now has a polyline tool, on every dataset. It is the same polyline the lab's own viewer draws.</p>
+<h2>Tell us how it goes</h2>
+<p>The Cilia Quest is the first Quest, and Quests are on Retina for now. If something is unclear or could work better, ask in chat or send a report with the feedback button.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Achievements in Pyr: how the steps work</title>
+      <link>https://connectome.quest/blog/achievements-in-pyr-how-the-steps-work/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/achievements-in-pyr-how-the-steps-work/</guid>
+      <pubDate>Sun, 11 Oct 2026 15:23:52 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>Overview of achievement tiers in Pyr.</description>
+      <content:encoded><![CDATA[<p>Pyr has two sets of Achievements you earn just by doing science. One counts the <strong>cells you complete</strong>. The other counts the <strong>edits you make</strong>.</p>
+<p>Below find a list of the thresholds.</p>
+<h2>Cell Completion Achievements</h2>
+<p>Every cell you complete counts.</p>
+<ul><li>Your <strong>first cell</strong> earns your first Achievement.</li></ul>
+<ul><li>Then <strong>5, 10, 15 and 20</strong> cells.</li></ul>
+<ul><li>Then <strong>30, 40, 50, 75, 100, 125 and 150</strong> cells.</li></ul>
+<ul><li>Every <strong>50</strong> cells up to 500.</li></ul>
+<ul><li>Every <strong>100</strong> cells up to 2,000.</li></ul>
+<ul><li>Every <strong>250</strong> cells up to 5,000.</li></ul>
+<ul><li>Every <strong>500</strong> cells up to 10,000.</li></ul>
+<ul><li>After 10,000, Every <strong>1,000</strong> cells.</li></ul>
+<h2>Editor Achievements</h2>
+<p>Every merge and every split counts as an edit.</p>
+<ul><li>Your <strong>first edit</strong> earns your first Achievement.</li></ul>
+<ul><li>Then <strong>10, 25, 50 and 100</strong> edits.</li></ul>
+<ul><li>Every <strong>100</strong> edits up to 500.</li></ul>
+<ul><li>Then <strong>750 and 1,000</strong> edits.</li></ul>
+<ul><li>Every <strong>500</strong> edits up to 5,000.</li></ul>
+<ul><li>Every <strong>1,000</strong> edits up to 10,000.</li></ul>
+<ul><li>Every <strong>2,000</strong> edits up to 20,000.</li></ul>
+<ul><li>Every <strong>5,000</strong> edits up to 100,000.</li></ul>
+<ul><li>After 100,000, Every <strong>10,000</strong> edits.</li></ul>
+<h2>What will you unlock next?</h2>
+<p>Open your Trophy Case to see the ones you hold and how far you are from the next one.</p>
+<p>Thank you for helping to map the brain. For science!</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Upgrades to chat</title>
+      <link>https://connectome.quest/blog/upgrades-to-chat/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/upgrades-to-chat/</guid>
+      <pubDate>Sat, 10 Oct 2026 16:46:31 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>Chat in Pyr has a set of new tools. Search the conversation, add bold and underline, see where new messages begin, and find your own messages at a glance.</description>
+      <content:encoded><![CDATA[<p>Chat is where a lot of Pyr happens: questions about a tricky branch, a link to a cell, a cheer when someone finishes a big one or earns a new achievement. This week it picked up a set of expansions suggested by Krzysztof Kruk. Bonus: None of them takes up any more of your screen.</p>
+<h2>Bold and underline</h2>
+<p>There is no toolbar to learn. Put a star, <code>*</code>, on each side of the words you want in bold. Put an underscore on each side of the words you want underlined, like <code>_this_</code>.</p>
+<p>Or select some text in the message box and press <strong>Ctrl+B</strong> for bold or <strong>Ctrl+U</strong> for underline. Press it again to take the mark off. You can use both on the same words.</p>
+<p>The marks only count around a whole word or phrase. A name with an underscore in it, or a sum written with stars, stays exactly as you typed it.</p>
+<h2>Search the conversation</h2>
+<p>Click the magnifier at the top of the chat. The line where you type a message becomes a search line, and the chat shows only the messages that match.</p>
+<ul><li>Type one or more words. A message has to contain all of them.</li></ul>
+<ul><li>Put a minus sign in front of a word to leave out messages that have it, like <code>merge -queue</code>.</li></ul>
+<ul><li>Put words in quotes to find them together, like <code>&quot;cut off&quot;</code>.</li></ul>
+<ul><li>Type <code>from:</code> and a name to see one player's messages, like <code>from:Nseraf</code>.</li></ul>
+<ul><li>Search one day with <code>on:10/8</code>, or a stretch of days with <code>after:yesterday</code> and <code>before:2026-10-01</code>. The words today and yesterday work too.</li></ul>
+<p>Click any result to jump to that message in the conversation, with everything around it. Press <strong>Esc</strong>, or click the magnifier again, to go back to chat.</p>
+<p>Search looks through the messages chat has loaded. To reach further back, press <strong>Search earlier messages too</strong> at the top of the list to include the past 14 days. When you search for a day, chat brings in the earlier messages by itself.</p>
+<h2>Find your own messages</h2>
+<p>A thin bar now appears to the left of your own messages, making them easy to spot. If you would rather not see it, open <strong>Settings</strong> and switch off <strong>Mark my own messages in chat</strong>.</p>
+<h2>See what is new</h2>
+<p>When you open Pyr, or come back to it from another tab, a line across the chat shows where the messages you have not seen begin. It reads <strong>New since you left</strong>. Everything below it is new. The line goes away once you send a message.</p>
+<h2>Pinned messages</h2>
+<p>Sometimes there is one thing everyone should see, like a dataset opening or an event starting. The Pyr team can now pin a message to the top of chat. It sits in one line above the conversation. Click it to jump to the message, or press the small x to hide it for yourself.</p>
+<h2>Thank you, Krzysztof</h2>
+<p>Search, bold and underline, and marking your own messages all came from one player's suggestions. If you have an idea for Pyr, send it in with the feedback button.   For science!</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Highlight mode: color in what you have checked</title>
+      <link>https://connectome.quest/blog/highlight-mode/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/highlight-mode/</guid>
+      <pubDate>Mon, 05 Oct 2026 23:57:46 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>A new tool for keeping track of your work on a big cell. Mark a stretch of a branch and its surface takes a color, so you can see what is done and what is left.</description>
+      <content:encoded><![CDATA[<p>Proofreading a big cell means checking a lot of branches, and it is easy to lose track of which ones you have already been down. Until now the usual trick was to drop a point at the end of each branch. That marks a place. It does not show you the stretch of cell you checked.</p>
+<p>Highlight mode does. You pick two points on a cell, and the stretch between them takes a color. The cell fills in as you work, and whatever is still plain is what is left to do.</p>
+<h2>How to use it</h2>
+<ol><li>Click the spray can in the toolbar to open Highlight.</li><li>Hold <strong>Ctrl</strong> and click the cell where your checked stretch starts. On a Mac, hold <strong>Cmd</strong>. Holding <strong>H</strong> and clicking works too.</li><li>Turn and move the view as much as you like.</li><li>Hold <strong>Ctrl</strong> and click where the stretch ends.</li></ol>
+<p>The game finds the path along the cell between your two clicks and colors the surface of the cell along it.</p>
+<h2>Pick your colors</h2>
+<p>Highlight starts with three colors: <strong>Checked</strong>, <strong>Needs a look</strong> and <strong>Problem</strong>. Click a color's swatch to change it. Use <strong>+ Add</strong> to make your own, with any name you like, up to eight colors in all.</p>
+<p>Your colors are saved to your account, so they are there on any computer you sign in on.</p>
+<h2>Color reach</h2>
+<p>The <strong>Color reach</strong> slider sets how far out from the middle of the branch the color spreads, from 0.5 to 8 µm.</p>
+<p>Here is the same stretch of dendrite at two settings. At 2.5 µm the color covers the shaft, but the tips of the longer spines stay the cell's own purple.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/highlight-reach-2-5-um.webp" alt="A dendrite highlighted blue with color reach at 2.5 micrometers. The tips of the longer spines are still purple." loading="lazy" /></figure>
+<p>At 4 µm the color reaches all the way to the spine tips.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/highlight-reach-4-um.webp" alt="The same dendrite with color reach at 4 micrometers. The spines are blue to their tips." loading="lazy" /></figure>
+<p>A wider reach covers thick branches and their spines. A narrower reach keeps the color off neighboring branches that run close by. You can move the slider after you have made your marks, and they all update.</p>
+<h2>Good to know</h2>
+<ul><li><strong>Undo</strong> removes your last mark. <strong>Clear all</strong> removes every mark.</li><li><strong>Your marks are saved with your view.</strong> They come back with the autosave, with Save view on a claim, and in a link you share.</li><li><strong>Marks stay put when you merge or split.</strong> They are attached to the place, so editing the cell does not lose them.</li><li><strong>Long paths can take a while.</strong> If the game cannot find the path within a minute it stops, and nothing is marked. There is also a <strong>Stop tracing</strong> button.</li><li><strong>You can drag the Highlight box</strong> anywhere on the screen, and it stays where you put it.</li><li><strong>Highlight is not on every dataset yet.</strong> Where it is off, the spray can is greyed out.</li></ul>
+<h2>Tell us how it goes</h2>
+<p>Highlight is new, and it will change as you use it. If something does not color the way you expect, send it with the feedback button in the game, or <a href="https://connectome.quest/forum.html" target="_blank" rel="noopener noreferrer">tell us on the forum</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Write your own scripts for EyeWire II</title>
+      <link>https://connectome.quest/blog/scripts-and-api/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/scripts-and-api/</guid>
+      <pubDate>Fri, 02 Oct 2026 16:00:00 GMT</pubDate>
+      <dc:creator>Amy and the EyeWire team</dc:creator>
+      <description>EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.</description>
+      <content:encoded><![CDATA[<p>Players of the original EyeWire built some of its best features themselves. Bigger annotation dots, extra statistics, faster ways to get around: many of them started as a script one player wrote for their own browser and then shared.</p>
+<p>EyeWire II now supports that properly. There is a guide for getting started, and a small set of tools made for scripts to use.</p>
+<h2>What a script is</h2>
+<p>A script is a small piece of code that changes the game on your computer only. It runs through Tampermonkey, a free browser extension. Nobody else sees your script, and you do not need permission to write one.</p>
+<h2>What scripts can use</h2>
+<p>Until now a script had to reach into the inner workings of the game, which change with almost every update. So scripts broke often. The new tools are the parts we promise to keep working:</p>
+<ul><li><strong>Your cells and your view.</strong> The cells you have selected, the cell under the crosshairs, your claims, and where you are looking.</li><li><strong>Events.</strong> Run your code when you claim, release or complete a cell, when your selection changes, or when you switch datasets.</li><li><strong>A button and a panel.</strong> Add your own button to the top bar and your own side panel.</li><li><strong>Annotation layers.</strong> Make a layer of your own and add points and lines to it.</li><li><strong>Settings.</strong> Save your script's settings in your browser.</li></ul>
+<p>Everything else is still open. Scripts can reach the viewer directly for anything the tools do not cover.</p>
+<p class="blog-post__cta"><a class="blog-post__button" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/scripts.html" target="_blank" rel="noopener noreferrer">Open the scripts guide</a></p>
+<p>The guide has setup steps, the full list of tools, and six example scripts you can copy.</p>
+<h2>A word on safety</h2>
+<p>A script runs as you. It can do anything you can do in the game, including editing cells with your sign in. Scripts you write yourself are fine. Before you install a script from someone else, read it, or ask in chat whether others use it. Scripts are made by players and are not reviewed by the EyeWire team.</p>
+<h2>Tell us what is missing</h2>
+<p>We asked the script writers on the forum what they need, and the answer was that scripts grow out of whatever rough edge someone notices that week. So the list of tools starts small on purpose. If your script needs something that is not there, <a href="https://forum.eyewire.org/t/pyr-eyewire-ii-api-requests/2246/4" target="_blank" rel="noopener noreferrer">ask on the forum</a> and we will add it.</p>
+<h2>Also new this week</h2>
+<ul><li><strong>Split screen replaces the 4 panel view.</strong> Press Space to flip between split screen and the single panel under your mouse. Nothing lands you in 4 panel any more.</li><li><strong>Your view saves itself.</strong> Annotations, layers and position are saved to your account as you work. Open the game on any computer and it offers to pick up where you left off.</li><li><strong>Save view on a claim.</strong> In the Cell Library, the cell you are working on has a Save view button, so your annotations stay with the cell.</li><li><strong>The fly brain and nerve cord.</strong> BANC is now in the dataset switcher, and the three MICrONS versions share one card.</li><li><strong>Claim several cells at once.</strong> The Cell Library can fill your claims from the Available list in one click.</li><li><strong>A faster Cell Library.</strong> Your own cells load first, and long lists draw 200 rows at a time.</li></ul>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

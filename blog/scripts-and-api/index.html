@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Write your own scripts for EyeWire II | Map the Brain</title>
+  <meta name="description" content="EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list." />
+  <link rel="canonical" href="https://connectome.quest/blog/scripts-and-api/" />
+  <meta name="author" content="Amy and the EyeWire team" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Map the Brain" />
+  <meta property="og:title" content="Write your own scripts for EyeWire II" />
+  <meta property="og:description" content="EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list." />
+  <meta property="og:url" content="https://connectome.quest/blog/scripts-and-api/" />
+  <meta property="og:image" content="https://connectome.quest/assets/images/eyewire-ii-og.jpg" />
+  <meta property="og:image:alt" content="Write your own scripts for EyeWire II" />
+  <meta property="article:published_time" content="2026-10-02T16:00:00+00:00" />
+  <meta property="article:modified_time" content="2026-10-03T14:49:40.877209+00:00" />
+  <meta property="article:author" content="Amy and the EyeWire team" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Write your own scripts for EyeWire II" />
+  <meta name="twitter:description" content="EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list." />
+  <meta name="twitter:image" content="https://connectome.quest/assets/images/eyewire-ii-og.jpg" />
+  <link rel="alternate" type="application/rss+xml" title="Map the Brain blog" href="https://connectome.quest/blog/feed.xml" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Write your own scripts for EyeWire II","description":"EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.","image":["https://connectome.quest/assets/images/eyewire-ii-og.jpg"],"datePublished":"2026-10-02T16:00:00+00:00","dateModified":"2026-10-03T14:49:40.877209+00:00","author":[{"@type":"Person","name":"Amy and the EyeWire team"}],"publisher":{"@type":"Organization","name":"Seung Lab, Princeton University","url":"https://connectome.quest/","logo":{"@type":"ImageObject","url":"https://connectome.quest/assets/images/favicon-pyr.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://connectome.quest/blog/scripts-and-api/"},"url":"https://connectome.quest/blog/scripts-and-api/","isPartOf":{"@type":"Blog","name":"Map the Brain blog","url":"https://connectome.quest/blog/"}}</script>
+  <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="/styles.css?v=bloglight1" />
+</head>
+<body class="blog-light">
+  <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
+  <nav class="topnav">
+    <div class="wrap topnav__inner">
+      <a class="topnav__brand" href="/" aria-label="Home">
+        <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="" />
+        <span>Princeton University</span>
+        <img class="topnav__pyr" src="/assets/images/favicon-pyr.png" alt="" />
+        <span class="topnav__pyrword">Pyr</span>
+      </a>
+      <div class="topnav__links">
+        <a class="topnav__link" href="/learn.html">Neuro 101</a>
+        <a class="topnav__link" href="/videos.html">Videos</a>
+        <a class="topnav__link" href="/help.html">Help</a>
+        <a class="topnav__link" href="/forum.html">Forum</a>
+        <a class="topnav__link is-active" href="/blog/">Blog</a>
+        <a class="topnav__link" href="/access.html">Access</a>
+        <a class="topnav__link" href="/atlas/">Connectome 101</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap blog-page">
+    <article class="blog-post">
+      <header class="pagehead">
+        <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
+        <h1>Write your own scripts for EyeWire II</h1>
+        <p class="blog-post__meta"><time datetime="2026-10-02">October 2, 2026</time> · Amy and the EyeWire team</p>
+      </header>
+      <div>
+<p>Players of the original EyeWire built some of its best features themselves. Bigger annotation dots, extra statistics, faster ways to get around: many of them started as a script one player wrote for their own browser and then shared.</p>
+<p>EyeWire II now supports that properly. There is a guide for getting started, and a small set of tools made for scripts to use.</p>
+<h2>What a script is</h2>
+<p>A script is a small piece of code that changes the game on your computer only. It runs through Tampermonkey, a free browser extension. Nobody else sees your script, and you do not need permission to write one.</p>
+<h2>What scripts can use</h2>
+<p>Until now a script had to reach into the inner workings of the game, which change with almost every update. So scripts broke often. The new tools are the parts we promise to keep working:</p>
+<ul><li><strong>Your cells and your view.</strong> The cells you have selected, the cell under the crosshairs, your claims, and where you are looking.</li><li><strong>Events.</strong> Run your code when you claim, release or complete a cell, when your selection changes, or when you switch datasets.</li><li><strong>A button and a panel.</strong> Add your own button to the top bar and your own side panel.</li><li><strong>Annotation layers.</strong> Make a layer of your own and add points and lines to it.</li><li><strong>Settings.</strong> Save your script's settings in your browser.</li></ul>
+<p>Everything else is still open. Scripts can reach the viewer directly for anything the tools do not cover.</p>
+<p class="blog-post__cta"><a class="blog-post__button" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/scripts.html" target="_blank" rel="noopener noreferrer">Open the scripts guide</a></p>
+<p>The guide has setup steps, the full list of tools, and six example scripts you can copy.</p>
+<h2>A word on safety</h2>
+<p>A script runs as you. It can do anything you can do in the game, including editing cells with your sign in. Scripts you write yourself are fine. Before you install a script from someone else, read it, or ask in chat whether others use it. Scripts are made by players and are not reviewed by the EyeWire team.</p>
+<h2>Tell us what is missing</h2>
+<p>We asked the script writers on the forum what they need, and the answer was that scripts grow out of whatever rough edge someone notices that week. So the list of tools starts small on purpose. If your script needs something that is not there, <a href="https://forum.eyewire.org/t/pyr-eyewire-ii-api-requests/2246/4" target="_blank" rel="noopener noreferrer">ask on the forum</a> and we will add it.</p>
+<h2>Also new this week</h2>
+<ul><li><strong>Split screen replaces the 4 panel view.</strong> Press Space to flip between split screen and the single panel under your mouse. Nothing lands you in 4 panel any more.</li><li><strong>Your view saves itself.</strong> Annotations, layers and position are saved to your account as you work. Open the game on any computer and it offers to pick up where you left off.</li><li><strong>Save view on a claim.</strong> In the Cell Library, the cell you are working on has a Save view button, so your annotations stay with the cell.</li><li><strong>The fly brain and nerve cord.</strong> BANC is now in the dataset switcher, and the three MICrONS versions share one card.</li><li><strong>Claim several cells at once.</strong> The Cell Library can fill your claims from the Available list in one click.</li><li><strong>A faster Cell Library.</strong> Your own cells load first, and long lists draw 200 rows at a time.</li></ul>
+      </div>
+      <p class="blog-post__back"><a href="/blog/">All posts</a></p>
+    </article>
+
+    <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
+      <div class="subscribe__copy">
+        <p class="res__badge">Stay in the loop</p>
+        <h2>Get new posts by email</h2>
+        <p class="subscribe__lede">
+          New posts, new datasets and events, straight to your inbox.
+          We'll never share your information.
+        </p>
+      </div>
+      <form class="subscribe__form" id="subscribeForm" novalidate>
+        <div class="subscribe__grid">
+          <label class="cform__field">
+            <span>First name</span>
+            <input id="sub-name" name="name" type="text" autocomplete="given-name" required />
+          </label>
+          <label class="cform__field">
+            <span>Email</span>
+            <input id="sub-email" name="email" type="email" autocomplete="email" required />
+          </label>
+        </div>
+        <!-- bot trap -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+        <div class="subscribe__foot">
+          <button class="btn btn--cta" id="sub-submit" type="submit">Subscribe</button>
+          <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="subscribe__success" id="subscribeSuccess" hidden>
+        <img class="subscribe__nurro" src="/assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
+        <h3>You're on the list!</h3>
+        <p>Nurro will keep you posted. Welcome to the quest.</p>
+        <p class="subscribe__egg"><a href="https://amyleesterling.github.io/science-experiment/scale-test" target="_blank" rel="noreferrer">psst… ever wondered how small a neuron really is?</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__credit footer__credit--standalone">
+      <a href="/index.html">Return to Map the Brain</a>
+    </div>
+  </footer>
+  <script src="/assets/subscribe.js?v=2"></script>
+</body>
+</html>

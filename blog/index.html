@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog | Map the Brain</title>
   <meta name="description" content="News and updates from EyeWire II and the Seung Lab citizen science projects." />
+  <link rel="canonical" href="https://connectome.quest/blog/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Map the Brain" />
+  <meta property="og:title" content="Blog | Map the Brain" />
+  <meta property="og:description" content="What is new in Pyr and the other brain mapping projects, written for the people who play them." />
+  <meta property="og:url" content="https://connectome.quest/blog/" />
+  <meta property="og:image" content="https://connectome.quest/assets/images/eyewire-ii-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" type="application/rss+xml" title="Map the Brain blog" href="https://connectome.quest/blog/feed.xml" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,8 +49,10 @@
       <p class="hero__lede">What is new in EyeWire II and the other brain mapping projects, written for the people who play them.</p>
     </header>
 
-    <!-- Posts are written in the game (profile, Blog tab) and loaded by /assets/blog.js.
-         The entry below only shows if the database cannot be reached. See HANDOFF.md. -->
+    <!-- Posts are written in the game (profile, Blog tab). The list below is
+         written by tools/build-blog.mjs, so it is in the page for search
+         engines and readers without JavaScript; /assets/blog.js then redraws
+         it from the database, newest posts included, with search. -->
     <!-- Shown by blog.js once the posts have loaded. -->
     <div class="blog-search" id="blogSearchBox" role="search" hidden>
       <label class="blog-search__label" for="blogSearch">Search the blog</label>
@@ -50,12 +61,74 @@
     </div>
 
     <section class="blog-list" id="blogList" aria-label="Posts">
-      <article class="blog-item">
-        <p class="blog-item__date"><time datetime="2026-10-02">October 2, 2026</time></p>
-        <h2><a href="/blog/scripts-and-api.html">Write your own scripts for EyeWire II</a></h2>
-        <p>EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.</p>
-        <a class="blog-item__more" href="/blog/scripts-and-api.html">Read the post</a>
+      <!-- POSTS:START (written by tools/build-blog.mjs) -->
+      <article class="blog-item blog-item--cover">
+        <a class="blog-item__cover" href="/blog/super-quests-mec-inhibitory-interneurons/" tabindex="-1" aria-hidden="true"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/b94c3bb3-dbec-4f0d-abd8-322cbf18f203.png" alt="" loading="lazy" /></a>
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-28">October 28, 2026</time> · Amy R. Sterling</p>
+          <h2><a href="/blog/super-quests-mec-inhibitory-interneurons/">Super Quests: MEC Inhibitory Interneurons</a></h2>
+          <p>Some neurons ask for an afternoon. These could keep you exploring for weeks.
+
+We’re introducing Super Quests in Pyr: a chance to help map enormous inhibitory interneurons in the medial entorhinal cortex (MEC), a brain region involved in navigation and memory.
+
+These cells have sprawling branches and plenty of mysteries. Claim one and help reveal cells never before mapped in the brain.</p>
+          <a class="blog-item__more" href="/blog/super-quests-mec-inhibitory-interneurons/">Read the post</a>
+        </div>
       </article>
+      <article class="blog-item blog-item--cover">
+        <a class="blog-item__cover" href="/blog/how-to-unlock-edit-access-in-pyr/" tabindex="-1" aria-hidden="true"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/1c66bfe9-0403-464a-9148-5388682d5b07.png" alt="" loading="lazy" /></a>
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-16">October 16, 2026</time> · Amy R. Sterling</p>
+          <h2><a href="/blog/how-to-unlock-edit-access-in-pyr/">How to unlock Edit access in Pyr</a></h2>
+          <p>Practice in the Sandbox, then show us ten edits you would make, right inside Pyr. Here is how the access check works, what happens after you send, and where to find help while you learn.</p>
+          <a class="blog-item__more" href="/blog/how-to-unlock-edit-access-in-pyr/">Read the post</a>
+        </div>
+      </article>
+      <article class="blog-item blog-item--cover">
+        <a class="blog-item__cover" href="/blog/the-cilia-quest-a-new-way-to-help-in-pyr/" tabindex="-1" aria-hidden="true"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/31205338-9883-4799-8be1-b863fbc7cffa.png" alt="" loading="lazy" /></a>
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-13">October 13, 2026</time> · Amy R. Sterling</p>
+          <h2><a href="/blog/the-cilia-quest-a-new-way-to-help-in-pyr/">The Cilia Quest: a new way to help in Pyr</a></h2>
+          <p>Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell.</p>
+          <a class="blog-item__more" href="/blog/the-cilia-quest-a-new-way-to-help-in-pyr/">Read the post</a>
+        </div>
+      </article>
+      <article class="blog-item blog-item--cover">
+        <a class="blog-item__cover" href="/blog/achievements-in-pyr-how-the-steps-work/" tabindex="-1" aria-hidden="true"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/2a6fd9b2-53a0-4766-816e-f352c095fcf2.png" alt="" loading="lazy" /></a>
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-11">October 11, 2026</time> · Amy R. Sterling</p>
+          <h2><a href="/blog/achievements-in-pyr-how-the-steps-work/">Achievements in Pyr: how the steps work</a></h2>
+          <p>Overview of achievement tiers in Pyr.</p>
+          <a class="blog-item__more" href="/blog/achievements-in-pyr-how-the-steps-work/">Read the post</a>
+        </div>
+      </article>
+      <article class="blog-item blog-item--cover">
+        <a class="blog-item__cover" href="/blog/upgrades-to-chat/" tabindex="-1" aria-hidden="true"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/19d4cc80-223a-4a2a-bc82-c8b9bdbe1179.png" alt="" loading="lazy" /></a>
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-10">October 10, 2026</time> · Amy R. Sterling</p>
+          <h2><a href="/blog/upgrades-to-chat/">Upgrades to chat</a></h2>
+          <p>Chat in Pyr has a set of new tools. Search the conversation, add bold and underline, see where new messages begin, and find your own messages at a glance.</p>
+          <a class="blog-item__more" href="/blog/upgrades-to-chat/">Read the post</a>
+        </div>
+      </article>
+      <article class="blog-item blog-item--cover">
+        <a class="blog-item__cover" href="/blog/highlight-mode/" tabindex="-1" aria-hidden="true"><img src="https://connectome.quest/assets/images/blog/highlight-mode-cover.webp" alt="" loading="lazy" /></a>
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-05">October 5, 2026</time> · Amy R. Sterling</p>
+          <h2><a href="/blog/highlight-mode/">Highlight mode: color in what you have checked</a></h2>
+          <p>A new tool for keeping track of your work on a big cell. Mark a stretch of a branch and its surface takes a color, so you can see what is done and what is left.</p>
+          <a class="blog-item__more" href="/blog/highlight-mode/">Read the post</a>
+        </div>
+      </article>
+      <article class="blog-item">
+        <div class="blog-item__text">
+          <p class="blog-item__date"><time datetime="2026-10-02">October 2, 2026</time> · Amy and the EyeWire team</p>
+          <h2><a href="/blog/scripts-and-api/">Write your own scripts for EyeWire II</a></h2>
+          <p>EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.</p>
+          <a class="blog-item__more" href="/blog/scripts-and-api/">Read the post</a>
+        </div>
+      </article>
+      <!-- POSTS:END -->
     </section>
 
     <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">

@@ -1,0 +1,46 @@
+# Builds the blog's static pages, sitemap, feed and crawler files from the
+# published posts (tools/build-blog.mjs), and publishes them when they change.
+# Posts are written in Pyr, so this runs on a timer instead of on a push.
+name: Blog Build
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build the blog pages
+        run: node tools/build-blog.mjs
+
+      - name: Publish what changed
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "blog-build"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A blog sitemap.xml robots.txt llms.txt
+          git commit -m "Blog: pages rebuilt from the published posts"
+          # someone may have pushed meanwhile
+          git pull --rebase origin main
+          git push origin HEAD:main
