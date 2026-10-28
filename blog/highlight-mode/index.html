@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=bloglight1" />
+  <link rel="stylesheet" href="/styles.css?v=blogedit1" />
 </head>
 <body class="blog-light">
   <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
@@ -59,6 +59,7 @@
         <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
         <h1>Highlight mode: color in what you have checked</h1>
         <p class="blog-post__meta"><time datetime="2026-10-05">October 5, 2026</time> · Amy R. Sterling</p>
+        <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="highlight-mode" data-blog-author-only hidden>Edit</button></p>
       </header>
       <div>
       <figure class="blog-post__figure blog-post__figure--cover"><img src="https://connectome.quest/assets/images/blog/highlight-mode-cover.webp" alt="" /></figure>
@@ -82,7 +83,7 @@
 <h2>Tell us how it goes</h2>
 <p>Highlight is new, and it will change as you use it. If something does not color the way you expect, send it with the feedback button in the game, or <a href="https://connectome.quest/forum.html" target="_blank" rel="noopener noreferrer">tell us on the forum</a>.</p>
       </div>
-      <p class="blog-post__back"><a href="/blog/">All posts</a></p>
+      <p class="blog-post__back"><a href="/blog/">All posts</a><button type="button" class="blog-edit__quiet" data-blog-edit="highlight-mode" hidden>Edit this post</button></p>
     </article>
 
     <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
@@ -128,5 +129,6 @@
     </div>
   </footer>
   <script src="/assets/subscribe.js?v=2"></script>
+  <script src="/assets/blog-edit.js?v=1"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=bloglight1" />
+  <link rel="stylesheet" href="/styles.css?v=blogedit1" />
 </head>
 <body class="blog-light">
   <nav class="topnav">
@@ -47,6 +47,7 @@
       <p class="hero__eyebrow">News and updates</p>
       <h1>Blog</h1>
       <p class="hero__lede">What is new in EyeWire II and the other brain mapping projects, written for the people who play them.</p>
+      <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="" data-blog-author-only hidden>Write a post</button></p>
     </header>
 
     <!-- Posts are written in the game (profile, Blog tab). The list below is
@@ -180,9 +181,11 @@ These cells have sprawling branches and plenty of mysteries. Claim one and help 
   <footer class="footer">
     <div class="footer__credit footer__credit--standalone">
       <a href="/index.html">Return to Map the Brain</a>
+      <button type="button" class="blog-edit__quiet" data-blog-edit="" hidden>Authors: write a post</button>
     </div>
   </footer>
   <script src="/assets/blog.js"></script>
   <script src="/assets/subscribe.js?v=2"></script>
+  <script src="/assets/blog-edit.js?v=1"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=bloglight1" />
+  <link rel="stylesheet" href="/styles.css?v=blogedit1" />
 </head>
 <body class="blog-light">
   <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
@@ -59,6 +59,7 @@
         <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
         <h1>Write your own scripts for EyeWire II</h1>
         <p class="blog-post__meta"><time datetime="2026-10-02">October 2, 2026</time> · Amy and the EyeWire team</p>
+        <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="scripts-and-api" data-blog-author-only hidden>Edit</button></p>
       </header>
       <div>
 <p>Players of the original EyeWire built some of its best features themselves. Bigger annotation dots, extra statistics, faster ways to get around: many of them started as a script one player wrote for their own browser and then shared.</p>
@@ -78,7 +79,7 @@
 <h2>Also new this week</h2>
 <ul><li><strong>Split screen replaces the 4 panel view.</strong> Press Space to flip between split screen and the single panel under your mouse. Nothing lands you in 4 panel any more.</li><li><strong>Your view saves itself.</strong> Annotations, layers and position are saved to your account as you work. Open the game on any computer and it offers to pick up where you left off.</li><li><strong>Save view on a claim.</strong> In the Cell Library, the cell you are working on has a Save view button, so your annotations stay with the cell.</li><li><strong>The fly brain and nerve cord.</strong> BANC is now in the dataset switcher, and the three MICrONS versions share one card.</li><li><strong>Claim several cells at once.</strong> The Cell Library can fill your claims from the Available list in one click.</li><li><strong>A faster Cell Library.</strong> Your own cells load first, and long lists draw 200 rows at a time.</li></ul>
       </div>
-      <p class="blog-post__back"><a href="/blog/">All posts</a></p>
+      <p class="blog-post__back"><a href="/blog/">All posts</a><button type="button" class="blog-edit__quiet" data-blog-edit="scripts-and-api" hidden>Edit this post</button></p>
     </article>
 
     <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
@@ -124,5 +125,6 @@
     </div>
   </footer>
   <script src="/assets/subscribe.js?v=2"></script>
+  <script src="/assets/blog-edit.js?v=1"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=bloglight1" />
+  <link rel="stylesheet" href="/styles.css?v=blogedit1" />
 </head>
 <body class="blog-light">
   <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
@@ -59,6 +59,7 @@
         <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
         <h1>Upgrades to chat</h1>
         <p class="blog-post__meta"><time datetime="2026-10-10">October 10, 2026</time> · Amy R. Sterling</p>
+        <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="upgrades-to-chat" data-blog-author-only hidden>Edit</button></p>
       </header>
       <div>
       <figure class="blog-post__figure blog-post__figure--cover"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/19d4cc80-223a-4a2a-bc82-c8b9bdbe1179.png" alt="" /></figure>
@@ -85,7 +86,7 @@
 <h2>Thank you, Krzysztof</h2>
 <p>Search, bold and underline, and marking your own messages all came from one player's suggestions. If you have an idea for Pyr, send it in with the feedback button.   For science!</p>
       </div>
-      <p class="blog-post__back"><a href="/blog/">All posts</a></p>
+      <p class="blog-post__back"><a href="/blog/">All posts</a><button type="button" class="blog-edit__quiet" data-blog-edit="upgrades-to-chat" hidden>Edit this post</button></p>
     </article>
 
     <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
@@ -131,5 +132,6 @@
     </div>
   </footer>
   <script src="/assets/subscribe.js?v=2"></script>
+  <script src="/assets/blog-edit.js?v=1"></script>
 </body>
 </html>
