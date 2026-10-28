@@ -11,6 +11,7 @@
 
 ## Blog
 - [All posts](https://connectome.quest/blog/) ([RSS](https://connectome.quest/blog/feed.xml))
+- [Mapping MEC](https://connectome.quest/blog/mapping-mec/): The lab needs help proofreading axons!
 - [Super Quests: MEC Inhibitory Interneurons](https://connectome.quest/blog/super-quests-mec-inhibitory-interneurons/): Some neurons ask for an afternoon. These could keep you exploring for weeks. We’re introducing Super Quests in Pyr: a chance to help map enormous inhibitory interneurons in the medial entorhinal cortex (MEC), a brain region involved in navigation and memory. These cells have sprawling branches…
 - [How to unlock Edit access in Pyr](https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/): Practice in the Sandbox, then show us ten edits you would make, right inside Pyr. Here is how the access check works, what happens after you send, and where to find help while you learn.
 - [The Cilia Quest: a new way to help in Pyr](https://connectome.quest/blog/the-cilia-quest-a-new-way-to-help-in-pyr/): Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell.
