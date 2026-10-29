@@ -16,8 +16,12 @@
     /* the banner: the MEC render full width, the title on top of it in the
        scifi-ui holopanel (panel-surface.css) with its circuit traces
        (ambient.js) drawn inside, and lit corner brackets */
-    .sym__banner{ position: relative; min-height: clamp(460px, 62vh, 640px); display: flex; align-items: center; overflow: hidden; background: #000; border-bottom: 1px solid var(--line); }
-    .sym__banner > img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    /* the MEC render fills the whole page, fixed behind everything (a fixed
+       layer, not background-attachment, which iOS ignores) */
+    body{ background: #000; }
+    .sym__bg{ position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+    .sym__banner{ position: relative; min-height: clamp(460px, 62vh, 640px); display: flex; align-items: center; }
+    .sym ~ .footer, body > .footer{ background: rgba(5,8,14,.82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
     .sym__banner .wrap{ position: relative; z-index: 1; padding: 48px 0; }
     .sym__box{ position: relative; isolation: isolate; max-width: 600px; padding: 34px 36px 32px; overflow: hidden;
       border: 1px solid rgba(74,150,224,.38); border-radius: 14px;
@@ -45,7 +49,34 @@
     /* on desktop the RSVP form sits right under the banner, so the button only shows on phones */
     @media (min-width: 821px){ .sym__go{ display: none; } }
     .sym__grid{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; margin-top: 28px; align-items: start; }
-    .sym__card{ border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.035)); padding: 24px; }
+    /* The cards are cut like Pyr's layer tabs and Lantern bar (ng-extend
+       ng-override.css, LanternBar.vue): a long diagonal top right, a short one
+       top left, a third bottom left, one corner square, so no two match. A
+       clipped box cannot carry a border, so the edge is the card's own
+       background showing round a slightly smaller fill (::before). The top
+       edge IS the circuit trace: two runs ending on solder pads either side
+       of a gap three quarters of the way across, and the light fades down
+       the sides before the foot. */
+    .sym__card{ --cut-tr: 34px; --cut-tl: 12px; --cut-bl: 22px; --pad-x: calc(var(--cut-tl) + (100% - var(--cut-tl) - var(--cut-tr)) * .75);
+      position: relative; isolation: isolate; padding: 30px 26px 26px;
+      background: linear-gradient(180deg, #b4f0ff 0%, #6fc4ff 22%, rgba(74,158,255,.35) 70%, rgba(74,158,255,.12) 100%) no-repeat left bottom / 100% calc(100% - 4px);
+      clip-path: polygon(var(--cut-tl) 4px, calc(var(--pad-x) - 10px) 4px, calc(var(--pad-x) - 10px) 0, calc(var(--pad-x) + 10px) 0, calc(var(--pad-x) + 10px) 4px,
+        calc(100% - var(--cut-tr)) 4px, 100% calc(var(--cut-tr) + 4px), 100% 100%, var(--cut-bl) 100%, 0 calc(100% - var(--cut-bl)), 0 calc(var(--cut-tl) + 4px));
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.45)); }
+    .sym__card::before{ content: ""; position: absolute; inset: 5px 1.5px 1.5px 1.5px; z-index: -1; pointer-events: none;
+      background: linear-gradient(168deg, rgba(14,24,44,.93) 0%, rgba(8,14,28,.94) 55%, rgba(5,9,20,.96) 100%);
+      clip-path: polygon(calc(var(--cut-tl) - 1px) 0, calc(100% - var(--cut-tr) + 1px) 0, 100% calc(var(--cut-tr) - 1px), 100% 100%, calc(var(--cut-bl) - .6px) 100%, 0 calc(100% - var(--cut-bl) + .6px), 0 calc(var(--cut-tl) - 1px)); }
+    .sym__card::after{ content: ""; position: absolute; z-index: 1; pointer-events: none; left: var(--cut-tl); right: var(--cut-tr); top: 0; height: 9px;
+      background:
+        radial-gradient(circle at calc(75% - 6px) 4.6px, #04101f 0 1.3px, #b4f0ff 1.8px 3px, transparent 3.5px),
+        radial-gradient(circle at calc(75% + 6px) 4.6px, #04101f 0 1.3px, #b4f0ff 1.8px 3px, transparent 3.5px),
+        linear-gradient(#b4f0ff, #b4f0ff) left 0 top 4px / calc(75% - 9.5px) 1.6px no-repeat,
+        linear-gradient(#b4f0ff, #b4f0ff) right 0 top 4px / calc(25% - 9.5px) 1.6px no-repeat;
+      filter: drop-shadow(0 0 4px rgba(126,224,255,.8)); }
+    .sym__card h2{ display: flex; align-items: center; gap: 10px; }
+    /* the layer tab's index chip: a small square with one corner cut */
+    .sym__card h2::before{ content: ""; flex: none; width: 10px; height: 10px; background: #7ee0ff; box-shadow: 0 0 8px rgba(126,224,255,.8);
+      clip-path: polygon(0 0, calc(100% - 3px) 0, 100% 3px, 100% 100%, 0 100%); }
     .sym__card h2{ margin: 0 0 14px; color: #eaf6ff; font-size: 22px; }
     .sym__facts{ margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; }
     .sym__facts dt{ color: rgba(255,255,255,.6); font-size: 14px; padding-top: 2px; }
@@ -58,10 +89,11 @@
     .sym label{ display: flex; flex-direction: column; gap: 6px; }
     .sym label span{ font-size: 14px; color: var(--muted); }
     .sym label em{ font-style: normal; opacity: .75; }
-    .sym input, .sym textarea{ width: 100%; padding: 11px 14px; border-radius: 12px; font: inherit; font-size: 16px; color: var(--text);
-      background: rgba(255,255,255,.05); border: 1px solid var(--line); }
+    .sym input, .sym textarea{ width: 100%; padding: 11px 14px; border-radius: 8px; font: inherit; font-size: 16px; color: var(--text);
+      background: rgba(74,158,255,.06); border: 1px solid rgba(74,158,255,.28); transition: border-color .15s, box-shadow .15s, background .15s; }
+    .sym input:hover, .sym textarea:hover{ border-color: rgba(111,196,255,.55); }
     .sym textarea{ min-height: 120px; resize: vertical; line-height: 1.5; }
-    .sym input:focus, .sym textarea:focus{ outline: none; border-color: #42d5ec; }
+    .sym input:focus, .sym textarea:focus{ outline: none; border-color: #7ee0ff; background: rgba(74,158,255,.1); box-shadow: 0 0 0 3px rgba(126,224,255,.16), 0 0 14px rgba(126,224,255,.18); }
     .sym__foot{ display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .sym__status{ margin: 0; color: var(--muted); font-size: 15px; }
     /* sending: the button keeps its width, shows a spinner, and the fields dim and lock */
@@ -100,8 +132,8 @@
     </div>
   </nav>
 
+  <img class="sym__bg" src="/assets/images/mec-banner-hero.jpg" alt="Hundreds of reconstructed neurons from the medial entorhinal cortex, in blue, green and pink on black." />
   <header class="sym__banner">
-    <img src="/assets/images/mec-banner-hero.jpg" alt="Hundreds of reconstructed neurons from the medial entorhinal cortex, in blue, green and pink on black." />
     <div class="wrap">
       <div class="sym__box">
         <svg class="sym__circuit" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke-width="2" fill="none" stroke-linecap="square"><path d="M40 80 H180 V160 H280 V100 H400"/><path d="M40 240 H140 V340 H260 V280 H380 V360"/><path d="M120 480 H320 V560 H440"/><path d="M60 700 H200 V780 H340 V720 H460"/><path d="M40 880 H260 V940"/><path d="M520 60 V200 H680 V120 H820"/><path d="M540 320 H760 V440 H900"/><path d="M520 580 V720 H680"/><path d="M540 820 H720 V900 H860"/><path d="M960 80 H1140 V200"/><path d="M980 280 H1180 V380 H1300 V440"/><path d="M960 540 V680 H1100 V620 H1240"/><path d="M980 800 H1140 V900 H1260"/><path d="M1340 80 V220 H1500"/><path d="M1340 360 H1500"/><path d="M1380 480 V620 H1540 V700"/><path d="M1340 820 H1480 V940"/></g><g stroke-width="2.4" fill="none" stroke-linecap="square"><path class="lit" d="M40 240 H140 V340 H260 V280 H380 V360"/><path class="lit" d="M540 320 H760 V440 H900"/><path class="lit" d="M980 280 H1180 V380 H1300 V440"/></g></svg>
