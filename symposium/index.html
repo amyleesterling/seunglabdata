@@ -65,6 +65,14 @@
     .sym input:focus, .sym textarea:focus{ outline: none; border-color: #42d5ec; }
     .sym__foot{ display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .sym__status{ margin: 0; color: var(--muted); font-size: 15px; }
+    /* sending: the button keeps its width, shows a spinner, and the fields dim and lock */
+    .sym .btn--cta[disabled]{ cursor: progress; transform: none; }
+    .sym .btn--cta.is-sending{ background: #eed588; }
+    .sym .btn--cta.is-sending::before{ content: ""; width: 13px; height: 13px; border-radius: 50%;
+      border: 2px solid rgba(4,18,27,.25); border-top-color: #04121b; animation: sym-spin .7s linear infinite; }
+    @keyframes sym-spin{ to{ transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce){ .sym .btn--cta.is-sending::before{ animation-duration: 2.4s; } }
+    .sym form[aria-busy="true"] input, .sym form[aria-busy="true"] textarea{ opacity: .6; }
     .sym__status--bad{ color: #ff9aa8; }
     .sym__done{ text-align: center; padding: 10px 0; }
     .sym__done[hidden], .sym form[hidden]{ display: none; }
@@ -200,6 +208,16 @@
       var form = document.getElementById('rsvpForm');
       var status = document.getElementById('rsvpStatus');
       var button = document.getElementById('rsvpSubmit');
+      var sending = false;
+      var fields = form.querySelectorAll('input, textarea');
+      var setSending = function (on) {
+        sending = on;
+        button.disabled = on;
+        button.classList.toggle('is-sending', on);
+        button.textContent = on ? 'Sending' : 'RSVP';
+        form.setAttribute('aria-busy', on ? 'true' : 'false');
+        for (var i = 0; i < fields.length; i++) fields[i].readOnly = on;
+      };
       var say = function (text, bad) { status.textContent = text; status.className = 'sym__status' + (bad ? ' sym__status--bad' : ''); };
 
       form.addEventListener('submit', function (e) {
@@ -210,8 +228,11 @@
         var question = document.getElementById('rsvpQuestion').value.trim();
         if (!name) { say('Please add your name.', true); return; }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say('Please check your email address.', true); return; }
-        button.disabled = true;
-        say('Sending...');
+        if (sending) return;
+        setSending(true);
+        say('');
+        // the first RSVP after a quiet spell can wait on a cold server
+        var slow = setTimeout(function () { say('Still sending, one moment.'); }, 6000);
         fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -224,7 +245,7 @@
             document.getElementById('rsvpDone').hidden = false;
           })
           .catch(function () { say('That did not go through. Please check your connection and try again.', true); })
-          .then(function () { button.disabled = false; });
+          .then(function () { clearTimeout(slow); setSending(false); });
       });
     })();
   </script>
