@@ -236,7 +236,7 @@
       <div>
         <p class="hero__eyebrow">Explore</p>
         <h2 id="brain">MEC in a whole mouse brain</h2>
-        <p>A whole mouse brain in 3D, with the MEC volume lit in purple. Drag to turn it, then scroll to zoom in and see its cells. Every cell there is a real cell, placed on a measured atlas.</p>
+        <p>A whole mouse brain in 3D, with the MEC volume and the outline of the medial entorhinal cortex lit in purple. Drag to turn it, scroll to zoom, and click the box to go inside and see its cells. Every cell there is a real cell, placed on a measured atlas.</p>
         <a class="btn btn--cta" href="https://whatisabrain.com/mouse/?m=pick&amp;cube=mec" target="_blank" rel="noreferrer">Open the full 3D brain</a>
       </div>
     </section>
@@ -278,7 +278,7 @@
           if (box.classList.contains('is-live')) return;
           box.classList.add('is-live');
           var f = document.createElement('iframe');
-          f.src = 'https://whatisabrain.com/mouse/?m=pick&cube=mec&embed=1';
+          f.src = 'https://whatisabrain.com/mouse/?embed=1&show=mec';
           f.title = 'A whole mouse brain in 3D with the MEC volume highlighted';
           f.allow = 'fullscreen';
           f.addEventListener('load', function () { setTimeout(function () { f.classList.add('is-ready'); }, 1500); });
