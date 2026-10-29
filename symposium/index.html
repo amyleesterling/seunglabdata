@@ -45,6 +45,8 @@
     .sym__when{ margin: 18px 0 0; padding-top: 16px; border-top: 1px solid rgba(126,224,255,.18); color: #eaf6ff; font-size: 16px; font-weight: 600; letter-spacing: .01em; }
     .sym__when span{ color: rgba(255,255,255,.62); font-weight: 400; }
     .sym__go{ margin-top: 20px; }
+    /* on desktop the RSVP form sits right under the banner, so the button only shows on phones */
+    @media (min-width: 821px){ .sym__go{ display: none; } }
     .sym__grid{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; margin-top: 28px; align-items: start; }
     .sym__card{ border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(180deg, var(--panel), rgba(255,255,255,.035)); padding: 24px; }
     .sym__card h2{ margin: 0 0 14px; color: #eaf6ff; font-size: 22px; }
