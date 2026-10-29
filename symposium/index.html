@@ -82,11 +82,17 @@
     .sym__card h2{ display: flex; align-items: center; gap: 10px; }
     /* the mouse brain card: a real capture of whatisabrain.com/mouse, opening the live 3D view */
     .sym__brain{ margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 26px; align-items: center; }
-    .sym__brainpic{ display: block; position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(74,158,255,.28); background: #07090f; }
-    .sym__brainpic img{ display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 40% 45%; transition: transform .5s ease; }
-    .sym__brainpic:hover img, .sym__brainpic:focus-visible img{ transform: scale(1.03); }
-    .sym__brainpic span{ position: absolute; left: 12px; bottom: 12px; padding: 6px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #eaf6ff;
+    /* the live brain (whatisabrain.com/mouse ?embed=1) over its own picture:
+       on a computer it loads when it scrolls into view; a phone keeps the
+       picture until it is tapped, so nobody downloads 16 MB unasked */
+    .sym__brainpic{ position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(74,158,255,.28); background: #090B10; aspect-ratio: 16 / 10; }
+    .sym__brainpic img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% 45%; }
+    .sym__brainpic iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .6s ease; }
+    .sym__brainpic iframe.is-ready{ opacity: 1; }
+    .sym__brainpic button{ position: absolute; left: 12px; bottom: 12px; padding: 7px 12px; border-radius: 6px; font: inherit; font-size: 13px; font-weight: 600; color: #eaf6ff; cursor: pointer;
       background: rgba(5,9,20,.78); border: 1px solid rgba(126,224,255,.45); }
+    .sym__brainpic button:hover, .sym__brainpic button:focus-visible{ border-color: #7ee0ff; outline: none; }
+    .sym__brainpic.is-live button{ display: none; }
     .sym__brain .hero__eyebrow{ margin-bottom: 8px; }
     .sym__brain p{ margin-top: 0; }
     .sym__brain .btn{ margin-top: 18px; padding: 10px 18px; font-size: 14px; }
@@ -223,15 +229,15 @@
     </div>
 
     <section class="sym__card sym__brain" aria-labelledby="brain">
-      <a class="sym__brainpic" href="https://whatisabrain.com/mouse/?m=pick&amp;r=1.2%2C1.24&amp;z=1.62&amp;cube=mec" target="_blank" rel="noreferrer">
+      <div class="sym__brainpic" id="brainView">
         <img src="/assets/images/mec-in-mouse-brain.jpg" alt="A whole mouse brain in 3D with thousands of neurons drawn as colored dots, and the MEC volume outlined as a small box." loading="lazy" />
-        <span>Open in 3D</span>
-      </a>
+        <button type="button" id="brainGo">Turn it in 3D</button>
+      </div>
       <div>
         <p class="hero__eyebrow">Explore</p>
         <h2 id="brain">MEC in a whole mouse brain</h2>
-        <p>Turn a whole mouse brain in 3D and find where the MEC volume sits. Every cell there is a real cell, placed on a measured atlas. Drag to turn it, scroll to zoom.</p>
-        <a class="btn btn--cta" href="https://whatisabrain.com/mouse/?m=pick&amp;r=1.2%2C1.24&amp;z=1.62&amp;cube=mec" target="_blank" rel="noreferrer">Open the 3D brain</a>
+        <p>A whole mouse brain in 3D, with the MEC volume lit in purple. Drag to turn it, then scroll to zoom in and see its cells. Every cell there is a real cell, placed on a measured atlas.</p>
+        <a class="btn btn--cta" href="https://whatisabrain.com/mouse/?m=pick&amp;cube=mec" target="_blank" rel="noreferrer">Open the full 3D brain</a>
       </div>
     </section>
   </main>
@@ -264,6 +270,28 @@
         'URL:https://connectome.quest/symposium/', 'END:VEVENT', 'END:VCALENDAR', ''
       ].join('\r\n');
       document.getElementById('icsLink').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+
+      // The live brain: loads when it comes into view on a computer, on a tap on a phone.
+      (function () {
+        var box = document.getElementById('brainView'), go = document.getElementById('brainGo');
+        var live = function () {
+          if (box.classList.contains('is-live')) return;
+          box.classList.add('is-live');
+          var f = document.createElement('iframe');
+          f.src = 'https://whatisabrain.com/mouse/?m=pick&cube=mec&embed=1';
+          f.title = 'A whole mouse brain in 3D with the MEC volume highlighted';
+          f.allow = 'fullscreen';
+          f.addEventListener('load', function () { setTimeout(function () { f.classList.add('is-ready'); }, 1500); });
+          box.appendChild(f);
+        };
+        go.addEventListener('click', live);
+        var big = matchMedia('(min-width: 821px) and (pointer: fine)').matches;
+        var thrifty = navigator.connection && navigator.connection.saveData;
+        if (big && !thrifty && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); live(); } }, { rootMargin: '200px' });
+          io.observe(box);
+        }
+      })();
 
       var ENDPOINT = 'https://us-central1-eyewire-ii-e4d52.cloudfunctions.net/ewSymposiumRsvp';
       var form = document.getElementById('rsvpForm');
