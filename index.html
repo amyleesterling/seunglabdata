@@ -13,6 +13,34 @@
   <link rel="icon" type="image/png" href="assets/images/favicon-pyr.png" />
   <link rel="apple-touch-icon" href="assets/images/favicon-pyr.png" />
   <link rel="stylesheet" href="styles.css?v=b6a3a802" />
+  <style>
+    /* MEC Symposium notice, shown until the event ends (Nov 18, 2026, 16:00 UTC).
+       The MEC render with the same circuit panel as connectome.quest/symposium/. */
+    .symnote{ position: relative; overflow: hidden; margin: clamp(32px, 5vw, 56px) 0 0; padding: clamp(28px, 4vw, 48px);
+      border: 1px solid var(--line); border-radius: var(--radius); background: #000; display: flex; justify-content: center; }
+    .symnote[hidden]{ display: none; }
+    .symnote > img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .symnote__box{ position: relative; isolation: isolate; overflow: hidden; width: 100%; max-width: 640px; padding: 28px 32px;
+      border: 1px solid rgba(74,150,224,.38); border-radius: 14px;
+      background: linear-gradient(158deg, rgba(15,18,24,.86) 0%, rgba(6,10,18,.92) 100%);
+      -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
+      box-shadow: 0 18px 50px rgba(0,0,0,.5), 0 0 60px rgba(74,150,224,.10), inset 0 1px 0 rgba(196,228,255,.10); }
+    .symnote__box::before{ content: ""; position: absolute; left: 8%; right: 8%; top: 0; height: 1px; pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(196,228,255,.95) 50%, transparent); box-shadow: 0 0 12px rgba(178,216,248,.6); }
+    .symnote__corner{ position: absolute; width: 14px; height: 14px; border: 0 solid rgba(126,224,255,.8); pointer-events: none; }
+    .symnote__corner--tl{ top: 8px; left: 8px; border-top-width: 2px; border-left-width: 2px; }
+    .symnote__corner--tr{ top: 8px; right: 8px; border-top-width: 2px; border-right-width: 2px; }
+    .symnote__corner--bl{ bottom: 8px; left: 8px; border-bottom-width: 2px; border-left-width: 2px; }
+    .symnote__corner--br{ bottom: 8px; right: 8px; border-bottom-width: 2px; border-right-width: 2px; }
+    .symnote .hero__eyebrow{ margin-bottom: 8px; }
+    .symnote h2{ margin: 0 0 8px; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05; letter-spacing: -0.02em; color: #f2f9ff; }
+    .symnote__lede{ margin: 0; color: rgba(255,255,255,.84); font-size: 16px; line-height: 1.55; }
+    .symnote__row{ display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(126,224,255,.18); }
+    .symnote__when{ margin: 0; color: #eaf6ff; font-size: 15px; font-weight: 600; }
+    .symnote__when span{ color: rgba(255,255,255,.62); font-weight: 400; }
+    .symnote .btn{ padding: 10px 22px; font-size: 14px; }
+    @media (max-width: 640px){ .symnote{ padding: 18px; } .symnote__box{ padding: 24px 20px; } }
+  </style>
 </head>
 <body>
     <nav class="topnav">
@@ -52,6 +80,25 @@
     </header>
 
     <main class="wrap">
+
+    <!-- MEC Symposium notice: the script below shows it until the event ends, Nov 18, 2026 -->
+    <section class="symnote" id="symnote" aria-label="MEC Symposium" hidden>
+      <img src="/assets/images/mec-banner-hero.jpg" alt="Hundreds of reconstructed neurons from the medial entorhinal cortex, in blue, green and pink." />
+      <div class="symnote__box">
+        <span class="symnote__corner symnote__corner--tl" aria-hidden="true"></span><span class="symnote__corner symnote__corner--tr" aria-hidden="true"></span><span class="symnote__corner symnote__corner--bl" aria-hidden="true"></span><span class="symnote__corner symnote__corner--br" aria-hidden="true"></span>
+        <p class="hero__eyebrow">Online event · RSVP</p>
+        <h2>MEC Symposium</h2>
+        <p class="symnote__lede">A short talk on the medial entorhinal cortex, the brain region Pyr players are mapping now, then your questions.</p>
+        <div class="symnote__row">
+          <p class="symnote__when">Wednesday, November 18 &nbsp;·&nbsp; 10:00 am Eastern <span>(3:00 pm GMT)</span></p>
+          <a class="btn btn--cta" href="/symposium/">RSVP</a>
+        </div>
+      </div>
+    </section>
+    <script>
+      // Shown until the symposium ends (11 am Eastern, 16:00 UTC, Nov 18, 2026), then never again.
+      if (Date.now() < Date.parse('2026-11-18T16:00:00Z')) document.getElementById('symnote').hidden = false;
+    </script>
 
     <!-- Citizen Science section -->
     <section class="citizen" aria-label="Citizen Science">
