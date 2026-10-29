@@ -278,7 +278,7 @@
           if (box.classList.contains('is-live')) return;
           box.classList.add('is-live');
           var f = document.createElement('iframe');
-          f.src = 'https://whatisabrain.com/mouse/?embed=1&show=mec';
+          f.src = 'https://whatisabrain.com/mouse/?m=pick&cube=mec&embed=1';
           f.title = 'A whole mouse brain in 3D with the MEC volume highlighted';
           f.allow = 'fullscreen';
           f.addEventListener('load', function () { setTimeout(function () { f.classList.add('is-ready'); }, 1500); });
