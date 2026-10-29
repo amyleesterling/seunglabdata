@@ -80,6 +80,17 @@
         linear-gradient(#b4f0ff, #b4f0ff) right 0 top 4px / calc(25% - 9.5px) 1.6px no-repeat;
       filter: drop-shadow(0 0 4px rgba(126,224,255,.8)); }
     .sym__card h2{ display: flex; align-items: center; gap: 10px; }
+    /* the mouse brain card: a real capture of whatisabrain.com/mouse, opening the live 3D view */
+    .sym__brain{ margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 26px; align-items: center; }
+    .sym__brainpic{ display: block; position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(74,158,255,.28); background: #07090f; }
+    .sym__brainpic img{ display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: 40% 45%; transition: transform .5s ease; }
+    .sym__brainpic:hover img, .sym__brainpic:focus-visible img{ transform: scale(1.03); }
+    .sym__brainpic span{ position: absolute; left: 12px; bottom: 12px; padding: 6px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #eaf6ff;
+      background: rgba(5,9,20,.78); border: 1px solid rgba(126,224,255,.45); }
+    .sym__brain .hero__eyebrow{ margin-bottom: 8px; }
+    .sym__brain p{ margin-top: 0; }
+    .sym__brain .btn{ margin-top: 18px; padding: 10px 18px; font-size: 14px; }
+    @media (max-width: 820px){ .sym__brain{ grid-template-columns: 1fr; } }
     /* the layer tab's index chip: a small square with one corner cut */
     .sym__card h2::before{ content: ""; flex: none; width: 10px; height: 10px; background: #7ee0ff; box-shadow: 0 0 8px rgba(126,224,255,.8);
       clip-path: polygon(0 0, calc(100% - 3px) 0, 100% 3px, 100% 100%, 0 100%); }
@@ -210,6 +221,19 @@
         </div>
       </section>
     </div>
+
+    <section class="sym__card sym__brain" aria-labelledby="brain">
+      <a class="sym__brainpic" href="https://whatisabrain.com/mouse/?m=pick&amp;r=1.2%2C1.24&amp;z=1.62&amp;cube=mec" target="_blank" rel="noreferrer">
+        <img src="/assets/images/mec-in-mouse-brain.jpg" alt="A whole mouse brain in 3D with thousands of neurons drawn as colored dots, and the MEC volume outlined as a small box." loading="lazy" />
+        <span>Open in 3D</span>
+      </a>
+      <div>
+        <p class="hero__eyebrow">Explore</p>
+        <h2 id="brain">MEC in a whole mouse brain</h2>
+        <p>Turn a whole mouse brain in 3D and find where the MEC volume sits. Every cell there is a real cell, placed on a measured atlas. Drag to turn it, scroll to zoom.</p>
+        <a class="btn btn--cta" href="https://whatisabrain.com/mouse/?m=pick&amp;r=1.2%2C1.24&amp;z=1.62&amp;cube=mec" target="_blank" rel="noreferrer">Open the 3D brain</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
