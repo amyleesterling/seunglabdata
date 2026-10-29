@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>How a Hunt works · Connectome Quest</title>
+  <link rel="icon" href="/assets/images/favicon-pyr.png" />
+  <style>
+    :root {
+      --bg: #070A12; --ink: #eaf6ff; --muted: #A7BCD6; --dim: rgba(167,188,214,.72);
+      --line: rgba(122,186,246,.18); --blue: #42d5ec; --sky: #5aaaff; --gold: #f5d142;
+      --purple: #9b5cff; --green: #48d682; --red: #e06060; --grey: #7d8799;
+      --panel: rgba(13,26,45,.55);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; line-height: 1.6; font-size: 16px;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(110% 60% at 50% -10%, rgba(66,90,190,.22), transparent 70%);
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 32px 16px 80px; }
+    header.top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    h1 { font-size: 34px; margin: 0; letter-spacing: .01em; }
+    .kicker { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); font-weight: 700; }
+    .lede { color: var(--muted); font-size: 17px; margin: 10px 0 0; }
+    nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 6px; }
+    nav.jump a { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); text-decoration: none; }
+    nav.jump a:hover { border-color: var(--blue); }
+    section { margin-top: 40px; }
+    h2 { font-size: 22px; margin: 0 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+    h3 { font-size: 16px; margin: 22px 0 6px; color: #cfeaff; }
+    p { margin: 8px 0; }
+    a { color: var(--blue); }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 12px 0; }
+    .muted { color: var(--dim); }
+    ul, ol { padding-left: 22px; margin: 8px 0; }
+    li { margin: 4px 0; }
+    b, strong { color: #fff; }
+    .tl { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .tl div { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+    .tl b { display: block; font-size: 13px; color: var(--blue); }
+    .tl span { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; margin-top: 10px; }
+    .key { display: flex; align-items: center; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font-size: 14px; }
+    .dot { flex: none; width: 12px; height: 12px; border-radius: 50%; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--blue); font-weight: 600; font-size: 13px; }
+    .phase { display: grid; grid-template-columns: 44px 1fr; gap: 12px; margin: 12px 0; }
+    .phase .n { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-weight: 800; color: var(--bg); background: var(--blue); }
+    .note { border-left: 3px solid var(--gold); padding: 8px 12px; background: rgba(245,209,66,.06); border-radius: 0 10px 10px 0; margin: 12px 0; color: #f3e7b8; font-size: 15px; }
+    .unit { text-transform: none; }
+    code { font-size: 13px; background: rgba(122,186,246,.1); padding: 1px 5px; border-radius: 5px; }
+    footer { margin-top: 48px; font-size: 13px; color: var(--dim); }
+    @media (max-width: 720px) {
+      .tl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      h1 { font-size: 28px; }
+      table { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <div class="kicker">Pyr · Admin guide</div>
+        <h1>How a Hunt works</h1>
+        <p class="lede">The Hunt is a timed game in Pyr: a few cells hide mergers and missing extensions, and players drop gems on them to find as many as they can. This page explains it end to end, for the admins who make and run Hunts.</p>
+      </div>
+    </header>
+
+    <nav class="jump">
+      <a href="#glance">At a glance</a>
+      <a href="#players">What players do</a>
+      <a href="#judging">How a gem is judged</a>
+      <a href="#ranking">Leaderboard and awards</a>
+      <a href="#making">Making a Hunt</a>
+      <a href="#running">While it runs</a>
+      <a href="#after">After it ends</a>
+      <a href="#builder">The Hunt Builder</a>
+      <a href="#limits">Limits to know</a>
+    </nav>
+
+    <section id="glance">
+      <h2>At a glance</h2>
+      <div class="tl">
+        <div><b>1. Made</b><span>An admin builds it in Admin Hub, Hunts: cells, answers, rules.</span></div>
+        <div><b>2. Announced</b><span>Players see it coming, with a countdown.</span></div>
+        <div><b>3. Live</b><span>Players drop gems. Reports come in.</span></div>
+        <div><b>4. Ends</b><span>No more gems. Scores are final unless an admin changes the answers.</span></div>
+        <div><b>5. Awards</b><span>Medals, Speed and Laser Eyes go out.</span></div>
+        <div><b>6. Results</b><span>Everyone's place, and the answers on the cells.</span></div>
+      </div>
+      <p class="muted">Each Hunt is on one dataset (so far the Sandbox). The top bar shows a pill with the countdown to the next stage, to the second.</p>
+    </section>
+
+    <section id="players">
+      <h2>What players do</h2>
+      <div class="card">
+        <ol>
+          <li>Open the Hunt from the top bar pill or the Hunt box. Pyr loads the Hunt's cells and view.</li>
+          <li>Pick <b>Cut</b> (a merger: a piece that should not be there) or <b>Extend</b> (a missing extension: a piece that should be there). Keys 3 and 4 switch between them.</li>
+          <li><b>Ctrl + Click</b> drops a gem on the origin of the problem. Each gem uses one from the Hunt's total.</li>
+          <li>With <b>Check each gem as it lands</b> on, every gem is judged at once. With it off, gems wait, and a gem dropped by mistake can be taken back with <b>Take back</b> before it is checked. Once checked, a gem stays.</li>
+          <li>The run ends when they find everything or run out of gems. One run per player.</li>
+          <li>Found a real problem the answers missed? <b>Found a problem the Hunt missed?</b> in the Hunt box sends its x, y, z and kind to the admins. No gem is used.</li>
+        </ol>
+        <h3>The color key</h3>
+        <div class="keys">
+          <div class="key"><span class="dot" style="background: var(--red)"></span>Cut gem, not checked yet</div>
+          <div class="key"><span class="dot" style="background: var(--sky)"></span>Extend gem, not checked yet</div>
+          <div class="key"><span class="dot" style="background: var(--gold)"></span>Merger found</div>
+          <div class="key"><span class="dot" style="background: var(--purple)"></span>Extension found</div>
+          <div class="key"><span class="dot" style="background: var(--grey)"></span>Missed: nothing in the answers there</div>
+          <div class="key"><span class="dot" style="background: var(--blue)"></span>Edge of the dataset</div>
+        </div>
+        <p class="muted">Where a cell runs off the edge of the data it glows teal (a switch turns that off). A cell that stops at the edge is not a missing extension: a gem there turns teal, and no gem is used.</p>
+      </div>
+    </section>
+
+    <section id="judging">
+      <h2>How a gem is judged</h2>
+      <div class="card">
+        <p>Every Hunt has an answer key: a list of <b>places</b>, each a merger or a missing extension. A gem counts when it lands <b>within the Hunt's reach</b> of a place of its kind that this player has not found yet. The reach is the Hunt's tolerance, set in the editor (3 <span class="unit">µm</span> unless changed; Return of the Merger used 5 <span class="unit">µm</span>).</p>
+        <p>A place can be a point, or it can have a size:</p>
+        <ul>
+          <li><b>A ball</b> (an ellipsoid in the key layer, or a Size given in the reports queue): a gem anywhere inside counts.</li>
+          <li><b>A line or a box</b> in the key layer: a gem near any part of it counts.</li>
+          <li><b>A whole cut off piece</b> (from a Hunt made from a proofread cell): points along the piece, labelled <code>#N</code>; a gem near any of them counts, once per piece.</li>
+        </ul>
+        <p>A second gem on a problem already found is told "you already found that one", and no gem is used.</p>
+      </div>
+    </section>
+
+    <section id="ranking">
+      <h2>Leaderboard and awards</h2>
+      <div class="card">
+        <h3>The leaderboard</h3>
+        <ul>
+          <li><b>While the Hunt runs:</b> most found first; ties go to fewer gems used, then to whoever started earlier. It shows finds only, never gem counts.</li>
+          <li><b>In the results:</b> grouped by medal (Gold, Silver, Bronze, then no medal). Within a medal: most found, then fewer gems, then the faster clock.</li>
+          <li>Each player appears once, with their best run.</li>
+        </ul>
+        <h3>The awards</h3>
+        <table>
+          <thead><tr><th>Award</th><th>Who gets it</th></tr></thead>
+          <tbody>
+            <tr><td>Gold, Silver, Bronze</td><td>Everyone who reaches the medal's number of finds, within its gem limit if one is set. Medals are thresholds, not places: many players can win Gold. Unless set by hand, Gold is every place, Silver two thirds, Bronze one third.</td></tr>
+            <tr><td>Speed</td><td>One player: the quickest run that found every problem, or if nobody did, the quickest of the runs that found the most. The clock runs from a player's start to their last find.</td></tr>
+            <tr><td>Laser Eyes</td><td>Players who found a real problem the answers missed: it was added to the answers from their report, or their gem landed on a place added later. Once per Hunt. Held until the Hunt ends.</td></tr>
+            <tr><td>Helper Achievement</td><td>Players who helped build the Hunt in the Hunt Builder: those whose suggestion was planted, and (being added now) the players who proofread its candidate cells.</td></tr>
+          </tbody>
+        </table>
+        <div class="note">Medal numbers set by hand never move. If a Hunt is left on the default (Gold is every place), adding a place during the Hunt raises the bar for Gold, Silver and Bronze. Set the numbers by hand before adding places if that matters.</div>
+      </div>
+    </section>
+
+    <section id="making">
+      <h2>Making a Hunt</h2>
+      <div class="card">
+        <p>Admin Hub, <b>Hunts</b>. Start a new Hunt, or <b>Duplicate</b> an old one to keep its cells, answers and settings.</p>
+        <ol>
+          <li><b>Title and words.</b> The title, the description, and the three notes (announce, start, end) with their pictures. <b>Preview</b> shows a note as players will see it.</li>
+          <li><b>Cells and view.</b> Open the cells and the view players should start from, then use the screen.</li>
+          <li><b>The answers.</b> Put the places in annotation layers named <b>Mergers</b> and <b>Extensions</b> (and <b>edge</b> for spots at the edge of the data), then read them in. Points, ellipsoids, lines and boxes all work. The saved Hunt's link opens the key back up as those layers.</li>
+          <li><b>Or make it from a proofread cell.</b> Paste a proofread cell (Sandbox, or MICrONS public), pick the editing session to start from, and Pyr turns the proofreaders' own edits into the answers. Check them in the viewer, take any out, and save.</li>
+          <li><b>Rules.</b> Tolerance (the reach), gems, medal numbers and gem limits, how long results stay up.</li>
+          <li><b>Schedule.</b> Announce, start and end times (shown in ET). <b>Admins only</b> keeps a Hunt hidden from players. Every Hunt saved from a test site is admins only.</li>
+        </ol>
+        <p class="muted">The Hunt instructions in the Hunt box are shared by every Hunt. Admins can edit them in place; an edit from an admin who is not an approver waits for approval.</p>
+      </div>
+    </section>
+
+    <section id="running">
+      <h2>While it runs</h2>
+      <div class="card">
+        <h3>The reports queue</h3>
+        <p>Every report from a player lands in the bell, under <b>Admin</b>, <b>Hunt reports</b>. Clicking one opens the queue under the top bar and takes the view straight to the spot, with the answers drawn in: <span style="color: var(--gold)">mergers gold</span>, <span style="color: var(--purple)">extensions purple</span>, <span style="color: var(--green)">places added from reports green</span>, the report itself a teal dot. Reports run <b>oldest first</b>, so the first player to send a spot gets the credit. Use <b>‹ ›</b> and <b>Next open</b> to step through them; going through them marks their bell notes read.</p>
+        <table>
+          <thead><tr><th>Button</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Add to the answers</td><td>A new place there. Everyone is judged again. The sender gets the credit, Laser Eyes at the end, and a note in the bell saying it was added.</td></tr>
+            <tr><td>Size, then Resize place #N</td><td>Type how wide (in <span class="unit">µm</span>, across) and a see through ball shows in the view. If a place of that kind is already nearby, the button says <b>Resize place #N</b> and makes that place this size instead of adding one. Keep it small: a ball counts gems on every cell inside it.</td></tr>
+            <tr><td>Same as #N</td><td>Shows when the answers already have this spot. Nothing is added; the credit stays with the first finder; the player hears "Correct! You were the 2nd to find this".</td></tr>
+            <tr><td>Dismiss</td><td>Not a problem the Hunt counts. Off the list.</td></tr>
+            <tr><td>A note</td><td>Kept with the report for the admins. Tick <b>Send to</b> the player to send it to them with what you decided.</td></tr>
+          </tbody>
+        </table>
+        <p>Each report shows who dealt with it and when, and warns when another player sent the same spot first. Clearing the last open report gets a small celebration.</p>
+        <h3>In the editor</h3>
+        <ul>
+          <li><b>A place the key missed:</b> add one by x, y, z without a report.</li>
+          <li><b>Reported by hunters:</b> the same reports as a list, with <b>Go through them, oldest first</b>.</li>
+          <li><b>Hunters:</b> click a player to see their gems; <b>Count it</b> turns one of their missed gems into a place.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="after">
+      <h2>After it ends</h2>
+      <div class="card">
+        <ul>
+          <li>The awards are given the first time anyone opens Pyr after the end, and each winner gets a note in the bell.</li>
+          <li>The Hunt box shows the results: everyone's place, finds and gems, and medal. Players can turn on <b>Show the answers</b> to see every place on the cells; their own gems sit on the ones they found.</li>
+          <li>Changed the answers after the end (added, resized, counted)? Click <b>Give the awards again</b> in the editor. Awards are never taken away.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="builder">
+      <h2>The Hunt Builder</h2>
+      <p class="muted">Players help make the next Hunt on the Sandbox, without ever seeing where the problems were planted.</p>
+      <div class="phase"><div class="n">1</div><div><b>Candidates, proofread.</b> Admins paste candidate cells. Each becomes an ordinary proofreading task that players claim and proofread fully. Claims on candidates need production access, and a claim left for 24 hours is released.</div></div>
+      <div class="phase"><div class="n">2</div><div><b>Suggestions.</b> Players with production access, and anyone an admin invites by name, open <b>Help build</b> and merge or cut the proofread cell with the normal tools. Pyr stops each edit just before it reaches the graph and keeps it as a suggestion; the cell stays as it is. Two merges and two cuts each per cell unless changed, up to a closing time.</div></div>
+      <div class="phase"><div class="n">3</div><div><b>Planting.</b> Admins go through the suggestions, oldest first, jump to each, and <b>plant</b> the ones they like (the real edit, sent from the admin's browser) or skip them. A player whose suggestion is planted hears "your suggestion was planted".</div></div>
+      <div class="phase"><div class="n">4</div><div><b>Building.</b> The planted edits, reversed, are the Hunt's answers.</div></div>
+      <div class="phase"><div class="n">5</div><div><b>The Hunt.</b> Played like any other. At the end the helpers get the Hunt's helper Achievement.</div></div>
+      <div class="phase"><div class="n">6</div><div><b>Put it back.</b> One button undoes every planting, so the cell is proofread again.</div></div>
+      <div class="card">
+        <h3>Keeping the answers secret</h3>
+        <ul>
+          <li><b>From suggestions on</b>, the cell and everything a planting touched are protected: out of the Cell Library, no claims, player edits refused (a helper's edit is kept as a suggestion), no Watch it grow, no "update to the current ID".</li>
+          <li><b>From planting on</b> they are also hidden: Pyr shows them to admins only.</li>
+          <li><b>At the Hunt's start</b> the cell players hunt is shown; pieces a planted cut made stay hidden.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="limits">
+      <h2>Limits to know</h2>
+      <div class="card">
+        <ul>
+          <li><b>Judging is by distance only.</b> A gem on the right piece but far from its marked spot is missed. Long extensions and wide merger faces need a size, a line, a box or a whole piece in the key.</li>
+          <li><b>Only the Hunt's own cells count.</b> Mergers inside a missing extension piece are not in the answers unless an admin adds them.</li>
+          <li><b>The Sandbox is one shared graph.</b> Pyr hides building cells from players, but cannot make them invisible to someone loading the data another way. Plant close to launch.</li>
+          <li><b>A big Size swallows neighbors.</b> A 15 <span class="unit">µm</span> ball counts gems on every cell inside it. Watch the see through ball before you click.</li>
+          <li><b>Test sites share live data.</b> A Hunt saved from a test site is admins only, but its notes and chat still reach real players.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>Written from Pyr's own Hunt code, October 2026. Ask in the admin channel if something here no longer matches the game.</footer>
+  </div>
+</body>
+</html>
