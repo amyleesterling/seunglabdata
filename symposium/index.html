@@ -283,7 +283,7 @@
           if (box.classList.contains('is-live')) return;
           box.classList.add('is-live');
           var f = document.createElement('iframe');
-          f.src = 'https://whatisabrain.com/mouse/?m=pick&cube=mec&embed=1';
+          f.src = 'https://whatisabrain.com/mouse/?m=pick&cube=mec&embed=1&holo=eyJlcmEiOiIyMDI2IiwiY29sb3IiOiIjNEZCOEZGIiwiY29yZUNvbG9yIjoiI0NGRUZGRiIsImdsb3dJbnRlbnNpdHkiOjAuNDIsImZyZXNuZWxQb3dlciI6My42LCJib2R5QWxwaGEiOjAuMDEyLCJkb3RTY2FsZSI6MzQsImRvdFJhZGl1cyI6MC4wNywiZG90SW50ZW5zaXR5IjowLjI4LCJnbGl0Y2hBbW91bnQiOjAuMCwidm94ZWwiOjAsImNocm9tYSI6MC4yNSwiaXJpZGVzY2VuY2UiOjAuMTUsIm9wYWNpdHkiOjAuNDJ9';
           f.title = 'A whole mouse brain in 3D with the MEC volume highlighted';
           f.allow = 'fullscreen';
           f.addEventListener('load', function () { setTimeout(function () { f.classList.add('is-ready'); }, 1500); });
