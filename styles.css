@@ -1980,3 +1980,17 @@ body.blog-light .footer, body.blog-light .footer__credit{ color: var(--blog-soft
 .blog-edit__note{ margin: 6px 0 0; font-size: 13px; color: #6b7a8c; }
 .blog-edit__host{ padding-top: 28px; padding-bottom: 48px; }
 .footer .blog-edit__quiet{ display: block; margin: 10px auto 0; }
+
+/* Credits: the Seung Lab datasets, with their teams and papers */
+.credits-datasets{ margin-top: 40px; }
+.credits-datasets > h2{ font-size: 1.5rem; margin: 0 0 6px; }
+.credits-datasets__lede{ color: var(--muted); margin: 0 0 18px; }
+.credits-ds{ background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; }
+.credits-ds h3{ margin: 0 0 6px; font-size: 1.15rem; }
+.credits-ds p{ margin: 0 0 8px; line-height: 1.55; }
+.credits-ds__who{ color: var(--muted); font-size: .95rem; }
+.credits-ds__note{ color: var(--muted); font-style: italic; font-size: .9rem; }
+.credits-ds__refs{ margin: 8px 0 0; padding-left: 18px; font-size: .9rem; line-height: 1.5; color: var(--muted); }
+.credits-ds__refs li{ margin-bottom: 4px; }
+.credits-ds__refs a{ word-break: break-all; }
+.credits-ds__fund{ color: var(--muted); font-size: .85rem; margin-top: 10px !important; }

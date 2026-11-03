@@ -34,13 +34,21 @@
     <header class="pagehead">
       <p class="hero__eyebrow">About this project</p>
       <h1>Credits</h1>
-      <p class="hero__lede">Connectome Quest brings together public datasets, learning tools, and ways for people to contribute to connectomics.</p>
+      <p class="hero__lede">Connectome Quest and Pyr bring together public datasets, learning tools, and ways for people to contribute to connectomics. Here is who makes it possible.</p>
     </header>
 
     <section class="credits-grid" aria-label="Project credits">
       <article class="credits-card">
+        <h2>Pyr</h2>
+        <p>Pyr, the game where players proofread real connectomes, was designed and built by Amy Sterling, <a href="https://x.com/amyneurons" target="_blank" rel="noreferrer">@amyneurons</a>, at <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>. It grew out of <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a> and runs on <a href="https://github.com/google/neuroglancer" target="_blank" rel="noreferrer">Neuroglancer</a> and <a href="https://doi.org/10.1038/s41592-024-02426-z" target="_blank" rel="noreferrer">CAVE</a>.</p>
+      </article>
+      <article class="credits-card">
         <h2>Research community</h2>
-        <p>Connectome Quest is presented by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at the <a href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">Princeton Neuroscience Institute</a>, Princeton University.</p>
+        <p>Connectome Quest is presented by <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at the <a href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">Princeton Neuroscience Institute</a>, Princeton University. The fly datasets are made in collaboration with <a href="https://murthylab.princeton.edu/" target="_blank" rel="noreferrer">Murthy Lab</a>, also at Princeton.</p>
+      </article>
+      <article class="credits-card">
+        <h2>Support</h2>
+        <p><a href="https://cloud.google.com/" target="_blank" rel="noreferrer">Google</a> and <a href="https://aws.amazon.com/" target="_blank" rel="noreferrer">Amazon Web Services</a> provide Seung Lab with the cloud compute that stores these datasets and serves them to every player. The research is funded by the National Institutes of Health (NIH), including the BRAIN Initiative and BRAIN CONNECTS, and by the Princeton Neuroscience Institute, with support for individual datasets from IARPA, the Simons Foundation, Research to Prevent Blindness and others listed with each dataset below. Thank you.</p>
       </article>
       <article class="credits-card">
         <h2>Educational experiences</h2>
@@ -53,6 +61,92 @@
       <article class="credits-card">
         <h2>Source</h2>
         <p>The website source is available on <a href="https://github.com/amyleesterling/seunglabdata" target="_blank" rel="noreferrer">GitHub</a>. Dataset records link to their official project pages and publications.</p>
+      </article>
+    </section>
+
+    <section class="credits-datasets" aria-labelledby="datasets-title">
+      <h2 id="datasets-title">Seung Lab datasets</h2>
+      <p class="credits-datasets__lede">The connectomes you can explore and proofread here, the teams behind them, and where to read about them.</p>
+
+      <article class="credits-ds">
+        <h3>EyeWire II: Mouse Retina</h3>
+        <p class="credits-ds__who">Seung Lab, Princeton University, with Euler Lab and Berens Lab, University of Tübingen, the Eyewire II Consortium and the players of Pyr.</p>
+        <p>Pyr's Level 1 dataset: a 1 × 1 × 0.09 mm volume of adult mouse retina with about 100,000 neurons, spanning every synaptic layer. <a href="https://eyewire.ai" target="_blank" rel="noreferrer">eyewire.ai</a></p>
+        <ul class="credits-ds__refs">
+          <li>Ströh, S. et al. Eyewire II – A connectomic resource for resolving cell types and circuits of the mouse retina. <i>bioRxiv</i> (2026). <a href="https://doi.org/10.64898/2026.05.28.727403" target="_blank" rel="noreferrer">doi:10.64898/2026.05.28.727403</a></li>
+        </ul>
+        <p class="credits-ds__fund"><b>Funding:</b> Princeton Neuroscience Institute and the NIH (5U01N5090562, Seung and Euler labs); DFG (SPP 2041, 313856816, Euler and Berens labs); ERC (NextMechMod, 101039115) and the Hertie Foundation (Berens lab); the Research to Prevent Blindness Transformational Team Science Award. Compute from Amazon and Google.</p>
+      </article>
+
+      <article class="credits-ds">
+        <h3>Medial Entorhinal Cortex (MEC)</h3>
+        <p class="credits-ds__who">Seung Lab and the Princeton Neuroscience Institute, with the players of Pyr.</p>
+        <p>Grid cell circuitry in mouse medial entorhinal cortex, where players trace axons and Super Quest interneurons. <a href="mec.html">More about MEC</a>.</p>
+        <p class="credits-ds__note">Publication in preparation.</p>
+        <!-- TODO (Ames): name the collaborating labs. -->
+      </article>
+
+      <article class="credits-ds">
+        <h3>FlyWire: the whole adult fly brain</h3>
+        <p class="credits-ds__who">FlyWire Consortium, led by Seung Lab and <a href="https://murthylab.princeton.edu/" target="_blank" rel="noreferrer">Murthy Lab</a>, Princeton. Images from the FAFB volume.</p>
+        <p>The first complete wiring diagram of an adult brain, 139,255 neurons, proofread by a worldwide community. <a href="https://flywire.ai" target="_blank" rel="noreferrer">flywire.ai</a> · <a href="https://codex.flywire.ai" target="_blank" rel="noreferrer">Codex</a></p>
+        <ul class="credits-ds__refs">
+          <li>Dorkenwald, S. et al. Neuronal wiring diagram of an adult brain. <i>Nature</i> 634, 124–138 (2024). <a href="https://doi.org/10.1038/s41586-024-07558-y" target="_blank" rel="noreferrer">doi:10.1038/s41586-024-07558-y</a></li>
+          <li>Schlegel, P. et al. Whole-brain annotation and multi-connectome cell typing of <i>Drosophila</i>. <i>Nature</i> 634, 139–152 (2024). <a href="https://doi.org/10.1038/s41586-024-07686-5" target="_blank" rel="noreferrer">doi:10.1038/s41586-024-07686-5</a></li>
+          <li>Lin, A., Yang, R. et al. Network statistics of the whole-brain connectome of <i>Drosophila</i>. <i>Nature</i> 634, 153–165 (2024). <a href="https://doi.org/10.1038/s41586-024-07968-y" target="_blank" rel="noreferrer">doi:10.1038/s41586-024-07968-y</a></li>
+          <li>Dorkenwald, S. et al. FlyWire: online community for whole-brain connectomics. <i>Nature Methods</i> 19, 119–128 (2022). <a href="https://doi.org/10.1038/s41592-021-01330-0" target="_blank" rel="noreferrer">doi:10.1038/s41592-021-01330-0</a></li>
+          <li>Zheng, Z. et al. A complete electron microscopy volume of the brain of adult <i>Drosophila melanogaster</i>. <i>Cell</i> 174, 730–743 (2018). <a href="https://doi.org/10.1016/j.cell.2018.06.019" target="_blank" rel="noreferrer">doi:10.1016/j.cell.2018.06.019</a></li>
+        </ul>
+        <p class="credits-ds__fund"><b>Funding:</b> NIH BRAIN Initiative (RF1 MH117815, RF1 MH129268, U24 NS126935, RF1 MH120679), Wellcome Trust (203261/Z/16/Z, 220343/Z/20/Z), Medical Research Council (MC-U105188491, MC_EX_MR/T046279/1), NSF Neuronex2 (2014862), Princeton Neuroscience Institute and IARPA. Compute from Amazon and Google.</p>
+      </article>
+
+      <article class="credits-ds">
+        <h3>BANC: Fly Brain and Nerve Cord</h3>
+        <p class="credits-ds__who">Seung Lab and <a href="https://murthylab.princeton.edu/" target="_blank" rel="noreferrer">Murthy Lab</a>, Princeton, with Wilson Lab and Lee Lab at Harvard Medical School and many collaborators.</p>
+        <p>The first connectome of a fly's whole central nervous system, brain and ventral nerve cord together. <a href="https://codex.flywire.ai/banc" target="_blank" rel="noreferrer">Explore in Codex</a></p>
+        <ul class="credits-ds__refs">
+          <li>Bates, A. S. et al. Distributed control circuits across a brain-and-cord connectome. <i>Nature</i> (2026). <a href="https://doi.org/10.1038/s41586-026-10735-w" target="_blank" rel="noreferrer">doi:10.1038/s41586-026-10735-w</a></li>
+        </ul>
+      </article>
+
+      <article class="credits-ds">
+        <h3>MICrONS: Mouse Visual Cortex (Pinky and Minnie)</h3>
+        <p class="credits-ds__who">MICrONS Consortium: the Allen Institute for Brain Science, Baylor College of Medicine and Seung Lab, Princeton.</p>
+        <p>Functional connectomics of mouse visual cortex: a cubic millimetre whose neurons' activity was recorded before imaging. Pyr's Sandbox uses the smaller Pinky volume. <a href="https://www.microns-explorer.org/" target="_blank" rel="noreferrer">MICrONS Explorer</a></p>
+        <ul class="credits-ds__refs">
+          <li>MICrONS Consortium. Functional connectomics spanning multiple areas of mouse visual cortex. <i>Nature</i> 640, 435–447 (2025). <a href="https://doi.org/10.1038/s41586-025-08790-w" target="_blank" rel="noreferrer">doi:10.1038/s41586-025-08790-w</a></li>
+          <li>Turner, N. L. et al. Reconstruction of neocortex: organelles, compartments, cells, circuits, and activity. <i>Cell</i> 185, 1082–1100 (2022). <a href="https://doi.org/10.1016/j.cell.2022.01.023" target="_blank" rel="noreferrer">doi:10.1016/j.cell.2022.01.023</a></li>
+        </ul>
+        <p class="credits-ds__fund"><b>Funding:</b> IARPA MICrONS project (D16PC0005), for the Seung lab and the Allen Institute for Brain Science. Compute from Amazon and Google.</p>
+      </article>
+
+      <article class="credits-ds">
+        <h3>CA3: Mouse Hippocampus</h3>
+        <p class="credits-ds__who">Seung Lab and Tank Lab, Princeton University.</p>
+        <p>Pyramidal cells of hippocampal area CA3 and the more than 55,000 mossy fiber axons that feed them. On the cover of <a href="https://www.nature.com/neuro/volumes/29/issues/9" target="_blank" rel="noreferrer"><i>Nature Neuroscience</i></a>. <a href="https://amyleesterling.github.io/ca3/" target="_blank" rel="noreferrer">Explore CA3</a></p>
+        <ul class="credits-ds__refs">
+          <li>Zheng, Z. et al. Hippocampal CA3 connectomics reveals a gradient of mossy fiber inputs and selective feedforward inhibition onto pyramidal cells. <i>Nature Neuroscience</i> 29, 2311–2323 (2026). <a href="https://doi.org/10.1038/s41593-026-02388-9" target="_blank" rel="noreferrer">doi:10.1038/s41593-026-02388-9</a></li>
+        </ul>
+        <p class="credits-ds__fund"><b>Funding:</b> NIH BRAIN Initiative (U19 NS104648, U19 NS132720, RF1 MH123400) and BRAIN CONNECTS (UM1 NS132250), an NIH instrumentation award (S10 OD023602), the Simons Foundation, Princeton Neuroscience Institute and Google; Zhihao Zheng by a Pathway to Independence Award (K99 NS135650). Compute from Amazon and Google. Part of the NIH BRAIN CONNECTS project to map the whole mouse hippocampal formation. <a href="https://pyr.ai" target="_blank" rel="noreferrer">pyr.ai</a></p>
+      </article>
+
+      <article class="credits-ds">
+        <h3>EyeWire: the original retina</h3>
+        <p class="credits-ds__who">Seung Lab, then at MIT, with the EyeWire player community. Retina volume e2198 imaged by Kevin Briggman, Moritz Helmstaedter and Winfried Denk at the Max Planck Institute.</p>
+        <p>Where citizen neuroscience began: players reconstructed retinal neurons in 3D. <a href="https://eyewire.org" target="_blank" rel="noreferrer">eyewire.org</a></p>
+        <ul class="credits-ds__refs">
+          <li>Kim, J. S. et al. Space–time wiring specificity supports direction selectivity in the retina. <i>Nature</i> 509, 331–336 (2014). <a href="https://doi.org/10.1038/nature13240" target="_blank" rel="noreferrer">doi:10.1038/nature13240</a></li>
+          <li>Bae, J. A. et al. Digital museum of retinal ganglion cells with dense anatomy and physiology. <i>Cell</i> 173, 1293–1306 (2018). <a href="https://doi.org/10.1016/j.cell.2018.04.040" target="_blank" rel="noreferrer">doi:10.1016/j.cell.2018.04.040</a></li>
+          <li>Briggman, K. L., Helmstaedter, M. &amp; Denk, W. Wiring specificity in the direction-selectivity circuit of the retina. <i>Nature</i> 471, 183–188 (2011). <a href="https://doi.org/10.1038/nature09818" target="_blank" rel="noreferrer">doi:10.1038/nature09818</a></li>
+        </ul>
+      </article>
+
+      <article class="credits-ds">
+        <h3>Tools</h3>
+        <p>Every dataset here is viewed in Neuroglancer, made at Google, and versioned in CAVE.</p>
+        <ul class="credits-ds__refs">
+          <li>Dorkenwald, S. et al. CAVE: Connectome Annotation Versioning Engine. <i>Nature Methods</i> 22, 1112–1120 (2025). <a href="https://doi.org/10.1038/s41592-024-02426-z" target="_blank" rel="noreferrer">doi:10.1038/s41592-024-02426-z</a></li>
+        </ul>
       </article>
     </section>
   </main>
