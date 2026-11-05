@@ -143,7 +143,7 @@ function postPage(p, R, f) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=blog395" />
+  <link rel="stylesheet" href="/styles.css?v=gallery1" />
 </head>
 <body class="blog-light">
   <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
@@ -168,7 +168,7 @@ ${R.renderBlogMarkdown(p.body)}
 
   ${f.foot}
   <script src="/assets/subscribe.js?v=2"></script>
-  <script src="/assets/blog.js?v=395"></script>
+  <script src="/assets/blog.js?v=gallery1"></script>
   <script src="/assets/blog-edit.js?v=2"></script>
 </body>
 </html>
