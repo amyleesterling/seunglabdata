@@ -31,6 +31,10 @@ jobs:
       - name: Build the blog pages
         run: node tools/build-blog.mjs
 
+      # A copy of every published post and its uploaded pictures (backup/blog).
+      - name: Back up the blog
+        run: node tools/backup-blog.mjs
+
       - name: Publish what changed
         run: |
           if [ -z "$(git status --porcelain)" ]; then
@@ -39,7 +43,7 @@ jobs:
           fi
           git config user.name "blog-build"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A blog sitemap.xml robots.txt llms.txt
+          git add -A blog backup sitemap.xml robots.txt llms.txt
           git commit -m "Blog: pages rebuilt from the published posts"
           # someone may have pushed meanwhile
           git pull --rebase origin main
