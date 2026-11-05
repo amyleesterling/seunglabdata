@@ -6,7 +6,18 @@
     <atom:link href="https://connectome.quest/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>What is new in Pyr and the other brain mapping projects of the Seung Lab, Princeton University.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 14:37:07 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 19:19:08 GMT</lastBuildDate>
+    <item>
+      <title>Cilia Status Guide</title>
+      <link>https://connectome.quest/blog/cilia-status-guide/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/cilia-status-guide/</guid>
+      <pubDate>Thu, 05 Nov 2026 19:19:08 GMT</pubDate>
+      <dc:creator>Celia D</dc:creator>
+      <description>Hello Cilia Hunters! This is a quick guide to each cilia status type you may encounter. Click each one to see an example. Happy Hunting! Cilium Annotated - Cilium emerges from the cell, both centrioles and cilium centerline are annotated. Cilium Annotated (fixation artifact) - Cilium structure is…</description>
+      <content:encoded><![CDATA[<p>Hello Cilia Hunters!</p>
+<p>This is a quick guide to each cilia status type you may encounter. Click each one to see an example. Happy Hunting!</p>
+<ul><li><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6134465776582656" target="_blank" rel="noopener noreferrer">Cilium Annotated</a></strong> - Cilium emerges from the cell, both centrioles and cilium centerline are annotated.</li><li><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6224937215852544" target="_blank" rel="noopener noreferrer">Cilium Annotated (fixation artifact)</a></strong> - Cilium structure is visible near the surface of the cell, but appears attached/internal to the soma. This is caused by membranes fusing during data collection.</li><li><strong>Need Help</strong> - You can't find any cilium or centrioles, or there's another issue that stops you from annotating the cell. Good to leave clarifying notes in most cases!</li><li><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6697415730003968" target="_blank" rel="noopener noreferrer">Need Help: One centriole missing</a></strong> - You found one centriole, but the other is MIA</li><li><strong>No cilium</strong> - Nothing found. This should only be used after review (use Need Help if you are the first annotator)</li><li><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5742473875816448" target="_blank" rel="noopener noreferrer">No cilium (BB &amp; DC clear)</a></strong> - No cilium, but centrioles are visible and clearly differentiated (basal body closer to the surface).</li><li><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5185996505219072" target="_blank" rel="noopener noreferrer">No cilium (BB &amp; DC unclear)</a></strong> - No cilium, centriole positions make it unclear which is the basal body and which is the daughter</li><li><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6280972446203904" target="_blank" rel="noopener noreferrer">Skipped (low quality)</a></strong> - Extensive data artifacting, missing slides, no soma etc, make it too difficult to ID cilium or centrioles</li></ul>]]></content:encoded>
+    </item>
     <item>
       <title>How Do We See? The Mysteries Hiding in Plain Sight</title>
       <link>https://connectome.quest/blog/how-do-we-see/</link>
