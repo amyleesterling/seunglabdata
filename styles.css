@@ -1834,6 +1834,7 @@ h2{
 .blog-post h3{ margin: 28px 0 8px; color: #eaf6ff; font-size: 20px; }
 .blog-post img{ max-width: 100%; height: auto; border-radius: 12px; }
 .blog-post__figure{ margin: 22px 0; }
+.blog-post__figure picture{ display: block; }
 .blog-post__figure--cover{ margin-top: 8px; }
 .blog-post__figure--cover img{ display: block; width: 100%; border: 1px solid var(--line); }
 .blog-post blockquote{ margin: 0 0 16px; padding: 2px 0 2px 16px; border-left: 3px solid #42d5ec; }
