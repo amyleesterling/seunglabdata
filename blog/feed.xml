@@ -6,7 +6,47 @@
     <atom:link href="https://connectome.quest/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>What is new in Pyr and the other brain mapping projects of the Seung Lab, Princeton University.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 03:14:15 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 14:37:07 GMT</lastBuildDate>
+    <item>
+      <title>How Do We See? The Mysteries Hiding in Plain Sight</title>
+      <link>https://connectome.quest/blog/how-do-we-see/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/how-do-we-see/</guid>
+      <pubDate>Thu, 05 Nov 2026 14:37:07 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>Some of the biggest mysteries of vision begin in a thin layer of cells at the back of your eye. Here is the known, the unknown and how you can help map the brain to make neuroscience history.</description>
+      <content:encoded><![CDATA[<p>Every time you open your eyes, billions of photons enter your pupils. A fraction of a second later, you're seeing the world in color, depth, and motion. You can recognize a face across a crowded room, follow a bird in flight, or notice something moving at the edge of your vision.</p>
+<p>How does your brain accomplish all this?</p>
+<p>Surprisingly, scientists are still figuring it out. And some of the biggest mysteries begin in a thin layer of cells at the back of your eye.</p>
+<h2>Your retina is a little piece of brain</h2>
+<p>Light enters your eye through the cornea and pupil. The lens focuses it onto the retina, a delicate sheet of neural tissue lining the back of the eye.</p>
+<p>Here, specialized cells called rods and cones detect light and convert it into electrical signals. Those signals pass through an intricate network of neurons before traveling along the optic nerve to the brain.</p>
+<p>But the retina does much more than detect light. It helps identify edges, changes in brightness, and movement. Some retinal neurons even respond preferentially when objects move in a particular direction.</p>
+<p>Your eyes are already making sense of the world before your brain gets the message.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/bipolar-cells/eye-diagram.webp" alt="How we see: the eye, with a close look at the retina's cells" loading="lazy" /></figure>
+<h2>A forest of neurons</h2>
+<p>The retina contains many different kinds of neurons, arranged in layers. Bipolar cells relay information from photoreceptors, amacrine cells shape and modify those signals, and ganglion cells carry the results to the brain.</p>
+<p>Their shapes are extraordinary. Some stretch vertically between layers, while others extend elaborate branches sideways, gathering information from their neighbors.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/bipolar-cells/real-retina-cells.webp" alt="How a signal flows through the retina: photoreceptors, a bipolar cell, a starburst amacrine cell and a ganglion neuron, real cells from Eyewire II at their true depths" loading="lazy" /></figure>
+<p>The arrangement of these branches matters. Which cells connect, where they connect, and how strongly they communicate all help determine what information reaches the brain.</p>
+<h2>What don't we know?</h2>
+<p>Quite a lot, actually.</p>
+<p>Scientists are still working to identify all the different types of retinal neurons and understand what each contributes to vision. We know some of the circuitry responsible for detecting motion, contrast, and changes in light, but we don't yet understand how all those circuits work together when we look at a complex, constantly changing world.</p>
+<p>And there's an especially tantalizing question: If we could map every neuron and every connection in the retina, could we predict what the circuit sees?</p>
+<p>A wiring diagram alone isn't enough. Neurons are living, dynamic cells. But combining their anatomy with recordings of their activity will bring us to many new discoveries. That possibility is what makes modern connectomics so exciting.</p>
+<h2>A million tiny clues</h2>
+<p>With advances in electron microscopy and artificial intelligence, scientists can now reconstruct neurons in extraordinary detail.</p>
+<p>Pyr is one such prjoject. It includes several connectomics datasets, including Eyewire II, a volume of mouse retina containing ~100,000cells. For hundreds of its neurons, researchers have both detailed anatomy and recordings of how the cells respond to visual stimuli.</p>
+<p>That gives us a rare opportunity to connect the shape of a neuron with what it actually does. And there are countless connections left to investigate.</p>
+<h2>Help us discover what's hiding in the retina</h2>
+<p>Mapping neural circuits is painstaking work. AI can trace neurons through microscopic images, but it makes mistakes. Human eyes are remarkably good at spotting where a branch has gone astray.</p>
+<p>That's where you come in.</p>
+<p>In Pyr, the new citizen science game from the creators of Eyewire, players help map real neurons from neuroscience datasets, including the EyeWire II retina.</p>
+<p>Every correction contributes to a more accurate map. And every better map gives scientists new opportunities to investigate how neural circuits work.</p>
+<p>We can't promise what discoveries lie ahead. Perhaps we'll uncover clues about how we see or make progress toward solving issues of the eye such as blindness. One thing is for certain: this is uncharted territory, and mapping it is only possible with your help!</p>
+<p>That's the lovely thing about exploring the unknown: you don't get to know what you'll find before you begin.</p>
+<p>Come explore the brain with us. Play Pyr and help unravel the mysteries of vision!</p>
+<p class="blog-post__cta"><a class="blog-post__button" href="https://pyr.ai/" target="_blank" rel="noopener noreferrer">Play Pyr</a></p>]]></content:encoded>
+    </item>
     <item>
       <title>Guide to Mapping Bipolar Cells (BCs)</title>
       <link>https://connectome.quest/blog/guide-to-mapping-bipolar-cells-bcs/</link>
