@@ -1,25 +1,22 @@
-// Subscribe form (blog pages). Same form and endpoint as the homepage, index.html.
+// Subscribe form, on the homepage and every blog page (Ames 2026-11-05).
+// Signups go to the blog email list in Resend through Pyr's ewBlogMail
+// function (ng-extend functions/blog-mail.js); every new blog post is then
+// emailed to the list, with a one click unsubscribe. The old Google Apps
+// Script sheet stopped taking signups (it answered 403, unseen behind no-cors).
 (function () {
   var form = document.getElementById('subscribeForm');
   if (!form) return;
   var statusEl = document.getElementById('sub-status');
   var submitBtn = document.getElementById('sub-submit');
-
-  // Google Apps Script web app (subscribe-to-sheet.gs) that appends each
-  // signup as a row in the Connectome.Quest Subscribe sheet.
-  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxB4zbbzrivwkpgAMtdto2zPc95lamxTlw8KnZPi5MkjHftWKq5RJhAlvjP_zragwdtCg/exec';
+  var ENDPOINT = 'https://us-central1-eyewire-ii-e4d52.cloudfunctions.net/ewBlogMail';
+  var value = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var name = document.getElementById('sub-name').value.trim();
-    var email = document.getElementById('sub-email').value.trim();
-    if (form._honey && form._honey.value) return; // bot trap
+    var name = value('sub-name');
+    var email = value('sub-email');
     if (!name || !email) {
-      statusEl.textContent = 'Please add your first name and email.';
-      return;
-    }
-    if (ENDPOINT.indexOf('http') !== 0) {
-      statusEl.textContent = 'Signup is not connected yet. Please check back soon.';
+      statusEl.textContent = 'Please add your name and email.';
       return;
     }
 
@@ -28,21 +25,23 @@
     submitBtn.textContent = 'Subscribing…';
     statusEl.textContent = '';
 
-    // URLSearchParams keeps this a simple CORS request (no preflight);
-    // no-cors lets the Apps Script append the row without a CORS response header.
     fetch(ENDPOINT, {
       method: 'POST',
-      mode: 'no-cors',
-      body: new URLSearchParams({
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'subscribe',
         name: name,
         email: email,
-        // The blog form asks for a first name and an email only (Ames
-        // 2026-10-10). These two are still sent, empty, so the sheet's
-        // columns stay where the signup script expects them.
-        country: '',
-        eyewire_username: ''
+        username: value('sub-username'),
+        source: form.getAttribute('data-source') || 'blog',
+        _honey: form._honey ? form._honey.value : ''
       })
     })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || !j.ok) throw new Error(j.error || '');
+        });
+      })
       .then(function () {
         form.reset();
         var success = document.getElementById('subscribeSuccess');
@@ -53,8 +52,10 @@
           statusEl.textContent = "You're on the list. Thanks for joining the quest!";
         }
       })
-      .catch(function () {
-        statusEl.innerHTML = "We couldn't sign you up just now. Please try again, or reach us on the <a href='https://discuss.flywire.ai/' target='_blank' rel='noreferrer'>community forum</a>.";
+      .catch(function (err) {
+        // The server's own words when it has them ("Please check your email address.").
+        var said = err && err.message;
+        statusEl.textContent = said || "We couldn't sign you up just now. Please try again in a moment.";
       })
       .finally(function () {
         submitBtn.disabled = false;

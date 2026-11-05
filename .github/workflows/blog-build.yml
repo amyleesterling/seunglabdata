@@ -36,6 +36,7 @@ jobs:
         run: node tools/backup-blog.mjs
 
       - name: Publish what changed
+        id: publish
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo "Nothing changed."
@@ -48,3 +49,15 @@ jobs:
           # someone may have pushed meanwhile
           git pull --rebase origin main
           git push origin HEAD:main
+          echo "pushed=1" >> "$GITHUB_OUTPUT"
+
+      # New posts by email (ng-extend functions/blog-mail.js, ewBlogMail). The
+      # function holds the key and decides everything: each post goes once,
+      # only after its page is live. This only says "look now", every run, so
+      # a post whose page was not live yet is picked up next time. After a
+      # push it first waits for GitHub Pages. It never fails the build.
+      - name: Email new posts
+        if: always()
+        run: |
+          if [ "${{ steps.publish.outputs.pushed }}" = "1" ]; then sleep 90; fi
+          curl -sS -m 60 -X POST https://us-central1-eyewire-ii-e4d52.cloudfunctions.net/ewBlogMail -H 'Content-Type: application/json' -d '{"action":"check"}' || true

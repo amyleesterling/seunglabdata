@@ -1495,6 +1495,8 @@ h2{
   gap: 28px;
   align-items: center;
 }
+/* The label is a small pill, not a bar across the column (it is not in a flex column here). */
+.subscribe__copy .res__badge{ width: fit-content; }
 .subscribe__copy h2{
   margin: 8px 0 8px;
   font-size: clamp(21px, 2.3vw, 28px);
@@ -1515,6 +1517,8 @@ h2{
   gap: 12px;
 }
 .subscribe__grid .cform__field{ display: flex; flex-direction: column; gap: 6px; }
+/* An odd field out (Name, Email, then the optional username) takes the whole row. */
+.subscribe__grid .cform__field:last-child:nth-child(odd){ grid-column: 1 / -1; }
 .subscribe__grid .cform__field span{ font-size: 13px; color: var(--muted); }
 .subscribe__grid .cform__field span em{ font-style: normal; opacity: .7; }
 .subscribe__grid input{

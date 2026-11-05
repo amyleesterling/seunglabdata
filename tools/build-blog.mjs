@@ -167,7 +167,7 @@ ${R.renderBlogMarkdown(p.body)}
   </main>
 
   ${f.foot}
-  <script src="/assets/subscribe.js?v=2"></script>
+  <script src="/assets/subscribe.js?v=3"></script>
   <script src="/assets/blog.js?v=395"></script>
   <script src="/assets/blog-edit.js?v=2"></script>
 </body>
