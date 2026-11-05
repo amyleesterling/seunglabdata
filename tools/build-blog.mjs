@@ -143,21 +143,21 @@ function postPage(p, R, f) {
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=blogedit1" />
+  <link rel="stylesheet" href="/styles.css?v=blog395" />
 </head>
 <body class="blog-light">
   <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
   ${f.nav}
 
   <main class="wrap blog-page">
-    <article class="blog-post">
+    <article class="blog-post" data-blog-live="${esc(p.slug)}" data-updated="${esc(p.updated_at || '')}">
       <header class="pagehead">
         <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
-        <h1>${esc(title)}</h1>
+        <h1 data-blog-title>${esc(title)}</h1>
         <p class="blog-post__meta"><time datetime="${esc(String(published || '').slice(0, 10))}">${esc(day(published))}</time>${p.author_name ? ' · ' + esc(p.author_name) : ''}</p>
         <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="${esc(p.slug)}" data-blog-author-only hidden>Edit</button></p>
       </header>
-      <div>${cover}
+      <div data-blog-body>${cover}
 ${R.renderBlogMarkdown(p.body)}
       </div>
       <p class="blog-post__back"><a href="/blog/">All posts</a><button type="button" class="blog-edit__quiet" data-blog-edit="${esc(p.slug)}" hidden>Edit this post</button></p>
@@ -168,6 +168,7 @@ ${R.renderBlogMarkdown(p.body)}
 
   ${f.foot}
   <script src="/assets/subscribe.js?v=2"></script>
+  <script src="/assets/blog.js?v=395"></script>
   <script src="/assets/blog-edit.js?v=2"></script>
 </body>
 </html>

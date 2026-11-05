@@ -1995,3 +1995,9 @@ body.blog-light .footer, body.blog-light .footer__credit{ color: var(--blog-soft
 .credits-ds__refs li{ margin-bottom: 4px; }
 .credits-ds__refs a{ word-break: break-all; }
 .credits-ds__fund{ color: var(--muted); font-size: .85rem; margin-top: 10px !important; }
+
+/* A picture's size, chosen in the editor (Celia, triage #395). No size: as wide as the text. */
+.blog-post__figure--small{ max-width: 40%; margin-left: auto; margin-right: auto; }
+.blog-post__figure--medium{ max-width: 70%; margin-left: auto; margin-right: auto; }
+.blog-post__figure--small img, .blog-post__figure--medium img{ width: 100%; height: auto; }
+@media (max-width: 620px){ .blog-post__figure--small{ max-width: 70%; } .blog-post__figure--medium{ max-width: 100%; } }

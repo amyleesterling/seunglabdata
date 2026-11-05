@@ -11,7 +11,7 @@ var KEY = 'sb_publishable_a5r5rfbOuWNoVw0Qb_LtRg_xA4H6Jxb';
 
 const IMG_OK = /^https:\/\/(javthknksdcrlhiaaptj\.supabase\.co\/storage\/v1\/object\/public\/|connectome\.quest\/assets\/)/;
 const LINK_OK = /^(https:\/\/|\/(?!\/))/;
-const IMG_LINE = /^!\[([^\]]*)\]\(([^)\s]+)\)$/;
+const IMG_LINE = /^!\[([^\]]*)\]\(([^)\s]+)\)(?:\{(small|medium|large)\})?$/;
 const VIDEO_LINE = /^@\[youtube\]\(([A-Za-z0-9_-]{11})\)$/;
 const PHONE_LINE = /^@\[phone\]\(([^)\s]+)\)$/;
 
@@ -46,10 +46,13 @@ function figures(para) {
     }
     const img = `<img src="${m[2]}" alt="${m[1]}" loading="lazy" />`;
     const pic = phone ? `<picture><source media="(max-width: 700px)" srcset="${phone}" />${img}</picture>` : img;
-    figs.push(`<figure class="blog-post__figure">${pic}${caption ? `<figcaption>${inline(caption)}</figcaption>` : ''}</figure>`);
+    // A picture's size (Celia, triage #395: "loads huge and I can't adjust
+    // its size"). Sizes apply to a picture on its own, not to a pair.
+    const size = m[3] ? ` blog-post__figure--${m[3]}` : '';
+    figs.push(`<figure class="blog-post__figure${size}"${m[3] ? ` data-size="${m[3]}"` : ''}>${pic}${caption ? `<figcaption>${inline(caption)}</figcaption>` : ''}</figure>`);
   }
   if (!figs.length) return null;
-  return figs.length === 1 ? figs[0] : `<div class="blog-post__pair">${figs.join('')}</div>`;
+  return figs.length === 1 ? figs[0] : `<div class="blog-post__pair">${figs.map(f => f.replace(/ blog-post__figure--\w+"/, '"').replace(/ data-size="\w+"/, '')).join('')}</div>`;
 }
 
 /** editor: draw a video as a still picture, so it can sit inside the editor. */
@@ -102,8 +105,6 @@ function blogSlug(title) {
   return String(title || '').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80).replace(/-+$/, '');
 }
 
-// The build script (tools/build-blog.mjs) runs this file to draw the static
-// pages with the very same renderer.
 globalThis.BlogRender = { renderBlogMarkdown: renderBlogMarkdown, blogSlug: blogSlug };
 
 function get(query) {
@@ -232,6 +233,39 @@ if (post) {
       }
     })
     .catch(function () { missing('The blog could not be loaded just now. Please try again in a moment.'); });
+}
+
+// ── A post's own page (blog/<slug>/) shows the post as it is now ──────────
+// Those pages are built from the published posts every 15 minutes
+// (tools/build-blog.mjs), so a change published a moment ago was not there
+// yet (Celia, triage #395: "publishing doesn't save my edits"). The page
+// shows what it was built with straight away, then asks for the post as it
+// is now and, if it changed since, draws the new version in its place.
+var livePost = document.querySelector('[data-blog-live]');
+if (livePost) {
+  var liveSlug = livePost.getAttribute('data-blog-live') || '';
+  var builtAt = livePost.getAttribute('data-updated') || '';
+  if (/^[a-z0-9]+(-[a-z0-9]+)*$/.test(liveSlug)) get('select=slug,title,summary,body,cover_url,author_name,published_at,updated_at&status=eq.published&slug=eq.' + liveSlug + '&limit=1')
+    .then(function (rows) {
+      var p = rows[0];
+      if (!p || !p.updated_at || Date.parse(p.updated_at) === Date.parse(builtAt)) return;
+      var h = livePost.querySelector('[data-blog-title]');
+      if (h) h.textContent = p.title;
+      document.title = p.title + ' | Map the Brain';
+      var body = livePost.querySelector('[data-blog-body]');
+      if (!body) return;
+      body.innerHTML = renderBlogMarkdown(p.body);   // escaped, then a short list of tags
+      if (p.cover_url && IMG_OK.test(p.cover_url)) {
+        var fig = el('figure', 'blog-post__figure blog-post__figure--cover');
+        var img = el('img');
+        img.src = p.cover_url;
+        img.alt = '';
+        fig.appendChild(img);
+        body.insertBefore(fig, body.firstChild);
+      }
+      livePost.setAttribute('data-updated', p.updated_at);
+    })
+    .catch(function () { /* the built page stays as it is */ });
 }
 
 // ── The first post's old address forwards to its new one once it exists ─
