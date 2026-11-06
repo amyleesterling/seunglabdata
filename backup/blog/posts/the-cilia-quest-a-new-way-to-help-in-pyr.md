@@ -3,7 +3,7 @@ title: "The Cilia Quest: a new way to help in Pyr"
 summary: "Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell."
 author: "Amy R. Sterling"
 published: 2026-10-13T20:45:54.387+00:00
-updated: 2026-11-05T19:54:27.988+00:00
+updated: 2026-11-06T00:36:02.086+00:00
 cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/31205338-9883-4799-8be1-b863fbc7cffa.png
 ---
 Calling all Pyr players! there's a new **Quest** on the horizon, and we need your help!
@@ -55,8 +55,6 @@ You can hold three cells at a time. **Release** sends a cell back for someone el
 - [The lab's scientific guide to cilia with tips on how to locate them.](https://unitc-my.sharepoint.com/:p:/g/personal/ojxjl01_cloud_uni-tuebingen_de/IQDBsH6sbIjZRY5Gc3Flt5iaAUvXSDf4QLsyamGQ72f8rOo?rtime=Ky2GsGU730g)
 
 - A [training video](https://www.youtube.com/watch?v=-l2-R-9vX6o&t=1525s).
-
-- A reference that opens three real cells with the lab's own annotations. Each one shows a different status and says when that status applies.
 
 Not sure about a cell? There is a status for that. Choose **Need help** and say why in the notes.
 
