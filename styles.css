@@ -2046,3 +2046,6 @@ html.blog-lightbox-open{ overflow: hidden; }
   .blog-lightbox__step{ top: auto; bottom: 14px; margin-top: 0; }
   .blog-lightbox--many .blog-lightbox__figure{ padding-bottom: 56px; }
 }
+
+/* Bold words inside a link keep the link's color (Ames 2026-11-06) */
+.blog-post a strong, .blog-post a b, body.blog-light .blog-post a strong, body.blog-light .blog-post a b{ color: inherit; }
