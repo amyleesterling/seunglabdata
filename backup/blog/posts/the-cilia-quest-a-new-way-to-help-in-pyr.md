@@ -3,8 +3,8 @@ title: "The Cilia Quest: a new way to help in Pyr"
 summary: "Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell."
 author: "Amy R. Sterling"
 published: 2026-10-13T20:45:54.387+00:00
-updated: 2026-11-06T00:36:02.086+00:00
-cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/31205338-9883-4799-8be1-b863fbc7cffa.png
+updated: 2026-11-06T16:44:43.942+00:00
+cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/a3637476-317f-4c15-8980-2c70a66ee2bc.png
 ---
 Calling all Pyr players! there's a new **Quest** on the horizon, and we need your help!
 
@@ -12,7 +12,15 @@ Calling all Pyr players! there's a new **Quest** on the horizon, and we need you
 
 ## How to Hunt for Cilia
 
-Each cell in the Quest is retinal neuron. Somewhere on its cell body there may be a cilium, a thin appendage that projects from. At its base sits the basal body, and close by is a second structure, the daughter centriole.
+1. Open the **Cell Library** and click **Quests**. If you are on another dataset, press **Switch to Retina**.
+2. Press **Claim** on an available cell. The cell and it's annotation layers will open on screen. Each cell in a Cilia Quest is retinal neuron. Somewhere on its cell body there may be a cilium, a thin appendage that projects from. This is what we quest for.
+3. Find the cilium (if there is one). At its base sits the basal body, and close by is a second structure, the daughter centriole. Mark all 3 structures, if present.
+4. Put the crosshairs inside the cell and press **Submit**.
+5. Choose a cilium status from the list. Don't know which to choose? Select your guess to see help text below. Or [check out this post](https://connectome.quest/blog/cilia-status-guide/) for a full explanation of all statuses with examples!
+6. Select whether the cilium was "split" - part of all of the cilium was not attached, or "merged" - cilium was fully visible in the original segmentation. If no cilium was present, make no selection.
+7. Add a note if needed, and press the 2nd Submit button!
+
+You can hold three cells at a time. **Release** sends a cell back for someone else.
 
 ![](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/1e17ed53-6add-43dc-99af-c617744e3a95.png)
 
@@ -36,19 +44,8 @@ To annotate a cilium, you'll need to use the 3 annotation layers. Click a layer 
 
 [Here's an example](https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5973814101934080) of a cell with a cilium that's been fully annotated and is ready to complete!
 
-![](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/b571f473-65b8-48aa-82b2-51771a2460c9.png)
-
-**Completing a Quest**
-
-1. Open the **Cell Library** and click **Quests**. If you are on another dataset, press **Switch to Retina**.
-2. Press **Claim** on an available cell. The cell and it's annotation layers will open on screen.
-3. Find the cilium and mark all 3 structures, if present.
-4. Put the crosshairs inside the cell and press **Submit**.
-5. Choose a cilium status from the list. Don't know which to choose? Select your guess to see help text below. Or [check out this post](https://connectome.quest/blog/cilia-status-guide/) for a full explantation of all statuses with examples!
-6. Select whether the cilium was "split" - part of all of the cilium was not attached, or "merged" - cilium was fully visible in the original segmentation. If no cilium was present, make no selection.
-7. Add a note if needed, and press the 2nd Submit button!
-
-You can hold three cells at a time. **Release** sends a cell back for someone else.
+![Cell with cilium annotated](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/1d7519ca-1702-4af7-8fbb-daa063bb91d4.png){medium}
+^ Cell with cilium annotated
 
 ## Dive Deeper
 
