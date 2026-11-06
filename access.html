@@ -76,8 +76,12 @@
             </label>
           </div>
           <label class="cform__field">
+            <span>How did you find us? <em>(optional)</em></span>
+            <input id="ea-found" name="found_us" type="text" maxlength="200" autocomplete="off" placeholder="For example: the EyeWire forum, a friend, a class" />
+          </label>
+          <label class="cform__field">
             <span>Anything you'd like us to know? <em>(optional)</em></span>
-            <textarea id="ea-note" name="note" rows="2" maxlength="500" placeholder="Where you heard about Pyr"></textarea>
+            <textarea id="ea-note" name="note" rows="2" maxlength="500"></textarea>
           </label>
           <label class="earlyaccess__agree">
             <input id="ea-agree" type="checkbox" required aria-required="true" />
@@ -200,6 +204,7 @@
           var name = document.getElementById('ea-name').value.trim().replace(/\s+/g, ' ');
           var email = document.getElementById('ea-email').value.trim();
           var note = document.getElementById('ea-note').value.trim();
+          var foundUs = document.getElementById('ea-found').value.trim().replace(/\s+/g, ' ');
           var agree = document.getElementById('ea-agree').checked;
           var ewName = document.getElementById('ea-ewname').value.trim();
           var ewRank = document.getElementById('ea-ewrank').value.trim().replace(/\s+/g, ' ');
@@ -213,7 +218,7 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ action: 'access.visitorBeta', name: name, email: email, note: note || undefined,
-              eyewireUsername: ewName || undefined, eyewireRank: ewRank || undefined,
+              eyewireUsername: ewName || undefined, eyewireRank: ewRank || undefined, foundUs: foundUs || undefined,
               agree: true, website: form.website.value || undefined })
           })
             .then(function (r) {
