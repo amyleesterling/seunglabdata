@@ -3,7 +3,7 @@ title: "Mapping MEC"
 summary: "The lab needs help proofreading axons!"
 author: "Amy R. Sterling"
 published: 2026-10-28T22:56:54.868+00:00
-updated: 2026-10-28T22:56:54.868+00:00
+updated: 2026-11-07T20:50:31.731+00:00
 cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/5ca71866-375f-44be-80f3-1a90f603b88b.jpg
 ---
 ### The lab needs help proofreading axons!
@@ -43,9 +43,15 @@ Keeping track. On a big axon it is easy to lose your place. **Highlight** (Shift
 
 The other annotation layer in Marks (True End, Can’t Fix and Hits Edge) are optional now. Use them if they help you keep track, but only the AIS is required.
 
-2. **Complete it**
+1. **Complete it**
 
 When every end of the axon is done, Complete the cell, either in the Cell Library or with the Δ button next to its segment ID, and choose Axon complete. It counts as one of your completed cells, and the lab’s spreadsheet records it. Proofread axons count toward you cell completion, even if eventually we go back and add more to the dendritic arbor.
+
+### Merge Errors
+
+MEC is currently experiencing some errors with splits and merges. This is a dataset error rather than an issue with the game interface.
+
+For now please follow this protocol: If you encounter errors please add new annotation layers named "Merge Errors" and "Split Errors" and use the line annotation type to mark where you want the split or merge. You can then continue to complete the rest of the cell as normal. Please leave a note that you encountered errors and what type (merge, split, both) when you submit the cell as complete.
 
 *Need help?*
 

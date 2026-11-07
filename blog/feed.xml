@@ -129,6 +129,9 @@
 <p>The other annotation layer in Marks (True End, Can’t Fix and Hits Edge) are optional now. Use them if they help you keep track, but only the AIS is required.</p>
 <ol><li><strong>Complete it</strong></li></ol>
 <p>When every end of the axon is done, Complete the cell, either in the Cell Library or with the Δ button next to its segment ID, and choose Axon complete. It counts as one of your completed cells, and the lab’s spreadsheet records it. Proofread axons count toward you cell completion, even if eventually we go back and add more to the dendritic arbor.</p>
+<h3>Merge Errors</h3>
+<p>MEC is currently experiencing some errors with splits and merges. This is a dataset error rather than an issue with the game interface.</p>
+<p>For now please follow this protocol: If you encounter errors please add new annotation layers named &quot;Merge Errors&quot; and &quot;Split Errors&quot; and use the line annotation type to mark where you want the split or merge. You can then continue to complete the rest of the cell as normal. Please leave a note that you encountered errors and what type (merge, split, both) when you submit the cell as complete.</p>
 <p><em>Need help?</em></p>
 <p>Use chat, ask in the Help tab, or drop us an email.</p>
 <p><em>Need a bigger challenge</em>? Try <a href="https://connectome.quest/blog/post.html?p=super-quests-mec-inhibitory-interneurons" target="_blank" rel="noopener noreferrer">Super Quests</a> :)</p>
