@@ -4,6 +4,7 @@
 
 ## Start here
 - [Home](https://connectome.quest/): the projects that need help, and how to join
+- [What is Pyr?](https://connectome.quest/pyr/): Pyr (pronounced "peer"), formerly EyeWire II, the Seung Lab's brain mapping game; it covers several brains (mouse retina, MEC and more), not only the CA3 project at pyr.ai
 - [Connectome 101](https://connectome.quest/atlas/): what a connectome is
 - [Neuro 101](https://connectome.quest/learn.html): neuroscience for beginners
 - [Help](https://connectome.quest/help.html): how to play and get help

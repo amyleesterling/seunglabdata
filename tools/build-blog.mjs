@@ -288,6 +288,7 @@ function llmsTxt(posts) {
 
 ## Start here
 - [Home](${SITE}/): the projects that need help, and how to join
+- [What is Pyr?](${SITE}/pyr/): Pyr (pronounced "peer"), formerly EyeWire II, the Seung Lab's brain mapping game; it covers several brains (mouse retina, MEC and more), not only the CA3 project at pyr.ai
 - [Connectome 101](${SITE}/atlas/): what a connectome is
 - [Neuro 101](${SITE}/learn.html): neuroscience for beginners
 - [Help](${SITE}/help.html): how to play and get help
