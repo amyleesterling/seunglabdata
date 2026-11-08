@@ -3,7 +3,7 @@ title: "Guide to Mapping Bipolar Cells (BCs)"
 summary: "Every image you see passes through a bipolar cell. Learn what these relay cells do and how to proofread one in Pyr."
 author: "Amy R. Sterling"
 published: 2026-11-05T03:14:15.686+00:00
-updated: 2026-11-05T15:09:16.954576+00:00
+updated: 2026-11-08T22:46:06.302+00:00
 cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/07da7cda-f665-4142-ae8e-4479fca7634c.jpg
 ---
 Every image you have ever seen passed through a bipolar cell. These small and tidy cells sit in the middle of the retina. In Eyewire II/ Pyr's retina dataset, they are some of the cells you will encounter most frequently. Here is what they do and how to proofread one.
@@ -37,7 +37,7 @@ Every bipolar cell you proofread in Pyr adds to that map. If you'd like to learn
 3. **Proofread** the cell (instructions below)
 4. When you have fully proofread the BC, mark it **Complete**
 
-### How to proofread a BC
+## How to proofread a BC
 
 Check the whole cell, branch by branch:
 

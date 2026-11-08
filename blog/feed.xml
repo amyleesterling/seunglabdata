@@ -80,7 +80,7 @@
 <p>Every bipolar cell you proofread in Pyr adds to that map. If you'd like to learn more about the science, scroll to the bottom of the post. Below find instructions on how to proofread Bipolar Cells (BCs).</p>
 <h2>Claiming a BC</h2>
 <ol><li>Head to the <strong>Retina Dataset</strong> (if you don't have access yet, see <a href="https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/" target="_blank" rel="noopener noreferrer">this post</a>).</li><li>Open the <strong>Cell Library</strong>, navigate to <strong>Available Cells</strong>, and <strong>Claim</strong> one.</li><li><strong>Proofread</strong> the cell (instructions below)</li><li>When you have fully proofread the BC, mark it <strong>Complete</strong></li></ol>
-<h3>How to proofread a BC</h3>
+<h2>How to proofread a BC</h2>
 <p>Check the whole cell, branch by branch:</p>
 <ul><li><strong>Dendrites:</strong> follow each one up to its tip. Look for pieces that broke off (they need a merge) and pieces of other cells stuck on (they need a cut).</li><li><strong>Axon:</strong> follow it down to the terminals, and check that the terminals all belong to this cell.</li><li><strong>Each branch end:</strong> a bipolar cell has many small ends. Check every one.</li></ul>
 <figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/bipolar-cells/real-bipolar-cell.webp" alt="A real bipolar cell proofread in Eyewire II, with its dendrites, cell body, axon and axon terminals labeled" loading="lazy" /></figure>
