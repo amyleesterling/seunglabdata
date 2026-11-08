@@ -2046,3 +2046,12 @@ html.blog-lightbox-open{ overflow: hidden; }
   .blog-lightbox__step{ top: auto; bottom: 14px; margin-top: 0; }
   .blog-lightbox--many .blog-lightbox__figure{ padding-bottom: 56px; }
 }
+
+/* Links to a heading: a quiet # that shows on hover (blog.js copies the link). */
+.blog-post h2[id], .blog-post h3[id]{ scroll-margin-top: 84px; }
+.blog-anchor{ margin-left: .35em; padding: 0 .15em; color: inherit; opacity: 0; text-decoration: none; font-weight: 400; transition: opacity .15s ease; }
+.blog-post h2:hover .blog-anchor, .blog-post h3:hover .blog-anchor, .blog-anchor:focus-visible{ opacity: .45; }
+.blog-anchor:hover{ opacity: .9 !important; }
+.blog-anchor--copied{ opacity: .9 !important; }
+.blog-anchor--copied::after{ content: "Link copied"; margin-left: .5em; font-size: 13px; font-weight: 600; letter-spacing: 0; }
+@media (hover: none){ .blog-anchor{ opacity: .35; } }

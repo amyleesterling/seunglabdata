@@ -71,6 +71,19 @@ function figures(para, gallery, editor) {
 function renderBlogMarkdown(text, editor) {
   const lines = esc(String(text || '').replace(/\r\n?/g, '\n')).split('\n');
   const out = [];
+  // Each heading gets an address of its own, from its words, so a link can
+  // point at it: /blog/<post>/#how-to-proofread-a-bc (Ames 2026-11-08).
+  // On the page a small # beside it is that link. Not in the editor, where
+  // the # would be saved as part of the heading.
+  const ids = new Set();
+  const heading = (tag, html) => {
+    const words = html.replace(/<[^>]*>/g, '').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+    let id = blogSlug(words) || 'section';
+    for (let n = 2; ids.has(id); n++) id = `${blogSlug(words) || 'section'}-${n}`;
+    ids.add(id);
+    return editor ? `<${tag}>${html}</${tag}>`
+      : `<${tag} id="${id}">${html}<a class="blog-anchor" href="#${id}" aria-label="Link to this section" title="Link to this section">#</a></${tag}>`;
+  };
   let i = 0;
   const run = (re) => { const got = []; while (i < lines.length && re.test(lines[i])) got.push(lines[i++].replace(re, '')); return got; };
   while (i < lines.length) {
@@ -89,8 +102,8 @@ function renderBlogMarkdown(text, editor) {
         ? `<div class="blog-post__video" data-yt="${video[1]}" contenteditable="false"><img src="https://i.ytimg.com/vi/${video[1]}/hqdefault.jpg" alt="YouTube video" /></div>`
         : `<div class="blog-post__video"><iframe src="https://www.youtube-nocookie.com/embed/${video[1]}" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`);
     } else if (/^-{3,}\s*$/.test(line)) { out.push('<hr />'); i++; }
-    else if (/^###\s+/.test(line)) { out.push(`<h3>${inline(line.replace(/^###\s+/, ''))}</h3>`); i++; }
-    else if (/^##?\s+/.test(line)) { out.push(`<h2>${inline(line.replace(/^##?\s+/, ''))}</h2>`); i++; }
+    else if (/^###\s+/.test(line)) { out.push(heading('h3', inline(line.replace(/^###\s+/, '')))); i++; }
+    else if (/^##?\s+/.test(line)) { out.push(heading('h2', inline(line.replace(/^##?\s+/, '')))); i++; }
     else if (/^!&gt;\s?/.test(line)) out.push(`<aside class="blog-post__callout">${run(/^!&gt;\s?/).map(x => `<p>${inline(x)}</p>`).join('')}</aside>`);
     else if (/^[-*]\s+/.test(line)) out.push(`<ul>${run(/^[-*]\s+/).map(x => `<li>${inline(x)}</li>`).join('')}</ul>`);
     else if (/^\d+\.\s+/.test(line)) out.push(`<ol>${run(/^\d+\.\s+/).map(x => `<li>${inline(x)}</li>`).join('')}</ol>`);
@@ -243,6 +256,7 @@ if (post) {
         fig.appendChild(img);
         body.insertBefore(fig, body.firstChild);
       }
+      goToHeading();
     })
     .catch(function () { missing('The blog could not be loaded just now. Please try again in a moment.'); });
 }
@@ -276,8 +290,32 @@ if (livePost) {
         body.insertBefore(fig, body.firstChild);
       }
       livePost.setAttribute('data-updated', p.updated_at);
+      goToHeading();
     })
     .catch(function () { /* the built page stays as it is */ });
+}
+
+// ── Links to a heading (Ames 2026-11-08) ─────────────────────────────────
+// The # beside a heading puts its address in the bar and copies it, so it
+// can be pasted anywhere: connectome.quest/blog/<post>/#<heading>.
+// (The page builder runs this file without a browser: no click handler there.)
+if (typeof document.addEventListener === 'function') document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('.blog-anchor') : null;
+  if (!a) return;
+  e.preventDefault();
+  var hash = a.getAttribute('href') || '';
+  var target = document.getElementById(decodeURIComponent(hash.slice(1)));
+  try { history.replaceState(null, '', hash); } catch (err) { location.hash = hash; }
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  var url = location.origin + location.pathname + hash;
+  var done = function () { a.classList.add('blog-anchor--copied'); setTimeout(function () { a.classList.remove('blog-anchor--copied'); }, 1600); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, function () {});
+});
+/** After a page draws a post's text itself, go to the heading in the address. */
+function goToHeading() {
+  if (!location.hash) return;
+  var t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (t) t.scrollIntoView({ block: 'start' });
 }
 
 // ── The first post's old address forwards to its new one once it exists ─
