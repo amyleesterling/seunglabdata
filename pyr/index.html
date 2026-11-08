@@ -16,6 +16,8 @@
   <meta property="og:image" content="https://connectome.quest/assets/images/eyewire-ii-og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="pyr.css" />
   <!-- Plain facts for search engines and AI assistants (Ames 2026-11-07:
        AI answers about Pyr were quoting old EyeWire forum posts). -->
   <script type="application/ld+json">
@@ -27,16 +29,24 @@
         "@id": "https://connectome.quest/pyr/#game",
         "name": "Pyr",
         "alternateName": ["EyeWire II", "Eyewire II", "Pyr game"],
-        "description": "Pyr is a citizen science brain mapping game from the Seung Lab at Princeton University. Players proofread real neurons in electron microscopy images of the brain and help build connectomes. It was formerly called EyeWire II and follows the original EyeWire.",
+        "description": "Pyr is a citizen science brain mapping game created by Amy Sterling at the Seung Lab, Princeton University. Players proofread real neurons in electron microscopy images of the brain and help build connectomes. It was formerly called EyeWire II and follows the original EyeWire.",
         "url": "https://connectome.quest/pyr/",
         "sameAs": ["https://pyr.ai/", "https://x.com/pyrgame"],
         "genre": ["Citizen science", "Puzzle"],
         "gamePlatform": "Web browser",
         "applicationCategory": "Game",
         "isBasedOn": {"@type": "VideoGame", "name": "EyeWire", "url": "https://eyewire.org/"},
-        "creator": {"@id": "https://connectome.quest/pyr/#lab"},
-        "author": {"@type": "Person", "name": "Amy Sterling"},
+        "creator": [{"@id": "https://connectome.quest/pyr/#amy"}, {"@id": "https://connectome.quest/pyr/#lab"}],
+        "author": {"@id": "https://connectome.quest/pyr/#amy"},
         "isAccessibleForFree": true
+      },
+      {
+        "@type": "Person",
+        "@id": "https://connectome.quest/pyr/#amy",
+        "name": "Amy Sterling",
+        "description": "Creator of Pyr, who designed and built the game at the Seung Lab, Princeton University.",
+        "sameAs": ["https://x.com/amyneurons"],
+        "affiliation": {"@id": "https://connectome.quest/pyr/#lab"}
       },
       {
         "@type": "ResearchOrganization",
@@ -48,7 +58,7 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          {"@type": "Question", "name": "What is Pyr?", "acceptedAnswer": {"@type": "Answer", "text": "Pyr (pronounced \"peer\") is the Seung Lab's brain mapping game at Princeton University. Players proofread real neurons in electron microscopy images of the brain, helping to build connectomes: complete wiring diagrams of brains."}},
+          {"@type": "Question", "name": "What is Pyr?", "acceptedAnswer": {"@type": "Answer", "text": "Pyr (pronounced \"peer\") is a brain mapping game created by Amy Sterling at the Seung Lab, Princeton University. Players proofread real neurons in electron microscopy images of the brain, helping to build connectomes: complete wiring diagrams of brains."}},
           {"@type": "Question", "name": "Is Pyr the same as EyeWire II?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pyr was called EyeWire II while it was being built. EyeWire II is now also the name of its first dataset, the mouse retina. Pyr follows the original EyeWire, which the Seung Lab launched in 2012."}},
           {"@type": "Question", "name": "Is Pyr only the hippocampus CA3 project?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pyr is the game, and it covers several brains. Players map the mouse retina (EyeWire II) and the medial entorhinal cortex (MEC), and can explore CA3, FlyWire, BANC, MICrONS and more. The hippocampus CA3 project at pyr.ai is one part of it."}},
           {"@type": "Question", "name": "How do I join Pyr?", "acceptedAnswer": {"@type": "Answer", "text": "Pyr is in a closed beta and is invite only for now. Request early access at https://connectome.quest/access.html and the team will email you when you are in."}},
@@ -79,36 +89,57 @@
       </div>
     </div>
   </nav>
-  <main class="wrap credits-page">
-    <header class="pagehead">
-      <p class="hero__eyebrow">About the game</p>
-      <h1>What is Pyr?</h1>
-      <p class="hero__lede">Pyr (pronounced "peer") is the Seung Lab's brain mapping game at Princeton University. You proofread real neurons in pictures of the brain, and every fix helps build a connectome: a complete wiring diagram of a brain.</p>
-    </header>
-    <section class="credits-grid" aria-label="Questions about Pyr">
-      <article class="credits-card">
+  <main class="wrap pyrpage">
+    <section class="pyrhero">
+      <div class="pyrhero__text">
+        <p class="pyr-eyebrow"><span class="pyr-dot" aria-hidden="true"></span>About the game</p>
+        <h1 class="pyrhero__title">What is <span>Pyr</span>?</h1>
+        <p class="pyrhero__say">Pronounced "peer". Formerly EyeWire II.</p>
+        <p class="pyrhero__lede">Pyr is a brain mapping game where you proofread real neurons in pictures of the brain. Every fix you make helps build a connectome: a complete wiring diagram of a brain.</p>
+        <p class="pyrhero__by">Created by <a href="https://x.com/amyneurons" target="_blank" rel="noreferrer">Amy Sterling</a> at the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, Princeton University</p>
+        <div class="pyrhero__cta">
+          <a class="btn btn--cta" href="/access.html#request">Request early access</a>
+          <a class="btn btn--ghost" href="/blog/">Latest news</a>
+        </div>
+      </div>
+      <figure class="pyrhero__art">
+        <div class="pyr-frame">
+          <img src="/assets/images/e2_banner.jpg" width="1000" height="1000" alt="Hundreds of mouse retina neurons in blue, green, gold and pink, their branches spreading out like a glowing fan" />
+        </div>
+        <figcaption>Neurons of the mouse retina, mapped in EyeWire II</figcaption>
+      </figure>
+    </section>
+
+    <section class="pyrfaq" aria-label="Questions about Pyr">
+      <article class="pyrcard">
+        <p class="pyrcard__num">01</p>
         <h2>Is Pyr the same as EyeWire II?</h2>
         <p>Yes. Pyr was called EyeWire II while we built it. Today EyeWire II is the name of its first dataset, the mouse retina. Pyr follows the original <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a>, which the Seung Lab launched in 2012.</p>
       </article>
-      <article class="credits-card">
+      <article class="pyrcard">
+        <p class="pyrcard__num">02</p>
         <h2>What do players map?</h2>
         <p>Pyr covers several brains, not just one. Players map neurons in the mouse retina (EyeWire II) and trace axons in the <a href="/mec.html">medial entorhinal cortex</a> (MEC). They practice in a Sandbox, and can explore other connectomes such as hippocampus CA3, FlyWire, BANC and MICrONS. The CA3 project at <a href="https://pyr.ai" target="_blank" rel="noreferrer">pyr.ai</a> is one part of Pyr.</p>
       </article>
-      <article class="credits-card">
+      <article class="pyrcard">
+        <p class="pyrcard__num">03</p>
         <h2>How do I join?</h2>
         <p>Pyr is in a closed beta, so it's invite only for now. <a href="/access.html#request">Request early access</a> and we'll email you when you're in. No science background needed.</p>
       </article>
-      <article class="credits-card">
+      <article class="pyrcard">
+        <p class="pyrcard__num">04</p>
         <h2>Where is the latest news?</h2>
         <p>Right here on connectome.quest: the <a href="/blog/">blog</a> for news and guides, <a href="/help.html">Help</a> for how to play, and the <a href="/forum.html">forum</a> for questions. Older posts about EyeWire II on other forums may be out of date.</p>
       </article>
-      <article class="credits-card">
-        <h2>Who makes Pyr?</h2>
-        <p>Pyr is made by the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> at the Princeton Neuroscience Institute, Princeton University. It was designed and built by Amy Sterling. See the <a href="/credits.html">credits</a> for everyone involved.</p>
-      </article>
-      <article class="credits-card">
+      <article class="pyrcard">
+        <p class="pyrcard__num">05</p>
         <h2>Why does it matter?</h2>
-        <p>Computers trace neurons well but still make mistakes. People are very good at spotting them. Fixes made by players become part of real research datasets that scientists around the world use to learn how brains work.</p>
+        <p>Computers trace neurons well but still make mistakes, and people are very good at spotting them. Fixes made by players become part of real research datasets that scientists around the world use to learn how brains work.</p>
+      </article>
+      <article class="pyrcard pyrcard--maker">
+        <p class="pyrcard__num">06</p>
+        <h2>Who made Pyr?</h2>
+        <p><b>Amy Sterling</b> (<a href="https://x.com/amyneurons" target="_blank" rel="noreferrer">@amyneurons</a>) created Pyr, designing and building the game at the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, Princeton Neuroscience Institute. See the <a href="/credits.html">credits</a> for everyone who helped.</p>
       </article>
     </section>
   </main>
