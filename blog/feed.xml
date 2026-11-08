@@ -30,27 +30,27 @@
       <content:encoded><![CDATA[<p>Every time you open your eyes, billions of photons enter your pupils. A fraction of a second later, you're seeing the world in color, depth, and motion. You can recognize a face across a crowded room, follow a bird in flight, or notice something moving at the edge of your vision.</p>
 <p>How does your brain accomplish all this?</p>
 <p>Surprisingly, scientists are still figuring it out. And some of the biggest mysteries begin in a thin layer of cells at the back of your eye.</p>
-<h2>Your retina is a little piece of brain</h2>
+<h2 id="your-retina-is-a-little-piece-of-brain">Your retina is a little piece of brain<a class="blog-anchor" href="#your-retina-is-a-little-piece-of-brain" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Light enters your eye through the cornea and pupil. The lens focuses it onto the retina, a delicate sheet of neural tissue lining the back of the eye.</p>
 <p>Here, specialized cells called rods and cones detect light and convert it into electrical signals. Those signals pass through an intricate network of neurons before traveling along the optic nerve to the brain.</p>
 <p>But the retina does much more than detect light. It helps identify edges, changes in brightness, and movement. Some retinal neurons even respond preferentially when objects move in a particular direction.</p>
 <p>Your eyes are already making sense of the world before your brain gets the message.</p>
 <figure class="blog-post__figure"><picture><source media="(max-width: 700px)" srcset="https://connectome.quest/assets/images/blog/bipolar-cells/eye-diagram-phone.webp" /><img src="https://connectome.quest/assets/images/blog/bipolar-cells/eye-diagram.webp" alt="How we see: the eye, with a close look at the retina's cells" loading="lazy" /></picture></figure>
-<h2>A forest of neurons</h2>
+<h2 id="a-forest-of-neurons">A forest of neurons<a class="blog-anchor" href="#a-forest-of-neurons" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>The retina contains many different kinds of neurons, arranged in layers. Bipolar cells relay information from photoreceptors, amacrine cells shape and modify those signals, and ganglion cells carry the results to the brain.</p>
 <p>Their shapes are extraordinary. Some stretch vertically between layers, while others extend elaborate branches sideways, gathering information from their neighbors.</p>
 <figure class="blog-post__figure"><picture><source media="(max-width: 700px)" srcset="https://connectome.quest/assets/images/blog/bipolar-cells/real-retina-cells-phone.webp" /><img src="https://connectome.quest/assets/images/blog/bipolar-cells/real-retina-cells.webp" alt="How a signal flows through the retina: photoreceptors, a bipolar cell, a starburst amacrine cell and a ganglion neuron, real cells from Eyewire II at their true depths" loading="lazy" /></picture></figure>
 <p>The arrangement of these branches matters. Which cells connect, where they connect, and how strongly they communicate all help determine what information reaches the brain.</p>
-<h2>What don't we know?</h2>
+<h2 id="what-don-t-we-know">What don't we know?<a class="blog-anchor" href="#what-don-t-we-know" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Quite a lot, actually.</p>
 <p>Scientists are still working to identify all the different types of retinal neurons and understand what each contributes to vision. We know some of the circuitry responsible for detecting motion, contrast, and changes in light, but we don't yet understand how all those circuits work together when we look at a complex, constantly changing world.</p>
 <p>And there's an especially tantalizing question: If we could map every neuron and every connection in the retina, could we predict what the circuit sees?</p>
 <p>A wiring diagram alone isn't enough. Neurons are living, dynamic cells. But combining their anatomy with recordings of their activity will bring us to many new discoveries. That possibility is what makes modern connectomics so exciting.</p>
-<h2>A million tiny clues</h2>
+<h2 id="a-million-tiny-clues">A million tiny clues<a class="blog-anchor" href="#a-million-tiny-clues" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>With advances in electron microscopy and artificial intelligence, scientists can now reconstruct neurons in extraordinary detail.</p>
 <p>Pyr is one such prjoject. It includes several connectomics datasets, including Eyewire II, a volume of mouse retina containing ~100,000cells. For hundreds of its neurons, researchers have both detailed anatomy and recordings of how the cells respond to visual stimuli.</p>
 <p>That gives us a rare opportunity to connect the shape of a neuron with what it actually does. And there are countless connections left to investigate.</p>
-<h2>Help us discover what's hiding in the retina</h2>
+<h2 id="help-us-discover-what-s-hiding-in-the-retina">Help us discover what's hiding in the retina<a class="blog-anchor" href="#help-us-discover-what-s-hiding-in-the-retina" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Mapping neural circuits is painstaking work. AI can trace neurons through microscopic images, but it makes mistakes. Human eyes are remarkably good at spotting where a branch has gone astray.</p>
 <p>That's where you come in.</p>
 <p>In Pyr, the new citizen science game from the creators of Eyewire, players help map real neurons from neuroscience datasets, including the EyeWire II retina.</p>
@@ -68,7 +68,7 @@
       <dc:creator>Amy R. Sterling</dc:creator>
       <description>Every image you see passes through a bipolar cell. Learn what these relay cells do and how to proofread one in Pyr.</description>
       <content:encoded><![CDATA[<p>Every image you have ever seen passed through a bipolar cell. These small and tidy cells sit in the middle of the retina. In Eyewire II/ Pyr's retina dataset, they are some of the cells you will encounter most frequently. Here is what they do and how to proofread one.</p>
-<h2>What bipolar cells do</h2>
+<h2 id="what-bipolar-cells-do">What bipolar cells do<a class="blog-anchor" href="#what-bipolar-cells-do" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Light hits the photoreceptors (the rods and cones) at the back of the retina. The photoreceptors can't talk to the brain directly. They hand their signal to bipolar cells, and the bipolar cells pass it on to both amacrine and ganglion cells. Ganglion axons form the optic nerve and send a pre-processed signal carrying information about objects and movement from the eye to the brain.</p>
 <figure class="blog-post__figure"><picture><source media="(max-width: 700px)" srcset="https://connectome.quest/assets/images/blog/bipolar-cells/eye-diagram-phone.webp" /><img src="https://connectome.quest/assets/images/blog/bipolar-cells/eye-diagram.webp" alt="How we see: the eye, with a close look at the retina's cells" loading="lazy" /></picture></figure>
 <p>Bipolar cells are a critical relay step, and the direct path from photoreceptor to neuron.</p>
@@ -78,13 +78,13 @@
 <p>Today, Eyewire II players are carrying that work forward, and you have already mapped more than 10,000 cells together:</p>
 <div class="blog-post__video"><iframe src="https://www.youtube-nocookie.com/embed/LUYDh1yROzg" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
 <p>Every bipolar cell you proofread in Pyr adds to that map. If you'd like to learn more about the science, scroll to the bottom of the post. Below find instructions on how to proofread Bipolar Cells (BCs).</p>
-<h2>Claiming a BC</h2>
+<h2 id="claiming-a-bc">Claiming a BC<a class="blog-anchor" href="#claiming-a-bc" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ol><li>Head to the <strong>Retina Dataset</strong> (if you don't have access yet, see <a href="https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/" target="_blank" rel="noopener noreferrer">this post</a>).</li><li>Open the <strong>Cell Library</strong>, navigate to <strong>Available Cells</strong>, and <strong>Claim</strong> one.</li><li><strong>Proofread</strong> the cell (instructions below)</li><li>When you have fully proofread the BC, mark it <strong>Complete</strong></li></ol>
-<h2>How to proofread a BC</h2>
+<h2 id="how-to-proofread-a-bc">How to proofread a BC<a class="blog-anchor" href="#how-to-proofread-a-bc" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Check the whole cell, branch by branch:</p>
 <ul><li><strong>Dendrites:</strong> follow each one up to its tip. Look for pieces that broke off (they need a merge) and pieces of other cells stuck on (they need a cut).</li><li><strong>Axon:</strong> follow it down to the terminals, and check that the terminals all belong to this cell.</li><li><strong>Each branch end:</strong> a bipolar cell has many small ends. Check every one.</li></ul>
 <figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/bipolar-cells/real-bipolar-cell.webp" alt="A real bipolar cell proofread in Eyewire II, with its dendrites, cell body, axon and axon terminals labeled" loading="lazy" /></figure>
-<h2>Keep track of what you checked</h2>
+<h2 id="keep-track-of-what-you-checked">Keep track of what you checked<a class="blog-anchor" href="#keep-track-of-what-you-checked" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>A bipolar cell has lots of small branch ends, and for proofreading accuracy you must mark each one as you finish it. <strong>You may use Highlight OR Annotations</strong>. Or both if you're crazy. Use whichever tool you like best. The only annotation that is required is &quot;Can't Complete&quot;, which should be used to mark any spots on the branches that cannot be traced due to issues like EM image quality.</p>
 <p><strong>Highlight Mode</strong></p>
 <ul><li>Turn on Highlight Mode from its icon in the top bar.</li><li><strong>Ctrl+click</strong> two points on the cell, and the stretch between them is marked with a highlighter stroke.</li><li><strong>To soma</strong> marks the way from a point back to the cell body, and the button beside it marks every branch beyond a point.</li><li>Pick a color, or add your own, and press <strong>Undo</strong> if you mark the wrong piece.</li></ul>
@@ -92,12 +92,12 @@
 <ul><li>Make an annotation layer and pick the point tool.</li><li><strong>Ctrl+click</strong> to drop a point on each branch end you have checked.</li><li>Change the layer's color and point size so your points are easy to see.</li><li>Points are listed in the layer's panel: <strong>right click</strong> one to jump to it, or step through them with the arrows.</li></ul>
 <p>Some people like Highlight because it colors the branch itself. Others like annotation points because they can step through them one by one later. Either way, when every end is marked, you know the cell is done and you can mark it complete and claim another. If you get stuck, you can ask for help in Chat or via the Help feature in the Cell Library.</p>
 <p>Happy proofreading, and thank you for helping map the brain!</p>
-<h2>More Science!</h2>
+<h2 id="more-science">More Science!<a class="blog-anchor" href="#more-science" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Check out the cast of the retina <a href="https://amyleesterling.github.io/retina/cast/" target="_blank" rel="noopener noreferrer">here</a>.</p>
 <p>Each bipolar cell has two ends, which is where the name comes from:</p>
 <ul><li><strong>Dendrites</strong> reach up to the photoreceptors and collect their signal.</li><li><strong>An axon</strong> runs down into the inner retina and ends in a spray of <strong>axon terminals</strong>, where it passes the signal on.</li></ul>
 <figure class="blog-post__figure"><picture><source media="(max-width: 700px)" srcset="https://connectome.quest/assets/images/blog/bipolar-cells/bipolar-cell-diagram-phone.webp" /><img src="https://connectome.quest/assets/images/blog/bipolar-cells/bipolar-cell-diagram.webp" alt="A bipolar cell, drawn and labeled, beside a real one from Eyewire II" loading="lazy" /></picture></figure>
-<h3>Why they matter</h3>
+<h3 id="why-they-matter">Why they matter<a class="blog-anchor" href="#why-they-matter" aria-label="Link to this section" title="Link to this section">#</a></h3>
 <p>Bipolar cells don't just pass the picture along. They split it up.</p>
 <ul><li><strong>ON and OFF.</strong> Some bipolar cells respond when light gets brighter (ON), others when it gets darker (OFF). In the mouse, types 1 to 4 are OFF, and types 5 to 9 and the rod bipolar cell are ON.</li><li><strong>About 15 types.</strong> Each type reports a different piece of the scene: fast or slow changes, light or dark, fine detail or broad strokes. The rod bipolar cell carries vision in dim light.</li><li><strong>Layers.</strong> Each type ends its axon at its own depth in the inner retina, so the signals stay sorted into separate channels, like wires in a cable.</li></ul>
 <p>These parallel channels are the raw material for everything the retina computes before the brain sees anything. So if you think about it, your BCs are helping to map BCs and uncovering how mammalian eyes see. Pretty cool!</p>]]></content:encoded>
@@ -109,7 +109,7 @@
       <pubDate>Wed, 28 Oct 2026 22:56:54 GMT</pubDate>
       <dc:creator>Amy R. Sterling</dc:creator>
       <description>The lab needs help proofreading axons!</description>
-      <content:encoded><![CDATA[<h3>The lab needs help proofreading axons!</h3>
+      <content:encoded><![CDATA[<h3 id="the-lab-needs-help-proofreading-axons">The lab needs help proofreading axons!<a class="blog-anchor" href="#the-lab-needs-help-proofreading-axons" aria-label="Link to this section" title="Link to this section">#</a></h3>
 <p>Here is how:</p>
 <ol><li><strong>Claim a cell</strong></li></ol>
 <p>Open the Cell Library on MEC, click Available, pick a cell and press Claim. It is yours until you complete or release it.</p>
@@ -129,7 +129,7 @@
 <p>The other annotation layer in Marks (True End, Can’t Fix and Hits Edge) are optional now. Use them if they help you keep track, but only the AIS is required.</p>
 <ol><li><strong>Complete it</strong></li></ol>
 <p>When every end of the axon is done, Complete the cell, either in the Cell Library or with the Δ button next to its segment ID, and choose Axon complete. It counts as one of your completed cells, and the lab’s spreadsheet records it. Proofread axons count toward you cell completion, even if eventually we go back and add more to the dendritic arbor.</p>
-<h3>Merge Errors</h3>
+<h3 id="merge-errors">Merge Errors<a class="blog-anchor" href="#merge-errors" aria-label="Link to this section" title="Link to this section">#</a></h3>
 <p>MEC is currently experiencing some errors with splits and merges. This is a dataset error rather than an issue with the game interface.</p>
 <p>For now please follow this protocol: If you encounter errors please add new annotation layers named &quot;Merge Errors&quot; and &quot;Split Errors&quot; and use the line annotation type to mark where you want the split or merge. You can then continue to complete the rest of the cell as normal. Please leave a note that you encountered errors and what type (merge, split, both) when you submit the cell as complete.</p>
 <p><em>Need help?</em></p>
@@ -156,7 +156,7 @@ These cells have sprawling branches…</description>
 <p>The lab has selected 29 cells and grouped them by their predicted targets:</p>
 <ul><li>Pyramidal Target — 17 cells: predicted to inhibit pyramidal neurons exclusively.</li><li>Non-Pyramidal Target — 12 cells: predicted to inhibit non-pyramidal cells exclusively.</li></ul>
 <p>Those are predictions. Your proofreading will help us reconstruct these neurons and analyze their connections to find out whether the predictions hold.</p>
-<h3>How a Super Quest works</h3>
+<h3 id="how-a-super-quest-works">How a Super Quest works<a class="blog-anchor" href="#how-a-super-quest-works" aria-label="Link to this section" title="Link to this section">#</a></h3>
 <p>Open the Cell Library on MEC and pick the <strong>Super Quests</strong> chip. You may claim one at a time and keep it for up to two months (if you need longer, just message us). A Super Quest sits beside your other claims and does not count against them.</p>
 <p>Marks. Mark the AIS, where the axon leaves the cell; it is the one mark that is required. Others are optional. You could use True End for a branch that stops naturally, and Checked for a place you have looked at and found right, so you know where you have been. Hide marks clears them from the view when you want to see the cell itself. We are working on Highlight mode in MEC. For now, annotations highlight the immediately surrounding area on a cell, so you can add lots of annotations to effectively highlight a branch.</p>
 <p>Your time is counted. This is how the lab learns how long these cells really take and will help us estimate the amount of time required for proofreading in this and future datasets. Pyr adds up your active time on the cell and shows it on the row, such as 14 h 20 min so far. It counts only while the cell is on screen, Pyr is the tab in front, and you have used the mouse or keys in the last 5 minutes. There is no need to hurry. It is most important to map the cells accurately.</p>
@@ -172,20 +172,20 @@ These cells have sprawling branches…</description>
       <dc:creator>Amy R. Sterling</dc:creator>
       <description>Practice in the Sandbox, then show us ten edits you would make, right inside Pyr. Here is how the access check works, what happens after you send, and where to find help while you learn.</description>
       <content:encoded><![CDATA[<p>The Sandbox is where everyone starts in Pyr. Every signed in player can cut and merge there, and nothing you do in it touches real science. Once those tools feel natural, you can ask for edit access so that you can edit real neurons and help map the brain.</p>
-<h2>Getting started</h2>
+<h2 id="getting-started">Getting started<a class="blog-anchor" href="#getting-started" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Everything you need to learn lives in the menu at the top right of Pyr (the burger icon).</p>
 <ul><li><strong>Site Tour.</strong> A quick walk around the screen: the top bar, the views and where everything is.</li><li><strong>Tutorials.</strong> Take them in order. <strong>Get Started</strong> shows you how to move around a cell in 3D and step through the electron microscope images. <strong>Advanced Interface</strong> covers layers, coordinates, annotations and settings. <strong>Merge</strong> and <strong>Cut</strong> teach the two edits on practice cells, so a slip costs nothing.</li><li><strong>Merger Sandbox.</strong> Practice cells, each with a merger to find and cut. The menu keeps count of how many you have done.</li><li><strong>Utilize Chat</strong> if you have questions, or <strong>ask for help in the Cell Library</strong> (neuron icon in the top bar).</li></ul>
-<h2>What we ask for</h2>
+<h2 id="what-we-ask-for">What we ask for<a class="blog-anchor" href="#what-we-ask-for" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Before you can contribute to real science, you must demonstrate that you know your way around a neuron. For this, submit test edits on cells in the sandbox or on the Retina dataset where you found mergers or missed extensions. 10 demo edits are currently required:</p>
 <ul><li><strong>Seven cuts.</strong> Find places where two cells were wrongly joined. Place red and blue Multicut (cut) points on each side of where you would cut.</li><li><strong>Three merges.</strong> Find places where one cell was wrongly broken in two. Press M, then Ctrl+click the two pieces to place merge points.</li></ul>
 <p><strong>Place the points, but do not submit the edit.</strong> Leave each mistake in place, so we can see it the way you found it.</p>
-<h2>How to request Edit access</h2>
+<h2 id="how-to-request-edit-access">How to request Edit access<a class="blog-anchor" href="#how-to-request-edit-access" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ul><li>Open the menu at the top right and choose <strong>Ask for retina access</strong>, at the very bottom.</li><li>Place your cut or merge points, then press <strong>Save this view as cut 1</strong> (or merge 1). Pyr keeps the view, every point you placed, and a note if you want to add one. The points are cleared afterwards, so the next one starts fresh.</li><li>Click any saved example to fly back to it, or press <strong>Replace</strong> to swap in a better one.</li><li>On a laptop, press <strong>Slim</strong> to make the box small while you work.</li><li>When all ten are saved, press <strong>Send for review</strong>.</li></ul>
-<h2>What happens next</h2>
+<h2 id="what-happens-next">What happens next<a class="blog-anchor" href="#what-happens-next" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Someone from the team looks at every example and every point you placed and you will hear back in your notifications.</p>
 <p>If your edits look right, your edit access is granted and the world of connectomics opens to you. If a few need another look, we mark them and tell you why. Redo those and send again.</p>
 <p>Taking more than one try is normal. You are never locked out and there is no limit on tries. If you have practiced in the Sandbox for two weeks and still feel unsure, reach out to us. We are happy to help.</p>
-<h2>Help while you learn</h2>
+<h2 id="help-while-you-learn">Help while you learn<a class="blog-anchor" href="#help-while-you-learn" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ul><li><strong>The tutorials in Pyr.</strong> After Get Started, open the menu at the top right and take Merge, Cut and Advanced Interface.</li><li><strong>Chat and the Cell Library.</strong> Ask in chat, or ask for help on a cell from the Cell Library (the neuron icon in the top bar).</li><li><strong>Videos.</strong> <a href="https://www.youtube.com/watch?v=48GS9Sizrvw" target="_blank" rel="noopener noreferrer">How to merge</a>, <a href="https://www.youtube.com/watch?v=DB6wmQWGsck" target="_blank" rel="noopener noreferrer">how to split</a>, and <a href="https://www.youtube.com/watch?v=CGooeAhSryg" target="_blank" rel="noopener noreferrer">Find Path</a>, which helps you trace a merger back to where it starts. There is also a full <a href="https://www.youtube.com/playlist?list=PLZlCbXsRJFCw0BLFWKrc49JHKWK1o41Ud" target="_blank" rel="noopener noreferrer">playlist of advanced tutorials</a>. We are working on tutorials using the new Pyr interface.</li><li><strong>The <a href="https://blog.pyr.ai/2024/12/20/proofreading-101-climb-into-spelunker/" target="_blank" rel="noopener noreferrer">Proofreading Guide</a>.</strong></li><li><strong>Chat</strong></li></ul>
 <p>Once you are in, you are part of the team building new maps of the brain. For science!</p>]]></content:encoded>
     </item>
@@ -198,7 +198,7 @@ These cells have sprawling branches…</description>
       <description>Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell.</description>
       <content:encoded><![CDATA[<p>Calling all Pyr players! there's a new <strong>Quest</strong> on the horizon, and we need your help!</p>
 <blockquote><p>We're on the hunt for <strong>primary cilia</strong>, important cellular appendages that receive and process environmental signals. Cilia serve as “antennas” that cells use to sense the chemistry of their environment. Each cell only has one primary cilium, will you be the one to find it?</p></blockquote>
-<h2>How to Hunt for Cilia</h2>
+<h2 id="how-to-hunt-for-cilia">How to Hunt for Cilia<a class="blog-anchor" href="#how-to-hunt-for-cilia" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ol><li>Open the <strong>Cell Library</strong> and click <strong>Quests</strong>. If you are on another dataset, press <strong>Switch to Retina</strong>.</li><li>Press <strong>Claim</strong> on an available cell. The cell and it's annotation layers will open on screen. Each cell in a Cilia Quest is retinal neuron. Somewhere on its cell body there may be a cilium, a thin appendage that projects from. This is what we quest for.</li><li>Find the cilium (if there is one). At its base sits the basal body, and close by is a second structure, the daughter centriole. Mark all 3 structures, if present.</li><li>Put the crosshairs inside the cell and press <strong>Submit</strong>.</li><li>Choose a cilium status from the list. Don't know which to choose? Select your guess to see help text below. Or <a href="https://connectome.quest/blog/cilia-status-guide/" target="_blank" rel="noopener noreferrer">check out this post</a> for a full explanation of all statuses with examples!</li><li>Select whether the cilium was &quot;split&quot; - part of all of the cilium was not attached, or &quot;merged&quot; - cilium was fully visible in the original segmentation. If no cilium was present, make no selection.</li><li>Add a note if needed, and press the 2nd Submit button!</li></ol>
 <p>You can hold three cells at a time. <strong>Release</strong> sends a cell back for someone else.</p>
 <figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/1e17ed53-6add-43dc-99af-c617744e3a95.png" alt="" loading="lazy" /></figure>
@@ -206,21 +206,21 @@ These cells have sprawling branches…</description>
 <ul><li><strong>Cilium</strong> - a columnar structure that projects from the cell's soma. Microtubules should be visible inside (greyish lines).</li><li><strong>Basal body</strong> - a centriole at the base of cilium. It's always inside to the soma membrane. When no cilium is present, there may still be a basal body.</li></ul>
 <ul><li><strong>Daughter centriole</strong> - A second centriole. It is often found near, but not attached to the basal body. In some cases it can be very far from the BB -- keep scrolling!</li></ul>
 <p><em><strong>Important note!</strong></em> Some cells have no visible cilium, but often you will still be able to locate the two centrioles inside the soma.</p>
-<h2>annotating the structures</h2>
+<h2 id="annotating-the-structures">annotating the structures<a class="blog-anchor" href="#annotating-the-structures" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>To annotate a cilium, you'll need to use the 3 annotation layers. Click a layer to select it.</p>
 <ul><li><strong>Polyline annotation</strong> - use this to annotate the <strong>cilium centerline</strong>. Once selected, Ctrl and click along the cilium, then press Enter. Backspace removes the last point and Esc cancels the line.</li><li><strong>Point annotation</strong> - use this to annotate the <strong>basal body (BB)</strong> and <strong>daughter centriole (DC)</strong>. CTRL + click to place it. Always double check your layer when placing!</li></ul>
-<h2>Putting it all together</h2>
+<h2 id="putting-it-all-together">Putting it all together<a class="blog-anchor" href="#putting-it-all-together" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5973814101934080" target="_blank" rel="noopener noreferrer">Here's an example</a> of a cell with a cilium that's been fully annotated and is ready to complete!</p>
 <figure class="blog-post__figure blog-post__figure--medium" data-size="medium"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/1d7519ca-1702-4af7-8fbb-daa063bb91d4.png" alt="Cell with cilium annotated" loading="lazy" /><figcaption>Cell with cilium annotated</figcaption></figure>
-<h2>Dive Deeper</h2>
+<h2 id="dive-deeper">Dive Deeper<a class="blog-anchor" href="#dive-deeper" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ul><li><a href="https://unitc-my.sharepoint.com/:p:/g/personal/ojxjl01_cloud_uni-tuebingen_de/IQDBsH6sbIjZRY5Gc3Flt5iaAUvXSDf4QLsyamGQ72f8rOo?rtime=Ky2GsGU730g" target="_blank" rel="noopener noreferrer">Check out the lab's scientific guide to cilia with tips on how to locate them.</a></li></ul>
 <ul><li><a href="https://www.youtube.com/watch?v=-l2-R-9vX6o&amp;t=1525s" target="_blank" rel="noopener noreferrer">Watch an in-depth training video</a>.</li><li>Here's quick guide to each cilia status and when to use it. Click the image to enlarge, and the link to see an interactive example.</li></ul>
 <div class="blog-post__gallery"><figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/9f83e1a8-0b69-4dd3-8f54-5d7ea8d523fa.png" alt="Cilium Annotatedhttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6134465776582656 - Cilium emerges from the cell, both centrioles and cilium centerline are annotated." loading="lazy" /><figcaption><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6134465776582656" target="_blank" rel="noopener noreferrer">Cilium Annotated</a></strong> - Cilium emerges from the cell, both centrioles and cilium centerline are annotated.</figcaption></figure><figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/94837203-4741-4297-b6f0-aa01f1c472b9.png" alt="Cilium Annotated fixation artifacthttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6224937215852544 - Cilium structure is visible near the surface of the cell, but appears attached/internal to the soma. This is caused by membranes fusing during data collection." loading="lazy" /><figcaption><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6224937215852544" target="_blank" rel="noopener noreferrer">Cilium Annotated (fixation artifact)</a></strong> - Cilium structure is visible near the surface of the cell, but appears attached/internal to the soma. This is caused by membranes fusing during data collection.</figcaption></figure><figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/10a74111-9fe5-4e89-b361-e7338a7f7fd3.webp" alt="Need Help: One Centriole Missinghttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6697415730003968 - You found one centriole, but the other is MIA. Cilium may or may not be present" loading="lazy" /><figcaption><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6697415730003968" target="_blank" rel="noopener noreferrer">Need Help: One Centriole Missing</a></strong> - You found one centriole, but the other is MIA. Cilium may or may not be present.</figcaption></figure><figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/5bcfbad0-686e-4c3e-8955-055c87b33a4f.png" alt="No Cilium BB &amp; DC clearhttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5742473875816448 - No cilium, but centrioles are visible and clearly differentiated basal body closer to the surface." loading="lazy" /><figcaption><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5742473875816448" target="_blank" rel="noopener noreferrer">No Cilium (BB &amp; DC clear)</a></strong> - No cilium, but centrioles are visible and clearly differentiated (basal body closer to the surface).</figcaption></figure><figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/08e39a1d-1f13-4cc7-a278-d2ae50ae302d.png" alt="No cilium BB &amp; DC unclearhttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5185996505219072 - No cilium, centriole positions make it unclear which is the basal body and which is the daughter" loading="lazy" /><figcaption><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5185996505219072" target="_blank" rel="noopener noreferrer">No cilium (BB &amp; DC unclear)</a></strong> - No cilium, centriole positions make it unclear which is the basal body and which is the daughter.</figcaption></figure><figure class="blog-post__figure"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/c97c0328-eeac-4f1d-9057-c8f7d76ac321.png" alt="Skipped low qualityhttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6280972446203904 -- in this case the soma is missing" loading="lazy" /><figcaption><strong><a href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6280972446203904" target="_blank" rel="noopener noreferrer">Skipped (low quality)</a></strong> -- in this case the soma is missing.</figcaption></figure></div>
 <p>Other statuses:</p>
 <ul><li><strong>Need Help</strong> - You can't find any cilium or centrioles, or there's another issue that stops you from annotating the cell. Good to leave clarifying notes in most cases!</li><li><strong>No cilium</strong> - Nothing found. This should only be used after review (use Need Help if you are the first annotator)</li></ul>
-<h2>Where your answer goes</h2>
+<h2 id="where-your-answer-goes">Where your answer goes<a class="blog-anchor" href="#where-your-answer-goes" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>When you submit, your status, your notes and a link to your view go to the lab, with your name and the date. Pyr celebrates with you and tells you how many annotations you placed on that cell and how many Quests you have completed. Your profile keeps the count.</p>
-<h2>Tell us how it goes</h2>
+<h2 id="tell-us-how-it-goes">Tell us how it goes<a class="blog-anchor" href="#tell-us-how-it-goes" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>The Cilia Quest is our very first Quest! If something is unclear or could work better, ask in chat or send a report with the feedback button.</p>]]></content:encoded>
     </item>
     <item>
@@ -233,7 +233,7 @@ These cells have sprawling branches…</description>
       <content:encoded><![CDATA[<p>Pyr has two sets of Achievements you earn just by doing science. One counts the <strong>cells you complete</strong>. The other counts the <strong>edits you make</strong>.</p>
 <p>Achievements you earned before the November 2026 update stay yours, in the Legacy Achievements row of your Trophy Case.</p>
 <p>Below find a list of the thresholds.</p>
-<h2>Cell Completion Achievements</h2>
+<h2 id="cell-completion-achievements">Cell Completion Achievements<a class="blog-anchor" href="#cell-completion-achievements" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Every cell you complete counts.</p>
 <ul><li>Your <strong>first cell</strong> earns your first Achievement.</li></ul>
 <ul><li>Then <strong>5, 10, 15 and 20</strong> cells.</li></ul>
@@ -243,7 +243,7 @@ These cells have sprawling branches…</description>
 <ul><li>Every <strong>250</strong> cells up to 5,000.</li></ul>
 <ul><li>Every <strong>500</strong> cells up to 10,000.</li></ul>
 <ul><li>After 10,000, Every <strong>1,000</strong> cells.</li></ul>
-<h2>Editor Achievements</h2>
+<h2 id="editor-achievements">Editor Achievements<a class="blog-anchor" href="#editor-achievements" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Every merge and every split counts as an edit.</p>
 <ul><li>Your <strong>first edit</strong> earns your first Achievement.</li></ul>
 <ul><li>Then <strong>10, 25, 50 and 100</strong> edits.</li></ul>
@@ -254,7 +254,7 @@ These cells have sprawling branches…</description>
 <ul><li>Every <strong>2,500</strong> edits up to 50,000.</li></ul>
 <ul><li>Every <strong>5,000</strong> edits up to 100,000.</li></ul>
 <ul><li>After 100,000, every <strong>25,000</strong> edits.</li></ul>
-<h2>What will you unlock next?</h2>
+<h2 id="what-will-you-unlock-next">What will you unlock next?<a class="blog-anchor" href="#what-will-you-unlock-next" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Open your Trophy Case to see the ones you hold and how far you are from the next one.</p>
 <p>Thank you for helping to map the brain. For science!</p>]]></content:encoded>
     </item>
@@ -266,11 +266,11 @@ These cells have sprawling branches…</description>
       <dc:creator>Amy R. Sterling</dc:creator>
       <description>Chat in Pyr has a set of new tools. Search the conversation, add bold and underline, see where new messages begin, and find your own messages at a glance.</description>
       <content:encoded><![CDATA[<p>Chat is where a lot of Pyr happens: questions about a tricky branch, a link to a cell, a cheer when someone finishes a big one or earns a new achievement. This week it picked up a set of expansions suggested by Krzysztof Kruk. Bonus: None of them takes up any more of your screen.</p>
-<h2>Bold and underline</h2>
+<h2 id="bold-and-underline">Bold and underline<a class="blog-anchor" href="#bold-and-underline" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>There is no toolbar to learn. Put a star, <code>*</code>, on each side of the words you want in bold. Put an underscore on each side of the words you want underlined, like <code>_this_</code>.</p>
 <p>Or select some text in the message box and press <strong>Ctrl+B</strong> for bold or <strong>Ctrl+U</strong> for underline. Press it again to take the mark off. You can use both on the same words.</p>
 <p>The marks only count around a whole word or phrase. A name with an underscore in it, or a sum written with stars, stays exactly as you typed it.</p>
-<h2>Search the conversation</h2>
+<h2 id="search-the-conversation">Search the conversation<a class="blog-anchor" href="#search-the-conversation" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Click the magnifier at the top of the chat. The line where you type a message becomes a search line, and the chat shows only the messages that match.</p>
 <ul><li>Type one or more words. A message has to contain all of them.</li></ul>
 <ul><li>Put a minus sign in front of a word to leave out messages that have it, like <code>merge -queue</code>.</li></ul>
@@ -279,13 +279,13 @@ These cells have sprawling branches…</description>
 <ul><li>Search one day with <code>on:10/8</code>, or a stretch of days with <code>after:yesterday</code> and <code>before:2026-10-01</code>. The words today and yesterday work too.</li></ul>
 <p>Click any result to jump to that message in the conversation, with everything around it. Press <strong>Esc</strong>, or click the magnifier again, to go back to chat.</p>
 <p>Search looks through the messages chat has loaded. To reach further back, press <strong>Search earlier messages too</strong> at the top of the list to include the past 14 days. When you search for a day, chat brings in the earlier messages by itself.</p>
-<h2>Find your own messages</h2>
+<h2 id="find-your-own-messages">Find your own messages<a class="blog-anchor" href="#find-your-own-messages" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>A thin bar now appears to the left of your own messages, making them easy to spot. If you would rather not see it, open <strong>Settings</strong> and switch off <strong>Mark my own messages in chat</strong>.</p>
-<h2>See what is new</h2>
+<h2 id="see-what-is-new">See what is new<a class="blog-anchor" href="#see-what-is-new" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>When you open Pyr, or come back to it from another tab, a line across the chat shows where the messages you have not seen begin. It reads <strong>New since you left</strong>. Everything below it is new. The line goes away once you send a message.</p>
-<h2>Pinned messages</h2>
+<h2 id="pinned-messages">Pinned messages<a class="blog-anchor" href="#pinned-messages" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Sometimes there is one thing everyone should see, like a dataset opening or an event starting. The Pyr team can now pin a message to the top of chat. It sits in one line above the conversation. Click it to jump to the message, or press the small x to hide it for yourself.</p>
-<h2>Thank you, Krzysztof</h2>
+<h2 id="thank-you-krzysztof">Thank you, Krzysztof<a class="blog-anchor" href="#thank-you-krzysztof" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Search, bold and underline, and marking your own messages all came from one player's suggestions. If you have an idea for Pyr, send it in with the feedback button.   For science!</p>]]></content:encoded>
     </item>
     <item>
@@ -297,22 +297,22 @@ These cells have sprawling branches…</description>
       <description>A new tool for keeping track of your work on a big cell. Mark a stretch of a branch and its surface takes a color, so you can see what is done and what is left.</description>
       <content:encoded><![CDATA[<p>Proofreading a big cell means checking a lot of branches, and it is easy to lose track of which ones you have already been down. Until now the usual trick was to drop a point at the end of each branch. That marks a place. It does not show you the stretch of cell you checked.</p>
 <p>Highlight mode does. You pick two points on a cell, and the stretch between them takes a color. The cell fills in as you work, and whatever is still plain is what is left to do.</p>
-<h2>How to use it</h2>
+<h2 id="how-to-use-it">How to use it<a class="blog-anchor" href="#how-to-use-it" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ol><li>Click the spray can in the toolbar to open Highlight.</li><li>Hold <strong>Ctrl</strong> and click the cell where your checked stretch starts. On a Mac, hold <strong>Cmd</strong>. Holding <strong>H</strong> and clicking works too.</li><li>Turn and move the view as much as you like.</li><li>Hold <strong>Ctrl</strong> and click where the stretch ends.</li></ol>
 <p>The game finds the path along the cell between your two clicks and colors the surface of the cell along it.</p>
-<h2>Pick your colors</h2>
+<h2 id="pick-your-colors">Pick your colors<a class="blog-anchor" href="#pick-your-colors" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Highlight starts with three colors: <strong>Checked</strong>, <strong>Needs a look</strong> and <strong>Problem</strong>. Click a color's swatch to change it. Use <strong>+ Add</strong> to make your own, with any name you like, up to eight colors in all.</p>
 <p>Your colors are saved to your account, so they are there on any computer you sign in on.</p>
-<h2>Color reach</h2>
+<h2 id="color-reach">Color reach<a class="blog-anchor" href="#color-reach" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>The <strong>Color reach</strong> slider sets how far out from the middle of the branch the color spreads, from 0.5 to 8 µm.</p>
 <p>Here is the same stretch of dendrite at two settings. At 2.5 µm the color covers the shaft, but the tips of the longer spines stay the cell's own purple.</p>
 <figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/highlight-reach-2-5-um.webp" alt="A dendrite highlighted blue with color reach at 2.5 micrometers. The tips of the longer spines are still purple." loading="lazy" /></figure>
 <p>At 4 µm the color reaches all the way to the spine tips.</p>
 <figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/highlight-reach-4-um.webp" alt="The same dendrite with color reach at 4 micrometers. The spines are blue to their tips." loading="lazy" /></figure>
 <p>A wider reach covers thick branches and their spines. A narrower reach keeps the color off neighboring branches that run close by. You can move the slider after you have made your marks, and they all update.</p>
-<h2>Good to know</h2>
+<h2 id="good-to-know">Good to know<a class="blog-anchor" href="#good-to-know" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ul><li><strong>Undo</strong> removes your last mark. <strong>Clear all</strong> removes every mark.</li><li><strong>Your marks are saved with your view.</strong> They come back with the autosave, with Save view on a claim, and in a link you share.</li><li><strong>Marks stay put when you merge or split.</strong> They are attached to the place, so editing the cell does not lose them.</li><li><strong>Long paths can take a while.</strong> If the game cannot find the path within a minute it stops, and nothing is marked. There is also a <strong>Stop tracing</strong> button.</li><li><strong>You can drag the Highlight box</strong> anywhere on the screen, and it stays where you put it.</li><li><strong>Highlight is not on every dataset yet.</strong> Where it is off, the spray can is greyed out.</li></ul>
-<h2>Tell us how it goes</h2>
+<h2 id="tell-us-how-it-goes">Tell us how it goes<a class="blog-anchor" href="#tell-us-how-it-goes" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Highlight is new, and it will change as you use it. If something does not color the way you expect, send it with the feedback button in the game, or <a href="https://connectome.quest/forum.html" target="_blank" rel="noopener noreferrer">tell us on the forum</a>.</p>]]></content:encoded>
     </item>
     <item>
@@ -324,19 +324,19 @@ These cells have sprawling branches…</description>
       <description>EyeWire II now has a small set of tools for player scripts, plus a guide to get you started with Tampermonkey. Also this week: split screen replaces the 4 panel view, your view saves itself, and the fly nerve cord joins the dataset list.</description>
       <content:encoded><![CDATA[<p>Players of the original EyeWire built some of its best features themselves. Bigger annotation dots, extra statistics, faster ways to get around: many of them started as a script one player wrote for their own browser and then shared.</p>
 <p>EyeWire II now supports that properly. There is a guide for getting started, and a small set of tools made for scripts to use.</p>
-<h2>What a script is</h2>
+<h2 id="what-a-script-is">What a script is<a class="blog-anchor" href="#what-a-script-is" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>A script is a small piece of code that changes the game on your computer only. It runs through Tampermonkey, a free browser extension. Nobody else sees your script, and you do not need permission to write one.</p>
-<h2>What scripts can use</h2>
+<h2 id="what-scripts-can-use">What scripts can use<a class="blog-anchor" href="#what-scripts-can-use" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>Until now a script had to reach into the inner workings of the game, which change with almost every update. So scripts broke often. The new tools are the parts we promise to keep working:</p>
 <ul><li><strong>Your cells and your view.</strong> The cells you have selected, the cell under the crosshairs, your claims, and where you are looking.</li><li><strong>Events.</strong> Run your code when you claim, release or complete a cell, when your selection changes, or when you switch datasets.</li><li><strong>A button and a panel.</strong> Add your own button to the top bar and your own side panel.</li><li><strong>Annotation layers.</strong> Make a layer of your own and add points and lines to it.</li><li><strong>Settings.</strong> Save your script's settings in your browser.</li></ul>
 <p>Everything else is still open. Scripts can reach the viewer directly for anything the tools do not cover.</p>
 <p class="blog-post__cta"><a class="blog-post__button" href="https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/scripts.html" target="_blank" rel="noopener noreferrer">Open the scripts guide</a></p>
 <p>The guide has setup steps, the full list of tools, and six example scripts you can copy.</p>
-<h2>A word on safety</h2>
+<h2 id="a-word-on-safety">A word on safety<a class="blog-anchor" href="#a-word-on-safety" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>A script runs as you. It can do anything you can do in the game, including editing cells with your sign in. Scripts you write yourself are fine. Before you install a script from someone else, read it, or ask in chat whether others use it. Scripts are made by players and are not reviewed by the EyeWire team.</p>
-<h2>Tell us what is missing</h2>
+<h2 id="tell-us-what-is-missing">Tell us what is missing<a class="blog-anchor" href="#tell-us-what-is-missing" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <p>We asked the script writers on the forum what they need, and the answer was that scripts grow out of whatever rough edge someone notices that week. So the list of tools starts small on purpose. If your script needs something that is not there, <a href="https://forum.eyewire.org/t/pyr-eyewire-ii-api-requests/2246/4" target="_blank" rel="noopener noreferrer">ask on the forum</a> and we will add it.</p>
-<h2>Also new this week</h2>
+<h2 id="also-new-this-week">Also new this week<a class="blog-anchor" href="#also-new-this-week" aria-label="Link to this section" title="Link to this section">#</a></h2>
 <ul><li><strong>Split screen replaces the 4 panel view.</strong> Press Space to flip between split screen and the single panel under your mouse. Nothing lands you in 4 panel any more.</li><li><strong>Your view saves itself.</strong> Annotations, layers and position are saved to your account as you work. Open the game on any computer and it offers to pick up where you left off.</li><li><strong>Save view on a claim.</strong> In the Cell Library, the cell you are working on has a Save view button, so your annotations stay with the cell.</li><li><strong>The fly brain and nerve cord.</strong> BANC is now in the dataset switcher, and the three MICrONS versions share one card.</li><li><strong>Claim several cells at once.</strong> The Cell Library can fill your claims from the Available list in one click.</li><li><strong>A faster Cell Library.</strong> Your own cells load first, and long lists draw 200 rows at a time.</li></ul>]]></content:encoded>
     </item>
   </channel>
