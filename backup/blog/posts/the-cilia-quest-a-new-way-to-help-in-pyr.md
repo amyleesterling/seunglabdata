@@ -3,7 +3,7 @@ title: "The Cilia Quest: a new way to help in Pyr"
 summary: "Quests are a new kind of task in Pyr. Your challenge, should you choose to accept it, is to find and tag the primary cilium on starburst cells in the retina, without ever having to proofread the cell."
 author: "Amy R. Sterling"
 published: 2026-10-13T20:45:54.387+00:00
-updated: 2026-11-06T17:42:22.129+00:00
+updated: 2026-11-09T19:30:59.841+00:00
 cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/6afa305c257b45ab2518c340/a3637476-317f-4c15-8980-2c70a66ee2bc.png
 ---
 Calling all Pyr players! there's a new **Quest** on the horizon, and we need your help!
@@ -22,7 +22,8 @@ Calling all Pyr players! there's a new **Quest** on the horizon, and we need you
 
 You can hold three cells at a time. **Release** sends a cell back for someone else.
 
-![](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/1e17ed53-6add-43dc-99af-c617744e3a95.png)
+![A scientific diagram of the cilium. Check out the Lab's Guidehttps://unitc-my.sharepoint.com/:p:/g/personal/ojxjl01_cloud_uni-tuebingen_de/IQDBsH6sbIjZRY5Gc3Flt5iaAUvXSDf4QLsyamGQ72f8rOo?rtime=Ky2GsGU730g for more about cilia](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/b91ee9ea-336f-47f2-8d53-6b1932cd0398.png){medium}
+^ A scientific diagram of the cilium. Check out the **[Lab's Guide](https://unitc-my.sharepoint.com/:p:/g/personal/ojxjl01_cloud_uni-tuebingen_de/IQDBsH6sbIjZRY5Gc3Flt5iaAUvXSDf4QLsyamGQ72f8rOo?rtime=Ky2GsGU730g)** for more about cilia
 
 About each structure:
 
