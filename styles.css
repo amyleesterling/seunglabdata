@@ -1889,6 +1889,8 @@ body.blog-light .blog-post h2, body.blog-light .blog-post h3{
 }
 body.blog-light .blog-post h3{ font-size: 13.5px; margin-top: 28px; }
 body.blog-light .blog-post strong{ color: var(--blog-ink); font-weight: 700; }
+/* bold words inside a link keep the link color (Celia, triage #407) */
+.blog-post a strong, .blog-post a b, body.blog-light .blog-post a strong, body.blog-light .blog-post a b{ color: inherit; }
 body.blog-light .blog-post li::marker{ color: #17a2bd; }
 body.blog-light .blog-post blockquote{ border-left-color: #17a2bd; background: rgba(23,162,189,.07); padding: 8px 0 8px 16px; }
 body.blog-light .blog-post pre{ background: #e9edf3; }

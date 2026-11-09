@@ -13,7 +13,7 @@
 // author has signed in before; the rest always show.
 (function () {
   'use strict';
-  var VERSION = '5';
+  var VERSION = '6';
   var author = false;
   try { author = localStorage.getItem('pyr-blog-author') === '1'; } catch (e) { /* storage blocked */ }
 
