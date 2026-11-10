@@ -300,6 +300,30 @@ ${lines.join('\n')}
 `;
 }
 
+/** A page that sends people on to the newest release notes post. */
+function whatsNewPage(posts) {
+  const newest = posts.filter((p) => /^whats-new-in-pyr-/.test(p.slug))
+    .sort((x, y) => String(y.slug).localeCompare(String(x.slug)))[0];
+  const to = newest ? postPath(newest.slug) : '/blog/';
+  const title = esc(newest ? newest.title : "What's new in Pyr");
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- Built by tools/build-blog.mjs: sends people to the newest "What's new in Pyr". -->
+  <title>${title} | ${SITE_NAME}</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="${SITE}${to}" />
+  <meta http-equiv="refresh" content="0; url=${to}" />
+</head>
+<body>
+  <p><a href="${to}">${title}</a></p>
+  <script>location.replace(${JSON.stringify(to)} + location.hash);</script>
+</body>
+</html>
+`;
+}
+
 // ── Build ─────────────────────────────────────────────────────────────────
 const res = await fetch(`${API}?select=slug,title,summary,body,cover_url,author_name,published_at,updated_at,created_at&status=eq.published&order=published_at.desc&limit=500`, { headers: { apikey: KEY } });
 if (!res.ok) throw new Error(`could not read the posts (${res.status})`);
@@ -313,6 +337,7 @@ for (const p of posts) put(`blog/${p.slug}/index.html`, postPage(p, R, f));
 // A post that was unpublished or renamed: its page goes, and the address
 // falls through to the 404 page, which sends people to the blog.
 const live = new Set(posts.map((p) => p.slug));
+live.add('whats-new');   // the release notes address, below
 for (const name of fs.readdirSync(path.join(ROOT, 'blog'))) {
   const dir = path.join(ROOT, 'blog', name);
   if (!fs.statSync(dir).isDirectory() || live.has(name)) continue;
@@ -323,6 +348,11 @@ for (const name of fs.readdirSync(path.join(ROOT, 'blog'))) {
     console.log('removed', `blog/${name}/`);
   }
 }
+
+// /blog/whats-new/: always the newest week of "What's new in Pyr" (Ames
+// 2026-11-10, triage #463). The game links here from its update notice and
+// from Today in Pyr; ng-extend scripts/release-notes-blog.mjs writes the weeks.
+put('blog/whats-new/index.html', whatsNewPage(posts));
 
 const indexFile = path.join(ROOT, 'blog/index.html');
 const index = fs.readFileSync(indexFile, 'utf8');
