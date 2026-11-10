@@ -96,7 +96,7 @@
         <h1 class="pyrhero__title">What is <span>Pyr</span>?</h1>
         <p class="pyrhero__say">Pronounced "peer". Formerly EyeWire II.</p>
         <p class="pyrhero__lede">Pyr is a brain mapping game where you proofread real neurons in pictures of the brain. Every fix you make helps build a connectome: a complete wiring diagram of a brain.</p>
-        <p class="pyrhero__by">Created by <a href="https://x.com/amyneurons" target="_blank" rel="noreferrer">Amy Sterling</a> at the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, Princeton University</p>
+        <p class="pyrhero__by">A <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a> project at Princeton University</p>
         <div class="pyrhero__cta">
           <a class="btn btn--cta" href="/access.html#request">Request early access</a>
           <a class="btn btn--ghost" href="/blog/">Latest news</a>
@@ -136,11 +136,31 @@
         <h2>Why does it matter?</h2>
         <p>Computers trace neurons well but still make mistakes, and people are very good at spotting them. Fixes made by players become part of real research datasets that scientists around the world use to learn how brains work.</p>
       </article>
-      <article class="pyrcard pyrcard--maker">
+      <article class="pyrcard">
         <p class="pyrcard__num">06</p>
-        <h2>Who made Pyr?</h2>
-        <p><b>Amy Sterling</b> (<a href="https://x.com/amyneurons" target="_blank" rel="noreferrer">@amyneurons</a>) created Pyr, designing and building the game at the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, Princeton Neuroscience Institute. See the <a href="/credits.html">credits</a> for everyone who helped.</p>
+        <h2>Can I see the code?</h2>
+        <p>Yes. Pyr's code is public on <a href="https://github.com/seung-lab/ng-extend" target="_blank" rel="noreferrer">GitHub</a>. It runs on <a href="https://github.com/google/neuroglancer" target="_blank" rel="noreferrer">Neuroglancer</a>, made at Google, and <a href="https://doi.org/10.1038/s41592-024-02426-z" target="_blank" rel="noreferrer">CAVE</a>, which keeps track of every edit.</p>
       </article>
+    </section>
+    <!-- Numbers counted 2026-11-09 from seung-lab/ng-extend, branch eyewire-ii-community:
+         commits = git rev-list --count; deploys = successful runs of
+         on_dev_branch_push.yml on that branch, by week (GitHub's record starts March 2026). -->
+    <section class="pyrmaker" aria-labelledby="pyrmaker-title">
+      <div class="pyrmaker__who">
+        <p class="pyr-eyebrow"><span class="pyr-dot pyr-dot--gold" aria-hidden="true"></span>The maker</p>
+        <h2 id="pyrmaker-title">Created by Amy Sterling</h2>
+        <p>Amy Sterling designed and built Pyr at the <a href="https://seunglab.org" target="_blank" rel="noreferrer">Seung Lab</a>, Princeton Neuroscience Institute, Princeton University. It grew out of <a href="https://eyewire.org" target="_blank" rel="noreferrer">EyeWire</a>, and is shaped every week by its players. See the <a href="/credits.html">credits</a> for everyone who helped.</p>
+        <a class="pyrmaker__x" href="https://x.com/amyneurons" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.8-6.3L6.4 22H3.3l7.3-8.3L1 2h6.3l4.4 5.8L18.9 2Zm-1.1 18h1.7L6.3 3.9H4.5L17.8 20Z"/></svg>Follow @amyneurons on X</a>
+      </div>
+      <div class="pyrmaker__stats">
+        <div class="pyrstat"><b>3,319</b><span>commits to Pyr's code</span></div>
+        <div class="pyrstat"><b>1,311</b><span>updates sent live since March</span></div>
+      </div>
+      <figure class="pyrchart">
+        <figcaption>Updates sent live to the game, each week</figcaption>
+        <div class="pyrchart__plot" id="pyrchart" role="img" aria-label="Bar chart of updates sent live each week from March to November 2026. Busiest week: 244 updates, the week of October 5."></div>
+        <p class="pyrchart__note">Counted November 9, 2026 from GitHub's deploy record for Pyr, which starts in March 2026.</p>
+      </figure>
     </section>
   </main>
   <footer class="footer">
@@ -148,5 +168,33 @@
       <a href="/">Return to Map the Brain</a>
     </div>
   </footer>
+  <script>
+  // Weekly deploys: [Monday, count]. See the comment on the section above.
+  (function () {
+    var weeks = [["2026-03-09",19],["2026-03-16",90],["2026-03-23",21],["2026-03-30",0],["2026-04-06",5],["2026-04-13",0],["2026-04-20",7],["2026-04-27",55],["2026-05-04",0],["2026-05-11",0],["2026-05-18",0],["2026-05-25",0],["2026-06-01",0],["2026-06-08",0],["2026-06-15",0],["2026-06-22",0],["2026-06-29",0],["2026-07-06",16],["2026-07-13",2],["2026-07-20",22],["2026-07-27",0],["2026-08-03",0],["2026-08-10",29],["2026-08-17",61],["2026-08-24",1],["2026-08-31",0],["2026-09-07",0],["2026-09-14",0],["2026-09-21",60],["2026-09-28",182],["2026-10-05",244],["2026-10-12",97],["2026-10-19",155],["2026-10-26",109],["2026-11-02",113],["2026-11-09",23]];
+    var el = document.getElementById('pyrchart'); if (!el) return;
+    var W = 900, H = 240, L = 40, R = 8, T = 14, B = 30;
+    var max = 0; weeks.forEach(function (w) { if (w[1] > max) max = w[1]; });
+    var top = Math.ceil(max / 50) * 50, n = weeks.length, step = (W - L - R) / n, bw = Math.max(2, step * 0.72);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var y = function (v) { return T + (H - T - B) * (1 - v / top); };
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" aria-hidden="true"><defs><linearGradient id="pyrbar" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#42d5ec"/><stop offset="1" stop-color="#a68bff"/></linearGradient></defs>';
+    for (var g = 0; g <= top; g += 50) {
+      svg += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(g) + '" y2="' + y(g) + '" class="pyrchart__grid"/>' +
+        '<text x="' + (L - 8) + '" y="' + (y(g) + 4) + '" text-anchor="end" class="pyrchart__tick">' + g + '</text>';
+    }
+    var lastMonth = -1;
+    weeks.forEach(function (w, i) {
+      var d = new Date(w[0] + 'T12:00:00Z'), x = L + i * step + (step - bw) / 2;
+      var label = 'Week of ' + months[d.getUTCMonth()] + ' ' + d.getUTCDate() + ': ' + w[1] + (w[1] === 1 ? ' update' : ' updates');
+      if (w[1] > 0) svg += '<rect x="' + x.toFixed(1) + '" y="' + y(w[1]).toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + (y(0) - y(w[1])).toFixed(1) + '" rx="2" fill="url(#pyrbar)" class="pyrchart__bar"><title>' + label + '</title></rect>';
+      if (d.getUTCMonth() !== lastMonth) {
+        lastMonth = d.getUTCMonth();
+        svg += '<text x="' + (L + i * step) + '" y="' + (H - 8) + '" class="pyrchart__tick">' + months[lastMonth] + '</text>';
+      }
+    });
+    el.innerHTML = svg + '</svg>';
+  })();
+  </script>
 </body>
 </html>
