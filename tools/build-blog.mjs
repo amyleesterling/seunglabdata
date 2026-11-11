@@ -31,6 +31,22 @@ const API = 'https://javthknksdcrlhiaaptj.supabase.co/rest/v1/blog_posts';
 const KEY = 'sb_publishable_a5r5rfbOuWNoVw0Qb_LtRg_xA4H6Jxb';   // public, read only
 const DEFAULT_IMAGE = `${SITE}/assets/images/eyewire-ii-og.jpg`;
 const SLUG_OK = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+// The weekly "What's new in Pyr" posts (ng-extend scripts/release-notes-blog.mjs).
+const RELEASE_NOTES = /^whats-new-in-pyr-/;
+// On those pages: a box to get them by email at your Pyr address (Ames
+// 2026-11-11). assets/notes-subscribe.js shows it and does the work.
+const NOTES_BOX = `
+        <div class="notes-sub" data-notes-sub hidden>
+          <style>
+            .notes-sub { margin: 18px 0 0; padding: 14px 16px; border: 1px solid #cfe3e8; border-radius: 12px; background: #f1f8fa; }
+            .notes-sub__label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-weight: 600; color: #0b101a; line-height: 1.45; }
+            .notes-sub__box { width: 18px; height: 18px; margin: 2px 0 0; flex-shrink: 0; accent-color: #0a7286; cursor: pointer; }
+            .notes-sub__status { margin: 6px 0 0 28px; font-size: 14px; color: #5a6578; min-height: 1.2em; }
+            .notes-sub__status:empty { display: none; }
+          </style>
+          <label class="notes-sub__label"><input type="checkbox" class="notes-sub__box" data-notes-box /><span>Email me What's new in Pyr every Monday, at my Pyr email</span></label>
+          <p class="notes-sub__status" data-notes-status role="status" aria-live="polite"></p>
+        </div>`;
 
 // ── The renderer, from assets/blog.js ─────────────────────────────────────
 function loadRenderer() {
@@ -155,7 +171,7 @@ function postPage(p, R, f) {
         <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
         <h1 data-blog-title>${esc(title)}</h1>
         <p class="blog-post__meta"><time datetime="${esc(String(published || '').slice(0, 10))}">${esc(day(published))}</time>${p.author_name ? ' · ' + esc(p.author_name) : ''}</p>
-        <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="${esc(p.slug)}" data-blog-author-only hidden>Edit</button></p>
+        <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="${esc(p.slug)}" data-blog-author-only hidden>Edit</button></p>${RELEASE_NOTES.test(p.slug) ? NOTES_BOX : ''}
       </header>
       <div data-blog-body>${cover}
 ${R.renderBlogMarkdown(p.body)}
@@ -169,7 +185,7 @@ ${R.renderBlogMarkdown(p.body)}
   ${f.foot}
   <script src="/assets/subscribe.js?v=3"></script>
   <script src="/assets/blog.js?v=anchors1"></script>
-  <script src="/assets/blog-edit.js?v=4"></script>
+  <script src="/assets/blog-edit.js?v=4"></script>${RELEASE_NOTES.test(p.slug) ? '\n  <script src="/assets/notes-subscribe.js?v=1"></script>' : ''}
 </body>
 </html>
 `;
