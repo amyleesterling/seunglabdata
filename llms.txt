@@ -12,6 +12,7 @@
 
 ## Blog
 - [All posts](https://connectome.quest/blog/) ([RSS](https://connectome.quest/blog/feed.xml))
+- [What's new in Pyr: week of November 9](https://connectome.quest/blog/whats-new-in-pyr-2026-11-09/): Every update to Pyr from November 9 to 15, 2026, newest first.
 - [Cilia Status Guide](https://connectome.quest/blog/cilia-status-guide/): Hello Cilia Hunters! This is a quick guide to each cilia status and when to use it. Click each one to see an example. Happy Hunting! @[gallery] Cilium Annotated - Cilium emerges from the cell, both centrioles and cilium centerline are annotated. Cilium Annotated (fixation artifact) - Cilium…
 - [How Do We See? The Mysteries Hiding in Plain Sight](https://connectome.quest/blog/how-do-we-see/): Some of the biggest mysteries of vision begin in a thin layer of cells at the back of your eye. Here is the known, the unknown and how you can help map the brain to make neuroscience history.
 - [Guide to Mapping Bipolar Cells (BCs)](https://connectome.quest/blog/guide-to-mapping-bipolar-cells-bcs/): Every image you see passes through a bipolar cell. Learn what these relay cells do and how to proofread one in Pyr.

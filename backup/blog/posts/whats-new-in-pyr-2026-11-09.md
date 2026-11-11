@@ -1,0 +1,87 @@
+---
+title: "What's new in Pyr: week of November 9"
+summary: "Every update to Pyr from November 9 to 15, 2026, newest first."
+author: "Nurro"
+published: 2026-11-09T21:32:17.171+00:00
+updated: 2026-11-11T23:52:00.667+00:00
+cover: 
+---
+Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Wednesday, November 11
+
+Pyr now has Cilia Quest Training, a guided tutorial for marking cilia that earns the Cilia Signal Achievement. You can also redo the edit in the Merge and Cut tutorials, and the chat online count now matches.
+
+**Cilia Quest Training:** Use the Training button in the Quests tab to practice marking a cilium and its centrioles, then earn the Cilia Signal Achievement.
+
+**Redo Merge and Cut edits:** Going back to the start of the Merge or Cut tutorial now resets the cell, so you can make the edit again.
+
+**Chat online count fixed:** The online count and name list in chat now match, you show online as soon as you write, and long links wrap.
+
+**Smoother tutorials:** The Get Started, Merge and Cut tutorials have clearer boxes and steadier tips, and partial cuts now explain how to finish.
+
+### All 8 updates
+
+- **Who is online, fixed.** The online count in chat and its list of names now always match, and anyone around in the last 5 minutes counts as online. Writing in chat now shows you online right away, even with Pyr open in several tabs. Chat no longer gets a sideways scroll bar; long words and links wrap instead.
+- **A Cilia Quest tutorial.** New: a Cilia Quest tutorial. Start it with the Tutorial button in the Quests tab, or from the menu under Quests. It shows a cell the lab has already marked, then you mark the cilium and its two centrioles yourself and get checked as you go. It ends with a short quiz on choosing a status, and finishing it earns the Cilia Signal Achievement. Leaving the Merge or Cut tutorial for another one no longer leaves merge mode or its messages behind. A tutorial box that takes a moment to load now shows a loading card.
+- **Cilia Quest Training.** The new Cilia Quest tutorial is now called Cilia Quest Training, and its button in the Quests tab reads Training. The first time you open Cilia Quests, the training starts by itself if you have not done a quest yet. Close it with the ✕ if you already know how.
+- **Get Started: the split screen box.** In Get Started, the 2D EM tab now glows when the box points to it, and pressing SPACE no longer skips the box before you finish reading. Click Next when you are ready. The electron microscope boxes show one yellow point, and the images always open flat in their normal orientation.
+- **Cut tutorial fixes.** The Cut tutorial always uses its own two cells. If you try it again right away, it waits a moment while they are put back, so you always get the 2D cut too. The first boxes of the Cut tutorial open closer in on the cut. Help me tips stay on screen instead of vanishing after a moment. If a cut takes off only part of the merger, the box changes to tell you what is left and how to finish it. The box before the 2D cut says more clearly what comes next.
+- **Tutorial touch ups.** Get Started: the box about finding the continuation shows one hint point, and it no longer flickers away. Merge tutorial: the How to Merge box sits lower so it no longer covers the top bar, and the Merge icon glows until merge mode is on. Merge tutorial: the first merge opens closer in, and the tips on the last merge box show as a bulleted list again.
+- **Going back in the Merge and Cut tutorials.** If you go back to the start of the Merge or Cut tutorial after making the edit, the cell is put back to how it began, so the yellow piece returns and you can do it again.
+- **Cilia Quest Training touch ups.** The steps for drawing the cilium line now sit in the box where you draw it. A new tip in the daughter centriole box explains how to tell it apart from the basal body. The status box links to Celia's Cilia Status Guide, with real examples of each status.
+
+*Players made 794 edits and completed 13 cells.*
+
+## Tuesday, November 10
+
+Today brings small polish: the tour's portal now swirls with twice as many sparks, and the Help me button in tutorials and sandboxes reads Hide help once help is open.
+
+### All 9 updates
+
+- **Number pad and layer 10 keys.** The number pad picks layers just like the number keys above the letters. Ctrl + 0 opens layers 10 and up, the next one each time you press it. In the blog editor, pasting into a picture caption keeps the words in the caption, and a link copied from a list stays a link.
+- **BC Challenge on the Retina.** On the Retina, the Available tab is now BC Challenge: every cell left to map there is a bipolar cell. The Retina instructions are now How to map a bipolar cell.
+- **Faster big views.** Views with hundreds of cells kept in folders, or many annotation points, draw and respond faster. Cell status is looked up for many cells at once, so long segment lists fill in their marks sooner. If the lab's server can't be reached, a cell just cut or merged shows "couldn't check" and is asked again, instead of looking unproofread.
+- **Smoother scrolling and highlighting.** The annotation list no longer freezes while you scroll it. Highlight ignores a click that misses the cell, such as one on the dataset's outline box, instead of putting marks in empty space. Long segment lists look up marks for 50 cells at a time.
+- **Faster with thousands of annotations.** Views with thousands of annotation points stay smoother while you pan and zoom. The Retina question fits a small window, so its Save button is always in reach. The box drawing tool that could appear by accident is gone. Admin notifications no longer jump back to the top while you add players.
+- **Alt+click finds the cell.** Alt+click on a cell finds it in your list, even over a highlight point or annotation, and no longer opens Highlight or moves the mark.
+- **A brighter portal.** The tour's portal swirls with twice as many sparks, spiraling in from the rim to its glowing core. The Starship and its contrails now come out of the middle of the portal and stay in front of the ring, even when you replay the flight.
+- **Cheer on achievements.** You can react to a player's achievement in chat with an emoji, a quick way to say congratulations. The Update ready button has an i beside it, so you can still read what changed after pressing Later.
+- **Help me becomes Hide help.** In the tutorials and sandboxes, once help is open the Help me button reads Hide help, so it is clear how to close it.
+
+*Players made 477 edits and completed 14 cells.*
+
+## Monday, November 9
+
+Retina cells you claim now open with a Highlight layer, a new tour of Pyr lets you fly the Axon Runner into a real neuron, and Get Started shows a neuron being traced.
+
+**Retina cells open with Highlight:** Claimed Retina cells open with one Checked Highlight layer, and you can still add annotation layers from the Cell Library or Settings.
+
+**Fly the new tour:** Press the rocket by the chat box to fly the Axon Runner into a real neuron, then explore a Martinotti cell in MICrONS.
+
+**The tour on phones:** On a phone the tour fills the screen, a lightning button sends pulses, and buttons step through the Martinotti cell's partners.
+
+**Watch a neuron get traced:** Get Started page 2 shows a brain block being sliced and imaged, then a traced branch growing into a whole 3D neuron.
+
+**Smaller changes:** Today in Pyr in chat has an Open button, Settings can stop cells turning by themselves, and Ctrl+Z brings back a closed layer.
+
+### All 16 updates
+
+- **From a block of brain to a neuron.** Page 2 of Get Started now shows how a connectome is made with real data: a tiny block of brain is sliced, each slice is imaged, and a whole neuron is reconstructed in 3D.
+- **Open Today in Pyr from chat.** Nurro's Today in Pyr line in chat has an Open button that brings up the full report.
+- **Start playing in the Sandbox.** Once you have finished Merge and Cut, the Sandbox card says Start playing. It takes you to a Sandbox cell of your own to proofread, with a short note on what to do.
+- **Get Started page 2, shorter.** Page 2 of Get Started no longer sends you to Connectome 101, since the Starship tour now explains what a connectome is.
+- **Watch a neuron get traced.** On page 2 of Get Started, the tiny block of brain now sits on one of the neuron's branches. You see the AI color in every cell, then the traced branch lights up and grows into the whole neuron.
+- **Try the new tour of Pyr.** A rocket by the chat box opens a prototype of the new tour that new players will see: a Starship flies into a real neuron and shows you its parts, its synapses and an action potential. From its last screen you can explore a much bigger neuron in MICrONS and visit the cells it connects to, or start Get Started from the beginning. Settings has a new switch under 3D looks, Turn cells slowly, to stop the view turning by itself. It is still a prototype, so please send ideas and problems with a bug report.
+- **Tour touch ups.** The tour's message boxes draw their glowing frame at the right size, including the Leave the introduction question. Start the tour shows a loading screen while your first neuron arrives, instead of a black screen. A stray line under the tour invitation is gone. The X on the Leave the introduction question now closes the tour.
+- **A cleaner neuron view.** The neuron animation on Get Started page 2 no longer draws lines across the volume behind the cell.
+- **A smoother tour of Pyr.** The tour's ship is now called the Axon Runner, and it flies smooth banked curves: up the apical dendrite, two barrel rolls on its dive to the axon, and nose first everywhere. A new launch screen shows while your first neuron loads, with a warp jump into the cell. The Axon Runner's holograms build up out of its beam once it has stopped, and the tour's panel follows. In MICrONS the Axon Runner scans the Martinotti cell's synapses with a hologram bar, shows its stats as a hologram, and counts its partners: 5,195 cells it hears from and 3,660 it sends to, with the cell types it hears from and sends to most. Visiting a partner cell, the Axon Runner swoops up through the synapses the two cells share, and each one lights with a burst of sparks. The welcome now says Pyr is pronounced peer, and the X closes the tour from the Leave question. Turning the cell no longer drags the parked Axon Runner around.
+- **The Axon Runner's banked swoop.** On its way to the side of the view the Axon Runner swoops out and away, rolls onto its side through a banked turn, and comes back toward you. It always shows its back as it flies, stays in view as it climbs the dendrite, and parks closer to the soma. The orange downstream cell grows out from the synapse and is named in the tour, and the connectome step fills the volume with dozens of other cells. The Axon Runner's hologram beam is a soft triangle of light.
+- **The tour on phones.** On a phone the tour now has the whole screen: the top and bottom bars step aside while it runs, also in MICrONS. Holograms on phones are short and easy to read, and the cell no longer turns on its own. The Axon Runner swings out beside the cell before it turns, never through it, and hovers clear of the branches at the soma. A yellow lightning button on the action potential step sends another pulse with each tap. In MICrONS on a phone, Upstream cell and Downstream cell buttons step through the Martinotti cell's partners one at a time. The portal on the way into MICrONS stays a modest size, and the welcome and action potential words are shorter.
+- **A smoother flight to the neuron.** In the tour, the Starship now flies a clean curve from the soma out to its spot beside the neuron, and stays easy to see while the view pulls back. The rocket key always starts a fresh flight, even if the last one never finished.
+- **Retina cells open with Highlight.** A Retina cell you claim now opens with one Checked Highlight layer and the Highlight box ready, instead of five annotation layers. Prefer annotations? Press + Annotation layers on your cell in the Cell Library, or turn them on for every Retina claim in Settings, under Jumping and views. Your Checked marks stay in one Checked layer, with no more Checked 1 and Checked 2. Claiming a cell takes you to My Cells, with your new cell in view. Click your current cell's row in the Cell Library to open Complete. Your cell stays at the top while the form is open, so nothing is cut off. A layer tab has one close button, an x, and Ctrl+Z brings a closed layer back. For neuroglancer's two buttons (hide to the side panel, and delete), turn on Classic layer tab buttons in Settings, under Neuroglancer. How to map a cell, in the Cell Library, opens in a box of its own with a picture of a bipolar cell. The outline around the volume is a softer blue. If you have worked on Retina cells, Pyr asks you once whether they open with Highlight or with the annotation layers. Cilia Quests always open with their annotations.
+- **Clearer messages when a cell cannot be marked.** When marking a cell done does not work, the message now says plainly what went wrong, and shows the whole cell IDs when the crosshairs are in the wrong cell.
+- **Log out, Not now, and tour fixes.** Log out is now the last option in the menu at the top right. The last Get Started box has a Not now button, so you can finish without starting the Merge tutorial. The Starship tour and the tutorial boxes no longer show at the same time. In Get Started, the box about the big black empty space now shows the black space in the 2D image. A bug report still sends when your view cannot be saved, with your position instead.
+- **A better bug report.** What you write in a bug report is kept until you send it or press Clear, and clicking outside the box no longer closes it. Set up the screen first: the report steps aside so you can open what the picture should show, then press Take screenshot. The details box has bold, italics, bullets and numbers.
+
+*Players made 1,167 edits and completed 21 cells.*
