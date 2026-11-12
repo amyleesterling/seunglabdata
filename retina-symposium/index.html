@@ -103,6 +103,19 @@
     .sym__brain .hero__eyebrow{ margin-bottom: 8px; }
     .sym__brain p{ margin-top: 0; }
     .sym__brain .btn{ margin-top: 18px; padding: 10px 18px; font-size: 14px; }
+    /* two films under the model: the cast of the retina, and a YouTube film loaded only on a click */
+    .sym__films{ margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    .sym__films h2{ font-size: 20px; }
+    .sym__films p{ margin: 12px 0 0; }
+    .sym__film{ position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(74,158,255,.28); background: #090B10; aspect-ratio: 16 / 9; }
+    .sym__film video, .sym__film iframe, .sym__film img{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; display: block; }
+    .sym__film button{ position: absolute; inset: 0; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+    .sym__film button span{ position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%;
+      background: rgba(5,9,20,.78); border: 1px solid rgba(126,224,255,.6); box-shadow: 0 0 24px rgba(126,224,255,.25); }
+    .sym__film button span::after{ content: ""; position: absolute; left: 26px; top: 21px; border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent #eaf6ff; }
+    .sym__film button:hover span, .sym__film button:focus-visible span{ border-color: #7ee0ff; }
+    .sym__film button:focus-visible{ outline: none; }
+    @media (max-width: 820px){ .sym__films{ grid-template-columns: 1fr; } }
     @media (max-width: 820px){ .sym__brain > div:last-child{ grid-template-columns: 1fr; } .sym__brain > div:last-child > p, .sym__brain > div:last-child > .btn{ grid-column: 1; } .sym__brain > div:last-child > p{ grid-row: auto; } .sym__brainpic{ aspect-ratio: 4 / 3; } }
     /* the layer tab's index chip: a small square with one corner cut */
     .sym__card h2::before{ content: ""; flex: none; width: 10px; height: 10px; background: #7ee0ff; box-shadow: 0 0 8px rgba(126,224,255,.8);
@@ -231,6 +244,37 @@
       </section>
     </div>
 
+    <section class="sym__card sym__brain" aria-labelledby="bipolar">
+      <div class="sym__brainpic" id="brainView">
+        <img src="https://amyleesterling.github.io/retina/media/bipolar_model.jpg" alt="Hundreds of reconstructed bipolar cells from the mouse retina, packed side by side and colored by type, in layers from pink to blue." loading="lazy" />
+        <button type="button" id="brainGo">Play it in 3D</button>
+      </div>
+      <div>
+        <p class="hero__eyebrow">Explore</p>
+        <h2 id="bipolar">Ten thousand bipolar cells</h2>
+        <p>Bipolar cells carry the signal from the photoreceptors to the ganglion cells that send it to the brain. In October 2026 the citizen scientists of EyeWire II finished proofreading their 10,000th bipolar cell. This model shows 981 of them, in the order they were proofread. Press play to watch it as a film, drag to turn the cells, scroll to zoom, and point at a cell to see who proofread it.</p>
+        <a class="btn btn--cta" href="https://amyleesterling.github.io/retina/bipolars/" target="_blank" rel="noreferrer">Open it full screen</a>
+      </div>
+    </section>
+
+    <div class="sym__films">
+      <section class="sym__card" aria-labelledby="cast">
+        <div class="sym__film">
+          <video src="https://amyleesterling.github.io/retina/media/cast.mp4" poster="https://amyleesterling.github.io/retina/media/cast.jpg" controls playsinline preload="none" aria-label="Pages of reconstructed retinal neurons, one example cell of each of 117 types, each turning in its own tile"></video>
+        </div>
+        <h2 id="cast" style="margin-top:18px">The cast of the retina</h2>
+        <p>The retina is not one kind of neuron but more than a hundred. One proofread cell of each of 117 types: 15 bipolar, 1 horizontal, 64 amacrine and 37 ganglion cell types.</p>
+      </section>
+      <section class="sym__card" aria-labelledby="calcium">
+        <div class="sym__film" id="ytCalcium">
+          <img src="https://i.ytimg.com/vi/8phgjay5Jm0/maxresdefault.jpg" alt="" loading="lazy" />
+          <button type="button" aria-label="Play Calcium imaged clusters from mouse retina on YouTube"><span></span></button>
+        </div>
+        <h2 id="calcium" style="margin-top:18px">Calcium imaged clusters</h2>
+        <p>Clusters of mouse retinal neurons whose activity was recorded with calcium imaging, here reconstructed in 3D cell by cell.</p>
+      </section>
+    </div>
+
   </main>
 
   <footer class="footer">
@@ -262,6 +306,41 @@
       ].join('\r\n');
       document.getElementById('icsLink').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
 
+
+      // The bipolar cell model: loads when it comes into view on a computer, on a tap on a phone.
+      (function () {
+        var box = document.getElementById('brainView'), go = document.getElementById('brainGo');
+        var live = function () {
+          if (box.classList.contains('is-live')) return;
+          box.classList.add('is-live');
+          var f = document.createElement('iframe');
+          f.src = 'https://amyleesterling.github.io/retina/bipolars/';
+          f.title = 'Ten thousand bipolar cells, an interactive 3D model of 981 of them';
+          f.allow = 'fullscreen';
+          f.addEventListener('load', function () { setTimeout(function () { f.classList.add('is-ready'); }, 1200); });
+          box.appendChild(f);
+        };
+        go.addEventListener('click', live);
+        var big = matchMedia('(min-width: 821px) and (pointer: fine)').matches;
+        var thrifty = navigator.connection && navigator.connection.saveData;
+        if (big && !thrifty && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); live(); } }, { rootMargin: '200px' });
+          io.observe(box);
+        }
+      })();
+
+      // YouTube loads only when the film is clicked, from the no cookie address.
+      (function () {
+        var yt = document.getElementById('ytCalcium');
+        yt.querySelector('button').addEventListener('click', function () {
+          var f = document.createElement('iframe');
+          f.src = 'https://www.youtube-nocookie.com/embed/8phgjay5Jm0?autoplay=1&rel=0';
+          f.title = 'Calcium imaged clusters from mouse retina';
+          f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+          f.allowFullscreen = true;
+          yt.innerHTML = ''; yt.appendChild(f);
+        });
+      })();
 
       var ENDPOINT = 'https://us-central1-eyewire-ii-e4d52.cloudfunctions.net/ewSymposiumRsvp';
       var form = document.getElementById('rsvpForm');
