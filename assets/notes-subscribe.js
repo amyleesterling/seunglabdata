@@ -15,6 +15,8 @@
   var box = wrap.querySelector('[data-notes-box]');
   var status = wrap.querySelector('[data-notes-status]');
   wrap.hidden = false;
+  // Arrived by a link to the box: it was hidden when the browser jumped, so jump now.
+  if (location.hash === "#email") wrap.scrollIntoView({ block: "center" });
 
   function token() {
     try { var raw = localStorage.getItem(TOKEN_KEY); return raw ? (JSON.parse(raw).accessToken || null) : null; }

@@ -180,7 +180,17 @@ These cells have sprawling branches and plenty of mysteries. Claim one and help 
       <ul class="blog-notes__weeks">
           <li><a href="/blog/whats-new-in-pyr-2026-11-09/">Week of November 9</a></li>
       </ul>
-      <a class="blog-notes__email" href="/blog/whats-new-in-pyr-2026-11-09/#email">Get it by email every Monday</a>
+      <div class="notes-sub" id="email" data-notes-sub hidden>
+          <style>
+            .notes-sub { scroll-margin-top: 90px; margin: 18px 0 0; padding: 14px 16px; border: 1px solid #cfe3e8; border-radius: 12px; background: #f1f8fa; }
+            .notes-sub__label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-weight: 600; color: #0b101a; line-height: 1.45; }
+            .notes-sub__box { width: 18px; height: 18px; margin: 2px 0 0; flex-shrink: 0; accent-color: #0a7286; cursor: pointer; }
+            .notes-sub__status { margin: 6px 0 0 28px; font-size: 14px; color: #5a6578; min-height: 1.2em; }
+            .notes-sub__status:empty { display: none; }
+          </style>
+          <label class="notes-sub__label"><input type="checkbox" class="notes-sub__box" data-notes-box /><span>Email me What's new in Pyr every Monday, at my Pyr email</span></label>
+          <p class="notes-sub__status" data-notes-status role="status" aria-live="polite"></p>
+        </div>
       <!-- NOTES:END -->
     </aside>
     </div>
@@ -231,5 +241,6 @@ These cells have sprawling branches and plenty of mysteries. Claim one and help 
   <script src="/assets/blog.js?v=notes1"></script>
   <script src="/assets/subscribe.js?v=3"></script>
   <script src="/assets/blog-edit.js?v=4"></script>
+  <script src="/assets/notes-subscribe.js?v=2"></script>
 </body>
 </html>

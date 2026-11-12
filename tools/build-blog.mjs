@@ -38,7 +38,7 @@ const RELEASE_NOTES = /^whats-new-in-pyr-/;
 const NOTES_BOX = `
         <div class="notes-sub" id="email" data-notes-sub hidden>
           <style>
-            .notes-sub { margin: 18px 0 0; padding: 14px 16px; border: 1px solid #cfe3e8; border-radius: 12px; background: #f1f8fa; }
+            .notes-sub { scroll-margin-top: 90px; margin: 18px 0 0; padding: 14px 16px; border: 1px solid #cfe3e8; border-radius: 12px; background: #f1f8fa; }
             .notes-sub__label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-weight: 600; color: #0b101a; line-height: 1.45; }
             .notes-sub__box { width: 18px; height: 18px; margin: 2px 0 0; flex-shrink: 0; accent-color: #0a7286; cursor: pointer; }
             .notes-sub__status { margin: 6px 0 0 28px; font-size: 14px; color: #5a6578; min-height: 1.2em; }
@@ -185,7 +185,7 @@ ${R.renderBlogMarkdown(p.body)}
   ${f.foot}
   <script src="/assets/subscribe.js?v=3"></script>
   <script src="/assets/blog.js?v=anchors1"></script>
-  <script src="/assets/blog-edit.js?v=4"></script>${RELEASE_NOTES.test(p.slug) ? '\n  <script src="/assets/notes-subscribe.js?v=1"></script>' : ''}
+  <script src="/assets/blog-edit.js?v=4"></script>${RELEASE_NOTES.test(p.slug) ? '\n  <script src="/assets/notes-subscribe.js?v=2"></script>' : ''}
 </body>
 </html>
 `;
@@ -349,7 +349,7 @@ function notesAside(weeks) {
     const name = String(p.title || '').replace(/^What's new in Pyr:\s*/i, '');
     return `          <li><a href="${postPath(p.slug)}">${esc(name.charAt(0).toUpperCase() + name.slice(1))}</a></li>`;
   }).join('\n');
-  const newest = weeks[0] ? postPath(weeks[0].slug) : '/blog/whats-new/';
+
   return `
       <a class="blog-notes__cover" href="/blog/whats-new/" tabindex="-1" aria-hidden="true"><img src="${NOTES_IMAGE}" alt="" loading="lazy" width="1200" height="630" /></a>
       <h2 class="blog-notes__title"><a href="/blog/whats-new/">What's new in Pyr</a></h2>
@@ -357,7 +357,7 @@ function notesAside(weeks) {
       <ul class="blog-notes__weeks">
 ${items}
       </ul>` : ''}
-      <a class="blog-notes__email" href="${newest}#email">Get it by email every Monday</a>
+      ${NOTES_BOX.trim()}
       `;
 }
 
