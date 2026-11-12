@@ -206,7 +206,8 @@ if (list) {
   get('select=slug,title,summary,body,cover_url,author_name,published_at&status=eq.published&order=published_at.desc&limit=100')
     .then(function (posts) {
       if (!posts.length) return;               // keep whatever the page shipped with
-      all = posts.map(function (p) {
+      // "What's new in Pyr" weeks live in the side feed, not this list.
+      all = posts.filter(function (p) { return !/^whats-new-in-pyr-/.test(p.slug); }).map(function (p) {
         p._text = [p.title, p.summary, p.author_name, p.body].join(' ').toLowerCase();
         return p;
       });

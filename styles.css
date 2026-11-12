@@ -1790,6 +1790,29 @@ h2{
 
 /* ── Blog (blog/index.html lists posts, one file per post) ─────────────── */
 .blog-page{ padding-bottom: 72px; }
+/* Posts on the left, the "What's new in Pyr" weeks beside them (Ames 2026-11-12). */
+.blog-columns{ display: grid; grid-template-columns: minmax(0, 860px) 300px; gap: 48px; align-items: start; }
+.blog-notes{ position: sticky; top: 88px; margin-top: 22px; padding: 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.blog-notes__cover{ display: block; border-radius: 10px; overflow: hidden; }
+.blog-notes__cover img{ display: block; width: 100%; height: auto; }
+.blog-notes__title{ margin: 16px 0 6px; font-size: 20px; line-height: 1.2; }
+.blog-notes__title a{ text-decoration: none; }
+.blog-notes__lede{ margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.blog-notes__weeks{ list-style: none; margin: 0 0 14px; padding: 0; }
+.blog-notes__weeks li{ border-top: 1px solid var(--line); }
+.blog-notes__weeks a{ display: block; padding: 9px 0; font-size: 15px; font-weight: 600; text-decoration: none; }
+.blog-notes__email{ font-size: 14px; font-weight: 600; }
+@media (max-width: 1080px){
+  .blog-columns{ grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .blog-notes{ position: static; order: -1; max-width: 860px; display: grid; grid-template-columns: 200px minmax(0, 1fr); column-gap: 18px; }
+  .blog-notes__cover{ grid-row: span 4; align-self: start; }
+  .blog-notes__title{ margin-top: 0; }
+  .blog-notes__weeks li:nth-child(n+4){ display: none; }
+}
+@media (max-width: 560px){
+  .blog-notes{ grid-template-columns: 1fr; }
+  .blog-notes__cover{ grid-row: auto; margin-bottom: 12px; }
+}
 .blog-list{ padding: 22px 0 0; max-width: 860px; }
 .blog-search{ max-width: 860px; padding: 22px 0 0; }
 .blog-search[hidden]{ display: none; }

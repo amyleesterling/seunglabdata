@@ -36,7 +36,7 @@ const RELEASE_NOTES = /^whats-new-in-pyr-/;
 // On those pages: a box to get them by email at your Pyr address (Ames
 // 2026-11-11). assets/notes-subscribe.js shows it and does the work.
 const NOTES_BOX = `
-        <div class="notes-sub" data-notes-sub hidden>
+        <div class="notes-sub" id="email" data-notes-sub hidden>
           <style>
             .notes-sub { margin: 18px 0 0; padding: 14px 16px; border: 1px solid #cfe3e8; border-radius: 12px; background: #f1f8fa; }
             .notes-sub__label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-weight: 600; color: #0b101a; line-height: 1.45; }
@@ -340,6 +340,27 @@ function whatsNewPage(posts) {
 `;
 }
 
+/** The "What's new in Pyr" side feed on blog/index.html: the newest weeks,
+ *  kept out of the post list (Ames 2026-11-12). */
+const NOTES_IMAGE = '/assets/images/blog/whats-new-in-pyr.jpg';
+const NOTES_SHOWN = 8;
+function notesAside(weeks) {
+  const items = weeks.slice(0, NOTES_SHOWN).map((p) => {
+    const name = String(p.title || '').replace(/^What's new in Pyr:\s*/i, '');
+    return `          <li><a href="${postPath(p.slug)}">${esc(name.charAt(0).toUpperCase() + name.slice(1))}</a></li>`;
+  }).join('\n');
+  const newest = weeks[0] ? postPath(weeks[0].slug) : '/blog/whats-new/';
+  return `
+      <a class="blog-notes__cover" href="/blog/whats-new/" tabindex="-1" aria-hidden="true"><img src="${NOTES_IMAGE}" alt="" loading="lazy" width="1200" height="630" /></a>
+      <h2 class="blog-notes__title"><a href="/blog/whats-new/">What's new in Pyr</a></h2>
+      <p class="blog-notes__lede">Every update to the game, one page a week, newest first.</p>${items ? `
+      <ul class="blog-notes__weeks">
+${items}
+      </ul>` : ''}
+      <a class="blog-notes__email" href="${newest}#email">Get it by email every Monday</a>
+      `;
+}
+
 // ── Build ─────────────────────────────────────────────────────────────────
 const res = await fetch(`${API}?select=slug,title,summary,body,cover_url,author_name,published_at,updated_at,created_at&status=eq.published&order=published_at.desc&limit=500`, { headers: { apikey: KEY } });
 if (!res.ok) throw new Error(`could not read the posts (${res.status})`);
@@ -371,13 +392,22 @@ for (const name of fs.readdirSync(path.join(ROOT, 'blog'))) {
 put('blog/whats-new/index.html', whatsNewPage(posts));
 
 const indexFile = path.join(ROOT, 'blog/index.html');
-const index = fs.readFileSync(indexFile, 'utf8');
-const START = '<!-- POSTS:START (written by tools/build-blog.mjs) -->', END = '<!-- POSTS:END -->';
-const a = index.indexOf(START), b = index.indexOf(END);
-if (a < 0 || b < a) throw new Error('blog/index.html has lost its POSTS markers');
-put('blog/index.html', index.slice(0, a + START.length) + '\n' + listItems(posts) + '\n      ' + index.slice(b));
+// "What's new in Pyr" weeks go in the side feed, not the post list or the RSS
+// feed (Ames 2026-11-12). Their own pages, the sitemap and llms.txt keep them.
+const stories = posts.filter((p) => !RELEASE_NOTES.test(p.slug));
+const weeks = posts.filter((p) => RELEASE_NOTES.test(p.slug))
+  .sort((x, y) => String(y.slug).localeCompare(String(x.slug)));
+const between = (html, start, end, inner, what) => {
+  const a = html.indexOf(start), b = html.indexOf(end);
+  if (a < 0 || b < a) throw new Error(`blog/index.html has lost its ${what} markers`);
+  return html.slice(0, a + start.length) + inner + html.slice(b);
+};
+let index = fs.readFileSync(indexFile, 'utf8');
+index = between(index, '<!-- POSTS:START (written by tools/build-blog.mjs) -->', '<!-- POSTS:END -->', '\n' + listItems(stories) + '\n      ', 'POSTS');
+index = between(index, '<!-- NOTES:START (written by tools/build-blog.mjs) -->', '<!-- NOTES:END -->', notesAside(weeks), 'NOTES');
+put('blog/index.html', index);
 
-put('blog/feed.xml', rssFeed(posts, R));
+put('blog/feed.xml', rssFeed(stories, R));
 put('sitemap.xml', sitemap(posts));
 put('robots.txt', ROBOTS);
 put('llms.txt', llmsTxt(posts));

@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="/styles.css?v=gallery1" />
+  <link rel="stylesheet" href="/styles.css?v=notes1" />
 </head>
 <body class="blog-light">
   <nav class="topnav">
@@ -54,6 +54,8 @@
          written by tools/build-blog.mjs, so it is in the page for search
          engines and readers without JavaScript; /assets/blog.js then redraws
          it from the database, newest posts included, with search. -->
+    <div class="blog-columns">
+    <div class="blog-main">
     <!-- Shown by blog.js once the posts have loaded. -->
     <div class="blog-search" id="blogSearchBox" role="search" hidden>
       <label class="blog-search__label" for="blogSearch">Search the blog</label>
@@ -63,14 +65,6 @@
 
     <section class="blog-list" id="blogList" aria-label="Posts">
       <!-- POSTS:START (written by tools/build-blog.mjs) -->
-      <article class="blog-item">
-        <div class="blog-item__text">
-          <p class="blog-item__date"><time datetime="2026-11-09">November 9, 2026</time> · Nurro</p>
-          <h2><a href="/blog/whats-new-in-pyr-2026-11-09/">What's new in Pyr: week of November 9</a></h2>
-          <p>Every update to Pyr from November 9 to 15, 2026, newest first.</p>
-          <a class="blog-item__more" href="/blog/whats-new-in-pyr-2026-11-09/">Read the post</a>
-        </div>
-      </article>
       <article class="blog-item blog-item--cover">
         <a class="blog-item__cover" href="/blog/cilia-status-guide/" tabindex="-1" aria-hidden="true"><img src="https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/2a91783d-65b2-48f8-a344-c44eae7b0285.png" alt="" loading="lazy" /></a>
         <div class="blog-item__text">
@@ -174,6 +168,22 @@ These cells have sprawling branches and plenty of mysteries. Claim one and help 
       </article>
       <!-- POSTS:END -->
     </section>
+    </div>
+
+    <!-- "What's new in Pyr", one page a week, kept out of the post list
+         (Ames 2026-11-12). Written by tools/build-blog.mjs. -->
+    <aside class="blog-notes" aria-label="What's new in Pyr">
+      <!-- NOTES:START (written by tools/build-blog.mjs) -->
+      <a class="blog-notes__cover" href="/blog/whats-new/" tabindex="-1" aria-hidden="true"><img src="/assets/images/blog/whats-new-in-pyr.jpg" alt="" loading="lazy" width="1200" height="630" /></a>
+      <h2 class="blog-notes__title"><a href="/blog/whats-new/">What's new in Pyr</a></h2>
+      <p class="blog-notes__lede">Every update to the game, one page a week, newest first.</p>
+      <ul class="blog-notes__weeks">
+          <li><a href="/blog/whats-new-in-pyr-2026-11-09/">Week of November 9</a></li>
+      </ul>
+      <a class="blog-notes__email" href="/blog/whats-new-in-pyr-2026-11-09/#email">Get it by email every Monday</a>
+      <!-- NOTES:END -->
+    </aside>
+    </div>
 
     <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
       <div class="subscribe__copy">
@@ -218,7 +228,7 @@ These cells have sprawling branches and plenty of mysteries. Claim one and help 
       <button type="button" class="blog-edit__quiet" data-blog-edit="" hidden>Authors: write a post</button>
     </div>
   </footer>
-  <script src="/assets/blog.js?v=gallery1"></script>
+  <script src="/assets/blog.js?v=notes1"></script>
   <script src="/assets/subscribe.js?v=3"></script>
   <script src="/assets/blog-edit.js?v=4"></script>
 </body>
