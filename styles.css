@@ -1928,6 +1928,13 @@ body.blog-light .footer, body.blog-light .footer__credit{ color: var(--blog-soft
   color: #eaf6ff;
 }
 .earlyaccess__intro p:not(.hero__eyebrow){ margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.earlyaccess__intro p.earlyaccess__ew{
+  margin-top: 16px; padding: 12px 14px;
+  border-left: 3px solid #e6c760; border-radius: 0 10px 10px 0;
+  background: linear-gradient(90deg, rgba(230,199,96,.13), rgba(230,199,96,.03));
+  color: var(--text);
+}
+.earlyaccess__ew b{ color: #e6c760; }
 .earlyaccess__grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .earlyaccess__form textarea{ min-height: 64px; }
 .cform__field span em{ font-style: normal; opacity: .7; }
