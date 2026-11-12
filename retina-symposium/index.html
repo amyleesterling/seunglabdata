@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retina Citizen Science Symposium RSVP | Map the Brain</title>
+  <meta name="description" content="Join us online on Thursday, December 10, 2026 at 10 am Eastern (3 pm GMT) for the Retina Citizen Science Symposium, on the mouse retina players map in Pyr." />
+  <meta property="og:title" content="Retina Citizen Science Symposium, December 10" />
+  <meta property="og:description" content="The mouse retina players map in Pyr, and your questions. Thursday, December 10, 10 am Eastern, 3 pm GMT." />
+  <meta property="og:image" content="https://connectome.quest/assets/images/e2_banner.jpg" />
+  <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .sym{ padding-bottom: 72px; }
+    /* the banner: the retina render full width, the title on top of it in the
+       scifi-ui holopanel (panel-surface.css) with its circuit traces
+       (ambient.js) drawn inside, and lit corner brackets */
+    /* the retina render fills the whole page, fixed behind everything (a fixed
+       layer, not background-attachment, which iOS ignores) */
+    body{ background: #000; }
+    /* the site's navy wash would show as a band beside the square render, which sits on pure black */
+    body::before{ display: none; }
+    .sym__bg{ position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 72% 50%; z-index: -1; }
+    .sym__banner{ position: relative; min-height: clamp(460px, 62vh, 640px); display: flex; align-items: center; }
+    /* the render fades into the dark at the foot of the page, no hard edge:
+       the footer is a tall gradient that rises behind the last of the cards */
+    .sym{ position: relative; z-index: 1; }
+    body > .footer{ position: relative; z-index: 0; margin-top: -220px; padding: 260px 0 30px; border-top: 0;
+      background: linear-gradient(180deg, rgba(3,5,10,0) 0%, rgba(3,5,10,.55) 35%, rgba(3,5,10,.92) 70%, #03050a 100%); }
+    .sym__banner .wrap{ position: relative; z-index: 1; padding: 48px 0; }
+    .sym__box{ position: relative; isolation: isolate; max-width: 600px; padding: 34px 36px 32px; overflow: hidden;
+      border: 1px solid rgba(74,150,224,.38); border-radius: 14px;
+      background: linear-gradient(158deg, rgba(15,18,24,.86) 0%, rgba(6,10,18,.92) 100%);
+      -webkit-backdrop-filter: blur(10px) saturate(1.2); backdrop-filter: blur(10px) saturate(1.2);
+      box-shadow: 0 18px 50px rgba(0,0,0,.5), 0 0 60px rgba(74,150,224,.10), inset 0 1px 0 rgba(196,228,255,.10); }
+    .sym__box::before{ content: ""; position: absolute; left: 8%; right: 8%; top: 0; height: 1px; pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(196,228,255,.95) 50%, transparent); box-shadow: 0 0 12px rgba(178,216,248,.6); }
+    .sym__circuit{ position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+    .sym__circuit g{ stroke: rgba(126,224,255,.24); }
+    .sym__circuit .lit{ stroke: rgba(126,224,255,.55); stroke-dasharray: 60 900; animation: sym-trace 7s linear infinite; }
+    .sym__circuit .lit:nth-child(2){ animation-delay: -2.3s; } .sym__circuit .lit:nth-child(3){ animation-delay: -4.6s; }
+    @keyframes sym-trace{ from{ stroke-dashoffset: 960; } to{ stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce){ .sym__circuit .lit{ animation: none; stroke-dasharray: none; stroke: rgba(126,224,255,.24); } }
+    .sym__corner{ position: absolute; width: 16px; height: 16px; border: 0 solid rgba(126,224,255,.8); pointer-events: none; }
+    .sym__corner--tl{ top: 8px; left: 8px; border-top-width: 2px; border-left-width: 2px; }
+    .sym__corner--tr{ top: 8px; right: 8px; border-top-width: 2px; border-right-width: 2px; }
+    .sym__corner--bl{ bottom: 8px; left: 8px; border-bottom-width: 2px; border-left-width: 2px; }
+    .sym__corner--br{ bottom: 8px; right: 8px; border-bottom-width: 2px; border-right-width: 2px; }
+    .sym__box h1{ font-size: clamp(36px, 5vw, 60px); line-height: 1.03; letter-spacing: -0.03em; margin: 0 0 14px; color: #f2f9ff; }
+    .sym__box .hero__lede{ color: rgba(255,255,255,.86); font-size: 17px; }
+    .sym__when{ margin: 18px 0 0; padding-top: 16px; border-top: 1px solid rgba(126,224,255,.18); color: #eaf6ff; font-size: 16px; font-weight: 600; letter-spacing: .01em; }
+    .sym__when span{ color: rgba(255,255,255,.62); font-weight: 400; }
+    .sym__go{ margin-top: 20px; }
+    /* on desktop the RSVP form sits right under the banner, so the button only shows on phones */
+    @media (min-width: 821px){ .sym__go{ display: none; } }
+    .sym__grid{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; margin-top: 28px; align-items: start; }
+    /* The cards are cut like Pyr's layer tabs and Lantern bar (ng-extend
+       ng-override.css, LanternBar.vue): a long diagonal top right, a short one
+       top left, a third bottom left, one corner square, so no two match. A
+       clipped box cannot carry a border, so the edge is the card's own
+       background showing round a slightly smaller fill (::before). The top
+       edge IS the circuit trace: two runs ending on solder pads either side
+       of a gap three quarters of the way across, and the light fades down
+       the sides before the foot. */
+    .sym__card{ --cut-tr: 34px; --cut-tl: 12px; --cut-bl: 22px; --pad-x: calc(var(--cut-tl) + (100% - var(--cut-tl) - var(--cut-tr)) * .75);
+      position: relative; isolation: isolate; padding: 30px 26px 26px;
+      background: linear-gradient(180deg, #b4f0ff 0%, #6fc4ff 22%, rgba(74,158,255,.35) 70%, rgba(74,158,255,.12) 100%) no-repeat left bottom / 100% calc(100% - 4px);
+      clip-path: polygon(var(--cut-tl) 4px, calc(var(--pad-x) - 10px) 4px, calc(var(--pad-x) - 10px) 0, calc(var(--pad-x) + 10px) 0, calc(var(--pad-x) + 10px) 4px,
+        calc(100% - var(--cut-tr)) 4px, 100% calc(var(--cut-tr) + 4px), 100% 100%, var(--cut-bl) 100%, 0 calc(100% - var(--cut-bl)), 0 calc(var(--cut-tl) + 4px));
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.45)); }
+    .sym__card::before{ content: ""; position: absolute; inset: 5px 1.5px 1.5px 1.5px; z-index: -1; pointer-events: none;
+      /* solid where the words start, a little see through toward the foot */
+      background: linear-gradient(180deg, rgba(14,24,44,.94) 0%, rgba(9,16,32,.9) 55%, rgba(6,11,24,.72) 100%);
+      -webkit-backdrop-filter: blur(8px) saturate(1.15); backdrop-filter: blur(8px) saturate(1.15);
+      clip-path: polygon(calc(var(--cut-tl) - 1px) 0, calc(100% - var(--cut-tr) + 1px) 0, 100% calc(var(--cut-tr) - 1px), 100% 100%, calc(var(--cut-bl) - .6px) 100%, 0 calc(100% - var(--cut-bl) + .6px), 0 calc(var(--cut-tl) - 1px)); }
+    .sym__card::after{ content: ""; position: absolute; z-index: 1; pointer-events: none; left: var(--cut-tl); right: var(--cut-tr); top: 0; height: 9px;
+      background:
+        radial-gradient(circle at calc(75% - 6px) 4.6px, #04101f 0 1.3px, #b4f0ff 1.8px 3px, transparent 3.5px),
+        radial-gradient(circle at calc(75% + 6px) 4.6px, #04101f 0 1.3px, #b4f0ff 1.8px 3px, transparent 3.5px),
+        linear-gradient(#b4f0ff, #b4f0ff) left 0 top 4px / calc(75% - 9.5px) 1.6px no-repeat,
+        linear-gradient(#b4f0ff, #b4f0ff) right 0 top 4px / calc(25% - 9.5px) 1.6px no-repeat;
+      filter: drop-shadow(0 0 4px rgba(126,224,255,.8)); }
+    .sym__card h2{ display: flex; align-items: center; gap: 10px; }
+    /* the mouse brain card: a real capture of whatisabrain.com/mouse, opening the live 3D view */
+    .sym__brain{ margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 22px; align-items: start; }
+    .sym__brain > div:last-child{ display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 4px 36px; align-items: start; }
+    .sym__brain > div:last-child > .hero__eyebrow, .sym__brain > div:last-child > h2{ grid-column: 1; }
+    .sym__brain > div:last-child > p, .sym__brain > div:last-child > .btn{ grid-column: 2; }
+    .sym__brain > div:last-child > p{ grid-row: 1 / span 2; }
+    .sym__brain > div:last-child > .btn{ justify-self: start; margin-top: 6px; }
+    /* the live brain (whatisabrain.com/mouse ?embed=1) over its own picture:
+       on a computer it loads when it scrolls into view; a phone keeps the
+       picture until it is tapped, so nobody downloads 16 MB unasked */
+    .sym__brainpic{ position: relative; overflow: hidden; border-radius: 8px; border: 1px solid rgba(74,158,255,.28); background: #090B10; aspect-ratio: 16 / 9; max-height: 72vh; }
+    .sym__brainpic img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% 45%; }
+    .sym__brainpic iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; opacity: 0; transition: opacity .6s ease; }
+    .sym__brainpic iframe.is-ready{ opacity: 1; }
+    .sym__brainpic button{ position: absolute; left: 12px; bottom: 12px; padding: 7px 12px; border-radius: 6px; font: inherit; font-size: 13px; font-weight: 600; color: #eaf6ff; cursor: pointer;
+      background: rgba(5,9,20,.78); border: 1px solid rgba(126,224,255,.45); }
+    .sym__brainpic button:hover, .sym__brainpic button:focus-visible{ border-color: #7ee0ff; outline: none; }
+    .sym__brainpic.is-live button{ display: none; }
+    .sym__brain .hero__eyebrow{ margin-bottom: 8px; }
+    .sym__brain p{ margin-top: 0; }
+    .sym__brain .btn{ margin-top: 18px; padding: 10px 18px; font-size: 14px; }
+    @media (max-width: 820px){ .sym__brain > div:last-child{ grid-template-columns: 1fr; } .sym__brain > div:last-child > p, .sym__brain > div:last-child > .btn{ grid-column: 1; } .sym__brain > div:last-child > p{ grid-row: auto; } .sym__brainpic{ aspect-ratio: 4 / 3; } }
+    /* the layer tab's index chip: a small square with one corner cut */
+    .sym__card h2::before{ content: ""; flex: none; width: 10px; height: 10px; background: #7ee0ff; box-shadow: 0 0 8px rgba(126,224,255,.8);
+      clip-path: polygon(0 0, calc(100% - 3px) 0, 100% 3px, 100% 100%, 0 100%); }
+    .sym__card h2{ margin: 0 0 14px; color: #eaf6ff; font-size: 22px; }
+    .sym__facts{ margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; }
+    .sym__facts dt{ color: rgba(255,255,255,.6); font-size: 14px; padding-top: 2px; }
+    .sym__facts dd{ margin: 0; color: var(--text); font-size: 16px; line-height: 1.5; }
+    .sym__local{ display: block; color: rgba(255,255,255,.6); font-size: 14px; }
+    .sym__card p{ color: var(--muted); font-size: 16px; line-height: 1.65; margin: 14px 0 0; }
+    .sym__cal{ margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .sym__cal a{ font-size: 14px; }
+    .sym form{ display: flex; flex-direction: column; gap: 14px; }
+    .sym label{ display: flex; flex-direction: column; gap: 6px; }
+    .sym label span{ font-size: 14px; color: var(--muted); }
+    .sym label em{ font-style: normal; opacity: .75; }
+    .sym input, .sym textarea{ width: 100%; padding: 11px 14px; border-radius: 8px; font: inherit; font-size: 16px; color: var(--text);
+      background: rgba(74,158,255,.06); border: 1px solid rgba(74,158,255,.28); transition: border-color .15s, box-shadow .15s, background .15s; }
+    .sym input:hover, .sym textarea:hover{ border-color: rgba(111,196,255,.55); }
+    .sym textarea{ min-height: 120px; resize: vertical; line-height: 1.5; }
+    .sym input:focus, .sym textarea:focus{ outline: none; border-color: #7ee0ff; background: rgba(74,158,255,.1); box-shadow: 0 0 0 3px rgba(126,224,255,.16), 0 0 14px rgba(126,224,255,.18); }
+    .sym__foot{ display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .sym__status{ margin: 0; color: var(--muted); font-size: 15px; }
+    /* sending: the button keeps its width, shows a spinner, and the fields dim and lock */
+    .sym .btn--cta[disabled]{ cursor: progress; transform: none; }
+    .sym .btn--cta.is-sending{ background: #eed588; }
+    .sym .btn--cta.is-sending::before{ content: ""; width: 13px; height: 13px; border-radius: 50%;
+      border: 2px solid rgba(4,18,27,.25); border-top-color: #04121b; animation: sym-spin .7s linear infinite; }
+    @keyframes sym-spin{ to{ transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce){ .sym .btn--cta.is-sending::before{ animation-duration: 2.4s; } }
+    .sym form[aria-busy="true"] input, .sym form[aria-busy="true"] textarea{ opacity: .6; }
+    .sym__status--bad{ color: #ff9aa8; }
+    .sym__done{ text-align: center; padding: 10px 0; }
+    .sym__done[hidden], .sym form[hidden]{ display: none; }
+    .sym__done img{ width: 120px; height: auto; }
+    .sym__done h3{ margin: 10px 0 6px; color: #eaf6ff; font-size: 22px; }
+    .sym__done p{ margin: 0 auto; max-width: 42ch; }
+    @media (max-width: 820px){ .sym__grid{ grid-template-columns: 1fr; } .sym__banner .wrap{ padding: 28px 0; } .sym__box{ padding: 26px 22px 24px; } }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <div class="wrap topnav__inner">
+      <a class="topnav__brand" href="https://pni.princeton.edu/" target="_blank" rel="noreferrer">
+        <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="Princeton University shield" />
+        <span>Princeton University</span>
+      </a>
+      <div class="topnav__links">
+        <a class="topnav__link" href="/learn.html">Neuro 101</a>
+        <a class="topnav__link" href="/videos.html">Videos</a>
+        <a class="topnav__link" href="/help.html">Help</a>
+        <a class="topnav__link" href="/forum.html">Forum</a>
+        <a class="topnav__link" href="/blog/">Blog</a>
+        <a class="topnav__link" href="/access.html">Access</a>
+        <a class="topnav__link" href="/atlas/">Connectome 101</a>
+      </div>
+    </div>
+  </nav>
+
+  <img class="sym__bg" src="/assets/images/e2_banner.jpg" alt="Reconstructed neurons from the mouse retina in EyeWire II, their branches in many colors on black." />
+  <header class="sym__banner">
+    <div class="wrap">
+      <div class="sym__box">
+        <svg class="sym__circuit" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g stroke-width="2" fill="none" stroke-linecap="square"><path d="M40 80 H180 V160 H280 V100 H400"/><path d="M40 240 H140 V340 H260 V280 H380 V360"/><path d="M120 480 H320 V560 H440"/><path d="M60 700 H200 V780 H340 V720 H460"/><path d="M40 880 H260 V940"/><path d="M520 60 V200 H680 V120 H820"/><path d="M540 320 H760 V440 H900"/><path d="M520 580 V720 H680"/><path d="M540 820 H720 V900 H860"/><path d="M960 80 H1140 V200"/><path d="M980 280 H1180 V380 H1300 V440"/><path d="M960 540 V680 H1100 V620 H1240"/><path d="M980 800 H1140 V900 H1260"/><path d="M1340 80 V220 H1500"/><path d="M1340 360 H1500"/><path d="M1380 480 V620 H1540 V700"/><path d="M1340 820 H1480 V940"/></g><g stroke-width="2.4" fill="none" stroke-linecap="square"><path class="lit" d="M40 240 H140 V340 H260 V280 H380 V360"/><path class="lit" d="M540 320 H760 V440 H900"/><path class="lit" d="M980 280 H1180 V380 H1300 V440"/></g></svg>
+        <span class="sym__corner sym__corner--tl" aria-hidden="true"></span><span class="sym__corner sym__corner--tr" aria-hidden="true"></span><span class="sym__corner sym__corner--bl" aria-hidden="true"></span><span class="sym__corner sym__corner--br" aria-hidden="true"></span>
+        <p class="hero__eyebrow">Symposium · RSVP</p>
+        <h1>Retina Citizen Science Symposium</h1>
+        <p class="hero__lede">The mouse retina that players are mapping in EyeWire II, and your questions about the retina and connectomics.</p>
+        <p class="sym__when">Thursday, December 10 &nbsp;·&nbsp; 10:00 am Eastern <span>(3:00 pm GMT)</span></p>
+        <a class="btn btn--cta sym__go" href="#rsvp">RSVP</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap sym">
+
+    <div class="sym__grid">
+      <section class="sym__card" aria-labelledby="when">
+        <h2 id="when">When and where</h2>
+        <dl class="sym__facts">
+          <dt>Date</dt>
+          <dd>Thursday, December 10, 2026</dd>
+          <dt>Time</dt>
+          <dd>10:00 am Eastern Time (EST)<br />3:00 pm GMT<span class="sym__local" id="localTime"></span></dd>
+          <dt>Where</dt>
+          <dd>Online</dd>
+        </dl>
+        <p>RSVP and we will email you the link to join before the event.</p>
+        <div class="sym__cal">
+          <a href="#" id="icsLink" download="retina-symposium.ics">Add to your calendar (.ics)</a>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Retina%20Citizen%20Science%20Symposium&amp;dates=20261210T150000Z%2F20261210T160000Z&amp;details=RSVP%20at%20https%3A%2F%2Fconnectome.quest%2Fretina-symposium%2F%20to%20get%20the%20link%20to%20join." target="_blank" rel="noreferrer">Add to Google Calendar</a>
+        </div>
+      </section>
+
+      <section class="sym__card" aria-labelledby="rsvp">
+        <h2 id="rsvp">RSVP</h2>
+        <form id="rsvpForm" novalidate>
+          <label>
+            <span>Name</span>
+            <input id="rsvpName" name="name" type="text" autocomplete="name" maxlength="120" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input id="rsvpEmail" name="email" type="email" autocomplete="email" maxlength="254" required />
+          </label>
+          <label>
+            <span>Pyr username <em>(optional)</em></span>
+            <input id="rsvpUsername" name="username" type="text" autocomplete="username" maxlength="40" autocapitalize="off" spellcheck="false" />
+          </label>
+          <label>
+            <span>Do you have any questions about the retina or connectomics? <em>(optional)</em></span>
+            <textarea id="rsvpQuestion" name="question" maxlength="2000" placeholder="We will try to answer them in the Q&amp;A."></textarea>
+          </label>
+          <!-- bot trap -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+          <div class="sym__foot">
+            <button class="btn btn--cta" id="rsvpSubmit" type="submit">RSVP</button>
+            <p class="sym__status" id="rsvpStatus" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <div class="sym__done" id="rsvpDone" hidden>
+          <img src="/assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
+          <h3>You're on the list!</h3>
+          <p class="sym__status">See you on Thursday, December 10. We will email you the link to join.</p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__credit footer__credit--standalone">
+      <a href="/index.html">Return to Map the Brain</a> · <a href="/terms/">Terms and Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var START = new Date('2026-12-10T15:00:00Z');
+
+      // The time where the visitor is, when that is neither Eastern nor GMT.
+      try {
+        var zone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (zone && !/^(America\/(New_York|Toronto|Detroit|Indiana)|Etc\/(GMT|UTC)|UTC|Europe\/London)/.test(zone)) {
+          var local = START.toLocaleString(undefined, { weekday: 'long', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+          document.getElementById('localTime').textContent = 'Your time: ' + local;
+        }
+      } catch (e) { /* older browser */ }
+
+      // A calendar file made here, so it needs no server.
+      var ics = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//connectome.quest//Retina Citizen Science Symposium//EN', 'BEGIN:VEVENT',
+        'UID:retina-symposium-20261210@connectome.quest', 'DTSTAMP:20261112T000000Z',
+        'DTSTART:20261210T150000Z', 'DTEND:20261210T160000Z', 'SUMMARY:Retina Citizen Science Symposium',
+        'DESCRIPTION:The mouse retina players map in EyeWire II\, and your questions. RSVP at https://connectome.quest/retina-symposium/ to get the link to join.',
+        'URL:https://connectome.quest/retina-symposium/', 'END:VEVENT', 'END:VCALENDAR', ''
+      ].join('\r\n');
+      document.getElementById('icsLink').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+
+
+      var ENDPOINT = 'https://us-central1-eyewire-ii-e4d52.cloudfunctions.net/ewSymposiumRsvp';
+      var form = document.getElementById('rsvpForm');
+      var status = document.getElementById('rsvpStatus');
+      var button = document.getElementById('rsvpSubmit');
+      var sending = false;
+      var fields = form.querySelectorAll('input, textarea');
+      var setSending = function (on) {
+        sending = on;
+        button.disabled = on;
+        button.classList.toggle('is-sending', on);
+        button.textContent = on ? 'Sending' : 'RSVP';
+        form.setAttribute('aria-busy', on ? 'true' : 'false');
+        for (var i = 0; i < fields.length; i++) fields[i].readOnly = on;
+      };
+      var say = function (text, bad) { status.textContent = text; status.className = 'sym__status' + (bad ? ' sym__status--bad' : ''); };
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('rsvpName').value.trim();
+        var email = document.getElementById('rsvpEmail').value.trim();
+        var username = document.getElementById('rsvpUsername').value.trim();
+        var question = document.getElementById('rsvpQuestion').value.trim();
+        if (!name) { say('Please add your name.', true); return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { say('Please check your email address.', true); return; }
+        if (sending) return;
+        setSending(true);
+        say('');
+        // the first RSVP after a quiet spell can wait on a cold server
+        var slow = setTimeout(function () { say('Still sending, one moment.'); }, 6000);
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ event: 'retina', name: name, email: email, username: username, question: question, website: form.website.value })
+        })
+          .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+          .then(function (res) {
+            if (!res.ok || !res.j.ok) { say(res.j.error || 'That did not go through. Please try again.', true); return; }
+            form.hidden = true;
+            document.getElementById('rsvpDone').hidden = false;
+          })
+          .catch(function () { say('That did not go through. Please check your connection and try again.', true); })
+          .then(function () { clearTimeout(slow); setSending(false); });
+      });
+    })();
+  </script>
+</body>
+</html>
