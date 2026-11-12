@@ -3,10 +3,40 @@ title: "What's new in Pyr: week of November 9"
 summary: "Every update to Pyr from November 9 to 15, 2026, newest first."
 author: "Nurro"
 published: 2026-11-09T21:32:17.171+00:00
-updated: 2026-11-11T23:52:00.667+00:00
+updated: 2026-11-12T21:32:34.527+00:00
 cover: 
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Thursday, November 12
+
+Cilia Quests now gathers cells sent back for your update in one place, every Pyr update has a weekly page on the blog, and both sandboxes get new practice cells.
+
+**Quest updates in one place:** A new Needs your update group shows cells a reviewer sent back, with the review, their view and a Send update form.
+
+**Every update on the blog:** Read every change in full on the weekly What's new in Pyr page, linked from update notices and each daily note.
+
+**More sandbox practice:** Cut apart five new mergers in the Merger Sandbox and merge missing branches back onto six new Extension Sandbox cells.
+
+**Easier bug reports:** Submit an issue has a new look where you choose Bug, Idea or Other, and the bug button stays during the Starship tour.
+
+**Smaller fixes and polish:** Chat lists everyone online, tutorial tips fold under a Tip link, Terms of Use are in the menu, and tutorial boxes fit better.
+
+### All 11 updates
+
+- **Every update, on the blog.** Every update to Pyr now has a home on the blog: What's new in Pyr, one page a week, with each day's summary and every change in full. The New version ready notice and each Today in Pyr note link to it, so you can read what changed any time, even after pressing Later.
+- **Tutorial colors kept.** Colored words in the tutorials stay colored after an admin rewords a box.
+- **Cilia Quest: a shorter box.** The Trace the cilium box is half as long, so it covers less of the screen.
+- **Tips you can open.** Tips in tutorial boxes are now folded away under a small Tip link, so the boxes stay short. Click it to read the tip.
+- **Quest updates in one place.** Cilia Quests has a new Needs your update group at the top: cells a reviewer sent back, with the review, the reviewer's view and a Send update form right there. Highlight follows the annotation tab you picked while it was off, so its color is right when you turn it back on. Tutorial boxes keep their words inside: long lines and answer buttons wrap instead of running off the edge. The falling leaves are done for the year.
+- **More sandbox practice.** The Merger Sandbox has five new mergers to cut apart, for 13 in all. The Extension Sandbox has six new cells, each missing one branch to merge back on.
+- **Tutorial fixes.** Get Started: the branch end views open with one yellow point, with no second point flashing in first. Merge tutorial: the Merge icon glows while the box asks you to turn merge on. Merge tutorial: the second merge box sits higher, so the merge bar no longer covers it.
+- **Terms of Use and Privacy Notice.** Pyr's Terms of Use and Privacy Notice are now on connectome.quest, with a link in the menu and on the sign in screen.
+- **A fresh look for Submit an issue.** Submit an issue has a new look, and you pick Bug, Idea or Other yourself; nothing is picked to start. A screenshot of a window you set up first, like Settings or a profile, now keeps that window in the picture.
+- **Report a bug during the tour.** The bug button now stays in the top right corner during the Starship tour, so you can send a report from the middle of the flight.
+- **Everyone online is listed.** The online list in chat now shows everyone signed in, including new players on the Starship tour and anyone with chat closed.
+
+*Players made 1,243 edits and completed 41 cells.*
 
 ## Wednesday, November 11
 
