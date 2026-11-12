@@ -251,3 +251,16 @@
   .pyrmaker__stats{ grid-template-columns: 1fr 1fr; }
   .pyrchart__tick{ font-size: 22px; }
 }
+
+/* Toned down (Ames 2026-11-12): the numbers lead, the credit is one quiet line. */
+.pyrmaker{
+  border-color: rgba(66,213,236,.22);
+  background:
+    radial-gradient(ellipse 60% 80% at 100% 0%, rgba(166,139,255,.10), transparent 70%),
+    linear-gradient(180deg, rgba(66,213,236,.06), rgba(255,255,255,.02) 50%),
+    rgba(10,16,30,.8);
+  box-shadow: none;
+}
+.pyrmaker::before{ background: linear-gradient(90deg, var(--pyr-cyan), var(--pyr-violet), transparent); }
+.pyrmaker .pyr-eyebrow{ color: var(--pyr-cyan); }
+.pyrmaker__credit{ grid-column: 1 / -1; margin: 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.08); font-size: 13.5px; color: var(--muted); }
