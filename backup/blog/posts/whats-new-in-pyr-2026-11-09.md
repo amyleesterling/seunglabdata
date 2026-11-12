@@ -4,7 +4,7 @@ summary: "Every update to Pyr from November 9 to 15, 2026, newest first."
 author: "Nurro"
 published: 2026-11-09T21:32:17.171+00:00
 updated: 2026-11-12T21:32:34.527+00:00
-cover: 
+cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
 
