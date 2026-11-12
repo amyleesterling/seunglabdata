@@ -87,6 +87,10 @@
             <input id="ea-agree" type="checkbox" required aria-required="true" />
             <span>I've read and agree to the <a href="https://eyewire.ai/principles" target="_blank" rel="noreferrer">Eyewire II Principles</a> and the <a href="/terms/" target="_blank" rel="noreferrer">Terms of Use and Privacy Notice</a>. <em>(required)</em></span>
           </label>
+          <label class="earlyaccess__agree earlyaccess__news">
+            <input id="ea-news" type="checkbox" />
+            <span>Email me Pyr news, like new datasets and events. <em>(optional, stop any time)</em></span>
+          </label>
           <!-- bot trap: people never see or fill this -->
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="earlyaccess__trap" />
           <div class="subscribe__foot">
@@ -206,6 +210,7 @@
           var note = document.getElementById('ea-note').value.trim();
           var foundUs = document.getElementById('ea-found').value.trim().replace(/\s+/g, ' ');
           var agree = document.getElementById('ea-agree').checked;
+          var news = document.getElementById('ea-news').checked;
           var ewName = document.getElementById('ea-ewname').value.trim();
           var ewRank = document.getElementById('ea-ewrank').value.trim().replace(/\s+/g, ' ');
           var err = problem(name, email, agree, ewName, ewRank);
@@ -219,7 +224,7 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ action: 'access.visitorBeta', name: name, email: email, note: note || undefined,
               eyewireUsername: ewName || undefined, eyewireRank: ewRank || undefined, foundUs: foundUs || undefined,
-              agree: true, website: form.website.value || undefined })
+              agree: true, emailOptIn: news, website: form.website.value || undefined })
           })
             .then(function (r) {
               return r.json().catch(function () { return {}; }).then(function (b) {
