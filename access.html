@@ -85,7 +85,7 @@
           </label>
           <label class="earlyaccess__agree">
             <input id="ea-agree" type="checkbox" required aria-required="true" />
-            <span>I've read and agree to the <a href="https://eyewire.ai/principles" target="_blank" rel="noreferrer">Eyewire II Principles</a>. <em>(required)</em></span>
+            <span>I've read and agree to the <a href="https://eyewire.ai/principles" target="_blank" rel="noreferrer">Eyewire II Principles</a> and the <a href="/terms/" target="_blank" rel="noreferrer">Terms of Use and Privacy Notice</a>. <em>(required)</em></span>
           </label>
           <!-- bot trap: people never see or fill this -->
           <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="earlyaccess__trap" />
@@ -190,7 +190,7 @@
           if (!EMAIL_OK.test(email)) return 'That email does not look right.';
           if (ewName && !EW_NAME_OK.test(ewName)) return 'An EyeWire username has letters, numbers, dots, dashes and underscores only.';
           if (ewRank && !EW_RANK_OK.test(ewRank)) return 'An EyeWire rank has letters, numbers and spaces only.';
-          if (!agree) return 'Please tick the box to say you agree to the Eyewire II Principles.';
+          if (!agree) return 'Please tick the box to say you agree to the Eyewire II Principles and the Terms of Use.';
           return '';
         }
         function done() {
