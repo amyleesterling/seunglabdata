@@ -3,10 +3,55 @@ title: "What's new in Pyr: week of November 9"
 summary: "Every update to Pyr from November 9 to 15, 2026, newest first."
 author: "Nurro"
 published: 2026-11-09T21:32:17.171+00:00
-updated: 2026-11-12T21:32:34.527+00:00
+updated: 2026-11-13T21:32:24.67+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Friday, November 13
+
+Pyr now has a Play button that claims a cell and flies you there, a new Annotations tutorial with its own Achievement, and new keyboard shortcuts for Highlight.
+
+**Play button:** Press Play at the top left and Pyr claims a cell, flies you there, and has the next one waiting after you Complete.
+
+**Save and come back:** In Complete, Save and come back saves your view and keeps the cell reserved until you complete or release it.
+
+**Annotations tutorial:** Learn annotation layers, colors, jumping to marks and Find Path in a new tutorial after Cut, and earn an Achievement.
+
+**Keys for Highlight:** Press H to open Highlight, then S for To soma or B for Beyond, and press ? to search every key and mouse control.
+
+**Claim 10 and fixes:** Claim 10 skips cells others hold, the leaderboard shows your chosen username, folders drag again, and the Cell Library opens again.
+
+### All 26 updates
+
+- **New tutorial: Annotations.** A new Annotations tutorial is in the menu, right after Cut. It shows you how to make annotation layers, color them, step through your marks and jump to them. It ends with Find Path, used to find where a merger starts. Finish it to earn a new Achievement.
+- **Claim 10 and folders.** Claim 10 skips a cell someone else already holds and claims the next one, and tells you how many it claimed. Folders tell you, when you point at their name, that you can drag them into any order. Dropping above or below another folder is easier too.
+- **Tutorial boxes scroll their words.** A tall tutorial box keeps its title and buttons in place and scrolls only the words.
+- **Retina claims really open with Highlight.** A Retina cell you claim now opens with the Checked Highlight layer as promised; for many players it still opened with the five annotation layers.
+- **Folders drag again, and cut pieces stand apart.** Folders in the Segments list can be dragged again: drop on the top or bottom edge of another folder to put it above or below, or on its middle to put it inside. After a cut, a piece whose color is close to the other piece now gets a clearly different color, so you no longer have to recolor it by hand.
+- **Play.** A new Play button at the top left takes you straight to a cell to work on. Pyr claims one for you and flies you there, and after you Complete it, the next one is waiting. If you have not finished the tutorials yet, Play takes you through them first: Get Started, Merge, Cut, Annotations, then Advanced Interface. On Retina you can play Cilia Quests the same way: click the quest bar to submit your answer, and Pyr brings you the next cell. While you play, Skip hands the cell back for someone else and finds you a new one. Each dataset in Switch Dataset now has Start playing, and Open active cell when you already have a cell claimed there. Rather not see the Play button? Turn it off in Settings, under Screen. The Twine Achievement now shows sideways, like an infinity sign, everywhere it appears.
+- **Play skips the tutorials for proofreaders.** If you already have edit access to the main datasets, Play now takes you straight to a cell instead of to the tutorials.
+- **Play bar tidy up.** The Playing chip in the top bar is shorter: the play icon and what you are playing. While you play, click anywhere on the cell bar to open Complete, or to fold it away again. The notes box in Complete folds away behind Add a note for the reviewers until you want it. Pyr asks how the cell ended only if you press Complete without picking one. A cell or Cilia Quest cell you arrive on is saved a few seconds in, so it never says Not saved yet. The crosshairs check now says Place the crosshairs inside the cell, with an (i) that shows how in a small picture. On the Cilia Quest bar, the Submit box runs the full width and the green edge is gone.
+- **The Cell Library opens again.** The Cell Library opens again: the last update stopped it from opening. While you play, clicking the chip in the top bar takes you back to your cell.
+- **Switch what you play from the top bar.** While you play, clicking the chip in the top bar opens the choice again, so you can switch between mapping and Cilia Quest, go back to your cell, or stop.
+- **Back to your cell from the top bar.** While you play, clicking the chip in the top bar brings back your cell in the small Cell Library bar. Click it again while that bar is open to switch what you play, or stop. A Retina cell you claimed before Highlight now opens with Highlight too, when its annotation layers have no marks in them.
+- **Play starts where you are.** The choice between mapping and Cilia Quest only shows on Retina. In the Sandbox or anywhere else, Play and the chip in the top bar just start you mapping where you are.
+- **Submit is back, and MEC is just the AIS.** The Submit button is back on the collapsed Cell Library bar for Cilia Quests, next to Save and Release. MEC cells now open with just the AIS layer, and Marks shows only the AIS. Layers you have already marked stay. The Play pill in the top bar no longer pulses.
+- **Your big view survives a browser restart.** A very big view kept in your browser now comes back after Firefox restarts or restores your tabs, not only after a refresh. Clicking a mark in the 2D or 3D view selects it in the Annotations list every time, even in a very full tab. An announcement no longer shows up twice in chat.
+- **Shorter forms, and basal bodies in empty space.** The Complete box is shorter: Check again sits under the crosshairs message, with Complete and Cancel beside it, and the crosshairs text is bigger. Cilia Quests: if the basal body sits where there is no segment, you can submit with the crosshairs on empty space by saying why in Notes. The Cilia Quest Submit form is tidier: a check mark when the crosshairs are inside, a shorter Notes box you can drag taller, and the share link and point count on two short lines. The (i) next to the crosshairs message shows a real 2D view with the crosshairs inside a cell. Nurro, your guide, can now explain what the Play button does.
+- **H for Highlight, and every mouse control in one list.** H now opens Highlight. Inside Highlight, hold H and click to place a point as before; Shift+H or the × closes it. The keys list (press ?) now has Mouse and Touch sections, so every control is in one place. Search the list: type keys zoom, ? scroll, or mouse.
+- **Crosshairs go inside the cell.** Cilia Quests: the crosshairs need to be inside the cell again. If what you marked sits outside the cell, put the crosshairs in the cell nearby and say so in Notes.
+- **Training shows your part.** Cilia Quest Training: the top of each box now says which part you are on, like Part 2 of 3, so you can see how far through the whole training you are.
+- **Your username on the leaderboard.** If your sign-in has no name, the leaderboard now shows the username you chose instead of the start of your email. The leaderboard and Dataset Stats stay open while you click around, so you can report a problem with them. Close them with the x or Escape. New players choose a username when they ask to join, and can use their EyeWire username with one checkbox.
+- **Side panels close on a click again.** The leaderboard and Dataset Stats close again when you click elsewhere, as before. They stay open while you send a bug report, so you can report a problem with them.
+- **Marks stay put, and so does Highlight.** Adding a segment to try something, then removing it, no longer asks whether to delete the marks you made nearby earlier. The slim Highlight strip and the full Highlight box each remember where you put them, so opening the full box no longer moves the strip.
+- **A cleaner Submit an issue window.** The Submit an issue window no longer has corner brackets, so the close button is easy to see.
+- **Save and come back.** Skip in Play now stays on the slim bar: the full Cell Library no longer opens and closes again on the way to your next cell. The slim bar shows only the cell you are working on, never two. New Save and come back button in the Complete form: it saves your view and keeps the cell reserved for you until you complete or release it.
+- **Clear all asks first.** In Highlight, Clear all is now gray so it stands apart from Undo, and it asks before removing every highlight in your view. Your segments and lab marks always stay.
+- **Play pill shows and hides the box.** The Play pill in the top bar now shows and hides the box you play in: click once to put it away, click again to bring it back on your cell. On Retina, a small arrows button beside the pill lets you switch between the BC Challenge and Cilia Quests, or stop playing.
+- **S for To soma.** In Highlight, with a start point placed, press S for To soma or B for Beyond instead of clicking the buttons. Clear all asks if you are sure, and Enter says OK.
+
+*Players made 1,021 edits and completed 22 cells.*
 
 ## Thursday, November 12
 
