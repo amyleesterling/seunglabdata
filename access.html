@@ -58,7 +58,7 @@
           </p>
           <p class="earlyaccess__ew">
             <b>EyeWire players come first.</b> We're giving EyeWire players priority in the beta.
-            If you play EyeWire, please include your EyeWire username when you ask.
+            If you play EyeWire, please include your EyeWire username and the email on your EyeWire account when you ask.
           </p>
         </div>
         <form class="cform earlyaccess__form" id="earlyForm" novalidate>
@@ -80,6 +80,10 @@
               <input id="ea-ewrank" name="eyewire_rank" type="text" maxlength="40" autocomplete="off" />
             </label>
           </div>
+          <label class="cform__field">
+            <span>Your EyeWire email, if different <em>(optional)</em></span>
+            <input id="ea-ewemail" name="eyewire_email" type="email" maxlength="254" autocomplete="off" placeholder="The email on your EyeWire account" />
+          </label>
           <label class="cform__field">
             <span>How did you find us? <em>(optional)</em></span>
             <input id="ea-found" name="found_us" type="text" maxlength="200" autocomplete="off" placeholder="For example: the EyeWire forum, a friend, a class" />
@@ -192,11 +196,12 @@
         var btn = document.getElementById('ea-submit');
         var EW_NAME_OK = /^[A-Za-z0-9_.\- ]+$/;
         var EW_RANK_OK = /^[\p{L}\p{N}][\p{L}\p{N} .'-]*$/u;
-        function problem(name, email, agree, ewName, ewRank) {
+        function problem(name, email, agree, ewName, ewRank, ewEmail) {
           if (!name) return 'Please add your name.';
           if (!NAME_OK.test(name)) return 'Your name can have letters, spaces, periods, apostrophes and hyphens only.';
           if (!email) return 'Please add your email.';
           if (!EMAIL_OK.test(email)) return 'That email does not look right.';
+          if (ewEmail && !EMAIL_OK.test(ewEmail)) return 'That EyeWire email does not look right.';
           if (ewName && !EW_NAME_OK.test(ewName)) return 'An EyeWire username has letters, numbers, dots, dashes and underscores only.';
           if (ewRank && !EW_RANK_OK.test(ewRank)) return 'An EyeWire rank has letters, numbers and spaces only.';
           if (!agree) return 'Please tick the box to say you agree to the Eyewire II Principles and the Terms of Use.';
@@ -218,7 +223,8 @@
           var news = document.getElementById('ea-news').checked;
           var ewName = document.getElementById('ea-ewname').value.trim();
           var ewRank = document.getElementById('ea-ewrank').value.trim().replace(/\s+/g, ' ');
-          var err = problem(name, email, agree, ewName, ewRank);
+          var ewEmail = document.getElementById('ea-ewemail').value.trim();
+          var err = problem(name, email, agree, ewName, ewRank, ewEmail);
           statusEl.textContent = err;
           if (err) { if (!agree && /tick the box/.test(err)) flagAgree(); return; }
           btn.disabled = true;
@@ -228,7 +234,8 @@
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ action: 'access.visitorBeta', name: name, email: email, note: note || undefined,
-              eyewireUsername: ewName || undefined, eyewireRank: ewRank || undefined, foundUs: foundUs || undefined,
+              eyewireUsername: ewName || undefined, eyewireRank: ewRank || undefined,
+              eyewireEmail: ewEmail && ewEmail.toLowerCase() !== email.toLowerCase() ? ewEmail : undefined, foundUs: foundUs || undefined,
               agree: true, emailOptIn: news, website: form.website.value || undefined })
           })
             .then(function (r) {
