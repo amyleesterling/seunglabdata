@@ -3,7 +3,7 @@ title: "Cilia Status Guide"
 summary: ""
 author: "Celia D"
 published: 2026-11-05T19:19:08.279+00:00
-updated: 2026-11-06T17:42:30.119+00:00
+updated: 2026-11-13T18:27:43.559+00:00
 cover: https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/2a91783d-65b2-48f8-a344-c44eae7b0285.png
 ---
 Hello Cilia Hunters!
@@ -28,3 +28,27 @@ Other statuses:
 
 - **Need Help** - You can't find any cilium or centrioles, or there's another issue that stops you from annotating the cell. Good to leave clarifying notes in most cases!
 - **No Cilium** - Nothing found. This should only be used after review (use Need Help if you are the first annotator).
+
+## Tip: Distinguishing BB and DC
+
+You found two centrioles, but how do you know which one is the basal body, and which is the daughter?
+
+**Answer**: The basal body is closer to the soma's surface. In cases where there is a cilium, it is always the centriole at the base of the cilium. When no cilium is present, it will still often be close (or closer than the daughter) to the soma membrane.
+
+Here are two images where we can tell a difference between the centrioles:
+
+![In this examplehttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5116782905917440, the basal body yellow annotation is clearly closer to the surface. The centrioles can appear as different shapes depending on their orientation.](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/956d07e1-4e76-40fa-96c4-e012b6161811.png)
+^ [In this example](https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5116782905917440), the basal body (yellow annotation) is clearly closer to the surface. The centrioles can appear as different shapes depending on their orientation.
+![Here is another examplehttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5663507412418560 where we can clearly see which is the basal body yellow annotation.](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/488a3842-59e6-46c3-9863-be1d4a849e36.png)
+^ [Here is another example](https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5663507412418560) where we can clearly see which is the basal body (yellow annotation).
+
+*I think one may be closer but I'm not sure. What do I do?*
+
+If the centrioles are not easily distinguishable, consider them "No cilium (BB and DC unclear)."
+
+Here are two examples where it is not easy to differentiate the centrioles:
+
+![In this examplehttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5160372340260864, although both centrioles were found, it is unclear which is which. You should still use one of each annotation type to mark them - red and yellow.](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/af995631-ad71-46b9-80fb-e40cdc2a4d5d.png)
+^ [In this example](https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5160372340260864), although both centrioles were found, it is unclear which is which. You should still use one of each annotation type to mark them - red and yellow.
+![Here is a second examplehttps://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/5136791346610176 where the centrioles are not clearly distinguished.](https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/blog/69930a0febedc717a52b10fd/c5ca69f9-13ec-4372-9aab-531f735ae793.png)
+^ [Here is a second example](https://eyewire-ii-community-dot-brain-wire-dot-seung-lab.ue.r.appspot.com/#!middleauth+https://global.brain-wire-test.org/nglstate/api/v1/6242682812760064) where the centrioles are not clearly distinguished.
