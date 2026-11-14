@@ -3,10 +3,38 @@ title: "What's new in Pyr: week of November 9"
 summary: "Every update to Pyr from November 9 to 15, 2026, newest first."
 author: "Nurro"
 published: 2026-11-09T21:32:17.171+00:00
-updated: 2026-11-13T21:32:24.67+00:00
+updated: 2026-11-14T21:32:25.771+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Saturday, November 14
+
+Pyr now records MEC axons and whole cells apart, shows your active time on Quests, and adds a button to stop playing on MEC.
+
+**MEC axons and whole cells:** On MEC, your cards show axons and whole cells apart, Axon complete gets its own celebration, and Mark as Proofread makes it whole later.
+
+**Time on Quests:** Profile Overview and Dataset Stats now show your active time on Quests and Super Quests today, this week, this month and all time.
+
+**Stop playing button:** While playing on MEC or the Sandbox, a square button beside the Play pill stops playing and brings back the full Cell Library.
+
+**Fixes and polish:** The Starship tour fits shorter screens, MEC play and cells stay on MEC, and removing segments no longer freezes the page.
+
+### All 11 updates
+
+- **Time on Quests.** Profile, Overview now shows your active time on Quests and Super Quests today, this week, this month and all time. Dataset Stats shows the same for the dataset you pick, under Your part. Weeks run Monday to Sunday and months start on the 1st, on US Eastern time, like the weekly and monthly awards.
+- **The Starship stays in view.** On shorter screens the camera now eases back during the Starship tour, so the whole ship stays in view instead of being cut off at the top.
+- **Your cell count, and a steadier MICrONS tour.** The message after you complete a cell now counts the cell you just finished, so its total matches your real count. In the MICrONS part of the Starship tour, scrolling and dragging now zoom and turn around the cell, not a point behind the text box. The tour starts closer in on a cell and its partner, the scan box no longer covers the text box, and a double-click no longer hides the tour's cells.
+- **Less lag after removing a segment.** With thousands of annotation points open, removing a segment no longer freezes the page for seconds while Pyr checks which marks were on it.
+- **Play stays on MEC.** Play on MEC now waits to hear that you have access before picking your cell, so a player just let into MEC is no longer sent to a Retina cell instead.
+- **Extension Sandbox fixes.** In the Extension Sandbox, the "Place the merge points for me" button shows up again. When the cell you go back to is not free, the box now says so and tells you which cell you have instead.
+- **MEC: Axon complete and Cell complete, counted apart.** On MEC, finishing a cell as Axon complete is now recorded as an axon, and Complete as the whole cell. Both still count as one completed cell. Your MEC card in Profile > Datasets and the Now entering card show how many were whole cells and how many were axons. Finishing a cell as Axon complete now gets its own celebration, and the Cell Library labels the cell axon complete. An axon-complete cell can be finished as the whole cell later with Mark as Proofread. It stays one cell and becomes a whole cell, in your counts and in the sheet.
+- **Your cell opens where you claimed it.** A cell you claim now always remembers its own dataset, so opening it can no longer take you to a different one, such as Retina instead of MEC.
+- **Stop playing on MEC.** While playing on MEC or the Sandbox, a small square button beside the Play pill in the top bar stops playing. Your cell stays yours and the full Cell Library comes back.
+- **Practice cells repair.** Practice cells that got stuck can be put back to their start again, so a missing Extension Sandbox cell returns to the rotation.
+- **Your cell is never an empty screen.** When the view saved with your cell does not show it, Play now opens your cell at its cell body instead of leaving you on an empty screen.
+
+*Players made 867 edits and completed 13 cells.*
 
 ## Friday, November 13
 
