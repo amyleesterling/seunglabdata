@@ -3,10 +3,23 @@ title: "What's new in Pyr: week of November 9"
 summary: "Every update to Pyr from November 9 to 15, 2026, newest first."
 author: "Nurro"
 published: 2026-11-09T21:32:17.171+00:00
-updated: 2026-11-14T21:32:25.771+00:00
+updated: 2026-11-15T21:32:13.481+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Sunday, November 15
+
+A quiet day in Pyr: Time on Quests now labels its first column MEC Quests, and Pyr no longer fills your browser history while you work.
+
+**Small fixes and polish:** Time on Quests now says MEC Quests, your browser history stays small, and Extension Sandbox cells are numbered 1 to 8.
+
+### All 2 updates
+
+- **Time on Quests: MEC Quests.** In Time on Quests on your profile and in Dataset Stats, the first column is now called MEC Quests, so it is easy to tell apart from Cilia Quests. Cilia Quests are not timed; how many you finished is under Scout Report, Quests.
+- **Lighter on your browser history.** Pyr no longer fills your browser history with copies of the view while you work, which could make the history very large in Firefox. Extension Sandbox: a cell that could not be put back to its start is retired, and the cells are now numbered 1 to 8.
+
+*Players made 1,796 edits and completed 37 cells.*
 
 ## Saturday, November 14
 
@@ -20,7 +33,7 @@ Pyr now records MEC axons and whole cells apart, shows your active time on Quest
 
 **Fixes and polish:** The Starship tour fits shorter screens, MEC play and cells stay on MEC, and removing segments no longer freezes the page.
 
-### All 11 updates
+### All 12 updates
 
 - **Time on Quests.** Profile, Overview now shows your active time on Quests and Super Quests today, this week, this month and all time. Dataset Stats shows the same for the dataset you pick, under Your part. Weeks run Monday to Sunday and months start on the 1st, on US Eastern time, like the weekly and monthly awards.
 - **The Starship stays in view.** On shorter screens the camera now eases back during the Starship tour, so the whole ship stays in view instead of being cut off at the top.
@@ -33,6 +46,7 @@ Pyr now records MEC axons and whole cells apart, shows your active time on Quest
 - **Stop playing on MEC.** While playing on MEC or the Sandbox, a small square button beside the Play pill in the top bar stops playing. Your cell stays yours and the full Cell Library comes back.
 - **Practice cells repair.** Practice cells that got stuck can be put back to their start again, so a missing Extension Sandbox cell returns to the rotation.
 - **Your cell is never an empty screen.** When the view saved with your cell does not show it, Play now opens your cell at its cell body instead of leaving you on an empty screen.
+- **A lighter Pyr when many people play at once.** Joining, leaving and finished cells now reach chat as one small message each, instead of every open tab hearing every player's check-in each minute. Chat stays quick as more people come online. Pyr asks the lab's servers less after each edit: only the claims on your screen are looked up, and a cell's status is no longer asked about twice on the Retina. Tabs in the background do less: chat checks less often there, and the radio and layer names wait until you come back. Pasting a long list of cells, placing marks on a big MEC cell, and leaving the Cell Library open all do less work, so the page stays smoother. If the page ever freezes, the report you send now says whether drawing the view was the slow part, so freezes are easier to track down.
 
 *Players made 867 edits and completed 13 cells.*
 
