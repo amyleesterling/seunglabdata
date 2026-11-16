@@ -2192,3 +2192,8 @@ html.blog-lightbox-open{ overflow: hidden; }
 .blog-anchor--copied{ opacity: .9 !important; }
 .blog-anchor--copied::after{ content: "Link copied"; margin-left: .5em; font-size: 13px; font-weight: 600; letter-spacing: 0; }
 @media (hover: none){ .blog-anchor{ opacity: .35; } }
+
+/* "Already have access? Sign in here" under Play now and on the request form (Ames 2026-11-16) */
+.signin-hint{ margin: 14px 0 0; font-size: 14px; color: rgba(234,246,255,.75); }
+.signin-hint a{ color: #42d5ec; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.signin-hint a:hover{ color: #9fe9f5; }
