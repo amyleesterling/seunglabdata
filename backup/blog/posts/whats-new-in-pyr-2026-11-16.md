@@ -3,10 +3,37 @@ title: "What's new in Pyr: week of November 16"
 summary: "Every update to Pyr from November 16 to 22, 2026, newest first."
 author: "Nurro"
 published: 2026-11-16T21:32:23.221+00:00
-updated: 2026-11-16T21:32:23.221+00:00
+updated: 2026-11-17T21:32:07.861+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Tuesday, November 17
+
+The Sandbox is now the Training Sim, which scores your cell live against a proofread copy. Cilia Quests get an instructions button, and the Cell Library marks your active cell.
+
+**Meet the Training Sim:** Press Play in the Training Sim and a box scores you against a proofread copy, with Jump to fixes and missed spots shown in gold.
+
+**Quest instructions on hand:** While playing Cilia Quests, tap the small i button on the play bar to open the quest instructions.
+
+**See your active cell:** A green Active tag in the Cell Library shows which cell you are working on, so you know where Save view saves.
+
+**Fixes and polish:** Claim and Skip now pass over cells others hold, finished merges no longer show as failed, and the Highlight box is easier to move.
+
+### All 10 updates
+
+- **Play button setting, claiming fixed.** The Settings switch for the Play button is now called Play button on the 2D view. Turning it off keeps the 2D view clear, and you can still start playing from the Cell Library. Claim a new cell and Skip pass over a cell someone else already holds and claim the next one, instead of stopping with This cell is already claimed.
+- **Merges that worked no longer say failed.** When a merge went through but the server was slow to say so, the Merge Queue could still mark it failed. Pyr now checks the cell, and a merge that worked shows as done.
+- **Quest instructions, Highlight box.** While playing Cilia Quests, a small i button on the play bar opens the quest instructions. The Highlight box moves out of the way when it would sit under the Cell Library. The slim Highlight strip is easy to move: drag it by the grip at its left end, or by any part that is not a button.
+- **Your active cell.** In the Cell Library, the cell you are working on now has a green Active tag by its name, so you always know which cell Save view saves to.
+- **A simpler beta request form.** The beta request form now just asks for your email, the best one to reach you.
+- **The Training Sim.** The Sandbox is now the Training Sim. Press Play and a box scores your cell as you work, against a proofread copy of the same cell. Merge counts the missing pieces you add back, and Cut counts the wrong parts you cut off. Every cell starts at 0% for you. Jump takes you to the next spot that needs fixing, and Complete and Review shows what you missed in gold. A colored bar on the box shows what a Ctrl+click does: blue for Merge, red for Cut, green for Highlight. Mark where you have been with Checked and Come back, and the 2D view opens beside the 3D when you play. Your Training Sim accuracy shows on your profile and on your Cell complete card. When you skip a sim cell you can say why, and the Pyr team reads it.
+- **Training Sim touch ups.** Jump in the Training Sim now always takes you to a spot on your own cell, never out into empty space. Getting your cell ready shows Pyr's glowing neuron while your cell loads. The info boxes in the Training Sim give each term its own heading, so they are easier to read.
+- **Sections slider on hover.** In the 3D view, the slider for how solid the sections are now shows only when you hover on Sections, so it stays out of the way.
+- **Sections and scale bar restyled.** The Sections switch in the 3D view and the scale bar now match the rest of Pyr: dark rounded chips with a cyan tick box and a thin cyan bar.
+- **Training Sim score on your profile.** Your Training Sim accuracy now sits on its own line above Cells completed, so your counts and Achievements stay in their places. Once you can edit the Retina, the Training Sim score no longer shows on your profile.
+
+*Players made 2,092 edits and completed 73 cells.*
 
 ## Monday, November 16
 
