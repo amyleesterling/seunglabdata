@@ -62,3 +62,6 @@ assets/mec/population/ladder5/
 
 # admin page: readable source and password stay local; only data.enc.json ships
 admin/private/
+
+# Not on the website (too big for GitHub Pages; nothing uses them). Backup: D:\Meshes\connectome-quest-mec-backup
+assets/mec/cells/
