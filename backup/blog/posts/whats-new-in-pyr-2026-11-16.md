@@ -3,10 +3,40 @@ title: "What's new in Pyr: week of November 16"
 summary: "Every update to Pyr from November 16 to 22, 2026, newest first."
 author: "Nurro"
 published: 2026-11-16T21:32:23.221+00:00
-updated: 2026-11-17T21:32:07.861+00:00
+updated: 2026-11-18T21:32:23.574+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Wednesday, November 18
+
+The Training Sim gets Merge and Cut buttons, a faster Jump and a Merge score that counts every merge. The Starship Tour can be replayed from the menu, and letter shortcuts work on French and other keyboards.
+
+**Training Sim upgrades:** Turn Merge and Cut on with new buttons, Jump to the next spot faster, and watch every good merge raise your Merge score.
+
+**Replay the Starship Tour:** Pick Starship Tour in the top right menu, just under Site Tour, to fly it again now that the chat box rocket is retired.
+
+**Shortcuts on every keyboard:** Letter shortcuts follow the letter printed on your key, so M merges and C cuts on French and other keyboards.
+
+**A new Play button:** Press the bright teal Play button for a launch flash, rings of light and a comet, then see Teleporting while your cell loads.
+
+**Tutorials and smaller fixes:** Merge and Cut tutorials zoom the 2D images close, the side panel button always opens, and Pyr opens on your cells again.
+
+### All 11 updates
+
+- **Keyboards and the Merge glow.** Letter shortcuts now follow the letter printed on your key, so M merges and C cuts on French and other keyboards too. In the Merge tutorial, the Merge icon on the top bar glows again while the box asks you to turn it on.
+- **Clearer Cut tutorial.** The Cut tutorial now says to Ctrl+Click the branch right next to each gem, not the gem itself.
+- **The tour rocket lands.** The rocket by the chat box is retired now that the new tour is done. Thank you to everyone who flew it and sent feedback! New players now start the tour only after the sign in box closes, so it never plays hidden behind it.
+- **Closer 2D in the tutorials.** In the Merge and Cut tutorials, the 2D images now zoom in close on the spot each step points at. The 2D cut steps remind you that Ctrl and the mouse wheel zoom the 2D images.
+- **A new Play button.** The Play button is now a bright teal key with a glass label. Press it and it launches with a flash, rings of light and a comet along the label. While your cell loads, it says Teleporting until you arrive.
+- **Fly the Starship Tour again.** Want to see the Starship tour again? Open the menu at the top right and pick Starship Tour, just under Site Tour.
+- **Every merge counts in the Training Sim.** Every missing piece you merge in now adds to your Merge score, even a tiny one, so each good merge moves the number. The Match score and Merge show tenths of a percent.
+- **Easier to spot pins, clearer mark questions.** In the Training Sim, the pin that shows where to look is bigger, drawn over the cell, and beats like a heart. When you remove a segment that has marks on it, the question now shows that segment in its own color with its number, and Show takes you to the marks before you decide. That question also comes up faster.
+- **A faster Jump in the Training Sim.** Jump finds the next spot much faster: the Training Sim looks it up while you work. Jump and Review now take you to a slice with an image, so the 2D view no longer goes black. The Jump pin stays still again, big and drawn over your cell. New Merge and Cut buttons in the Training Sim box turn those modes on and off, just like the M and C keys. A wrong part you cut off now counts as cut off, even when a small stub of it stays on your cell. After a cut, the old copy of your cell no longer stays on screen over the new one.
+- **Side panel button always opens.** The side panel button at the top right now opens the cells panel even when no layer is selected. Before, it sometimes did nothing.
+- **Opening on your cells again.** Pyr no longer opens on an empty view with no cells. A view with no cells is never kept as where you left off. The Training Sim pin is a little smaller.
+
+*Players made 1,896 edits and completed 77 cells.*
 
 ## Tuesday, November 17
 
