@@ -60,6 +60,8 @@ let failed = 0;
 for (const url of urls) {
   const rel = decodeURIComponent(url.slice(STORAGE.length).split(/[?#]/)[0]);
   if (rel.split('/').some((s) => s === '..' || s === '')) continue;
+  // Pictures only: nothing that a browser would run as a page may land here.
+  if (!/\.(png|jpe?g|gif|webp|avif)$/i.test(rel)) { console.log('skipped, not a picture', url); continue; }
   const file = path.join(OUT, 'images', rel);
   if (fs.existsSync(file)) continue;                 // uploads never change under the same name
   const r = await fetch(url);

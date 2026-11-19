@@ -1,0 +1,15 @@
+# GitHub Pages builds this site with Jekyll. Nothing here changes how a page
+# looks: it only keeps working notes and tools out of what the site serves.
+# They stay in the repository, which is public, so none of them may hold a
+# password or a key (security review 2026-11-18).
+exclude:
+  - HANDOFF.md
+  - README.md
+  - mec/HANDOFF.md
+  - cell-library-task.md
+  - subscribe-to-sheet.gs
+  - admin/tools
+  - tools
+  - translation
+  - backup
+  - assets/images/desktop.ini
