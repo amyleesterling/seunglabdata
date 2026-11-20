@@ -3,10 +3,57 @@ title: "What's new in Pyr: week of November 16"
 summary: "Every update to Pyr from November 16 to 22, 2026, newest first."
 author: "Nurro"
 published: 2026-11-16T21:32:23.221+00:00
-updated: 2026-11-19T21:32:02.746+00:00
+updated: 2026-11-20T21:32:10.37+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Friday, November 20
+
+Lost Fragments opens for everyone who edits Retina, your profile now shows Datasets Unlocked emblems, and the Training Sim stops calling good merges wrong.
+
+**Lost Fragments are here:** Pick an untraced Retina fragment in the Cell Library or Play card, fix it, and it counts as a completed cell.
+
+**Datasets Unlocked emblems:** Your profile shows an emblem and date for each dataset you unlocked, including CA3, and you can drag them into any order.
+
+**Fairer, sharper Training Sim:** Pieces the finished cell never placed no longer count as wrong, and the box has a light bulb hint, lightning buttons and remembered widths.
+
+**A new Settings layout:** Settings is one larger column with a section list, a search box, and a Changed filter showing only what you changed.
+
+**More handy additions:** Check lab server status in Profile, Datasets, add up to four screenshots to bug reports, and fold away the Cell Library tabs.
+
+### All 28 updates
+
+- **Training Sim stops calling good merges wrong.** The Training Sim no longer calls a merge wrong when the finished cell simply never placed that piece. Most of those merges were right. Pieces the finished cell never placed no longer count as wrong parts, in your score, in Show me or in Jump. Some cells showed dozens of wrong parts that were really one. A failed merge left over in your Merge Queue from an earlier visit goes away on its own once those two pieces are already one cell.
+- **Clear removes stray merge dots, and a place in line after a reload.** Clear in the Merge Queue now also removes leftover red merge dots that stayed on the screen with nothing queued. If you reload partway through a tutorial while every practice cell is in use, you now get a place in line, and your cell loads by itself when it is your turn.
+- **Safer names, invites and shared notes.** If you use an invite that was sent to a different email, an admin now checks it is you before letting you in. You can no longer change your name to one another player already uses. You can remove only the help requests and tags you made yourself. Anyone can still mark a help request as solved.
+- **A shorter cell bar.** The cell bar's button now says + Annotation, so the bar stays on one line. A cell you claimed now says My cell.
+- **A lighter Training Sim box.** Jump to next spot shows a little search running across the button while it looks, and lights up when it finds the spot. The hint folds into a small light bulb beside Jump. Click the bulb to read the hint and use Show me. The Training Sim icon no longer has a box around it. More pieces that the finished cell never checked now count as neither right nor wrong, so fewer good merges are called wrong.
+- **Play waits for the tour.** New players see the Play button once they have finished the starship tour and closed the tutorials, so it no longer appears in the middle of the tour.
+- **Datasets Unlocked on your profile.** Your profile now shows the datasets you have unlocked, each with its own emblem, under your favorite Achievement. The buttons at the top of your notifications are bigger and easier to read.
+- **A bigger streak flame, and a faster Mine list.** Your streak in the top bar is now a bigger flame with the number of days inside it in gold. The flame grows as the number gets longer. The Mine list in the Cell Library no longer freezes the page for a few seconds when you have finished many cells.
+- **Datasets Unlocked arrives Nov 20.** At 10 am Eastern on Nov 20, your profile shows an emblem for each dataset you have unlocked: the Retina, MEC, FlyWire and BANC. Join us in chat then for the Datasets Unlocked ceremony.
+- **A faster Cell Library.** The Cell Library does much less work when it opens and updates, so it stays quick even with thousands of cells and many of your own claims.
+- **An easier to read streak and a tidier Segments panel.** The day count in your streak flame is now dark against the fire, so it is easy to read. On a short screen, the Segments panel no longer shows two scrollbars side by side or cuts off the edge of the list.
+- **More screenshots in a report.** A bug report can now carry up to four screenshots, so you can show what happened before and after.
+- **Steadier merging and scrolling.** Clear in Merge Mode now also removes a red dot left by a first point placed outside the data. The bottom bar and the TODO legend no longer jump up while a cut or merge is being sent. With folders, the Segments panel now keeps its place when you switch tabs and come back.
+- **A sharper Training Sim box.** Play shows a lightning search across the button the moment you click it, and it strikes when your cell is up. Jump to next spot and Complete and Review have clean faces with a small circuit chip around their edges. Jump's lightning runs from pad to pad and stops at the light bulb, which now sits in Jump like a key. The open hint has its words across the top, with Show me on the right under the fold arrow. What you still have to merge in and cut off reads in red. Teleport to a new cell has the same shape as Play, with lightning on click.
+- **Training Sim buttons line up.** With the light bulb showing, Jump to next spot sits centered over Complete and Review.
+- **Nurro flies by.** All day today, Nurro flies across the page once an hour to celebrate Datasets Unlocked. Click a player's dataset line in chat to open their profile at their Datasets Unlocked row.
+- **Favorites open in the Trophy Case.** Clicking a favorite Achievement in your profile, special ones included, now opens the Trophy Case right at it.
+- **The Training Sim box powers on.** The Training Sim box powers on like a screen when it opens, and powers off when you close it. Keep working and Complete and Review on the finish screen have the same circuit chip edge as Jump. With the light bulb showing, Jump and Complete are balanced so the row looks even. The finish screen buttons stay on one line, even on a small screen.
+- **See the 3D shape update, and server status.** After a cut or merge, a small note shows while the new 3D shape loads. Your edit is already saved. You can drag the note anywhere. Profile, Datasets now has Server status: whether the lab servers for Retina, the Sandbox and MEC are OK, slow or down. View all on Special Awards in your profile now opens the Trophy Case, like the other rows. Nurro keeps his answers shorter.
+- **A new Settings layout.** Settings is now one easy column, with a list of sections on the left, a search box, and a Changed filter that shows only what you have changed. The text in Settings is larger. Server status is now one line at the top of Profile, Datasets, and opens by itself if a server is slow or down.
+- **A Training Sim box that fits.** While the Training Sim checks your edits, lightning runs along the score bar and strikes when your new score is in. The box fits its contents as they change, so it grows when Highlight opens and shrinks back after. Slim and expanded each remember the width you give them. Teleport to a new cell no longer brings the Play button up over the box.
+- **Datasets Unlocked, dated.** Under each emblem in Datasets Unlocked is the date you unlocked it, or the year for FlyWire and BANC. Everyone who helped proofread CA3, the mouse hippocampus, has a CA3 emblem. Drag the emblems to put them in the order you like.
+- **Fold the Cell Library tabs.** An arrow at the top of the Cell Library's tabs folds them away, so the header just names the tab you are on. Press All tabs to bring them back.
+- **Profile glows and tabs.** The glow behind each Achievement on a profile now matches its art: purple for Days helping science, gold for Edits. The profile's tabs show Pyr's own icons instead of emoji, with the neuron trophy for the Trophy Case.
+- **Pinned messages and notifications.** The pinned message at the top of chat now shows up to three lines, so longer notes from the team can be read in full. The × that closes Notifications now sits in the panel's top right corner and says what it does when you point at it.
+- **Quicker Jump, no stuck 3D pill.** The Training Sim score bar flashes with one bolt of lightning when your new score is in. Pressing Jump to next spot while your score is still being worked out no longer takes ages: it waits for the score, then finds the spot. Updating the 3D shape no longer sits at 98% when a last piece never arrives. It goes once loading stops.
+- **Other players' activity, no 3D note.** On another player's profile, the last 14 days chart now shows their activity, not yours. The Updating the 3D shape note after a cut or merge is gone.
+- **Lost Fragments are here.** Lost Fragments is open to everyone who can edit Retina: pieces of the retina nobody has traced yet, in the Cell Library and on the Play card. Pick one, fix its splits and merges, check every end, and put the crosshairs inside it. Each one counts as a completed cell. Claim a fragment to hold it for you while you work on it. When we complete 500 Lost Fragments together, there is a party. The tab counts down how many to go.
+
+*Players made 2,231 edits and completed 86 cells.*
 
 ## Thursday, November 19
 
