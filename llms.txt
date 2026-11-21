@@ -12,6 +12,7 @@
 
 ## Blog
 - [All posts](https://connectome.quest/blog/) ([RSS](https://connectome.quest/blog/feed.xml))
+- [Lost Fragments 2.0: The Glia Strike Back](https://connectome.quest/blog/lost-fragments-2-the-glia-strike-back/): The lab's full list of 11,605 untraced retina fragments is in Pyr, played from the center of the retina outward. Plus a new way to tag glia.
 - [How to make Pyr run faster](https://connectome.quest/blog/how-to-make-pyr-run-faster/): Simple settings to keep Pyr smooth, a look at how Pyr loads a cell, and what we have already sped up.
 - [What's new in Pyr: week of November 16](https://connectome.quest/blog/whats-new-in-pyr-2026-11-16/): Every update to Pyr from November 16 to 22, 2026, newest first.
 - [What's new in Pyr: week of November 9](https://connectome.quest/blog/whats-new-in-pyr-2026-11-09/): Every update to Pyr from November 9 to 15, 2026, newest first.

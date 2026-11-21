@@ -1,5 +1,18 @@
 [
   {
+    "id": 24,
+    "slug": "lost-fragments-2-the-glia-strike-back",
+    "title": "Lost Fragments 2.0: The Glia Strike Back",
+    "summary": "The lab's full list of 11,605 untraced retina fragments is in Pyr, played from the center of the retina outward. Plus a new way to tag glia.",
+    "body": "Lost Fragments just got a lot bigger.\n\n## What are Lost Fragments?\n\nThe retina we are mapping in Pyr is full of pieces nobody is tracking yet. Some are whole cells that were never registered, and the rest are large pieces of neurite cut off from their cells. Tidy one up and complete it, and it counts as a completed cell.\n\n## The lab's full list\n\nWhen Lost Fragments opened on November 20, it had a first sample of 151 fragments. Now the lab has sent us their full list: **11,605 fragments**. They left out anything their filters took for glia, anything edited a lot recently, and every cell already in the proofreading sheets, so you are never redoing someone's work.\n\nThey come in three groups:\n\n- **Easy** (2,735): each probably has a cell body, which makes the cell easy to recognize and complete.\n- **Medium** (5,273): large pieces of neurite with no cell body.\n- **Hard** (3,597): the smallest pieces. Fewer clues, so they can be harder to place.\n\nPlay hands them out from the center of the retina outward, and passes over any fragment someone else has already started. Some fragments come with a clue: if a piece was cut off a cell in the lab's sheets, Pyr tells you which cell, so you can check where it belongs.\n\n## The glia strike back\n\nThe lab's glia filter is still early, so some glia slipped through. If your fragment is a glia, press **It's a glia** instead of proofreading it. Each glia is one column rising up, covered in little barb-like projections. Say whether it is one glia or several fused together, put the crosshairs in a trunk, then submit. That point tells the lab exactly where the glia is.\n\nNo proofreading needed, and it counts as a Quest. We'll stash it away for the Glia Quest, launching in early December, where you will split fused glia apart.\n\n## Also new\n\n- **Your work saves as you go.** Each fragment you hold keeps its checklist, your annotations and your view, even after a reload or on another computer.\n- **Later** keeps a fragment in My Cells and gives you a new one. You can hold up to 5 at a time.\n- **Nicknames.** Give any cell your own name, like \"cell I merged a branch into\". Only you see it.\n\n## How to play\n\nOpen Pyr, go to Retina, press Play and pick Lost Fragments. You need edit access on Retina: [here is how to unlock it](https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/).\n\nThank you for mapping with us. For Science!\n\nAmy",
+    "cover_url": "https://javthknksdcrlhiaaptj.supabase.co/storage/v1/object/public/admin-uploads/lost-fragments-2/wide.png",
+    "author_name": "Amy R. Sterling",
+    "status": "published",
+    "published_at": "2026-11-21T19:44:41.244337+00:00",
+    "updated_at": "2026-11-21T19:44:41.244337+00:00",
+    "created_at": "2026-11-21T19:09:30.581071+00:00"
+  },
+  {
     "id": 23,
     "slug": "how-to-make-pyr-run-faster",
     "title": "How to make Pyr run faster",

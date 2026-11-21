@@ -6,7 +6,32 @@
     <atom:link href="https://connectome.quest/blog/feed.xml" rel="self" type="application/rss+xml" />
     <description>What is new in Pyr and the other brain mapping projects of the Seung Lab, Princeton University.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 21 Nov 2026 01:47:10 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 19:44:41 GMT</lastBuildDate>
+    <item>
+      <title>Lost Fragments 2.0: The Glia Strike Back</title>
+      <link>https://connectome.quest/blog/lost-fragments-2-the-glia-strike-back/</link>
+      <guid isPermaLink="true">https://connectome.quest/blog/lost-fragments-2-the-glia-strike-back/</guid>
+      <pubDate>Sat, 21 Nov 2026 19:44:41 GMT</pubDate>
+      <dc:creator>Amy R. Sterling</dc:creator>
+      <description>The lab's full list of 11,605 untraced retina fragments is in Pyr, played from the center of the retina outward. Plus a new way to tag glia.</description>
+      <content:encoded><![CDATA[<p>Lost Fragments just got a lot bigger.</p>
+<h2 id="what-are-lost-fragments">What are Lost Fragments?<a class="blog-anchor" href="#what-are-lost-fragments" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>The retina we are mapping in Pyr is full of pieces nobody is tracking yet. Some are whole cells that were never registered, and the rest are large pieces of neurite cut off from their cells. Tidy one up and complete it, and it counts as a completed cell.</p>
+<h2 id="the-lab-s-full-list">The lab's full list<a class="blog-anchor" href="#the-lab-s-full-list" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>When Lost Fragments opened on November 20, it had a first sample of 151 fragments. Now the lab has sent us their full list: <strong>11,605 fragments</strong>. They left out anything their filters took for glia, anything edited a lot recently, and every cell already in the proofreading sheets, so you are never redoing someone's work.</p>
+<p>They come in three groups:</p>
+<ul><li><strong>Easy</strong> (2,735): each probably has a cell body, which makes the cell easy to recognize and complete.</li><li><strong>Medium</strong> (5,273): large pieces of neurite with no cell body.</li><li><strong>Hard</strong> (3,597): the smallest pieces. Fewer clues, so they can be harder to place.</li></ul>
+<p>Play hands them out from the center of the retina outward, and passes over any fragment someone else has already started. Some fragments come with a clue: if a piece was cut off a cell in the lab's sheets, Pyr tells you which cell, so you can check where it belongs.</p>
+<h2 id="the-glia-strike-back">The glia strike back<a class="blog-anchor" href="#the-glia-strike-back" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>The lab's glia filter is still early, so some glia slipped through. If your fragment is a glia, press <strong>It's a glia</strong> instead of proofreading it. Each glia is one column rising up, covered in little barb-like projections. Say whether it is one glia or several fused together, put the crosshairs in a trunk, then submit. That point tells the lab exactly where the glia is.</p>
+<p>No proofreading needed, and it counts as a Quest. We'll stash it away for the Glia Quest, launching in early December, where you will split fused glia apart.</p>
+<h2 id="also-new">Also new<a class="blog-anchor" href="#also-new" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<ul><li><strong>Your work saves as you go.</strong> Each fragment you hold keeps its checklist, your annotations and your view, even after a reload or on another computer.</li><li><strong>Later</strong> keeps a fragment in My Cells and gives you a new one. You can hold up to 5 at a time.</li><li><strong>Nicknames.</strong> Give any cell your own name, like &quot;cell I merged a branch into&quot;. Only you see it.</li></ul>
+<h2 id="how-to-play">How to play<a class="blog-anchor" href="#how-to-play" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>Open Pyr, go to Retina, press Play and pick Lost Fragments. You need edit access on Retina: <a href="https://connectome.quest/blog/how-to-unlock-edit-access-in-pyr/" target="_blank" rel="noopener noreferrer">here is how to unlock it</a>.</p>
+<p>Thank you for mapping with us. For Science!</p>
+<p>Amy</p>]]></content:encoded>
+    </item>
     <item>
       <title>How to make Pyr run faster</title>
       <link>https://connectome.quest/blog/how-to-make-pyr-run-faster/</link>
