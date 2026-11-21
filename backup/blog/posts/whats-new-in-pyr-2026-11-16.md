@@ -3,10 +3,54 @@ title: "What's new in Pyr: week of November 16"
 summary: "Every update to Pyr from November 16 to 22, 2026, newest first."
 author: "Nurro"
 published: 2026-11-16T21:32:23.221+00:00
-updated: 2026-11-20T21:32:10.37+00:00
+updated: 2026-11-21T21:32:10.618+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Saturday, November 21
+
+Lost Fragments now holds the lab's full list of 11,605 untraced pieces, you can tag glia for a Quest, and the whole Pyr community gets milestone celebrations with confetti and fireworks.
+
+**Lost Fragments full list:** Play through 11,605 untraced retina pieces in Easy, Medium and Hard, starting from the center and passing over pieces others have started.
+
+**Community milestone celebrations:** When all players together reach a big milestone, everyone sees a banner with confetti, fireworks and Nurro, and Dataset Stats shows the next one.
+
+**Tag glia for Quests:** Press It's a glia in Lost Fragments and mark its trunk to count it as a Quest and save it for the Glia Quest.
+
+**Keep and nickname fragments:** Hold up to five Lost Fragments with saved views, set one aside with Later, and give any cell a private nickname.
+
+**Resize views, peek underneath:** Drag the line between the 2D and 3D views to resize them, and hold D to hide cell colors in 2D.
+
+### All 25 updates
+
+- **Easier to read chat.** Chat messages that reply to you or mention you have a fainter highlight, so their words are easier to read. The bright bar on the left still marks them.
+- **Faster Cilia Quest list, Asia 2D back.** The Cilia Quest list loads much faster. It shows the first 50 open cells and how many more there are, your own cells, and how many other players hold or have finished. Retina 2D images load again for players who chose the copy hosted in Asia.
+- **Community milestones.** When all Pyr players together reach a big milestone, everyone sees a CONGRATS! banner with confetti, and Nurro flies across once it has landed. The milestones are 5,000 cells completed and every 5,000 after, 100,000 merges and splits and every 100,000 after, 100, 250 and 500 players, and the Lost Fragments milestones. Each one shows once. Close it with the X, and its notification brings it back any time. Dataset Stats shows the next milestone and how many to go.
+- **Resize the 2D and 3D views.** Drag the line between the 2D and 3D views to give either one more room. Double click the line to split them evenly again. Pyr remembers your split.
+- **Lost Fragments: stash a cell, cleaner checklist.** If part of a Lost Fragment belongs to another cell, say so: Pyr tells you whether that cell is already proofread, and if not you can proofread it too or stash it for later. Stashed cells show up in a new Stashed group in Lost Fragments, for anyone to proofread. Complete now reads the crosshairs straight away, and the Nucleus step is gone. The cell type list matches the rest of Pyr, and the Lost Fragments instructions have a new look. Some announcements now open full screen. Click the picture to jump straight in.
+- **Pinned messages show once.** A new pinned message from the team shows at the top until you close it or refresh, and it does not come back after that. Longer pinned messages now show in full, up to six lines.
+- **Hold D to see under the colors.** Hold D to hide the cell colors in 2D and see the image underneath. Let go and they come back.
+- **Community milestone celebrations.** A community milestone celebration now plays by itself only if you are on Pyr within a week of it, and only once. If two milestones arrive close together, you see the newest one, with no line of celebrations waiting behind it. Click the milestone in your notifications to play the whole celebration again, confetti and Nurro included. Only the newest milestone stays there.
+- **Pinned messages and announcements.** A pinned message in chat is now a small chip. Click it to read the whole message, with what players have sent us since Sept 28 and what we built from it. Clicking the Lost Fragments announcement in your notifications opens it full screen again, with its Play button.
+- **Fireworks for the Pyr community.** Community celebrations now have fireworks, and the confetti bursts out from behind the banner. A test celebration shows everything we have done in Pyr so far, together: cells completed, edits and players. More confetti is coming as we reach new community milestones!
+- **Lost Fragments you started stay yours.** Once you make a merge or a cut on a Lost Fragment, it stays yours when Play gives you the next one. You can have five started at once. With five, Play takes you back to them until you complete or skip one. Your Lost Fragments now show in My Cells, with Open and Skip.
+- **One popup at a time, and a calmer bell.** Achievements, celebrations and questions now take turns, so only one popup is on screen at a time. When you open Pyr you get at most one greeting: a new Achievement, a question you need to answer, or the leaderboard. Community milestones always get their turn. Opening Pyr from its plain address brings back where you left off in that dataset, with no bar asking first. Missed three or more days? The daily updates fold into one While you were away note with a link to the week on the blog. News from the team stays unread until you read it, and the red counts stop at 9+.
+- **Reports send more easily.** Submit an issue now sends when you only fill in the big box: its first sentence becomes the title.
+- **Lost Fragments work like claimed cells.** Your work on a Lost Fragment saves as you go: the checks, the point, the cell type and your note come back after a reload or on another computer. Pyr follows a fragment to its new ID after merges and cuts, and shows that ID. Start playing is back in Lost Fragments, and it takes you back to the fragment you were working on. My Cells shows each of your fragments by its current ID, with how many steps are done.
+- **A Close button under the instructions.** The Lost Fragments and Quest instructions now have a Close button at the bottom right, where you finish reading.
+- **Pinned messages stay until you close them.** A pinned message in chat now stays at the top until you click its ×, instead of going away when you refresh.
+- **Lost Fragments save your whole view.** Each Lost Fragment you hold keeps its own view, with your annotations, Highlight marks, layers and camera. It saves by itself as you work, and comes back when you open the fragment again. Your Lost Fragments show in My Cells as rows like your claimed cells, with Save view, Release and Complete. The next fragment starts clean, without the last one's marks. Instructions in the Lost Fragments tab now opens the Lost Fragments how to.
+- **Smoother slice, steadier cut bar, 2D detail per dataset.** The Sections slider in 3D now fades the slice evenly, instead of staying almost invisible until the very end. Short notes while placing cut or merge points, like a supervoxel already being selected, now show where errors do, so the cut bar and the TODO legend stay still. Settings, 2D images: you can choose a different 2D image detail for the dataset you are on, and it switches by itself when you change datasets.
+- **Nicknames for your cells.** Give a cell your own nickname, like "cell I merged a branch into". It is not a cell type, and only you see it. There is a Nickname box in the Lost Fragments checklist and in the Complete form. It saves as you type, to your account. Your nickname shows instead of the ID in the Segments list, in My Cells and in the side panel, and it stays with the cell after merges and cuts.
+- **Later, for Lost Fragments.** Later keeps the Lost Fragment you are on in My Cells with your work saved, and gives you a new one. It is in the Before you complete box while you play, and in the full view. You can hold up to 5 at a time. Play never hands you one of your own started fragments as the next one. Play remembers that you were playing Lost Fragments, instead of going back to BC Challenge.
+- **2D detail for every dataset.** In Settings, under 2D images, the new Set it for other datasets list lets you choose the image detail for each dataset without switching to it first.
+- **No more replayed achievements.** An achievement you already earned no longer celebrates again when Pyr opens while you are still signing in.
+- **It's a glia, in Lost Fragments.** Found a glia in Lost Fragments? Press It's a glia instead of proofreading it. Say whether it is one glia or several cells fused together, then Submit glia. Labelling a glia counts as a Quest, like Cilia Quest, and the glia is saved for splitting later. Each glia is one column rising up, covered in little barb-like projections. The box links to examples of a glia and of glia fused together. Skip in Lost Fragments no longer leaves the 3D view empty.
+- **Lost Fragments: the lab's full list.** Lost Fragments now has the lab's full list: 11,605 pieces of the retina nobody has traced yet. They come in Easy, Medium and Hard. Easy ones probably have a cell body, and Hard ones are the smallest pieces. Play takes you from the center of the retina outward, and passes over any piece someone else has already started. Some pieces were cut off a cell in the lab's sheets, or may already be one. The fragment tells you which cell, so you can check.
+- **Glia get a trunk point, and the Glia Quest has a date.** When you tag a glia in Lost Fragments, put the crosshairs in its trunk before you submit. It shows the lab exactly where the glia is. Tagged glia are stashed for the Glia Quest, launching in early December. Researchers from the labs now have gold names in chat. Nurro knows about Lost Fragments and can answer more questions about Pyr.
+
+*Players made 1,017 edits and completed 57 cells.*
 
 ## Friday, November 20
 
@@ -22,7 +66,7 @@ Lost Fragments opens for everyone who edits Retina, your profile now shows Datas
 
 **More handy additions:** Check lab server status in Profile, Datasets, add up to four screenshots to bug reports, and fold away the Cell Library tabs.
 
-### All 28 updates
+### All 29 updates
 
 - **Training Sim stops calling good merges wrong.** The Training Sim no longer calls a merge wrong when the finished cell simply never placed that piece. Most of those merges were right. Pieces the finished cell never placed no longer count as wrong parts, in your score, in Show me or in Jump. Some cells showed dozens of wrong parts that were really one. A failed merge left over in your Merge Queue from an earlier visit goes away on its own once those two pieces are already one cell.
 - **Clear removes stray merge dots, and a place in line after a reload.** Clear in the Merge Queue now also removes leftover red merge dots that stayed on the screen with nothing queued. If you reload partway through a tutorial while every practice cell is in use, you now get a place in line, and your cell loads by itself when it is your turn.
@@ -52,6 +96,7 @@ Lost Fragments opens for everyone who edits Retina, your profile now shows Datas
 - **Quicker Jump, no stuck 3D pill.** The Training Sim score bar flashes with one bolt of lightning when your new score is in. Pressing Jump to next spot while your score is still being worked out no longer takes ages: it waits for the score, then finds the spot. Updating the 3D shape no longer sits at 98% when a last piece never arrives. It goes once loading stops.
 - **Other players' activity, no 3D note.** On another player's profile, the last 14 days chart now shows their activity, not yours. The Updating the 3D shape note after a cut or merge is gone.
 - **Lost Fragments are here.** Lost Fragments is open to everyone who can edit Retina: pieces of the retina nobody has traced yet, in the Cell Library and on the Play card. Pick one, fix its splits and merges, check every end, and put the crosshairs inside it. Each one counts as a completed cell. Claim a fragment to hold it for you while you work on it. When we complete 500 Lost Fragments together, there is a party. The tab counts down how many to go.
+- **Lost Fragments: cell types and instructions.** When you complete a Lost Fragment you can now say what kind of cell it is, if you can tell. Lost Fragments has its own instructions. They open the first time you play, and the ? button opens them again. Folding the Cell Library tabs now puts the tab's name in the title, for example Cell Library: Lost Fragments. The Teleport complete card says Your Cell and sits over the middle of the 3D view.
 
 *Players made 2,231 edits and completed 86 cells.*
 
