@@ -25,6 +25,12 @@ Go to **Settings > 2D images > 2D image detail** and pick:
 
 The images stay at that detail until you choose **Full** again, so switch back whenever you need a close look at a tricky spot.
 
+### A different detail for each dataset
+
+Some datasets are heavier than others, so Pyr can remember a detail for each one. Right below **2D image detail** there is a line named after the dataset you are on, such as **On MEC**. Leave it at **Same as above**, or pick **Full**, **Half** or **Quarter** just for that dataset.
+
+Pyr saves the choice to your account and switches the 2D detail by itself when you change datasets. For example, you might use **Half** on MEC for heavy proofreading and keep **Full** on Cilia.
+
 ## 2. Load 2D images from the closer server
 
 Retina, MEC and the Sandbox have a second copy of their 2D images hosted in Asia. Other datasets always load from the Americas.
