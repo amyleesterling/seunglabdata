@@ -31,7 +31,7 @@ Retina, MEC and the Sandbox have a second copy of their 2D images hosted in Asia
 
 In **Settings > 2D images > 2D images load from**, **Automatic** times both copies once and uses the faster one for you. The menu shows which one it picked. If you know the other copy is closer to you, choose **Asia** or **Americas** yourself.
 
-![Settings, 2D images: 2D image detail and 2D images load from](https://connectome.quest/assets/images/blog/pyr-speed/settings-2d-images.webp)
+![Settings, 2D images: 2D image detail and 2D images load from](https://connectome.quest/assets/images/blog/pyr-speed/settings-2d-images-v2.webp)
 ^ Settings > 2D images
 
 ## 3. Keep fewer cells in the 3D view
@@ -49,33 +49,33 @@ A few settings in **Settings > Screen** cut down on extra drawing:
 - **Particles** off: your points go down without the little burst of sparkles.
 - During Thanksgiving week, **Show the Thanksgiving turkey** turns off the turkey that wanders along the bottom of the screen. The turkey button by the chat box does the same, and Calm screen keeps him away too.
 
-![Settings, Screen: Particles and Calm screen](https://connectome.quest/assets/images/blog/pyr-speed/settings-screen.webp)
+![Settings, Screen: Particles and Calm screen](https://connectome.quest/assets/images/blog/pyr-speed/settings-screen-v2.webp)
 ^ Settings > Screen
 
 In **Settings > 3D looks**, turning off **Turn cells slowly** stops the 3D view from slowly spinning by itself.
 
-![Settings, 3D looks: Turn cells slowly](https://connectome.quest/assets/images/blog/pyr-speed/settings-3d-looks.webp)
+![Settings, 3D looks: Turn cells slowly](https://connectome.quest/assets/images/blog/pyr-speed/settings-3d-looks-v2.webp)
 ^ Settings > 3D looks
 
 ## 5. Tune the Viewer Settings
 
 For finer control, go to **Settings > Neuroglancer** and click **Viewer Settings**. Pyr remembers what you set here on your account, so it stays the same on every new cell.
 
-![Settings, Neuroglancer: the Viewer Settings button](https://connectome.quest/assets/images/blog/pyr-speed/settings-neuroglancer.webp)
+![Settings, Neuroglancer: the Viewer Settings button](https://connectome.quest/assets/images/blog/pyr-speed/settings-neuroglancer-v2.webp)
 ^ Settings > Neuroglancer > Viewer Settings
 
 - **Enable prefetching:** loads nearby images before you reach them. Turning it off saves data on a slow connection, though scrolling to a new spot may take a moment longer.
 - **Concurrent chunk requests:** how many pieces of data load at the same time. A lower number can help on a weak connection.
 - **GPU memory limit** and **System memory limit:** how much memory the viewer may use. If Pyr stutters or the browser tab crashes, try a lower number. If you have a strong computer and cells keep fading in and out as you move, a higher number can help.
 
-![Viewer Settings: GPU memory limit, System memory limit, Concurrent chunk requests and Enable prefetching](https://connectome.quest/assets/images/blog/pyr-speed/viewer-settings-panel.webp)
+![Viewer Settings: GPU memory limit, System memory limit, Concurrent chunk requests and Enable prefetching](https://connectome.quest/assets/images/blog/pyr-speed/viewer-settings-panel-v2.webp)
 ^ The Viewer Settings panel
 
 ## 6. Check whether it's you or the servers
 
 Sometimes the slowdown isn't your computer at all. Open your Profile and go to **Datasets**. The **Server status** line at the top says whether the lab servers for Retina, the Sandbox and MEC are OK, Slow or Down, and it opens by itself when one is having trouble. If a server is slow, it's not your setup, and things usually pick up again soon.
 
-![Profile, Datasets: the Server status line](https://connectome.quest/assets/images/blog/pyr-speed/server-status.webp)
+![Profile, Datasets: the Server status line](https://connectome.quest/assets/images/blog/pyr-speed/server-status-v2.webp)
 ^ Profile > Datasets > Server status
 
 ## How Pyr works behind the scenes
