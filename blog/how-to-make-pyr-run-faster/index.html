@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to make Pyr run faster | Map the Brain</title>
+  <meta name="description" content="Simple settings to keep Pyr smooth, a look at how Pyr loads a cell, and what we have already sped up." />
+  <link rel="canonical" href="https://connectome.quest/blog/how-to-make-pyr-run-faster/" />
+  <meta name="author" content="Amy R. Sterling" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Map the Brain" />
+  <meta property="og:title" content="How to make Pyr run faster" />
+  <meta property="og:description" content="Simple settings to keep Pyr smooth, a look at how Pyr loads a cell, and what we have already sped up." />
+  <meta property="og:url" content="https://connectome.quest/blog/how-to-make-pyr-run-faster/" />
+  <meta property="og:image" content="https://connectome.quest/assets/images/blog/pyr-speed/cover.jpg" />
+  <meta property="og:image:alt" content="How to make Pyr run faster" />
+  <meta property="article:published_time" content="2026-11-21T01:47:10.206506+00:00" />
+  <meta property="article:modified_time" content="2026-11-21T01:21:21.388553+00:00" />
+  <meta property="article:author" content="Amy R. Sterling" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to make Pyr run faster" />
+  <meta name="twitter:description" content="Simple settings to keep Pyr smooth, a look at how Pyr loads a cell, and what we have already sped up." />
+  <meta name="twitter:image" content="https://connectome.quest/assets/images/blog/pyr-speed/cover.jpg" />
+  <link rel="alternate" type="application/rss+xml" title="Map the Brain blog" href="https://connectome.quest/blog/feed.xml" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to make Pyr run faster","description":"Simple settings to keep Pyr smooth, a look at how Pyr loads a cell, and what we have already sped up.","image":["https://connectome.quest/assets/images/blog/pyr-speed/cover.jpg"],"datePublished":"2026-11-21T01:47:10.206506+00:00","dateModified":"2026-11-21T01:21:21.388553+00:00","author":[{"@type":"Person","name":"Amy R. Sterling"}],"publisher":{"@type":"Organization","name":"Seung Lab, Princeton University","url":"https://connectome.quest/","logo":{"@type":"ImageObject","url":"https://connectome.quest/assets/images/favicon-pyr.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://connectome.quest/blog/how-to-make-pyr-run-faster/"},"url":"https://connectome.quest/blog/how-to-make-pyr-run-faster/","isPartOf":{"@type":"Blog","name":"Map the Brain blog","url":"https://connectome.quest/blog/"}}</script>
+  <link rel="icon" type="image/png" href="/assets/images/favicon-pyr.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon-pyr.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="/styles.css?v=anchors1" />
+</head>
+<body class="blog-light">
+  <!-- Built by tools/build-blog.mjs from the published post. Edit the post in Pyr, not here. -->
+  <nav class="topnav">
+    <div class="wrap topnav__inner">
+      <a class="topnav__brand" href="/" aria-label="Home">
+        <img class="topnav__crest" src="/assets/images/princeton-crest-white.png" alt="" />
+        <span>Princeton University</span>
+        <img class="topnav__pyr" src="/assets/images/favicon-pyr.png" alt="" />
+        <span class="topnav__pyrword">Pyr</span>
+      </a>
+      <div class="topnav__links">
+        <a class="topnav__link" href="/learn.html">Neuro 101</a>
+        <a class="topnav__link" href="/videos.html">Videos</a>
+        <a class="topnav__link" href="/help.html">Help</a>
+        <a class="topnav__link" href="/forum.html">Forum</a>
+        <a class="topnav__link is-active" href="/blog/">Blog</a>
+        <a class="topnav__link" href="/access.html">Access</a>
+        <a class="topnav__link" href="/atlas/">Connectome 101</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap blog-page">
+    <article class="blog-post" data-blog-live="how-to-make-pyr-run-faster" data-updated="2026-11-21T01:21:21.388553+00:00">
+      <header class="pagehead">
+        <p class="hero__eyebrow"><a href="/blog/">Blog</a></p>
+        <h1 data-blog-title>How to make Pyr run faster</h1>
+        <p class="blog-post__meta"><time datetime="2026-11-21">November 21, 2026</time> · Amy R. Sterling</p>
+        <p class="blog-edit"><button type="button" class="blog-edit__btn" data-blog-edit="how-to-make-pyr-run-faster" data-blog-author-only hidden>Edit</button></p>
+      </header>
+      <div data-blog-body>
+      <figure class="blog-post__figure blog-post__figure--cover"><img src="https://connectome.quest/assets/images/blog/pyr-speed/cover.jpg" alt="" /></figure>
+<p>Pyr feeling slow? A setting or two usually fixes it.</p>
+<p>Every cell you proofread helps map the brain, one neuron at a time. The images behind each dataset are far too large for any computer to hold at once, so Pyr streams in just the pieces you are looking at, while the lab's servers keep track of every edit every player makes. That makes Pyr a challenge not only to play but also to deliver, and we are always working to make it faster.</p>
+<p>Pyr draws a lot at once: sharp 2D images, detailed 3D cells, chat, and a few festive extras. A fast computer handles that easily, but an older laptop or a slow connection can start to drag. Below are the settings that help most, biggest wins first. After them comes a quick look at how Pyr loads a cell, which helps you tell <em>what</em> is slow, and a rundown of what we've already done to speed things up.</p>
+<p>To open Settings, press <strong>Shift+S</strong>. You can type any setting's name into the search box at the top to jump straight to it.</p>
+<h2 id="1-lower-the-2d-image-detail">1. Lower the 2D image detail<a class="blog-anchor" href="#1-lower-the-2d-image-detail" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>If the 2D images take a long time to sharpen, start here.</p>
+<p>Go to <strong>Settings &gt; 2D images &gt; 2D image detail</strong> and pick:</p>
+<ul><li><strong>Half (faster loading):</strong> loads about a quarter of the data. For most tracing, this is still plenty sharp.</li><li><strong>Quarter (fastest, blurry):</strong> loads about a sixteenth of the data. Good for a very slow connection.</li></ul>
+<p>The images stay at that detail until you choose <strong>Full</strong> again, so switch back whenever you need a close look at a tricky spot.</p>
+<h2 id="2-load-2d-images-from-the-closer-server">2. Load 2D images from the closer server<a class="blog-anchor" href="#2-load-2d-images-from-the-closer-server" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>Retina, MEC and the Sandbox have a second copy of their 2D images hosted in Asia. Other datasets always load from the Americas.</p>
+<p>In <strong>Settings &gt; 2D images &gt; 2D images load from</strong>, <strong>Automatic</strong> times both copies once and uses the faster one for you. The menu shows which one it picked. If you know the other copy is closer to you, choose <strong>Asia</strong> or <strong>Americas</strong> yourself.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/pyr-speed/settings-2d-images.webp" alt="Settings, 2D images: 2D image detail and 2D images load from" loading="lazy" /><figcaption>Settings &gt; 2D images</figcaption></figure>
+<h2 id="3-keep-fewer-cells-in-the-3d-view">3. Keep fewer cells in the 3D view<a class="blog-anchor" href="#3-keep-fewer-cells-in-the-3d-view" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>Every cell shown in 3D uses graphics memory, and a view full of finished cells is one of the most common reasons Pyr slows down.</p>
+<ul><li>Take cells out of the view once you are done with them.</li><li><strong>Ctrl+Shift+X</strong> clears every cell from the view at once. Your cells and your edits stay exactly as they are; they are just no longer drawn.</li></ul>
+<h2 id="4-quiet-the-screen">4. Quiet the screen<a class="blog-anchor" href="#4-quiet-the-screen" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>A few settings in <strong>Settings &gt; Screen</strong> cut down on extra drawing:</p>
+<ul><li><strong>Calm screen: no animations or glows</strong> stops the animations and glows around text, buttons and panels. The cells and the 3D view stay as they are. A few small animations follow after a reload.</li><li><strong>Particles</strong> off: your points go down without the little burst of sparkles.</li><li>During Thanksgiving week, <strong>Show the Thanksgiving turkey</strong> turns off the turkey that wanders along the bottom of the screen. The turkey button by the chat box does the same, and Calm screen keeps him away too.</li></ul>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/pyr-speed/settings-screen.webp" alt="Settings, Screen: Particles and Calm screen" loading="lazy" /><figcaption>Settings &gt; Screen</figcaption></figure>
+<p>In <strong>Settings &gt; 3D looks</strong>, turning off <strong>Turn cells slowly</strong> stops the 3D view from slowly spinning by itself.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/pyr-speed/settings-3d-looks.webp" alt="Settings, 3D looks: Turn cells slowly" loading="lazy" /><figcaption>Settings &gt; 3D looks</figcaption></figure>
+<h2 id="5-tune-the-viewer-settings">5. Tune the Viewer Settings<a class="blog-anchor" href="#5-tune-the-viewer-settings" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>For finer control, go to <strong>Settings &gt; Neuroglancer</strong> and click <strong>Viewer Settings</strong>. Pyr remembers what you set here on your account, so it stays the same on every new cell.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/pyr-speed/settings-neuroglancer.webp" alt="Settings, Neuroglancer: the Viewer Settings button" loading="lazy" /><figcaption>Settings &gt; Neuroglancer &gt; Viewer Settings</figcaption></figure>
+<ul><li><strong>Enable prefetching:</strong> loads nearby images before you reach them. Turning it off saves data on a slow connection, though scrolling to a new spot may take a moment longer.</li><li><strong>Concurrent chunk requests:</strong> how many pieces of data load at the same time. A lower number can help on a weak connection.</li><li><strong>GPU memory limit</strong> and <strong>System memory limit:</strong> how much memory the viewer may use. If Pyr stutters or the browser tab crashes, try a lower number. If you have a strong computer and cells keep fading in and out as you move, a higher number can help.</li></ul>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/pyr-speed/viewer-settings-panel.webp" alt="Viewer Settings: GPU memory limit, System memory limit, Concurrent chunk requests and Enable prefetching" loading="lazy" /><figcaption>The Viewer Settings panel</figcaption></figure>
+<h2 id="6-check-whether-it-s-you-or-the-servers">6. Check whether it's you or the servers<a class="blog-anchor" href="#6-check-whether-it-s-you-or-the-servers" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>Sometimes the slowdown isn't your computer at all. Open your Profile and go to <strong>Datasets</strong>. The <strong>Server status</strong> line at the top says whether the lab servers for Retina, the Sandbox and MEC are OK, Slow or Down, and it opens by itself when one is having trouble. If a server is slow, it's not your setup, and things usually pick up again soon.</p>
+<figure class="blog-post__figure"><img src="https://connectome.quest/assets/images/blog/pyr-speed/server-status.webp" alt="Profile, Datasets: the Server status line" loading="lazy" /><figcaption>Profile &gt; Datasets &gt; Server status</figcaption></figure>
+<h2 id="how-pyr-works-behind-the-scenes">How Pyr works behind the scenes<a class="blog-anchor" href="#how-pyr-works-behind-the-scenes" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>When you open a cell, Pyr is talking to several servers at once. Knowing who does what makes it easier to tell what is slow.</p>
+<p><strong>The 2D images.</strong> A dataset's microscope images are far too big to download whole, so they are stored as millions of small blocks called chunks, each a little cube of image. Every dataset is saved at several levels of detail, from sharp to very blurry. Pyr works out which chunks cover what's on your screen, shows a blurry version first so you see something right away, then fills in the sharp chunks. As you scroll through slices, it also fetches the images just ahead of you. This is the part that depends most on your internet connection, and it's what the 2D image detail and image source settings change.</p>
+<p><strong>The 3D cells.</strong> Each cell is built from many small pieces. When you select a cell, Pyr first asks the lab's proofreading server which pieces belong to it, then downloads the 3D shape of each piece and draws them together. A big cell can be made of thousands of pieces, which is why it fills in bit by bit. Once they arrive, every shape stays in your graphics card's memory while it is in view, which is why clearing finished cells helps so much.</p>
+<p><strong>Your edits.</strong> A merge or a cut goes to the proofreading server, which updates the cell and builds its new 3D shape. That's the &quot;Updating the 3D shape&quot; you sometimes see after an edit.</p>
+<p><strong>Cell information.</strong> For the cells in view, Pyr also asks the lab's servers whether each one has been proofread and what type of cell it is.</p>
+<p><strong>The game itself.</strong> Chat, claims, the Cell Library, leaderboards, Achievements and notifications live on Pyr's own game server, separate from the science data.</p>
+<p>So different kinds of slow have different causes:</p>
+<ul><li><strong>2D images stay blurry:</strong> usually your connection, or the image server. Try a lower image detail or the closer server.</li><li><strong>3D cells take a long time to appear, or an edit takes a while:</strong> usually the proofreading server. Check Server status.</li><li><strong>Panning and turning feel choppy:</strong> usually too much for the graphics to draw at once. Clear finished cells, turn on Calm screen, or lower the memory limits.</li></ul>
+<h2 id="what-we-ve-already-sped-up">What we've already sped up<a class="blog-anchor" href="#what-we-ve-already-sped-up" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>A lot of the work on Pyr this fall has gone into making it lighter. Some highlights:</p>
+<ul><li><strong>Faster 2D images.</strong> Pyr now asks for fewer image chunks, in a better order: fewer blurry backup levels, only a short way fetched ahead instead of dozens of blocks, and a piece that fails to arrive is tried again. In our tests, Sandbox images that took about 8 seconds to fill in now take about 5.</li><li><strong>Copies of the images in Asia</strong> for Retina, MEC and the Sandbox, with Automatic picking the faster one for you.</li><li><strong>Fewer questions to the lab's servers.</strong> Cell status is now asked for many cells in one request instead of one at a time, and remembered for a short while. After an edit, Pyr only looks up the claims on your screen.</li><li><strong>Smoother big views.</strong> Views with hundreds of cells or thousands of annotation points draw and respond faster, and cut points appear the moment you place them, even on very big cells.</li><li><strong>A faster Cell Library.</strong> It loads cells in pages instead of all at once and does much less work when it updates. The Mine list no longer freezes when you have finished many cells, and the Cilia Quest list loads much faster.</li><li><strong>Lighter chat and leaderboards.</strong> When many people play at once, joining and leaving now reach chat as one small message each. The leaderboard refreshes less often and asks for far less, and the bell asks only for what is new.</li><li><strong>Your Viewer Settings stick.</strong> Memory and loading choices are saved on your account and kept for every new cell.</li><li><strong>Server status</strong> in your Profile, so you can see when the slowness is on our side.</li></ul>
+<h2 id="still-slow">Still slow?<a class="blog-anchor" href="#still-slow" aria-label="Link to this section" title="Link to this section">#</a></h2>
+<p>Tell us in chat or send us a bug report, and mention which dataset you were on and what felt slow. Every report helps us make Pyr lighter for everyone.</p>
+<p>Happy proofreading!</p>
+      </div>
+      <p class="blog-post__back"><a href="/blog/">All posts</a><button type="button" class="blog-edit__quiet" data-blog-edit="how-to-make-pyr-run-faster" hidden>Edit this post</button></p>
+    </article>
+
+    <section class="subscribe" id="subscribe" aria-label="Subscribe to updates from our team">
+      <div class="subscribe__copy">
+        <p class="res__badge">Subscribe</p>
+        <h2>Get new posts by email</h2>
+        <p class="subscribe__lede">
+          New posts, new datasets and events, straight to your inbox.
+          We'll never share your information.
+        </p>
+      </div>
+      <form class="subscribe__form" id="subscribeForm" novalidate>
+        <div class="subscribe__grid">
+          <label class="cform__field">
+            <span>First name</span>
+            <input id="sub-name" name="name" type="text" autocomplete="given-name" required />
+          </label>
+          <label class="cform__field">
+            <span>Email</span>
+            <input id="sub-email" name="email" type="email" autocomplete="email" required />
+          </label>
+        </div>
+        <!-- bot trap -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;" />
+        <div class="subscribe__foot">
+          <button class="btn btn--cta" id="sub-submit" type="submit">Subscribe</button>
+          <p class="cform__status" id="sub-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="subscribe__success" id="subscribeSuccess" hidden>
+        <img class="subscribe__nurro" src="/assets/images/nurro-subscribe.png" alt="Nurro, the connectome cat, holding up a little heart" />
+        <h3>You're on the list!</h3>
+        <p>Nurro will keep you posted. Welcome to the quest.</p>
+        <p class="subscribe__egg"><a href="https://amyleesterling.github.io/science-experiment/scale-test" target="_blank" rel="noreferrer">psst… ever wondered how small a neuron really is?</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__credit footer__credit--standalone">
+      <a href="/index.html">Return to Map the Brain</a> · <a href="/terms/">Terms and Privacy</a>
+    </div>
+  </footer>
+  <script src="/assets/subscribe.js?v=3"></script>
+  <script src="/assets/blog.js?v=anchors1"></script>
+  <script src="/assets/blog-edit.js?v=4"></script>
+</body>
+</html>

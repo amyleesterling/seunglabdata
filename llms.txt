@@ -12,6 +12,7 @@
 
 ## Blog
 - [All posts](https://connectome.quest/blog/) ([RSS](https://connectome.quest/blog/feed.xml))
+- [How to make Pyr run faster](https://connectome.quest/blog/how-to-make-pyr-run-faster/): Simple settings to keep Pyr smooth, a look at how Pyr loads a cell, and what we have already sped up.
 - [What's new in Pyr: week of November 16](https://connectome.quest/blog/whats-new-in-pyr-2026-11-16/): Every update to Pyr from November 16 to 22, 2026, newest first.
 - [What's new in Pyr: week of November 9](https://connectome.quest/blog/whats-new-in-pyr-2026-11-09/): Every update to Pyr from November 9 to 15, 2026, newest first.
 - [Cilia Status Guide](https://connectome.quest/blog/cilia-status-guide/): Hello Cilia Hunters! This is a quick guide to each cilia status and when to use it. Click each one to see an example. Happy Hunting! @[gallery] Cilium Annotated - Cilium emerges from the cell, both centrioles and cilium centerline are annotated. Cilium Annotated (fixation artifact) - Cilium…
