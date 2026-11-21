@@ -1827,10 +1827,10 @@ h2{
 .blog-empty{ color: var(--muted); padding: 18px 0; }
 .blog-item--cover{ display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 24px; align-items: start; }
 .blog-item__cover{ display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: #000; }
-.blog-item__cover img{ display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+/* The whole cover, at its own shape: a fixed 4:3 box cut the sides off wide covers (Ames 2026-11-20). */
+.blog-item__cover img{ display: block; width: 100%; height: auto; }
 @media (max-width: 720px){
   .blog-item--cover{ grid-template-columns: 1fr; gap: 14px; }
-  .blog-item__cover img{ aspect-ratio: 16 / 9; }
 }
 .blog-item{ padding: 26px 0; border-top: 1px solid var(--line); }
 .blog-item:first-child{ border-top: 0; }
