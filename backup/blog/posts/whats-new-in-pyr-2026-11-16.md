@@ -3,10 +3,32 @@ title: "What's new in Pyr: week of November 16"
 summary: "Every update to Pyr from November 16 to 22, 2026, newest first."
 author: "Nurro"
 published: 2026-11-16T21:32:23.221+00:00
-updated: 2026-11-21T21:32:10.618+00:00
+updated: 2026-11-22T21:32:20.245+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Sunday, November 22
+
+Your streak flame now levels up as your streak grows, and Lost Fragments that come apart can be completed as several cells, each with its own type.
+
+**Streak flame levels up:** Your flame changes from Kindled at 7 days up to Solar at 365, flares with sparks, and shows days to the next one on hover.
+
+**Fragments that split apart:** Press It split into several cells in the Complete box, then add each cell at the crosshairs with its own lab point and type.
+
+**Glia read crosshairs automatically:** When you tag glia in Lost Fragments, Pyr reads the crosshairs as you choose and again when you submit.
+
+**Counts that keep up:** Lost Fragments counts go up as soon as you finish one, and the Cell Library tab shows how many are still to do.
+
+### All 5 updates
+
+- **Your streak flame levels up.** Your streak flame now changes as your streak grows: Kindled at 7 days, Blue Core at 14, Plasma at 30, Starfire at 50, Nova at 100 and Solar at 365. The first time you reach a new flame, it flares up with a shower of sparks in its new color. Hover your streak to see which flame you have and how many days until the next one. If your streak breaks, your flame starts again as a Spark.
+- **Lost Fragments counts that keep up.** In Lost Fragments, the Easy, Medium and Hard counts and the number still to do go up as soon as you finish one. The Lost Fragments tab in the Cell Library now shows how many fragments are still to do. The Quests leaderboard says that for now it counts only Cilia Quests on the Retina. Claiming, releasing or submitting a Cilia Quest cell now reaches your own scripts, like any other cell.
+- **Glia read the crosshairs by themselves.** When you tag a glia in Lost Fragments, Pyr reads where the crosshairs are as soon as you choose one glia or several, and again when you submit. To change the spot, move the crosshairs into a trunk and press Read again.
+- **Lost Fragments that split into several cells.** When a fragment comes apart into several finished cells, press It split into several cells? in the Complete box. Put the crosshairs in each cell and press Add. Each one gets its own point for the lab and its own cell type, picked from the list or typed. They all count as the one fragment. Thanks to Nseraf for the idea.
+- **Adding the cells a fragment split into.** Add the cell at the crosshairs now takes each cell a Lost Fragment split into. Before, it turned every one of them away. Only the main cell, the one you are completing, stays off the list.
+
+*Players made 1,559 edits and completed 132 cells.*
 
 ## Saturday, November 21
 
