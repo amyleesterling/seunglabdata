@@ -3,10 +3,26 @@ title: "What's new in Pyr: week of November 23"
 summary: "Every update to Pyr from November 23 to 29, 2026, newest first."
 author: "Nurro"
 published: 2026-11-23T21:32:06.836+00:00
-updated: 2026-11-24T21:32:04.419+00:00
+updated: 2026-11-26T21:31:59.397+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Thursday, November 26
+
+Cancel now stays available while an edit is sending, so a stuck merge can no longer trap you, and Cilia Quest reopens your cells and views correctly.
+
+**Escape a stuck merge:** Cancel stays on the cut and merge bar while an edit is sending, so a merge that never answers cannot trap you.
+
+**Cilia Quest view fixes:** Again opens your submitted view first, your active cell restores its whole view, and a reclaimed cell opens fresh without old marks.
+
+**Smaller fixes:** Highlight between two points follows the branch to your end point, Training Sim Merged pins sit on the merger, and the Retina form reads clearer.
+
+### The update
+
+- **Cilia Quest fixes, and a way out of a stuck merge.** Cilia Quest: Again opens your submitted view first, so your fix, the crosshair check and the new link are all on that cell. Cilia Quest: going back to your active cell brings its whole view back, not just the crosshairs. Cilia Quest: a released cell opens fresh when it is claimed again, without the marks placed before. Cancel stays on the cut and merge bar while an edit is sending, so a merge that never answers can't trap you. Highlight between two points follows the branch and stops at your end point. Training Sim review: each Merged pin sits on the merger itself, not in empty space nearby. The Retina access form's first step reads more clearly.
+
+*Players made 2,135 edits and completed 87 cells.*
 
 ## Tuesday, November 24
 
