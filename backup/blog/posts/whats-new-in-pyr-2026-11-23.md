@@ -3,10 +3,20 @@ title: "What's new in Pyr: week of November 23"
 summary: "Every update to Pyr from November 23 to 29, 2026, newest first."
 author: "Nurro"
 published: 2026-11-23T21:32:06.836+00:00
-updated: 2026-11-26T21:31:59.397+00:00
+updated: 2026-11-27T21:32:08.672+00:00
 cover: https://connectome.quest/assets/images/blog/whats-new-in-pyr.jpg
 ---
 Everything that changed in Pyr this week, newest day first. A new day is added each afternoon, with the Today in Pyr note in your bell.
+
+## Friday, November 27
+
+The Thanksgiving turkey has gone home for the year, but the falling leaves stay in Pyr through Sunday.
+
+### The update
+
+- **The turkey heads home.** The Thanksgiving turkey has gone home for the year. The falling leaves stay through Sunday.
+
+*Players made 1,082 edits and completed 17 cells.*
 
 ## Thursday, November 26
 
